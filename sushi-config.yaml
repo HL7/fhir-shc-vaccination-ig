@@ -1,0 +1,28 @@
+# ╭──────────────────────────────────────ImplementationGuide───────────────────────────────────────╮
+# │  The properties below are used to create the ImplementationGuide resource. For a list of       │
+# │  supported properties, see: https://fshschool.org/sushi/configuration/                         │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+id: hl7.fhir.us.vaccineyellowcard
+canonical: http://hl7.org/fhir/us/vaccineyellowcard
+name: Vaccine Yellow Card IG
+title: Vaccine Yellow Card Implementation Guide (HealthCards)
+status: draft
+publisher:
+  name: TBD
+  url: http://example.com
+  email: example@example.com
+version: 0.1.0
+fhirVersion: 4.0.1
+dependencies:
+  hl7.fhir.us.core: 3.1.1
+copyrightYear: 2020+
+license: Apache-2.0
+releaseLabel: ci-build
+jurisdiction: urn:iso:std:iso:3166#US "United States of America"
+
+# ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
+# │  To use a provided ig-data/input/includes/menu.xml file, delete the "menu" property below.     │
+# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+menu:
+  Home: index.html
+  Artifacts: artifacts.html
