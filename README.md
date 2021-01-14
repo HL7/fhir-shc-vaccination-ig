@@ -1,5 +1,7 @@
 # Vaccine Yellow Card - FHIR Implementation Guide \[DRAFT\]
 
+CI build of this IG available at <http://build.fhir.org/ig/dvci/vaccine-yellow-card-ig/branches/main/>.
+
 ## License
 
 Copyright 2021 The MITRE Corporation
