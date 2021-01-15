@@ -2,10 +2,10 @@
 # │  The properties below are used to create the ImplementationGuide resource. For a list of       │
 # │  supported properties, see: https://fshschool.org/sushi/configuration/                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: hl7.fhir.us.vaccineyellowcard
-canonical: http://hl7.org/fhir/us/vaccineyellowcard
-name: Vaccine Yellow Card IG
-title: Vaccine Yellow Card Implementation Guide (HealthCards)
+id: hl7.fhir.us.vaccinecredential
+canonical: http://hl7.org/fhir/us/vaccinecredential
+name: Vaccine Credential IG
+title: Vaccine Credential Implementation Guide
 status: draft
 publisher:
   name: TBD

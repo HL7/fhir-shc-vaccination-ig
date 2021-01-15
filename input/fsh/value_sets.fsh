@@ -8,7 +8,7 @@ Alias: ACT = http://terminology.hl7.org/CodeSystem/v3-ActReason
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 CodeSystem:  OtherSpecifyCS
-Id:          yellow-card-other-specify-code-system
+Id:          vaccine-credential-other-specify-code-system
 Title:       "Other Specify Code System"
 Description: "A code system containing codes signifying a value set has been extended, using an 'Other ____, Specify' approach."
 * #OtherCVX "Other vaccine CVX code."
@@ -16,10 +16,10 @@ Description: "A code system containing codes signifying a value set has been ext
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-ValueSet:    YellowCardCVXValueSet
-Id:          yellow-card-cvx-value-set
+ValueSet:    VaccineCredentialCVXValueSet
+Id:          vaccine-credential-cvx-value-set
 Title:       "CVX codes value set"
-Description: "Curated set of CVX codes for the Vaccine Yellow Card"
+Description: "Curated set of CVX codes for the vaccine credential Health Card"
 * OtherSpecifyCS#OtherCVX
 
 // Moderna COVID-19 Vaccine: SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, preservative free, 100 mcg/0.5mL dose
@@ -30,8 +30,8 @@ Description: "Curated set of CVX codes for the Vaccine Yellow Card"
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-ValueSet:    YellowCardAntibodyResultValueSet
-Id:          yellow-card-antibody-result-value-set
+ValueSet:    VaccineCredentialAntibodyResultValueSet
+Id:          vaccine-credential-antibody-result-value-set
 Title:       "Antibody results value set"
 Description: "Result codes for SARS coronavirus 2 antibodies"
 * OtherSpecifyCS#OtherAntibodyResult
@@ -41,8 +41,8 @@ Description: "Result codes for SARS coronavirus 2 antibodies"
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // For Immunization.statusReason
-ValueSet:    YellowCardStatusReasonValueSet
-Id:          yellow-card-status-reason-value-set
+ValueSet:    VaccineCredentialStatusReasonValueSet
+Id:          vaccine-credential-status-reason-value-set
 Title:       "Status reason value set"
 Description: "Reasons a vaccine was not given"
 * ACT#IMMUNE
@@ -56,8 +56,8 @@ Description: "Reasons a vaccine was not given"
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // For Immunization.reportOrigin
-ValueSet:    YellowCardReportOriginValueSet
-Id:          yellow-card-report-origin-value-set
+ValueSet:    VaccineCredentialReportOriginValueSet
+Id:          vaccine-credential-report-origin-value-set
 Title:       "Secondarily reported record source value set"
 Description: "Source of secondarily reported records"
 
@@ -70,8 +70,8 @@ Description: "Source of secondarily reported records"
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // For Immunization.site
-ValueSet:    YellowCardVaccineSiteValueSet
-Id:          yellow-card-vaccine-site-value-set
+ValueSet:    VaccineCredentialVaccineSiteValueSet
+Id:          vaccine-credential-vaccine-site-value-set
 Title:       "Body site for vaccine administration value set"
 Description: "Body site vaccine was administered"
 
@@ -84,8 +84,8 @@ Description: "Body site vaccine was administered"
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // For Immunization.route
-ValueSet:    YellowCardVaccineRouteValueSet
-Id:          yellow-card-vaccine-route-value-set
+ValueSet:    VaccineCredentialVaccineRouteValueSet
+Id:          vaccine-credential-vaccine-route-value-set
 Title:       "Vaccination route value set"
 Description: "How vaccine entered the body"
 
@@ -103,8 +103,8 @@ Description: "How vaccine entered the body"
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // For Immunization.fundingSource
-ValueSet:    YellowCardFundingSourceValueSet
-Id:          yellow-card-funding-source-value-set
+ValueSet:    VaccineCredentialFundingSourceValueSet
+Id:          vaccine-credential-funding-source-value-set
 Title:       "Funding source value set"
 Description: "Funding source for the vaccine"
 
@@ -116,9 +116,9 @@ Description: "Funding source for the vaccine"
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// For vaccine reaction Observation (YellowCardVaccineReactionObservation)
-ValueSet:    YellowCardVaccineReactionValueSet
-Id:          yellow-card-vaccine-reaction-value-set
+// For vaccine reaction Observation (VaccineCredentialVaccineReactionObservation)
+ValueSet:    VaccineCredentialVaccineReactionValueSet
+Id:          vaccine-credential-vaccine-reaction-value-set
 Title:       "Adverse reaction value set"
 Description: "Codes describing reactions to vaccinations"
 

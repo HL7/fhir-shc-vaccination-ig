@@ -1,6 +1,6 @@
-# Vaccine Yellow Card - FHIR Implementation Guide \[DRAFT\]
+# Vaccine Credential FHIR Implementation Guide \[DRAFT\]
 
-CI build of this IG available at <http://build.fhir.org/ig/dvci/vaccine-yellow-card-ig/branches/main/>.
+CI build of this IG available at <http://build.fhir.org/ig/dvci/vaccine-credential-ig/branches/main/>.
 
 ## License
 
