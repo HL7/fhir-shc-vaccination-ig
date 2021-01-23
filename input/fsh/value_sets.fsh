@@ -7,11 +7,11 @@ Alias: ACT = http://terminology.hl7.org/CodeSystem/v3-ActReason
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-CodeSystem:  OtherSpecifyCS
-Id:          vaccine-credential-other-specify-code-system
-Title:       "Other Specify Code System"
-Description: "A code system containing codes signifying a value set has been extended, using an 'Other ____, Specify' approach."
-* #OtherCVX "Other vaccine CVX code."
+CodeSystem:  OtherCode
+Id:          vaccine-credential-other-code-cs
+Title:       "OtherCode Code System"
+Description: "A code system containing codes that signify a code outside a specified value set has been used, using an 'Other ____, Specify' approach."
+* #OtherVaccine "Other vaccine without published CVX"
 * #OtherAntibodyResult "Other antibody result"
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -20,13 +20,14 @@ ValueSet:    VaccineCredentialCVXValueSet
 Id:          vaccine-credential-cvx-value-set
 Title:       "CVX codes value set"
 Description: "Curated set of CVX codes for the vaccine credential Health Card"
-* OtherSpecifyCS#OtherCVX
+* include codes from system CVX
+* OtherCode#OtherVaccine
 
+// Not limiting to just COVID EUA vaccines for now - see index.md for details
 // Moderna COVID-19 Vaccine: SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, preservative free, 100 mcg/0.5mL dose
-* CVX#207
-
+// * CVX#207
 // Pfizer-BioNTech COVID-19 Vaccine: SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, preservative free, 30 mcg/0.3mL dose
-* CVX#208
+// * CVX#208
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -34,7 +35,7 @@ ValueSet:    VaccineCredentialAntibodyResultValueSet
 Id:          vaccine-credential-antibody-result-value-set
 Title:       "Antibody results value set"
 Description: "Result codes for SARS coronavirus 2 antibodies"
-* OtherSpecifyCS#OtherAntibodyResult
+* OtherCode#OtherAntibodyResult
 * LNC#LA6577-6 "Negative"
 * LNC#LA6576-8 "Positive"
 
@@ -52,6 +53,13 @@ Description: "Reasons a vaccine was not given"
 
 // Support for IIS value set for RXA-18 (refusal reason) - this is CDC NIP002
 * include codes from system https://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.114222.4.11.3380
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+ValueSet:    VaccineCredentialTargetDiseaseValueSet
+Id:          vaccine-credential-target-disease-value-set
+Title:       "Target disease value set"
+Description: "Disease targeted by the vaccination or other observation"
+* codes from system SCT where concept is-a #40733004
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
