@@ -4,7 +4,7 @@ This is a **rough draft** of a FHIR Implementation Guide for representing the cl
 
 Our primary focus is on the use case of representing the minimal set of clinical data necessary to represent COVID-19 vaccination status for verification purposes. 
 
-Secondarily, we want define patterns that support future use cases including:
+Secondarily, we want to define patterns that support future use cases including:
 
 * clinical data indicating current or previous COVID-19 infection status (e.g., laboratory testing results evaluating presence of RNA, antigens, or antibodies)
 * clinical data pertaining to other infectious diseases
