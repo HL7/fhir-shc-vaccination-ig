@@ -23,4 +23,11 @@
 [Scenario1Immunization2]: Immunization-Scenario1Immunization2.html
 [Scenario1Location]: Location-Scenario1Location.html
 [Scenario1Bundle]: Bundle-Scenario1Bundle.html
+
+[Scenario2Patient]: Patient-Scenario2Patient.html
+[Scenario2Immunization1]: Immunization-Scenario2Immunization1.html
+[Scenario2Immunization2]: Immunization-Scenario2Immunization2.html
+[Scenario2Location]: Location-Scenario2Location.html
+[Scenario2Bundle]: Bundle-Scenario1Bundle.html
+
 [ExampleImmunizationNoCVX]: Immunization-ExampleImmunizationNoCVX.html

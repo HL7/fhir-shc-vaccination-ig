@@ -70,6 +70,16 @@ TODO: Add guidance on when specific resources should be included in the bundle.
     - [Scenario1Immunization2]
     - [Scenario1Location]
 
+1. Scenario 2: A patient receives two doses of the Pfizer-BioNTech COVID-19 vaccine. The first dose was administered on January 1, 2021, and the second dose on January 29, 2021.
+
+    Example resources:
+
+    - [Scenario2Bundle]
+    - [Scenario2Patient]
+    - [Scenario2Immunization1]
+    - [Scenario2Immunization2]
+    - [Scenario2Location]
+
 1. Miscellaneous examples:
 
     1. [ExampleImmunizationNoCVX]\: Immunization resource showing how to record a vaccine without a published CVX code.
