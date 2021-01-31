@@ -2,12 +2,30 @@
 
 Profile:     VaccineCredentialPatient
 Id:          vaccine-credential-patient
-Parent:      USCorePatientProfile
+// Parent:      USCorePatientProfile
+Parent:      Patient
 Title:       "Patient Profile"
 Description: "***Currently this profile does not modify USCorePatientProfile, and can be removed if
                 USCorePatientProfile is sufficient for our use cases.***"
 
 * ^status = #draft
+* identifier 0..0 // changed cardinality
+// active: not MS, no change in cardinality
+* name 1..* MS // changed cardinality to 1..*, added MS
+// telecom: not MS, no change in cardinality
+* gender 0..1 MS // added MS
+* birthDate 0..1 MS // added MS
+// deceased: not MS, no change in cardinality
+// address: not MS, no change in cardinality
+// maritalStatus: not MS, no change in cardinality
+// multipleBirth[x]: not MS, no change in cardinaltiy
+// photo: not MS, no change in cardinality
+// contact: not MS, no change in cardinality
+// communication: not MS, no change in cardinality
+// generalPractitioner: not MS, no change in cardinality
+// managingOrganization: not MS, no change in cardinality
+// link: not MS, no change in cardinality
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
