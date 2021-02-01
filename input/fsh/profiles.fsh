@@ -25,6 +25,7 @@ Description: "***Currently this profile does not modify USCorePatientProfile, an
 // generalPractitioner: not MS, no change in cardinality
 // managingOrganization: not MS, no change in cardinality
 // link: not MS, no change in cardinality
+// left off us-core-race, us-core-ethnicity, us-core-birthsex
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
