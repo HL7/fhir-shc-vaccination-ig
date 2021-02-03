@@ -28,6 +28,6 @@
 [Scenario2Immunization1]: Immunization-Scenario2Immunization1.html
 [Scenario2Immunization2]: Immunization-Scenario2Immunization2.html
 [Scenario2Location]: Location-Scenario2Location.html
-[Scenario2Bundle]: Bundle-Scenario1Bundle.html
+[Scenario2Bundle]: Bundle-Scenario2Bundle.html
 
 [ExampleImmunizationNoCVX]: Immunization-ExampleImmunizationNoCVX.html
