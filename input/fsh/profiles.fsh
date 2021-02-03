@@ -1,3 +1,5 @@
+Alias:   ObsCat = http://terminology.hl7.org/CodeSystem/observation-category
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Profile:     VaccineCredentialPatient
@@ -72,8 +74,11 @@ Parent:         Observation
 Id:             vaccine-credential-immune-status
 Title:          "Immune Status Profile"
 Description:    "Defines constraints and extensions on the observation resource for the minimal set of data to query and retrieve vaccine credential immune status."
+
 * ^status = #draft
 
+* category = ObsCat#laboratory
+* code 1..1 MS
 * subject only Reference(VaccineCredentialPatient)
 * effective[x] 1..1 MS
 * effective[x] only dateTime
