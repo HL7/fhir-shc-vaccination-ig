@@ -6,7 +6,7 @@ Profile:     VaccineCredentialPatient
 Id:          vaccine-credential-patient
 Parent:      Patient
 Title:       "Patient Profile"
-Description: "***Slight modification of Patient, with identifier as 0..0 and limited MS.***"
+Description: "Slight modification of Patient, with identifier as 0..0 and limited MS."
 
 * ^status = #draft
 * identifier 0..0 
