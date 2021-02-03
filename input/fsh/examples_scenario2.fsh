@@ -3,10 +3,6 @@
 Instance:   Scenario2Patient
 InstanceOf: VaccineCredentialPatient
 Title:      "Scenario 2: Example Patient"
-* identifier.use = #usual
-* identifier.type = http://terminology.hl7.org/CodeSystem/v2-0203#MR "Medical Record Number"
-* identifier.system = "http://hospital.example.org"
-* identifier.value = "m421"
 * name.family = "Anyperson"
 * name.given[0] = "Jane"
 * name.given[1] = "C."
