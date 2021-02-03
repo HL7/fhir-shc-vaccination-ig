@@ -18,8 +18,7 @@ Description: "***Slight modification of Patient, with identifier as 0..0 and lim
 
 Profile:     VaccineCredentialImmunization
 Id:          vaccine-credential-immunization
-Parent:  Immunization
-//Parent:      http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization
+Parent:      Immunization
 Title:       "Immunization Profile"
 Description: "Defines a profile representing a vaccination for a vaccine credential Health Card."
 
@@ -70,7 +69,6 @@ Severity:    #error
 
 Profile:        VaccineCredentialImmuneStatus
 Parent:         Observation
-// Parent:         USCoreLaboratoryResultObservationProfile
 Id:             vaccine-credential-immune-status
 Title:          "Immune Status Profile"
 Description:    "Defines constraints and extensions on the observation resource for the minimal set of data to query and retrieve vaccine credential immune status."
