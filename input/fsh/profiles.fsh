@@ -24,6 +24,8 @@ Description: "Defines a profile representing a vaccination for a vaccine credent
 * ^status = #draft
 
 * patient only Reference(VaccineCredentialPatient)
+* vaccineCode MS
+* occurrence[x] MS
 
 // Parent profile short description is not as clear as it could be
 * primarySource ^short = "Information in this record from person who administered vaccine?"
