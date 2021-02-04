@@ -12,6 +12,7 @@ Description: "Slight modification of Patient, with identifier as 0..0 and limite
 * identifier 0..0 
 * name 1..* MS 
 * gender 0..1 MS 
+* gender from http://hl7.org/fhir/ValueSet/administrative-gender (required)
 * birthDate 0..1 MS 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
