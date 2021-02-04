@@ -51,7 +51,7 @@ Description: "Defines a profile representing a vaccination for a vaccine credent
 * reaction.detail only Reference(VaccineCredentialVaccineReactionObservation)
 
 * isSubpotent MS
-* subpotentReason MS
+* isSubpotent ^definition = "Indication if a dose is considered to be subpotent. By default, a dose should be considered to be potent. Verifiers SHALL assume that if an Immunization resource is provided and isSubpotent is not true, then the dose was not subpotent. Issuers SHALL only populate isSubpotent if the value is true. Issuers SHALL NOT produce an Immunization resource for a known subpotent dose without populating isSubpotent."
 
 Invariant:   vaccine-code-invariant
 Description: "If the code representing 'Other Vaccine' is used, a second code from outside the original value set must be present."
