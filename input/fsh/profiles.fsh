@@ -1,25 +1,49 @@
+Alias:   ObsCat = http://terminology.hl7.org/CodeSystem/observation-category
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Profile:     VaccineCredentialPatient
 Id:          vaccine-credential-patient
-Parent:      USCorePatientProfile
+Parent:      Patient
 Title:       "Patient Profile"
-Description: "***Currently this profile does not modify USCorePatientProfile, and can be removed if
-                USCorePatientProfile is sufficient for our use cases.***"
+Description: "Slight modification of Patient, with identifier as 0..0 and limited MS."
 
 * ^status = #draft
+
+* identifier 0..0
+* identifier ^definition = "Identifer is not allowed in this IG due to risk of accidental, unnecessary exposure of sensitive identifiers to verifiers."
+
+* name 1..*
+* name and name.given and name.family MS
+* name obeys name-invariant
+
+// Keeping gender MS as it is likely available and useful for interfacing with IIS
+// See https://github.com/dvci/vaccine-credential-ig/pull/31#issuecomment-773434836 for details
+* gender MS
+* gender from http://hl7.org/fhir/ValueSet/administrative-gender (required)
+
+* birthDate MS
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Invariant: name-invariant
+Description: "Require one of the key name elements to be filled. Allows for `text` for [names that cannot be cleanly categorized into `family` or `given`](https://www.nature.com/articles/d41586-020-02761-z)."
+Expression: "family.exists() or given.exists() or text.exists()"
+Severity: #error
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Profile:     VaccineCredentialImmunization
 Id:          vaccine-credential-immunization
-Parent:      http://hl7.org/fhir/us/core/StructureDefinition/us-core-immunization
+Parent:      Immunization
 Title:       "Immunization Profile"
 Description: "Defines a profile representing a vaccination for a vaccine credential Health Card."
 
 * ^status = #draft
 
-* patient only Reference(USCorePatientProfile)
+* patient only Reference(VaccineCredentialPatient)
+* vaccineCode MS
+* occurrence[x] MS
 
 // Parent profile short description is not as clear as it could be
 * primarySource ^short = "Information in this record from person who administered vaccine?"
@@ -61,13 +85,16 @@ Severity:    #error
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Profile:        VaccineCredentialImmuneStatus
-Parent:         USCoreLaboratoryResultObservationProfile
+Parent:         Observation
 Id:             vaccine-credential-immune-status
 Title:          "Immune Status Profile"
 Description:    "Defines constraints and extensions on the observation resource for the minimal set of data to query and retrieve vaccine credential immune status."
+
 * ^status = #draft
 
-* subject only Reference(USCorePatientProfile)
+* category = ObsCat#laboratory
+* code 1..1 MS
+* subject only Reference(VaccineCredentialPatient)
 * effective[x] 1..1 MS
 * effective[x] only dateTime
 * effective[x] ^short = "When immune status was assessed"
