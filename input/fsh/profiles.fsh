@@ -9,11 +9,21 @@ Title:       "Patient Profile"
 Description: "Slight modification of Patient, with identifier as 0..0 and limited MS."
 
 * ^status = #draft
-* identifier 0..0 
-* name 1..* MS 
-* gender 0..1 MS 
+* identifier 0..0
+* identifier ^definition = "Identifer is not allowed in this IG due to risk of accidental, unnecessary exposure of sensitive identifiers to verifiers."
+* name 1..*
+* name and name.given and name.family MS
+* name obeys name-invariant
+* gender MS
 * gender from http://hl7.org/fhir/ValueSet/administrative-gender (required)
-* birthDate 0..1 MS 
+* birthDate MS
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Invariant: name-invariant
+Description: "Require one of the key name elements to be filled. Allows for `text` for [names that cannot be cleanly categorized into `family` or `given`](https://www.nature.com/articles/d41586-020-02761-z)."
+Expression: "family.exists() or given.exists() or text.exists()"
+Severity: #error
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
