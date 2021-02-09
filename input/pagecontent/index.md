@@ -2,7 +2,7 @@ This is a **rough draft** of a FHIR Implementation Guide for representing the cl
 
 ### Use cases
 
-Our primary focus is on the use case of representing the minimal set of clinical data necessary to represent COVID-19 vaccination status for verification purposes. 
+Our primary focus is on the use case of representing the minimal set of clinical data necessary to represent COVID-19 vaccination status for verification purposes.
 
 Secondarily, we want to define patterns that support future use cases including:
 
@@ -88,5 +88,11 @@ TODO: Add guidance on when specific resources should be included in the bundle.
 1. Miscellaneous examples:
 
     1. [ExampleImmunizationNoCVX]\: Immunization resource showing how to record a vaccine without a published CVX code.
+
+### Implementation notes
+
+#### Data minimization
+
+- Use `YYYY-MM-DD` precision for all `dateTime` fields
 
 {% include markdown-link-references.md %}
