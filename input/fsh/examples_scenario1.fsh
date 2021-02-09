@@ -28,7 +28,7 @@ Title:      "Scenario 1: Example Immunization 1"
 * status = #completed
 * vaccineCode = CVX#207
 * patient = Reference(Scenario1Patient)
-* occurrenceDateTime = "2021-01-01T11:45:33+11:00"
+* occurrenceDateTime = "2021-01-01"
 * primarySource = true
 * location = Reference(Scenario1Location)
 * lotNumber = "Lot #0000001"
@@ -41,7 +41,7 @@ Title:      "Scenario 1: Example Immunization 2"
 * status = #completed
 * vaccineCode = CVX#207
 * patient = Reference(Scenario1Patient)
-* occurrenceDateTime = "2021-01-29T11:45:33+11:00"
+* occurrenceDateTime = "2021-01-29"
 * primarySource = true
 * location = Reference(Scenario1Location)
 * lotNumber = "Lot #0000007"
