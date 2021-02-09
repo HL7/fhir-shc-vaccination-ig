@@ -4,7 +4,6 @@ Alias: CVX = https://phinvads.cdc.gov/vads/ViewCodeSystem.action?id=2.16.840.1.1
 Alias: LNC = http://loinc.org
 Alias: SCT = http://snomed.info/sct
 Alias: ACT = http://terminology.hl7.org/CodeSystem/v3-ActReason
-Alias: OtherCode = http://hl7.org/fhir/us/vaccinecredential/CodeSystem/vaccine-credential-other-code-cs
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
