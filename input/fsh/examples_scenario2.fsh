@@ -26,7 +26,7 @@ Instance:   Scenario2Immunization1
 InstanceOf: VaccineCredentialImmunization
 Title:      "Scenario 2: Example Immunization 1"
 * status = #completed
-* vaccineCode = CVX#208 "COVID-19, mRNA, LNP-S, PF, 30 mcg/0.3 mL dose"
+* vaccineCode = CVX#208
 * patient = Reference(Scenario2Patient)
 * occurrenceDateTime = "2021-01-01T11:45:33+11:00"
 * primarySource = true
@@ -39,7 +39,7 @@ Instance:   Scenario2Immunization2
 InstanceOf: VaccineCredentialImmunization
 Title:      "Scenario 2: Example Immunization 2"
 * status = #completed
-* vaccineCode = CVX#208 "COVID-19, mRNA, LNP-S, PF, 30 mcg/0.3 mL dose"
+* vaccineCode = CVX#208
 * patient = Reference(Scenario2Patient)
 * occurrenceDateTime = "2021-01-29T11:45:33+11:00"
 * primarySource = true
