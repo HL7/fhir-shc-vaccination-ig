@@ -4,9 +4,8 @@ Instance: ExampleImmunizationNoCVX
 InstanceOf: VaccineCredentialImmunization
 Title: "Example: Immunization where the CVX is not known"
 * status = #completed
-* vaccineCode.coding.code = OtherCode#OtherVaccine
-* vaccineCode.coding.display = "Other vaccine without published CVX"
-* vaccineCode.text = "Acme, Inc. COVID-19 vaccine (EUA)"
+* vaccineCode.coding[+] = CatchCodeCS#OTHER-VACCINE
+* vaccineCode.coding[+] = #acme-inc-covid-temporary-code "Acme, Inc. COVID-19 vaccine (EUA)"
 * patient = Reference(Scenario1Patient)
 * occurrenceDateTime = "2021-01-21T11:45:33+11:00"
 * primarySource = true

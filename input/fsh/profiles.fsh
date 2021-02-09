@@ -73,7 +73,7 @@ Description: "Defines a profile representing a vaccination for a vaccine credent
 
 Invariant:   vaccine-code-invariant
 Description: "If the code representing 'Other Vaccine' is used, a second code from outside the original value set must be present."
-Expression:  "coding.where(code = 'OtherVaccine').exists() implies coding.where(code != 'OtherVaccine' and $this.memberOf('http://hl7.org/fhir/us/vaccinecredential/ValueSet/vaccine-credential-cvx-value-set').not()).exists()"
+Expression:  "coding.where(code = 'OTHER-VACCINE').exists() implies coding.where(code != 'OTHER-VACCINE' and $this.memberOf('http://hl7.org/fhir/us/vaccinecredential/ValueSet/vaccine-credential-cvx-value-set').not()).exists()"
 Severity:    #error
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
