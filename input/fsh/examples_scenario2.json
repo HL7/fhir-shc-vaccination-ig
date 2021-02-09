@@ -1,0 +1,129 @@
+{
+    "resourceType": "Bundle",
+    "type": "collection",
+    "entry": [
+      {
+        "fullUrl": "http://example.org/fhir/Patient/Scenario2Patient",
+        "resource": {
+          "resourceType": "Patient",
+          "id": "Scenario2Patient",
+          "meta": {
+            "profile": [
+              "http://hl7.org/fhir/us/vaccinecredential/StructureDefinition/vaccine-credential-patient"
+            ]
+          },
+          "name": [
+            {
+              "family": "Anyperson",
+              "given": [
+                "Jane",
+                "C."
+              ]
+            }
+          ],
+          "telecom": [
+            {
+              "system": "phone",
+              "value": "555-555-5555",
+              "use": "home"
+            },
+            {
+              "system": "email",
+              "value": "jane.anyperson@example.com"
+            }
+          ],
+          "gender": "male",
+          "birthDate": "1961-01-20",
+          "address": [
+            {
+              "line": [
+                "321 State St"
+              ],
+              "city": "Somecity",
+              "postalCode": "12345",
+              "country": "US"
+            }
+          ]
+        }
+      },
+      {
+        "fullUrl": "http://example.org/fhir/Immunization/Scenario2Immunization1",
+        "resource": {
+          "resourceType": "Immunization",
+          "id": "Scenario2Immunization1",
+          "meta": {
+            "profile": [
+              "http://hl7.org/fhir/us/vaccinecredential/StructureDefinition/vaccine-credential-immunization"
+            ]
+          },
+          "status": "completed",
+          "vaccineCode": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/sid/cvx",
+                "code": "208",
+                "display": "COVID-19, mRNA, LNP-S, PF, 30 mcg/0.3 mL dose"
+              }
+            ]
+          },
+          "patient": {
+            "reference": "Patient/Scenario2Patient"
+          },
+          "occurrenceDateTime": "2021-01-01T11:45:33+11:00",
+          "primarySource": true,
+          "location": {
+            "reference": "Location/Scenario2Location"
+          },
+          "lotNumber": "Lot #0000001"
+        }
+      },
+      {
+        "fullUrl": "http://example.org/fhir/Immunization/Scenario2Immunization2",
+        "resource": {
+          "resourceType": "Immunization",
+          "id": "Scenario2Immunization2",
+          "meta": {
+            "profile": [
+              "http://hl7.org/fhir/us/vaccinecredential/StructureDefinition/vaccine-credential-immunization"
+            ]
+          },
+          "status": "completed",
+          "vaccineCode": {
+            "coding": [
+              {
+                "system": "http://hl7.org/fhir/sid/cvx",
+                "code": "208",
+                "display": "COVID-19, mRNA, LNP-S, PF, 30 mcg/0.3 mL dose"
+              }
+            ]
+          },
+          "patient": {
+            "reference": "Patient/Scenario2Patient"
+          },
+          "occurrenceDateTime": "2021-01-29T11:45:33+11:00",
+          "primarySource": true,
+          "location": {
+            "reference": "Location/Scenario2Location"
+          },
+          "lotNumber": "Lot #0000007"
+        }
+      },
+      {
+        "fullUrl": "http://example.org/fhir/Immunization/Scenario2Location",
+        "resource": {
+          "resourceType": "Location",
+          "id": "Scenario2Location",
+          "meta": {
+            "profile": [
+              "http://hl7.org/fhir/us/core/StructureDefinition/us-core-location"
+            ]
+          },
+          "text": {
+            "status": "generated",
+            "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><p><b>name</b>: ABC Pharmacy</p></div>"
+          },
+          "name": "ABC Pharmacy"
+        }
+      }
+    ]
+  }
