@@ -33,9 +33,11 @@ This specification uses the conformance verbs SHALL, SHOULD, and MAY as defined 
 
 #### MustSupport interpretation
 
-The [MustSupport](https://www.hl7.org/fhir/conformance-rules.html#mustSupport) flag indicates that implementation shall provide "meaningful support" for the element, as defined by its implementation guide. This IG follows the MustSupport [definitions in US Core](http://hl7.org/fhir/us/core/general-guidance.html#must-support).
+- Issuers SHALL populate any elements marked as `MustSupport` if the necessary data are available in their system.
+- Issuers SHOULD NOT populate any elements that are not marked as `MustSupport` unless they believe the element contains valuable information for Verifiers. This is due to the payload size constraints of SMART Health Cards; see the [Data minimization](#data-minimization) section below for more details on how to reduce payload size when implementing.
+- Verifiers SHALL be able to "meaningfully process" elements flagged with both `MustSupport` and the `Is-Modifier` property. For other elements flagged with `MustSupport`, Verifiers MAY process at their own discretion.
 
-Note that MustSupport does **not** indicate an element is required to be present in resource instances. Required elements are those with a minimim cardinality of 1 or greater.
+Note that `MustSupport` does **not** indicate an element is required to be present in resource instances. Required elements are those with a minimum cardinality of 1 or greater.
 
 ### Profiles
 
