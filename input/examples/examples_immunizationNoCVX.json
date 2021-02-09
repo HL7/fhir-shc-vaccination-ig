@@ -19,7 +19,7 @@
   "patient": {
     "reference": "Patient/Scenario1Patient"
   },
-  "occurrenceDateTime": "2021-01-21T11:45:33+11:00",
+  "occurrenceDateTime": "2021-01-21",
   "primarySource": true,
   "location": {
     "reference": "Location/Scenario1Location"

@@ -70,7 +70,7 @@
           "patient": {
             "reference": "Patient/Scenario2Patient"
           },
-          "occurrenceDateTime": "2021-01-01T11:45:33+11:00",
+          "occurrenceDateTime": "2021-01-01",
           "primarySource": true,
           "location": {
             "reference": "Location/Scenario2Location"
@@ -101,7 +101,7 @@
           "patient": {
             "reference": "Patient/Scenario2Patient"
           },
-          "occurrenceDateTime": "2021-01-29T11:45:33+11:00",
+          "occurrenceDateTime": "2021-01-29",
           "primarySource": true,
           "location": {
             "reference": "Location/Scenario2Location"
