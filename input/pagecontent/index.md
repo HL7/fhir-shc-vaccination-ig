@@ -93,6 +93,6 @@ TODO: Add guidance on when specific resources should be included in the bundle.
 
 #### Data minimization
 
-- Use `YYYY-MM-DD` precision for all `dateTime` fields
+- Use `YYYY-MM-DD` precision for all `dateTime` fields. Greater precision will result in a warning when validating a resource.
 
 {% include markdown-link-references.md %}
