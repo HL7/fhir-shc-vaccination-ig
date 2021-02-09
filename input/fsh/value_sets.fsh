@@ -55,6 +55,7 @@ Description: "Reasons a vaccine was not given"
 * include codes from system https://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.114222.4.11.3380
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 ValueSet:    VaccineCredentialTargetDiseaseValueSet
 Id:          vaccine-credential-target-disease-value-set
 Title:       "Target disease value set"

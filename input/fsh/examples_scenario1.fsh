@@ -32,9 +32,6 @@ Title:      "Scenario 1: Example Immunization 1"
 * primarySource = true
 * location = Reference(Scenario1Location)
 * lotNumber = "Lot #0000001"
-* protocolApplied.doseNumberPositiveInt = 1
-* protocolApplied.seriesDosesPositiveInt = 2
-* protocolApplied.targetDisease = SCT#840539006 "COVID-19"
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -48,9 +45,6 @@ Title:      "Scenario 1: Example Immunization 2"
 * primarySource = true
 * location = Reference(Scenario1Location)
 * lotNumber = "Lot #0000007"
-* protocolApplied.doseNumberPositiveInt = 2
-* protocolApplied.seriesDosesPositiveInt = 2
-* protocolApplied.targetDisease = SCT#840539006 "COVID-19"
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 

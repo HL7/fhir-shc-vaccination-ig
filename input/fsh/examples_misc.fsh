@@ -12,6 +12,3 @@ Title: "Example: Immunization where the CVX is not known"
 * primarySource = true
 * location = Reference(Scenario1Location)
 * lotNumber = "some lot number"
-* protocolApplied.doseNumberPositiveInt = 1
-* protocolApplied.seriesDosesPositiveInt = 2
-* protocolApplied.targetDisease = SCT#840539006 "COVID-19"

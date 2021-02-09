@@ -53,13 +53,7 @@ Description: "Defines a profile representing a vaccination for a vaccine credent
 
 * lotNumber MS
 
-// Marking dose sequence information as MS due to the importance for COVID
-* protocolApplied 1..1 MS
-* protocolApplied.doseNumber[x] only positiveInt
-* protocolApplied.doseNumber[x] MS
-* protocolApplied.seriesDoses[x] MS
-* protocolApplied.targetDisease 1..1 MS
-* protocolApplied.targetDisease from VaccineCredentialTargetDiseaseValueSet (extensible)
+* protocolApplied 0..0 // See explanation in pagecontent/StructureDefinition-vaccine-credential-immunization-intro.md
 
 * location only Reference(USCoreLocation)
 * location MS
