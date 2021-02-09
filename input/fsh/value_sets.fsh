@@ -1,6 +1,6 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Alias: CVX = http://hl7.org/fhir/sid/cvx
+Alias: CVX = https://phinvads.cdc.gov/vads/ViewCodeSystem.action?id=2.16.840.1.113883.12.292
 Alias: LNC = http://loinc.org
 Alias: SCT = http://snomed.info/sct
 Alias: ACT = http://terminology.hl7.org/CodeSystem/v3-ActReason
@@ -8,12 +8,12 @@ Alias: OtherCode = http://hl7.org/fhir/us/vaccinecredential/CodeSystem/vaccine-c
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-CodeSystem:  OtherCode
-Id:          vaccine-credential-other-code-cs
-Title:       "OtherCode Code System"
+CodeSystem:  CatchCodeCS
+Id:          vaccine-credential-catch-code-cs
+Title:       "CatchCodeCS Code System"
 Description: "A code system containing codes that signify a code outside a specified value set has been used, using an 'Other ____, Specify' approach."
-* #OtherVaccine "Other vaccine without published CVX"
-* #OtherAntibodyResult "Other antibody result"
+* #OTHER-VACCINE "Other vaccine without published CVX"
+* #OTHER-ANTIBODY-RESULT "Other antibody result"
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -21,8 +21,9 @@ ValueSet:    VaccineCredentialCVXValueSet
 Id:          vaccine-credential-cvx-value-set
 Title:       "CVX codes value set"
 Description: "Curated set of CVX codes for the vaccine credential Health Card"
+* CatchCodeCS#OTHER-VACCINE
 * include codes from system CVX
-* OtherCode#OtherVaccine
+
 
 // Not limiting to just COVID EUA vaccines for now - see index.md for details
 // Moderna COVID-19 Vaccine: SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, preservative free, 100 mcg/0.5mL dose
@@ -36,7 +37,7 @@ ValueSet:    VaccineCredentialAntibodyResultValueSet
 Id:          vaccine-credential-antibody-result-value-set
 Title:       "Antibody results value set"
 Description: "Result codes for SARS coronavirus 2 antibodies"
-* OtherCode#OtherAntibodyResult
+* CatchCodeCS#OTHER-ANTIBODY-RESULT
 * LNC#LA6577-6 "Negative"
 * LNC#LA6576-8 "Positive"
 
@@ -103,7 +104,7 @@ Description: "How vaccine entered the body"
 * include codes from system http://terminology.hl7.org/CodeSystem/v2-0162
 
 // Support for example binding from base FHIR Immunization resource
-* include codes from system http://hl7.org/fhir/ValueSet/immunization-route
+* include codes from valueset http://hl7.org/fhir/ValueSet/immunization-route
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
