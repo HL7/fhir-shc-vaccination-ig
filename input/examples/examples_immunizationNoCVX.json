@@ -1,20 +1,18 @@
 {
   "resourceType": "Immunization",
   "id": "ExampleImmunizationNoCVX",
-  "meta": {
-    "profile": [
-      "http://hl7.org/fhir/us/vaccinecredential/StructureDefinition/vaccine-credential-immunization"
-    ]
-  },
   "status": "completed",
   "vaccineCode": {
     "coding": [
       {
-        "code": "OtherVaccine",
-        "display": "Other vaccine without published CVX"
+        "system": "http://hl7.org/fhir/us/vaccinecredential/CodeSystem/vaccine-credential-catch-code-cs",
+        "code": "OTHER-VACCINE"
+      },
+      {
+        "code": "acme-inc-covid-temporary-code",
+        "display": "Acme, Inc. COVID-19 vaccine (EUA)"
       }
-    ],
-    "text": "Acme, Inc. COVID-19 vaccine (EUA)"
+    ]
   },
   "patient": {
     "reference": "Patient/Scenario1Patient"
