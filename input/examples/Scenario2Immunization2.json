@@ -1,0 +1,22 @@
+{
+    "resourceType": "Immunization",
+    "id": "Scenario2Immunization2",
+    "status": "completed",
+    "vaccineCode": {
+      "coding": [
+        {
+          "system": "https://phinvads.cdc.gov/vads/ViewCodeSystem.action?id=2.16.840.1.113883.12.292",
+          "code": "208"
+        }
+      ]
+    },
+    "patient": {
+      "reference": "Patient/Scenario2Patient"
+    },
+    "occurrenceDateTime": "2021-01-29",
+    "primarySource": true,
+    "location": {
+      "reference": "Location/Scenario2Location"
+    },
+    "lotNumber": "Lot #0000007"
+  }
