@@ -2,16 +2,16 @@
 # │  The properties below are used to create the ImplementationGuide resource. For a list of       │
 # │  supported properties, see: https://fshschool.org/sushi/configuration/                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: hl7.fhir.us.vaccinecredential
-canonical: http://hl7.org/fhir/us/vaccinecredential
-name: Vaccine Credential IG
-title: Vaccine Credential Implementation Guide
+id: hl7.fhir.us.smarthealthcards-vaccination
+canonical: http://hl7.org/fhir/us/smarthealthcards-vaccination
+name: SMARTHealthCardsVaccinationAndTestingIG
+title: "SMART Health Cards: Vaccination &amp; Testing Implementation Guide"
 status: draft
 publisher:
   name: TBD
   url: http://example.com
   email: example@example.com
-version: 0.1.0
+version: 0.2.0
 fhirVersion: 4.0.1
 dependencies:
   hl7.fhir.us.core: 3.1.1
