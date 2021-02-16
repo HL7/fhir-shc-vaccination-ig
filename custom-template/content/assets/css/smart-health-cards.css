@@ -1,0 +1,9 @@
+/* Yellow box at the top of the page that is problematic:
+
+1. Displays &amp; rather than &
+2. Links to a non-existent HL7 history page
+
+*/
+#publish-box {
+    display: none;
+}
