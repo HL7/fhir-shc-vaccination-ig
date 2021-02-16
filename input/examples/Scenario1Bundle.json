@@ -1,13 +1,11 @@
 {
   "resourceType": "Bundle",
-  "id": "Scenario1Bundle",
   "type": "collection",
   "entry": [
     {
-      "fullUrl": "http://example.org/fhir/Patient/Scenario1Patient",
+      "fullUrl": "resource:Scenario1Patient",
       "resource": {
         "resourceType": "Patient",
-        "id": "Scenario1Patient",
         "name": [
           {
             "family": "Anyperson",
@@ -43,10 +41,9 @@
       }
     },
     {
-      "fullUrl": "http://example.org/fhir/Immunization/Scenario1Immunization1",
+      "fullUrl": "resource:Scenario1Immunization1",
       "resource": {
         "resourceType": "Immunization",
-        "id": "Scenario1Immunization1",
         "status": "completed",
         "vaccineCode": {
           "coding": [
@@ -57,21 +54,20 @@
           ]
         },
         "patient": {
-          "reference": "Patient/Scenario1Patient"
+          "reference": "resource:Scenario1Patient"
         },
         "occurrenceDateTime": "2021-01-01",
         "primarySource": true,
         "location": {
-          "reference": "Location/Scenario1Location"
+          "reference": "resource:Scenario1Location"
         },
         "lotNumber": "Lot #0000001"
       }
     },
     {
-      "fullUrl": "http://example.org/fhir/Immunization/Scenario1Immunization2",
+      "fullUrl": "resource:Scenario1Immunization2",
       "resource": {
         "resourceType": "Immunization",
-        "id": "Scenario1Immunization2",
         "status": "completed",
         "vaccineCode": {
           "coding": [
@@ -82,21 +78,20 @@
           ]
         },
         "patient": {
-          "reference": "Patient/Scenario1Patient"
+          "reference": "resource:Scenario1Patient"
         },
         "occurrenceDateTime": "2021-01-29",
         "primarySource": true,
         "location": {
-          "reference": "Location/Scenario1Location"
+          "reference": "resource:Scenario1Location"
         },
         "lotNumber": "Lot #0000007"
       }
     },
     {
-      "fullUrl": "http://example.org/fhir/Immunization/Scenario1Location",
+      "fullUrl": "resource:Scenario1Location",
       "resource": {
         "resourceType": "Location",
-        "id": "Scenario1Location",
         "name": "ABC Pharmacy"
       }
     }

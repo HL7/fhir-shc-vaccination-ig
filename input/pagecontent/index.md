@@ -120,6 +120,10 @@ TODO: Add guidance on when specific resources should be included in the bundle.
 
 #### Data minimization
 
+A number of constraints apply to all Health Cards regardless of IG, as documented in the [SMART Health Card specification](https://smarthealth.cards/#health-cards-are-small).
+- Implementers SHOULD NOT populate `Resource.id`, `Resource.meta`, or `Resource.text` elements.
+- Implementers SHOULD populate `Bundle.entry.fullUrl` elements with short resource-scheme URIs (e.g., {"fullUrl": "resource:0}).
+- Implementers SHOULD populate `Reference.reference` elements with short resource-scheme URIs (e.g., {"patient": {"reference": "resource:0"}}) which SHOULD resolve within the bundle.
 - Implementers SHOULD NOT populate `CodeableConcept.text` or `Coding.display` when using any value from a value set with a `required` binding, or using specified values from a value set with an `extensible` binding.
 - Likewise, implementers SHOULD NOT populate `CodeableConcept.text` or `Coding.display` when specifying codes that are fixed in profiles.
 - Use `YYYY-MM-DD` precision for all `dateTime` fields. Greater precision will result in a warning when validating a resource.
