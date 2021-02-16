@@ -5,7 +5,7 @@
   "vaccineCode": {
     "coding": [
       {
-        "system": "http://hl7.org/fhir/us/vaccinecredential/CodeSystem/vaccine-credential-catch-code-cs",
+        "system": "http://hl7.org/fhir/us/smarthealthcards-vaccination/CodeSystem/vaccine-credential-catch-code-cs",
         "code": "OTHER-VACCINE"
       },
       {
