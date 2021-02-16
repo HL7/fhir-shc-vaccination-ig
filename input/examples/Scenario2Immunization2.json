@@ -5,7 +5,7 @@
     "vaccineCode": {
       "coding": [
         {
-          "system": "https://phinvads.cdc.gov/vads/ViewCodeSystem.action?id=2.16.840.1.113883.12.292",
+          "system": "http://hl7.org/fhir/sid/cvx",
           "code": "208"
         }
       ]
