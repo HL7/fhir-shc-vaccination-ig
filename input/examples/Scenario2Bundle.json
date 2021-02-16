@@ -1,0 +1,118 @@
+{
+  "resourceType": "Bundle",
+  "id": "Scenario2Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "fullUrl": "http://example.org/fhir/Patient/Scenario2Patient",
+      "resource": {
+        "resourceType": "Patient",
+        "id": "Scenario2Patient",
+        "name": [
+          {
+            "family": "Anyperson",
+            "given": [
+              "Jane",
+              "C."
+            ]
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "555-555-5555",
+            "use": "home"
+          },
+          {
+            "system": "email",
+            "value": "jane.anyperson@example.com"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1961-01-20",
+        "address": [
+          {
+            "line": [
+              "321 State St"
+            ],
+            "city": "Somecity",
+            "postalCode": "12345",
+            "country": "US"
+          }
+        ],
+        "communication": [
+          {
+            "language": {
+              "coding": [
+                {
+                  "system": "urn:ietf:bcp:47",
+                  "code": "en-US",
+                  "display": "English (Region=United States)"
+                }
+              ],
+              "text": "English"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Immunization/Scenario2Immunization1",
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "Scenario2Immunization1",
+        "status": "completed",
+        "vaccineCode": {
+          "coding": [
+            {
+              "system": "https://phinvads.cdc.gov/vads/ViewCodeSystem.action?id=2.16.840.1.113883.12.292",
+              "code": "208"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "Patient/Scenario2Patient"
+        },
+        "occurrenceDateTime": "2021-01-01",
+        "primarySource": true,
+        "location": {
+          "reference": "Location/Scenario2Location"
+        },
+        "lotNumber": "Lot #0000001"
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Immunization/Scenario2Immunization2",
+      "resource": {
+        "resourceType": "Immunization",
+        "id": "Scenario2Immunization2",
+        "status": "completed",
+        "vaccineCode": {
+          "coding": [
+            {
+              "system": "https://phinvads.cdc.gov/vads/ViewCodeSystem.action?id=2.16.840.1.113883.12.292",
+              "code": "208"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "Patient/Scenario2Patient"
+        },
+        "occurrenceDateTime": "2021-01-29",
+        "primarySource": true,
+        "location": {
+          "reference": "Location/Scenario2Location"
+        },
+        "lotNumber": "Lot #0000007"
+      }
+    },
+    {
+      "fullUrl": "http://example.org/fhir/Immunization/Scenario2Location",
+      "resource": {
+        "resourceType": "Location",
+        "id": "Scenario2Location",
+        "name": "ABC Pharmacy"
+      }
+    }
+  ]
+}
