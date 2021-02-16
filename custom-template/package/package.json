@@ -5,9 +5,9 @@
   "description": "Smart Health Cards FHIR IG Template",
   "author": "http://hl7.org/fhir",
   "canonical": "http://fhir.org/templates/hl7.fhir.us.smarthealthcards-ig-template",
-  "base": "hl7.fhir.template",
+  "base": "fhir.base.template",
   "dependencies": {
-    "hl7.fhir.template": "current"
+    "fhir.base.template": "current"
   },
   "version": "0.1.0"
 }
