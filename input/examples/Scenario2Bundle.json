@@ -4,10 +4,9 @@
   "type": "collection",
   "entry": [
     {
-      "fullUrl": "http://example.org/fhir/Patient/Scenario2Patient",
+      "fullUrl": "resource:Scenario2Patient",
       "resource": {
         "resourceType": "Patient",
-        "id": "Scenario2Patient",
         "name": [
           {
             "family": "Anyperson",
@@ -57,10 +56,9 @@
       }
     },
     {
-      "fullUrl": "http://example.org/fhir/Immunization/Scenario2Immunization1",
+      "fullUrl": "resource:Scenario2Immunization1",
       "resource": {
         "resourceType": "Immunization",
-        "id": "Scenario2Immunization1",
         "status": "completed",
         "vaccineCode": {
           "coding": [
@@ -71,21 +69,20 @@
           ]
         },
         "patient": {
-          "reference": "Patient/Scenario2Patient"
+          "reference": "resource:Scenario2Patient"
         },
         "occurrenceDateTime": "2021-01-01",
         "primarySource": true,
         "location": {
-          "reference": "Location/Scenario2Location"
+          "reference": "resource:Scenario2Location"
         },
         "lotNumber": "Lot #0000001"
       }
     },
     {
-      "fullUrl": "http://example.org/fhir/Immunization/Scenario2Immunization2",
+      "fullUrl": "resource:Scenario2Immunization2",
       "resource": {
         "resourceType": "Immunization",
-        "id": "Scenario2Immunization2",
         "status": "completed",
         "vaccineCode": {
           "coding": [
@@ -101,16 +98,15 @@
         "occurrenceDateTime": "2021-01-29",
         "primarySource": true,
         "location": {
-          "reference": "Location/Scenario2Location"
+          "reference": "resource:Scenario2Location"
         },
         "lotNumber": "Lot #0000007"
       }
     },
     {
-      "fullUrl": "http://example.org/fhir/Immunization/Scenario2Location",
+      "fullUrl": "resource:Scenario2Location",
       "resource": {
         "resourceType": "Location",
-        "id": "Scenario2Location",
         "name": "ABC Pharmacy"
       }
     }
