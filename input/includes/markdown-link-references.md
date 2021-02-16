@@ -1,5 +1,6 @@
 [RFC 2119]: https://tools.ietf.org/html/rfc2119
 [USCoreLocation]: https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-location.html
+[SMART Health Card]: https://healthwallet.cards/
 
 [VaccineCredentialBundle]: StructureDefinition-vaccine-credential-bundle.html
 [VaccineCredentialImmuneStatus]: StructureDefinition-vaccine-credential-immune-status.html

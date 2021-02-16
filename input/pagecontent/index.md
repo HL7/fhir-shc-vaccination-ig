@@ -1,4 +1,15 @@
-This is a **rough draft** of a FHIR Implementation Guide for representing the clinical information needed for a digital vaccination record, or other vaccination/immunity-related health record contained within a [SMART Health Card](https://healthwallet.cards/).
+<div class="alert alert-info" role="alert" markdown="1">
+**DRAFT Implementation Guide** This implementation guide is under active development on [GitHub](https://github.com/dvci/vaccine-credential-ig/issues), and may change without notice. Please comment on or [create](https://github.com/dvci/vaccine-credential-ig/issues/new) an issue on GitHub if you have questions, comments, or suggestions. Contributions are welcome!
+</div>
+
+### Scope
+
+This [FHIR Implementation Guide](https://www.hl7.org/fhir/implementationguide.html) (IG):
+
+1. Describes the clinical information necessary to create a [SMART Health Card] identifying vaccination and testing status for infectious diseases such as [COVID-19](https://www.cdc.gov/coronavirus/2019-ncov/index.html).
+2. Describes a minimal set of patient information (name and contact information) that is also included in the [SMART Health Card].
+
+The goal of this IG is to constrain resources for use specifically in [SMART Health Cards]. This applies to the contents of both digital and paper Health Cards, including Health Cards produced via a Health Card-specific FHIR endpoint like `[base]/Patient/:id/$HealthWallet.issueVc`. This IG is not applicable to general purpose FHIR endpoints like `[base]/Patient/:id/Immunization`; these are governed by other IGs like [US Core](https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-immunization.html).
 
 ### Use cases
 
@@ -15,6 +26,15 @@ We therefore avoid constraints that limit use in other diseases unless such cons
 
 Resources representing a vaccination and associated data should be able to be directly populated with data from [IIS](https://www.cdc.gov/vaccines/programs/iis/index.html) implementations using the [HL7 v2.5.1 Implementation Guide for Immunization Messaging, Release 1.5](https://repository.immregistries.org/resource/hl7-version-2-5-1-implementation-guide-for-immunization-messaging-release-1-5-1/).
 
+### Actors
+
+The primary actors are:
+
+1. **Issuers** who produce the FHIR resources described in this IG. These are typically the entities responsible for giving vaccinations, including health systems, pharmacies, and doctors offices.
+2. **Verifiers** who read and analyze the FHIR resources described in this IG.
+3. **Patients** who receive a [SMART Health Card] from an Issuer (which contains the FHIR resources described in this IG), and may display it to a Verifier.
+
+Issuers and Verifiers are considered "implementers" of this IG.
 
 ### Approach to constraints
 
@@ -46,7 +66,7 @@ Note that `MustSupport` does **not** indicate an element is required to be prese
 
 ### Profiles
 
-- **[VaccineCredentialPatient]**: Currently the same as USCorePatientProfile. This can be removed if we decide we can use USCorePatientProfile as-is.
+- **[VaccineCredentialPatient]**: Describes a minimal set of patient information to assist Verifiers in determining or verifying identity.
 
 - **[VaccineCredentialImmunization]**: Represents an immunization, includes vaccine information such as the CVX code identifying the vaccine, who administered the vaccine, etc.
 
@@ -105,3 +125,10 @@ TODO: Add guidance on when specific resources should be included in the bundle.
 - Use `YYYY-MM-DD` precision for all `dateTime` fields. Greater precision will result in a warning when validating a resource.
 
 {% include markdown-link-references.md %}
+
+<style>
+/* Moves the TOC down below the info box */
+div.markdown-toc {
+    margin-top: 15rem;
+}
+</style>
