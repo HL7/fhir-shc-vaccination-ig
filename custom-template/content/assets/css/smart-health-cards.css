@@ -3,6 +3,7 @@
 1. Displays &amp; rather than &
 2. Links to a non-existent HL7 history page
 
+Disable until these issues are resolved.
 */
 #publish-box {
     display: none;
