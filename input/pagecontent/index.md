@@ -120,7 +120,7 @@ TODO: Add guidance on when specific resources should be included in the bundle.
 
 #### Data minimization
 
-A number of constraints apply to all Health Cards regardless of IG, as documented in the [SMART Health Card specification](https://smarthealth.cards/#health-cards-are-small).
+A number of constraints apply to all Health Cards as documented in the [SMART Health Card specification](https://smarthealth.cards/#health-cards-are-small).
 - Implementers SHOULD NOT populate `Resource.id`, `Resource.meta`, or `Resource.text` elements.
 - Implementers SHOULD populate `Bundle.entry.fullUrl` elements with short resource-scheme URIs (e.g., {"fullUrl": "resource:0}).
 - Implementers SHOULD populate `Reference.reference` elements with short resource-scheme URIs (e.g., {"patient": {"reference": "resource:0"}}) which SHOULD resolve within the bundle.
