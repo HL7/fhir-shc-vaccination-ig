@@ -7,6 +7,7 @@
 [VaccineCredentialImmuneStatus]: StructureDefinition-vaccine-credential-immune-status.html
 [VaccineCredentialImmunization]: StructureDefinition-vaccine-credential-immunization.html
 [VaccineCredentialPatient]: StructureDefinition-vaccine-credential-patient.html
+[VaccineCredentialLaboratoryResultObservation]: StructureDefinition-vaccine-credential-laboratory-result-observation.html
 [VaccineCredentialTargetDisease]: StructureDefinition-vaccine-credential-target-disease.html
 [VaccineCredentialVaccineReactionObservation]: StructureDefinition-vaccine-credential-vaccine-reaction-observation.html
 

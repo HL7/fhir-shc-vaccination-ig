@@ -170,6 +170,7 @@ Description: "The bundle of resources that represents the clinical content of a 
     vaccineCredentialImmunization 0..* MS and
     vaccineCredentialImmuneStatus 0..* MS and
     vaccineCredentialVaccineReactionObservation 0..* MS and
+    vaccineCredentialLaboratoryResultObservation 0..* MS and
     vaccineCredentialLocation 0..* MS
 
 
@@ -189,6 +190,47 @@ Description: "The bundle of resources that represents the clinical content of a 
 * entry[vaccineCredentialVaccineReactionObservation] ^definition = "Vaccination reaction"
 * entry[vaccineCredentialVaccineReactionObservation].resource only VaccineCredentialVaccineReactionObservation
 
+* entry[vaccineCredentialLaboratoryResultObservation] ^short = "Laboratory result"
+* entry[vaccineCredentialLaboratoryResultObservation] ^definition = "Laboratory result"
+* entry[vaccineCredentialLaboratoryResultObservation].resource only VaccineCredentialLaboratoryResultObservation
+
 * entry[vaccineCredentialLocation] ^short = "Location (real world, not body site)"
 * entry[vaccineCredentialLocation] ^definition = "Location (real world, not body site)"
 * entry[vaccineCredentialLocation].resource only USCoreLocation
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Profile:        VaccineCredentialLaboratoryResultObservation
+Parent:         Observation
+Id:             vaccine-credential-laboratory-result-observation
+Title:          "Vaccine Laboratory Result Observation Profile"
+Description:    "Profile for reporting lab results indicating current or previous infection status for verified credentials."
+* ^status = #draft
+
+* status MS 
+* status ^short = "Bundle should only include results with status final or status that is subsequent to final"
+
+* category MS
+* category ^slicing.discriminator.type = #pattern
+* category ^slicing.discriminator.path = "$this"
+* category ^slicing.rules = #open
+* category ^slicing.ordered = false   // can be omitted, since false is the default
+* category ^slicing.description = "Slice based on the $this pattern"
+* category contains 
+    Laboratory 1..1 MS
+* category[Laboratory] = ObsCat#laboratory
+
+* code MS
+* code from VaccineCredentialLaboratoryValueSet (extensible)
+
+* subject only Reference(VaccineCredentialPatient)
+* subject 1..1 MS
+* subject ^short = "Patient to whom lab result applies"
+* subject ^definition = "Reference to a VaccineCredentialPatient-conforming resource who is subject of lab result."
+
+* effective[x] MS 
+* effective[x] only dateTime or Period
+
+* value[x] MS
+
+////////////////////////////////////////////////////////////////////////////////////////////////////

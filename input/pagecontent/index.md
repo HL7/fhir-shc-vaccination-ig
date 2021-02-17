@@ -70,6 +70,8 @@ Note that `MustSupport` does **not** indicate an element is required to be prese
 
 - **[VaccineCredentialImmunization]**: Represents an immunization, includes vaccine information such as the CVX code identifying the vaccine, who administered the vaccine, etc.
 
+- **[VaccineCredentialLaboratoryResultObservation]**: Represents a laboratory result indicating current or previous infection status (e.g., laboratory testing results evaluating presence of RNA, antigens, or antibodies).
+
 - **[VaccineCredentialAntibodyResultValueSet] [experimental]**: Represents the results of an antibody test. Included because a positive antibody test could be interpreted as showing immunity to the disease. This profile is considered "experimental" as it does not pertain to the core scope of the IG.
 
 - **[VaccineCredentialVaccineReactionObservation] [experimental]**: Represents an adverse reaction to a vaccination. Included because an adverse reaction may be interpreted by some actors as justification for not receiving the full series of a vaccination. This profile is considered "experimental" as it does not pertain to the core scope of the IG.

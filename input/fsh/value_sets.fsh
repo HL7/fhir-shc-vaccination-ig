@@ -136,3 +136,14 @@ Description: "Codes describing reactions to vaccinations"
 * include codes from system https://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.114222.4.11.3288
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// For Laboratory Result Observation (VaccineCredentialLaboratoryResultObservation)
+ValueSet:    VaccineCredentialLaboratoryValueSet
+Id:          vaccine-credential-laboratory-result-value-set
+Title:       "Lab result value set"
+Description: "Codes describing labs"
+
+// Support for CDC LIVD SARS CoV2 Test Codes
+* include codes from system urn:oid:2.16.840.1.113762.1.4.1114.9
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
