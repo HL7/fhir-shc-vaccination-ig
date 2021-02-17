@@ -71,6 +71,7 @@ Note that `MustSupport` does **not** indicate an element is required to be prese
 - **[VaccineCredentialImmunization]**: Represents an immunization, includes vaccine information such as the CVX code identifying the vaccine, who administered the vaccine, etc.
 
 - **[VaccineCredentialLaboratoryResultObservation]**: Represents a laboratory result indicating current or previous infection status (e.g., laboratory testing results evaluating presence of RNA, antigens, or antibodies).
+    - **[Covid19CredentialLaboratoryResultObservation]**: COVID 19 specific profile.
 
 - **[VaccineCredentialAntibodyResultValueSet] [experimental]**: Represents the results of an antibody test. Included because a positive antibody test could be interpreted as showing immunity to the disease. This profile is considered "experimental" as it does not pertain to the core scope of the IG.
 
@@ -91,6 +92,8 @@ Each Bundle resource SHALL include resources related to one patient and one targ
 - By the reference to an Immunization resource in [VaccineCredentialVaccineReactionObservation]
 
 TODO: Add guidance on when specific resources should be included in the bundle.
+
+The **[VaccineCredentialLaboratoryBundle]** collects resources conforming to the profiles listed above specifically regarding laboratory testing for infectious status. Resources conforming to profiles outside this IG MAY also be included in Bundles conforming to [VaccineCredentialLaboratoryBundle].
 
 ### Examples
 
@@ -113,6 +116,14 @@ TODO: Add guidance on when specific resources should be included in the bundle.
     - [Scenario2Immunization1]
     - [Scenario2Immunization2]
     - [Scenario2Location]
+
+1. Scenario 3: A patient is tested for SARS-CoV-2 (COVID19) antigen via rapid immunoassay on February 17, 2021 with result detectable.
+
+    Example resources:
+
+    - [Scenario3Bundle]
+    - [Scenario1Patient]
+    - [Scenario3Lab]
 
 1. Miscellaneous examples:
 

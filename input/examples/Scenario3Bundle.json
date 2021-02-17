@@ -1,0 +1,83 @@
+{
+  "resourceType": "Bundle",
+  "id": "Scenario3Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "fullUrl": "resource:Scenario1Patient",
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "family": "Anyperson",
+            "given": [
+              "John",
+              "B."
+            ]
+          }
+        ],
+        "telecom": [
+          {
+            "system": "phone",
+            "value": "555-555-5555",
+            "use": "home"
+          },
+          {
+            "system": "email",
+            "value": "john.anyperson@example.com"
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1951-01-20",
+        "address": [
+          {
+            "line": [
+              "123 Main St"
+            ],
+            "city": "Anytown",
+            "postalCode": "12345",
+            "country": "US"
+          }
+        ]
+      }
+    },
+    {
+      "fullUrl": "resource:Scenario3Lab",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "Scenario3Lab",
+        "status": "final",
+        "category":  [
+            {
+                "coding":  [
+                    {
+                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                        "code": "laboratory"
+                    }
+                ]
+            }
+        ],
+        "code": {
+            "coding":  [
+                {
+                    "system": "http://loinc.org",
+                    "code": "94558-4"
+                }
+            ]
+        },
+        "subject": {
+            "reference": "resource:Scenario1Patient"
+        },
+        "effectiveDateTime": "2021-02-17",
+        "valueCodeableConcept": {
+            "coding":  [
+                {
+                    "system": "http://snomed.info/sct",
+                    "code": "260373001"
+                }
+            ]
+        }
+      }
+    }
+  ]
+}

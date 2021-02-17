@@ -7,12 +7,16 @@
 [VaccineCredentialImmuneStatus]: StructureDefinition-vaccine-credential-immune-status.html
 [VaccineCredentialImmunization]: StructureDefinition-vaccine-credential-immunization.html
 [VaccineCredentialPatient]: StructureDefinition-vaccine-credential-patient.html
+[VaccineCredentialLaboratoryBundle]: StructureDefinition-vaccine-credential-laboratory-bundle.html
 [VaccineCredentialLaboratoryResultObservation]: StructureDefinition-vaccine-credential-laboratory-result-observation.html
+[Covid19CredentialLaboratoryResultObservation]: StructureDefinition-covid-19-credential-laboratory-result-observation.html
 [VaccineCredentialTargetDisease]: StructureDefinition-vaccine-credential-target-disease.html
 [VaccineCredentialVaccineReactionObservation]: StructureDefinition-vaccine-credential-vaccine-reaction-observation.html
 
 [VaccineCredentialAntibodyResultValueSet]: ValueSet-vaccine-credential-antibody-result-value-set.html
 [VaccineCredentialCVXValueSet]: ValueSet-vaccine-credential-cvx-value-set.html
+[Covid19CredentialLaboratoryCodeValueSet]: ValueSet-covid-19-credential-laboratory-code-value-set.html
+[Covid19CredentialLaboratoryResultValueSet]: ValueSet-covid-19-credential-laboratory-result-value-set.html
 [VaccineCredentialFundingSourceValueSet]: ValueSet-vaccine-credential-funding-source-value-set.html
 [VaccineCredentialReportOriginValueSet]: ValueSet-vaccine-credential-report-origin-value-set.html
 [VaccineCredentialStatusReasonValueSet]: ValueSet-vaccine-credential-status-reason-value-set.html
@@ -32,5 +36,8 @@
 [Scenario2Immunization2]: Immunization-Scenario2Immunization2.html
 [Scenario2Location]: Location-Scenario2Location.html
 [Scenario2Bundle]: Bundle-Scenario2Bundle.html
+
+[Scenario3Lab]: Observation-Scenario3Lab.html
+[Scenario3Bundle]: Bundle-Scenario3Bundle.html
 
 [ExampleImmunizationNoCVX]: Immunization-ExampleImmunizationNoCVX.html

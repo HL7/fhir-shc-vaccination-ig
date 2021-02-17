@@ -170,7 +170,6 @@ Description: "The bundle of resources that represents the clinical content of a 
     vaccineCredentialImmunization 0..* MS and
     vaccineCredentialImmuneStatus 0..* MS and
     vaccineCredentialVaccineReactionObservation 0..* MS and
-    vaccineCredentialLaboratoryResultObservation 0..* MS and
     vaccineCredentialLocation 0..* MS
 
 
@@ -190,10 +189,6 @@ Description: "The bundle of resources that represents the clinical content of a 
 * entry[vaccineCredentialVaccineReactionObservation] ^definition = "Vaccination reaction"
 * entry[vaccineCredentialVaccineReactionObservation].resource only VaccineCredentialVaccineReactionObservation
 
-* entry[vaccineCredentialLaboratoryResultObservation] ^short = "Laboratory result"
-* entry[vaccineCredentialLaboratoryResultObservation] ^definition = "Laboratory result"
-* entry[vaccineCredentialLaboratoryResultObservation].resource only VaccineCredentialLaboratoryResultObservation
-
 * entry[vaccineCredentialLocation] ^short = "Location (real world, not body site)"
 * entry[vaccineCredentialLocation] ^definition = "Location (real world, not body site)"
 * entry[vaccineCredentialLocation].resource only USCoreLocation
@@ -208,20 +203,17 @@ Description:    "Profile for reporting lab results indicating current or previou
 * ^status = #draft
 
 * status MS 
-* status ^short = "Bundle should only include results with status final or status that is subsequent to final"
 
 * category MS
 * category ^slicing.discriminator.type = #pattern
 * category ^slicing.discriminator.path = "$this"
 * category ^slicing.rules = #open
-* category ^slicing.ordered = false   // can be omitted, since false is the default
 * category ^slicing.description = "Slice based on the $this pattern"
 * category contains 
     Laboratory 1..1 MS
 * category[Laboratory] = ObsCat#laboratory
 
 * code MS
-* code from VaccineCredentialLaboratoryValueSet (extensible)
 
 * subject only Reference(VaccineCredentialPatient)
 * subject 1..1 MS
@@ -232,5 +224,58 @@ Description:    "Profile for reporting lab results indicating current or previou
 * effective[x] only dateTime or Period
 
 * value[x] MS
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Profile:        Covid19CredentialLaboratoryResultObservation
+Parent:         VaccineCredentialLaboratoryResultObservation
+Id:             covid-19-credential-laboratory-result-observation
+Title:          "COVID 19 Laboratory Result Observation Profile"
+Description:    "Profile for reporting lab results indicating current or previous COVID 19 infection status for verified credentials."
+* ^status = #draft
+
+* code MS
+* code from Covid19CredentialLaboratoryCodeValueSet (extensible)
+
+* value[x] only CodeableConcept or Quantity
+* valueCodeableConcept from Covid19CredentialLaboratoryResultValueSet (extensible)
+
+* bodySite 0..0
+* method 0..0
+* component 0..0
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Profile: VaccineCredentialLaboratoryBundle
+Parent: Bundle
+Id: vaccine-credential-laboratory-bundle
+Title: "Vaccine Credential Laboratory Bundle"
+Description: "The bundle of resources that represents the clinical content of a digital lab credential record."
+
+* type  = #collection
+* entry ^slicing.discriminator.type = #profile
+* entry ^slicing.discriminator.path = "resource"
+* entry ^slicing.rules = #open
+* entry ^slicing.description = "Slicing based on the profile conformance of the entry"
+* entry and entry.resource MS
+
+* entry contains
+    // These resources are required per Conformance > Supported Profiles.
+    vaccineCredentialPatient 1..1 MS and
+    vaccineCredentialLaboratoryResultObservation 0..* MS and
+    vaccineCredentialLocation 0..* MS
+
+* entry[vaccineCredentialPatient] ^short = "Patient"
+* entry[vaccineCredentialPatient] ^definition = "The patient who is the subject of the Bundle"
+* entry[vaccineCredentialPatient].resource only VaccineCredentialPatient
+
+* entry[vaccineCredentialLaboratoryResultObservation] ^short = "Laboratory result"
+* entry[vaccineCredentialLaboratoryResultObservation] ^definition = "Laboratory result"
+* entry[vaccineCredentialLaboratoryResultObservation].resource only VaccineCredentialLaboratoryResultObservation
+* entry[vaccineCredentialLaboratoryResultObservation] obeys vc-lab-1
+
+* entry[vaccineCredentialLocation] ^short = "Location (real world, not body site)"
+* entry[vaccineCredentialLocation] ^definition = "Location (real world, not body site)"
+* entry[vaccineCredentialLocation].resource only USCoreLocation
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////

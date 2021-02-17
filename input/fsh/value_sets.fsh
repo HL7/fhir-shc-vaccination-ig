@@ -137,13 +137,25 @@ Description: "Codes describing reactions to vaccinations"
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// For Laboratory Result Observation (VaccineCredentialLaboratoryResultObservation)
-ValueSet:    VaccineCredentialLaboratoryValueSet
-Id:          vaccine-credential-laboratory-result-value-set
-Title:       "Lab result value set"
-Description: "Codes describing labs"
+// For COVID 19 Laboratory Result Observation (Covid19CredentialLaboratoryResultObservation)
+ValueSet:    Covid19CredentialLaboratoryCodeValueSet
+Id:          covid-19-credential-laboratory-code-value-set
+Title:       "COVID 19 credential lab code value set"
+Description: "Codes describing COVID 19 labs"
 
 // Support for CDC LIVD SARS CoV2 Test Codes
-* include codes from system urn:oid:2.16.840.1.113762.1.4.1114.9
+* include codes from valueset urn:oid:2.16.840.1.113762.1.4.1114.9
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// For COVID 19 Laboratory Result Observation (Covid19CredentialLaboratoryResultObservation)
+ValueSet:    Covid19CredentialLaboratoryResultValueSet
+Id:          covid-19-credential-laboratory-result-value-set
+Title:       "COVID 19 credential lab result value set"
+Description: "Codes describing COVID 19 lab results"
+
+// Support for CDC LIVD SARS CoV2 Test Result Codes
+* include codes from valueset urn:oid:2.16.840.1.113762.1.4.1114.10
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
