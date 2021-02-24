@@ -13,6 +13,8 @@ Title:       "CatchCodeCS Code System"
 Description: "A code system containing codes that signify a code outside a specified value set has been used, using an 'Other ____, Specify' approach."
 * #OTHER-VACCINE "Other vaccine without published CVX"
 * #OTHER-ANTIBODY-RESULT "Other antibody result"
+* #OTHER-TEST "Other laboratory test"
+* #OTHER-RESULT "Other laboratory result"
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -137,24 +139,31 @@ Description: "Codes describing reactions to vaccinations"
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// For COVID 19 Laboratory Result Observation (Covid19CredentialLaboratoryResultObservation)
-ValueSet:    VaccineCredentialLabValueSet
-Id:          vaccine-credential-lab-value-set
-Title:       "Lab code value set"
-Description: "Currently includes COVID-19 lab codes via the [LIVD SARS CoV2 Test Codes value set](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1114.9/expansion). Other code systems may be added later."
+ValueSet:    Covid19LaboratoryTestValueSet
+Id:          covid19-laboratory-test-value-set
+Title:       "COVID-10 laboratory test code value set"
+Description: "Currently includes COVID-19 lab codes via the
+[LIVD SARS CoV2 Test Codes value set](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1114.9/expansion)."
 
 // Support for CDC LIVD SARS CoV2 Test Codes
 * include codes from system https://cts.nlm.nih.gov/fhir/valueset/2.16.840.1.113762.1.4.1114.9
+* CatchCodeCS#OTHER-TEST
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// For COVID 19 Laboratory Result Observation (Covid19CredentialLaboratoryResultObservation)
-ValueSet:    VaccineCredentialLabResultValueSet
-Id:          vaccine-credential-lab-result-value-set
-Title:       "Lab result value set"
-Description: "Currently includes COVID-19 lab result codes via the [LIVD SARS CoV2 Test Result Codes value set](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1114.10/expansion). Other code systems may be added later."
+ValueSet:    LaboratoryResultValueSet
+Id:          laboratory-result-value-set
+Title:       "Laboratory result value set"
+Description: "Currently includes COVID-19 lab result codes based on the conclusive values from the
+[LIVD SARS CoV2 Test Result Codes value set](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1114.10/expansion).
+Other value sets may be added in the future."
 
-// Support for CDC LIVD SARS CoV2 Test Result Codes
-* include codes from system https://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1114.10
+* SCT#10828004 "Positive (qualifier value)"
+* SCT#260373001 "Detected (qualifier value)"
+* SCT#260385009 "Negative (qualifier value)"
+* SCT#260408008 "Weakly positive (qualifier value)"
+* SCT#260415000 "Not detected (qualifier value)"
+* SCT#720735008 "Presumptive positive (qualifier value)"
+* CatchCodeCS#OTHER-RESULT
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////

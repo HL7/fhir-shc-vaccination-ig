@@ -34,22 +34,37 @@ RuleSet: LaboratoryResultObservation
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Profile:        VaccineCredentialLaboratoryResultObservation
+Profile:        Covid19LaboratoryResultObservation
 Parent:         Observation
-Id:             vaccine-credential-laboratory-result-observation
+Id:             covid19-laboratory-result-observation
 Title:          "Laboratory Result Observation Profile"
-Description:    "Profile for reporting lab results indicating current or previous infection status with an infectious disease for verified credentials.
-
-The `code` and `valueCodeableConcept` elements are extensibly bound to value sets that currently include COVID-19-related codes."
+Description:    "Profile for reporting COVID-19-related laboratory results indicating current or
+previous infection status."
 
 * insert LaboratoryResultObservation
 
-* code from VaccineCredentialLabValueSet (extensible)
+* code from Covid19LaboratoryTestValueSet (required)
+* code obeys covid19-laboratory-test-code-invariant
+
 
 * value[x] only CodeableConcept or Quantity
-* valueCodeableConcept from VaccineCredentialLabResultValueSet (extensible)
+* valueCodeableConcept from LaboratoryResultValueSet (required)
+* valueCodeableConcept obeys laboratory-result-invariant
+
+/*
+TODO: Test using `device` rather than `method`, like so:
+
+{
+    device:{
+        identifier: {
+            system: "some_system",
+            value: "some_id"
+        }
+    }
+}
 
 * method MS
 * method ^short = "Device or technique used by laboratory"
 * method ^definition = "Identifies the device or technique used by the laboratory, such as a test kit or piece of laboratory equipment."
 * method ^comment = "The method element is used rather than device for data minimization reasons: device is a reference, which would require an additional FHIR resource."
+*/

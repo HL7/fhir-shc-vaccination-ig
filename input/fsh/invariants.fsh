@@ -11,3 +11,29 @@ Expression: "family.exists() or given.exists() or text.exists()"
 Severity: #error
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Invariant:   vaccine-code-invariant
+Description: "If the code representing 'Other Vaccine' is used, a second code from outside the original value set must be present."
+Expression:  "coding.where(code = 'OTHER-VACCINE').exists() implies coding.where(code != 'OTHER-VACCINE' and $this.memberOf('http://hl7.org/fhir/us/smarthealthcards-vaccination/ValueSet/vaccine-credential-cvx-value-set').not()).exists()"
+Severity:    #error
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Invariant:   covid19-laboratory-test-code-invariant
+Description: "If the code representing 'Other Laboratory Test' is used, a second code from outside the original value set must be present."
+Expression:  "coding.where(code = 'OTHER-TEST').exists() implies coding.where(code != 'OTHER-TEST' and $this.memberOf('http://hl7.org/fhir/us/smarthealthcards-vaccination/ValueSet/covid19-laboratory-test-value-set').not()).exists()"
+Severity:    #error
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Invariant:   laboratory-result-invariant
+Description: "If the code representing 'Other Laboratory Result' is used, a second code from outside the original value set must be present."
+Expression:  "coding.where(code = 'OTHER-RESULT').exists() implies coding.where(code != 'OTHER-RESULT' and $this.memberOf('http://hl7.org/fhir/us/smarthealthcards-vaccination/ValueSet/laboratory-result-value-set').not()).exists()"
+Severity:    #error
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Invariant:   date-invariant
+Description: "All timestamps SHOULD be represented as Dates (YYYY-MM-DD only)."
+Expression:  "$this.toString().matches('^[0-9]{4}-[0-9]{2}-[0-9]{2}$')"
+Severity:    #warning

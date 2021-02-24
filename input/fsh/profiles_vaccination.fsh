@@ -1,5 +1,3 @@
-
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Profile:     VaccineCredentialImmunization
@@ -42,51 +40,6 @@ Description: "Defines a profile representing a vaccination for a vaccine credent
 
 * isSubpotent MS
 * isSubpotent ^definition = "Indication if a dose is considered to be subpotent. By default, a dose should be considered to be potent. Verifiers SHALL assume that if an Immunization resource is provided and isSubpotent is not true, then the dose was not subpotent. Issuers SHALL only populate isSubpotent if the value is true. Issuers SHALL NOT produce an Immunization resource for a known subpotent dose without populating isSubpotent."
-
-Invariant:   vaccine-code-invariant
-Description: "If the code representing 'Other Vaccine' is used, a second code from outside the original value set must be present."
-Expression:  "coding.where(code = 'OTHER-VACCINE').exists() implies coding.where(code != 'OTHER-VACCINE' and $this.memberOf('http://hl7.org/fhir/us/smarthealthcards-vaccination/ValueSet/vaccine-credential-cvx-value-set').not()).exists()"
-Severity:    #error
-
-Invariant:   date-invariant
-Description: "All timestamps SHOULD be represented as Dates (YYYY-MM-DD only)."
-Expression:  "$this.toString().matches('^[0-9]{4}-[0-9]{2}-[0-9]{2}$')"
-Severity:    #warning
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
-Profile:        VaccineCredentialImmuneStatus
-Parent:         Observation
-Id:             vaccine-credential-immune-status
-Title:          "Immune Status Profile"
-Description:    "Defines constraints and extensions on the observation resource for the minimal set of data to query and retrieve vaccine credential immune status."
-
-* ^status = #draft
-
-* category = ObsCat#laboratory
-* code 1..1 MS
-* subject only Reference(VaccineCredentialPatient)
-* effective[x] 1..1 MS
-* effective[x] only dateTime
-* effective[x] ^short = "When immune status was assessed"
-
-* extension contains
-    VaccineCredentialTargetDisease named targetDisease 1..1 MS
-
-* value[x] only CodeableConcept
-* valueCodeableConcept 1..1 MS
-* valueCodeableConcept from VaccineCredentialAntibodyResultValueSet (required)
-
-Extension: VaccineCredentialTargetDisease
-Id: vaccine-credential-target-disease
-Title: "Target disease of the observation"
-Description: "Disease "
-* ^status = #draft
-* ^experimental = true
-* ^context[0].type = #element
-* ^context[0].expression = "VaccineCredentialImmuneStatus"
-* value[x] only CodeableConcept
-* value[x] from VaccineCredentialTargetDiseaseValueSet (extensible)
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 

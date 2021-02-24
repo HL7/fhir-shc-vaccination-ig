@@ -30,10 +30,6 @@ Description: "The bundle of resources that represents the clinical content of a 
 * entry[vaccineCredentialImmunization] ^definition = "Immunization"
 * entry[vaccineCredentialImmunization].resource only VaccineCredentialImmunization
 
-* entry[vaccineCredentialImmuneStatus] ^short = "Immune status"
-* entry[vaccineCredentialImmuneStatus] ^definition = "Immune status"
-* entry[vaccineCredentialImmuneStatus].resource only VaccineCredentialImmuneStatus
-
 * entry[vaccineCredentialVaccineReactionObservation] ^short = "Vaccination reaction"
 * entry[vaccineCredentialVaccineReactionObservation] ^definition = "Vaccination reaction"
 * entry[vaccineCredentialVaccineReactionObservation].resource only VaccineCredentialVaccineReactionObservation
@@ -60,17 +56,17 @@ Description: "The bundle of resources that represents the clinical content of a 
 * entry contains
     // These resources are required per Conformance > Supported Profiles.
     vaccineCredentialPatient 1..1 MS and
-    vaccineCredentialLaboratoryResultObservation 0..* MS and
+    laboratoryResultObservation 0..* MS and
     vaccineCredentialLocation 0..* MS
 
 * entry[vaccineCredentialPatient] ^short = "Patient"
 * entry[vaccineCredentialPatient] ^definition = "The patient who is the subject of the Bundle"
 * entry[vaccineCredentialPatient].resource only VaccineCredentialPatient
 
-* entry[vaccineCredentialLaboratoryResultObservation] ^short = "Laboratory result"
-* entry[vaccineCredentialLaboratoryResultObservation] ^definition = "Laboratory result"
-* entry[vaccineCredentialLaboratoryResultObservation].resource only VaccineCredentialLaboratoryResultObservation
-* entry[vaccineCredentialLaboratoryResultObservation] obeys vc-lab-1
+* entry[laboratoryResultObservation] ^short = "Laboratory result"
+* entry[laboratoryResultObservation] ^definition = "Laboratory result"
+* entry[laboratoryResultObservation].resource only Covid19LaboratoryResultObservation
+* entry[laboratoryResultObservation] obeys vc-lab-1
 
 * entry[vaccineCredentialLocation] ^short = "Location (real world, not body site)"
 * entry[vaccineCredentialLocation] ^definition = "Location (real world, not body site)"
