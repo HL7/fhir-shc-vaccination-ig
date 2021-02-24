@@ -94,7 +94,16 @@ A laboratory results profile specific to COVID-19 is provided to limit the `code
 
 #### Data minimization
 
-A number of constraints apply to all Health Cards as documented in the [SMART Health Card specification](https://smarthealth.cards/#health-cards-are-small).
+The payload size of [SMART Health Cards is limited](https://smarthealth.cards/#health-cards-are-small), which limits the amount of data that SHOULD be included in FHIR resources that appear in SMART Health Card payloads.
+
+To assist Issuers in producing FHIR resources that have the minimal necessary data, this IG includes "data minimization" (DM) profiles in addition to "allowable data" (AD) profiles. The AD profiles identify required and `MustSupport` elements (see the [Conformance](conformance.html) page for further details). The DM profiles add additional constraints on top of their AD counterparts using `0..0` cardinality. Resources produced by issuers SHALL conform to the AD profiles, and SHOULD conform to the DM profiles UNLESS the Issuer intentionally includes additional information in the resource believed to be useful to Validators.
+
+To validate a specific resource against a DM profile, the [FHIR Validator](https://confluence.hl7.org/display/FHIR/Using+the+FHIR+Validator) can be used, where [package.tgz is downloaded from the IG](package.tgz):
+
+    java -jar path/to/validator_cli.jar -version 4.0.1 -ig hl7.fhir.us.core -ig package.tgz path/to/resource.json -profile http://hl7.org/fhir/us/smarthealthcards-vaccination/StructureDefinition/covid19-laboratory-result-observation-dm
+
+Additionally:
+
 - Implementers SHOULD NOT populate `Resource.id`, `Resource.meta`, or `Resource.text` elements.
 - Implementers SHOULD populate `Bundle.entry.fullUrl` elements with short resource-scheme URIs (e.g., {"fullUrl": "resource:0}).
 - Implementers SHOULD populate `Reference.reference` elements with short resource-scheme URIs (e.g., {"patient": {"reference": "resource:0"}}) which SHOULD resolve within the bundle.
