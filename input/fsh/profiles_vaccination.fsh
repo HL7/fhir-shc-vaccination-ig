@@ -3,10 +3,8 @@
 Profile:     VaccineCredentialImmunization
 Id:          vaccine-credential-immunization
 Parent:      Immunization
-Title:       "Immunization Profile"
+Title:       "Immunization Profile - Allowable Data"
 Description: "Defines a profile representing a vaccination for a vaccine credential Health Card."
-
-* ^status = #draft
 
 * patient only Reference(VaccineCredentialPatient)
 * vaccineCode MS
@@ -43,10 +41,44 @@ Description: "Defines a profile representing a vaccination for a vaccine credent
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+Profile:     VaccineCredentialImmunizationDM
+Id:          vaccine-credential-immunization-dm
+Parent:      VaccineCredentialImmunization
+Title:       "Immunization Profile - Data Minimization"
+Description: "Defines a profile representing a vaccination for a vaccine credential Health Card. Only elements necessary for Verifiers can be populated."
+
+* meta 0..0
+* implicitRules 0..0
+* language 0..0
+* text 0..0
+* contained 0..0
+* extension 0..0
+* modifierExtension 0..0
+* statusReason 0..0
+* encounter 0..0
+* recorded 0..0
+* primarySource 0..0
+* reportOrigin 0..0
+* manufacturer 0..0
+* expirationDate 0..0
+* site 0..0
+* route 0..0
+* doseQuantity 0..0
+* performer 0..0
+* note 0..0
+* reasonCode 0..0
+* reasonReference 0..0
+* subpotentReason 0..0
+* education 0..0
+* fundingSource 0..0
+* reaction 0..0
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
 Profile:        VaccineCredentialVaccineReactionObservation
 Parent:         Observation
 Id:             vaccine-credential-vaccine-reaction-observation
-Title:          "Vaccine Reaction Observation Profile"
+Title:          "Vaccine Reaction Observation Profile - Allowable Data"
 Description:    "Profile for reporting a reaction to a vaccine.
 
 This profile may not be necessary depending on the use cases for this IG, but it's included for now because
@@ -70,3 +102,37 @@ profile, VaccineCredentialVaccineReactionValueSet includes the IIS adverse react
 * value[x] only CodeableConcept
 * valueCodeableConcept 1..1 MS
 * valueCodeableConcept from VaccineCredentialVaccineReactionValueSet (extensible)
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Profile:        VaccineCredentialVaccineReactionObservationDM
+Parent:         VaccineCredentialVaccineReactionObservation
+Id:             vaccine-credential-vaccine-reaction-observation-dm
+Title:          "Vaccine Reaction Observation Profile - Data Minimization"
+Description:    "Profile for reporting a reaction to a vaccine. Only elements necessary for Verifiers can be populated."
+
+* meta 0..0
+* implicitRules 0..0
+* language 0..0
+* text 0..0
+* contained 0..0
+* extension 0..0
+* modifierExtension 0..0
+* basedOn 0..0
+* partOf 0..0
+* category.id 0..0
+* category.extension 0..0
+* category.text 0..0
+* issued 0..0
+* performer 0..0
+* dataAbsentReason 0..0
+* interpretation 0..0
+* note 0..0
+* bodySite 0..0
+* method 0..0
+* specimen 0..0
+* device 0..0
+* referenceRange 0..0
+* hasMember 0..0
+* derivedFrom 0..0
+* component 0..0

@@ -3,20 +3,23 @@
 [SMART Health Card]: https://healthwallet.cards/
 [SMART Health Cards]: https://healthwallet.cards/
 
+[Covid19LaboratoryResultObservationDM]: StructureDefinition-covid19-laboratory-result-observation-dm.html
+[Covid19LaboratoryResultObservation]: StructureDefinition-covid19-laboratory-result-observation.html
+[InfectiousDiseaseLaboratoryResultObservationDM]: StructureDefinition-infectious-disease-laboratory-result-observation-dm.html
+[InfectiousDiseaseLaboratoryResultObservation]: StructureDefinition-infectious-disease-laboratory-result-observation.html
 [VaccineCredentialBundle]: StructureDefinition-vaccine-credential-bundle.html
-[VaccineCredentialImmuneStatus]: StructureDefinition-vaccine-credential-immune-status.html
+[VaccineCredentialImmunizationDM]: StructureDefinition-vaccine-credential-immunization-dm.html
 [VaccineCredentialImmunization]: StructureDefinition-vaccine-credential-immunization.html
-[VaccineCredentialPatient]: StructureDefinition-vaccine-credential-patient.html
 [VaccineCredentialLaboratoryBundle]: StructureDefinition-vaccine-credential-laboratory-bundle.html
-[VaccineCredentialLaboratoryResultObservation]: StructureDefinition-vaccine-credential-laboratory-result-observation.html
-[Covid19CredentialLaboratoryResultObservation]: StructureDefinition-covid-19-credential-laboratory-result-observation.html
-[VaccineCredentialTargetDisease]: StructureDefinition-vaccine-credential-target-disease.html
+[VaccineCredentialPatientDM]: StructureDefinition-vaccine-credential-patient-dm.html
+[VaccineCredentialPatient]: StructureDefinition-vaccine-credential-patient.html
+[VaccineCredentialVaccineReactionObservationDM]: StructureDefinition-vaccine-credential-vaccine-reaction-observation-dm.html
 [VaccineCredentialVaccineReactionObservation]: StructureDefinition-vaccine-credential-vaccine-reaction-observation.html
 
+[Covid19LaboratoryTestValueSet]: ValueSet-covid19-laboratory-test-value-set.html
+[LaboratoryResultValueSet]: ValueSet-laboratory-result-value-set.html
 [VaccineCredentialAntibodyResultValueSet]: ValueSet-vaccine-credential-antibody-result-value-set.html
 [VaccineCredentialCVXValueSet]: ValueSet-vaccine-credential-cvx-value-set.html
-[Covid19CredentialLaboratoryCodeValueSet]: ValueSet-covid-19-credential-laboratory-code-value-set.html
-[Covid19CredentialLaboratoryResultValueSet]: ValueSet-covid-19-credential-laboratory-result-value-set.html
 [VaccineCredentialFundingSourceValueSet]: ValueSet-vaccine-credential-funding-source-value-set.html
 [VaccineCredentialReportOriginValueSet]: ValueSet-vaccine-credential-report-origin-value-set.html
 [VaccineCredentialStatusReasonValueSet]: ValueSet-vaccine-credential-status-reason-value-set.html

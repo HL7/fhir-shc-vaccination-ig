@@ -25,5 +25,6 @@ jurisdiction: urn:iso:std:iso:3166#US "United States of America"
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
   Home: index.html
+  Conformance: conformance.html
   Artifacts: artifacts.html
   GitHub Repository: https://github.com/dvci/vaccine-credential-ig

@@ -16,9 +16,8 @@ Description: "The bundle of resources that represents the clinical content of a 
 * entry contains
     // These resources are required per Conformance > Supported Profiles.
     vaccineCredentialPatient 1..1 MS and
-    vaccineCredentialImmunization 0..* MS and
-    vaccineCredentialImmuneStatus 0..* MS and
-    vaccineCredentialVaccineReactionObservation 0..* MS and
+    vaccineCredentialImmunization 1..* MS and
+    vaccineCredentialVaccineReactionObservation 0..* and
     vaccineCredentialLocation 0..* MS
 
 
@@ -56,7 +55,7 @@ Description: "The bundle of resources that represents the clinical content of a 
 * entry contains
     // These resources are required per Conformance > Supported Profiles.
     vaccineCredentialPatient 1..1 MS and
-    laboratoryResultObservation 0..* MS and
+    laboratoryResultObservation 1..* MS and
     vaccineCredentialLocation 0..* MS
 
 * entry[vaccineCredentialPatient] ^short = "Patient"
@@ -65,7 +64,7 @@ Description: "The bundle of resources that represents the clinical content of a 
 
 * entry[laboratoryResultObservation] ^short = "Laboratory result"
 * entry[laboratoryResultObservation] ^definition = "Laboratory result"
-* entry[laboratoryResultObservation].resource only Covid19LaboratoryResultObservation
+* entry[laboratoryResultObservation].resource only Covid19LaboratoryResultObservation or InfectiousDiseaseLaboratoryResultObservation
 * entry[laboratoryResultObservation] obeys vc-lab-1
 
 * entry[vaccineCredentialLocation] ^short = "Location (real world, not body site)"

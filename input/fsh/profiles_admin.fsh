@@ -3,10 +3,8 @@
 Profile:     VaccineCredentialPatient
 Id:          vaccine-credential-patient
 Parent:      Patient
-Title:       "Patient Profile"
+Title:       "Patient Profile - Allowable Data"
 Description: "Slight modification of Patient, with identifier as 0..0 and limited MS."
-
-* ^status = #draft
 
 * identifier 0..0
 * identifier ^definition = "Identifer is not allowed in this IG due to risk of accidental, unnecessary exposure of sensitive identifiers to verifiers."
@@ -23,3 +21,32 @@ Description: "Slight modification of Patient, with identifier as 0..0 and limite
 * birthDate MS
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Profile:     VaccineCredentialPatientDM
+Id:          vaccine-credential-patient-dm
+Parent:      VaccineCredentialPatient
+Title:       "Patient Profile - Data Minimization"
+Description: "Only elements necessary for Verifiers can be populated."
+
+* meta 0..0
+* implicitRules 0..0
+* language 0..0
+* text 0..0
+* contained 0..0
+* extension 0..0
+* modifierExtension 0..0
+* active 0..0
+* name.id 0..0
+* name.extension 0..0
+* name.use 0..0
+* telecom 0..0
+* deceased[x] 0..0
+* address 0..0
+* maritalStatus 0..0
+* multipleBirth[x] 0..0
+* photo 0..0
+* contact 0..0
+* communication 0..0
+* generalPractitioner 0..0
+* managingOrganization 0..0
+* link 0..0
