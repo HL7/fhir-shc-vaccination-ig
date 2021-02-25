@@ -19,6 +19,8 @@ copyrightYear: 2020+
 license: Apache-2.0
 releaseLabel: ci-build
 jurisdiction: urn:iso:std:iso:3166#US "United States of America"
+parameters:
+  "liquid-path": "liquid"
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │  To use a provided ig-data/input/includes/menu.xml file, delete the "menu" property below.     │

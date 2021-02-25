@@ -25,3 +25,5 @@ This specification uses the conformance verbs SHALL, SHOULD, and MAY as defined 
 - Verifiers SHALL be able to "meaningfully process" elements marked BOTH as `MustSupport` and `Is-Modifier`. For other elements flagged with `MustSupport`, Verifiers MAY process at their own discretion.
 
 Note that `MustSupport` does **not** indicate an element is **required** to be present in resource instances. Required elements are those with a minimum cardinality of 1 or greater. Instead, `MustSupport` is used to indicate elements that SHALL be populated **if and only if the necessary data are available in the Issuer's system.**
+
+{% include markdown-link-references.md %}

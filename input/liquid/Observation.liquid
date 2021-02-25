@@ -1,0 +1,39 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Element</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Category</th>
+                <td>
+                   {{Observation.category.coding.code}}
+                </td>
+            </tr>
+
+            <tr>
+                <th>Code</th>
+                <td>
+                   {{Observation.code.coding.code}}
+                </td>
+            </tr>
+
+            <tr>
+                <th>Value</th>
+                <td>
+                   <code>{{Observation.value.coding.code}}</code>
+                </td>
+            </tr>
+
+            <tr>
+                <th>Date administered (<code>effective</code>)</th>
+                <td>
+                   {{Observation.effective}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

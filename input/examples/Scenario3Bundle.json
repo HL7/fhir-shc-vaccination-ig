@@ -4,7 +4,7 @@
   "type": "collection",
   "entry": [
     {
-      "fullUrl": "resource:Scenario1Patient",
+      "fullUrl": "resource:0",
       "resource": {
         "resourceType": "Patient",
         "name": [
@@ -42,10 +42,9 @@
       }
     },
     {
-      "fullUrl": "resource:Scenario3Lab",
+      "fullUrl": "resource:1",
       "resource": {
         "resourceType": "Observation",
-        "id": "Scenario3Lab",
         "status": "final",
         "category":  [
             {
@@ -66,7 +65,7 @@
             ]
         },
         "subject": {
-            "reference": "resource:Scenario1Patient"
+            "reference": "Patient/resource:0"
         },
         "effectiveDateTime": "2021-02-17",
         "valueCodeableConcept": {

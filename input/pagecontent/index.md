@@ -6,14 +6,10 @@
 
 This [FHIR Implementation Guide](https://www.hl7.org/fhir/implementationguide.html) (IG):
 
-1. Describes the clinical information necessary to create a [SMART Health Card] identifying vaccination and testing status for infectious diseases such as [COVID-19](https://www.cdc.gov/coronavirus/2019-ncov/index.html).
+1. Describes the clinical information necessary to create a [SMART Health Card] identifying vaccination and laboratory testing status for infectious diseases such as [COVID-19](https://www.cdc.gov/coronavirus/2019-ncov/index.html).
 2. Describes a minimal set of patient information (name and contact information) that is also included in the [SMART Health Card].
 
 The goal of this IG is to constrain resources for use specifically in [SMART Health Cards]. This applies to the contents of both digital and paper Health Cards, including Health Cards produced via a Health Card-specific FHIR endpoint like `[base]/Patient/:id/$HealthWallet.issueVc`. This IG is not applicable to general purpose FHIR endpoints like `[base]/Patient/:id/Immunization`; these are governed by other IGs like [US Core](https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-immunization.html).
-
-#### Compatibility with IIS
-
-Resources representing a vaccination and associated data should be able to be directly populated with data from [IIS](https://www.cdc.gov/vaccines/programs/iis/index.html) implementations using the [HL7 v2.5.1 Implementation Guide for Immunization Messaging, Release 1.5](https://repository.immregistries.org/resource/hl7-version-2-5-1-implementation-guide-for-immunization-messaging-release-1-5-1/).
 
 ### Actors
 
@@ -27,14 +23,16 @@ Issuers and Verifiers are considered "implementers" of this IG.
 
 ### Use cases
 
-Our primary focus is on the use case of representing the minimal set of clinical data necessary to represent COVID-19 vaccination status and laboratory testing for verification purposes.
+Our primary focus is on the use case of representing the minimal set of clinical data necessary to represent COVID-19 vaccination status and laboratory testing for verification purposes in a SMART Health Card.
+
+Due to the size constraints of the SMART Health Card payload, a "data minimization" profile is provided to supplement each of the "allowable data" profiles. Please see the [Data minimization](#data-minimization) section for details.
 
 #### Use case 1: vaccination credentials
 
 To represent patient and clinical data related to a vaccination, the [VaccineCredentialBundle] SHALL be used to wrap resources conforming to these profiles:
 
-{:.table-striped}
-| Profile: Allowable Data                       | Profile: Data Minimization                      | Purpose                                       | Support required?       |
+{:.table-striped.table}
+| Profile: Allowable Data                       | Profile: Data Minimization                      | Purpose                                       | Required in bundle?     |
 | --------------------------------------------- | ----------------------------------------------- | --------------------------------------------- | ----------------------- |
 | [VaccineCredentialPatient]                    | [VaccineCredentialPatientDM]                    | Identify the patient                          | Exactly 1 required      |
 | [VaccineCredentialImmunization]               | [VaccineCredentialImmunizationDM]               | Describe a vaccination                        | 1 or more required      |
@@ -69,11 +67,11 @@ Examples using these profiles:
 
 To represent patient and laboratory test result information, the [VaccineCredentialLaboratoryBundle] SHALL be used to wrap  resources conforming to these profiles:
 
-{:.table-striped}
-| Profile: Allowable Data              | Profile: Data Minimization             | Purpose                          | Support required? |
-| ------------------------------------ | -------------------------------------- | -------------------------------- | ----------------- |
-| [VaccineCredentialPatient]           | [VaccineCredentialPatientDM]           | Identify the patient             | Required          |
-| [Covid19LaboratoryResultObservation] | [Covid19LaboratoryResultObservationDM] | Identify the lab test and result | Required          |
+{:.table-striped.table}
+| Profile: Allowable Data              | Profile: Data Minimization             | Purpose                          | Required in bundle? |
+| ------------------------------------ | -------------------------------------- | -------------------------------- | ------------------- |
+| [VaccineCredentialPatient]           | [VaccineCredentialPatientDM]           | Identify the patient             | Required            |
+| [Covid19LaboratoryResultObservation] | [Covid19LaboratoryResultObservationDM] | Identify the lab test and result | Required            |
 
 An example using these profiles:
 
@@ -106,11 +104,14 @@ Additionally:
 
 - Implementers SHOULD NOT populate `Resource.id`, `Resource.meta`, or `Resource.text` elements.
 - Implementers SHOULD populate `Bundle.entry.fullUrl` elements with short resource-scheme URIs (e.g., {"fullUrl": "resource:0}).
-- Implementers SHOULD populate `Reference.reference` elements with short resource-scheme URIs (e.g., {"patient": {"reference": "resource:0"}}) which SHOULD resolve within the bundle.
+- Implementers SHOULD populate `Reference.reference` elements with short resource-scheme URIs (e.g., {"patient": {"reference": "Patient/resource:0"}}) which SHOULD resolve within the bundle.
 - Implementers SHOULD NOT populate `CodeableConcept.text` or `Coding.display` when using any value from a value set with a `required` binding, or using specified values from a value set with an `extensible` binding.
 - Likewise, implementers SHOULD NOT populate `CodeableConcept.text` or `Coding.display` when specifying codes that are fixed in profiles.
 - Use `YYYY-MM-DD` precision for all `dateTime` fields. Greater precision will result in a warning when validating a resource.
 
+#### Compatibility with IIS
+
+Resources representing a vaccination and associated data should be able to be directly populated with data from [IIS](https://www.cdc.gov/vaccines/programs/iis/index.html) implementations using the [HL7 v2.5.1 Implementation Guide for Immunization Messaging, Release 1.5](https://repository.immregistries.org/resource/hl7-version-2-5-1-implementation-guide-for-immunization-messaging-release-1-5-1/).
 
 {% include markdown-link-references.md %}
 

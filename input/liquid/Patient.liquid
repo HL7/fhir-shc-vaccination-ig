@@ -1,0 +1,30 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Element</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Name</th>
+                <td>
+                    {% loop name in Patient.name %}
+                        <div>
+                            {% if name.text %}
+                                {{name.text}}
+                            {% else %}
+                                {{name.family}},
+                                {% loop given in name.given %}
+                                    {{given}}
+                                {% endloop %}
+                            {% endif %}
+                        </div>
+                    {% endloop %}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
