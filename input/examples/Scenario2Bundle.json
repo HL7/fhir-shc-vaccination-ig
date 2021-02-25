@@ -4,8 +4,9 @@
   "type": "collection",
   "entry": [
     {
-      "fullUrl": "resource:0",
+      "fullUrl": "r:0",
       "resource": {
+        "id": "r:0",
         "resourceType": "Patient",
         "name": [
           {
@@ -56,8 +57,9 @@
       }
     },
     {
-      "fullUrl": "resource:1",
+      "fullUrl": "r:1",
       "resource": {
+        "id": "r:1",
         "resourceType": "Immunization",
         "status": "completed",
         "vaccineCode": {
@@ -69,19 +71,20 @@
           ]
         },
         "patient": {
-          "reference": "Patient/resource:0"
+          "reference": "Patient/r:0"
         },
         "occurrenceDateTime": "2021-01-01",
         "primarySource": true,
         "location": {
-          "reference": "Location/resource:3"
+          "reference": "Location/r:3"
         },
         "lotNumber": "Lot #0000001"
       }
     },
     {
-      "fullUrl": "resource:2",
+      "fullUrl": "r:2",
       "resource": {
+        "id": "r:2",
         "resourceType": "Immunization",
         "status": "completed",
         "vaccineCode": {
@@ -93,19 +96,20 @@
           ]
         },
         "patient": {
-          "reference": "Patient/resource:0"
+          "reference": "Patient/r:0"
         },
         "occurrenceDateTime": "2021-01-29",
         "primarySource": true,
         "location": {
-          "reference": "Location/resource:3"
+          "reference": "Location/r:3"
         },
         "lotNumber": "Lot #0000007"
       }
     },
     {
-      "fullUrl": "resource:3",
+      "fullUrl": "r:3",
       "resource": {
+        "id": "r:3",
         "resourceType": "Location",
         "name": "ABC Pharmacy"
       }

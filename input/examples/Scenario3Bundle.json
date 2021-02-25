@@ -4,8 +4,9 @@
   "type": "collection",
   "entry": [
     {
-      "fullUrl": "resource:0",
+      "fullUrl": "r:0",
       "resource": {
+        "id": "r:0",
         "resourceType": "Patient",
         "name": [
           {
@@ -42,8 +43,9 @@
       }
     },
     {
-      "fullUrl": "resource:1",
+      "fullUrl": "r:1",
       "resource": {
+        "id": "r:1",
         "resourceType": "Observation",
         "status": "final",
         "category":  [
@@ -65,7 +67,7 @@
             ]
         },
         "subject": {
-            "reference": "Patient/resource:0"
+            "reference": "Patient/r:0"
         },
         "effectiveDateTime": "2021-02-17",
         "valueCodeableConcept": {
