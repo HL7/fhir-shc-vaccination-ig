@@ -15,9 +15,9 @@ The goal of this IG is to constrain resources for use specifically in [SMART Hea
 
 The primary actors are:
 
-1. **Issuers** who produce the FHIR resources described in this IG. These are typically the entities responsible for giving vaccinations, including health systems, pharmacies, and doctors offices.
-2. **Verifiers** who read and analyze the FHIR resources described in this IG.
-3. **Patients** who receive a [SMART Health Card] from an Issuer (which contains the FHIR resources described in this IG), and may display it to a Verifier.
+1. **Issuers** who produce the FHIR resources described in this IG. These may be the entities responsible for giving vaccinations or reporting laboratory results, including health systems, pharmacies, clinical labs, and doctors offices.
+1. **Holders** who receive a [SMART Health Card] from an Issuer (which contains the FHIR resources described in this IG), and may display it to a Verifier.
+1. **Verifiers** who read and analyze the FHIR resources described in this IG.
 
 Issuers and Verifiers are considered "implementers" of this IG.
 
@@ -103,8 +103,8 @@ To validate a specific resource against a DM profile, the [FHIR Validator](https
 Additionally:
 
 - Implementers SHOULD NOT populate `Resource.id`, `Resource.meta`, or `Resource.text` elements.
-- Implementers SHOULD populate `Bundle.entry.fullUrl` elements with short resource-scheme URIs (e.g., {"fullUrl": "resource:0}).
-- Implementers SHOULD populate `Reference.reference` elements with short resource-scheme URIs (e.g., {"patient": {"reference": "Patient/resource:0"}}) which SHOULD resolve within the bundle.
+- Implementers SHOULD populate `Bundle.entry.fullUrl` elements with short resource-scheme URIs (e.g., {"fullUrl": "r:0}).
+- Implementers SHOULD populate `Reference.reference` elements with short resource-scheme URIs (e.g., {"patient": {"reference": "Patient/r:0"}}) which SHALL resolve within the bundle.
 - Implementers SHOULD NOT populate `CodeableConcept.text` or `Coding.display` when using any value from a value set with a `required` binding, or using specified values from a value set with an `extensible` binding.
 - Likewise, implementers SHOULD NOT populate `CodeableConcept.text` or `Coding.display` when specifying codes that are fixed in profiles.
 - Use `YYYY-MM-DD` precision for all `dateTime` fields. Greater precision will result in a warning when validating a resource.
