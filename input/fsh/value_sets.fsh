@@ -141,7 +141,7 @@ Description: "Codes describing reactions to vaccinations"
 
 ValueSet:    Covid19LaboratoryTestValueSet
 Id:          covid19-laboratory-test-value-set
-Title:       "COVID-10 laboratory test code value set"
+Title:       "COVID-19 laboratory test code value set"
 Description: "Currently includes COVID-19 lab codes via the
 [LIVD SARS CoV2 Test Codes value set](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1114.9/expansion)."
 
@@ -151,9 +151,9 @@ Description: "Currently includes COVID-19 lab codes via the
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-ValueSet:    LaboratoryResultValueSet
-Id:          laboratory-result-value-set
-Title:       "Laboratory result value set"
+ValueSet:    Covid19LaboratoryResultValueSet
+Id:          covid19-laboratory-result-value-set
+Title:       "COVID-19 laboratory result value set"
 Description: "Currently includes COVID-19 lab result codes based on the conclusive values from the
 [LIVD SARS CoV2 Test Result Codes value set](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1114.10/expansion).
 Other value sets may be added in the future."

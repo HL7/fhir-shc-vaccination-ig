@@ -46,9 +46,9 @@ previous infection status."
 * code from Covid19LaboratoryTestValueSet (required)
 * code obeys covid19-laboratory-test-code-invariant
 
-
+* value[x] 1..1
 * value[x] only CodeableConcept or Quantity
-* valueCodeableConcept from LaboratoryResultValueSet (required)
+* valueCodeableConcept from Covid19LaboratoryResultValueSet (required)
 * valueCodeableConcept obeys laboratory-result-invariant
 
 /*
@@ -126,8 +126,6 @@ Description:    "Profile for reporting laboratory results indicating current or 
 * code obeys not-specified-laboratory-test-code-invariant
 
 * value[x] only CodeableConcept or Quantity
-* valueCodeableConcept from LaboratoryResultValueSet (required)
-* valueCodeableConcept obeys laboratory-result-invariant
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
