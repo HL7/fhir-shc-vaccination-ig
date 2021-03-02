@@ -23,8 +23,11 @@ Description: "Defines a profile representing a vaccination for a vaccine credent
 
 * protocolApplied 0..0 // See explanation in pagecontent/StructureDefinition-vaccine-credential-immunization-intro.md
 
-* location only Reference(USCoreLocation)
-* location MS
+* performer.actor only Reference(Organization)
+* performer MS
+* performer 0..1
+* performer.actor ^short = "Organization which was responsible for vaccine administration."
+* performer.actor ^definition = "Organization which was responsible for vaccine administration. Issuers SHOULD provide display name only. This is provided to Verifiers in case of invalid data in the credential, to support manual validation. This is not expected to be a computable Organization identifier."
 
 * status ^short = "Whether or not the vaccination was completed"
 
@@ -59,12 +62,13 @@ Description: "Defines a profile representing a vaccination for a vaccine credent
 * recorded 0..0
 * primarySource 0..0
 * reportOrigin 0..0
+* location 0..0
 * manufacturer 0..0
 * expirationDate 0..0
 * site 0..0
 * route 0..0
 * doseQuantity 0..0
-* performer 0..0
+* performer.function 0..0
 * note 0..0
 * reasonCode 0..0
 * reasonReference 0..0

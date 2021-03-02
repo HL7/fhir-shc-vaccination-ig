@@ -32,6 +32,12 @@ RuleSet: LaboratoryResultObservation
 
 * value[x] MS
 
+* performer only Reference(Organization)
+* performer MS
+* performer 0..1
+* performer ^short = "Organization which was responsible for laboratory record."
+* performer ^definition = "Organization which was responsible for laboratory record. Issuers SHOULD provide display name only. This is provided to Verifiers in case of invalid data in the credential, to support manual validation. This is not expected to be a computable Organization identifier."
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Profile:        Covid19LaboratoryResultObservation
@@ -87,7 +93,6 @@ RuleSet: LaboratoryResultObservationDM
 * category.text 0..0
 * focus 0..0
 * issued 0..0
-* performer 0..0
 * dataAbsentReason 0..0
 * interpretation 0..0
 * note 0..0

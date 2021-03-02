@@ -17,9 +17,7 @@ Description: "The bundle of resources that represents the clinical content of a 
     // These resources are required per Conformance > Supported Profiles.
     vaccineCredentialPatient 1..1 MS and
     vaccineCredentialImmunization 1..* MS and
-    vaccineCredentialVaccineReactionObservation 0..* and
-    vaccineCredentialLocation 0..* MS
-
+    vaccineCredentialVaccineReactionObservation 0..*
 
 * entry[vaccineCredentialPatient] ^short = "Patient"
 * entry[vaccineCredentialPatient] ^definition = "The patient who is the subject of the Bundle"
@@ -32,10 +30,6 @@ Description: "The bundle of resources that represents the clinical content of a 
 * entry[vaccineCredentialVaccineReactionObservation] ^short = "Vaccination reaction"
 * entry[vaccineCredentialVaccineReactionObservation] ^definition = "Vaccination reaction"
 * entry[vaccineCredentialVaccineReactionObservation].resource only VaccineCredentialVaccineReactionObservation
-
-* entry[vaccineCredentialLocation] ^short = "Location (real world, not body site)"
-* entry[vaccineCredentialLocation] ^definition = "Location (real world, not body site)"
-* entry[vaccineCredentialLocation].resource only USCoreLocation
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -55,8 +49,7 @@ Description: "The bundle of resources that represents the clinical content of a 
 * entry contains
     // These resources are required per Conformance > Supported Profiles.
     vaccineCredentialPatient 1..1 MS and
-    laboratoryResultObservation 1..* MS and
-    vaccineCredentialLocation 0..* MS
+    laboratoryResultObservation 1..* MS
 
 * entry[vaccineCredentialPatient] ^short = "Patient"
 * entry[vaccineCredentialPatient] ^definition = "The patient who is the subject of the Bundle"
@@ -66,9 +59,5 @@ Description: "The bundle of resources that represents the clinical content of a 
 * entry[laboratoryResultObservation] ^definition = "Laboratory result"
 * entry[laboratoryResultObservation].resource only Covid19LaboratoryResultObservation or InfectiousDiseaseLaboratoryResultObservation
 * entry[laboratoryResultObservation] obeys vc-lab-1
-
-* entry[vaccineCredentialLocation] ^short = "Location (real world, not body site)"
-* entry[vaccineCredentialLocation] ^definition = "Location (real world, not body site)"
-* entry[vaccineCredentialLocation].resource only USCoreLocation
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
