@@ -6,7 +6,7 @@
 
 This [FHIR Implementation Guide](https://www.hl7.org/fhir/implementationguide.html) (IG):
 
-1. Describes the clinical information necessary to create a [SMART Health Card] identifying vaccination and laboratory testing status for infectious diseases such as [COVID-19](https://www.cdc.gov/coronavirus/2019-ncov/index.html).
+1. Describes the clinical information necessary to create a [SMART Health Card] identifying vaccination and laboratory testing status for infectious diseases such as [COVID-19](https://www.cdc.gov/coronavirus/2019-ncov/index.html). In particular, it describes the content of the credential subject of a verifiable credential in which the credential types include "https://smarthealth.cards#health-card", "https://smarthealth.cards#immunization" and/or "https://smarthealth.cards#laboratory", and optionally "https://smarthealth.cards#covid19".
 2. Describes a minimal set of patient information (name and contact information) that is also included in the [SMART Health Card].
 
 The goal of this IG is to constrain resources for use specifically in [SMART Health Cards]. This applies to the contents of both digital and paper Health Cards, including Health Cards produced via a Health Card-specific FHIR endpoint like `[base]/Patient/:id/$HealthWallet.issueVc`. This IG is not applicable to general purpose FHIR endpoints like `[base]/Patient/:id/Immunization`; these are governed by other IGs like [US Core](https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-immunization.html).
