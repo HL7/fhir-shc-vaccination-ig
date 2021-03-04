@@ -54,6 +54,7 @@ previous infection status."
 * code obeys covid19-laboratory-test-code-invariant
 * code ^definition = "If the Covid19LaboratoryTestValueSet does not contain a code for the lab test, use the InfectiousDiseaseLaboratoryResultObservation profile."
 
+* value[x] 1..1
 * value[x] only CodeableConcept or Quantity
 * valueCodeableConcept from LaboratoryResultValueSet (extensible)
 * valueCodeableConcept obeys laboratory-result-invariant
@@ -137,6 +138,7 @@ Description:    "Profile for reporting laboratory results indicating current or 
 // be used instead.
 * code obeys not-specified-laboratory-test-code-invariant
 
+* value[x] 1..1
 * value[x] only CodeableConcept or Quantity
 * valueCodeableConcept from LaboratoryResultValueSet (extensible)
 * valueCodeableConcept obeys laboratory-result-invariant
