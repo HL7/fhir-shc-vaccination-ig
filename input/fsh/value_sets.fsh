@@ -7,6 +7,15 @@ Alias: ACT = http://terminology.hl7.org/CodeSystem/v3-ActReason
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+
+ValueSet:    VaccineCredentialVaccineValueSet
+Id:          vaccine-credential-vaccine-value-set
+Title:       "Value set for identifying vaccines"
+Description: "Includes [CVX codes](https://www2.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=tradename) to identify specific vaccinations."
+* include codes from system CVX
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
 ValueSet:    VaccineCredentialAntibodyResultValueSet
 Id:          vaccine-credential-antibody-result-value-set
 Title:       "Antibody results value set"

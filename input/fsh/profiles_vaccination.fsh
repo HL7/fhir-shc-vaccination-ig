@@ -16,8 +16,10 @@ Description: "Defines a profile representing a vaccination for a vaccine credent
 // Parent profile short description is not as clear as it could be
 * primarySource ^short = "Information in this record from person who administered vaccine?"
 
-* vaccineCode from http://hl7.org/fhir/us/core/ValueSet/us-core-vaccines-cvx (extensible)
+* vaccineCode from VaccineCredentialVaccineValueSet (extensible)
 * vaccineCode obeys vaccine-code-invariant
+* vaccineCode ^definition = "Implementers SHALL use a code from VaccineCredentialVaccineValueSet if this value set contains an appropriate code."
+
 
 * lotNumber MS
 
@@ -72,6 +74,10 @@ Description: "Defines a profile representing a vaccination for a vaccine credent
 * education 0..0
 * fundingSource 0..0
 * reaction 0..0
+
+// Required in DM profile to provide implementers with sterner warning when straying from the expected value sets
+* vaccineCode from VaccineCredentialVaccineValueSet (required)
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 

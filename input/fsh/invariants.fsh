@@ -27,7 +27,7 @@ Severity:    #warning
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Invariant:   not-specified-laboratory-test-code-invariant
-Description: "Code cannot be part of a value set for a specified disease."
+Description: "Code cannot be part of a value set for a specified disease. Instead, validate against the profile specific for the disease in question."
 Expression:  "$this.memberOf('http://hl7.org/fhir/us/smarthealthcards-vaccination/ValueSet/covid19-laboratory-test-value-set').not()"
 Severity:    #error
 
