@@ -16,7 +16,7 @@ Description: "Defines a profile representing a vaccination for a vaccine credent
 // Parent profile short description is not as clear as it could be
 * primarySource ^short = "Information in this record from person who administered vaccine?"
 
-* vaccineCode from VaccineCredentialCVXValueSet (required)
+* vaccineCode from http://hl7.org/fhir/us/core/ValueSet/us-core-vaccines-cvx (extensible)
 * vaccineCode obeys vaccine-code-invariant
 
 * lotNumber MS

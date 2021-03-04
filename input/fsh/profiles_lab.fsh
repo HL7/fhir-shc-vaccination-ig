@@ -43,12 +43,11 @@ previous infection status."
 
 * insert LaboratoryResultObservation
 
-* code from Covid19LaboratoryTestValueSet (required)
+* code from Covid19LaboratoryTestValueSet (extensible)
 * code obeys covid19-laboratory-test-code-invariant
 
-
 * value[x] only CodeableConcept or Quantity
-* valueCodeableConcept from LaboratoryResultValueSet (required)
+* valueCodeableConcept from LaboratoryResultValueSet (extensible)
 * valueCodeableConcept obeys laboratory-result-invariant
 
 /*
@@ -126,7 +125,7 @@ Description:    "Profile for reporting laboratory results indicating current or 
 * code obeys not-specified-laboratory-test-code-invariant
 
 * value[x] only CodeableConcept or Quantity
-* valueCodeableConcept from LaboratoryResultValueSet (required)
+* valueCodeableConcept from LaboratoryResultValueSet (extensible)
 * valueCodeableConcept obeys laboratory-result-invariant
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////

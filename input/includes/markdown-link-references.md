@@ -42,5 +42,3 @@
 
 [Scenario3Lab]: Observation-Scenario3Lab.html
 [Scenario3Bundle]: Bundle-Scenario3Bundle.html
-
-[ExampleImmunizationNoCVX]: Immunization-ExampleImmunizationNoCVX.html
