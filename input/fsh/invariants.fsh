@@ -13,30 +13,30 @@ Severity: #error
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Invariant:   vaccine-code-invariant
-Description: "If the code representing 'Other Vaccine' is used, a second code from outside the original value set must be present."
-Expression:  "coding.where(code = 'OTHER-VACCINE').exists() implies coding.where(code != 'OTHER-VACCINE' and $this.memberOf('http://hl7.org/fhir/us/smarthealthcards-vaccination/ValueSet/vaccine-credential-cvx-value-set').not()).exists()"
-Severity:    #error
+Description: "CVX code should be provided if an applicable CVX code exists."
+Expression:  "coding.where($this.memberOf('http://hl7.org/fhir/us/smarthealthcards-vaccination/ValueSet/vaccine-credential-cvx-value-set').not()).exists()"
+Severity:    #warning
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Invariant:   covid19-laboratory-test-code-invariant
-Description: "If the code representing 'Other Laboratory Test' is used, a second code from outside the original value set must be present."
-Expression:  "coding.where(code = 'OTHER-TEST').exists() implies coding.where(code != 'OTHER-TEST' and $this.memberOf('http://hl7.org/fhir/us/smarthealthcards-vaccination/ValueSet/covid19-laboratory-test-value-set').not()).exists()"
-Severity:    #error
+Description: "Code from value set should be provided if an applicable code exists."
+Expression:  "coding.where($this.memberOf('http://hl7.org/fhir/us/smarthealthcards-vaccination/ValueSet/covid19-laboratory-test-value-set').not()).exists()"
+Severity:    #warning
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Invariant:   not-specified-laboratory-test-code-invariant
-Description: "Code cannot be part of a value set for a specified disease."
+Description: "Code cannot be part of a value set for a specified disease. Instead, validate against the profile specific for the disease in question."
 Expression:  "$this.memberOf('http://hl7.org/fhir/us/smarthealthcards-vaccination/ValueSet/covid19-laboratory-test-value-set').not()"
 Severity:    #error
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Invariant:   laboratory-result-invariant
-Description: "If the code representing 'Other Laboratory Result' is used, a second code from outside the original value set must be present."
-Expression:  "coding.where(code = 'OTHER-RESULT').exists() implies coding.where(code != 'OTHER-RESULT' and $this.memberOf('http://hl7.org/fhir/us/smarthealthcards-vaccination/ValueSet/laboratory-result-value-set').not()).exists()"
-Severity:    #error
+Description: "Code from value set should be provided if an applicable code exists."
+Expression:  "coding.where($this.memberOf('http://hl7.org/fhir/us/smarthealthcards-vaccination/ValueSet/laboratory-result-value-set').not()).exists()"
+Severity:    #warning
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 

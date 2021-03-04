@@ -2,11 +2,7 @@
 
 #### Identifying vaccines
 
-`Immunization.vaccineCode` uses the "Other, specify" pattern to provide flexibility for representing vaccinations that are not part of the published [CVX value set](http://hl7.org/fhir/sid/cvx). `Immunization.vaccineCode` has a required binding to [VaccineCredentialCVXValueSet], which includes all CVX codes plus an additional `OtherCode#OtherVaccine` code.
-
-Implementers MUST use a valid CVX code if one is available in the published value set.
-
-If one is not available, implementers MAY set `Immunization.vaccineCode.coding.code` to `OtherVaccine`, `Immunization.vaccineCode.coding.display` to `Other vaccine without published CVX`, and `Immunization.vaccineCode.text` to some string describing the vaccine. [Here is an example of a resource employing this approach.](Immunization-ExampleImmunizationNoCVX.html)
+Implementers SHALL use the [VaccineCredentialVaccineValueSet] to identify vaccinations if a suitable code is available in that value set. An extensible binding is used in this profile to provide flexibility ONLY if real-world circumstances require the use of a code outside this value set. The [data minimization version of this profile][VaccineCredentialImmunizationDM] uses a required binding to reflect these conformance criteria.
 
 #### Why `protocolApplied` is not allowed
 

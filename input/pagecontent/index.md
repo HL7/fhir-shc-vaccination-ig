@@ -61,8 +61,6 @@ Examples using these profiles:
 > - [Scenario2Immunization2]
 > - [Scenario2Location]
 
-> [ExampleImmunizationNoCVX] shows how to record a vaccine without a published CVX code.
-
 #### Use case 2: laboratory test result credentials
 
 To represent patient and laboratory test result information, the [VaccineCredentialLaboratoryBundle] SHALL be used to wrap  resources conforming to these profiles:

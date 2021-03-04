@@ -43,12 +43,13 @@ previous infection status."
 
 * insert LaboratoryResultObservation
 
+// This binding can be required because implementers can fall back to InfectiousDiseaseLaboratoryResultObservation
 * code from Covid19LaboratoryTestValueSet (required)
 * code obeys covid19-laboratory-test-code-invariant
-
+* code ^definition = "If the Covid19LaboratoryTestValueSet does not contain a code for the lab test, use the InfectiousDiseaseLaboratoryResultObservation profile."
 
 * value[x] only CodeableConcept or Quantity
-* valueCodeableConcept from LaboratoryResultValueSet (required)
+* valueCodeableConcept from LaboratoryResultValueSet (extensible)
 * valueCodeableConcept obeys laboratory-result-invariant
 
 /*
@@ -112,6 +113,9 @@ previous infection status. Only elements necessary for Verifiers can be populate
 
 * insert LaboratoryResultObservationDM
 
+// Required in DM profile to provide implementers with sterner warning when straying from the expected value sets
+* code from Covid19LaboratoryTestValueSet (required)
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -123,10 +127,13 @@ Description:    "Profile for reporting laboratory results indicating current or 
 
 * insert LaboratoryResultObservation
 
+// Show an error if the code is part of a value set used in a disease-specific profile. If that's
+// the case, there's no reason to use this generic profile -- the disease-specific profile should
+// be used instead.
 * code obeys not-specified-laboratory-test-code-invariant
 
 * value[x] only CodeableConcept or Quantity
-* valueCodeableConcept from LaboratoryResultValueSet (required)
+* valueCodeableConcept from LaboratoryResultValueSet (extensible)
 * valueCodeableConcept obeys laboratory-result-invariant
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
