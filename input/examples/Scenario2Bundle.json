@@ -4,9 +4,9 @@
   "type": "collection",
   "entry": [
     {
-      "fullUrl": "r:0",
+      "fullUrl": "resource:0",
       "resource": {
-        "id": "r:0",
+        "id": "resource:0",
         "resourceType": "Patient",
         "name": [
           {
@@ -57,7 +57,7 @@
       }
     },
     {
-      "fullUrl": "r:1",
+      "fullUrl": "resource:1",
       "resource": {
         "resourceType": "Immunization",
         "id": "Scenario2Immunization1",
@@ -85,7 +85,7 @@
       }
     },
     {
-      "fullUrl": "r:2",
+      "fullUrl": "resource:2",
       "resource": {
         "resourceType": "Immunization",
         "id": "Scenario2Immunization2",

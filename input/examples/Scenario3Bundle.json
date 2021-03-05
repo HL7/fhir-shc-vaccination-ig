@@ -4,9 +4,9 @@
   "type": "collection",
   "entry": [
     {
-      "fullUrl": "r:0",
+      "fullUrl": "resource:0",
       "resource": {
-        "id": "r:0",
+        "id": "resource:0",
         "resourceType": "Patient",
         "name": [
           {
@@ -43,7 +43,7 @@
       }
     },
     {
-      "fullUrl": "r:1",
+      "fullUrl": "resource:1",
       "resource": {
         "resourceType": "Observation",
         "id": "Scenario3Lab",
