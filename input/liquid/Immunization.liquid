@@ -1,0 +1,46 @@
+<div xmlns="http://www.w3.org/1999/xhtml">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Element</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Patient reference</th>
+                <td>
+                   {{Immunization.patient}}
+                </td>
+            </tr>
+
+            <tr>
+                <th>CVX code</th>
+                <td>
+                   {{Immunization.vaccineCode.coding.code}}
+                </td>
+            </tr>
+
+            <tr>
+                <th>Lot number</th>
+                <td>
+                   {{Immunization.lotNumber}}
+                </td>
+            </tr>
+
+            <tr>
+                <th>Status and date administered (<code>occurrence</code>)</th>
+                <td>
+                   {{Immunization.status}} {{Immunization.occurrence}}
+                </td>
+            </tr>
+
+            <tr>
+                <th>Administering location</th>
+                <td>
+                   {{Immunization.location}}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

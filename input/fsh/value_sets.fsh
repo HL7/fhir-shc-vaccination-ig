@@ -7,28 +7,12 @@ Alias: ACT = http://terminology.hl7.org/CodeSystem/v3-ActReason
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-CodeSystem:  CatchCodeCS
-Id:          vaccine-credential-catch-code-cs
-Title:       "CatchCodeCS Code System"
-Description: "A code system containing codes that signify a code outside a specified value set has been used, using an 'Other ____, Specify' approach."
-* #OTHER-VACCINE "Other vaccine without published CVX"
-* #OTHER-ANTIBODY-RESULT "Other antibody result"
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
-ValueSet:    VaccineCredentialCVXValueSet
-Id:          vaccine-credential-cvx-value-set
-Title:       "CVX codes value set"
-Description: "Curated set of CVX codes for the vaccine credential Health Card"
-* CatchCodeCS#OTHER-VACCINE
+ValueSet:    VaccineCredentialVaccineValueSet
+Id:          vaccine-credential-vaccine-value-set
+Title:       "Value set for identifying vaccines"
+Description: "Includes [CVX codes](https://www2.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=tradename) to identify specific vaccinations."
 * include codes from system CVX
-
-
-// Not limiting to just COVID EUA vaccines for now - see index.md for details
-// Moderna COVID-19 Vaccine: SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, preservative free, 100 mcg/0.5mL dose
-// * CVX#207
-// Pfizer-BioNTech COVID-19 Vaccine: SARS-COV-2 (COVID-19) vaccine, mRNA, spike protein, LNP, preservative free, 30 mcg/0.3mL dose
-// * CVX#208
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -36,7 +20,6 @@ ValueSet:    VaccineCredentialAntibodyResultValueSet
 Id:          vaccine-credential-antibody-result-value-set
 Title:       "Antibody results value set"
 Description: "Result codes for SARS coronavirus 2 antibodies"
-* CatchCodeCS#OTHER-ANTIBODY-RESULT
 * LNC#LA6577-6 "Negative"
 * LNC#LA6576-8 "Positive"
 
@@ -134,5 +117,32 @@ Description: "Codes describing reactions to vaccinations"
 
 // Support for IIS value set for OBX-5
 * include codes from system https://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.114222.4.11.3288
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ValueSet:    Covid19LaboratoryTestValueSet
+Id:          covid19-laboratory-test-value-set
+Title:       "COVID-19 laboratory test code value set"
+Description: "Currently includes COVID-19 lab codes via the
+[LIVD SARS CoV2 Test Codes value set](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1114.9/expansion)."
+
+// Support for CDC LIVD SARS CoV2 Test Codes
+* include codes from system https://cts.nlm.nih.gov/fhir/valueset/2.16.840.1.113762.1.4.1114.9
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ValueSet:    LaboratoryResultValueSet
+Id:          laboratory-result-value-set
+Title:       "Laboratory result value set"
+Description: "Currently includes COVID-19 lab result codes based on the conclusive values from the
+[LIVD SARS CoV2 Test Result Codes value set](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1114.10/expansion).
+Other value sets may be added in the future."
+
+* SCT#10828004 "Positive (qualifier value)"
+* SCT#260373001 "Detected (qualifier value)"
+* SCT#260385009 "Negative (qualifier value)"
+* SCT#260408008 "Weakly positive (qualifier value)"
+* SCT#260415000 "Not detected (qualifier value)"
+* SCT#720735008 "Presumptive positive (qualifier value)"
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////

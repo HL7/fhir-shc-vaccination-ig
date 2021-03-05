@@ -1,6 +1,6 @@
 {
   "resourceType": "Bundle",
-  "id": "Scenario1Bundle",
+  "id": "Scenario3Bundle",
   "type": "collection",
   "entry": [
     {
@@ -45,57 +45,44 @@
     {
       "fullUrl": "resource:1",
       "resource": {
-        "resourceType": "Immunization",
-        "id": "Scenario1Immunization1",
-        "status": "completed",
-        "vaccineCode": {
+        "resourceType": "Observation",
+        "id": "Scenario3Lab",
+        "status": "final",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
+        ],
+        "code": {
           "coding": [
             {
-              "system": "http://hl7.org/fhir/sid/cvx",
-              "code": "207"
+              "system": "http://loinc.org",
+              "code": "94558-4"
             }
           ]
         },
-        "patient": {
+        "subject": {
           "reference": "Patient/Scenario1Patient"
         },
-        "occurrenceDateTime": "2021-01-01",
-        "performer": [
-          {
-            "actor": {
-              "display": "ABC General Hospital"
-            }
-          }
-        ],
-        "lotNumber": "Lot #0000001"
-      }
-    },
-    {
-      "fullUrl": "resource:2",
-      "resource": {
-        "resourceType": "Immunization",
-        "id": "Scenario1Immunization2",
-        "status": "completed",
-        "vaccineCode": {
+        "effectiveDateTime": "2021-02-17",
+        "valueCodeableConcept": {
           "coding": [
             {
-              "system": "http://hl7.org/fhir/sid/cvx",
-              "code": "207"
+              "system": "http://snomed.info/sct",
+              "code": "260373001"
             }
           ]
         },
-        "patient": {
-          "reference": "Patient/Scenario1Patient"
-        },
-        "occurrenceDateTime": "2021-01-29",
         "performer": [
           {
-            "actor": {
-              "display": "ABC General Hospital"
-            }
+            "display": "ABC General Hospital"
           }
-        ],
-        "lotNumber": "Lot #0000007"
+        ]
       }
     }
   ]

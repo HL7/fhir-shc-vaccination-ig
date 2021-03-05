@@ -6,127 +6,113 @@
 
 This [FHIR Implementation Guide](https://www.hl7.org/fhir/implementationguide.html) (IG):
 
-1. Describes the clinical information necessary to create a [SMART Health Card] identifying vaccination and testing status for infectious diseases such as [COVID-19](https://www.cdc.gov/coronavirus/2019-ncov/index.html).
+1. Describes the clinical information necessary to create a [SMART Health Card] identifying vaccination and laboratory testing status for infectious diseases such as [COVID-19](https://www.cdc.gov/coronavirus/2019-ncov/index.html). In particular, it describes the content of the credential subject of a verifiable credential in which the credential types include "https://smarthealth.cards#health-card", "https://smarthealth.cards#immunization" and/or "https://smarthealth.cards#laboratory", and optionally "https://smarthealth.cards#covid19".
 2. Describes a minimal set of patient information (name and contact information) that is also included in the [SMART Health Card].
 
 The goal of this IG is to constrain resources for use specifically in [SMART Health Cards]. This applies to the contents of both digital and paper Health Cards, including Health Cards produced via a Health Card-specific FHIR endpoint like `[base]/Patient/:id/$HealthWallet.issueVc`. This IG is not applicable to general purpose FHIR endpoints like `[base]/Patient/:id/Immunization`; these are governed by other IGs like [US Core](https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-immunization.html).
-
-### Use cases
-
-Our primary focus is on the use case of representing the minimal set of clinical data necessary to represent COVID-19 vaccination status for verification purposes.
-
-Secondarily, we want to define patterns that support future use cases including:
-
-* clinical data indicating current or previous COVID-19 infection status (e.g., laboratory testing results evaluating presence of RNA, antigens, or antibodies)
-* clinical data pertaining to other infectious diseases
-
-We therefore avoid constraints that limit use in other diseases unless such constraints are necessary to support COVID-19 use cases.
-
-#### Compatibility with IIS
-
-Resources representing a vaccination and associated data should be able to be directly populated with data from [IIS](https://www.cdc.gov/vaccines/programs/iis/index.html) implementations using the [HL7 v2.5.1 Implementation Guide for Immunization Messaging, Release 1.5](https://repository.immregistries.org/resource/hl7-version-2-5-1-implementation-guide-for-immunization-messaging-release-1-5-1/).
 
 ### Actors
 
 The primary actors are:
 
-1. **Issuers** who produce the FHIR resources described in this IG. These are typically the entities responsible for giving vaccinations, including health systems, pharmacies, and doctors offices.
-2. **Verifiers** who read and analyze the FHIR resources described in this IG.
-3. **Patients** who receive a [SMART Health Card] from an Issuer (which contains the FHIR resources described in this IG), and may display it to a Verifier.
+1. **Issuers** who produce the FHIR resources described in this IG. These may be the entities responsible for giving vaccinations or reporting laboratory results, including health systems, pharmacies, clinical labs, and doctors offices.
+1. **Holders** who receive a [SMART Health Card] from an Issuer (which contains the FHIR resources described in this IG), and may display it to a Verifier.
+1. **Verifiers** who read and analyze the FHIR resources described in this IG.
 
 Issuers and Verifiers are considered "implementers" of this IG.
 
-### Approach to constraints
+### Use cases
 
-The IG is currently focused on coordinating implementers' representations of relevant clinical data, rather than evaluating risk or applying decision rules based on these clinical data. For example, this IG does not include information about which vaccine products are considered effective, or which dosing protocols are appropriate for a given product. The rationale for focusing on "conveying a clinical history" rather than "evaluating risk or making decisions" is:
+Our primary focus is on the use case of representing the minimal set of clinical data necessary to represent COVID-19 vaccination status and laboratory testing for verification purposes in a SMART Health Card.
 
-1. Risk evaluation algorithms are likely to evolve faster than IG constraints can be updated.
+Due to the size constraints of the SMART Health Card payload, a "data minimization" profile is provided to supplement each of the "allowable data" profiles. Please see the [Data minimization](#data-minimization) section for details.
 
-    For example, constraining the [VaccineCredentialImmunization] profile to require specific `vaccineCode` values (e.g., only `CVX#207` and `CVX#208` for the current Moderna and Pfizer-BioNTech vaccines) could pose a problem if a new vaccine receives emergency authorization: recipients of the new vaccination would have non-conforming Immunization resources due to the constraints on `vaccineCode` until the IG could be updated and published.
+#### Use case 1: vaccination credentials
 
-1. Risk evaluation algorithms may be actor- or context-dependent.
+To represent patient and clinical data related to a vaccination, the [VaccineCredentialBundle] SHALL be used to wrap resources conforming to these profiles:
 
-    For example, some parties may only consider FDA-approved or EUA vaccines to be acceptable, while others may accept vaccines approved in other countries.
+{:.table-striped.table}
+| Profile: Allowable Data                       | Profile: Data Minimization                      | Purpose                                       | Required in bundle?     |
+| --------------------------------------------- | ----------------------------------------------- | --------------------------------------------- | ----------------------- |
+| [VaccineCredentialPatient]                    | [VaccineCredentialPatientDM]                    | Identify the patient                          | Exactly 1 required      |
+| [VaccineCredentialImmunization]               | [VaccineCredentialImmunizationDM]               | Describe a vaccination                        | 1 or more required      |
+| [VaccineCredentialVaccineReactionObservation] | [VaccineCredentialVaccineReactionObservationDM] | Describe an adverse reaction to a vaccination | Optional (experimental) |
 
-    Embedding stringent validation criteria in our FHIR profiles may make it impossible for implementers with less stringent criteria to use this IG.
+Examples using these profiles:
 
-1. More constrained profiles for risk evaluation can be created based on the profiles in this IG, but it's not possible to remove constraints in a child profile.
+> **Scenario 1:** A patient receives two doses of the Moderna COVID-19 vaccine. The first dose was administered on January 1, 2021, and the second dose on January 29, 2021.
+>
+> Example resources:
+>
+> - [Scenario1Bundle]
+> - [Scenario1Patient]
+> - [Scenario1Immunization1]
+> - [Scenario1Immunization2]
+> - [Scenario1Location]
 
-#### Conformance verbs
+> **Scenario 2:** A patient receives two doses of the Pfizer-BioNTech COVID-19 vaccine. The first dose was administered on January 1, 2021, and the second dose on January 29, 2021.
+>
+> Example resources:
+>
+> - [Scenario2Bundle]
+> - [Scenario2Patient]
+> - [Scenario2Immunization1]
+> - [Scenario2Immunization2]
+> - [Scenario2Location]
 
-This specification uses the conformance verbs SHALL, SHOULD, and MAY as defined in [RFC 2119].
+#### Use case 2: laboratory test result credentials
 
-#### MustSupport interpretation
+To represent patient and laboratory test result information, the [VaccineCredentialLaboratoryBundle] SHALL be used to wrap  resources conforming to these profiles:
 
-- Issuers SHALL populate any elements marked as `MustSupport` if the necessary data are available in their system.
-- Issuers SHOULD NOT populate any elements that are not marked as `MustSupport` unless they believe the element contains valuable information for Verifiers. This is due to the payload size constraints of SMART Health Cards; see the [Data minimization](#data-minimization) section below for more details on how to reduce payload size when implementing.
-- Verifiers SHALL be able to "meaningfully process" elements flagged with both `MustSupport` and the `Is-Modifier` property. For other elements flagged with `MustSupport`, Verifiers MAY process at their own discretion.
+{:.table-striped.table}
+| Profile: Allowable Data              | Profile: Data Minimization             | Purpose                          | Required in bundle? |
+| ------------------------------------ | -------------------------------------- | -------------------------------- | ------------------- |
+| [VaccineCredentialPatient]           | [VaccineCredentialPatientDM]           | Identify the patient             | Required            |
+| [Covid19LaboratoryResultObservation] | [Covid19LaboratoryResultObservationDM] | Identify the lab test and result | Required            |
 
-Note that `MustSupport` does **not** indicate an element is required to be present in resource instances. Required elements are those with a minimum cardinality of 1 or greater.
+An example using these profiles:
 
-### Profiles
+> **Scenario 3:** A patient is tested for SARS-CoV-2 (COVID19) antigen via rapid immunoassay on February 17, 2021 with result detectable.
+>
+> Example resources:
+>
+> - [Scenario3Bundle]
+> - [Scenario1Patient]
+> - [Scenario3Lab]
 
-- **[VaccineCredentialPatient]**: Describes a minimal set of patient information to assist Verifiers in determining or verifying identity.
-
-- **[VaccineCredentialImmunization]**: Represents an immunization, includes vaccine information such as the CVX code identifying the vaccine, who administered the vaccine, etc.
-
-- **[VaccineCredentialAntibodyResultValueSet] [experimental]**: Represents the results of an antibody test. Included because a positive antibody test could be interpreted as showing immunity to the disease. This profile is considered "experimental" as it does not pertain to the core scope of the IG.
-
-- **[VaccineCredentialVaccineReactionObservation] [experimental]**: Represents an adverse reaction to a vaccination. Included because an adverse reaction may be interpreted by some actors as justification for not receiving the full series of a vaccination. This profile is considered "experimental" as it does not pertain to the core scope of the IG.
-
-Additionally, the following profiles from other IGs are used to represent key resources needed to implement this IG:
-
-- **[USCoreLocation]** represents the location (geographic, not body site) where the patient received their vaccination.
-
-#### Bundle
-
-The **[VaccineCredentialBundle]** collects resources conforming to the profiles listed above. Resources conforming to profiles outside this IG MAY also be included in Bundles conforming to [VaccineCredentialBundle].
-
-Each Bundle resource SHALL include resources related to one patient and one target disease. The target disease is identified as follows:
-
-- By `protocolApplied.targetDisease` in [VaccineCredentialImmunization]
-- By `extension[targetDisease]` in [VaccineCredentialImmuneStatus]
-- By the reference to an Immunization resource in [VaccineCredentialVaccineReactionObservation]
-
-TODO: Add guidance on when specific resources should be included in the bundle.
-
-### Examples
-
-1. Scenario 1: A patient receives two doses of the Moderna COVID-19 vaccine. The first dose was administered on January 1, 2021, and the second dose on January 29, 2021.
-
-    Example resources:
-
-    - [Scenario1Bundle]
-    - [Scenario1Patient]
-    - [Scenario1Immunization1]
-    - [Scenario1Immunization2]
-    - [Scenario1Location]
-
-1. Scenario 2: A patient receives two doses of the Pfizer-BioNTech COVID-19 vaccine. The first dose was administered on January 1, 2021, and the second dose on January 29, 2021.
-
-    Example resources:
-
-    - [Scenario2Bundle]
-    - [Scenario2Patient]
-    - [Scenario2Immunization1]
-    - [Scenario2Immunization2]
-    - [Scenario2Location]
-
-1. Miscellaneous examples:
-
-    1. [ExampleImmunizationNoCVX]\: Immunization resource showing how to record a vaccine without a published CVX code.
+A laboratory results profile specific to COVID-19 is provided to limit the `code` to a [value set describing COVID-19-specific tests][Covid19LaboratoryTestValueSet]. Additional disease-specific profiles may be added in the future. To represent a disease without a specific set of profiles, implementers SHALL use [InfectiousDiseaseLaboratoryResultObservation] and [InfectiousDiseaseLaboratoryResultObservationDM], which can be used with [VaccineCredentialLaboratoryBundle].
 
 ### Implementation notes
 
+- Implementers should see the [Conformance](conformance.html) page for further details, including details on `MustSupport` interpretation. Note that `MustSupport` **does not** mean an element is required in all cases.
+- If an Issuer wishes to include both vaccination and laboratory test results in the same Bundle resource, this resource SHALL validate against both [VaccineCredentialBundle] and [VaccineCredentialLaboratoryBundle].
+
 #### Data minimization
 
-A number of constraints apply to all Health Cards as documented in the [SMART Health Card specification](https://smarthealth.cards/#health-cards-are-small).
+The payload size of [SMART Health Cards is limited](https://smarthealth.cards/#health-cards-are-small), which limits the amount of data that SHOULD be included in FHIR resources that appear in SMART Health Card payloads.
+
+To assist Issuers in producing FHIR resources that have the minimal necessary data, this IG includes "data minimization" (DM) profiles in addition to "allowable data" (AD) profiles. The AD profiles identify required and `MustSupport` elements (see the [Conformance](conformance.html) page for further details). The DM profiles add additional constraints on top of their AD counterparts using `0..0` cardinality. Resources produced by issuers SHALL conform to the AD profiles, and SHOULD conform to the DM profiles UNLESS the Issuer intentionally includes additional information in the resource believed to be useful to Validators.
+
+To validate a specific resource against a DM profile, the [FHIR Validator](https://confluence.hl7.org/display/FHIR/Using+the+FHIR+Validator) can be used, where [package.tgz is downloaded from the IG](package.tgz):
+
+    java -jar path/to/validator_cli.jar -version 4.0.1 -ig hl7.fhir.us.core -ig package.tgz path/to/resource.json -profile http://hl7.org/fhir/us/smarthealthcards-vaccination/StructureDefinition/covid19-laboratory-result-observation-dm
+
+Additionally:
+
 - Implementers SHOULD NOT populate `Resource.id`, `Resource.meta`, or `Resource.text` elements.
 - Implementers SHOULD populate `Bundle.entry.fullUrl` elements with short resource-scheme URIs (e.g., {"fullUrl": "resource:0}).
-- Implementers SHOULD populate `Reference.reference` elements with short resource-scheme URIs (e.g., {"patient": {"reference": "resource:0"}}) which SHOULD resolve within the bundle.
+- Implementers SHOULD populate `Reference.reference` elements with short resource-scheme URIs (e.g., {"patient": {"reference": "Patient/r:0"}}) which SHALL resolve within the bundle.
 - Implementers SHOULD NOT populate `CodeableConcept.text` or `Coding.display` when using any value from a value set with a `required` binding, or using specified values from a value set with an `extensible` binding.
 - Likewise, implementers SHOULD NOT populate `CodeableConcept.text` or `Coding.display` when specifying codes that are fixed in profiles.
 - Use `YYYY-MM-DD` precision for all `dateTime` fields. Greater precision will result in a warning when validating a resource.
+
+#### Compatibility with IIS
+
+Resources representing a vaccination and associated data should be able to be directly populated with data from [IIS](https://www.cdc.gov/vaccines/programs/iis/index.html) implementations using the [HL7 v2.5.1 Implementation Guide for Immunization Messaging, Release 1.5](https://repository.immregistries.org/resource/hl7-version-2-5-1-implementation-guide-for-immunization-messaging-release-1-5-1/).
+
+### Supplemental data dictionary
+
+There is an [Excel data dictionary](data-dictionary/data_dictionary.xlsx) available here. This presents the IG's content in a format that may be more accessible than the default FHIR artifact pages. The Data Dictionary is a Excel spreadsheet that lists data elements and some details about them. If there is a discrepancy between the Data Dictionary and the FHIR artifacts, the FHIR artifacts are taken as the source of truth.
 
 {% include markdown-link-references.md %}
 

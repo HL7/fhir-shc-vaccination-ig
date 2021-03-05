@@ -19,11 +19,14 @@ copyrightYear: 2020+
 license: Apache-2.0
 releaseLabel: ci-build
 jurisdiction: urn:iso:std:iso:3166#US "United States of America"
+parameters:
+  "liquid-path": "liquid"
 
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │  To use a provided ig-data/input/includes/menu.xml file, delete the "menu" property below.     │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
 menu:
   Home: index.html
-  Artifacts: artifacts.html
-  GitHub Repository: https://github.com/dvci/vaccine-credential-ig
+  Conformance: conformance.html
+  "Data Dictionary (.xlsx)": data-dictionary/data_dictionary.xlsx
+  GitHub: https://github.com/dvci/vaccine-credential-ig
