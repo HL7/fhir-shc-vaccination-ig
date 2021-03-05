@@ -59,8 +59,8 @@
     {
       "fullUrl": "r:1",
       "resource": {
-        "id": "r:1",
         "resourceType": "Immunization",
+        "id": "Scenario2Immunization1",
         "status": "completed",
         "vaccineCode": {
           "coding": [
@@ -71,21 +71,24 @@
           ]
         },
         "patient": {
-          "reference": "Patient/r:0"
+          "reference": "Patient/Scenario2Patient"
         },
         "occurrenceDateTime": "2021-01-01",
-        "primarySource": true,
-        "location": {
-          "reference": "Location/r:3"
-        },
+        "performer": [
+          {
+            "actor": {
+              "display": "ABC General Hospital"
+            }
+          }
+        ],
         "lotNumber": "Lot #0000001"
       }
     },
     {
       "fullUrl": "r:2",
       "resource": {
-        "id": "r:2",
         "resourceType": "Immunization",
+        "id": "Scenario2Immunization2",
         "status": "completed",
         "vaccineCode": {
           "coding": [
@@ -96,22 +99,18 @@
           ]
         },
         "patient": {
-          "reference": "Patient/r:0"
+          "reference": "Patient/Scenario2Patient"
         },
         "occurrenceDateTime": "2021-01-29",
         "primarySource": true,
-        "location": {
-          "reference": "Location/r:3"
-        },
+        "performer": [
+          {
+            "actor": {
+              "display": "ABC General Hospital"
+            }
+          }
+        ],
         "lotNumber": "Lot #0000007"
-      }
-    },
-    {
-      "fullUrl": "r:3",
-      "resource": {
-        "id": "r:3",
-        "resourceType": "Location",
-        "name": "ABC Pharmacy"
       }
     }
   ]

@@ -2,9 +2,9 @@
     "resourceType": "Observation",
     "id": "Scenario3Lab",
     "status": "final",
-    "category":  [
+    "category": [
         {
-            "coding":  [
+            "coding": [
                 {
                     "system": "http://terminology.hl7.org/CodeSystem/observation-category",
                     "code": "laboratory"
@@ -13,7 +13,7 @@
         }
     ],
     "code": {
-        "coding":  [
+        "coding": [
             {
                 "system": "http://loinc.org",
                 "code": "94558-4"
@@ -25,11 +25,16 @@
     },
     "effectiveDateTime": "2021-02-17",
     "valueCodeableConcept": {
-        "coding":  [
+        "coding": [
             {
                 "system": "http://snomed.info/sct",
                 "code": "260373001"
             }
         ]
-    }
-  }
+    },
+    "performer": [
+        {
+            "display": "ABC General Hospital"
+        }
+    ]
+}

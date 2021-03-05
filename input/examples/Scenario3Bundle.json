@@ -45,39 +45,44 @@
     {
       "fullUrl": "r:1",
       "resource": {
-        "id": "r:1",
         "resourceType": "Observation",
+        "id": "Scenario3Lab",
         "status": "final",
-        "category":  [
-            {
-                "coding":  [
-                    {
-                        "system": "http://terminology.hl7.org/CodeSystem/observation-category",
-                        "code": "laboratory"
-                    }
-                ]
-            }
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "laboratory"
+              }
+            ]
+          }
         ],
         "code": {
-            "coding":  [
-                {
-                    "system": "http://loinc.org",
-                    "code": "94558-4"
-                }
-            ]
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "94558-4"
+            }
+          ]
         },
         "subject": {
-            "reference": "Patient/r:0"
+          "reference": "Patient/Scenario1Patient"
         },
         "effectiveDateTime": "2021-02-17",
         "valueCodeableConcept": {
-            "coding":  [
-                {
-                    "system": "http://snomed.info/sct",
-                    "code": "260373001"
-                }
-            ]
-        }
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "260373001"
+            }
+          ]
+        },
+        "performer": [
+          {
+            "display": "ABC General Hospital"
+          }
+        ]
       }
     }
   ]

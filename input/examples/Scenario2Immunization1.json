@@ -1,22 +1,25 @@
 {
-    "resourceType": "Immunization",
-    "id": "Scenario2Immunization1",
-    "status": "completed",
-    "vaccineCode": {
-      "coding": [
-        {
-          "system": "http://hl7.org/fhir/sid/cvx",
-          "code": "208"
-        }
-      ]
-    },
-    "patient": {
-      "reference": "Patient/Scenario2Patient"
-    },
-    "occurrenceDateTime": "2021-01-01",
-    "primarySource": true,
-    "location": {
-      "reference": "Location/Scenario2Location"
-    },
-    "lotNumber": "Lot #0000001"
-  }
+  "resourceType": "Immunization",
+  "id": "Scenario2Immunization1",
+  "status": "completed",
+  "vaccineCode": {
+    "coding": [
+      {
+        "system": "http://hl7.org/fhir/sid/cvx",
+        "code": "208"
+      }
+    ]
+  },
+  "patient": {
+    "reference": "Patient/Scenario2Patient"
+  },
+  "occurrenceDateTime": "2021-01-01",
+  "performer": [
+    {
+      "actor": {
+        "display": "ABC General Hospital"
+      }
+    }
+  ],
+  "lotNumber": "Lot #0000001"
+}
