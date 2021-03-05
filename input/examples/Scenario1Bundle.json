@@ -32,10 +32,6 @@
         "birthDate": "1951-01-20",
         "address": [
           {
-            "line": [
-              "123 Main St"
-            ],
-            "city": "Anytown",
             "postalCode": "12345",
             "country": "US"
           }

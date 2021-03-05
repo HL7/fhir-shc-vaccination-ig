@@ -11,10 +11,8 @@ publisher:
   name: TBD
   url: http://example.com
   email: example@example.com
-version: 0.2.0
+version: 0.2.1
 fhirVersion: 4.0.1
-dependencies:
-  hl7.fhir.us.core: 3.1.1
 copyrightYear: 2020+
 license: Apache-2.0
 releaseLabel: ci-build

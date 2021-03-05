@@ -25,10 +25,6 @@
     "birthDate": "1961-01-20",
     "address": [
       {
-        "line": [
-          "321 State St"
-        ],
-        "city": "Somecity",
         "postalCode": "12345",
         "country": "US"
       }
