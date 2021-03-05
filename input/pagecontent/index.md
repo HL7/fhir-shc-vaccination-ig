@@ -36,7 +36,6 @@ To represent patient and clinical data related to a vaccination, the [VaccineCre
 | --------------------------------------------- | ----------------------------------------------- | --------------------------------------------- | ----------------------- |
 | [VaccineCredentialPatient]                    | [VaccineCredentialPatientDM]                    | Identify the patient                          | Exactly 1 required      |
 | [VaccineCredentialImmunization]               | [VaccineCredentialImmunizationDM]               | Describe a vaccination                        | 1 or more required      |
-| [USCoreLocation]                              | TBD                                             | Identify the provider of the vaccination      | 1 or more required      |
 | [VaccineCredentialVaccineReactionObservation] | [VaccineCredentialVaccineReactionObservationDM] | Describe an adverse reaction to a vaccination | Optional (experimental) |
 
 Examples using these profiles:
@@ -110,6 +109,10 @@ Additionally:
 #### Compatibility with IIS
 
 Resources representing a vaccination and associated data should be able to be directly populated with data from [IIS](https://www.cdc.gov/vaccines/programs/iis/index.html) implementations using the [HL7 v2.5.1 Implementation Guide for Immunization Messaging, Release 1.5](https://repository.immregistries.org/resource/hl7-version-2-5-1-implementation-guide-for-immunization-messaging-release-1-5-1/).
+
+### Supplemental files
+
+There is an [Excel data dictionary](data-dictionary/data_dictionary.xlsx) available here. This presents the IG's content in a format that may be more accessible than the default FHIR artifact pages. The Data Dictionary is a Excel spreadsheet that lists data elements and some details about them. If there is a discrepancy between the Data Dictionary and the FHIR artifacts, the FHIR artifacts are taken as the source of truth.
 
 {% include markdown-link-references.md %}
 

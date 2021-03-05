@@ -28,5 +28,5 @@ parameters:
 menu:
   Home: index.html
   Conformance: conformance.html
-  Artifacts: artifacts.html
-  GitHub Repository: https://github.com/dvci/vaccine-credential-ig
+  "Data Dictionary (.xlsx)": data-dictionary/data_dictionary.xlsx
+  GitHub: https://github.com/dvci/vaccine-credential-ig

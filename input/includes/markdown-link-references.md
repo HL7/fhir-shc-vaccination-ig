@@ -1,5 +1,4 @@
 [RFC 2119]: https://tools.ietf.org/html/rfc2119
-[USCoreLocation]: https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-location.html
 [SMART Health Card]: https://healthwallet.cards/
 [SMART Health Cards]: https://healthwallet.cards/
 
@@ -31,13 +30,11 @@
 [Scenario1Patient]: Patient-Scenario1Patient.html
 [Scenario1Immunization1]: Immunization-Scenario1Immunization1.html
 [Scenario1Immunization2]: Immunization-Scenario1Immunization2.html
-[Scenario1Location]: Location-Scenario1Location.html
 [Scenario1Bundle]: Bundle-Scenario1Bundle.html
 
 [Scenario2Patient]: Patient-Scenario2Patient.html
 [Scenario2Immunization1]: Immunization-Scenario2Immunization1.html
 [Scenario2Immunization2]: Immunization-Scenario2Immunization2.html
-[Scenario2Location]: Location-Scenario2Location.html
 [Scenario2Bundle]: Bundle-Scenario2Bundle.html
 
 [Scenario3Lab]: Observation-Scenario3Lab.html
