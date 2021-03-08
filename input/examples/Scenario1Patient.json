@@ -1,6 +1,9 @@
 {
     "resourceType": "Patient",
     "id": "Scenario1Patient",
+    "meta": {
+      "security": [{"code": "P1"}]
+    },
     "name": [
       {
         "family": "Anyperson",

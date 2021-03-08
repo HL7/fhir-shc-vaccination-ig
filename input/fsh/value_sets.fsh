@@ -4,6 +4,7 @@ Alias: CVX = http://hl7.org/fhir/sid/cvx
 Alias: LNC = http://loinc.org
 Alias: SCT = http://snomed.info/sct
 Alias: ACT = http://terminology.hl7.org/CodeSystem/v3-ActReason
+Alias: TRST = https://github.com/TransparentHealth/800-63-3-trustmark
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -144,5 +145,16 @@ Other value sets may be added in the future."
 * SCT#260408008 "Weakly positive (qualifier value)"
 * SCT#260415000 "Not detected (qualifier value)"
 * SCT#720735008 "Presumptive positive (qualifier value)"
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ValueSet:    IdentityAssuranceLevelValueSet
+Id:          identity-assurance-level-value-set
+Title:       "Identity assurance level value set"
+Description: "Code representing NIST 800-63-3 identity assurance level"
+
+* TRST#P1 "Identity Proofing P1"
+* TRST#P2 "Identity Proofing P2"
+* TRST#P3 "Identity Proofing P3"
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -9,6 +9,9 @@ Description: "Slight modification of Patient, with identifier as 0..0 and limite
 * identifier 0..0
 * identifier ^definition = "Identifer is not allowed in this IG due to risk of accidental, unnecessary exposure of sensitive identifiers to verifiers."
 
+* meta.security 0..1
+* meta.security from IdentityAssuranceLevelValueSet (required)
+
 * name 1..*
 * name and name.given and name.family MS
 * name obeys name-invariant
