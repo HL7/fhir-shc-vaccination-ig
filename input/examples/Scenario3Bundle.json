@@ -6,7 +6,6 @@
     {
       "fullUrl": "resource:0",
       "resource": {
-        "id": "resource:0",
         "resourceType": "Patient",
         "name": [
           {
@@ -46,7 +45,6 @@
       "fullUrl": "resource:1",
       "resource": {
         "resourceType": "Observation",
-        "id": "Scenario3Lab",
         "status": "final",
         "category": [
           {
@@ -67,7 +65,7 @@
           ]
         },
         "subject": {
-          "reference": "Patient/Scenario1Patient"
+          "reference": "resource:0"
         },
         "effectiveDateTime": "2021-02-17",
         "valueCodeableConcept": {

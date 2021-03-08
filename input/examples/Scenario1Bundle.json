@@ -6,7 +6,6 @@
     {
       "fullUrl": "resource:0",
       "resource": {
-        "id": "resource:0",
         "resourceType": "Patient",
         "name": [
           {
@@ -42,7 +41,6 @@
       "fullUrl": "resource:1",
       "resource": {
         "resourceType": "Immunization",
-        "id": "Scenario1Immunization1",
         "status": "completed",
         "vaccineCode": {
           "coding": [
@@ -53,7 +51,7 @@
           ]
         },
         "patient": {
-          "reference": "Patient/Scenario1Patient"
+          "reference": "resource:0"
         },
         "occurrenceDateTime": "2021-01-01",
         "performer": [
@@ -70,7 +68,6 @@
       "fullUrl": "resource:2",
       "resource": {
         "resourceType": "Immunization",
-        "id": "Scenario1Immunization2",
         "status": "completed",
         "vaccineCode": {
           "coding": [
@@ -81,7 +78,7 @@
           ]
         },
         "patient": {
-          "reference": "Patient/Scenario1Patient"
+          "reference": "resource:0"
         },
         "occurrenceDateTime": "2021-01-29",
         "performer": [
