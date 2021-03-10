@@ -4,7 +4,7 @@ Alias: CVX = http://hl7.org/fhir/sid/cvx
 Alias: LNC = http://loinc.org
 Alias: SCT = http://snomed.info/sct
 Alias: ACT = http://terminology.hl7.org/CodeSystem/v3-ActReason
-Alias: TRST = https://github.com/TransparentHealth/800-63-3-trustmark
+Alias: LOA = https://smarthealth.cards/loa
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -153,8 +153,10 @@ Id:          identity-assurance-level-value-set
 Title:       "Identity assurance level value set"
 Description: "Code representing NIST 800-63-3 identity assurance level"
 
-* TRST#P1 "Identity Proofing P1"
-* TRST#P2 "Identity Proofing P2"
-* TRST#P3 "Identity Proofing P3"
+* LOA#IAL1 "Name and birth date were self-asserted."
+* LOA#IAL1.2 "Strong and/or Fair identity evidence other than a US state-issued photo ID or nationally-issued photo ID was used to verify name and birth date."
+* LOA#IAL1.4 "A US state-issued photo ID or nationally-issued photo ID was used to verify name and birth date."
+* LOA#IAL2 "Either remote or in-person identity proofing is required. IAL2 requires identifying attributes to have been verified in person or remotely using, at a minimum, the procedures given in NIST Special Publication 800-63A."
+* LOA#IAL3 "In-person identity proofing is required. Identifying attributes must be verified by an authorized CSP representative through examination of physical documentation as described in NIST Special Publication 800-63A."
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////

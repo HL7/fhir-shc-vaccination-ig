@@ -11,6 +11,7 @@ Description: "Slight modification of Patient, with identifier as 0..0 and limite
 
 * meta.security 0..1
 * meta.security from IdentityAssuranceLevelValueSet (required)
+* meta.security ^short = "Limited security label to convey patient identity level of assurance. Coding SHOULD include only code."
 
 * name 1..*
 * name and name.given and name.family MS
@@ -36,7 +37,11 @@ Parent:      VaccineCredentialPatient
 Title:       "Patient Profile - Data Minimization"
 Description: "Only elements necessary for Verifiers can be populated."
 
-* meta 0..0
+* meta.versionId 0..0
+* meta.lastUpdated 0..0
+* meta.source 0..0
+* meta.profile 0..0
+* meta.tag 0..0
 * implicitRules 0..0
 * language 0..0
 * text 0..0
