@@ -114,6 +114,10 @@ Resources representing a vaccination and associated data should be able to be di
 
 There is an [Excel data dictionary](data-dictionary/data_dictionary.xlsx) available here. This presents the IG's content in a format that may be more accessible than the default FHIR artifact pages. The Data Dictionary is a Excel spreadsheet that lists data elements and some details about them. If there is a discrepancy between the Data Dictionary and the FHIR artifacts, the FHIR artifacts are taken as the source of truth.
 
+----
+
+MITRE: Approved for Public Release. Distribution Unlimited. Case Number 21-0225
+
 {% include markdown-link-references.md %}
 
 <style>
