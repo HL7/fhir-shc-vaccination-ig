@@ -151,11 +151,12 @@ Other value sets may be added in the future."
 ValueSet:    IdentityAssuranceLevelValueSet
 Id:          identity-assurance-level-value-set
 Title:       "Identity assurance level value set"
-Description: "Code representing NIST 800-63-3 identity assurance level"
+Description: "Code representing identity assurance level, based on NIST 800-63-3"
 
 * LOA#IAL1 "Name and birth date were self-asserted."
 * LOA#IAL1.2 "Strong and/or Fair identity evidence other than a US state-issued photo ID or nationally-issued photo ID was used to verify name and birth date."
 * LOA#IAL1.4 "A US state-issued photo ID or nationally-issued photo ID was used to verify name and birth date."
+* LOA#IAL1.5 "An unspecified ID was used to verify name and birth date."
 * LOA#IAL2 "Either remote or in-person identity proofing is required. IAL2 requires identifying attributes to have been verified in person or remotely using, at a minimum, the procedures given in NIST Special Publication 800-63A."
 * LOA#IAL3 "In-person identity proofing is required. Identifying attributes must be verified by an authorized CSP representative through examination of physical documentation as described in NIST Special Publication 800-63A."
 

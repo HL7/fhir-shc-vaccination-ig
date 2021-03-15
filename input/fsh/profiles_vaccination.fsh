@@ -7,7 +7,11 @@ Title:       "Immunization Profile - Allowable Data"
 Description: "Defines a profile representing a vaccination for a vaccine credential Health Card."
 
 * patient only Reference(VaccineCredentialPatient)
-* vaccineCode MS
+
+* meta.security 0..1
+* meta.security from IdentityAssuranceLevelValueSet (required)
+* meta.security ^short = "Limited security label to convey identity level of assurance for patient referenced by this resource. Coding SHOULD include only code."
+* meta.security ^definition = "Limited security metadata which conveys an attestation that the immunization provider performed a certain level of identity verification at the time of service."
 
 * occurrence[x] MS
 * occurrenceDateTime 1..1 MS
@@ -16,10 +20,10 @@ Description: "Defines a profile representing a vaccination for a vaccine credent
 // Parent profile short description is not as clear as it could be
 * primarySource ^short = "Information in this record from person who administered vaccine?"
 
+* vaccineCode MS
 * vaccineCode from VaccineCredentialVaccineValueSet (extensible)
 * vaccineCode obeys vaccine-code-invariant
 * vaccineCode ^definition = "Implementers SHALL use a code from VaccineCredentialVaccineValueSet if this value set contains an appropriate code."
-
 
 * lotNumber MS
 
@@ -52,7 +56,11 @@ Parent:      VaccineCredentialImmunization
 Title:       "Immunization Profile - Data Minimization"
 Description: "Defines a profile representing a vaccination for a vaccine credential Health Card. Only elements necessary for Verifiers can be populated."
 
-* meta 0..0
+* meta.versionId 0..0
+* meta.lastUpdated 0..0
+* meta.source 0..0
+* meta.profile 0..0
+* meta.tag 0..0
 * implicitRules 0..0
 * language 0..0
 * text 0..0
