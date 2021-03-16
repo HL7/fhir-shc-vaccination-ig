@@ -1,9 +1,6 @@
 {
     "resourceType": "Patient",
     "id": "Scenario1Patient",
-    "meta": {
-      "security": [{"code": "IAL1"}]
-    },
     "name": [
       {
         "family": "Anyperson",

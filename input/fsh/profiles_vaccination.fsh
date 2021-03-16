@@ -11,7 +11,7 @@ Description: "Defines a profile representing a vaccination for a vaccine credent
 * meta.security 0..1
 * meta.security from IdentityAssuranceLevelValueSet (required)
 * meta.security ^short = "Limited security label to convey identity level of assurance for patient referenced by this resource. Coding SHOULD include only code."
-* meta.security ^definition = "Limited security metadata which conveys an attestation that the immunization provider performed a certain level of identity verification at the time of service."
+* meta.security ^definition = "Limited security metadata which conveys an attestation that the immunization provider performed a certain level of identity verification at the time of service. Issuers SHOULD attest to the highest level that applies."
 
 * occurrence[x] MS
 * occurrenceDateTime 1..1 MS

@@ -1,6 +1,9 @@
 {
   "resourceType": "Immunization",
   "id": "Scenario1Immunization1",
+  "meta": {
+    "security": [{"code": "IAL1"}]
+  },
   "status": "completed",
   "vaccineCode": {
     "coding": [
