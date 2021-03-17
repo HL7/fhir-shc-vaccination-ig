@@ -20,6 +20,7 @@ Description: "Slight modification of Patient, with identifier as 0..0 and limite
 
 // We want address.country and address.postalCode to be included if available
 // See https://github.com/dvci/vaccine-credential-ig/issues/37#issuecomment-776042494
+* address MS
 * address.country MS
 * address.postalCode MS
 
@@ -46,6 +47,8 @@ Description: "Only elements necessary for Verifiers can be populated."
 * name.use 0..0
 * telecom 0..0
 * deceased[x] 0..0
+* address.id 0..0
+* address.extension 0..0
 * address.use 0..0
 * address.type 0..0
 * address.text 0..0

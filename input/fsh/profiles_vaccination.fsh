@@ -7,6 +7,7 @@ Title:       "Immunization Profile - Allowable Data"
 Description: "Defines a profile representing a vaccination for a vaccine credential Health Card."
 
 * patient only Reference(VaccineCredentialPatient)
+* patient MS
 
 * meta.security 0..1
 * meta.security from IdentityAssuranceLevelValueSet (required)
@@ -23,7 +24,11 @@ Description: "Defines a profile representing a vaccination for a vaccine credent
 * vaccineCode MS
 * vaccineCode from VaccineCredentialVaccineValueSet (extensible)
 * vaccineCode obeys vaccine-code-invariant
-* vaccineCode ^definition = "Implementers SHALL use a code from VaccineCredentialVaccineValueSet if this value set contains an appropriate code."
+* vaccineCode ^definition = "Implementers SHALL use a code from VaccineCredentialVaccineValueSet if this value set contains an appropriate code.
+
+For COVID-19-related vaccinations, implementers SHOULD use one of the CVX codes [listed on the CDC's COVID-19 vaccine-related codes list](https://www.cdc.gov/vaccines/programs/iis/COVID-19-related-codes.html) whenever possible.
+
+We are actively investigating adding additional codes that are not United States-centric."
 
 * lotNumber MS
 
@@ -36,6 +41,7 @@ Description: "Defines a profile representing a vaccination for a vaccine credent
 * performer.actor ^definition = "Organization which was responsible for vaccine administration. Issuers SHOULD provide display name only. This is provided to Verifiers in case of invalid data in the credential, to support manual validation. This is not expected to be a computable Organization identifier."
 
 * status ^short = "Whether or not the vaccination was completed"
+* status MS
 
 * reportOrigin from VaccineCredentialReportOriginValueSet (extensible)
 * site from VaccineCredentialVaccineSiteValueSet (extensible)
@@ -46,7 +52,19 @@ Description: "Defines a profile representing a vaccination for a vaccine credent
 * reaction.detail only Reference(VaccineCredentialVaccineReactionObservation)
 
 * isSubpotent MS
-* isSubpotent ^definition = "Indication if a dose is considered to be subpotent. By default, a dose should be considered to be potent. Verifiers SHALL assume that if an Immunization resource is provided and isSubpotent is not true, then the dose was not subpotent. Issuers SHALL only populate isSubpotent if the value is true. Issuers SHALL NOT produce an Immunization resource for a known subpotent dose without populating isSubpotent."
+* isSubpotent ^definition = "Indication if a dose is considered to be subpotent.
+
+Issuers SHALL populate `isSubpotent` with `true` if the dose is known to be subpotent. Alternatively, Issuers MAY choose to not produce an Immunization resource at all if the dose is known to be subpotent as this resource would be unlikely to provide value to the other actors.
+
+Issuers SHALL NOT populate `isSubpotent` for potent doses.
+
+Verifiers SHALL assume that if an Immunization resource is provided and `isSubpotent` is not `true`, then the dose was fully potent."
+* isSubpotent ^comment = "It is critical that Verifiers process this element if it exists and is set to `true`. Therefore, `isSubpotent` is marked as `MustSupport` because it is also flagged with `Is-Modifier`, and per the [conformance requirements](conformance.html), Verifiers SHALL \"meaningfully process\" elements that are `MustSupport` and `Is-Modifier`.
+
+This element is therefore an exception to the guidance that Issuers must populate `MustSupport` elements if the data are available. An invariant is used to provide a computable representation of this exception: it will produce an error if `isSubpotent = false`, which is the expected value of this element for the vast majority of resources. Because full potency is implicit per this element's definition, we do not want to populate `isSubpotent` with `false` because it increases payload size without adding information.
+
+If `isSubpotent` was not allowed at all (`0..0` cardinality), the concern is that resources where `isSubpotent = true` would inadvertently be generated without any indication they were not potent."
+* isSubpotent obeys shall-be-true-if-populated-invariant
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -90,6 +108,8 @@ Description: "Defines a profile representing a vaccination for a vaccine credent
 // Required in DM profile to provide implementers with sterner warning when straying from the expected value sets
 * vaccineCode from VaccineCredentialVaccineValueSet (required)
 
+// Brought over from parent profile
+* isSubpotent obeys shall-be-true-if-populated-invariant
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 

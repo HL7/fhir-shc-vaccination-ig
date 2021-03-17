@@ -44,3 +44,10 @@ Invariant:   date-invariant
 Description: "All timestamps SHOULD be represented as Dates (YYYY-MM-DD only)."
 Expression:  "$this.toString().matches('^[0-9]{4}-[0-9]{2}-[0-9]{2}$')"
 Severity:    #warning
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Invariant:   shall-be-true-if-populated-invariant
+Description: "Shall be `true` if populated"
+Expression:  "$this.exists().not() or $this = true"
+Severity:    #error

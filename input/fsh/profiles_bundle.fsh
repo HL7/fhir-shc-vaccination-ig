@@ -7,6 +7,7 @@ Title: "Vaccine Credential Bundle"
 Description: "The bundle of resources that represents the clinical content of a digital vaccination record."
 
 * type  = #collection
+* type MS
 * entry ^slicing.discriminator.type = #profile
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
@@ -40,6 +41,7 @@ Title: "Vaccine Credential Laboratory Bundle"
 Description: "The bundle of resources that represents the clinical content of a digital lab credential record."
 
 * type  = #collection
+* type MS
 * entry ^slicing.discriminator.type = #profile
 * entry ^slicing.discriminator.path = "resource"
 * entry ^slicing.rules = #open
@@ -57,7 +59,7 @@ Description: "The bundle of resources that represents the clinical content of a 
 
 * entry[laboratoryResultObservation] ^short = "Laboratory result"
 * entry[laboratoryResultObservation] ^definition = "Laboratory result"
-* entry[laboratoryResultObservation].resource only Covid19LaboratoryResultObservation or InfectiousDiseaseLaboratoryResultObservation
+* entry[laboratoryResultObservation].resource only AbstractLaboratoryResultObservation
 * entry[laboratoryResultObservation] obeys vc-lab-1
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
