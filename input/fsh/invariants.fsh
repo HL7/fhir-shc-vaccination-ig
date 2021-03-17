@@ -47,13 +47,6 @@ Severity:    #warning
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Invariant:   should-be-true-if-populated-invariant
-Description: "Should be `true` if populated"
-Expression:  "$this.exists().not() or $this = true"
-Severity:    #warning
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
 Invariant:   shall-be-true-if-populated-invariant
 Description: "Shall be `true` if populated"
 Expression:  "$this.exists().not() or $this = true"
