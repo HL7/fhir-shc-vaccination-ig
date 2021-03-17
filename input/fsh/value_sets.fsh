@@ -4,6 +4,7 @@ Alias: CVX = http://hl7.org/fhir/sid/cvx
 Alias: LNC = http://loinc.org
 Alias: SCT = http://snomed.info/sct
 Alias: ACT = http://terminology.hl7.org/CodeSystem/v3-ActReason
+Alias: LOA = https://smarthealth.cards/loa
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -144,5 +145,18 @@ Other value sets may be added in the future."
 * SCT#260408008 "Weakly positive (qualifier value)"
 * SCT#260415000 "Not detected (qualifier value)"
 * SCT#720735008 "Presumptive positive (qualifier value)"
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ValueSet:    IdentityAssuranceLevelValueSet
+Id:          identity-assurance-level-value-set
+Title:       "Identity assurance level value set"
+Description: "Code representing identity assurance level, based on NIST 800-63-3"
+
+* LOA#IAL1 "Name and birth date were self-asserted."
+* LOA#IAL1.2 "An unspecified ID was used to verify name and birth date."
+* LOA#IAL1.4 "A US state-issued photo ID or nationally-issued photo ID was used to verify name and birth date."
+* LOA#IAL2 "Either remote or in-person identity proofing is required. IAL2 requires identifying attributes to have been verified in person or remotely using, at a minimum, the procedures given in NIST Special Publication 800-63A."
+* LOA#IAL3 "In-person identity proofing is required. Identifying attributes must be verified by an authorized CSP representative through examination of physical documentation as described in NIST Special Publication 800-63A."
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
