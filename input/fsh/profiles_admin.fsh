@@ -20,6 +20,7 @@ Description: "Slight modification of Patient, with identifier as 0..0 and limite
 
 // We want address.country and address.postalCode to be included if available
 // See https://github.com/dvci/vaccine-credential-ig/issues/37#issuecomment-776042494
+* address MS
 * address.country MS
 * address.postalCode MS
 
