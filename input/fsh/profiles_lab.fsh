@@ -29,6 +29,7 @@ RuleSet: LaboratoryResultObservation
 
 * effective[x] MS
 * effective[x] only dateTime or Period
+* effective[x] 1..1
 
 * value[x] MS
 
