@@ -19,8 +19,11 @@ Description: "Defines a profile representing a vaccination for a vaccine credent
 
 * vaccineCode from VaccineCredentialVaccineValueSet (extensible)
 * vaccineCode obeys vaccine-code-invariant
-* vaccineCode ^definition = "Implementers SHALL use a code from VaccineCredentialVaccineValueSet if this value set contains an appropriate code."
+* vaccineCode ^definition = "Implementers SHALL use a code from VaccineCredentialVaccineValueSet if this value set contains an appropriate code.
 
+For COVID-19-related vaccinations, implementers SHOULD use one of the CVX codes [listed on the CDC's COVID-19 vaccine-related codes list](https://www.cdc.gov/vaccines/programs/iis/COVID-19-related-codes.html) whenever possible.
+
+We are actively investigating adding additional codes that are not United States-centric."
 
 * lotNumber MS
 
