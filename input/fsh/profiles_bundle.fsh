@@ -57,7 +57,7 @@ Description: "The bundle of resources that represents the clinical content of a 
 
 * entry[laboratoryResultObservation] ^short = "Laboratory result"
 * entry[laboratoryResultObservation] ^definition = "Laboratory result"
-* entry[laboratoryResultObservation].resource only Covid19LaboratoryResultObservation or InfectiousDiseaseLaboratoryResultObservation
+* entry[laboratoryResultObservation].resource only AbstractLaboratoryResultObservation
 * entry[laboratoryResultObservation] obeys vc-lab-1
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
