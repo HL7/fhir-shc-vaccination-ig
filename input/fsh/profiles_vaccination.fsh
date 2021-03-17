@@ -7,6 +7,7 @@ Title:       "Immunization Profile - Allowable Data"
 Description: "Defines a profile representing a vaccination for a vaccine credential Health Card."
 
 * patient only Reference(VaccineCredentialPatient)
+* patient MS
 * vaccineCode MS
 
 * occurrence[x] MS
