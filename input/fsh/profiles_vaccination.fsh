@@ -33,6 +33,7 @@ Description: "Defines a profile representing a vaccination for a vaccine credent
 * performer.actor ^definition = "Organization which was responsible for vaccine administration. Issuers SHOULD provide display name only. This is provided to Verifiers in case of invalid data in the credential, to support manual validation. This is not expected to be a computable Organization identifier."
 
 * status ^short = "Whether or not the vaccination was completed"
+* status MS
 
 * reportOrigin from VaccineCredentialReportOriginValueSet (extensible)
 * site from VaccineCredentialVaccineSiteValueSet (extensible)
