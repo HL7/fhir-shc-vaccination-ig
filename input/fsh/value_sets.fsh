@@ -63,8 +63,7 @@ Description: "Source of secondarily reported records"
 * include codes from system http://hl7.org/fhir/ValueSet/immunization-origin
 
 // Support for IIS value set for RXA-9 - this is part of CDC NIP001
-* include codes from system http://phinvads.cdc.gov/fhir/ValueSet/2.16.840.1.114222.4.5.293
-// Note: as of 2021-03-18, this is not available in http://fhir.org/packages/us.cdc.phinvads
+* include codes from system http://phinvads.cdc.gov/fhir/ValueSet/2.16.840.1.114222.4.11.7450
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
