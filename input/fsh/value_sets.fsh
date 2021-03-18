@@ -41,7 +41,7 @@ Description: "Reasons a vaccine was not given"
 * ACT#PATOBJ
 
 // Support for IIS value set for RXA-18 (refusal reason) - this is CDC NIP002
-* include codes from system https://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.114222.4.11.3380
+* include codes from system http://phinvads.cdc.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3380
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -63,7 +63,8 @@ Description: "Source of secondarily reported records"
 * include codes from system http://hl7.org/fhir/ValueSet/immunization-origin
 
 // Support for IIS value set for RXA-9 - this is part of CDC NIP001
-* include codes from system https://phinvads.cdc.gov/vads/ViewCodeSystem.action?id=2.16.840.1.114222.4.5.293
+* include codes from system http://phinvads.cdc.gov/fhir/ValueSet/2.16.840.1.114222.4.5.293
+// Note: as of 2021-03-18, this is not available in http://fhir.org/packages/us.cdc.phinvads
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -107,7 +108,7 @@ Title:       "Funding source value set"
 Description: "Funding source for the vaccine"
 
 // Support for IIS value set for OBX-5 (extensible)
-* include codes from system https://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.114222.4.11.3287
+* include codes from system http://phinvads.cdc.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3287
 
 // Support for example binding from base FHIR Immunization resource
 * include codes from system http://hl7.org/fhir/ValueSet/immunization-funding-source
@@ -121,7 +122,8 @@ Title:       "Adverse reaction value set"
 Description: "Codes describing reactions to vaccinations"
 
 // Support for IIS value set for OBX-5
-* include codes from system https://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.114222.4.11.3288
+// Source: https://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.114222.4.11.3288
+* include codes from system http://phinvads.cdc.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3288
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -132,7 +134,7 @@ Description: "Currently includes COVID-19 lab codes via the
 [LIVD SARS CoV2 Test Codes value set](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1114.9/expansion)."
 
 // Support for CDC LIVD SARS CoV2 Test Codes
-* include codes from system https://cts.nlm.nih.gov/fhir/valueset/2.16.840.1.113762.1.4.1114.9
+* include codes from system http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1114.9
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
