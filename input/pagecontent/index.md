@@ -95,9 +95,27 @@ The payload size of [SMART Health Cards is limited](https://smarthealth.cards/#h
 
 To assist Issuers in producing FHIR resources that have the minimal necessary data, this IG includes "data minimization" (DM) profiles in addition to "allowable data" (AD) profiles. The AD profiles identify required and `MustSupport` elements (see the [Conformance](conformance.html) page for further details). The DM profiles add additional constraints on top of their AD counterparts using `0..0` cardinality. Resources produced by issuers SHALL conform to the AD profiles, and SHOULD conform to the DM profiles UNLESS the Issuer intentionally includes additional information in the resource believed to be useful to Validators.
 
-To validate a specific resource against a DM profile, the [FHIR Validator](https://confluence.hl7.org/display/FHIR/Using+the+FHIR+Validator) can be used, where [package.tgz is downloaded from the IG](package.tgz):
+To validate a specific resource against a DM profile, the [FHIR Validator](https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar) can be used, where [package.tgz is downloaded from the IG](package.tgz):
 
-    java -jar path/to/validator_cli.jar -version 4.0.1 -ig hl7.fhir.us.core -ig package.tgz path/to/resource.json -profile http://hl7.org/fhir/us/smarthealthcards-vaccination/StructureDefinition/covid19-laboratory-result-observation-dm
+```sh
+# Run to get latest validator_cli.jar (~80MB)
+curl -L -O https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar
+
+# Run to get latest package from this IG to validate against
+curl -L -O http://build.fhir.org/ig/dvci/vaccine-credential-ig/branches/main/package.tgz
+
+# Run to validate; note you will need to update the paths to (1) validator_cli.jar; (2) package.tgz;
+# (3) the resource you wish to validate.
+#
+# You will also need to specify the URI of the profile you wish to validate against. This can be found
+# under "Defining URL" on any of the profile pages in this IG.
+java -jar path/to/validator_cli.jar -version 4.0.1 \
+-ig path/to/package.tgz \
+-profile http://hl7.org/fhir/us/smarthealthcards-vaccination/StructureDefinition/covid19-laboratory-result-observation-dm \
+path/to/resource.json
+```
+
+You can also use the online validator at <https://inferno.healthit.gov/validator/>. To use this, click "Advanced Options" and upload [package.tgz](package.tgz), then select the name of the profile you want to validate against in the dropdown.
 
 Additionally:
 
