@@ -73,7 +73,6 @@
           "reference": "Patient/Scenario2Patient"
         },
         "occurrenceDateTime": "2021-01-29",
-        "primarySource": true,
         "performer": [
           {
             "actor": {

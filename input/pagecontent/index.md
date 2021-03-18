@@ -121,9 +121,54 @@ java -jar path/to/validator_cli.jar -version 4.0.1 \
 path/to/resource.json
 ```
 
-For convenience, here are the commands for validating the bundles:
+For convenience, here are the commands for validating bundles:
 
-* [VaccineCredentialBundleDM]
+* [VaccineCredentialBundle]:
+
+    ```sh
+    java -jar path/to/validator_cli.jar -version 4.0.1 \
+    -ig path/to/package.tgz \
+    -profile http://hl7.org/fhir/us/smarthealthcards-vaccination/StructureDefinition/vaccine-credential-bundle \
+    path/to/bundle.json
+    ```
+
+* [VaccineCredentialBundleDM]:
+
+    ```sh
+    java -jar path/to/validator_cli.jar -version 4.0.1 \
+    -ig path/to/package.tgz \
+    -profile http://hl7.org/fhir/us/smarthealthcards-vaccination/StructureDefinition/vaccine-credential-bundle-dm \
+    path/to/bundle.json
+    ```
+
+* [VaccineCredentialLaboratoryBundle]:
+
+    ```sh
+    java -jar path/to/validator_cli.jar -version 4.0.1 \
+    -ig path/to/package.tgz \
+    -profile http://hl7.org/fhir/us/smarthealthcards-vaccination/StructureDefinition/vaccine-credential-laboratory-bundle \
+    path/to/bundle.json
+    ```
+
+* [Covid19LaboratoryBundleDM]:
+
+    ```sh
+    java -jar path/to/validator_cli.jar -version 4.0.1 \
+    -ig path/to/package.tgz \
+    -profile http://hl7.org/fhir/us/smarthealthcards-vaccination/StructureDefinition/covid-19-laboratory-bundle-dm \
+    path/to/bundle.json
+    ```
+
+* [InfectiousDiseaseLaboratoryBundleDM]:
+
+    ```sh
+    java -jar path/to/validator_cli.jar -version 4.0.1 \
+    -ig path/to/package.tgz \
+    -profile http://hl7.org/fhir/us/smarthealthcards-vaccination/StructureDefinition/infections-disease-laboratory-bundle-dm \
+    path/to/bundle.json
+    ```
+
+Bundles produced by Issuers SHALL validate against [VaccineCredentialBundle] or [VaccineCredentialLaboratoryBundle] without errors, and SHOULD validate against [VaccineCredentialBundleDM], [Covid19LaboratoryBundleDM], or [InfectiousDiseaseLaboratoryBundleDM] without errors. To test validation, use one of the example bundles: [Scenario1Bundle], [Scenario2Bundle], or [Scenario3Bundle]; click the "JSON" tab and choose "Download", and then provide the path to the downloaded file in the above command for `path/to/bundle.json`.
 
 You can also use the online validator at <https://inferno.healthit.gov/validator/>. To use this, click "Advanced Options" and upload [package.tgz](package.tgz), then select the name of the profile you want to validate against in the dropdown.
 

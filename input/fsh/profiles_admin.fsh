@@ -34,7 +34,11 @@ Parent:      VaccineCredentialPatient
 Title:       "Patient Profile - Data Minimization"
 Description: "Only elements necessary for Verifiers can be populated."
 
-* meta 0..0
+* meta.versionId 0..0
+* meta.lastUpdated 0..0
+* meta.source 0..0
+* meta.profile 0..0
+* meta.tag 0..0
 * implicitRules 0..0
 * language 0..0
 * text 0..0

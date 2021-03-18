@@ -100,7 +100,7 @@ Description: "The bundle of resources that represents the clinical content of a 
 
 Profile: InfectiousDiseaseLaboratoryBundleDM
 Parent: Bundle
-Id: infections-disease-laboratory-bundle
+Id: infections-disease-laboratory-bundle-dm
 Title: "Infections Disease (Generic) Laboratory Bundle - Data Minimization"
 Description: "The bundle of resources that represents the clinical content of a digital lab credential record for a generic infectious disease for data minimization."
 
