@@ -119,7 +119,7 @@ curl -L -O http://build.fhir.org/ig/dvci/vaccine-credential-ig/branches/main/pac
 # under "Defining URL" on any of the profile pages in this IG.
 java -jar path/to/validator_cli.jar -version 4.0.1 \
 -ig path/to/package.tgz \
--profile http://hl7.org/fhir/us/smarthealthcards-vaccination/StructureDefinition/covid19-laboratory-result-observation-dm \
+-profile http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/covid19-laboratory-result-observation-dm \
 path/to/resource.json
 ```
 
@@ -130,7 +130,7 @@ For convenience, here are the commands for validating bundles:
     ```sh
     java -jar path/to/validator_cli.jar -version 4.0.1 \
     -ig path/to/package.tgz \
-    -profile http://hl7.org/fhir/us/smarthealthcards-vaccination/StructureDefinition/vaccine-credential-bundle \
+    -profile http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccine-credential-bundle \
     path/to/bundle.json
     ```
 
@@ -139,7 +139,7 @@ For convenience, here are the commands for validating bundles:
     ```sh
     java -jar path/to/validator_cli.jar -version 4.0.1 \
     -ig path/to/package.tgz \
-    -profile http://hl7.org/fhir/us/smarthealthcards-vaccination/StructureDefinition/vaccine-credential-bundle-dm \
+    -profile http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccine-credential-bundle-dm \
     path/to/bundle.json
     ```
 
@@ -148,7 +148,7 @@ For convenience, here are the commands for validating bundles:
     ```sh
     java -jar path/to/validator_cli.jar -version 4.0.1 \
     -ig path/to/package.tgz \
-    -profile http://hl7.org/fhir/us/smarthealthcards-vaccination/StructureDefinition/vaccine-credential-laboratory-bundle \
+    -profile http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccine-credential-laboratory-bundle \
     path/to/bundle.json
     ```
 
@@ -157,7 +157,7 @@ For convenience, here are the commands for validating bundles:
     ```sh
     java -jar path/to/validator_cli.jar -version 4.0.1 \
     -ig path/to/package.tgz \
-    -profile http://hl7.org/fhir/us/smarthealthcards-vaccination/StructureDefinition/covid-19-laboratory-bundle-dm \
+    -profile http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/covid-19-laboratory-bundle-dm \
     path/to/bundle.json
     ```
 
@@ -166,7 +166,7 @@ For convenience, here are the commands for validating bundles:
     ```sh
     java -jar path/to/validator_cli.jar -version 4.0.1 \
     -ig path/to/package.tgz \
-    -profile http://hl7.org/fhir/us/smarthealthcards-vaccination/StructureDefinition/infections-disease-laboratory-bundle-dm \
+    -profile http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/infections-disease-laboratory-bundle-dm \
     path/to/bundle.json
     ```
 

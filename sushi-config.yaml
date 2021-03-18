@@ -2,8 +2,8 @@
 # │  The properties below are used to create the ImplementationGuide resource. For a list of       │
 # │  supported properties, see: https://fshschool.org/sushi/configuration/                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: hl7.fhir.us.smarthealthcards-vaccination
-canonical: http://hl7.org/fhir/us/smarthealthcards-vaccination
+id: hl7.fhir.uv.smarthealthcards-vaccination
+canonical: http://hl7.org/fhir/uv/smarthealthcards-vaccination
 name: SMARTHealthCardsVaccinationAndTestingIG
 title: "SMART Health Cards: Vaccination &amp; Testing Implementation Guide"
 status: draft
@@ -16,7 +16,7 @@ fhirVersion: 4.0.1
 copyrightYear: 2020+
 license: Apache-2.0
 releaseLabel: ci-build
-jurisdiction: urn:iso:std:iso:3166#US "United States of America"
+jurisdiction: urn:iso:std:iso:3166#UV "Universal"
 parameters:
   "liquid-path": "liquid"
 
