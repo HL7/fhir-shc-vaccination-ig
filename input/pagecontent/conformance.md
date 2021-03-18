@@ -26,4 +26,9 @@ This specification uses the conformance verbs SHALL, SHOULD, and MAY as defined 
 
 Note that `MustSupport` does **not** indicate an element is **required** to be present in resource instances. Required elements are those with a minimum cardinality of 1 or greater. Instead, `MustSupport` is used to indicate elements that SHALL be populated **if and only if the necessary data are available in the Issuer's system.**
 
+### Missing data
+
+- If an Issuer does not have data for a `MustSupport` data element, the data element SHALL be omitted from the resource.
+- If an Issuer does not have data for a required data element (minimum cardinality > 0), the Issuer SHALL NOT produce the resource.
+
 {% include markdown-link-references.md %}
