@@ -108,9 +108,6 @@ Description: "Defines a profile representing a vaccination for a vaccine credent
 // Required in DM profile to provide implementers with sterner warning when straying from the expected value sets
 * vaccineCode from VaccineCredentialVaccineValueSet (required)
 
-// Brought over from parent profile
-* isSubpotent obeys shall-be-true-if-populated-invariant
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Profile:        VaccineCredentialVaccineReactionObservation

@@ -6,7 +6,7 @@
 [Covid19LaboratoryBundleDM]: StructureDefinition-covid-19-laboratory-bundle-dm.html
 [Covid19LaboratoryResultObservationDM]: StructureDefinition-covid19-laboratory-result-observation-dm.html
 [Covid19LaboratoryResultObservation]: StructureDefinition-covid19-laboratory-result-observation.html
-[InfectiousDiseaseLaboratoryBundleDM]: StructureDefinition-infections-disease-laboratory-bundle.html
+[InfectiousDiseaseLaboratoryBundleDM]: StructureDefinition-infections-disease-laboratory-bundle-dm.html
 [InfectiousDiseaseLaboratoryResultObservationDM]: StructureDefinition-infectious-disease-laboratory-result-observation-dm.html
 [InfectiousDiseaseLaboratoryResultObservation]: StructureDefinition-infectious-disease-laboratory-result-observation.html
 [VaccineCredentialBundleDM]: StructureDefinition-vaccine-credential-bundle-dm.html
@@ -20,6 +20,7 @@
 [VaccineCredentialVaccineReactionObservation]: StructureDefinition-vaccine-credential-vaccine-reaction-observation.html
 
 [Covid19LaboratoryTestValueSet]: ValueSet-covid19-laboratory-test-value-set.html
+[IdentityAssuranceLevelValueSet]: ValueSet-identity-assurance-level-value-set.html
 [LaboratoryResultValueSet]: ValueSet-laboratory-result-value-set.html
 [VaccineCredentialAntibodyResultValueSet]: ValueSet-vaccine-credential-antibody-result-value-set.html
 [VaccineCredentialFundingSourceValueSet]: ValueSet-vaccine-credential-funding-source-value-set.html
