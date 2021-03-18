@@ -99,7 +99,11 @@ The payload size of [SMART Health Cards is limited](https://smarthealth.cards/#h
 
 To assist Issuers in producing FHIR resources that have the minimal necessary data, this IG includes "data minimization" (DM) profiles in addition to "allowable data" (AD) profiles. The AD profiles identify required and `MustSupport` elements (see the [Conformance](conformance.html) page for further details). The DM profiles add additional constraints on top of their AD counterparts using `0..0` cardinality. Resources produced by issuers SHALL conform to the AD profiles, and SHOULD conform to the DM profiles UNLESS the Issuer intentionally includes additional information in the resource believed to be useful to Validators.
 
-To validate a specific resource against a DM profile, the [FHIR Validator](https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar) can be used, where [package.tgz is downloaded from the IG](package.tgz):
+See the following section for information on how to validate against the DM profiles.
+
+#### Validation
+
+To validate a specific resource against a profile, the [FHIR Validator](https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar) can be used, where [package.tgz is downloaded from the IG](package.tgz):
 
 ```sh
 # Run to get latest validator_cli.jar (~80MB)
@@ -166,7 +170,9 @@ For convenience, here are the commands for validating bundles:
     path/to/bundle.json
     ```
 
-Bundles produced by Issuers SHALL validate against [VaccineCredentialBundle] or [VaccineCredentialLaboratoryBundle] without errors, and SHOULD validate against [VaccineCredentialBundleDM], [Covid19LaboratoryBundleDM], or [InfectiousDiseaseLaboratoryBundleDM] without errors. To test validation, use one of the example bundles: [Scenario1Bundle], [Scenario2Bundle], or [Scenario3Bundle]; click the "JSON" tab and choose "Download", and then provide the path to the downloaded file in the above command for `path/to/bundle.json`.
+**Bundles produced by Issuers SHALL validate against [VaccineCredentialBundle] or [VaccineCredentialLaboratoryBundle] without errors and SHOULD validate against [VaccineCredentialBundleDM], [Covid19LaboratoryBundleDM], or [InfectiousDiseaseLaboratoryBundleDM] without errors.**
+
+To test validation, use one of the example bundles: [Scenario1Bundle], [Scenario2Bundle], or [Scenario3Bundle]; click the "JSON" tab and choose "Download", and then provide the path to the downloaded file in the above command for `path/to/bundle.json`.
 
 You can also use the online validator at <https://inferno.healthit.gov/validator/>. To use this, click "Advanced Options" and upload [package.tgz](package.tgz), then select the name of the profile you want to validate against in the dropdown.
 
