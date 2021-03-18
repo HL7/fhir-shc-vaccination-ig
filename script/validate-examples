@@ -2,16 +2,16 @@
 
 source script/validate-helper.sh
 
-validate_example input/examples/Scenario1Bundle.json vaccine-credential-bundle
-validate_example input/examples/Scenario1Bundle.json vaccine-credential-bundle-dm
-validate_example input/examples/Scenario1Immunization1.json vaccine-credential-immunization-dm
-validate_example input/examples/Scenario1Immunization2.json vaccine-credential-immunization-dm
-validate_example input/examples/Scenario1Patient.json vaccine-credential-patient-dm
-validate_example input/examples/Scenario2Bundle.json vaccine-credential-bundle
-validate_example input/examples/Scenario2Bundle.json vaccine-credential-bundle-dm
-validate_example input/examples/Scenario2Immunization1.json vaccine-credential-immunization-dm
-validate_example input/examples/Scenario2Immunization2.json vaccine-credential-immunization-dm
-validate_example input/examples/Scenario2Patient.json vaccine-credential-patient-dm
-validate_example input/examples/Scenario3Bundle.json vaccine-credential-laboratory-bundle
-validate_example input/examples/Scenario3Bundle.json covid-19-laboratory-bundle-dm
+validate_example input/examples/Scenario1Bundle.json vaccine-credential-bundle &&
+validate_example input/examples/Scenario1Bundle.json vaccine-credential-bundle-dm &&
+validate_example input/examples/Scenario1Immunization1.json vaccine-credential-immunization-dm &&
+validate_example input/examples/Scenario1Immunization2.json vaccine-credential-immunization-dm &&
+validate_example input/examples/Scenario1Patient.json vaccine-credential-patient-dm &&
+validate_example input/examples/Scenario2Bundle.json vaccine-credential-bundle &&
+validate_example input/examples/Scenario2Bundle.json vaccine-credential-bundle-dm &&
+validate_example input/examples/Scenario2Immunization1.json vaccine-credential-immunization-dm &&
+validate_example input/examples/Scenario2Immunization2.json vaccine-credential-immunization-dm &&
+validate_example input/examples/Scenario2Patient.json vaccine-credential-patient-dm &&
+validate_example input/examples/Scenario3Bundle.json vaccine-credential-laboratory-bundle &&
+validate_example input/examples/Scenario3Bundle.json covid-19-laboratory-bundle-dm &&
 validate_example input/examples/Scenario3Lab.json covid19-laboratory-result-observation-dm

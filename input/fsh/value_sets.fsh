@@ -1,10 +1,23 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+CodeSystem: CVX
+Id: cvx-temp
+Title: "Temporary CVX code system"
+Description: "Temporary CVX code system to add missing codes to http://hl7.org/fhir/sid/cvx from the canonical list at https://www2.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=tradename)."
+* ^url =  http://hl7.org/fhir/sid/cvx-TEMPORARY-CODE-SYSTEM
+* #207 "COVID-19, mRNA, LNP-S, PF, 100 mcg/0.5 mL dose"
+* #208 "COVID-19, mRNA, LNP-S, PF, 30 mcg/0.3 mL dose"
+* #210 "COVID-19 vaccine, vector-nr, rS-ChAdOx1, PF, 0.5 mL"
+* #212 "COVID-19 vaccine, vector-nr, rS-Ad26, PF, 0.5 mL"
+
 ValueSet:    VaccineCredentialVaccineValueSet
 Id:          vaccine-credential-vaccine-value-set
 Title:       "Value set for identifying vaccines"
 Description: "Includes [CVX codes](https://www2.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=tradename) to identify specific vaccinations."
-* include codes from system CVX
+* CVX#207 "COVID-19, mRNA, LNP-S, PF, 100 mcg/0.5 mL dose"
+* CVX#208 "COVID-19, mRNA, LNP-S, PF, 30 mcg/0.3 mL dose"
+* CVX#210 "COVID-19 vaccine, vector-nr, rS-ChAdOx1, PF, 0.5 mL"
+* CVX#212 "COVID-19 vaccine, vector-nr, rS-Ad26, PF, 0.5 mL"
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -139,15 +152,21 @@ Other value sets may be added in the future."
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+CodeSystem: IdentityAssuranceCodeSystem
+Id: identity-assurance-code-system
+Title: "Identity Assurance Code System"
+Description: "Code representing identity assurance level, based on NIST 800-63-3"
+* ^url =  http://terminology.hl7.org/CodeSystem/loa
+* #IAL1 "Name and birth date were self-asserted."
+* #IAL1.2 "An unspecified ID was used to verify name and birth date."
+* #IAL1.4 "A US state-issued photo ID or nationally-issued photo ID was used to verify name and birth date."
+* #IAL2 "Either remote or in-person identity proofing is required. IAL2 requires identifying attributes to have been verified in person or remotely using, at a minimum, the procedures given in NIST Special Publication 800-63A."
+* #IAL3 "In-person identity proofing is required. Identifying attributes must be verified by an authorized CSP representative through examination of physical documentation as described in NIST Special Publication 800-63A."
+
 ValueSet:    IdentityAssuranceLevelValueSet
 Id:          identity-assurance-level-value-set
 Title:       "Identity assurance level value set"
 Description: "Code representing identity assurance level, based on NIST 800-63-3"
-
-* LOA#IAL1 "Name and birth date were self-asserted."
-* LOA#IAL1.2 "An unspecified ID was used to verify name and birth date."
-* LOA#IAL1.4 "A US state-issued photo ID or nationally-issued photo ID was used to verify name and birth date."
-* LOA#IAL2 "Either remote or in-person identity proofing is required. IAL2 requires identifying attributes to have been verified in person or remotely using, at a minimum, the procedures given in NIST Special Publication 800-63A."
-* LOA#IAL3 "In-person identity proofing is required. Identifying attributes must be verified by an authorized CSP representative through examination of physical documentation as described in NIST Special Publication 800-63A."
+* include codes from system LOA
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////

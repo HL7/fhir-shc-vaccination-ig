@@ -1,5 +1,11 @@
-<div class="alert alert-info" role="alert" markdown="1">
+<div class="alert alert-danger" role="alert" markdown="1">
 **DRAFT Implementation Guide** This implementation guide is under active development on [GitHub](https://github.com/dvci/vaccine-credential-ig/issues), and may change without notice. Please comment on or [create](https://github.com/dvci/vaccine-credential-ig/issues/new) an issue on GitHub if you have questions, comments, or suggestions. Contributions are welcome!
+
+<div style="font-weight: bold;">Known Issues</div>
+
+* The [official FHIR CVX code system][https://terminology.hl7.org/2.0.0/CodeSystem-v2-0292.html] does not have up-to-date [CVX codes](https://phinvads.cdc.gov/vads/ViewValueSet.action?id=6F408928-7C62-EB11-819A-005056ABE2F0). We are working with HL7 to resolve this. In the meantime, we have defined a temporary local code system called `http://hl7.org/fhir/sid/cvx-TEMPORARY-CODE-SYSTEM`. This will be replaced by `http://hl7.org/fhir/sid/cvx` or another non-local code system as soon as possible. Implementers may use `http://hl7.org/fhir/sid/cvx-TEMPORARY-CODE-SYSTEM` to avoid validation errors when testing, but should use `http://hl7.org/fhir/sid/cvx` in production. Verifiers should validate CVX codes using the [PHVS_VaccinesAdministeredCVX_CDC_NIP value set](https://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.114222.4.11.934).
+* Other value sets in this IG are not being properly expanded. We are working to resolve this.
+
 </div>
 
 ### Scope
@@ -114,6 +120,10 @@ java -jar path/to/validator_cli.jar -version 4.0.1 \
 -profile http://hl7.org/fhir/us/smarthealthcards-vaccination/StructureDefinition/covid19-laboratory-result-observation-dm \
 path/to/resource.json
 ```
+
+For convenience, here are the commands for validating the bundles:
+
+* [VaccineCredentialBundleDM]
 
 You can also use the online validator at <https://inferno.healthit.gov/validator/>. To use this, click "Advanced Options" and upload [package.tgz](package.tgz), then select the name of the profile you want to validate against in the dropdown.
 

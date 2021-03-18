@@ -20,17 +20,6 @@
             ]
           }
         ],
-        "telecom": [
-          {
-            "system": "phone",
-            "value": "555-555-5555",
-            "use": "home"
-          },
-          {
-            "system": "email",
-            "value": "john.anyperson@example.com"
-          }
-        ],
         "gender": "male",
         "birthDate": "1951-01-20",
         "address": [
@@ -45,7 +34,7 @@
       "fullUrl": "resource:1",
       "resource": {
         "resourceType": "Immunization",
-        "id": "Scenario1Immunization1",
+        "id": "resource:1",
         "meta": {
           "security": [{"code": "IAL1"}]
         },
@@ -53,13 +42,13 @@
         "vaccineCode": {
           "coding": [
             {
-              "system": "http://hl7.org/fhir/sid/cvx",
+              "system": "http://hl7.org/fhir/sid/cvx-TEMPORARY-CODE-SYSTEM",
               "code": "207"
             }
           ]
         },
         "patient": {
-          "reference": "Patient/Scenario1Patient"
+          "reference": "Patient/resource:0"
         },
         "occurrenceDateTime": "2021-01-01",
         "performer": [
@@ -76,7 +65,7 @@
       "fullUrl": "resource:2",
       "resource": {
         "resourceType": "Immunization",
-        "id": "Scenario1Immunization2",
+        "id": "resource:2",
         "meta": {
           "security": [{"code": "IAL1.2"}]
         },
@@ -84,13 +73,13 @@
         "vaccineCode": {
           "coding": [
             {
-              "system": "http://hl7.org/fhir/sid/cvx",
+              "system": "http://hl7.org/fhir/sid/cvx-TEMPORARY-CODE-SYSTEM",
               "code": "207"
             }
           ]
         },
         "patient": {
-          "reference": "Patient/Scenario1Patient"
+          "reference": "Patient/resource:0"
         },
         "occurrenceDateTime": "2021-01-29",
         "performer": [
