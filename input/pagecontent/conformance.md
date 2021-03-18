@@ -22,7 +22,7 @@ This specification uses the conformance verbs SHALL, SHOULD, and MAY as defined 
 
 - Issuers SHALL populate any elements marked as `MustSupport` **if and only if the necessary data are available in their system**.
 - Issuers SHOULD NOT populate any elements that are not marked as `MustSupport` unless they believe the element contains valuable information for Verifiers. This is due to the payload size constraints of SMART Health Cards; see the [Data minimization](index.html#data-minimization) section below for more details on how to reduce payload size when implementing.
-- Verifiers SHALL be able to "meaningfully process" elements marked BOTH as `MustSupport` and `Is-Modifier`. For other elements flagged with `MustSupport`, Verifiers MAY process at their own discretion.
+- Verifiers SHALL be able to "meaningfully process" elements marked BOTH as `MustSupport` and `Is-Modifier`; these elements [by definition](https://www.hl7.org/fhir/conformance-rules.html#isModifier) **cannot be safely ignored** as they may change the meaning of the resource. For other elements flagged with `MustSupport`, Verifiers MAY process at their own discretion.
 
 Note that `MustSupport` does **not** indicate an element is **required** to be present in resource instances. Required elements are those with a minimum cardinality of 1 or greater. Instead, `MustSupport` is used to indicate elements that SHALL be populated **if and only if the necessary data are available in the Issuer's system.**
 
