@@ -37,6 +37,7 @@ To represent patient and clinical data related to a vaccination, the [VaccineCre
 | [VaccineCredentialPatient]                    | [VaccineCredentialPatientDM]                    | Identify the patient                          | Exactly 1 required      |
 | [VaccineCredentialImmunization]               | [VaccineCredentialImmunizationDM]               | Describe a vaccination                        | 1 or more required      |
 | [VaccineCredentialVaccineReactionObservation] | [VaccineCredentialVaccineReactionObservationDM] | Describe an adverse reaction to a vaccination | Optional (experimental) |
+| Bundle: [VaccineCredentialBundle]             | Bundle: [VaccineCredentialBundleDM]             | Bundle for wrapping the above resources       | n/a                     |
 
 Examples using these profiles:
 
@@ -65,10 +66,11 @@ Examples using these profiles:
 To represent patient and laboratory test result information, the [VaccineCredentialLaboratoryBundle] SHALL be used to wrap  resources conforming to these profiles:
 
 {:.table-striped.table}
-| Profile: Allowable Data              | Profile: Data Minimization             | Purpose                          | Required in bundle? |
-| ------------------------------------ | -------------------------------------- | -------------------------------- | ------------------- |
-| [VaccineCredentialPatient]           | [VaccineCredentialPatientDM]           | Identify the patient             | Required            |
-| [Covid19LaboratoryResultObservation] | [Covid19LaboratoryResultObservationDM] | Identify the lab test and result | Required            |
+| Profile: Allowable Data                     | Profile: Data Minimization                                                           | Purpose                                 | Required in bundle? |
+| ------------------------------------------- | ------------------------------------------------------------------------------------ | --------------------------------------- | ------------------- |
+| [VaccineCredentialPatient]                  | [VaccineCredentialPatientDM]                                                         | Identify the patient                    | Required            |
+| [Covid19LaboratoryResultObservation]        | [Covid19LaboratoryResultObservationDM]                                               | Identify the lab test and result        | Required            |
+| Bundle: [VaccineCredentialLaboratoryBundle] | Bundle: [Covid19LaboratoryBundleDM]<br>Bundle: [InfectiousDiseaseLaboratoryBundleDM] | Bundle for wrapping the above resources | n/a                 |
 
 An example using these profiles:
 
