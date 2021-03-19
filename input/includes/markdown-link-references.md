@@ -22,11 +22,9 @@
 [Covid19LaboratoryTestValueSet]: ValueSet-covid19-laboratory-test-value-set.html
 [IdentityAssuranceLevelValueSet]: ValueSet-identity-assurance-level-value-set.html
 [LaboratoryResultValueSet]: ValueSet-laboratory-result-value-set.html
-[VaccineCredentialAntibodyResultValueSet]: ValueSet-vaccine-credential-antibody-result-value-set.html
 [VaccineCredentialFundingSourceValueSet]: ValueSet-vaccine-credential-funding-source-value-set.html
 [VaccineCredentialReportOriginValueSet]: ValueSet-vaccine-credential-report-origin-value-set.html
 [VaccineCredentialStatusReasonValueSet]: ValueSet-vaccine-credential-status-reason-value-set.html
-[VaccineCredentialTargetDiseaseValueSet]: ValueSet-vaccine-credential-target-disease-value-set.html
 [VaccineCredentialVaccineReactionValueSet]: ValueSet-vaccine-credential-vaccine-reaction-value-set.html
 [VaccineCredentialVaccineRouteValueSet]: ValueSet-vaccine-credential-vaccine-route-value-set.html
 [VaccineCredentialVaccineSiteValueSet]: ValueSet-vaccine-credential-vaccine-site-value-set.html

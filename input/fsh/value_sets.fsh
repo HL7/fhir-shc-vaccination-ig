@@ -21,15 +21,6 @@ Description: "Includes [CVX codes](https://www2.cdc.gov/vaccines/iis/iisstandard
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-ValueSet:    VaccineCredentialAntibodyResultValueSet
-Id:          vaccine-credential-antibody-result-value-set
-Title:       "Antibody results value set"
-Description: "Result codes for SARS coronavirus 2 antibodies"
-* LNC#LA6577-6 "Negative"
-* LNC#LA6576-8 "Positive"
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
 // For Immunization.statusReason
 ValueSet:    VaccineCredentialStatusReasonValueSet
 Id:          vaccine-credential-status-reason-value-set
@@ -42,14 +33,6 @@ Description: "Reasons a vaccine was not given"
 
 // Support for IIS value set for RXA-18 (refusal reason) - this is CDC NIP002
 * include codes from system http://phinvads.cdc.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3380
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
-ValueSet:    VaccineCredentialTargetDiseaseValueSet
-Id:          vaccine-credential-target-disease-value-set
-Title:       "Target disease value set"
-Description: "Disease targeted by the vaccination or other observation"
-* codes from system SCT where concept is-a #40733004
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
