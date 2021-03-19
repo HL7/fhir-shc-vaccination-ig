@@ -51,3 +51,17 @@ Invariant:   shall-be-true-if-populated-invariant
 Description: "Shall be `true` if populated"
 Expression:  "$this.exists().not() or $this = true"
 Severity:    #error
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Invariant:   should-be-under-50-chars
+Description: "Length SHOULD be <50 for data minimization."
+Expression:  "$this.length() < 50')"
+Severity:    #warning
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Invariant:   should-be-under-20-chars
+Description: "Length SHOULD be <20 for data minimization."
+Expression:  "$this.length() < 20"
+Severity:    #warning

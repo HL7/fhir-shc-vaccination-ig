@@ -6,6 +6,8 @@ Id: vaccine-credential-bundle
 Title: "Vaccine Credential Bundle - Allowable Data"
 Description: "The bundle of resources that represents the clinical content of a digital vaccination record."
 
+* id obeys should-be-under-20-chars
+
 * type  = #collection
 * type MS
 * entry ^slicing.discriminator.type = #profile
@@ -39,6 +41,8 @@ Parent: Bundle
 Id: vaccine-credential-bundle-dm
 Title: "Vaccine Credential Bundle - Data Minimization"
 Description: "The bundle of resources that represents the clinical content of a digital vaccination record using data minimization profiles."
+
+* id obeys should-be-under-20-chars
 
 * type  = #collection
 * type MS
@@ -74,6 +78,8 @@ Id: vaccine-credential-laboratory-bundle
 Title: "Vaccine Credential Laboratory Bundle - Allowable Data"
 Description: "The bundle of resources that represents the clinical content of a digital lab credential record."
 
+* id obeys should-be-under-20-chars
+
 * type  = #collection
 * type MS
 * entry ^slicing.discriminator.type = #profile
@@ -104,6 +110,8 @@ Id: infections-disease-laboratory-bundle-dm
 Title: "Infections Disease (Generic) Laboratory Bundle - Data Minimization"
 Description: "The bundle of resources that represents the clinical content of a digital lab credential record for a generic infectious disease for data minimization."
 
+* id obeys should-be-under-20-chars
+
 * type  = #collection
 * type MS
 * entry ^slicing.discriminator.type = #profile
@@ -133,6 +141,8 @@ Parent: Bundle
 Id: covid-19-laboratory-bundle-dm
 Title: "COVID-19-specific Laboratory Bundle - Data Minimization"
 Description: "The bundle of resources that represents the clinical content of a digital lab credential record specifically for COVID-19 data minimization."
+
+* id obeys should-be-under-20-chars
 
 * type  = #collection
 * type MS

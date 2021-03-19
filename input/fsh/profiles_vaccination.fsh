@@ -6,6 +6,8 @@ Parent:      Immunization
 Title:       "Immunization Profile - Allowable Data"
 Description: "Defines a profile representing a vaccination for a vaccine credential Health Card."
 
+* id obeys should-be-under-20-chars
+
 * patient only Reference(VaccineCredentialPatient)
 * patient MS
 
@@ -31,6 +33,7 @@ For COVID-19-related vaccinations, implementers SHOULD use one of the CVX codes 
 We are actively investigating adding additional codes that are not United States-centric."
 
 * lotNumber MS
+* lotNumber obeys should-be-under-20-chars
 
 * protocolApplied 0..0 // See explanation in pagecontent/StructureDefinition-vaccine-credential-immunization-intro.md
 
@@ -121,6 +124,8 @@ This profile may not be necessary depending on the use cases for this IG, but it
 we wanted to have value sets corresponding to all the value sets in the IIS core data elements. In this
 profile, VaccineCredentialVaccineReactionValueSet includes the IIS adverse reaction codes."
 * ^status = #draft
+
+* id obeys should-be-under-20-chars
 
 * code = SCT#293104008 "Vaccines adverse reaction (disorder)"
 
