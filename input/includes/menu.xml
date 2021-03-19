@@ -25,9 +25,14 @@
         <a href="StructureDefinition-vaccine-credential-bundle.html">Bundle: Immunization</a>
         <a href="StructureDefinition-vaccine-credential-bundle-dm.html">(DM)</a>
       </li>
-      <li><a href="StructureDefinition-vaccine-credential-laboratory-bundle.html">Bundle: Labs</a></li>
-      <li><a href="StructureDefinition-covid-19-laboratory-bundle-dm.html">Bundle: COVID-19 Labs (DM only)</a></li>
-      <li><a href="StructureDefinition-covid-19-laboratory-bundle-dm.html">Bundle: Generic Labs (DM only)</a></li>
+      <li class="side-by-side">
+        <a href="StructureDefinition-covid-19-laboratory-bundle.html">Bundle: COVID-19 Labs</a>
+        <a href="StructureDefinition-covid-19-laboratory-bundle-dm.html">(DM)</a>
+      </li>
+      <li class="side-by-side">
+        <a href="StructureDefinition-covid-19-laboratory-bundle.html">Bundle: Generic Labs</a>
+        <a href="StructureDefinition-covid-19-laboratory-bundle-dm.html">(DM)</a>
+      </li>
       <li role="separator" class="divider"></li>
       <li class="side-by-side">
         <a href="StructureDefinition-vaccine-credential-vaccine-reaction-observation.html">Experimental: Vaccination Reaction</a>

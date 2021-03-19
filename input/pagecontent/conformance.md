@@ -59,7 +59,7 @@ Additionally:
 
 ### Bundles
 
-Bundles produced by Issuers SHALL validate against [VaccineCredentialBundle] or [VaccineCredentialLaboratoryBundle] without errors and SHOULD validate against [VaccineCredentialBundleDM], [Covid19LaboratoryBundleDM], or [InfectiousDiseaseLaboratoryBundleDM] without errors.
+Bundles produced by Issuers SHALL validate against [VaccineCredentialBundle] or [Covid19LaboratoryBundle]/[InfectiousDiseaseLaboratoryBundle] without errors, and SHOULD validate against [VaccineCredentialBundleDM] or [Covid19LaboratoryBundleDM]/[InfectiousDiseaseLaboratoryBundleDM] without errors.
 
 If an Issuer wishes to include both vaccination and laboratory test results in the same Bundle resource, this resource SHALL validate against both [VaccineCredentialBundle] and [VaccineCredentialLaboratoryBundle], and SHOULD validate against their DM counterparts.
 
@@ -105,12 +105,21 @@ For convenience, here are the commands for validating bundles:
     path/to/bundle.json
     ```
 
-* [VaccineCredentialLaboratoryBundle]:
+* [Covid19LaboratoryBundle]:
 
     ```sh
     java -jar path/to/validator_cli.jar -version 4.0.1 \
     -ig path/to/package.tgz \
-    -profile http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccine-credential-laboratory-bundle \
+    -profile http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/covid-19-laboratory-bundle \
+    path/to/bundle.json
+    ```
+
+* [InfectiousDiseaseLaboratoryBundle]:
+
+    ```sh
+    java -jar path/to/validator_cli.jar -version 4.0.1 \
+    -ig path/to/package.tgz \
+    -profile http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/infections-disease-laboratory-bundle \
     path/to/bundle.json
     ```
 

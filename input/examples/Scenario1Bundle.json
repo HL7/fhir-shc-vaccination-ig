@@ -8,9 +8,6 @@
       "resource": {
         "id": "resource:0",
         "resourceType": "Patient",
-        "meta": {
-          "security": [{"code": "IAL1"}]
-        },
         "name": [
           {
             "family": "Anyperson",

@@ -16,7 +16,7 @@ This [FHIR Implementation Guide](https://www.hl7.org/fhir/implementationguide.ht
 1. Describes the clinical information necessary to create a [SMART Health Card] identifying vaccination and laboratory testing status for infectious diseases such as [COVID-19](https://www.cdc.gov/coronavirus/2019-ncov/index.html). In particular, it describes the content of the credential subject of a verifiable credential in which the credential types include "https://smarthealth.cards#health-card", "https://smarthealth.cards#immunization" and/or "https://smarthealth.cards#laboratory", and optionally "https://smarthealth.cards#covid19".
 2. Describes a minimal set of patient information (name and contact information) that is also included in the [SMART Health Card].
 
-The goal of this IG is to constrain resources for use specifically in [SMART Health Cards]. This applies to the contents of both digital and paper Health Cards, including Health Cards produced via a Health Card-specific FHIR endpoint like `[base]/Patient/:id/$HealthWallet.issueVc`. This IG is not applicable to general purpose FHIR endpoints like `[base]/Patient/:id/Immunization`; these are governed by other IGs like [US Core](https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-immunization.html).
+The goal of this IG is to constrain resources for use specifically in [SMART Health Cards]. This applies to the contents of both digital and paper Health Cards, including Health Cards produced via a Health Card-specific FHIR endpoint like `[base]/Patient/:id/$health-cards-issue`. This IG is not applicable to general purpose FHIR endpoints like `[base]/Patient/:id/Immunization`; these are governed by other IGs like [US Core](https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-immunization.html).
 
 ### Actors
 
@@ -32,7 +32,7 @@ Issuers and Verifiers are considered "implementers" of this IG.
 
 Our primary focus is on the use case of representing the minimal set of clinical data necessary to represent COVID-19 vaccination status and laboratory testing for verification purposes in a SMART Health Card.
 
-Due to the size constraints of the SMART Health Card payload, a "data minimization" profile is provided to supplement each of the "allowable data" profiles. Please see the [Data minimization](#data-minimization) section for details.
+Due to the size constraints of the SMART Health Card payload, a "data minimization" profile is provided to supplement each of the "allowable data" profiles. Please see the [Data minimization](conformance.html#data-minimization) section for details.
 
 #### Use case 1: vaccination credentials
 
@@ -68,14 +68,14 @@ Examples using these profiles:
 
 #### Use case 2: laboratory test result credentials
 
-To represent patient and laboratory test result information, the [VaccineCredentialLaboratoryBundle] SHALL be used to wrap  resources conforming to these profiles:
+To represent patient and laboratory test result information, [Covid19LaboratoryBundle] or [InfectiousDiseaseLaboratoryBundle] SHALL be used to wrap resources conforming to these profiles:
 
 {:.table-striped.table}
-| Profile: Allowable Data                     | Profile: Data Minimization                                                  | Purpose                                 | Required in bundle? |
-| ------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------- | ------------------- |
-| [VaccineCredentialPatient]                  | [VaccineCredentialPatientDM]                                                | Identify the patient                    | Required            |
-| [Covid19LaboratoryResultObservation]        | [Covid19LaboratoryResultObservationDM]                                      | Identify the lab test and result        | Required            |
-| Bundle: [VaccineCredentialLaboratoryBundle] | Bundles: [Covid19LaboratoryBundleDM], [InfectiousDiseaseLaboratoryBundleDM] | Bundle for wrapping the above resources | n/a                 |
+| Profile: Allowable Data                                                 | Profile: Data Minimization                                                  | Purpose                                 | Required in bundle? |
+| ----------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------- | ------------------- |
+| [VaccineCredentialPatient]                                              | [VaccineCredentialPatientDM]                                                | Identify the patient                    | Required            |
+| [Covid19LaboratoryResultObservation]                                    | [Covid19LaboratoryResultObservationDM]                                      | Identify the lab test and result        | Required            |
+| Bundles: [Covid19LaboratoryBundle], [InfectiousDiseaseLaboratoryBundle] | Bundles: [Covid19LaboratoryBundleDM], [InfectiousDiseaseLaboratoryBundleDM] | Bundle for wrapping the above resources | n/a                 |
 
 An example using these profiles:
 
@@ -104,6 +104,18 @@ The IG is currently focused on coordinating implementers' representations of rel
     Embedding stringent validation criteria in our FHIR profiles may make it impossible for implementers with less stringent criteria to use this IG.
 
 1. More constrained profiles for risk evaluation can be created based on the profiles in this IG, but it's not possible to remove constraints in a child profile.
+
+### Identity assurance
+
+The [VaccineCredentialPatient] and [Covid19LaboratoryBundle]/[InfectiousDiseaseLaboratoryBundle] profiles include a mechanism for indicating level of identity assurance of the patient. This uses the [IdentityAssuranceLevelValueSet] in this format:
+
+```json
+"meta": {
+  "security": [{"code": "IAL1"}]
+}
+```
+
+Issuers SHALL populate these elements if identity assurance information is available.
 
 ### Compatibility with IIS
 
