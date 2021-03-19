@@ -110,9 +110,7 @@ RuleSet: LaboratoryResultObservationDM
 * modifierExtension 0..0
 * basedOn 0..0
 * partOf 0..0
-* category.id 0..0
 * category.extension 0..0
-* category.text 0..0
 * focus 0..0
 * issued 0..0
 * dataAbsentReason 0..0
