@@ -39,6 +39,12 @@ RuleSet: LaboratoryResultObservation
 * performer ^short = "Organization which was responsible for laboratory record."
 * performer ^definition = "Organization which was responsible for laboratory record. Issuers SHOULD provide display name only. This is provided to Verifiers in case of invalid data in the credential, to support manual validation. This is not expected to be a computable Organization identifier."
 
+// VCI-specific (not from US Core)
+* id obeys should-be-under-20-chars
+* category[laboratory].coding MS
+* category[laboratory].coding.code MS
+* category[laboratory].coding.system MS
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Profile:        AbstractLaboratoryResultObservation
@@ -61,6 +67,7 @@ Description:    "Profile for reporting COVID-19-related laboratory results indic
 previous infection status."
 
 * insert LaboratoryResultObservation
+
 
 // This binding can be required because implementers can fall back to InfectiousDiseaseLaboratoryResultObservation
 * code from Covid19LaboratoryTestValueSet (required)
@@ -145,6 +152,7 @@ Title:          "Generic Laboratory Result Observation Profile - Allowable Data"
 Description:    "Profile for reporting laboratory results indicating current or previous infection status for a disease without a specified laboratory result profile."
 
 * insert LaboratoryResultObservation
+
 
 // Show an error if the code is part of a value set used in a disease-specific profile. If that's
 // the case, there's no reason to use this generic profile -- the disease-specific profile should

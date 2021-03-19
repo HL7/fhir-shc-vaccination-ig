@@ -34,9 +34,10 @@ We are actively investigating adding additional codes that are not United States
 
 * protocolApplied 0..0 // See explanation in pagecontent/StructureDefinition-vaccine-credential-immunization-intro.md
 
-* performer.actor only Reference(Organization)
 * performer MS
 * performer 0..1
+* performer.actor only Reference(Organization)
+* performer.actor MS
 * performer.actor ^short = "Organization which was responsible for vaccine administration."
 * performer.actor ^definition = "Organization which was responsible for vaccine administration. Issuers SHOULD provide display name only. This is provided to Verifiers in case of invalid data in the credential, to support manual validation. This is not expected to be a computable Organization identifier."
 
