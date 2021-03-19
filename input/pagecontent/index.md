@@ -89,109 +89,23 @@ An example using these profiles:
 
 A laboratory results profile specific to COVID-19 is provided to limit the `code` to a [value set describing COVID-19-specific tests][Covid19LaboratoryTestValueSet]. Additional disease-specific profiles may be added in the future. To represent a disease without a specific set of profiles, implementers SHALL use [InfectiousDiseaseLaboratoryResultObservation] and [InfectiousDiseaseLaboratoryResultObservationDM], which can be used with [VaccineCredentialLaboratoryBundle].
 
-### Implementation notes
+### Approach to constraints in profiles
 
-- Implementers should see the [Conformance](conformance.html) page for further details, including details on `MustSupport` interpretation. Note that `MustSupport` **does not** mean an element is required in all cases.
-- If an Issuer wishes to include both vaccination and laboratory test results in the same Bundle resource, this resource SHALL validate against both [VaccineCredentialBundle] and [VaccineCredentialLaboratoryBundle].
+The IG is currently focused on coordinating implementers' representations of relevant clinical data, rather than evaluating risk or applying decision rules based on these clinical data. For example, this IG does not include information about which vaccine products are considered effective, or which dosing protocols are appropriate for a given product. The rationale for focusing on "conveying a clinical history" rather than "evaluating risk or making decisions" is:
 
-#### Data minimization
+1. Risk evaluation algorithms are likely to evolve faster than IG constraints can be updated.
 
-The payload size of [SMART Health Cards is limited](https://smarthealth.cards/#health-cards-are-small), which limits the amount of data that SHOULD be included in FHIR resources that appear in SMART Health Card payloads.
+    For example, constraining the [VaccineCredentialImmunization] profile to require specific `vaccineCode` values (e.g., only `CVX#207` and `CVX#208` for the current Moderna and Pfizer-BioNTech vaccines) could pose a problem if a new vaccine receives emergency authorization: recipients of the new vaccination would have non-conforming Immunization resources due to the constraints on `vaccineCode` until the IG could be updated and published.
 
-To assist Issuers in producing FHIR resources that have the minimal necessary data, this IG includes "data minimization" (DM) profiles in addition to "allowable data" (AD) profiles. The AD profiles identify required and `MustSupport` elements (see the [Conformance](conformance.html) page for further details). The DM profiles add additional constraints on top of their AD counterparts using `0..0` cardinality. Resources produced by issuers SHALL conform to the AD profiles, and SHOULD conform to the DM profiles UNLESS the Issuer intentionally includes additional information in the resource believed to be useful to Validators.
+1. Risk evaluation algorithms may be actor- or context-dependent.
 
-See the following section for information on how to validate against the DM profiles.
+    For example, some parties may only consider FDA-approved or EUA vaccines to be acceptable, while others may accept vaccines approved in other countries.
 
-#### Validation
+    Embedding stringent validation criteria in our FHIR profiles may make it impossible for implementers with less stringent criteria to use this IG.
 
-To validate a specific resource against a profile, the [FHIR Validator](https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar) can be used, where [package.tgz is downloaded from the IG](package.tgz):
+1. More constrained profiles for risk evaluation can be created based on the profiles in this IG, but it's not possible to remove constraints in a child profile.
 
-```sh
-# Run to get latest validator_cli.jar (~80MB)
-curl -L -O https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar
-
-# Run to get latest package from this IG to validate against
-curl -L -O http://build.fhir.org/ig/dvci/vaccine-credential-ig/branches/main/package.tgz
-
-# Run to validate; note you will need to update the paths to (1) validator_cli.jar; (2) package.tgz;
-# (3) the resource you wish to validate.
-#
-# You will also need to specify the URI of the profile you wish to validate against. This can be found
-# under "Defining URL" on any of the profile pages in this IG.
-java -jar path/to/validator_cli.jar -version 4.0.1 \
--ig path/to/package.tgz \
--profile http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/covid19-laboratory-result-observation-dm \
-path/to/resource.json
-```
-
-For convenience, here are the commands for validating bundles:
-
-* [VaccineCredentialBundle]:
-
-    ```sh
-    java -jar path/to/validator_cli.jar -version 4.0.1 \
-    -ig path/to/package.tgz \
-    -profile http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccine-credential-bundle \
-    path/to/bundle.json
-    ```
-
-* [VaccineCredentialBundleDM]:
-
-    ```sh
-    java -jar path/to/validator_cli.jar -version 4.0.1 \
-    -ig path/to/package.tgz \
-    -profile http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccine-credential-bundle-dm \
-    path/to/bundle.json
-    ```
-
-* [VaccineCredentialLaboratoryBundle]:
-
-    ```sh
-    java -jar path/to/validator_cli.jar -version 4.0.1 \
-    -ig path/to/package.tgz \
-    -profile http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccine-credential-laboratory-bundle \
-    path/to/bundle.json
-    ```
-
-* [Covid19LaboratoryBundleDM]:
-
-    ```sh
-    java -jar path/to/validator_cli.jar -version 4.0.1 \
-    -ig path/to/package.tgz \
-    -profile http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/covid-19-laboratory-bundle-dm \
-    path/to/bundle.json
-    ```
-
-* [InfectiousDiseaseLaboratoryBundleDM]:
-
-    ```sh
-    java -jar path/to/validator_cli.jar -version 4.0.1 \
-    -ig path/to/package.tgz \
-    -profile http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/infections-disease-laboratory-bundle-dm \
-    path/to/bundle.json
-    ```
-
-**Bundles produced by Issuers SHALL validate against [VaccineCredentialBundle] or [VaccineCredentialLaboratoryBundle] without errors and SHOULD validate against [VaccineCredentialBundleDM], [Covid19LaboratoryBundleDM], or [InfectiousDiseaseLaboratoryBundleDM] without errors.**
-
-To test validation, use one of the example bundles: [Scenario1Bundle], [Scenario2Bundle], or [Scenario3Bundle]; click the "JSON" tab and choose "Download", and then provide the path to the downloaded file in the above command for `path/to/bundle.json`.
-
-You can also use the online validator at <https://inferno.healthit.gov/validator/>. To use this, click "Advanced Options" and upload [package.tgz](package.tgz), then select the name of the profile you want to validate against in the dropdown.
-
-Additionally:
-
-- Implementers SHOULD NOT populate `Resource.id`, `Resource.meta`, or `Resource.text` elements.
-- Implementers SHOULD use `resource:0` syntax for IDs and references.
-    - Implementers SHOULD populate `Bundle.entry.fullUrl` elements with short resource-scheme URIs (e.g., {"fullUrl": "resource:0}).
-    - Implementers SHOULD populate `Reference.reference` elements with short resource-scheme URIs (e.g., {"patient": {"reference": "Patient/resource:0"}}) which SHALL resolve within the bundle.
-    - Note that the Bundle examples reflect this guidance for their contained resources, but the other resource-specific examples cannot due to the FHIR IG Publisher workflow.
-- Implementers SHOULD NOT populate `CodeableConcept.text` or `Coding.display` when using any value from a value set with a `required` binding, or using specified values from a value set with an `extensible` binding.
-- Likewise, implementers SHOULD NOT populate `CodeableConcept.text` or `Coding.display` when specifying codes that are fixed in profiles.
-- Implementers SHOULD use `YYYY-MM-DD` precision for all `dateTime` fields EXCEPT for laboratory results (described below). Greater precision will result in a warning when validating a resource.
-    - Implementers SHALL use `YYYY-MM-DDThh:mm:ss+zz:zz` format for `effective[x]` dateTime elements in [Covid19LaboratoryResultObservation] and [InfectiousDiseaseLaboratoryResultObservation]. Additionally, implementers SHALL follow this conformance requirement from [FHIR R4's documentation for the dateTime type](http://hl7.org/fhir/R4/datatypes.html#dateTime):
-
-        > If hours and minutes are specified, **a time zone SHALL be populated**. Seconds must be provided due to schema type constraints but may be zero-filled and may be ignored at receiver discretion. \[Emphasis added.\]
-
-#### Compatibility with IIS
+### Compatibility with IIS
 
 Resources representing a vaccination and associated data should be able to be directly populated with data from [IIS](https://www.cdc.gov/vaccines/programs/iis/index.html) implementations using the [HL7 v2.5.1 Implementation Guide for Immunization Messaging, Release 1.5](https://repository.immregistries.org/resource/hl7-version-2-5-1-implementation-guide-for-immunization-messaging-release-1-5-1/).
 
@@ -205,9 +119,9 @@ MITRE: Approved for Public Release. Distribution Unlimited. Case Number 21-0225
 
 {% include markdown-link-references.md %}
 
-<style>
-/* Moves the TOC down below the info box */
-div.markdown-toc {
-    margin-top: 15rem;
-}
-</style>
+<script>
+// Move Markdown TOC below alert box for cosmetics
+var ref = document.querySelector('div.alert');
+var el = document.querySelector('div.markdown-toc');
+ref.parentNode.insertBefore(el, ref.nextSibling);
+</script>
