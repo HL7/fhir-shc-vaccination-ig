@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+source script/validate-helper.sh
+
+validate_example $@

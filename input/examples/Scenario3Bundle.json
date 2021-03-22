@@ -45,6 +45,9 @@
       "fullUrl": "urn:uuid:1",
       "resource": {
         "resourceType": "Observation",
+        "meta": {
+          "security": [{"code": "IAL1"}]
+        },
         "status": "final",
         "category": [
           {

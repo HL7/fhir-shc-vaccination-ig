@@ -65,3 +65,13 @@ Disable until these issues are resolved.
 #segment-breadcrumb .container {
     border-radius: 0 0 5px 5px;
 }
+
+/* Allow for side-by-side items on the same row in the dropdown menus */
+.nav .open > ul > li.side-by-side {
+    display: inline-flex !important;
+    justify-content: space-between;
+    width: 100%;
+}
+.nav .open > .dropdown-menu {
+    display: table-caption;
+}

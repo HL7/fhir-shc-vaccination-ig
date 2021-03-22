@@ -16,17 +16,6 @@
             ]
           }
         ],
-        "telecom": [
-          {
-            "system": "phone",
-            "value": "555-555-5555",
-            "use": "home"
-          },
-          {
-            "system": "email",
-            "value": "john.anyperson@example.com"
-          }
-        ],
         "gender": "male",
         "birthDate": "1951-01-20",
         "address": [
@@ -41,11 +30,14 @@
       "fullUrl": "urn:uuid:1",
       "resource": {
         "resourceType": "Immunization",
+        "meta": {
+          "security": [{"code": "IAL1"}]
+        },
         "status": "completed",
         "vaccineCode": {
           "coding": [
             {
-              "system": "http://hl7.org/fhir/sid/cvx",
+              "system": "http://hl7.org/fhir/sid/cvx-TEMPORARY-CODE-SYSTEM",
               "code": "207"
             }
           ]
@@ -68,11 +60,14 @@
       "fullUrl": "urn:uuid:2",
       "resource": {
         "resourceType": "Immunization",
+        "meta": {
+          "security": [{"code": "IAL1.2"}]
+        },
         "status": "completed",
         "vaccineCode": {
           "coding": [
             {
-              "system": "http://hl7.org/fhir/sid/cvx",
+              "system": "http://hl7.org/fhir/sid/cvx-TEMPORARY-CODE-SYSTEM",
               "code": "207"
             }
           ]

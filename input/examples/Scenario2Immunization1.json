@@ -5,7 +5,7 @@
   "vaccineCode": {
     "coding": [
       {
-        "system": "http://hl7.org/fhir/sid/cvx",
+        "system": "http://hl7.org/fhir/sid/cvx-TEMPORARY-CODE-SYSTEM",
         "code": "208"
       }
     ]

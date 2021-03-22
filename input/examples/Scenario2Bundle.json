@@ -16,37 +16,12 @@
             ]
           }
         ],
-        "telecom": [
-          {
-            "system": "phone",
-            "value": "555-555-5555",
-            "use": "home"
-          },
-          {
-            "system": "email",
-            "value": "jane.anyperson@example.com"
-          }
-        ],
         "gender": "male",
         "birthDate": "1961-01-20",
         "address": [
           {
             "postalCode": "12345",
             "country": "US"
-          }
-        ],
-        "communication": [
-          {
-            "language": {
-              "coding": [
-                {
-                  "system": "urn:ietf:bcp:47",
-                  "code": "en-US",
-                  "display": "English (Region=United States)"
-                }
-              ],
-              "text": "English"
-            }
           }
         ]
       }
@@ -59,7 +34,7 @@
         "vaccineCode": {
           "coding": [
             {
-              "system": "http://hl7.org/fhir/sid/cvx",
+              "system": "http://hl7.org/fhir/sid/cvx-TEMPORARY-CODE-SYSTEM",
               "code": "208"
             }
           ]
@@ -86,7 +61,7 @@
         "vaccineCode": {
           "coding": [
             {
-              "system": "http://hl7.org/fhir/sid/cvx",
+              "system": "http://hl7.org/fhir/sid/cvx-TEMPORARY-CODE-SYSTEM",
               "code": "208"
             }
           ]
@@ -95,7 +70,6 @@
           "reference": "urn:uuid:0"
         },
         "occurrenceDateTime": "2021-01-29",
-        "primarySource": true,
         "performer": [
           {
             "actor": {

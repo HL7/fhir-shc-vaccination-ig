@@ -5,6 +5,7 @@ Thumbs.db
 /output
 /temp
 /template
-/script
+/script/*
+!/script/validate*
 .vscode
 .env
