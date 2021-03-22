@@ -75,8 +75,8 @@ Description: "The bundle of resources that represents the clinical content of a 
 Profile: Covid19LaboratoryBundle
 Parent: Bundle
 Id: covid-19-laboratory-bundle
-Title: "Vaccine Credential Laboratory Bundle - Allowable Data"
-Description: "The bundle of resources that represents the clinical content of a digital lab credential record."
+Title: "COVID-19-specific Laboratory Bundle - Allowable Data"
+Description: "The bundle of resources that represents the clinical content of a digital lab credential record specifically for COVID-19."
 
 * id obeys should-be-under-20-chars
 
@@ -106,9 +106,9 @@ Description: "The bundle of resources that represents the clinical content of a 
 
 Profile: InfectiousDiseaseLaboratoryBundle
 Parent: Bundle
-Id: infections-disease-laboratory-bundle
-Title: "Vaccine Credential Laboratory Bundle - Allowable Data"
-Description: "The bundle of resources that represents the clinical content of a digital lab credential record."
+Id: infectious-disease-laboratory-bundle
+Title: "Infectious Disease (Generic) Laboratory Bundle - Allowable Data"
+Description: "The bundle of resources that represents the clinical content of a digital lab credential record for a generic infectious disease."
 
 * id obeys should-be-under-20-chars
 
@@ -138,8 +138,8 @@ Description: "The bundle of resources that represents the clinical content of a 
 
 Profile: InfectiousDiseaseLaboratoryBundleDM
 Parent: Bundle
-Id: infections-disease-laboratory-bundle-dm
-Title: "Infections Disease (Generic) Laboratory Bundle - Data Minimization"
+Id: infectious-disease-laboratory-bundle-dm
+Title: "Infectious Disease (Generic) Laboratory Bundle - Data Minimization"
 Description: "The bundle of resources that represents the clinical content of a digital lab credential record for a generic infectious disease for data minimization."
 
 * id obeys should-be-under-20-chars
