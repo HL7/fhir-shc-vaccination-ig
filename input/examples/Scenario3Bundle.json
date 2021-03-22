@@ -4,7 +4,7 @@
   "type": "collection",
   "entry": [
     {
-      "fullUrl": "resource:0",
+      "fullUrl": "urn:uuid:0",
       "resource": {
         "resourceType": "Patient",
         "name": [
@@ -42,7 +42,7 @@
       }
     },
     {
-      "fullUrl": "resource:1",
+      "fullUrl": "urn:uuid:1",
       "resource": {
         "resourceType": "Observation",
         "status": "final",
@@ -65,7 +65,7 @@
           ]
         },
         "subject": {
-          "reference": "resource:0"
+          "reference": "urn:uuid:0"
         },
         "effectiveDateTime": "2021-02-17",
         "valueCodeableConcept": {

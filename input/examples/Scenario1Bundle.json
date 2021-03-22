@@ -4,7 +4,7 @@
   "type": "collection",
   "entry": [
     {
-      "fullUrl": "resource:0",
+      "fullUrl": "urn:uuid:0",
       "resource": {
         "resourceType": "Patient",
         "name": [
@@ -38,7 +38,7 @@
       }
     },
     {
-      "fullUrl": "resource:1",
+      "fullUrl": "urn:uuid:1",
       "resource": {
         "resourceType": "Immunization",
         "status": "completed",
@@ -51,7 +51,7 @@
           ]
         },
         "patient": {
-          "reference": "resource:0"
+          "reference": "urn:uuid:0"
         },
         "occurrenceDateTime": "2021-01-01",
         "performer": [
@@ -65,7 +65,7 @@
       }
     },
     {
-      "fullUrl": "resource:2",
+      "fullUrl": "urn:uuid:2",
       "resource": {
         "resourceType": "Immunization",
         "status": "completed",
@@ -78,7 +78,7 @@
           ]
         },
         "patient": {
-          "reference": "resource:0"
+          "reference": "urn:uuid:0"
         },
         "occurrenceDateTime": "2021-01-29",
         "performer": [
