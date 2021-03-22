@@ -6,8 +6,8 @@
 [Covid19LaboratoryBundle]: StructureDefinition-covid-19-laboratory-bundle.html
 [Covid19LaboratoryResultObservationDM]: StructureDefinition-covid19-laboratory-result-observation-dm.html
 [Covid19LaboratoryResultObservation]: StructureDefinition-covid19-laboratory-result-observation.html
-[InfectiousDiseaseLaboratoryBundleDM]: StructureDefinition-infections-disease-laboratory-bundle-dm.html
-[InfectiousDiseaseLaboratoryBundle]: StructureDefinition-infections-disease-laboratory-bundle.html
+[InfectiousDiseaseLaboratoryBundleDM]: StructureDefinition-infectious-disease-laboratory-bundle-dm.html
+[InfectiousDiseaseLaboratoryBundle]: StructureDefinition-infectious-disease-laboratory-bundle.html
 [InfectiousDiseaseLaboratoryResultObservationDM]: StructureDefinition-infectious-disease-laboratory-result-observation-dm.html
 [InfectiousDiseaseLaboratoryResultObservation]: StructureDefinition-infectious-disease-laboratory-result-observation.html
 [VaccineCredentialBundleDM]: StructureDefinition-vaccine-credential-bundle-dm.html
