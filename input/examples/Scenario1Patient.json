@@ -1,6 +1,9 @@
 {
     "resourceType": "Patient",
     "id": "Scenario1Patient",
+    "meta": {
+      "security": [{"code": "IAL1"}]
+    },
     "name": [
       {
         "family": "Anyperson",
@@ -8,17 +11,6 @@
           "John",
           "B."
         ]
-      }
-    ],
-    "telecom": [
-      {
-        "system": "phone",
-        "value": "555-555-5555",
-        "use": "home"
-      },
-      {
-        "system": "email",
-        "value": "john.anyperson@example.com"
       }
     ],
     "gender": "male",

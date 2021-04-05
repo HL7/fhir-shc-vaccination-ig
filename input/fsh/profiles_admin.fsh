@@ -6,20 +6,26 @@ Parent:      Patient
 Title:       "Patient Profile - Allowable Data"
 Description: "Slight modification of Patient, with identifier as 0..0 and limited MS."
 
+* id obeys should-be-under-20-chars
+
 * identifier 0..0
 * identifier ^definition = "Identifer is not allowed in this IG due to risk of accidental, unnecessary exposure of sensitive identifiers to verifiers."
 
 * name 1..*
 * name and name.given and name.family MS
 * name obeys name-invariant
+* name ^short = "Official name (i.e., legal name) of patient"
+* name ^definition = "Official name (i.e., legal name) of the patient, corresponding to `official` in [this value set](http://hl7.org/fhir/R4/valueset-name-use.html). Issuers SHALL provide a single `name` element UNLESS they believe providing multiple `name` elements is critical for verification of the credential. If providing only a single `name` element, Issuers SHALL NOT populate `name.use`, and Verifiers SHALL assume that the provided name is `official`."
+* name ^comment = "Cardinality for this element is set to `1..*` rather than `1..1` as in rare cases there may be a valid rational for including multiple `name` elements. The Data Minimization version of this profile reflects the rarity of this by setting `name` to `1..1`."
 
-// Keeping gender MS as it is likely available and useful for interfacing with IIS
+// Gender may be important if data in this IG were being used to populate IIS. However this is not
+// currently a use case for the IG so it is not required or MS.
 // See https://github.com/dvci/vaccine-credential-ig/pull/31#issuecomment-773434836 for details
-* gender MS
 * gender from http://hl7.org/fhir/ValueSet/administrative-gender (required)
 
 // We want address.country and address.postalCode to be included if available
 // See https://github.com/dvci/vaccine-credential-ig/issues/37#issuecomment-776042494
+* address MS
 * address.country MS
 * address.postalCode MS
 
@@ -33,7 +39,11 @@ Parent:      VaccineCredentialPatient
 Title:       "Patient Profile - Data Minimization"
 Description: "Only elements necessary for Verifiers can be populated."
 
-* meta 0..0
+* meta.versionId 0..0
+* meta.lastUpdated 0..0
+* meta.source 0..0
+* meta.profile 0..0
+* meta.tag 0..0
 * implicitRules 0..0
 * language 0..0
 * text 0..0
@@ -41,11 +51,14 @@ Description: "Only elements necessary for Verifiers can be populated."
 * extension 0..0
 * modifierExtension 0..0
 * active 0..0
+* name 1..1
 * name.id 0..0
 * name.extension 0..0
 * name.use 0..0
 * telecom 0..0
 * deceased[x] 0..0
+* address.id 0..0
+* address.extension 0..0
 * address.use 0..0
 * address.type 0..0
 * address.text 0..0

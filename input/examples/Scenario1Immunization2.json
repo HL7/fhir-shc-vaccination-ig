@@ -1,11 +1,14 @@
 {
   "resourceType": "Immunization",
   "id": "Scenario1Immunization2",
+  "meta": {
+    "security": [{"code": "IAL1.2"}]
+  },
   "status": "completed",
   "vaccineCode": {
     "coding": [
       {
-        "system": "http://hl7.org/fhir/sid/cvx",
+        "system": "http://hl7.org/fhir/sid/cvx-TEMPORARY-CODE-SYSTEM",
         "code": "207"
       }
     ]

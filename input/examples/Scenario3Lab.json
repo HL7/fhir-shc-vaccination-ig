@@ -1,6 +1,9 @@
 {
     "resourceType": "Observation",
     "id": "Scenario3Lab",
+    "meta": {
+      "security": [{"code": "IAL1"}]
+    },
     "status": "final",
     "category": [
         {
