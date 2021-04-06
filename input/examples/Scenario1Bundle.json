@@ -17,14 +17,7 @@
             ]
           }
         ],
-        "gender": "male",
-        "birthDate": "1951-01-20",
-        "address": [
-          {
-            "postalCode": "12345",
-            "country": "US"
-          }
-        ]
+        "birthDate": "1951-01-20"
       }
     },
     {

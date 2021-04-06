@@ -18,17 +18,6 @@ Description: "Slight modification of Patient, with identifier as 0..0 and limite
 * name ^definition = "Official name (i.e., legal name) of the patient, corresponding to `official` in [this value set](http://hl7.org/fhir/R4/valueset-name-use.html). Issuers SHALL provide a single `name` element UNLESS they believe providing multiple `name` elements is critical for verification of the credential. If providing only a single `name` element, Issuers SHALL NOT populate `name.use`, and Verifiers SHALL assume that the provided name is `official`."
 * name ^comment = "Cardinality for this element is set to `1..*` rather than `1..1` as in rare cases there may be a valid rational for including multiple `name` elements. The Data Minimization version of this profile reflects the rarity of this by setting `name` to `1..1`."
 
-// Gender may be important if data in this IG were being used to populate IIS. However this is not
-// currently a use case for the IG so it is not required or MS.
-// See https://github.com/dvci/vaccine-credential-ig/pull/31#issuecomment-773434836 for details
-* gender from http://hl7.org/fhir/ValueSet/administrative-gender (required)
-
-// We want address.country and address.postalCode to be included if available
-// See https://github.com/dvci/vaccine-credential-ig/issues/37#issuecomment-776042494
-* address MS
-* address.country MS
-* address.postalCode MS
-
 * birthDate MS
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -56,17 +45,9 @@ Description: "Only elements necessary for Verifiers can be populated."
 * name.extension 0..0
 * name.use 0..0
 * telecom 0..0
+* gender 0..0
 * deceased[x] 0..0
-* address.id 0..0
-* address.extension 0..0
-* address.use 0..0
-* address.type 0..0
-* address.text 0..0
-* address.line 0..0
-* address.city 0..0
-* address.state 0..0
-* address.period 0..0
-* address.text 0..0
+* address 0..0
 * maritalStatus 0..0
 * multipleBirth[x] 0..0
 * photo 0..0
