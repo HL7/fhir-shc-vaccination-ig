@@ -18,7 +18,11 @@ Description: "Defines a profile representing a vaccination for a vaccine credent
 * meta.security MS
 
 * occurrence[x] MS
+* occurrence[x] ^definition = "Date vaccine administered."
+* occurrence[x] ^comment = "See `occurrenceDateTime`." // Remove inherited comment, which is not meaningful for our context.
 * occurrenceDateTime 1..1 MS
+* occurrenceDateTime ^definition = "Date vaccine administered (`YYYY-MM-DD` format)."
+* occurrenceDateTime ^comment = "For data minimization reasons, only year, month, and date SHOULD be reported for this element. Exact time (hour, minute, second) are not relevant for our use cases."
 * occurrenceDateTime obeys date-invariant
 
 // Parent profile short description is not as clear as it could be
