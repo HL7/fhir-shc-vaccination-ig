@@ -24,16 +24,20 @@
     {% include fragment-css.html %}
 
     <script>
+        // Set tab based on the anchor in URL
         var hash = window.location.hash;
         if(hash == "#tab-diff") sessionStorage.setItem('fhir-resource-tab-index', 1);
         if(hash == "#tab-snapshot") sessionStorage.setItem('fhir-resource-tab-index', 2);
         if(hash == "#tab-ms") sessionStorage.setItem('fhir-resource-tab-index', 3);
 
-        $('#tabs .ui-tabs-nav li').click(function() {
-            var id = $(this).attr('aria-labelledby');
-            if(id == "ui-ud-1") window.location.hash = "#tab-diff";
-            if(id == "ui-ud-2") window.location.hash = "#tab-snapshot";
-            if(id == "ui-ud-3") window.location.hash = "#tab-ms";
+        // Make it so that clicking the tabs also sets the anchor in the url
+        document.addEventListener("DOMContentLoaded", function() {
+            $('#tabs .ui-tabs-nav li').click(function() {
+                var id = $(this).children('a').attr('id');
+                if(id == "ui-id-2") window.location.hash = "#tab-diff";
+                if(id == "ui-id-3") window.location.hash = "#tab-snapshot";
+                if(id == "ui-id-4") window.location.hash = "#tab-ms";
+            })
         });
     </script>
 
