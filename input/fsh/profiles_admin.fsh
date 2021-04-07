@@ -20,6 +20,9 @@ Description: "Slight modification of Patient, with identifier as 0..0 and limite
 
 * birthDate MS
 
+* gender 0..0
+* gender ^comment = "Self-identified gender may change over time, and it may not be possible to re-issue a credential updating the value of this element. Mutable data should not be included in an immutable credential unless there is overwhelming value for verification (like with `name`). This is not the case for this element. Despite this, it's possible some systems will include gender by default because it is a common field in administrative data. We have therefore disallowed this element in both the allowable and data minimization profiles."
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Profile:     VaccineCredentialPatientDM
@@ -45,7 +48,6 @@ Description: "Only elements necessary for Verifiers can be populated."
 * name.extension 0..0
 * name.use 0..0
 * telecom 0..0
-* gender 0..0
 * deceased[x] 0..0
 * address 0..0
 * maritalStatus 0..0
