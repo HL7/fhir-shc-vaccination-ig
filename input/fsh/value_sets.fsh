@@ -21,7 +21,8 @@ Description: "Includes [CVX codes](https://www2.cdc.gov/vaccines/iis/iisstandard
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// For Immunization.statusReason
+// For Immunization.statusReason -- this element is currently not allowed
+/*
 ValueSet:    VaccineCredentialStatusReasonValueSet
 Id:          vaccine-credential-status-reason-value-set
 Title:       "Status reason value set"
@@ -33,6 +34,7 @@ Description: "Reasons a vaccine was not given"
 
 // Support for IIS value set for RXA-18 (refusal reason) - this is CDC NIP002
 * include codes from system http://phinvads.cdc.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3380
+*/
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 

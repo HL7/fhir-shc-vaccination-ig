@@ -65,3 +65,5 @@ Invariant:   should-be-under-20-chars
 Description: "Length SHOULD be <20 for data minimization."
 Expression:  "$this.length() < 20"
 Severity:    #warning
+
+////////////////////////////////////////////////////////////////////////////////////////////////////

@@ -51,12 +51,18 @@ We are actively investigating adding additional codes that are not United States
 
 * status ^short = "Whether or not the vaccination was completed"
 * status MS
+* status = #completed
+
+// If `status` is fixed to `completed`, `statusReason` is meaningless since it's only used for
+// incomplete vaccinations.
+* statusReason 0..0
+// This is the value set we would use if we were including `statusReason`
+// * statusReason from VaccineCredentialStatusReasonValueSet (extensible)
 
 * reportOrigin from VaccineCredentialReportOriginValueSet (extensible)
 * site from VaccineCredentialVaccineSiteValueSet (extensible)
 * route from VaccineCredentialVaccineRouteValueSet (extensible)
 * fundingSource from VaccineCredentialFundingSourceValueSet (extensible)
-* statusReason from VaccineCredentialStatusReasonValueSet (extensible)
 
 * reaction.detail only Reference(VaccineCredentialVaccineReactionObservation)
 
