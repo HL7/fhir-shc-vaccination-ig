@@ -23,6 +23,20 @@
     <link href="{{site.data.info.assets}}assets/css/prism.css" rel="stylesheet" />
     {% include fragment-css.html %}
 
+    <script>
+        var hash = window.location.hash;
+        if(hash == "#tab-diff") sessionStorage.setItem('fhir-resource-tab-index', 1);
+        if(hash == "#tab-snapshot") sessionStorage.setItem('fhir-resource-tab-index', 2);
+        if(hash == "#tab-ms") sessionStorage.setItem('fhir-resource-tab-index', 3);
+
+        $('#tabs .ui-tabs-nav li').click(function() {
+            var id = $(this).attr('aria-labelledby');
+            if(id == "ui-ud-1") window.location.hash = "#tab-diff";
+            if(id == "ui-ud-2") window.location.hash = "#tab-snapshot";
+            if(id == "ui-ud-3") window.location.hash = "#tab-ms";
+        });
+    </script>
+
     <script type="text/javascript" src="fhir-table-scripts.js"> </script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
