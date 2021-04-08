@@ -1,5 +1,10 @@
 == Suppressed Messages ==
 
+# Suppress errors related to relative links that the Publisher is turning into the wrong absolute links
+# Reported as https://github.com/HL7/fhir-ig-publisher/issues/245
+The link 'http://hl7.org/fhir/R4/conformance.html#data-minimization' for "data minimization reasons" cannot be resolved
+The link 'http://hl7.org/fhir/R4/conformance.html' for "conformance requirements" cannot be resolved
+
 # We are purposefully leaving out descriptions for data minimization
 WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Immunization/ExampleImmunizationNoCVX.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
 WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/Scenario1Bundle.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
