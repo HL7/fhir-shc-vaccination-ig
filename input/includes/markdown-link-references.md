@@ -30,15 +30,6 @@
 [VaccineCredentialVaccineSiteValueSet]: ValueSet-vaccine-credential-vaccine-site-value-set.html
 [VaccineCredentialVaccineValueSet]: ValueSet-vaccine-credential-vaccine-value-set.html
 
-[Scenario1Patient]: Patient-Scenario1Patient.html
-[Scenario1Immunization1]: Immunization-Scenario1Immunization1.html
-[Scenario1Immunization2]: Immunization-Scenario1Immunization2.html
-[Scenario1Bundle]: Bundle-Scenario1Bundle.html
-
-[Scenario2Patient]: Patient-Scenario2Patient.html
-[Scenario2Immunization1]: Immunization-Scenario2Immunization1.html
-[Scenario2Immunization2]: Immunization-Scenario2Immunization2.html
-[Scenario2Bundle]: Bundle-Scenario2Bundle.html
-
-[Scenario3Lab]: Observation-Scenario3Lab.html
-[Scenario3Bundle]: Bundle-Scenario3Bundle.html
+[Scenario1Bundle]: https://github.com/dvci/vaccine-credential-ig/blob/{{ site.data['git-branch'] }}/examples/Scenario1Bundle.json
+[Scenario2Bundle]: https://github.com/dvci/vaccine-credential-ig/blob/{{ site.data['git-branch'] }}/examples/Scenario2Bundle.json
+[Scenario3Bundle]: https://github.com/dvci/vaccine-credential-ig/blob/{{ site.data['git-branch'] }}/examples/Scenario3Bundle.json

@@ -141,7 +141,7 @@ For convenience, here are the commands for validating bundles:
     path/to/bundle.json
     ```
 
-To test validation, use one of the example bundles: [Scenario1Bundle], [Scenario2Bundle], or [Scenario3Bundle]; click the "JSON" tab and choose "Download", and then provide the path to the downloaded file in the above command for `path/to/bundle.json`.
+To test validation, use one of the example bundles: [Scenario1Bundle], [Scenario2Bundle], or [Scenario3Bundle]; provide the path to the downloaded file in the above command for `path/to/bundle.json`.
 
 You can also use the online validator at <https://inferno.healthit.gov/validator/>. To use this, click "Advanced Options" and upload [package.tgz](package.tgz), then select the name of the profile you want to validate against in the dropdown.
 

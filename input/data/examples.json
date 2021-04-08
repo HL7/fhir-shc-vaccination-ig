@@ -1,0 +1,70 @@
+{
+    "StructureDefinition-vaccine-credential-immunization.html": [
+        {
+            "title": "Immunization example with Moderna, dose 1",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario1Bundle.json#L25-L49"
+        },
+        {
+            "title": "Immunization example with Moderna, dose 2",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario1Bundle.json#L55-L79"
+        },
+        {
+            "title": "Immunization example with Pfizer, dose 1",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario2Bundle.json#L25-L49"
+        },
+        {
+            "title": "Immunization example with Pfizer, dose 2",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario2Bundle.json#L55-L79"
+        }
+    ],
+    "StructureDefinition-covid19-laboratory-result-observation.html": [
+        {
+            "title": "COVID-19 test results example",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle.json#L25-L64"
+        }
+    ],
+    "StructureDefinition-infectious-disease-laboratory-result-observation.html": [
+        {
+            "title": "COVID-19 test results example",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle.json#L25-L64"
+        }
+    ],
+    "StructureDefinition-vaccine-credential-bundle.html": [
+        {
+            "title": "Scenario 1 Bundle (COVID-19 vaccination with Pfizer, 2 doses)",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario1Bundle.json"
+        },
+        {
+            "title": "Scenario 2 Bundle (COVID-19 vaccination with Moderna, 2 doses)",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario2Bundle.json"
+        }
+    ],
+    "StructureDefinition-covid-19-laboratory-bundle.html": [
+        {
+            "title": "Scenario 3 Bundle (COVID-19 laboratory test results from immunoassay)",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle.json"
+        }
+    ],
+    "StructureDefinition-infectious-disease-laboratory-bundle.html": [
+        {
+            "title": "Scenario 3 Bundle (COVID-19 laboratory test results from immunoassay)",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle.json"
+        }
+    ],
+        "StructureDefinition-covid19-laboratory-result-observation.html": [
+        {
+            "title": "COVID-19 test results example",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle.json#L25-L64"
+        }
+    ],
+    "StructureDefinition-vaccine-credential-patient.html": [
+        {
+            "title": "John B. Anyperson example",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario1Bundle.json#L9-L19"
+        },
+        {
+            "title": "Jane C. Anyperson example",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario2Bundle.json#L9-L19"
+        }
+    ]
+}

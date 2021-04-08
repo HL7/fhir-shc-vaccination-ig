@@ -18,4 +18,4 @@ The `protocolApplied` element is set to `0..0` cardinality because it reflects t
 
 Instead, verifiers should use the presence and timestamps of multiple doses along with `vaccineCode` to make their own determination about whether or not an Immunization resource represents a valid dose of the vaccine and, if applicable, completion of a series.
 
-{% include markdown-link-references.md %}
+{% include ad-profile.md %}
