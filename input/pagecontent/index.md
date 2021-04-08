@@ -1,11 +1,11 @@
-<div class="alert alert-danger" role="alert" markdown="1">
-**DRAFT Implementation Guide** This implementation guide is under active development on [GitHub](https://github.com/dvci/vaccine-credential-ig/issues), and may change without notice. Please comment on or [create](https://github.com/dvci/vaccine-credential-ig/issues/new) an issue on GitHub if you have questions, comments, or suggestions. Contributions are welcome!
+<span class="label label-danger">NOTE</span> This implementation guide is under **active development** on [GitHub](https://github.com/dvci/vaccine-credential-ig/issues), and **may change without notice**. Please comment on or [create](https://github.com/dvci/vaccine-credential-ig/issues/new) an issue on GitHub if you have questions, comments, or suggestions. Contributions are welcome!
 
-<div style="font-weight: bold;">Known Issues</div>
+<div class="alert alert-warning" role="alert" markdown="1">
+<p style="font-size: 2rem;"><strong>Known issues</strong></p>
 
 * The [official FHIR CVX code system](https://terminology.hl7.org/2.0.0/CodeSystem-v2-0292.html) does not have up-to-date [CVX codes](https://phinvads.cdc.gov/vads/ViewValueSet.action?id=6F408928-7C62-EB11-819A-005056ABE2F0). We are working with HL7 to resolve this. In the meantime, we have defined a temporary local code system called `http://hl7.org/fhir/sid/cvx-TEMPORARY-CODE-SYSTEM`. This will be replaced by `http://hl7.org/fhir/sid/cvx` or another non-local code system as soon as possible. Implementers may use `http://hl7.org/fhir/sid/cvx-TEMPORARY-CODE-SYSTEM` to avoid validation errors when testing, but should use `http://hl7.org/fhir/sid/cvx` in production. Verifiers should validate CVX codes using the [PHVS_VaccinesAdministeredCVX_CDC_NIP value set](https://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.114222.4.11.934).<br><br>
 * Other value sets in this IG are not being properly expanded. We are working to resolve this.<br><br>
-* You will see warnings related to `meta.security` when validating that say `A code with no system has no defined meaning. A system should be provided`. This cannot be suppressed, but can be safely ignored.
+* Validation with the FHIR Validator tool currently produces spurious errors for valid resources. [Details here](conformance.html#validation).
 
 </div>
 
