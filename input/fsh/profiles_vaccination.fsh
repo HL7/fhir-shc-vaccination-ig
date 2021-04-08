@@ -96,6 +96,9 @@ Description: "Defines a profile representing a vaccination for a vaccine credent
 * meta.source 0..0
 * meta.profile 0..0
 * meta.tag 0..0
+* meta.id 0..0
+* meta.extension 0..0
+* identifier 0..0
 * implicitRules 0..0
 * language 0..0
 * text 0..0
@@ -114,6 +117,14 @@ Description: "Defines a profile representing a vaccination for a vaccine credent
 * route 0..0
 * doseQuantity 0..0
 * performer.function 0..0
+* performer.id 0..0
+* performer.extension 0..0
+* performer.modifierExtension 0..0
+* performer.actor.id 0..0
+* performer.actor.extension 0..0
+* performer.actor.reference 0..0
+* performer.actor.type 0..0
+* performer.actor.identifier 0..0
 * note 0..0
 * reasonCode 0..0
 * reasonReference 0..0
@@ -121,6 +132,7 @@ Description: "Defines a profile representing a vaccination for a vaccine credent
 * education 0..0
 * fundingSource 0..0
 * reaction 0..0
+* programEligibility 0..0
 
 // Required in DM profile to provide implementers with sterner warning when straying from the expected value sets
 * vaccineCode from VaccineCredentialVaccineValueSet (required)
