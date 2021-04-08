@@ -53,20 +53,20 @@ Examples using these profiles:
 > **Scenario 1:** A patient receives two doses of the Moderna COVID-19 vaccine. The first dose was administered on January 1, 2021, and the second dose on January 29, 2021.
 >
 > Example resources:
->
-> - [Scenario1Bundle]
-> - [Scenario1Patient]
-> - [Scenario1Immunization1]
-> - [Scenario1Immunization2]
+> - [Bundle](https://github.com/dvci/vaccine-credential-ig/blob/{{ site.data['git-branch'] }}/examples/Scenario1Bundle.json)
+>   - [Patient](https://github.com/dvci/vaccine-credential-ig/blob/{{ site.data['git-branch'] }}/examples/Scenario1Bundle.json#L9-L20)
+>   - [Immunization 1](https://github.com/dvci/vaccine-credential-ig/blob/{{ site.data['git-branch'] }}/examples/Scenario1Bundle.json#L25-L49)
+>   - [Immunization 2](https://github.com/dvci/vaccine-credential-ig/blob/{{ site.data['git-branch'] }}/examples/Scenario1Bundle.json#L55-L79)
+
 
 > **Scenario 2:** A patient receives two doses of the Pfizer-BioNTech COVID-19 vaccine. The first dose was administered on January 1, 2021, and the second dose on January 29, 2021.
 >
 > Example resources:
 >
-> - [Scenario2Bundle]
-> - [Scenario2Patient]
-> - [Scenario2Immunization1]
-> - [Scenario2Immunization2]
+> - [Bundle](https://github.com/dvci/vaccine-credential-ig/blob/{{ site.data['git-branch'] }}/examples/Scenario2Bundle.json)
+>   - [Patient](https://github.com/dvci/vaccine-credential-ig/blob/{{ site.data['git-branch'] }}/examples/Scenario2Bundle.json#L9-L20)
+>   - [Immunization 1](https://github.com/dvci/vaccine-credential-ig/blob/{{ site.data['git-branch'] }}/examples/Scenario2Bundle.json#L25-L49)
+>   - [Immunization 2](https://github.com/dvci/vaccine-credential-ig/blob/{{ site.data['git-branch'] }}/examples/Scenario2Bundle.json#L55-L79)
 
 #### Use case 2: laboratory test result credentials
 
@@ -85,9 +85,9 @@ An example using these profiles:
 >
 > Example resources:
 >
-> - [Scenario3Bundle]
-> - [Scenario1Patient]
-> - [Scenario3Lab]
+> - [Bundle](https://github.com/dvci/vaccine-credential-ig/blob/{{ site.data['git-branch'] }}/examples/Scenario3Bundle.json)
+>   - [Patient](https://github.com/dvci/vaccine-credential-ig/blob/{{ site.data['git-branch'] }}/examples/Scenario3Bundle.json#L9-L20)
+>   - [Observation with lab test results](https://github.com/dvci/vaccine-credential-ig/blob/{{ site.data['git-branch'] }}/examples/Scenario3Bundle.json#L25-L64)
 
 A laboratory results profile specific to COVID-19 is provided to limit the `code` to a [value set describing COVID-19-specific tests][Covid19LaboratoryTestValueSet]. Additional disease-specific profiles may be added in the future. To represent a disease without a specific set of profiles, implementers SHALL use [InfectiousDiseaseLaboratoryResultObservation] and [InfectiousDiseaseLaboratoryResultObservationDM], which can be used with [VaccineCredentialLaboratoryBundle].
 
