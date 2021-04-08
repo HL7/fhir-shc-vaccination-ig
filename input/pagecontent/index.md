@@ -1,6 +1,6 @@
 <span class="label label-danger">NOTE</span> This implementation guide is under **active development** on [GitHub](https://github.com/dvci/vaccine-credential-ig/issues), and **may change without notice**. Please comment on or [create](https://github.com/dvci/vaccine-credential-ig/issues/new) an issue on GitHub if you have questions, comments, or suggestions. Contributions are welcome!
 
-<div class="alert alert-warning" role="alert" markdown="1">
+<div class="alert alert-info" role="alert" markdown="1">
 <p style="font-size: 2rem;"><strong>Known issues</strong></p>
 
 * The [official FHIR CVX code system](https://terminology.hl7.org/2.0.0/CodeSystem-v2-0292.html) does not have up-to-date [CVX codes](https://phinvads.cdc.gov/vads/ViewValueSet.action?id=6F408928-7C62-EB11-819A-005056ABE2F0). We are working with HL7 to resolve this. In the meantime, we have defined a temporary local code system called `http://hl7.org/fhir/sid/cvx-TEMPORARY-CODE-SYSTEM`. This will be replaced by `http://hl7.org/fhir/sid/cvx` or another non-local code system as soon as possible. Implementers may use `http://hl7.org/fhir/sid/cvx-TEMPORARY-CODE-SYSTEM` to avoid validation errors when testing, but should use `http://hl7.org/fhir/sid/cvx` in production. Verifiers should validate CVX codes using the [PHVS_VaccinesAdministeredCVX_CDC_NIP value set](https://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.114222.4.11.934).<br><br>
@@ -13,10 +13,10 @@
 
 This [FHIR Implementation Guide](https://www.hl7.org/fhir/implementationguide.html) (IG):
 
-1. Describes the clinical information necessary to create a [SMART Health Card] identifying vaccination and laboratory testing status for infectious diseases such as [COVID-19](https://www.cdc.gov/coronavirus/2019-ncov/index.html). In particular, it describes the content of the credential subject of a verifiable credential in which the credential types include "https://smarthealth.cards#health-card", "https://smarthealth.cards#immunization" and/or "https://smarthealth.cards#laboratory", and optionally "https://smarthealth.cards#covid19".
+1. Describes the clinical information necessary to create a [SMART Health Card] identifying vaccination and laboratory testing status for infectious diseases such as [COVID-19](https://www.cdc.gov/coronavirus/2019-ncov/index.html). In particular, it describes the content of the credential subject of a verifiable credential in which the credential types include `https://smarthealth.cards#health-card`, `https://smarthealth.cards#immunization` and/or `https://smarthealth.cards#laboratory`, and optionally `https://smarthealth.cards#covid19`.
 2. Describes a minimal set of patient information (name and contact information) that is also included in the [SMART Health Card].
 
-The goal of this IG is to constrain resources for use specifically in [SMART Health Cards]. This applies to the contents of both digital and paper Health Cards, including Health Cards produced via a Health Card-specific FHIR endpoint like `[base]/Patient/:id/$health-cards-issue`. This IG is not applicable to general purpose FHIR endpoints like `[base]/Patient/:id/Immunization`; these are governed by other IGs like [US Core](https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-immunization.html).
+**The goal of this IG is to constrain resources for use specifically in [SMART Health Cards].** This applies to the contents of both digital and paper Health Cards, including Health Cards produced via a Health Card-specific FHIR endpoint like `[base]/Patient/:id/$health-cards-issue`. This IG is not applicable to general purpose FHIR endpoints like `[base]/Patient/:id/Immunization`; these are governed by other IGs like [US Core](https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-immunization.html).
 
 Note that this IG is not directly related to the [SMART App Launch Framework](http://www.hl7.org/fhir/smart-app-launch/). The name comes from [SMART Health IT](https://smarthealthit.org/), who also developed the [SMART Health Card] framework that this IG supports. SMART App Launch and SMART Health Cards are designed to work well together (the former being one of multiple methods for issuing the latter), but they don't have a hard dependency with each other.
 
@@ -104,9 +104,12 @@ Issuers SHALL populate these elements if identity assurance information is avail
 
 Resources representing a vaccination and associated data should be able to be directly populated with data from [IIS](https://www.cdc.gov/vaccines/programs/iis/index.html) implementations using the [HL7 v2.5.1 Implementation Guide for Immunization Messaging, Release 1.5](https://repository.immregistries.org/resource/hl7-version-2-5-1-implementation-guide-for-immunization-messaging-release-1-5-1/).
 
+<!--
 ### Supplemental data dictionary
 
 There is an [Excel data dictionary](data-dictionary/data_dictionary.xlsx) available here. This presents the IG's content in a format that may be more accessible than the default FHIR artifact pages. The Data Dictionary is a Excel spreadsheet that lists data elements and some details about them. If there is a discrepancy between the Data Dictionary and the FHIR artifacts, the FHIR artifacts are taken as the source of truth.
+
+-->
 
 ### Contact information
 
