@@ -24,11 +24,7 @@
       "resource": {
         "resourceType": "Immunization",
         "meta": {
-          "security": [
-            {
-              "code": "IAL1.1"
-            }
-          ]
+          "security": [{"code": "IAL1.1"}]
         },
         "status": "completed",
         "vaccineCode": {
@@ -58,11 +54,7 @@
       "resource": {
         "resourceType": "Immunization",
         "meta": {
-          "security": [
-            {
-              "code": "IAL3"
-            }
-          ]
+          "security": [{"code": "IAL3"}]
         },
         "status": "completed",
         "vaccineCode": {
