@@ -5,7 +5,7 @@ RuleSet: common-bundle-rules
 * id ^short = "Should be omitted"
 * id ^definition = "It is not necessary to provide an `id` for Bundles profiled in this IG. This element SHOULD be omitted for data minimization reasons."
 * id ^comment = "n/a"
-* obeys should-be-omitted
+* id obeys should-be-omitted
 
 * type  = #collection
 * type MS
