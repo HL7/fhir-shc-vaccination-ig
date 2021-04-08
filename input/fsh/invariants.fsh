@@ -68,6 +68,13 @@ Severity:    #warning
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+Invariant:   should-be-omitted
+Description: "SHOULD be omitted for data minimization."
+Expression:  "$this.length() = 0"
+Severity:    #warning
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
 Invariant:   should-be-resource-uri
 Description: "IDs should use resource:# format"
 Expression:  "$this.matches('^resource:[0-9]+$')"

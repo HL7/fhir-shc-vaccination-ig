@@ -1,15 +1,11 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Profile: VaccineCredentialBundle
-Parent: Bundle
-Id: vaccine-credential-bundle
-Title: "Vaccine Credential Bundle - Allowable Data"
-Description: "The bundle of resources that represents the clinical content of a digital vaccination record."
+RuleSet: common-bundle-rules
 
 * id ^short = "Should be omitted"
 * id ^definition = "It is not necessary to provide an `id` for Bundles profiled in this IG. This element SHOULD be omitted for data minimization reasons."
 * id ^comment = "n/a"
-* id obeys should-be-resource-uri
+* obeys should-be-omitted
 
 * type  = #collection
 * type MS
@@ -24,8 +20,20 @@ Description: "The bundle of resources that represents the clinical content of a 
 * entry.fullUrl ^short = "Locally unique identifier like resource:0"
 * entry.fullUrl ^definition = "Identifier for the contained resource that is locally unique within this Bundle. The identifier SHOULD use `resource:#` format, where `#` is an integer incremented from 0 to _n_ within the Bundle."
 * entry.fullUrl ^comment = "n/a"
+* entry.fullUrl obeys should-be-resource-uri
 
 * insert id-should-not-be-populated(entry.)
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Profile: VaccineCredentialBundle
+Parent: Bundle
+Id: vaccine-credential-bundle
+Title: "Vaccine Credential Bundle - Allowable Data"
+Description: "The bundle of resources that represents the clinical content of a digital vaccination record."
+
+* insert common-bundle-rules
 
 * entry contains
     // These resources are required per Conformance > Supported Profiles.
@@ -53,15 +61,7 @@ Id: vaccine-credential-bundle-dm
 Title: "Vaccine Credential Bundle - Data Minimization"
 Description: "The bundle of resources that represents the clinical content of a digital vaccination record using data minimization profiles."
 
-* id obeys should-be-under-20-chars
-
-* type  = #collection
-* type MS
-* entry ^slicing.discriminator.type = #profile
-* entry ^slicing.discriminator.path = "resource"
-* entry ^slicing.rules = #open
-* entry ^slicing.description = "Slicing based on the profile conformance of the entry"
-* entry and entry.resource MS
+* insert common-bundle-rules
 
 * entry contains
     // These resources are required per Conformance > Supported Profiles.
@@ -89,15 +89,7 @@ Id: covid-19-laboratory-bundle
 Title: "COVID-19-specific Laboratory Bundle - Allowable Data"
 Description: "The bundle of resources that represents the clinical content of a digital lab credential record specifically for COVID-19."
 
-* id obeys should-be-under-20-chars
-
-* type  = #collection
-* type MS
-* entry ^slicing.discriminator.type = #profile
-* entry ^slicing.discriminator.path = "resource"
-* entry ^slicing.rules = #open
-* entry ^slicing.description = "Slicing based on the profile conformance of the entry"
-* entry and entry.resource MS
+* insert common-bundle-rules
 
 * entry contains
     // These resources are required per Conformance > Supported Profiles.
@@ -121,15 +113,7 @@ Id: infectious-disease-laboratory-bundle
 Title: "Infectious Disease (Generic) Laboratory Bundle - Allowable Data"
 Description: "The bundle of resources that represents the clinical content of a digital lab credential record for a generic infectious disease."
 
-* id obeys should-be-under-20-chars
-
-* type  = #collection
-* type MS
-* entry ^slicing.discriminator.type = #profile
-* entry ^slicing.discriminator.path = "resource"
-* entry ^slicing.rules = #open
-* entry ^slicing.description = "Slicing based on the profile conformance of the entry"
-* entry and entry.resource MS
+* insert common-bundle-rules
 
 * entry contains
     // These resources are required per Conformance > Supported Profiles.
@@ -153,15 +137,7 @@ Id: infectious-disease-laboratory-bundle-dm
 Title: "Infectious Disease (Generic) Laboratory Bundle - Data Minimization"
 Description: "The bundle of resources that represents the clinical content of a digital lab credential record for a generic infectious disease for data minimization."
 
-* id obeys should-be-under-20-chars
-
-* type  = #collection
-* type MS
-* entry ^slicing.discriminator.type = #profile
-* entry ^slicing.discriminator.path = "resource"
-* entry ^slicing.rules = #open
-* entry ^slicing.description = "Slicing based on the profile conformance of the entry"
-* entry and entry.resource MS
+* insert common-bundle-rules
 
 * entry contains
     // These resources are required per Conformance > Supported Profiles.
@@ -185,15 +161,7 @@ Id: covid-19-laboratory-bundle-dm
 Title: "COVID-19-specific Laboratory Bundle - Data Minimization"
 Description: "The bundle of resources that represents the clinical content of a digital lab credential record specifically for COVID-19 data minimization."
 
-* id obeys should-be-under-20-chars
-
-* type  = #collection
-* type MS
-* entry ^slicing.discriminator.type = #profile
-* entry ^slicing.discriminator.path = "resource"
-* entry ^slicing.rules = #open
-* entry ^slicing.description = "Slicing based on the profile conformance of the entry"
-* entry and entry.resource MS
+* insert common-bundle-rules
 
 * entry contains
     // These resources are required per Conformance > Supported Profiles.
