@@ -6,7 +6,6 @@
     {
       "fullUrl": "resource:0",
       "resource": {
-        "id": "resource:0",
         "resourceType": "Patient",
         "name": [
           {
@@ -24,7 +23,6 @@
       "fullUrl": "resource:1",
       "resource": {
         "resourceType": "Immunization",
-        "id": "resource:1",
         "meta": {
           "security": [{"code": "IAL1"}]
         },
@@ -38,7 +36,7 @@
           ]
         },
         "patient": {
-          "reference": "Patient/resource:0"
+          "reference": "resource:0"
         },
         "occurrenceDateTime": "2021-01-01",
         "performer": [
@@ -55,7 +53,6 @@
       "fullUrl": "resource:2",
       "resource": {
         "resourceType": "Immunization",
-        "id": "resource:2",
         "meta": {
           "security": [{"code": "IAL1.2"}]
         },
@@ -69,7 +66,7 @@
           ]
         },
         "patient": {
-          "reference": "Patient/resource:0"
+          "reference": "resource:0"
         },
         "occurrenceDateTime": "2021-01-29",
         "performer": [
