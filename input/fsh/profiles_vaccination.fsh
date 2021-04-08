@@ -48,7 +48,11 @@ We are actively investigating adding additional codes that are not United States
 * performer.actor only Reference(Organization)
 * performer.actor MS
 * performer.actor ^short = "Organization which was responsible for vaccine administration."
-* performer.actor ^definition = "Organization which was responsible for vaccine administration. Issuers SHOULD provide display name only. This is provided to Verifiers in case of invalid data in the credential, to support manual validation. This is not expected to be a computable Organization identifier."
+* performer.actor ^definition = "Only `Immunization.performer.actor.display` SHOULD be populated. See the definition of that element for details."
+* performer.actor.display ^short = "Short, human-readable text representation of the organization."
+* performer.actor.display MS
+* performer.actor.display 1..1
+* performer.actor.display ^definition = "Organization which was responsible for vaccine administration. Issuers SHOULD provide display name only. This is provided to Verifiers in case of invalid data in the credential, to support manual validation. This is not expected to be a computable Organization identifier."
 
 * status ^short = "Whether or not the vaccination was completed"
 * status MS
