@@ -43,7 +43,7 @@ Additionally:
 
 - Implementers SHOULD use `resource:0` syntax for IDs and references.
     - Implementers SHOULD populate `Bundle.entry.fullUrl` elements with short resource-scheme URIs (e.g., `{"fullUrl": "resource:0}`).
-    - Implementers SHOULD populate `Reference.reference` elements with short resource-scheme URIs (e.g., `{"patient": {"reference": "Patient/resource:0"}}`) which SHALL resolve within the bundle.
+    - Implementers SHOULD populate `Reference.reference` elements with short resource-scheme URIs (e.g., `{"patient": {"reference": "resource:0"}}`) which SHALL resolve within the bundle.
     - _Note that the Bundle examples reflect this guidance for their contained resources, but the other resource-specific examples cannot because the FHIR IG Publisher requires their `id` value matches their filename._
 
 - Implementers SHOULD NOT populate `CodeableConcept.text` or `Coding.display` when using any value from a value set with a `required` binding, or using specified values from a value set with an `extensible` binding.

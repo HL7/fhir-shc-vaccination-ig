@@ -51,6 +51,8 @@ RuleSet: LaboratoryResultObservation
 * meta.security ^definition = "Limited security metadata which conveys an attestation that the lab testing provider performed a certain level of identity verification at the time of service. If known, Issuers SHALL attest to the highest level that applies."
 * meta.security MS
 
+* insert reference-to-absolute-uri(subject)
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Profile:        Covid19LaboratoryResultObservation
@@ -61,6 +63,7 @@ Description:    "Profile for reporting COVID-19-related laboratory results indic
 previous infection status."
 
 * insert LaboratoryResultObservation
+* insert id-should-not-be-populated()
 
 
 // This binding can be required because implementers can fall back to InfectiousDiseaseLaboratoryResultObservation
@@ -95,6 +98,7 @@ TODO: Test using `device` rather than `method`, like so:
 
 RuleSet: LaboratoryResultObservationDM
 
+* id 0..0
 * meta 0..0
 * implicitRules 0..0
 * language 0..0
@@ -144,6 +148,7 @@ Title:          "Generic Laboratory Result Observation Profile - Allowable Data"
 Description:    "Profile for reporting laboratory results indicating current or previous infection status for a disease without a specified laboratory result profile."
 
 * insert LaboratoryResultObservation
+* insert id-should-not-be-populated()
 
 
 // Show an error if the code is part of a value set used in a disease-specific profile. If that's

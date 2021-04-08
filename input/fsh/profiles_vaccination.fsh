@@ -6,10 +6,11 @@ Parent:      Immunization
 Title:       "Immunization Profile - Allowable Data"
 Description: "Defines a profile representing a vaccination for a vaccine credential Health Card."
 
-* id obeys should-be-under-20-chars
+* insert id-should-not-be-populated()
 
 * patient only Reference(VaccineCredentialPatient)
 * patient MS
+* insert reference-to-absolute-uri(patient)
 
 * meta.security 0..1
 * meta.security from IdentityAssuranceLevelValueSet (required)
@@ -89,6 +90,7 @@ Parent:      VaccineCredentialImmunization
 Title:       "Immunization Profile - Data Minimization"
 Description: "Defines a profile representing a vaccination for a vaccine credential Health Card. Only elements necessary for Verifiers can be populated."
 
+* id 0..0
 * meta.versionId 0..0
 * meta.lastUpdated 0..0
 * meta.source 0..0
@@ -163,6 +165,7 @@ Id:             vaccine-credential-vaccine-reaction-observation-dm
 Title:          "Vaccine Reaction Observation Profile - Data Minimization"
 Description:    "Profile for reporting a reaction to a vaccine. Only elements necessary for Verifiers can be populated."
 
+* id 0..0
 * meta 0..0
 * implicitRules 0..0
 * language 0..0

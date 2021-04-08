@@ -6,7 +6,7 @@ Parent:      Patient
 Title:       "Patient Profile - Allowable Data"
 Description: "Slight modification of Patient, with identifier as 0..0 and limited MS."
 
-* id obeys should-be-under-20-chars
+* insert id-should-not-be-populated()
 
 * identifier 0..0
 * identifier ^definition = "Identifer is not allowed in this IG due to risk of accidental, unnecessary exposure of sensitive identifiers to verifiers."
@@ -28,6 +28,7 @@ Parent:      VaccineCredentialPatient
 Title:       "Patient Profile - Data Minimization"
 Description: "Only elements necessary for Verifiers can be populated."
 
+* id 0..0
 * meta.versionId 0..0
 * meta.lastUpdated 0..0
 * meta.source 0..0

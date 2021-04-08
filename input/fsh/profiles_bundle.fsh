@@ -6,7 +6,10 @@ Id: vaccine-credential-bundle
 Title: "Vaccine Credential Bundle - Allowable Data"
 Description: "The bundle of resources that represents the clinical content of a digital vaccination record."
 
-* id obeys should-be-under-20-chars
+* id ^short = "Should be omitted"
+* id ^definition = "It is not necessary to provide an `id` for Bundles profiled in this IG. This element SHOULD be omitted for data minimization reasons."
+* id ^comment = "n/a"
+* id obeys should-be-resource-uri
 
 * type  = #collection
 * type MS
@@ -15,6 +18,14 @@ Description: "The bundle of resources that represents the clinical content of a 
 * entry ^slicing.rules = #open
 * entry ^slicing.description = "Slicing based on the profile conformance of the entry"
 * entry and entry.resource MS
+
+* entry.fullUrl 1..1
+* entry.fullUrl MS
+* entry.fullUrl ^short = "Locally unique identifier like resource:0"
+* entry.fullUrl ^definition = "Identifier for the contained resource that is locally unique within this Bundle. The identifier SHOULD use `resource:#` format, where `#` is an integer incremented from 0 to _n_ within the Bundle."
+* entry.fullUrl ^comment = "n/a"
+
+* insert id-should-not-be-populated(entry.)
 
 * entry contains
     // These resources are required per Conformance > Supported Profiles.
