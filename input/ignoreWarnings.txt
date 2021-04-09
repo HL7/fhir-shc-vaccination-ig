@@ -1,5 +1,10 @@
 == Suppressed Messages ==
 
+# Suppress errors related to relative links that the Publisher is turning into the wrong absolute links
+# Reported as https://github.com/HL7/fhir-ig-publisher/issues/245
+The link 'http://hl7.org/fhir/R4/conformance.html#data-minimization' for "data minimization reasons" cannot be resolved
+The link 'http://hl7.org/fhir/R4/conformance.html' for "conformance requirements" cannot be resolved
+
 # We are purposefully leaving out descriptions for data minimization
 WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Immunization/ExampleImmunizationNoCVX.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
 WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/Scenario1Bundle.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
@@ -16,18 +21,18 @@ WARNING: Unable to find ImplementationGuide.definition.resource.description for 
 WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Observation/Scenario3Lab.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
 
 # We have examples, but leave out meta.profile for data minimization so the Publisher doesn't know how to find them
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/covid-19-laboratory-bundle-dm'): The Implementation Guide contains no examples for this profile
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/covid19-laboratory-bundle-dm'): The Implementation Guide contains no examples for this profile
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/covid19-laboratory-result-observation'): The Implementation Guide contains no examples for this profile
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/covid19-laboratory-result-observation-dm'): The Implementation Guide contains no examples for this profile
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/infections-disease-laboratory-bundle-dm'): The Implementation Guide contains no examples for this profile
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/infectious-disease-laboratory-result-observation'): The Implementation Guide contains no examples for this profile
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/infectious-disease-laboratory-result-observation-dm'): The Implementation Guide contains no examples for this profile
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccine-credential-bundle'): The Implementation Guide contains no examples for this profile
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccine-credential-bundle-dm'): The Implementation Guide contains no examples for this profile
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccine-credential-immunization'): The Implementation Guide contains no examples for this profile
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccine-credential-immunization-dm'): The Implementation Guide contains no examples for this profile
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccine-credential-laboratory-bundle'): The Implementation Guide contains no examples for this profile
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccine-credential-patient'): The Implementation Guide contains no examples for this profile
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccine-credential-patient-dm'): The Implementation Guide contains no examples for this profile
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccine-credential-vaccine-reaction-observation'): The Implementation Guide contains no examples for this profile
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccine-credential-vaccine-reaction-observation-dm'): The Implementation Guide contains no examples for this profile
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-bundle'): The Implementation Guide contains no examples for this profile
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-bundle-dm'): The Implementation Guide contains no examples for this profile
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-immunization'): The Implementation Guide contains no examples for this profile
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-immunization-dm'): The Implementation Guide contains no examples for this profile
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-laboratory-bundle'): The Implementation Guide contains no examples for this profile
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-patient'): The Implementation Guide contains no examples for this profile
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-patient-dm'): The Implementation Guide contains no examples for this profile
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-vaccine-reaction-observation'): The Implementation Guide contains no examples for this profile
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-vaccine-reaction-observation-dm'): The Implementation Guide contains no examples for this profile

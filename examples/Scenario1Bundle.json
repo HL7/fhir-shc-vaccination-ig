@@ -6,7 +6,6 @@
     {
       "fullUrl": "resource:0",
       "resource": {
-        "id": "resource:0",
         "resourceType": "Patient",
         "name": [
           {
@@ -17,21 +16,13 @@
             ]
           }
         ],
-        "gender": "male",
-        "birthDate": "1951-01-20",
-        "address": [
-          {
-            "postalCode": "12345",
-            "country": "US"
-          }
-        ]
+        "birthDate": "1951-01-20"
       }
     },
     {
       "fullUrl": "resource:1",
       "resource": {
         "resourceType": "Immunization",
-        "id": "resource:1",
         "meta": {
           "security": [{"code": "IAL1"}]
         },
@@ -45,7 +36,7 @@
           ]
         },
         "patient": {
-          "reference": "Patient/resource:0"
+          "reference": "resource:0"
         },
         "occurrenceDateTime": "2021-01-01",
         "performer": [
@@ -55,14 +46,13 @@
             }
           }
         ],
-        "lotNumber": "Lot #0000001"
+        "lotNumber": "0000001"
       }
     },
     {
       "fullUrl": "resource:2",
       "resource": {
         "resourceType": "Immunization",
-        "id": "resource:2",
         "meta": {
           "security": [{"code": "IAL1.2"}]
         },
@@ -76,7 +66,7 @@
           ]
         },
         "patient": {
-          "reference": "Patient/resource:0"
+          "reference": "resource:0"
         },
         "occurrenceDateTime": "2021-01-29",
         "performer": [
@@ -86,7 +76,7 @@
             }
           }
         ],
-        "lotNumber": "Lot #0000007"
+        "lotNumber": "0000007"
       }
     }
   ]

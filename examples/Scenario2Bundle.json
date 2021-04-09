@@ -1,12 +1,11 @@
 {
   "resourceType": "Bundle",
-  "id": "Scenario2Bundle",
+  "id": "Scenario1Bundle",
   "type": "collection",
   "entry": [
     {
       "fullUrl": "resource:0",
       "resource": {
-        "id": "resource:0",
         "resourceType": "Patient",
         "name": [
           {
@@ -17,21 +16,16 @@
             ]
           }
         ],
-        "gender": "male",
-        "birthDate": "1961-01-20",
-        "address": [
-          {
-            "postalCode": "12345",
-            "country": "US"
-          }
-        ]
+        "birthDate": "1961-01-20"
       }
     },
     {
       "fullUrl": "resource:1",
       "resource": {
         "resourceType": "Immunization",
-        "id": "Scenario2Immunization1",
+        "meta": {
+          "security": [{"code": "IAL1.1"}]
+        },
         "status": "completed",
         "vaccineCode": {
           "coding": [
@@ -42,7 +36,7 @@
           ]
         },
         "patient": {
-          "reference": "Patient/Scenario2Patient"
+          "reference": "resource:0"
         },
         "occurrenceDateTime": "2021-01-01",
         "performer": [
@@ -52,14 +46,16 @@
             }
           }
         ],
-        "lotNumber": "Lot #0000001"
+        "lotNumber": "0000002"
       }
     },
     {
       "fullUrl": "resource:2",
       "resource": {
         "resourceType": "Immunization",
-        "id": "Scenario2Immunization2",
+        "meta": {
+          "security": [{"code": "IAL3"}]
+        },
         "status": "completed",
         "vaccineCode": {
           "coding": [
@@ -70,7 +66,7 @@
           ]
         },
         "patient": {
-          "reference": "Patient/Scenario2Patient"
+          "reference": "resource:0"
         },
         "occurrenceDateTime": "2021-01-29",
         "performer": [
@@ -80,7 +76,7 @@
             }
           }
         ],
-        "lotNumber": "Lot #0000007"
+        "lotNumber": "0000008"
       }
     }
   ]

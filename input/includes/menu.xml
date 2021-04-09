@@ -5,8 +5,8 @@
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Profiles<b class="caret"></b></a>
     <ul class="dropdown-menu">
       <li class="side-by-side">
-        <a href="StructureDefinition-vaccine-credential-immunization.html">Immunization</a>
-        <a href="StructureDefinition-vaccine-credential-immunization-dm.html">(DM)</a>
+        <a href="StructureDefinition-vaccination-credential-immunization.html">Immunization</a>
+        <a href="StructureDefinition-vaccination-credential-immunization-dm.html">(DM)</a>
       </li>
       <li class="side-by-side">
         <a href="StructureDefinition-covid19-laboratory-result-observation.html">Lab results (COVID-19)</a>
@@ -17,26 +17,26 @@
         <a href="StructureDefinition-infectious-disease-laboratory-result-observation-dm.html">(DM)</a>
       </li>
       <li class="side-by-side">
-        <a href="StructureDefinition-vaccine-credential-patient.html">Patient</a>
-        <a href="StructureDefinition-vaccine-credential-patient-dm.html">(DM)</a>
+        <a href="StructureDefinition-vaccination-credential-patient.html">Patient</a>
+        <a href="StructureDefinition-vaccination-credential-patient-dm.html">(DM)</a>
       </li>
       <li role="separator" class="divider"></li>
       <li class="side-by-side">
-        <a href="StructureDefinition-vaccine-credential-bundle.html">Bundle: Immunization</a>
-        <a href="StructureDefinition-vaccine-credential-bundle-dm.html">(DM)</a>
+        <a href="StructureDefinition-vaccination-credential-bundle.html">Bundle: Immunization</a>
+        <a href="StructureDefinition-vaccination-credential-bundle-dm.html">(DM)</a>
       </li>
       <li class="side-by-side">
-        <a href="StructureDefinition-covid-19-laboratory-bundle.html">Bundle: COVID-19 Labs</a>
-        <a href="StructureDefinition-covid-19-laboratory-bundle-dm.html">(DM)</a>
+        <a href="StructureDefinition-covid19-laboratory-bundle.html">Bundle: COVID-19 Labs</a>
+        <a href="StructureDefinition-covid19-laboratory-bundle-dm.html">(DM)</a>
       </li>
       <li class="side-by-side">
-        <a href="StructureDefinition-covid-19-laboratory-bundle.html">Bundle: Generic Labs</a>
-        <a href="StructureDefinition-covid-19-laboratory-bundle-dm.html">(DM)</a>
+        <a href="StructureDefinition-infectious-disease-laboratory-bundle.html">Bundle: Generic Labs</a>
+        <a href="StructureDefinition-infectious-disease-laboratory-bundle-dm.html">(DM)</a>
       </li>
       <li role="separator" class="divider"></li>
       <li class="side-by-side">
-        <a href="StructureDefinition-vaccine-credential-vaccine-reaction-observation.html">Experimental: Vaccination Reaction</a>
-        <a href="StructureDefinition-vaccine-credential-vaccine-reaction-observation-dm.html">(DM)</a>
+        <a href="StructureDefinition-vaccination-credential-vaccine-reaction-observation.html">Experimental: Vaccination Reaction</a>
+        <a href="StructureDefinition-vaccination-credential-vaccine-reaction-observation-dm.html">(DM)</a>
       </li>
       <li role="separator" class="divider"></li>
       <li><a href="conformance.html#data-minimization">What is "DM"?</a></li>
@@ -45,13 +45,12 @@
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Value Sets<b class="caret"></b></a>
     <ul class="dropdown-menu">
-      <li><a href="ValueSet-vaccine-credential-vaccine-value-set.html">Vaccines (CVX)</a></li>
-      <li><a href="ValueSet-vaccine-credential-vaccine-site-value-set.html">Vaccination Body Site</a></li>
-      <li><a href="ValueSet-vaccine-credential-funding-source-value-set.html">Vaccination Funding Source</a></li>
-      <li><a href="ValueSet-vaccine-credential-vaccine-reaction-value-set.html">Vaccination Reaction</a></li>
-      <li><a href="ValueSet-vaccine-credential-report-origin-value-set.html">Vaccination Report Origin</a></li>
-      <li><a href="ValueSet-vaccine-credential-vaccine-route-value-set.html">Vaccination Route</a></li>
-      <li><a href="ValueSet-vaccine-credential-status-reason-value-set.html">Vaccination Status Reason</a></li>
+      <li><a href="ValueSet-vaccination-credential-vaccine-value-set.html">Vaccines (CVX)</a></li>
+      <li><a href="ValueSet-vaccination-credential-vaccine-site-value-set.html">Vaccination Body Site</a></li>
+      <li><a href="ValueSet-vaccination-credential-funding-source-value-set.html">Vaccination Funding Source</a></li>
+      <li><a href="ValueSet-vaccination-credential-vaccine-reaction-value-set.html">Vaccination Reaction</a></li>
+      <li><a href="ValueSet-vaccination-credential-report-origin-value-set.html">Vaccination Report Origin</a></li>
+      <li><a href="ValueSet-vaccination-credential-vaccine-route-value-set.html">Vaccination Route</a></li>
 
       <li role="separator" class="divider"></li>
 
@@ -63,6 +62,7 @@
       <li><a href="ValueSet-identity-assurance-level-value-set.html">Identity Assurance</a></li>
     </ul>
   </li>
-  <li><a href="data-dictionary/data_dictionary.xlsx">Data Dictionary (.xlsx)</a></li>
+  <!--<li><a href="data-dictionary/data_dictionary.xlsx">Data Dictionary (.xlsx)</a></li>-->
+  <li><a href="https://github.com/dvci/vaccine-credential-ig/releases">Version History</a></li>
   <li><a href="https://github.com/dvci/vaccine-credential-ig">GitHub</a></li>
 </ul>

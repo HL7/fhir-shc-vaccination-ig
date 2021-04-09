@@ -1,6 +1,5 @@
 {
   "resourceType": "Bundle",
-  "id": "Scenario3Bundle",
   "type": "collection",
   "entry": [
     {
@@ -17,36 +16,13 @@
             ]
           }
         ],
-        "telecom": [
-          {
-            "system": "phone",
-            "value": "555-555-5555",
-            "use": "home"
-          },
-          {
-            "system": "email",
-            "value": "john.anyperson@example.com"
-          }
-        ],
-        "gender": "male",
-        "birthDate": "1951-01-20",
-        "address": [
-          {
-            "line": [
-              "123 Main St"
-            ],
-            "city": "Anytown",
-            "postalCode": "12345",
-            "country": "US"
-          }
-        ]
+        "birthDate": "1951-01-20"
       }
     },
     {
       "fullUrl": "resource:1",
       "resource": {
         "resourceType": "Observation",
-        "id": "Scenario3Lab",
         "meta": {
           "security": [{"code": "IAL1"}]
         },
@@ -70,7 +46,7 @@
           ]
         },
         "subject": {
-          "reference": "Patient/Scenario1Patient"
+          "reference": "resource:0"
         },
         "effectiveDateTime": "2021-02-17",
         "valueCodeableConcept": {

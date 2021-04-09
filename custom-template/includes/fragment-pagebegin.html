@@ -23,6 +23,29 @@
     <link href="{{site.data.info.assets}}assets/css/prism.css" rel="stylesheet" />
     {% include fragment-css.html %}
 
+    <script>
+        // Set tab based on the anchor in URL
+        var hash = window.location.hash;
+        try {
+            if(hash == "#tab-diff") sessionStorage.setItem('fhir-resource-tab-index', 1);
+            if(hash == "#tab-snapshot") sessionStorage.setItem('fhir-resource-tab-index', 2);
+            if(hash == "#tab-ms") sessionStorage.setItem('fhir-resource-tab-index', 3);
+
+            // Default to diff tab
+            if(!sessionStorage.getItem('fhir-resource-tab-index')) sessionStorage.setItem('fhir-resource-tab-index', 1);
+        } catch(e) { }
+
+        // Make it so that clicking the tabs also sets the anchor in the url
+        document.addEventListener("DOMContentLoaded", function() {
+            $('#tabs .ui-tabs-nav li').click(function() {
+                var id = $(this).children('a').attr('id');
+                if(id == "ui-id-2") window.location.hash = "#tab-diff";
+                if(id == "ui-id-3") window.location.hash = "#tab-snapshot";
+                if(id == "ui-id-4") window.location.hash = "#tab-ms";
+            })
+        });
+    </script>
+
     <script type="text/javascript" src="fhir-table-scripts.js"> </script>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->

@@ -14,7 +14,7 @@ Severity: #error
 
 Invariant:   vaccine-code-invariant
 Description: "CVX code should be provided if an applicable CVX code exists."
-Expression:  "coding.where($this.memberOf('http://hl7.org/fhir/uv/smarthealthcards-vaccination/ValueSet/vaccine-credential-cvx-value-set').not()).exists()"
+Expression:  "coding.where($this.memberOf('http://hl7.org/fhir/uv/smarthealthcards-vaccination/ValueSet/vaccination-credential-cvx-value-set').not()).exists()"
 Severity:    #warning
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -65,3 +65,33 @@ Invariant:   should-be-under-20-chars
 Description: "Length SHOULD be <20 for data minimization."
 Expression:  "$this.length() < 20"
 Severity:    #warning
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Invariant:   should-be-omitted
+Description: "SHOULD be omitted for data minimization."
+Expression:  "$this.length() = 0"
+Severity:    #warning
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Invariant:   should-be-omitted-privacy
+Description: "SHOULD be omitted to protect privacy and for data minimization."
+Expression:  "$this.length() = 0"
+Severity:    #warning
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Invariant:   shall-be-resource-uri
+Description: "IDs SHALL use resource:# format"
+Expression:  "$this.matches('^resource:[0-9]+$')"
+Severity:    #error
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Invariant:   should-not-include-string-lot
+Description: "lotNumber SHOULD NOT include `Lot #`, `Lot Number`, etc."
+Expression:  "$this.lower().matches('lot').not()"
+Severity:    #warning
+
+////////////////////////////////////////////////////////////////////////////////////////////////////

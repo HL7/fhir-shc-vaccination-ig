@@ -12,6 +12,7 @@ RuleSet: LaboratoryResultObservation
 * status MS
 
 * category MS
+* category 1..1
 * category ^slicing.discriminator.type = #pattern
 * category ^slicing.discriminator.path = "$this"
 * category ^slicing.rules = #open
@@ -22,16 +23,19 @@ RuleSet: LaboratoryResultObservation
 
 * code MS
 
-* subject only Reference(VaccineCredentialPatient)
+* subject only Reference(VaccinationCredentialPatient)
 * subject 1..1 MS
 * subject ^short = "Patient to whom lab result applies"
-* subject ^definition = "Reference to a VaccineCredentialPatient-conforming resource who is subject of lab result."
+* subject ^definition = "Reference to a VaccinationCredentialPatient-conforming resource who is subject of lab result."
 
 * effective[x] MS
 * effective[x] only dateTime or Period
 * effective[x] 1..1
 
 * value[x] MS
+* value[x] ^comment = "Issuers SHALL provide a computable representation of laboratory results if at all possible. If the Issuer is unable to accurately translate laboratory results into a computable form, it is unlikely a Verifier will be able to interpret the results. Issuers SHALL make every possible effort to resolve non-computable results prior to issuing credentials. In rare cases when this is not possible, Issuers MAY populate `valueCodeableConcept.text` with a free text result. Populating `valueCodeableConcept.text` will result in a warning when validating against the Allowable Data profile and an error with the Data Minimization profile."
+* valueCodeableConcept.text ^short = "String representation of results when a computable representation is not possible"
+* valueCodeableConcept.text ^comment = "See comment for `value[x]`."
 
 * performer only Reference(Organization)
 * performer MS
@@ -40,7 +44,7 @@ RuleSet: LaboratoryResultObservation
 * performer ^definition = "Organization which was responsible for laboratory record. Issuers SHOULD provide display name only. This is provided to Verifiers in case of invalid data in the credential, to support manual validation. This is not expected to be a computable Organization identifier."
 
 // VCI-specific (not from US Core)
-* id obeys should-be-under-20-chars
+* insert id-should-not-be-populated()
 * category[laboratory].coding MS
 * category[laboratory].coding.code MS
 * category[laboratory].coding.system MS
@@ -50,6 +54,20 @@ RuleSet: LaboratoryResultObservation
 * meta.security ^short = "Limited security label to convey identity level of assurance for patient referenced by this resource. Coding SHOULD include only code."
 * meta.security ^definition = "Limited security metadata which conveys an attestation that the lab testing provider performed a certain level of identity verification at the time of service. If known, Issuers SHALL attest to the highest level that applies."
 * meta.security MS
+
+* performer MS
+* performer 0..1
+* performer only Reference(Organization)
+* performer MS
+* performer ^short = "Organization which was responsible for the laboratory test result."
+* performer ^definition = "Only `Observation.performer.display` SHOULD be populated. See the definition of that element for details."
+* performer.display ^short = "Short, human-readable text representation of the organization."
+* performer.display MS
+* performer.display 1..1
+* performer.display ^definition = "Organization which was responsible for the laboratory test result. Issuers SHOULD provide display name only. This is provided to Verifiers in case of invalid data in the credential, to support manual validation. This is not expected to be a computable Organization identifier."
+
+
+* insert reference-to-absolute-uri(subject)
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -62,7 +80,6 @@ previous infection status."
 
 * insert LaboratoryResultObservation
 
-
 // This binding can be required because implementers can fall back to InfectiousDiseaseLaboratoryResultObservation
 * code from Covid19LaboratoryTestValueSet (required)
 * code obeys covid19-laboratory-test-code-invariant
@@ -72,6 +89,7 @@ previous infection status."
 * value[x] only CodeableConcept or Quantity
 * valueCodeableConcept from LaboratoryResultValueSet (extensible)
 * valueCodeableConcept obeys laboratory-result-invariant
+* valueCodeableConcept.text obeys should-be-omitted
 
 /*
 TODO: Test using `device` rather than `method`, like so:
@@ -95,7 +113,15 @@ TODO: Test using `device` rather than `method`, like so:
 
 RuleSet: LaboratoryResultObservationDM
 
-* meta 0..0
+* id 0..0
+* identifier 0..0
+* meta.versionId 0..0
+* meta.lastUpdated 0..0
+* meta.source 0..0
+* meta.profile 0..0
+* meta.tag 0..0
+* meta.id 0..0
+* meta.extension 0..0
 * implicitRules 0..0
 * language 0..0
 * text 0..0
@@ -104,7 +130,15 @@ RuleSet: LaboratoryResultObservationDM
 * modifierExtension 0..0
 * basedOn 0..0
 * partOf 0..0
-* category.extension 0..0
+* category[laboratory].extension 0..0
+* category[laboratory].id 0..0
+* category[laboratory].text 0..0
+* category[laboratory].coding.id 0..0
+* category[laboratory].coding.version 0..0
+* category[laboratory].coding.display 0..0
+* category[laboratory].coding.userSelected 0..0
+* category[laboratory].coding.extension 0..0
+* encounter 0..0
 * focus 0..0
 * issued 0..0
 * dataAbsentReason 0..0
@@ -118,6 +152,14 @@ RuleSet: LaboratoryResultObservationDM
 * hasMember 0..0
 * derivedFrom 0..0
 * component 0..0
+* performer.id 0..0
+* performer.extension 0..0
+* performer.reference 0..0
+* performer.type 0..0
+* performer.identifier 0..0
+* valueCodeableConcept.text 0..0
+
+* category ^slicing.rules = #closed
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -144,7 +186,6 @@ Title:          "Generic Laboratory Result Observation Profile - Allowable Data"
 Description:    "Profile for reporting laboratory results indicating current or previous infection status for a disease without a specified laboratory result profile."
 
 * insert LaboratoryResultObservation
-
 
 // Show an error if the code is part of a value set used in a disease-specific profile. If that's
 // the case, there's no reason to use this generic profile -- the disease-specific profile should

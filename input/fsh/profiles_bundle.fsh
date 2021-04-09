@@ -1,12 +1,20 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Profile: VaccineCredentialBundle
-Parent: Bundle
-Id: vaccine-credential-bundle
-Title: "Vaccine Credential Bundle - Allowable Data"
-Description: "The bundle of resources that represents the clinical content of a digital vaccination record."
+RuleSet: fullurl(path)
 
-* id obeys should-be-under-20-chars
+* {path}fullUrl 1..1
+* {path}fullUrl MS
+* {path}fullUrl ^short = "Locally unique identifier like resource:0"
+* {path}fullUrl ^definition = "Identifier for the contained resource that is locally unique within this Bundle. The identifier SHALL use `resource:#` format, where `#` is an integer incremented from 0 to _n_ within the Bundle."
+* {path}fullUrl ^comment = "n/a"
+* {path}fullUrl obeys shall-be-resource-uri
+
+RuleSet: common-bundle-rules
+
+* id ^short = "Should be omitted"
+* id ^definition = "It is not necessary to provide an `id` for Bundles profiled in this IG. This element SHOULD be omitted for data minimization reasons."
+* id ^comment = "n/a"
+* id obeys should-be-omitted
 
 * type  = #collection
 * type MS
@@ -16,86 +24,84 @@ Description: "The bundle of resources that represents the clinical content of a 
 * entry ^slicing.description = "Slicing based on the profile conformance of the entry"
 * entry and entry.resource MS
 
-* entry contains
-    // These resources are required per Conformance > Supported Profiles.
-    vaccineCredentialPatient 1..1 MS and
-    vaccineCredentialImmunization 1..* MS and
-    vaccineCredentialVaccineReactionObservation 0..*
+* insert id-should-not-be-populated(entry.)
+* insert fullurl(entry.)
 
-* entry[vaccineCredentialPatient] ^short = "Patient"
-* entry[vaccineCredentialPatient] ^definition = "The patient who is the subject of the Bundle"
-* entry[vaccineCredentialPatient].resource only VaccineCredentialPatient
-
-* entry[vaccineCredentialImmunization] ^short = "Immunization"
-* entry[vaccineCredentialImmunization] ^definition = "Immunization"
-* entry[vaccineCredentialImmunization].resource only VaccineCredentialImmunization
-
-* entry[vaccineCredentialVaccineReactionObservation] ^short = "Vaccination reaction"
-* entry[vaccineCredentialVaccineReactionObservation] ^definition = "Vaccination reaction"
-* entry[vaccineCredentialVaccineReactionObservation].resource only VaccineCredentialVaccineReactionObservation
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Profile: VaccineCredentialBundleDM
+Profile: VaccinationCredentialBundle
 Parent: Bundle
-Id: vaccine-credential-bundle-dm
-Title: "Vaccine Credential Bundle - Data Minimization"
-Description: "The bundle of resources that represents the clinical content of a digital vaccination record using data minimization profiles."
+Id: vaccination-credential-bundle
+Title: "Vaccination Credential Bundle - Allowable Data"
+Description: "The bundle of resources that represents the clinical content of a digital vaccination record."
 
-* id obeys should-be-under-20-chars
-
-* type  = #collection
-* type MS
-* entry ^slicing.discriminator.type = #profile
-* entry ^slicing.discriminator.path = "resource"
-* entry ^slicing.rules = #open
-* entry ^slicing.description = "Slicing based on the profile conformance of the entry"
-* entry and entry.resource MS
+* insert common-bundle-rules
 
 * entry contains
     // These resources are required per Conformance > Supported Profiles.
-    vaccineCredentialPatient 1..1 MS and
-    vaccineCredentialImmunization 1..* MS and
-    vaccineCredentialVaccineReactionObservation 0..*
+    VaccinationCredentialPatient 1..1 MS and
+    vaccinationCredentialImmunization 1..* MS and
+    vaccinationCredentialVaccineReactionObservation 0..*
 
-* entry[vaccineCredentialPatient] ^short = "Patient"
-* entry[vaccineCredentialPatient] ^definition = "The patient who is the subject of the Bundle"
-* entry[vaccineCredentialPatient].resource only VaccineCredentialPatientDM
+* entry[VaccinationCredentialPatient] ^short = "Patient"
+* entry[VaccinationCredentialPatient] ^definition = "The patient who is the subject of the Bundle"
+* entry[VaccinationCredentialPatient].resource only VaccinationCredentialPatient
 
-* entry[vaccineCredentialImmunization] ^short = "Immunization"
-* entry[vaccineCredentialImmunization] ^definition = "Immunization"
-* entry[vaccineCredentialImmunization].resource only VaccineCredentialImmunizationDM
+* entry[vaccinationCredentialImmunization] ^short = "Immunization"
+* entry[vaccinationCredentialImmunization] ^definition = "Immunization"
+* entry[vaccinationCredentialImmunization].resource only VaccinationCredentialImmunization
 
-* entry[vaccineCredentialVaccineReactionObservation] ^short = "Vaccination reaction"
-* entry[vaccineCredentialVaccineReactionObservation] ^definition = "Vaccination reaction"
-* entry[vaccineCredentialVaccineReactionObservation].resource only VaccineCredentialVaccineReactionObservationDM
+* entry[vaccinationCredentialVaccineReactionObservation] ^short = "Vaccination reaction"
+* entry[vaccinationCredentialVaccineReactionObservation] ^definition = "Vaccination reaction"
+* entry[vaccinationCredentialVaccineReactionObservation].resource only VaccinationCredentialVaccineReactionObservation
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Profile: VaccinationCredentialBundleDM
+Parent: Bundle
+Id: vaccination-credential-bundle-dm
+Title: "Vaccination Credential Bundle - Data Minimization"
+Description: "The bundle of resources that represents the clinical content of a digital vaccination record using data minimization profiles."
+
+* insert common-bundle-rules
+
+* entry contains
+    // These resources are required per Conformance > Supported Profiles.
+    VaccinationCredentialPatient 1..1 MS and
+    vaccinationCredentialImmunization 1..* MS and
+    vaccinationCredentialVaccineReactionObservation 0..*
+
+* entry[VaccinationCredentialPatient] ^short = "Patient"
+* entry[VaccinationCredentialPatient] ^definition = "The patient who is the subject of the Bundle"
+* entry[VaccinationCredentialPatient].resource only VaccinationCredentialPatientDM
+
+* entry[vaccinationCredentialImmunization] ^short = "Immunization"
+* entry[vaccinationCredentialImmunization] ^definition = "Immunization"
+* entry[vaccinationCredentialImmunization].resource only VaccinationCredentialImmunizationDM
+
+* entry[vaccinationCredentialVaccineReactionObservation] ^short = "Vaccination reaction"
+* entry[vaccinationCredentialVaccineReactionObservation] ^definition = "Vaccination reaction"
+* entry[vaccinationCredentialVaccineReactionObservation].resource only VaccinationCredentialVaccineReactionObservationDM
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Profile: Covid19LaboratoryBundle
 Parent: Bundle
-Id: covid-19-laboratory-bundle
-Title: "Vaccine Credential Laboratory Bundle - Allowable Data"
-Description: "The bundle of resources that represents the clinical content of a digital lab credential record."
+Id: covid19-laboratory-bundle
+Title: "COVID-19-specific Laboratory Bundle - Allowable Data"
+Description: "The bundle of resources that represents the clinical content of a digital lab credential record specifically for COVID-19."
 
-* id obeys should-be-under-20-chars
-
-* type  = #collection
-* type MS
-* entry ^slicing.discriminator.type = #profile
-* entry ^slicing.discriminator.path = "resource"
-* entry ^slicing.rules = #open
-* entry ^slicing.description = "Slicing based on the profile conformance of the entry"
-* entry and entry.resource MS
+* insert common-bundle-rules
 
 * entry contains
     // These resources are required per Conformance > Supported Profiles.
-    vaccineCredentialPatient 1..1 MS and
+    VaccinationCredentialPatient 1..1 MS and
     laboratoryResultObservation 1..* MS
 
-* entry[vaccineCredentialPatient] ^short = "Patient"
-* entry[vaccineCredentialPatient] ^definition = "The patient who is the subject of the Bundle"
-* entry[vaccineCredentialPatient].resource only VaccineCredentialPatient
+* entry[VaccinationCredentialPatient] ^short = "Patient"
+* entry[VaccinationCredentialPatient] ^definition = "The patient who is the subject of the Bundle"
+* entry[VaccinationCredentialPatient].resource only VaccinationCredentialPatient
 
 * entry[laboratoryResultObservation] ^short = "Laboratory result"
 * entry[laboratoryResultObservation] ^definition = "Laboratory result"
@@ -106,28 +112,20 @@ Description: "The bundle of resources that represents the clinical content of a 
 
 Profile: InfectiousDiseaseLaboratoryBundle
 Parent: Bundle
-Id: infections-disease-laboratory-bundle
-Title: "Vaccine Credential Laboratory Bundle - Allowable Data"
-Description: "The bundle of resources that represents the clinical content of a digital lab credential record."
+Id: infectious-disease-laboratory-bundle
+Title: "Infectious Disease (Generic) Laboratory Bundle - Allowable Data"
+Description: "The bundle of resources that represents the clinical content of a digital lab credential record for a generic infectious disease."
 
-* id obeys should-be-under-20-chars
-
-* type  = #collection
-* type MS
-* entry ^slicing.discriminator.type = #profile
-* entry ^slicing.discriminator.path = "resource"
-* entry ^slicing.rules = #open
-* entry ^slicing.description = "Slicing based on the profile conformance of the entry"
-* entry and entry.resource MS
+* insert common-bundle-rules
 
 * entry contains
     // These resources are required per Conformance > Supported Profiles.
-    vaccineCredentialPatient 1..1 MS and
+    VaccinationCredentialPatient 1..1 MS and
     laboratoryResultObservation 1..* MS
 
-* entry[vaccineCredentialPatient] ^short = "Patient"
-* entry[vaccineCredentialPatient] ^definition = "The patient who is the subject of the Bundle"
-* entry[vaccineCredentialPatient].resource only VaccineCredentialPatient
+* entry[VaccinationCredentialPatient] ^short = "Patient"
+* entry[VaccinationCredentialPatient] ^definition = "The patient who is the subject of the Bundle"
+* entry[VaccinationCredentialPatient].resource only VaccinationCredentialPatient
 
 * entry[laboratoryResultObservation] ^short = "Laboratory result"
 * entry[laboratoryResultObservation] ^definition = "Laboratory result"
@@ -138,28 +136,20 @@ Description: "The bundle of resources that represents the clinical content of a 
 
 Profile: InfectiousDiseaseLaboratoryBundleDM
 Parent: Bundle
-Id: infections-disease-laboratory-bundle-dm
-Title: "Infections Disease (Generic) Laboratory Bundle - Data Minimization"
+Id: infectious-disease-laboratory-bundle-dm
+Title: "Infectious Disease (Generic) Laboratory Bundle - Data Minimization"
 Description: "The bundle of resources that represents the clinical content of a digital lab credential record for a generic infectious disease for data minimization."
 
-* id obeys should-be-under-20-chars
-
-* type  = #collection
-* type MS
-* entry ^slicing.discriminator.type = #profile
-* entry ^slicing.discriminator.path = "resource"
-* entry ^slicing.rules = #open
-* entry ^slicing.description = "Slicing based on the profile conformance of the entry"
-* entry and entry.resource MS
+* insert common-bundle-rules
 
 * entry contains
     // These resources are required per Conformance > Supported Profiles.
-    vaccineCredentialPatient 1..1 MS and
+    VaccinationCredentialPatient 1..1 MS and
     laboratoryResultObservation 1..* MS
 
-* entry[vaccineCredentialPatient] ^short = "Patient"
-* entry[vaccineCredentialPatient] ^definition = "The patient who is the subject of the Bundle"
-* entry[vaccineCredentialPatient].resource only VaccineCredentialPatient
+* entry[VaccinationCredentialPatient] ^short = "Patient"
+* entry[VaccinationCredentialPatient] ^definition = "The patient who is the subject of the Bundle"
+* entry[VaccinationCredentialPatient].resource only VaccinationCredentialPatient
 
 * entry[laboratoryResultObservation] ^short = "Laboratory result"
 * entry[laboratoryResultObservation] ^definition = "Laboratory result"
@@ -170,28 +160,20 @@ Description: "The bundle of resources that represents the clinical content of a 
 
 Profile: Covid19LaboratoryBundleDM
 Parent: Bundle
-Id: covid-19-laboratory-bundle-dm
+Id: covid19-laboratory-bundle-dm
 Title: "COVID-19-specific Laboratory Bundle - Data Minimization"
 Description: "The bundle of resources that represents the clinical content of a digital lab credential record specifically for COVID-19 data minimization."
 
-* id obeys should-be-under-20-chars
-
-* type  = #collection
-* type MS
-* entry ^slicing.discriminator.type = #profile
-* entry ^slicing.discriminator.path = "resource"
-* entry ^slicing.rules = #open
-* entry ^slicing.description = "Slicing based on the profile conformance of the entry"
-* entry and entry.resource MS
+* insert common-bundle-rules
 
 * entry contains
     // These resources are required per Conformance > Supported Profiles.
-    vaccineCredentialPatient 1..1 MS and
+    VaccinationCredentialPatient 1..1 MS and
     laboratoryResultObservation 1..* MS
 
-* entry[vaccineCredentialPatient] ^short = "Patient"
-* entry[vaccineCredentialPatient] ^definition = "The patient who is the subject of the Bundle"
-* entry[vaccineCredentialPatient].resource only VaccineCredentialPatientDM
+* entry[VaccinationCredentialPatient] ^short = "Patient"
+* entry[VaccinationCredentialPatient] ^definition = "The patient who is the subject of the Bundle"
+* entry[VaccinationCredentialPatient].resource only VaccinationCredentialPatientDM
 
 * entry[laboratoryResultObservation] ^short = "Laboratory result"
 * entry[laboratoryResultObservation] ^definition = "Laboratory result"

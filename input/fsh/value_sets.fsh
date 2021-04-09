@@ -10,8 +10,8 @@ Description: "Temporary CVX code system to add missing codes to http://hl7.org/f
 * #210 "COVID-19 vaccine, vector-nr, rS-ChAdOx1, PF, 0.5 mL"
 * #212 "COVID-19 vaccine, vector-nr, rS-Ad26, PF, 0.5 mL"
 
-ValueSet:    VaccineCredentialVaccineValueSet
-Id:          vaccine-credential-vaccine-value-set
+ValueSet:    VaccinationCredentialVaccineValueSet
+Id:          vaccination-credential-vaccine-value-set
 Title:       "Value set for identifying vaccines"
 Description: "Includes [CVX codes](https://www2.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=tradename) to identify specific vaccinations."
 * CVX#207 "COVID-19, mRNA, LNP-S, PF, 100 mcg/0.5 mL dose"
@@ -21,9 +21,10 @@ Description: "Includes [CVX codes](https://www2.cdc.gov/vaccines/iis/iisstandard
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// For Immunization.statusReason
-ValueSet:    VaccineCredentialStatusReasonValueSet
-Id:          vaccine-credential-status-reason-value-set
+// For Immunization.statusReason -- this element is currently not allowed
+/*
+ValueSet:    VaccinationCredentialStatusReasonValueSet
+Id:          vaccination-credential-status-reason-value-set
 Title:       "Status reason value set"
 Description: "Reasons a vaccine was not given"
 * ACT#IMMUNE
@@ -33,12 +34,13 @@ Description: "Reasons a vaccine was not given"
 
 // Support for IIS value set for RXA-18 (refusal reason) - this is CDC NIP002
 * include codes from system http://phinvads.cdc.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3380
+*/
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // For Immunization.reportOrigin
-ValueSet:    VaccineCredentialReportOriginValueSet
-Id:          vaccine-credential-report-origin-value-set
+ValueSet:    VaccinationCredentialReportOriginValueSet
+Id:          vaccination-credential-report-origin-value-set
 Title:       "Secondarily reported record source value set"
 Description: "Source of secondarily reported records"
 
@@ -51,8 +53,8 @@ Description: "Source of secondarily reported records"
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // For Immunization.site
-ValueSet:    VaccineCredentialVaccineSiteValueSet
-Id:          vaccine-credential-vaccine-site-value-set
+ValueSet:    VaccinationCredentialVaccineSiteValueSet
+Id:          vaccination-credential-vaccine-site-value-set
 Title:       "Body site for vaccine administration value set"
 Description: "Body site vaccine was administered"
 
@@ -65,8 +67,8 @@ Description: "Body site vaccine was administered"
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // For Immunization.route
-ValueSet:    VaccineCredentialVaccineRouteValueSet
-Id:          vaccine-credential-vaccine-route-value-set
+ValueSet:    VaccinationCredentialVaccineRouteValueSet
+Id:          vaccination-credential-vaccine-route-value-set
 Title:       "Vaccination route value set"
 Description: "How vaccine entered the body"
 
@@ -84,8 +86,8 @@ Description: "How vaccine entered the body"
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // For Immunization.fundingSource
-ValueSet:    VaccineCredentialFundingSourceValueSet
-Id:          vaccine-credential-funding-source-value-set
+ValueSet:    VaccinationCredentialFundingSourceValueSet
+Id:          vaccination-credential-funding-source-value-set
 Title:       "Funding source value set"
 Description: "Funding source for the vaccine"
 
@@ -97,9 +99,9 @@ Description: "Funding source for the vaccine"
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// For vaccine reaction Observation (VaccineCredentialVaccineReactionObservation)
-ValueSet:    VaccineCredentialVaccineReactionValueSet
-Id:          vaccine-credential-vaccine-reaction-value-set
+// For vaccine reaction Observation (VaccinationCredentialVaccineReactionObservation)
+ValueSet:    VaccinationCredentialVaccineReactionValueSet
+Id:          vaccination-credential-vaccine-reaction-value-set
 Title:       "Adverse reaction value set"
 Description: "Codes describing reactions to vaccinations"
 
