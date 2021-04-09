@@ -21,7 +21,42 @@ Description: "Slight modification of Patient, with identifier as 0..0 and limite
 * birthDate MS
 
 * gender 0..0
-* gender ^comment = "Self-identified gender may change over time, and it may not be possible to re-issue a credential updating the value of this element. Mutable data should not be included in an immutable credential unless there is overwhelming value for verification (like with `name`). This is not the case for this element. Despite this, it's possible some systems will include gender by default because it is a common field in administrative data. We have therefore disallowed this element in both the allowable and data minimization profiles."
+* gender ^short = "SHALL not be included"
+* gender ^comment = "Self-identified gender may change over time, and it may not be possible to re-issue a credential updating the value of this element. Including this element could therefore create a situation where the gender element in the credential does not match that in another form of identification, or does not match the Holder's self-identified gender at the time they present their credential to a Verifier.
+
+Because gender is a common field in administrative data, it is possible Issuers will include it without considering the potential harms to Holders as described above. We have therefore disallowed this element in both the allowable and data minimization profiles."
+
+* photo 0..0
+* photo ^comment = "Attachments are not allowed due to data size constraints."
+
+* insert address-details-shall-not-be-populated(address.)
+* insert address-details-shall-not-be-populated(contact.address.)
+
+* insert contact-information-should-not-be-populated(telecom.value)
+* insert contact-information-should-not-be-populated(address.city)
+* insert contact-information-should-not-be-populated(address.district)
+* insert contact-information-should-not-be-populated(address.state)
+* insert contact-information-should-not-be-populated(address.postalCode)
+* insert contact-information-should-not-be-populated(contact.address.city)
+* insert contact-information-should-not-be-populated(contact.address.district)
+* insert contact-information-should-not-be-populated(contact.address.state)
+* insert contact-information-should-not-be-populated(contact.address.postalCode)
+
+RuleSet: address-details-shall-not-be-populated(path)
+* {path}text 0..0
+* {path}text ^short = "SHALL not be included"
+* {path}text ^definition = "Full physical address SHALL not be included because of patient privacy concerns."
+* {path}text ^comment = "There are scenarios where a Holder of a credential may wish to present their credential without revealing their full physical address."
+* {path}line 0..0
+* {path}line ^short = "SHALL not be included"
+* {path}line ^definition = "Full physical address SHALL not be included because of patient privacy concerns."
+* {path}line ^comment = "There are scenarios where a Holder of a credential may wish to present their credential without revealing their full physical address."
+
+RuleSet: contact-information-should-not-be-populated(path)
+* {path} obeys should-be-omitted-privacy
+* {path} ^comment = "For patient privacy reasons, this element SHALL NOT be populated unless the Issuer believes the credential cannot be verified in its absence."
+
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
