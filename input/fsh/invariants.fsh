@@ -82,10 +82,10 @@ Severity:    #warning
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Invariant:   should-be-resource-uri
-Description: "IDs should use resource:# format"
+Invariant:   shall-be-resource-uri
+Description: "IDs SHALL use resource:# format"
 Expression:  "$this.matches('^resource:[0-9]+$')"
-Severity:    #warning
+Severity:    #error
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
