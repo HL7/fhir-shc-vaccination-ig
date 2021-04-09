@@ -23,10 +23,10 @@ RuleSet: LaboratoryResultObservation
 
 * code MS
 
-* subject only Reference(VaccineCredentialPatient)
+* subject only Reference(VaccinationCredentialPatient)
 * subject 1..1 MS
 * subject ^short = "Patient to whom lab result applies"
-* subject ^definition = "Reference to a VaccineCredentialPatient-conforming resource who is subject of lab result."
+* subject ^definition = "Reference to a VaccinationCredentialPatient-conforming resource who is subject of lab result."
 
 * effective[x] MS
 * effective[x] only dateTime or Period

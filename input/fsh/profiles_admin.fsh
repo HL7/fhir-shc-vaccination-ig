@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Profile:     VaccineCredentialPatient
-Id:          vaccine-credential-patient
+Profile:     VaccinationCredentialPatient
+Id:          vaccination-credential-patient
 Parent:      Patient
 Title:       "Patient Profile - Allowable Data"
 Description: "Slight modification of Patient, with identifier as 0..0 and limited MS."
@@ -60,9 +60,9 @@ RuleSet: contact-information-should-not-be-populated(path)
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Profile:     VaccineCredentialPatientDM
-Id:          vaccine-credential-patient-dm
-Parent:      VaccineCredentialPatient
+Profile:     VaccinationCredentialPatientDM
+Id:          vaccination-credential-patient-dm
+Parent:      VaccinationCredentialPatient
 Title:       "Patient Profile - Data Minimization"
 Description: "Only elements necessary for Verifiers can be populated."
 

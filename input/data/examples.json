@@ -1,5 +1,5 @@
 {
-    "StructureDefinition-vaccine-credential-immunization.html": [
+    "StructureDefinition-vaccination-credential-immunization.html": [
         {
             "title": "Immunization example with Moderna, dose 1",
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario1Bundle.json#L25-L49"
@@ -29,7 +29,7 @@
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle.json#L25-L64"
         }
     ],
-    "StructureDefinition-vaccine-credential-bundle.html": [
+    "StructureDefinition-vaccination-credential-bundle.html": [
         {
             "title": "Scenario 1 Bundle (COVID-19 vaccination with Pfizer, 2 doses)",
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario1Bundle.json"
@@ -57,7 +57,7 @@
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle.json#L25-L64"
         }
     ],
-    "StructureDefinition-vaccine-credential-patient.html": [
+    "StructureDefinition-vaccination-credential-patient.html": [
         {
             "title": "John B. Anyperson example",
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario1Bundle.json#L9-L19"

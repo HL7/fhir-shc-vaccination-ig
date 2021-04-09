@@ -1,14 +1,14 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Profile:     VaccineCredentialImmunization
-Id:          vaccine-credential-immunization
+Profile:     VaccinationCredentialImmunization
+Id:          vaccination-credential-immunization
 Parent:      Immunization
 Title:       "Immunization Profile - Allowable Data"
-Description: "Defines a profile representing a vaccination for a vaccine credential Health Card."
+Description: "Defines a profile representing a vaccination for a vaccination credential Health Card."
 
 * insert id-should-not-be-populated()
 
-* patient only Reference(VaccineCredentialPatient)
+* patient only Reference(VaccinationCredentialPatient)
 * patient MS
 * insert reference-to-absolute-uri(patient)
 
@@ -30,9 +30,9 @@ Description: "Defines a profile representing a vaccination for a vaccine credent
 * primarySource ^short = "Information in this record from person who administered vaccine?"
 
 * vaccineCode MS
-* vaccineCode from VaccineCredentialVaccineValueSet (extensible)
+* vaccineCode from VaccinationCredentialVaccineValueSet (extensible)
 * vaccineCode obeys vaccine-code-invariant
-* vaccineCode ^definition = "Implementers SHALL use a code from VaccineCredentialVaccineValueSet if this value set contains an appropriate code.
+* vaccineCode ^definition = "Implementers SHALL use a code from VaccinationCredentialVaccineValueSet if this value set contains an appropriate code.
 
 For COVID-19-related vaccinations, implementers SHOULD use one of the CVX codes [listed on the CDC's COVID-19 vaccine-related codes list](https://www.cdc.gov/vaccines/programs/iis/COVID-19-related-codes.html) whenever possible.
 
@@ -44,7 +44,7 @@ We are actively investigating adding additional codes that are not United States
 * lotNumber ^short = "String representing lot number like `0123L45A`"
 * lotNumber ^definition = "Lot number of the vaccine product. Implementers SHOULD NOT include text synonymous with \"lot number\" in this element as this is redundant. For example, use `0123L45A` rather than `Lot # 0123L45A`."
 
-* protocolApplied 0..0 // See explanation in pagecontent/StructureDefinition-vaccine-credential-immunization-intro.md
+* protocolApplied 0..0 // See explanation in pagecontent/StructureDefinition-vaccination-credential-immunization-intro.md
 
 * performer MS
 * performer 0..1
@@ -65,14 +65,14 @@ We are actively investigating adding additional codes that are not United States
 // incomplete vaccinations.
 * statusReason 0..0
 // This is the value set we would use if we were including `statusReason`
-// * statusReason from VaccineCredentialStatusReasonValueSet (extensible)
+// * statusReason from VaccinationCredentialStatusReasonValueSet (extensible)
 
-* reportOrigin from VaccineCredentialReportOriginValueSet (extensible)
-* site from VaccineCredentialVaccineSiteValueSet (extensible)
-* route from VaccineCredentialVaccineRouteValueSet (extensible)
-* fundingSource from VaccineCredentialFundingSourceValueSet (extensible)
+* reportOrigin from VaccinationCredentialReportOriginValueSet (extensible)
+* site from VaccinationCredentialVaccineSiteValueSet (extensible)
+* route from VaccinationCredentialVaccineRouteValueSet (extensible)
+* fundingSource from VaccinationCredentialFundingSourceValueSet (extensible)
 
-* reaction.detail only Reference(VaccineCredentialVaccineReactionObservation)
+* reaction.detail only Reference(VaccinationCredentialVaccineReactionObservation)
 
 * isSubpotent MS
 * isSubpotent ^definition = "Indication if a dose is considered to be subpotent.
@@ -91,11 +91,11 @@ If `isSubpotent` was not allowed at all (`0..0` cardinality), the concern is tha
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Profile:     VaccineCredentialImmunizationDM
-Id:          vaccine-credential-immunization-dm
-Parent:      VaccineCredentialImmunization
+Profile:     VaccinationCredentialImmunizationDM
+Id:          vaccination-credential-immunization-dm
+Parent:      VaccinationCredentialImmunization
 Title:       "Immunization Profile - Data Minimization"
-Description: "Defines a profile representing a vaccination for a vaccine credential Health Card. Only elements necessary for Verifiers can be populated."
+Description: "Defines a profile representing a vaccination for a vaccination credential Health Card. Only elements necessary for Verifiers can be populated."
 
 * id 0..0
 * meta.versionId 0..0
@@ -142,45 +142,45 @@ Description: "Defines a profile representing a vaccination for a vaccine credent
 * programEligibility 0..0
 
 // Required in DM profile to provide implementers with sterner warning when straying from the expected value sets
-* vaccineCode from VaccineCredentialVaccineValueSet (required)
+* vaccineCode from VaccinationCredentialVaccineValueSet (required)
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Profile:        VaccineCredentialVaccineReactionObservation
+Profile:        VaccinationCredentialVaccineReactionObservation
 Parent:         Observation
-Id:             vaccine-credential-vaccine-reaction-observation
+Id:             vaccination-credential-vaccine-reaction-observation
 Title:          "Vaccine Reaction Observation Profile - Allowable Data"
 Description:    "Profile for reporting a reaction to a vaccine.
 
 This profile may not be necessary depending on the use cases for this IG, but it's included for now because
 we wanted to have value sets corresponding to all the value sets in the IIS core data elements. In this
-profile, VaccineCredentialVaccineReactionValueSet includes the IIS adverse reaction codes."
+profile, VaccinationCredentialVaccineReactionValueSet includes the IIS adverse reaction codes."
 * ^status = #draft
 
 * id obeys should-be-under-20-chars
 
 * code = SCT#293104008 "Vaccines adverse reaction (disorder)"
 
-* subject only Reference(VaccineCredentialPatient)
+* subject only Reference(VaccinationCredentialPatient)
 * subject 1..1 MS
 * subject ^short = "Patient with reaction to vaccine"
-* subject ^definition = "Reference to a VaccineCredentialPatient-conforming resource who had a reaction to the vaccine."
+* subject ^definition = "Reference to a VaccinationCredentialPatient-conforming resource who had a reaction to the vaccine."
 
 // Not sure if this is the best element to use to refer to the immunization(s) attributed to the reaction
-* focus only Reference(VaccineCredentialImmunization)
+* focus only Reference(VaccinationCredentialImmunization)
 * focus 1..* MS
 * focus ^short = "Immunization causing the reaction"
-* focus ^definition = "Reference to the VaccineCredentialImmunization-conforming resource representing the vaccination(s) causing the reaction."
+* focus ^definition = "Reference to the VaccinationCredentialImmunization-conforming resource representing the vaccination(s) causing the reaction."
 
 * value[x] only CodeableConcept
 * valueCodeableConcept 1..1 MS
-* valueCodeableConcept from VaccineCredentialVaccineReactionValueSet (extensible)
+* valueCodeableConcept from VaccinationCredentialVaccineReactionValueSet (extensible)
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Profile:        VaccineCredentialVaccineReactionObservationDM
-Parent:         VaccineCredentialVaccineReactionObservation
-Id:             vaccine-credential-vaccine-reaction-observation-dm
+Profile:        VaccinationCredentialVaccineReactionObservationDM
+Parent:         VaccinationCredentialVaccineReactionObservation
+Id:             vaccination-credential-vaccine-reaction-observation-dm
 Title:          "Vaccine Reaction Observation Profile - Data Minimization"
 Description:    "Profile for reporting a reaction to a vaccine. Only elements necessary for Verifiers can be populated."
 

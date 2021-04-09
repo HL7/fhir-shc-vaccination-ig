@@ -2,7 +2,7 @@
 
 #### Identifying vaccines
 
-Implementers SHALL use the [VaccineCredentialVaccineValueSet] to identify vaccinations if a suitable code is available in that value set. An extensible binding is used in this profile to provide flexibility ONLY if real-world circumstances require the use of a code outside this value set. The [data minimization version of this profile][VaccineCredentialImmunizationDM] uses a required binding to reflect these conformance criteria.
+Implementers SHALL use the [VaccinationCredentialVaccineValueSet] to identify vaccinations if a suitable code is available in that value set. An extensible binding is used in this profile to provide flexibility ONLY if real-world circumstances require the use of a code outside this value set. The [data minimization version of this profile][VaccinationCredentialImmunizationDM] uses a required binding to reflect these conformance criteria.
 
 #### Conformance for `status` and `statusReason`
 

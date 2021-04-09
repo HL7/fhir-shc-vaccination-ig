@@ -10,25 +10,25 @@
 [InfectiousDiseaseLaboratoryBundle]: StructureDefinition-infectious-disease-laboratory-bundle.html
 [InfectiousDiseaseLaboratoryResultObservationDM]: StructureDefinition-infectious-disease-laboratory-result-observation-dm.html
 [InfectiousDiseaseLaboratoryResultObservation]: StructureDefinition-infectious-disease-laboratory-result-observation.html
-[VaccineCredentialBundleDM]: StructureDefinition-vaccine-credential-bundle-dm.html
-[VaccineCredentialBundle]: StructureDefinition-vaccine-credential-bundle.html
-[VaccineCredentialImmunizationDM]: StructureDefinition-vaccine-credential-immunization-dm.html
-[VaccineCredentialImmunization]: StructureDefinition-vaccine-credential-immunization.html
-[VaccineCredentialPatientDM]: StructureDefinition-vaccine-credential-patient-dm.html
-[VaccineCredentialPatient]: StructureDefinition-vaccine-credential-patient.html
-[VaccineCredentialVaccineReactionObservationDM]: StructureDefinition-vaccine-credential-vaccine-reaction-observation-dm.html
-[VaccineCredentialVaccineReactionObservation]: StructureDefinition-vaccine-credential-vaccine-reaction-observation.html
+[VaccinationCredentialBundleDM]: StructureDefinition-vaccination-credential-bundle-dm.html
+[VaccinationCredentialBundle]: StructureDefinition-vaccination-credential-bundle.html
+[VaccinationCredentialImmunizationDM]: StructureDefinition-vaccination-credential-immunization-dm.html
+[VaccinationCredentialImmunization]: StructureDefinition-vaccination-credential-immunization.html
+[VaccinationCredentialPatientDM]: StructureDefinition-vaccination-credential-patient-dm.html
+[VaccinationCredentialPatient]: StructureDefinition-vaccination-credential-patient.html
+[VaccinationCredentialVaccineReactionObservationDM]: StructureDefinition-vaccination-credential-vaccine-reaction-observation-dm.html
+[VaccinationCredentialVaccineReactionObservation]: StructureDefinition-vaccination-credential-vaccine-reaction-observation.html
 
 [Covid19LaboratoryTestValueSet]: ValueSet-covid19-laboratory-test-value-set.html
 [IdentityAssuranceLevelValueSet]: ValueSet-identity-assurance-level-value-set.html
 [LaboratoryResultValueSet]: ValueSet-laboratory-result-value-set.html
-[VaccineCredentialFundingSourceValueSet]: ValueSet-vaccine-credential-funding-source-value-set.html
-[VaccineCredentialReportOriginValueSet]: ValueSet-vaccine-credential-report-origin-value-set.html
-[VaccineCredentialStatusReasonValueSet]: ValueSet-vaccine-credential-status-reason-value-set.html
-[VaccineCredentialVaccineReactionValueSet]: ValueSet-vaccine-credential-vaccine-reaction-value-set.html
-[VaccineCredentialVaccineRouteValueSet]: ValueSet-vaccine-credential-vaccine-route-value-set.html
-[VaccineCredentialVaccineSiteValueSet]: ValueSet-vaccine-credential-vaccine-site-value-set.html
-[VaccineCredentialVaccineValueSet]: ValueSet-vaccine-credential-vaccine-value-set.html
+[VaccinationCredentialFundingSourceValueSet]: ValueSet-vaccination-credential-funding-source-value-set.html
+[VaccinationCredentialReportOriginValueSet]: ValueSet-vaccination-credential-report-origin-value-set.html
+[VaccinationCredentialStatusReasonValueSet]: ValueSet-vaccination-credential-status-reason-value-set.html
+[VaccinationCredentialVaccineReactionValueSet]: ValueSet-vaccination-credential-vaccine-reaction-value-set.html
+[VaccinationCredentialVaccineRouteValueSet]: ValueSet-vaccination-credential-vaccine-route-value-set.html
+[VaccinationCredentialVaccineSiteValueSet]: ValueSet-vaccination-credential-vaccine-site-value-set.html
+[VaccinationCredentialVaccineValueSet]: ValueSet-vaccination-credential-vaccine-value-set.html
 
 [Scenario1Bundle]: https://github.com/dvci/vaccine-credential-ig/blob/{{ site.data['git-branch'] }}/examples/Scenario1Bundle.json
 [Scenario2Bundle]: https://github.com/dvci/vaccine-credential-ig/blob/{{ site.data['git-branch'] }}/examples/Scenario2Bundle.json

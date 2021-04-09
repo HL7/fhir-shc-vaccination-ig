@@ -14,7 +14,7 @@ Severity: #error
 
 Invariant:   vaccine-code-invariant
 Description: "CVX code should be provided if an applicable CVX code exists."
-Expression:  "coding.where($this.memberOf('http://hl7.org/fhir/uv/smarthealthcards-vaccination/ValueSet/vaccine-credential-cvx-value-set').not()).exists()"
+Expression:  "coding.where($this.memberOf('http://hl7.org/fhir/uv/smarthealthcards-vaccination/ValueSet/vaccination-credential-cvx-value-set').not()).exists()"
 Severity:    #warning
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////

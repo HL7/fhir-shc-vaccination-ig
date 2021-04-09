@@ -1,4 +1,4 @@
-# Vaccine Credential FHIR Implementation Guide \[DRAFT\]
+# Vaccination Credential FHIR Implementation Guide \[DRAFT\]
 
 CI build of this IG available at <http://build.fhir.org/ig/dvci/vaccine-credential-ig/branches/main/>.
 

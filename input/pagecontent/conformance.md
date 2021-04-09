@@ -59,9 +59,9 @@ Additionally:
 
 ### Bundles
 
-Bundles produced by Issuers SHALL validate against [VaccineCredentialBundle] or [Covid19LaboratoryBundle]/[InfectiousDiseaseLaboratoryBundle] without errors, and SHOULD validate against [VaccineCredentialBundleDM] or [Covid19LaboratoryBundleDM]/[InfectiousDiseaseLaboratoryBundleDM] without errors.
+Bundles produced by Issuers SHALL validate against [VaccinationCredentialBundle] or [Covid19LaboratoryBundle]/[InfectiousDiseaseLaboratoryBundle] without errors, and SHOULD validate against [VaccinationCredentialBundleDM] or [Covid19LaboratoryBundleDM]/[InfectiousDiseaseLaboratoryBundleDM] without errors.
 
-If an Issuer wishes to include both vaccination and laboratory test results in the same Bundle resource, this resource SHALL validate against both [VaccineCredentialBundle] and [VaccineCredentialLaboratoryBundle], and SHOULD validate against their DM counterparts.
+If an Issuer wishes to include both vaccination and laboratory test results in the same Bundle resource, this resource SHALL validate against both [VaccinationCredentialBundle] and [VaccinationCredentialLaboratoryBundle], and SHOULD validate against their DM counterparts.
 
 ### Validation
 
@@ -100,21 +100,21 @@ path/to/resource.json
 
 For convenience, here are the commands for validating bundles:
 
-* [VaccineCredentialBundle]:
+* [VaccinationCredentialBundle]:
 
     ```sh
     java -jar path/to/validator_cli.jar -version 4.0.1 \
     -ig path/to/package.tgz \
-    -profile http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccine-credential-bundle \
+    -profile http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-bundle \
     path/to/bundle.json
     ```
 
-* [VaccineCredentialBundleDM]:
+* [VaccinationCredentialBundleDM]:
 
     ```sh
     java -jar path/to/validator_cli.jar -version 4.0.1 \
     -ig path/to/package.tgz \
-    -profile http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccine-credential-bundle-dm \
+    -profile http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-bundle-dm \
     path/to/bundle.json
     ```
 

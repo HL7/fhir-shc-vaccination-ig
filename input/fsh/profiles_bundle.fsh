@@ -30,59 +30,59 @@ RuleSet: common-bundle-rules
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Profile: VaccineCredentialBundle
+Profile: VaccinationCredentialBundle
 Parent: Bundle
-Id: vaccine-credential-bundle
-Title: "Vaccine Credential Bundle - Allowable Data"
+Id: vaccination-credential-bundle
+Title: "Vaccination Credential Bundle - Allowable Data"
 Description: "The bundle of resources that represents the clinical content of a digital vaccination record."
 
 * insert common-bundle-rules
 
 * entry contains
     // These resources are required per Conformance > Supported Profiles.
-    vaccineCredentialPatient 1..1 MS and
-    vaccineCredentialImmunization 1..* MS and
-    vaccineCredentialVaccineReactionObservation 0..*
+    VaccinationCredentialPatient 1..1 MS and
+    vaccinationCredentialImmunization 1..* MS and
+    vaccinationCredentialVaccineReactionObservation 0..*
 
-* entry[vaccineCredentialPatient] ^short = "Patient"
-* entry[vaccineCredentialPatient] ^definition = "The patient who is the subject of the Bundle"
-* entry[vaccineCredentialPatient].resource only VaccineCredentialPatient
+* entry[VaccinationCredentialPatient] ^short = "Patient"
+* entry[VaccinationCredentialPatient] ^definition = "The patient who is the subject of the Bundle"
+* entry[VaccinationCredentialPatient].resource only VaccinationCredentialPatient
 
-* entry[vaccineCredentialImmunization] ^short = "Immunization"
-* entry[vaccineCredentialImmunization] ^definition = "Immunization"
-* entry[vaccineCredentialImmunization].resource only VaccineCredentialImmunization
+* entry[vaccinationCredentialImmunization] ^short = "Immunization"
+* entry[vaccinationCredentialImmunization] ^definition = "Immunization"
+* entry[vaccinationCredentialImmunization].resource only VaccinationCredentialImmunization
 
-* entry[vaccineCredentialVaccineReactionObservation] ^short = "Vaccination reaction"
-* entry[vaccineCredentialVaccineReactionObservation] ^definition = "Vaccination reaction"
-* entry[vaccineCredentialVaccineReactionObservation].resource only VaccineCredentialVaccineReactionObservation
+* entry[vaccinationCredentialVaccineReactionObservation] ^short = "Vaccination reaction"
+* entry[vaccinationCredentialVaccineReactionObservation] ^definition = "Vaccination reaction"
+* entry[vaccinationCredentialVaccineReactionObservation].resource only VaccinationCredentialVaccineReactionObservation
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Profile: VaccineCredentialBundleDM
+Profile: VaccinationCredentialBundleDM
 Parent: Bundle
-Id: vaccine-credential-bundle-dm
-Title: "Vaccine Credential Bundle - Data Minimization"
+Id: vaccination-credential-bundle-dm
+Title: "Vaccination Credential Bundle - Data Minimization"
 Description: "The bundle of resources that represents the clinical content of a digital vaccination record using data minimization profiles."
 
 * insert common-bundle-rules
 
 * entry contains
     // These resources are required per Conformance > Supported Profiles.
-    vaccineCredentialPatient 1..1 MS and
-    vaccineCredentialImmunization 1..* MS and
-    vaccineCredentialVaccineReactionObservation 0..*
+    VaccinationCredentialPatient 1..1 MS and
+    vaccinationCredentialImmunization 1..* MS and
+    vaccinationCredentialVaccineReactionObservation 0..*
 
-* entry[vaccineCredentialPatient] ^short = "Patient"
-* entry[vaccineCredentialPatient] ^definition = "The patient who is the subject of the Bundle"
-* entry[vaccineCredentialPatient].resource only VaccineCredentialPatientDM
+* entry[VaccinationCredentialPatient] ^short = "Patient"
+* entry[VaccinationCredentialPatient] ^definition = "The patient who is the subject of the Bundle"
+* entry[VaccinationCredentialPatient].resource only VaccinationCredentialPatientDM
 
-* entry[vaccineCredentialImmunization] ^short = "Immunization"
-* entry[vaccineCredentialImmunization] ^definition = "Immunization"
-* entry[vaccineCredentialImmunization].resource only VaccineCredentialImmunizationDM
+* entry[vaccinationCredentialImmunization] ^short = "Immunization"
+* entry[vaccinationCredentialImmunization] ^definition = "Immunization"
+* entry[vaccinationCredentialImmunization].resource only VaccinationCredentialImmunizationDM
 
-* entry[vaccineCredentialVaccineReactionObservation] ^short = "Vaccination reaction"
-* entry[vaccineCredentialVaccineReactionObservation] ^definition = "Vaccination reaction"
-* entry[vaccineCredentialVaccineReactionObservation].resource only VaccineCredentialVaccineReactionObservationDM
+* entry[vaccinationCredentialVaccineReactionObservation] ^short = "Vaccination reaction"
+* entry[vaccinationCredentialVaccineReactionObservation] ^definition = "Vaccination reaction"
+* entry[vaccinationCredentialVaccineReactionObservation].resource only VaccinationCredentialVaccineReactionObservationDM
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -96,12 +96,12 @@ Description: "The bundle of resources that represents the clinical content of a 
 
 * entry contains
     // These resources are required per Conformance > Supported Profiles.
-    vaccineCredentialPatient 1..1 MS and
+    VaccinationCredentialPatient 1..1 MS and
     laboratoryResultObservation 1..* MS
 
-* entry[vaccineCredentialPatient] ^short = "Patient"
-* entry[vaccineCredentialPatient] ^definition = "The patient who is the subject of the Bundle"
-* entry[vaccineCredentialPatient].resource only VaccineCredentialPatient
+* entry[VaccinationCredentialPatient] ^short = "Patient"
+* entry[VaccinationCredentialPatient] ^definition = "The patient who is the subject of the Bundle"
+* entry[VaccinationCredentialPatient].resource only VaccinationCredentialPatient
 
 * entry[laboratoryResultObservation] ^short = "Laboratory result"
 * entry[laboratoryResultObservation] ^definition = "Laboratory result"
@@ -120,12 +120,12 @@ Description: "The bundle of resources that represents the clinical content of a 
 
 * entry contains
     // These resources are required per Conformance > Supported Profiles.
-    vaccineCredentialPatient 1..1 MS and
+    VaccinationCredentialPatient 1..1 MS and
     laboratoryResultObservation 1..* MS
 
-* entry[vaccineCredentialPatient] ^short = "Patient"
-* entry[vaccineCredentialPatient] ^definition = "The patient who is the subject of the Bundle"
-* entry[vaccineCredentialPatient].resource only VaccineCredentialPatient
+* entry[VaccinationCredentialPatient] ^short = "Patient"
+* entry[VaccinationCredentialPatient] ^definition = "The patient who is the subject of the Bundle"
+* entry[VaccinationCredentialPatient].resource only VaccinationCredentialPatient
 
 * entry[laboratoryResultObservation] ^short = "Laboratory result"
 * entry[laboratoryResultObservation] ^definition = "Laboratory result"
@@ -144,12 +144,12 @@ Description: "The bundle of resources that represents the clinical content of a 
 
 * entry contains
     // These resources are required per Conformance > Supported Profiles.
-    vaccineCredentialPatient 1..1 MS and
+    VaccinationCredentialPatient 1..1 MS and
     laboratoryResultObservation 1..* MS
 
-* entry[vaccineCredentialPatient] ^short = "Patient"
-* entry[vaccineCredentialPatient] ^definition = "The patient who is the subject of the Bundle"
-* entry[vaccineCredentialPatient].resource only VaccineCredentialPatient
+* entry[VaccinationCredentialPatient] ^short = "Patient"
+* entry[VaccinationCredentialPatient] ^definition = "The patient who is the subject of the Bundle"
+* entry[VaccinationCredentialPatient].resource only VaccinationCredentialPatient
 
 * entry[laboratoryResultObservation] ^short = "Laboratory result"
 * entry[laboratoryResultObservation] ^definition = "Laboratory result"
@@ -168,12 +168,12 @@ Description: "The bundle of resources that represents the clinical content of a 
 
 * entry contains
     // These resources are required per Conformance > Supported Profiles.
-    vaccineCredentialPatient 1..1 MS and
+    VaccinationCredentialPatient 1..1 MS and
     laboratoryResultObservation 1..* MS
 
-* entry[vaccineCredentialPatient] ^short = "Patient"
-* entry[vaccineCredentialPatient] ^definition = "The patient who is the subject of the Bundle"
-* entry[vaccineCredentialPatient].resource only VaccineCredentialPatientDM
+* entry[VaccinationCredentialPatient] ^short = "Patient"
+* entry[VaccinationCredentialPatient] ^definition = "The patient who is the subject of the Bundle"
+* entry[VaccinationCredentialPatient].resource only VaccinationCredentialPatientDM
 
 * entry[laboratoryResultObservation] ^short = "Laboratory result"
 * entry[laboratoryResultObservation] ^definition = "Laboratory result"

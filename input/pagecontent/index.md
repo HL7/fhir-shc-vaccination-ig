@@ -38,15 +38,15 @@ Due to the size constraints of the SMART Health Card payload, a "data minimizati
 
 #### Use case 1: vaccination credentials
 
-To represent patient and clinical data related to a vaccination, the [VaccineCredentialBundle] SHALL be used to wrap resources conforming to these profiles:
+To represent patient and clinical data related to a vaccination, the [VaccinationCredentialBundle] SHALL be used to wrap resources conforming to these profiles:
 
 {:.table-striped.table}
 | Profile: Allowable Data                       | Profile: Data Minimization                      | Purpose                                       | Required in bundle?     |
 | --------------------------------------------- | ----------------------------------------------- | --------------------------------------------- | ----------------------- |
-| [VaccineCredentialPatient]                    | [VaccineCredentialPatientDM]                    | Identify the patient                          | Exactly 1 required      |
-| [VaccineCredentialImmunization]               | [VaccineCredentialImmunizationDM]               | Describe a vaccination                        | 1 or more required      |
-| [VaccineCredentialVaccineReactionObservation] | [VaccineCredentialVaccineReactionObservationDM] | Describe an adverse reaction to a vaccination | Optional (experimental) |
-| Bundle: [VaccineCredentialBundle]             | Bundle: [VaccineCredentialBundleDM]             | Bundle for wrapping the above resources       | n/a                     |
+| [VaccinationCredentialPatient]                    | [VaccinationCredentialPatientDM]                    | Identify the patient                          | Exactly 1 required      |
+| [VaccinationCredentialImmunization]               | [VaccinationCredentialImmunizationDM]               | Describe a vaccination                        | 1 or more required      |
+| [VaccinationCredentialVaccineReactionObservation] | [VaccinationCredentialVaccineReactionObservationDM] | Describe an adverse reaction to a vaccination | Optional (experimental) |
+| Bundle: [VaccinationCredentialBundle]             | Bundle: [VaccinationCredentialBundleDM]             | Bundle for wrapping the above resources       | n/a                     |
 
 Examples using these profiles:
 
@@ -62,7 +62,7 @@ To represent patient and laboratory test result information, [Covid19LaboratoryB
 {:.table-striped.table}
 | Profile: Allowable Data                                                 | Profile: Data Minimization                                                  | Purpose                                 | Required in bundle? |
 | ----------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------- | ------------------- |
-| [VaccineCredentialPatient]                                              | [VaccineCredentialPatientDM]                                                | Identify the patient                    | Required            |
+| [VaccinationCredentialPatient]                                              | [VaccinationCredentialPatientDM]                                                | Identify the patient                    | Required            |
 | [Covid19LaboratoryResultObservation]                                    | [Covid19LaboratoryResultObservationDM]                                      | Identify the lab test and result        | Required            |
 | Bundles: [Covid19LaboratoryBundle], [InfectiousDiseaseLaboratoryBundle] | Bundles: [Covid19LaboratoryBundleDM], [InfectiousDiseaseLaboratoryBundleDM] | Bundle for wrapping the above resources | n/a                 |
 
@@ -70,7 +70,7 @@ An example using these profiles:
 
 > **Scenario 3:** A patient is tested for SARS-CoV-2 (COVID19) antigen via rapid immunoassay on February 17, 2021 with result detectable. [See an example of a FHIR Bundle representing this.](https://github.com/dvci/vaccine-credential-ig/blob/{{ site.data['git-branch'] }}/examples/Scenario3Bundle.json)
 
-A laboratory results profile specific to COVID-19 is provided to limit the `code` to a [value set describing COVID-19-specific tests][Covid19LaboratoryTestValueSet]. Additional disease-specific profiles may be added in the future. To represent a disease without a specific set of profiles, implementers SHALL use [InfectiousDiseaseLaboratoryResultObservation] and [InfectiousDiseaseLaboratoryResultObservationDM], which can be used with [VaccineCredentialLaboratoryBundle].
+A laboratory results profile specific to COVID-19 is provided to limit the `code` to a [value set describing COVID-19-specific tests][Covid19LaboratoryTestValueSet]. Additional disease-specific profiles may be added in the future. To represent a disease without a specific set of profiles, implementers SHALL use [InfectiousDiseaseLaboratoryResultObservation] and [InfectiousDiseaseLaboratoryResultObservationDM], which can be used with [VaccinationCredentialLaboratoryBundle].
 
 ### Approach to constraints in profiles
 
@@ -78,7 +78,7 @@ The IG is currently focused on coordinating implementers' representations of rel
 
 1. Risk evaluation algorithms are likely to evolve faster than IG constraints can be updated.
 
-    For example, constraining the [VaccineCredentialImmunization] profile to require specific `vaccineCode` values (e.g., only `CVX#207` and `CVX#208` for the current Moderna and Pfizer-BioNTech vaccines) could pose a problem if a new vaccine receives emergency authorization: recipients of the new vaccination would have non-conforming Immunization resources due to the constraints on `vaccineCode` until the IG could be updated and published.
+    For example, constraining the [VaccinationCredentialImmunization] profile to require specific `vaccineCode` values (e.g., only `CVX#207` and `CVX#208` for the current Moderna and Pfizer-BioNTech vaccines) could pose a problem if a new vaccine receives emergency authorization: recipients of the new vaccination would have non-conforming Immunization resources due to the constraints on `vaccineCode` until the IG could be updated and published.
 
 1. Risk evaluation algorithms may be actor- or context-dependent.
 
@@ -88,11 +88,11 @@ The IG is currently focused on coordinating implementers' representations of rel
 
 1. More constrained profiles for risk evaluation can be created based on the profiles in this IG, but it's not possible to remove constraints in a child profile.
 
-1. Constraints are applied to specific data elements in [Allowable Data profiles](conformance.html#data-minimization) when their inclusion (1) is does not support our use case and could harm patients; or (2) is contrary to our [key design principles](https://vci.org/about#key-principles). For example, `Patient.identifier` is not allowed in resources conforming to [VaccineCredentialPatient] as this may include a MRN or SSN, which would introduce a significant privacy risk for patients.
+1. Constraints are applied to specific data elements in [Allowable Data profiles](conformance.html#data-minimization) when their inclusion (1) is does not support our use case and could harm patients; or (2) is contrary to our [key design principles](https://vci.org/about#key-principles). For example, `Patient.identifier` is not allowed in resources conforming to [VaccinationCredentialPatient] as this may include a MRN or SSN, which would introduce a significant privacy risk for patients.
 
 ### Identity assurance
 
-The [VaccineCredentialPatient] and [Covid19LaboratoryBundle]/[InfectiousDiseaseLaboratoryBundle] profiles include a mechanism for indicating level of identity assurance of the patient. This uses the [IdentityAssuranceLevelValueSet] in this format:
+The [VaccinationCredentialPatient] and [Covid19LaboratoryBundle]/[InfectiousDiseaseLaboratoryBundle] profiles include a mechanism for indicating level of identity assurance of the patient. This uses the [IdentityAssuranceLevelValueSet] in this format:
 
 ```json
 "meta": {
