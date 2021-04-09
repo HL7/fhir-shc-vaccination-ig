@@ -40,6 +40,9 @@ We are actively investigating adding additional codes that are not United States
 
 * lotNumber MS
 * lotNumber obeys should-be-under-20-chars
+* lotNumber obeys should-not-include-string-lot
+* lotNumber ^short = "String representing lot number like `0123L45A`"
+* lotNumber ^definition = "Lot number of the vaccine product. Implementers SHOULD NOT include text synonymous with \"lot number\" in this element as this is redundant. For example, use `0123L45A` rather than `Lot # 0123L45A`."
 
 * protocolApplied 0..0 // See explanation in pagecontent/StructureDefinition-vaccine-credential-immunization-intro.md
 
