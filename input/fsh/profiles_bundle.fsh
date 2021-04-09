@@ -47,17 +47,14 @@ Description: "The bundle of resources that represents the clinical content of a 
 * entry[vaccineCredentialPatient] ^short = "Patient"
 * entry[vaccineCredentialPatient] ^definition = "The patient who is the subject of the Bundle"
 * entry[vaccineCredentialPatient].resource only VaccineCredentialPatient
-* insert fullurl(entry[vaccineCredentialPatient].)
 
 * entry[vaccineCredentialImmunization] ^short = "Immunization"
 * entry[vaccineCredentialImmunization] ^definition = "Immunization"
 * entry[vaccineCredentialImmunization].resource only VaccineCredentialImmunization
-* insert fullurl(entry[vaccineCredentialImmunization].)
 
 * entry[vaccineCredentialVaccineReactionObservation] ^short = "Vaccination reaction"
 * entry[vaccineCredentialVaccineReactionObservation] ^definition = "Vaccination reaction"
 * entry[vaccineCredentialVaccineReactionObservation].resource only VaccineCredentialVaccineReactionObservation
-* insert fullurl(entry[vaccineCredentialVaccineReactionObservation].)
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -78,17 +75,14 @@ Description: "The bundle of resources that represents the clinical content of a 
 * entry[vaccineCredentialPatient] ^short = "Patient"
 * entry[vaccineCredentialPatient] ^definition = "The patient who is the subject of the Bundle"
 * entry[vaccineCredentialPatient].resource only VaccineCredentialPatientDM
-* insert fullurl(entry[vaccineCredentialPatient].)
 
 * entry[vaccineCredentialImmunization] ^short = "Immunization"
 * entry[vaccineCredentialImmunization] ^definition = "Immunization"
 * entry[vaccineCredentialImmunization].resource only VaccineCredentialImmunizationDM
-* insert fullurl(entry[vaccineCredentialImmunization].)
 
 * entry[vaccineCredentialVaccineReactionObservation] ^short = "Vaccination reaction"
 * entry[vaccineCredentialVaccineReactionObservation] ^definition = "Vaccination reaction"
 * entry[vaccineCredentialVaccineReactionObservation].resource only VaccineCredentialVaccineReactionObservationDM
-* insert fullurl(entry[vaccineCredentialVaccineReactionObservation].)
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -108,12 +102,10 @@ Description: "The bundle of resources that represents the clinical content of a 
 * entry[vaccineCredentialPatient] ^short = "Patient"
 * entry[vaccineCredentialPatient] ^definition = "The patient who is the subject of the Bundle"
 * entry[vaccineCredentialPatient].resource only VaccineCredentialPatient
-* insert fullurl(entry[vaccineCredentialPatient].)
 
 * entry[laboratoryResultObservation] ^short = "Laboratory result"
 * entry[laboratoryResultObservation] ^definition = "Laboratory result"
 * entry[laboratoryResultObservation].resource only Covid19LaboratoryResultObservation
-* insert fullurl(entry[laboratoryResultObservation].)
 * entry[laboratoryResultObservation] obeys vc-lab-1
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -134,12 +126,10 @@ Description: "The bundle of resources that represents the clinical content of a 
 * entry[vaccineCredentialPatient] ^short = "Patient"
 * entry[vaccineCredentialPatient] ^definition = "The patient who is the subject of the Bundle"
 * entry[vaccineCredentialPatient].resource only VaccineCredentialPatient
-* insert fullurl(entry[vaccineCredentialPatient].)
 
 * entry[laboratoryResultObservation] ^short = "Laboratory result"
 * entry[laboratoryResultObservation] ^definition = "Laboratory result"
 * entry[laboratoryResultObservation].resource only InfectiousDiseaseLaboratoryResultObservation
-* insert fullurl(entry[laboratoryResultObservation].)
 * entry[laboratoryResultObservation] obeys vc-lab-1
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -160,12 +150,10 @@ Description: "The bundle of resources that represents the clinical content of a 
 * entry[vaccineCredentialPatient] ^short = "Patient"
 * entry[vaccineCredentialPatient] ^definition = "The patient who is the subject of the Bundle"
 * entry[vaccineCredentialPatient].resource only VaccineCredentialPatient
-* insert fullurl(entry[vaccineCredentialPatient].)
 
 * entry[laboratoryResultObservation] ^short = "Laboratory result"
 * entry[laboratoryResultObservation] ^definition = "Laboratory result"
 * entry[laboratoryResultObservation].resource only InfectiousDiseaseLaboratoryResultObservationDM
-* insert fullurl(entry[laboratoryResultObservation].)
 * entry[laboratoryResultObservation] obeys vc-lab-1
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -186,12 +174,10 @@ Description: "The bundle of resources that represents the clinical content of a 
 * entry[vaccineCredentialPatient] ^short = "Patient"
 * entry[vaccineCredentialPatient] ^definition = "The patient who is the subject of the Bundle"
 * entry[vaccineCredentialPatient].resource only VaccineCredentialPatientDM
-* insert fullurl(entry[vaccineCredentialPatient].)
 
 * entry[laboratoryResultObservation] ^short = "Laboratory result"
 * entry[laboratoryResultObservation] ^definition = "Laboratory result"
 * entry[laboratoryResultObservation].resource only Covid19LaboratoryResultObservationDM
-* insert fullurl(entry[laboratoryResultObservation].)
 * entry[laboratoryResultObservation] obeys vc-lab-1
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
