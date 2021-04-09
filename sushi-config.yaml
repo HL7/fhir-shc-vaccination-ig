@@ -11,7 +11,7 @@ publisher:
   name: TBD
   url: http://example.com
   email: example@example.com
-version: 0.3.0-rc
+version: 0.4.0-rc
 fhirVersion: 4.0.1
 # dependencies:
 #   us.cdc.phinvads:
