@@ -123,7 +123,7 @@ For convenience, here are the commands for validating bundles:
     ```sh
     java -jar path/to/validator_cli.jar -version 4.0.1 \
     -ig path/to/package.tgz \
-    -profile http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/covid-19-laboratory-bundle \
+    -profile http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/covid19-laboratory-bundle \
     path/to/bundle.json
     ```
 
@@ -141,7 +141,7 @@ For convenience, here are the commands for validating bundles:
     ```sh
     java -jar path/to/validator_cli.jar -version 4.0.1 \
     -ig path/to/package.tgz \
-    -profile http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/covid-19-laboratory-bundle-dm \
+    -profile http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/covid19-laboratory-bundle-dm \
     path/to/bundle.json
     ```
 

@@ -2,8 +2,8 @@
 [SMART Health Card]: https://healthwallet.cards/
 [SMART Health Cards]: https://healthwallet.cards/
 
-[Covid19LaboratoryBundleDM]: StructureDefinition-covid-19-laboratory-bundle-dm.html
-[Covid19LaboratoryBundle]: StructureDefinition-covid-19-laboratory-bundle.html
+[Covid19LaboratoryBundleDM]: StructureDefinition-covid19-laboratory-bundle-dm.html
+[Covid19LaboratoryBundle]: StructureDefinition-covid19-laboratory-bundle.html
 [Covid19LaboratoryResultObservationDM]: StructureDefinition-covid19-laboratory-result-observation-dm.html
 [Covid19LaboratoryResultObservation]: StructureDefinition-covid19-laboratory-result-observation.html
 [InfectiousDiseaseLaboratoryBundleDM]: StructureDefinition-infectious-disease-laboratory-bundle-dm.html

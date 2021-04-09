@@ -6,5 +6,5 @@ validate_example examples/Scenario1Bundle.json vaccination-credential-bundle &&
 validate_example examples/Scenario1Bundle.json vaccination-credential-bundle-dm &&
 validate_example examples/Scenario2Bundle.json vaccination-credential-bundle &&
 validate_example examples/Scenario2Bundle.json vaccination-credential-bundle-dm &&
-validate_example examples/Scenario3Bundle.json covid-19-laboratory-bundle &&
-validate_example examples/Scenario3Bundle.json covid-19-laboratory-bundle-dm
+validate_example examples/Scenario3Bundle.json covid19-laboratory-bundle &&
+validate_example examples/Scenario3Bundle.json covid19-laboratory-bundle-dm

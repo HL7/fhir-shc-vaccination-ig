@@ -26,8 +26,8 @@
         <a href="StructureDefinition-vaccination-credential-bundle-dm.html">(DM)</a>
       </li>
       <li class="side-by-side">
-        <a href="StructureDefinition-covid-19-laboratory-bundle.html">Bundle: COVID-19 Labs</a>
-        <a href="StructureDefinition-covid-19-laboratory-bundle-dm.html">(DM)</a>
+        <a href="StructureDefinition-covid19-laboratory-bundle.html">Bundle: COVID-19 Labs</a>
+        <a href="StructureDefinition-covid19-laboratory-bundle-dm.html">(DM)</a>
       </li>
       <li class="side-by-side">
         <a href="StructureDefinition-infectious-disease-laboratory-bundle.html">Bundle: Generic Labs</a>

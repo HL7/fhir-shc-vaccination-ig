@@ -39,7 +39,7 @@
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario2Bundle.json"
         }
     ],
-    "StructureDefinition-covid-19-laboratory-bundle.html": [
+    "StructureDefinition-covid19-laboratory-bundle.html": [
         {
             "title": "Scenario 3 Bundle (COVID-19 laboratory test results from immunoassay)",
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle.json"

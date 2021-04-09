@@ -88,7 +88,7 @@ Description: "The bundle of resources that represents the clinical content of a 
 
 Profile: Covid19LaboratoryBundle
 Parent: Bundle
-Id: covid-19-laboratory-bundle
+Id: covid19-laboratory-bundle
 Title: "COVID-19-specific Laboratory Bundle - Allowable Data"
 Description: "The bundle of resources that represents the clinical content of a digital lab credential record specifically for COVID-19."
 
@@ -160,7 +160,7 @@ Description: "The bundle of resources that represents the clinical content of a 
 
 Profile: Covid19LaboratoryBundleDM
 Parent: Bundle
-Id: covid-19-laboratory-bundle-dm
+Id: covid19-laboratory-bundle-dm
 Title: "COVID-19-specific Laboratory Bundle - Data Minimization"
 Description: "The bundle of resources that represents the clinical content of a digital lab credential record specifically for COVID-19 data minimization."
 
