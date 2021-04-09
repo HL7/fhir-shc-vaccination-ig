@@ -32,6 +32,9 @@ RuleSet: LaboratoryResultObservation
 * effective[x] 1..1
 
 * value[x] MS
+* value[x] ^comment = "Issuers SHALL provide a computable representation of laboratory results if at all possible. If the Issuer is unable to accurately translate laboratory results into a computable form, it is unlikely a Verifier will be able to interpret the results. Issuers SHALL make every possible effort to resolve non-computable results prior to issuing credentials. In rare cases when this is not possible, Issuers MAY populate `valueCodeableConcept.text` with a free text result. Populating `valueCodeableConcept.text` will result in a warning when validating against the Allowable Data profile and an error with the Data Minimization profile."
+* valueCodeableConcept.text ^short = "String representation of results when a computable representation is not possible"
+* valueCodeableConcept.text ^comment = "See comment for `value[x]`."
 
 * performer only Reference(Organization)
 * performer MS
@@ -85,6 +88,7 @@ previous infection status."
 * value[x] only CodeableConcept or Quantity
 * valueCodeableConcept from LaboratoryResultValueSet (extensible)
 * valueCodeableConcept obeys laboratory-result-invariant
+* valueCodeableConcept.text obeys should-be-omitted
 
 /*
 TODO: Test using `device` rather than `method`, like so:
@@ -152,6 +156,7 @@ RuleSet: LaboratoryResultObservationDM
 * performer.reference 0..0
 * performer.type 0..0
 * performer.identifier 0..0
+* valueCodeableConcept.text 0..0
 
 * category ^slicing.rules = #closed
 
