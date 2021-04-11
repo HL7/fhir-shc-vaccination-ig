@@ -39,7 +39,7 @@ See the following section for information on how to validate against the DM prof
 
 Additionally:
 
-- Implementers SHOULD NOT populate `Resource.id`, `Resource.meta`, or `Resource.text` elements.
+- Implementers SHOULD NOT populate `Resource.id` or `Resource.text` elements. `Resource.meta` SHOULD NOT be populated, except for `Resource.meta.security` in the vaccination and laboratory test results profiles.
 
 - Implementers SHALL use `resource:0` syntax for IDs and references.
     - Implementers SHALL populate `Bundle.entry.fullUrl` elements with short resource-scheme URIs (e.g., `{"fullUrl": "resource:0}`).
