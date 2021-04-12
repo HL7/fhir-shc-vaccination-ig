@@ -29,28 +29,22 @@ Because gender is a common field in administrative data, it is possible Issuers 
 * photo 0..0
 * photo ^comment = "Attachments are not allowed due to data size constraints."
 
-* insert address-details-shall-not-be-populated(address.)
-* insert address-details-shall-not-be-populated(contact.address.)
+* contact 0..0
+
+* address.text 0..0
+* address.text ^short = "SHALL not be included"
+* address.text ^definition = "Full physical address SHALL not be included because of patient privacy concerns."
+* address.text ^comment = "There are scenarios where a Holder of a credential may wish to present their credential without revealing their full physical address."
+* address.line 0..0
+* address.line ^short = "SHALL not be included"
+* address.line ^definition = "Full physical address SHALL not be included because of patient privacy concerns."
+* address.line ^comment = "There are scenarios where a Holder of a credential may wish to present their credential without revealing their full physical address."
 
 * insert contact-information-should-not-be-populated(telecom.value)
 * insert contact-information-should-not-be-populated(address.city)
 * insert contact-information-should-not-be-populated(address.district)
 * insert contact-information-should-not-be-populated(address.state)
 * insert contact-information-should-not-be-populated(address.postalCode)
-* insert contact-information-should-not-be-populated(contact.address.city)
-* insert contact-information-should-not-be-populated(contact.address.district)
-* insert contact-information-should-not-be-populated(contact.address.state)
-* insert contact-information-should-not-be-populated(contact.address.postalCode)
-
-RuleSet: address-details-shall-not-be-populated(path)
-* {path}text 0..0
-* {path}text ^short = "SHALL not be included"
-* {path}text ^definition = "Full physical address SHALL not be included because of patient privacy concerns."
-* {path}text ^comment = "There are scenarios where a Holder of a credential may wish to present their credential without revealing their full physical address."
-* {path}line 0..0
-* {path}line ^short = "SHALL not be included"
-* {path}line ^definition = "Full physical address SHALL not be included because of patient privacy concerns."
-* {path}line ^comment = "There are scenarios where a Holder of a credential may wish to present their credential without revealing their full physical address."
 
 RuleSet: contact-information-should-not-be-populated(path)
 * {path} obeys should-be-omitted-privacy
@@ -89,7 +83,6 @@ Description: "Only elements necessary for Verifiers can be populated."
 * maritalStatus 0..0
 * multipleBirth[x] 0..0
 * photo 0..0
-* contact 0..0
 * communication 0..0
 * generalPractitioner 0..0
 * managingOrganization 0..0
