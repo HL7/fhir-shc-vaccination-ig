@@ -6,6 +6,8 @@ Parent:      Immunization
 Title:       "Immunization Profile - Allowable Data"
 Description: "Defines a profile representing a vaccination for a vaccination credential Health Card."
 
+* . ^definition = "Describes the event of a patient being administered a vaccine or a record of an immunization as reported by a patient, a clinician or another party. If the immunization is part of a multi-dose series, a separate Immunization resource SHALL be used to represent each dose."
+
 * insert id-should-not-be-populated()
 
 * patient only Reference(VaccinationCredentialPatient)
