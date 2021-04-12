@@ -28,6 +28,7 @@ RuleSet: LaboratoryResultObservation
 * value[x] ^comment = "Issuers SHALL provide a computable representation of laboratory results if at all possible. If the Issuer is unable to accurately translate laboratory results into a computable form, it is unlikely a Verifier will be able to interpret the results. Issuers SHALL make every possible effort to resolve non-computable results prior to issuing credentials. In rare cases when this is not possible, Issuers MAY populate `valueCodeableConcept.text` with a free text result. Populating `valueCodeableConcept.text` will result in a warning when validating against the Allowable Data profile and an error with the Data Minimization profile."
 * valueCodeableConcept.text ^short = "String representation of results when a computable representation is not possible"
 * valueCodeableConcept.text ^comment = "See comment for `value[x]`."
+* valueCodeableConcept.text obeys should-be-under-20-chars
 
 * performer only Reference(Organization)
 * performer MS
@@ -57,6 +58,7 @@ RuleSet: LaboratoryResultObservation
 * performer.display MS
 * performer.display 1..1
 * performer.display ^definition = "Organization which was responsible for the laboratory test result. Issuers SHOULD provide display name only. This is provided to Verifiers in case of invalid data in the credential, to support manual validation. This is not expected to be a computable Organization identifier."
+* performer.display obeys should-be-under-20-chars
 
 
 * insert reference-to-absolute-uri(subject)
