@@ -58,6 +58,7 @@ We are actively investigating adding additional codes that are not United States
 * performer.actor.display MS
 * performer.actor.display 1..1
 * performer.actor.display ^definition = "Organization which was responsible for vaccine administration. Issuers SHOULD provide display name only. This is provided to Verifiers in case of invalid data in the credential, to support manual validation. This is not expected to be a computable Organization identifier."
+* performer.actor.display obeys should-be-under-20-chars
 
 * status ^short = "Whether or not the vaccination was completed"
 * status MS
