@@ -11,15 +11,7 @@ RuleSet: LaboratoryResultObservation
 
 * status MS
 
-* category MS
-* category 1..1
-* category ^slicing.discriminator.type = #pattern
-* category ^slicing.discriminator.path = "$this"
-* category ^slicing.rules = #open
-* category ^slicing.description = "Slice based on the $this pattern"
-* category contains
-    laboratory 1..1 MS
-* category[laboratory] = ObsCat#laboratory
+* category 0..0
 
 * code MS
 
@@ -42,12 +34,6 @@ RuleSet: LaboratoryResultObservation
 * performer 0..1
 * performer ^short = "Organization which was responsible for laboratory record."
 * performer ^definition = "Organization which was responsible for laboratory record. Issuers SHOULD provide display name only. This is provided to Verifiers in case of invalid data in the credential, to support manual validation. This is not expected to be a computable Organization identifier."
-
-// VCI-specific (not from US Core)
-* insert id-should-not-be-populated()
-* category[laboratory].coding MS
-* category[laboratory].coding.code MS
-* category[laboratory].coding.system MS
 
 * meta.security 0..1
 * meta.security from IdentityAssuranceLevelValueSet (required)
@@ -130,14 +116,6 @@ RuleSet: LaboratoryResultObservationDM
 * modifierExtension 0..0
 * basedOn 0..0
 * partOf 0..0
-* category[laboratory].extension 0..0
-* category[laboratory].id 0..0
-* category[laboratory].text 0..0
-* category[laboratory].coding.id 0..0
-* category[laboratory].coding.version 0..0
-* category[laboratory].coding.display 0..0
-* category[laboratory].coding.userSelected 0..0
-* category[laboratory].coding.extension 0..0
 * encounter 0..0
 * focus 0..0
 * issued 0..0
@@ -158,8 +136,6 @@ RuleSet: LaboratoryResultObservationDM
 * performer.type 0..0
 * performer.identifier 0..0
 * valueCodeableConcept.text 0..0
-
-* category ^slicing.rules = #closed
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
