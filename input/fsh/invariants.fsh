@@ -95,3 +95,10 @@ Expression:  "$this.lower().matches('lot').not()"
 Severity:    #warning
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Invariant:   observation-status-shall-be-complete
+Description: "SHALL be `final`, `amended`, or `corrected`"
+Expression:  "$this.lower().matches('final') or $this.lower().matches('amended') or $this.lower().matches('corrected')"
+Severity:    #error
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
