@@ -11,8 +11,6 @@ RuleSet: LaboratoryResultObservation
 
 * status MS
 
-* category 0..0
-
 * code MS
 
 * subject only Reference(VaccinationCredentialPatient)
@@ -116,6 +114,7 @@ RuleSet: LaboratoryResultObservationDM
 * modifierExtension 0..0
 * basedOn 0..0
 * partOf 0..0
+* category 0..0
 * encounter 0..0
 * focus 0..0
 * issued 0..0
