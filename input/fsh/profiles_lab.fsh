@@ -49,6 +49,8 @@ RuleSet: LaboratoryResultObservation
 * category[laboratory].coding.code MS
 * category[laboratory].coding.system MS
 
+* status obeys observation-status-shall-be-complete
+
 * meta.security 0..1
 * meta.security from IdentityAssuranceLevelValueSet (required)
 * meta.security ^short = "Limited security label to convey identity level of assurance for patient referenced by this resource. Coding SHOULD include only code."
