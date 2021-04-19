@@ -6,6 +6,8 @@ Parent:      Immunization
 Title:       "Immunization Profile - Allowable Data"
 Description: "Defines a profile representing a vaccination for a vaccination credential Health Card."
 
+* . ^definition = "Describes the event of a patient being administered a vaccine or a record of an immunization as reported by a patient, a clinician or another party. If the immunization is part of a multi-dose series, a separate Immunization resource SHALL be used to represent each dose."
+
 * insert id-should-not-be-populated()
 
 * patient only Reference(VaccinationCredentialPatient)
@@ -56,6 +58,7 @@ We are actively investigating adding additional codes that are not United States
 * performer.actor.display MS
 * performer.actor.display 1..1
 * performer.actor.display ^definition = "Organization which was responsible for vaccine administration. Issuers SHOULD provide display name only. This is provided to Verifiers in case of invalid data in the credential, to support manual validation. This is not expected to be a computable Organization identifier."
+* performer.actor.display obeys should-be-under-20-chars
 
 * status ^short = "Whether or not the vaccination was completed"
 * status MS
@@ -75,13 +78,14 @@ We are actively investigating adding additional codes that are not United States
 * reaction.detail only Reference(VaccinationCredentialVaccineReactionObservation)
 
 * isSubpotent MS
+* isSubpotent ^short = "Set to `true` if dose is subpotent; omit otherwise"
 * isSubpotent ^definition = "Indication if a dose is considered to be subpotent.
 
 Issuers SHALL populate `isSubpotent` with `true` if the dose is known to be subpotent. Alternatively, Issuers MAY choose to not produce an Immunization resource at all if the dose is known to be subpotent as this resource would be unlikely to provide value to the other actors.
 
 Issuers SHALL NOT populate `isSubpotent` for potent doses.
 
-Verifiers SHALL assume that if an Immunization resource is provided and `isSubpotent` is not `true`, then the dose was fully potent."
+Verifiers SHALL assume that if an Immunization resource is provided and `isSubpotent` is empty, then the dose was fully potent."
 * isSubpotent ^comment = "It is critical that Verifiers process this element if it exists and is set to `true`. Therefore, `isSubpotent` is marked as `MustSupport` because it is also flagged with `Is-Modifier`, and per the [conformance requirements](conformance.html), Verifiers SHALL \"meaningfully process\" elements that are `MustSupport` and `Is-Modifier`.
 
 This element is therefore an exception to the guidance that Issuers must populate `MustSupport` elements if the data are available. An invariant is used to provide a computable representation of this exception: it will produce an error if `isSubpotent = false`, which is the expected value of this element for the vast majority of resources. Because full potency is implicit per this element's definition, we do not want to populate `isSubpotent` with `false` because it increases payload size without adding information.
