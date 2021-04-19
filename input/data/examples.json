@@ -20,13 +20,13 @@
     "StructureDefinition-covid19-laboratory-result-observation.html": [
         {
             "title": "COVID-19 test results example",
-            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle.json#L25-L64"
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle.json#L25-L54"
         }
     ],
     "StructureDefinition-infectious-disease-laboratory-result-observation.html": [
         {
             "title": "COVID-19 test results example",
-            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle.json#L25-L64"
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle.json#L25-L54"
         }
     ],
     "StructureDefinition-vaccination-credential-bundle.html": [
@@ -54,7 +54,7 @@
         "StructureDefinition-covid19-laboratory-result-observation.html": [
         {
             "title": "COVID-19 test results example",
-            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle.json#L25-L64"
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle.json#L25-L54"
         }
     ],
     "StructureDefinition-vaccination-credential-patient.html": [
