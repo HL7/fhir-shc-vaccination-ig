@@ -33,6 +33,11 @@ RuleSet: LaboratoryResultObservation
 * performer ^short = "Organization which was responsible for laboratory record."
 * performer ^definition = "Organization which was responsible for laboratory record. Issuers SHOULD provide display name only. This is provided to Verifiers in case of invalid data in the credential, to support manual validation. This is not expected to be a computable Organization identifier."
 
+// VCI-specific (not from US Core)
+* insert id-should-not-be-populated()
+
+* status obeys observation-status-shall-be-complete
+
 * meta.security 0..1
 * meta.security from IdentityAssuranceLevelValueSet (required)
 * meta.security ^short = "Limited security label to convey identity level of assurance for patient referenced by this resource. Coding SHOULD include only code."
