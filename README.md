@@ -2,6 +2,21 @@
 
 CI build of this IG available at <http://build.fhir.org/ig/dvci/vaccine-credential-ig/branches/main/>.
 
+## Tests
+
+Test cases defined in src/test/resources/tests.csv. Will run Sushi to generate fsh-generated files. Assumes Sushi and Java JDK are installed.
+
+Test output is in ./target/validator.log and ./target/surefire-reports.
+
+Shell
+
+    ./mvnw test
+
+Windows
+
+    ./mvnw.cmd test
+
+
 ## License
 
 Copyright 2021 The MITRE Corporation
