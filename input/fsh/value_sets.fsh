@@ -1,23 +1,13 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-CodeSystem: CVX
-Id: cvx-temp
-Title: "Temporary CVX code system"
-Description: "Temporary CVX code system to add missing codes to http://hl7.org/fhir/sid/cvx from the canonical list at https://www2.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=tradename)."
-* ^url =  http://hl7.org/fhir/sid/cvx-TEMPORARY-CODE-SYSTEM
-* #207 "COVID-19, mRNA, LNP-S, PF, 100 mcg/0.5 mL dose"
-* #208 "COVID-19, mRNA, LNP-S, PF, 30 mcg/0.3 mL dose"
-* #210 "COVID-19 vaccine, vector-nr, rS-ChAdOx1, PF, 0.5 mL"
-* #212 "COVID-19 vaccine, vector-nr, rS-Ad26, PF, 0.5 mL"
-
 ValueSet:    VaccinationCredentialVaccineValueSet
 Id:          vaccination-credential-vaccine-value-set
 Title:       "Value set for identifying vaccines"
-Description: "Includes [CVX codes](https://www2.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=tradename) to identify specific vaccinations."
-* CVX#207 "COVID-19, mRNA, LNP-S, PF, 100 mcg/0.5 mL dose"
-* CVX#208 "COVID-19, mRNA, LNP-S, PF, 30 mcg/0.3 mL dose"
-* CVX#210 "COVID-19 vaccine, vector-nr, rS-ChAdOx1, PF, 0.5 mL"
-* CVX#212 "COVID-19 vaccine, vector-nr, rS-Ad26, PF, 0.5 mL"
+Description: "This value set includes codes for identifying vaccinations."
+
+* include codes from system http://hl7.org/fhir/sid/cvx
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
