@@ -14,7 +14,7 @@ jobs:
         with:
           node-version: '12.x'
       - name: Set up Sushi 
-      - uses: borales/actions-yarn@v2.0.0
+        uses: borales/actions-yarn@v2.0.0
         with:
           cmd: install -g fsh-sushi     
       - name: Set up JDK 11
