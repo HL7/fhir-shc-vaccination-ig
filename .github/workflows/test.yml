@@ -16,7 +16,7 @@ jobs:
       - name: Set up Sushi 
         uses: borales/actions-yarn@v2.0.0
         with:
-          cmd: global add fsh-sushi
+          cmd: global add fsh-sushi     
       - name: Set up JDK 11
         uses: actions/setup-java@v2
         with:
@@ -30,4 +30,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
       - name: Test with Maven
-        run: mvn test
+        run: |
+          echo "$(yarn global bin)" >> $GITHUB_PATH
+          mvn test
