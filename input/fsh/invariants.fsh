@@ -12,31 +12,10 @@ Severity: #error
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Invariant:   vaccine-code-invariant
-Description: "CVX code should be provided if an applicable CVX code exists."
-Expression:  "coding.where($this.memberOf('http://hl7.org/fhir/uv/smarthealthcards-vaccination/ValueSet/vaccination-credential-cvx-value-set').not()).exists()"
-Severity:    #warning
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
-Invariant:   covid19-laboratory-test-code-invariant
-Description: "Code from value set should be provided if an applicable code exists."
-Expression:  "coding.where($this.memberOf('http://hl7.org/fhir/uv/smarthealthcards-vaccination/ValueSet/covid19-laboratory-test-value-set').not()).exists()"
-Severity:    #warning
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
-Invariant:   not-specified-laboratory-test-code-invariant
-Description: "Code cannot be part of a value set for a specified disease. Instead, validate against the profile specific for the disease in question."
-Expression:  "$this.memberOf('http://hl7.org/fhir/uv/smarthealthcards-vaccination/ValueSet/covid19-laboratory-test-value-set').not()"
+Invariant:   shall-not-be-a-covid-loinc
+Description: "This profile SHALL NOT be used to report results from COVID lab tests (https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1114.9/expansion). Use Covid19LaboratoryResultObservation instead."
+Expression:  "$this.memberOf('http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1114.9').not()"
 Severity:    #error
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
-Invariant:   laboratory-result-invariant
-Description: "Code from value set should be provided if an applicable code exists."
-Expression:  "coding.where($this.memberOf('http://hl7.org/fhir/uv/smarthealthcards-vaccination/ValueSet/laboratory-result-value-set').not()).exists()"
-Severity:    #warning
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 

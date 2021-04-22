@@ -19,15 +19,10 @@
 [VaccinationCredentialVaccineReactionObservationDM]: StructureDefinition-vaccination-credential-vaccine-reaction-observation-dm.html
 [VaccinationCredentialVaccineReactionObservation]: StructureDefinition-vaccination-credential-vaccine-reaction-observation.html
 
-[Covid19LaboratoryTestValueSet]: ValueSet-covid19-laboratory-test-value-set.html
 [IdentityAssuranceLevelValueSet]: ValueSet-identity-assurance-level-value-set.html
-[LaboratoryResultValueSet]: ValueSet-laboratory-result-value-set.html
-[VaccinationCredentialFundingSourceValueSet]: ValueSet-vaccination-credential-funding-source-value-set.html
-[VaccinationCredentialReportOriginValueSet]: ValueSet-vaccination-credential-report-origin-value-set.html
-[VaccinationCredentialStatusReasonValueSet]: ValueSet-vaccination-credential-status-reason-value-set.html
-[VaccinationCredentialVaccineReactionValueSet]: ValueSet-vaccination-credential-vaccine-reaction-value-set.html
-[VaccinationCredentialVaccineRouteValueSet]: ValueSet-vaccination-credential-vaccine-route-value-set.html
-[VaccinationCredentialVaccineSiteValueSet]: ValueSet-vaccination-credential-vaccine-site-value-set.html
+[VaccinationCredentialLabTestResultsValueSet]: ValueSet-vaccination-credential-lab-test-results-value-set.html
+[VaccinationCredentialLabTestValueSet]: ValueSet-vaccination-credential-lab-test-value-set.html
+[VaccinationCredentialVaccineManufacturerValueSet]: ValueSet-vaccination-credential-vaccine-manufacturer-value-set.html
 [VaccinationCredentialVaccineValueSet]: ValueSet-vaccination-credential-vaccine-value-set.html
 
 [Scenario1Bundle]: https://github.com/dvci/vaccine-credential-ig/blob/{{ site.data['git-branch'] }}/examples/Scenario1Bundle.json
