@@ -46,7 +46,7 @@
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Value Sets<b class="caret"></b></a>
     <ul class="dropdown-menu">
       <li><a href="ValueSet-vaccination-credential-vaccine-value-set.html">Vaccines</a></li>
-      <li><a href="ValueSet-vaccination-credential-vaccine-value-set.html">Vaccine manufacturers</a></li>
+      <li><a href="ValueSet-vaccination-credential-vaccine-manufacturer-value-set.html">Vaccine manufacturers</a></li>
 
       <li role="separator" class="divider"></li>
 
