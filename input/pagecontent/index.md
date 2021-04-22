@@ -3,8 +3,8 @@
 <div class="alert alert-info" role="alert" markdown="1">
 <p style="font-size: 2rem;"><strong>Known issues</strong></p>
 
-* The [HL7 representation of the CVX code system](https://terminology.hl7.org/1.0.0/CodeSystem-CVX.html) does is out of date with the [canonical list of CVX codes](https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cvx). We are working with HL7 to resolve this. In the meantime, you may see spurious validation errors related to invalid CVX codes.<br><br>
-* Other value sets in this IG are not being properly expanded. We are working to resolve this.<br><br>
+* The expansion of [VaccinationCredentialVaccineValueSet] currently has an out-of-date list of [CVX codes](https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cvx). This will be fixed in the next deploy of the HL7 terminology server (`tx.fhir.org`).<br><br>
+* Other value sets in this IG may also have out-of-date expansions. If a given code is listed in the canonical source for a given code system or value set, it should be considered valid regardless of the expansion in this IG.<br><br>
 * Validation with the FHIR Validator tool currently produces spurious errors for valid resources. [Details here](conformance.html#validation).
 
 </div>
