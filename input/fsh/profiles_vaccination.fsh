@@ -31,14 +31,31 @@ Description: "Defines a profile representing a vaccination for a vaccination cre
 // Parent profile short description is not as clear as it could be
 * primarySource ^short = "Information in this record from person who administered vaccine?"
 
+
+
+// Vaccine code
+* vaccineCode 1..1
 * vaccineCode MS
-* vaccineCode from VaccinationCredentialVaccineValueSet (extensible)
-* vaccineCode obeys vaccine-code-invariant
-* vaccineCode ^definition = "Implementers SHALL use a code from VaccinationCredentialVaccineValueSet if this value set contains an appropriate code.
+* vaccineCode from VaccinationCredentialVaccineValueSet (required)
+* vaccineCode ^short = "Codes identifying the vaccine product administered"
 
-For COVID-19-related vaccinations, implementers SHOULD use one of the CVX codes [listed on the CDC's COVID-19 vaccine-related codes list](https://www.cdc.gov/vaccines/programs/iis/COVID-19-related-codes.html) whenever possible.
+* vaccineCode.coding ^slicing.discriminator.type = #value
+* vaccineCode.coding ^slicing.discriminator.path = "system"
+* vaccineCode.coding ^slicing.rules = #closed
+* vaccineCode.coding ^slicing.description = "Slicing based on the code system"
 
-We are actively investigating adding additional codes that are not United States-centric."
+* vaccineCode.coding contains
+    vaccine 1..1 MS and
+    vaccineManufacturer 0..1 MS
+
+* vaccineCode.coding[vaccine] ^short = "Vaccine administered"
+* vaccineCode.coding[vaccine] from VaccinationCredentialVaccineValueSet (required)
+
+* vaccineCode.coding[vaccineManufacturer] ^short = "Manufacturer of the administered vaccine"
+* vaccineCode.coding[vaccineManufacturer] from VaccinationCredentialVaccineManufacturerValueSet (required)
+
+
+
 
 * lotNumber MS
 * lotNumber obeys should-be-under-20-chars
@@ -70,10 +87,17 @@ We are actively investigating adding additional codes that are not United States
 // This is the value set we would use if we were including `statusReason`
 // * statusReason from VaccinationCredentialStatusReasonValueSet (extensible)
 
-* reportOrigin from VaccinationCredentialReportOriginValueSet (extensible)
-* site from VaccinationCredentialVaccineSiteValueSet (extensible)
-* route from VaccinationCredentialVaccineRouteValueSet (extensible)
-* fundingSource from VaccinationCredentialFundingSourceValueSet (extensible)
+// Support for IIS value set for RXA-9 - this is part of CDC NIP001
+// * reportOrigin from http://phinvads.cdc.gov/fhir/ValueSet/2.16.840.1.114222.4.11.7450 (extensible)
+
+// Support for IIS value set for RXR-2
+// * site from http://terminology.hl7.org/ValueSet/v2-0163 (extensible)
+
+// Support for IIS value set for RXR-1
+// * route from https://terminology.hl7.org/2.1.0/ValueSet-v2-0162.html (extensible)
+
+// Support for IIS value set for OBX-5 (extensible)
+// * fundingSource from http://phinvads.cdc.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3287 (extensible)
 
 * reaction.detail only Reference(VaccinationCredentialVaccineReactionObservation)
 
@@ -178,7 +202,7 @@ profile, VaccinationCredentialVaccineReactionValueSet includes the IIS adverse r
 
 * value[x] only CodeableConcept
 * valueCodeableConcept 1..1 MS
-* valueCodeableConcept from VaccinationCredentialVaccineReactionValueSet (extensible)
+* valueCodeableConcept from http://phinvads.cdc.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3288 (extensible)
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 

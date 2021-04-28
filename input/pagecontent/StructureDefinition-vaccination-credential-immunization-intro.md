@@ -2,7 +2,14 @@
 
 #### Identifying vaccines
 
-Implementers SHALL use the [VaccinationCredentialVaccineValueSet] to identify vaccinations if a suitable code is available in that value set. An extensible binding is used in this profile to provide flexibility ONLY if real-world circumstances require the use of a code outside this value set. The [data minimization version of this profile][VaccinationCredentialImmunizationDM] uses a required binding to reflect these conformance criteria.
+The `vaccineCode` element has two different slices, which are used to identify vaccines:
+
+1. `vaccineCode.coding[vaccine]` identifies the disease(s) targeted (e.g., COVID-19) and type of vaccine (e.g., mRNA) at a minimum. Valid codes are defined in [VaccinationCredentialVaccineValueSet], and currently include only [CVX codes](https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cvx) but will be expanded in the future to include similar codes from other code systems. For example, `CVX#208` is `COVID-19, mRNA, LNP-S, PF, 30 mcg/0.3 mL dose` and `CVX#197` is `influenza, high-dose, quadrivalent`. This slice is required.
+1. `vaccineCode.coding[vaccineManufacturer]` identifies the manufacturer of the vaccine. Valid codes are defined in [VaccinationCredentialVaccineManufacturerValueSet]. This slice is not required, but SHOULD be populated if the necessary data are available to the Issuer.
+
+Additional slices may be defined in the future if necessary to identify specific boosters for COVID-19 vaccinations.
+
+When vaccine and manufacturer are provided using US-centric terminology (CVX and MVX, respectively) for COVID-19 vaccinations, CDC [provides a list](https://www.cdc.gov/vaccines/programs/iis/COVID-19-related-codes.html) that includes "Sale Proprietary Name" (e.g., `Moderna COVID-19 Vaccine`). The "Sale Proprietary Name" or other trade name SHALL NOT be included in FHIR resources, but MAY be used by Issuers when producing human-readable representations of these resources.
 
 #### Conformance for `status` and `statusReason`
 

@@ -13,13 +13,13 @@ publisher:
   email: example@example.com
 version: 0.4.0-rc
 fhirVersion: 4.0.1
-# dependencies:
-#   us.cdc.phinvads:
-#     uri: http://fhir.org/packages/us.cdc.phinvads
-#     version: 0.7.0
-#   us.nlm.vsac:
-#     uri: http://fhir.org/packages/us.nlm.vsac
-#     version: 0.4.0
+dependencies:
+  us.cdc.phinvads:
+    uri: http://fhir.org/packages/us.cdc.phinvads
+    version: 0.7.0
+  us.nlm.vsac:
+    uri: http://fhir.org/packages/us.nlm.vsac
+    version: 0.4.0
 copyrightYear: 2020+
 license: Apache-2.0
 releaseLabel: ci-build

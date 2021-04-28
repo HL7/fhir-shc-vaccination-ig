@@ -45,21 +45,17 @@
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Value Sets<b class="caret"></b></a>
     <ul class="dropdown-menu">
-      <li><a href="ValueSet-vaccination-credential-vaccine-value-set.html">Vaccines (CVX)</a></li>
-      <li><a href="ValueSet-vaccination-credential-vaccine-site-value-set.html">Vaccination Body Site</a></li>
-      <li><a href="ValueSet-vaccination-credential-funding-source-value-set.html">Vaccination Funding Source</a></li>
-      <li><a href="ValueSet-vaccination-credential-vaccine-reaction-value-set.html">Vaccination Reaction</a></li>
-      <li><a href="ValueSet-vaccination-credential-report-origin-value-set.html">Vaccination Report Origin</a></li>
-      <li><a href="ValueSet-vaccination-credential-vaccine-route-value-set.html">Vaccination Route</a></li>
+      <li><a href="ValueSet-vaccination-credential-vaccine-value-set.html">Vaccines</a></li>
+      <li><a href="ValueSet-vaccination-credential-vaccine-manufacturer-value-set.html">Vaccine manufacturers</a></li>
 
       <li role="separator" class="divider"></li>
 
-      <li><a href="ValueSet-laboratory-result-value-set.html">Lab Results</a></li>
-      <li><a href="ValueSet-covid19-laboratory-test-value-set.html">Lab Tests (COVID-19 only)</a></li>
+      <li><a href="ValueSet-vaccination-credential-lab-test-value-set.html">Lab tests</a></li>
+      <li><a href="ValueSet-vaccination-credential-lab-test-results-value-set.html">Lab test results</a></li>
 
       <li role="separator" class="divider"></li>
 
-      <li><a href="ValueSet-identity-assurance-level-value-set.html">Identity Assurance</a></li>
+      <li><a href="ValueSet-identity-assurance-level-value-set.html">Identity assurance levels</a></li>
     </ul>
   </li>
   <!--<li><a href="data-dictionary/data_dictionary.xlsx">Data Dictionary (.xlsx)</a></li>-->
