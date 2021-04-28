@@ -3,8 +3,8 @@
 <div class="alert alert-info" role="alert" markdown="1">
 <p style="font-size: 2rem;"><strong>Known issues</strong></p>
 
-* The [official FHIR CVX code system](https://terminology.hl7.org/2.0.0/CodeSystem-v2-0292.html) does not have up-to-date [CVX codes](https://phinvads.cdc.gov/vads/ViewValueSet.action?id=6F408928-7C62-EB11-819A-005056ABE2F0). We are working with HL7 to resolve this. In the meantime, we have defined a temporary local code system called `http://hl7.org/fhir/sid/cvx-TEMPORARY-CODE-SYSTEM`. This will be replaced by `http://hl7.org/fhir/sid/cvx` or another non-local code system as soon as possible. Implementers may use `http://hl7.org/fhir/sid/cvx-TEMPORARY-CODE-SYSTEM` to avoid validation errors when testing, but should use `http://hl7.org/fhir/sid/cvx` in production. Verifiers should validate CVX codes using the [PHVS_VaccinesAdministeredCVX_CDC_NIP value set](https://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.114222.4.11.934).<br><br>
-* Other value sets in this IG are not being properly expanded. We are working to resolve this.<br><br>
+* The expansion of [VaccinationCredentialVaccineValueSet] currently has an out-of-date list of [CVX codes](https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cvx). This will be fixed in the next deploy of the HL7 terminology server (`tx.fhir.org`).<br><br>
+* Other value sets in this IG may also have out-of-date expansions. If a given code is listed in the canonical source for a given code system or value set, it should be considered valid regardless of the expansion in this IG.<br><br>
 * Validation with the FHIR Validator tool currently produces spurious errors for valid resources. [Details here](conformance.html#validation).
 
 </div>
@@ -88,7 +88,17 @@ The IG is currently focused on coordinating implementers' representations of rel
 
 1. More constrained profiles for risk evaluation can be created based on the profiles in this IG, but it's not possible to remove constraints in a child profile.
 
-1. Constraints are applied to specific data elements in [Allowable Data profiles](conformance.html#data-minimization) when their inclusion (1) is does not support our use case and could harm patients; or (2) is contrary to our [key design principles](https://vci.org/about#key-principles). For example, `Patient.identifier` is not allowed in resources conforming to [VaccinationCredentialPatient] as this may include a MRN or SSN, which would introduce a significant privacy risk for patients.
+1. Cardinality constraints are applied to specific data elements in [Allowable Data profiles](conformance.html#data-minimization) when their inclusion (1) is does not support our use case and could harm patients; or (2) is contrary to our [key design principles](https://vci.org/about#key-principles). For example, `Patient.identifier` is not allowed in resources conforming to [VaccinationCredentialPatient] as this may include a MRN or SSN, which would introduce a significant privacy risk for patients.
+
+### Approach to terminology bindings
+
+Value set bindings for [`MustSupport` elements](conformance.html) are `required`, meaning that resources MUST use a code specified in the bound value set. This is to ensure implementers know which code systems can be expected to appear in a given element.
+
+In general, the value sets used in these `required` bindings are as broad as possible. For example, in [VaccinationCredentialVaccineValueSet], all codes from the [CVX code system](https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cvx) are included (as opposed to defining a value set with just COVID-related CVX codes, for example).
+
+In cases where disease-specific value sets exist, this IG may provide profiles with bindings to these restricted value sets (e.g., [Covid19LaboratoryResultObservation]) to help implementers identify the preferred subset of codes for that disease. However, in these cases, this IG will also provide generic equivalents to these profiles with broad value sets (e.g., [InfectiousDiseaseLaboratoryResultObservation]). Implementers MAY fall back to the generic version such profiles if the code they need is not part of the disease-specific value sets.
+
+Currently this IG uses US-centric terminology. We plan to add support for non-US terminology, and welcome any implementers outside the US to [identify which code systems and value sets are needed for their use cases](https://github.com/dvci/vaccine-credential-ig/issues/83).
 
 ### Identity assurance
 

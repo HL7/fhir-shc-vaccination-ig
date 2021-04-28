@@ -72,14 +72,13 @@ previous infection status."
 * insert LaboratoryResultObservation
 
 // This binding can be required because implementers can fall back to InfectiousDiseaseLaboratoryResultObservation
-* code from Covid19LaboratoryTestValueSet (required)
-* code obeys covid19-laboratory-test-code-invariant
-* code ^definition = "If the Covid19LaboratoryTestValueSet does not contain a code for the lab test, use the InfectiousDiseaseLaboratoryResultObservation profile."
+* code from covid-lab-tests-loinc-vsac (required)
+* code ^definition = "If an appropriate code is not found in the bound value set, use the InfectiousDiseaseLaboratoryResultObservation profile instead, which does not have a required binding."
 
 * value[x] 1..1
 * value[x] only CodeableConcept or Quantity
-* valueCodeableConcept from LaboratoryResultValueSet (extensible)
-* valueCodeableConcept obeys laboratory-result-invariant
+* valueCodeableConcept from covid-lab-test-results-snomed-vsac (required)
+* code ^definition = "If an appropriate code is not found in the bound value set, use the InfectiousDiseaseLaboratoryResultObservation profile instead, which does not have a required binding."
 * valueCodeableConcept.text obeys should-be-omitted
 
 /*
@@ -155,10 +154,6 @@ previous infection status. Only elements necessary for Verifiers can be populate
 
 * insert LaboratoryResultObservationDM
 
-// Required in DM profile to provide implementers with sterner warning when straying from the expected value sets
-* code from Covid19LaboratoryTestValueSet (required)
-
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Profile:        InfectiousDiseaseLaboratoryResultObservation
@@ -172,12 +167,12 @@ Description:    "Profile for reporting laboratory results indicating current or 
 // Show an error if the code is part of a value set used in a disease-specific profile. If that's
 // the case, there's no reason to use this generic profile -- the disease-specific profile should
 // be used instead.
-* code obeys not-specified-laboratory-test-code-invariant
+* code from VaccinationCredentialLabTestValueSet (required)
+* code obeys shall-not-be-a-covid-loinc
 
 * value[x] 1..1
 * value[x] only CodeableConcept or Quantity
-* valueCodeableConcept from LaboratoryResultValueSet (extensible)
-* valueCodeableConcept obeys laboratory-result-invariant
+* valueCodeableConcept from VaccinationCredentialLabTestResultsValueSet (required)
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
