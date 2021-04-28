@@ -1,0 +1,2 @@
+example,profile,expectedIssueSeverity,expectedLocation,expectedErrorMessage
+examples/Scenario1Bundle.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-bundle,WARNING,Bundle.id,should-be-omitted
