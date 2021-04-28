@@ -24,7 +24,7 @@
       "resource": {
         "resourceType": "Immunization",
         "meta": {
-          "security": [{"code": "IAL1"}]
+          "security": [{"code": "IAL1", "system": "http://terminology.hl7.org/CodeSystem/loa"}]
         },
         "status": "completed",
         "vaccineCode": {
@@ -54,7 +54,7 @@
       "resource": {
         "resourceType": "Immunization",
         "meta": {
-          "security": [{"code": "IAL1.2"}]
+          "security": [{"code": "IAL1.2", "system": "http://terminology.hl7.org/CodeSystem/loa"}]
         },
         "status": "completed",
         "vaccineCode": {
