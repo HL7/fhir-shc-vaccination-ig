@@ -3,8 +3,9 @@ name: Java tests
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ ** ]
+  pull_requests:
+    branches:
+        - '**'
 
 jobs:
   test:
