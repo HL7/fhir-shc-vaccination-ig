@@ -19,7 +19,7 @@ import org.slf4j.LoggerFactory;
 
 public class ProfileTest {
   private static final String DEF_TX = "http://tx.fhir.org";
-  private static String DEF_TXLOG = null;
+  private static final String DEF_TXLOG = null;
   private static ValidationEngine validator;
   private static final Logger logger = LoggerFactory.getLogger(ProfileTest.class);
 
@@ -57,11 +57,11 @@ public class ProfileTest {
     StringBuilder errorMessages = new StringBuilder();
     StringBuilder messages = new StringBuilder();
     outcome.getIssue().forEach(issue -> {
-      messages.append(issue.getUserData("source.vm"));
+      messages.append(createMessage(issue));
       messages.append("\n");
     });
     errors.forEach(error -> {
-      errorMessages.append(error.getUserData("source.vm"));
+      errorMessages.append(createMessage(error));
       errorMessages.append("\n");
     });
 
@@ -71,7 +71,7 @@ public class ProfileTest {
     }
     if (errors.size() > 0) {
       Assertions.fail("source: " + source
-          + ", profile: " + profile + "\n" + errorMessages.toString());
+          + ", profile: " + profile + "\n" + errorMessages);
     }
   }
 
@@ -102,11 +102,9 @@ public class ProfileTest {
           || issue.getSeverity().equals(expectedIssueSeverity))
         .filter(issue -> expectedErrorMessage == null 
           || issue.getDetails().getText().contains(expectedErrorMessage))
-        .filter(issue -> expectedLocation == null 
+        .anyMatch(issue -> expectedLocation == null 
           || issue.getExpression().stream()
-            .filter(s -> s.asStringValue().contains(expectedLocation))
-            .collect(Collectors.toList()).size() > 0)
-        .collect(Collectors.toList()).size() > 0,
+              .anyMatch(s -> s.asStringValue().contains(expectedLocation))),
         "Should throw level=" + expectedIssueSeverity
           + ", location=" + expectedLocation 
           + ", message=" + expectedErrorMessage);
@@ -134,24 +132,22 @@ public class ProfileTest {
   }
 
   private boolean ignoreError(OperationOutcomeIssueComponent issue) {
-    if (issue.getDetails().getText().equalsIgnoreCase(
-        "Relative URLs must be of the format [ResourceName]/[id].  Encountered resource:0")) {
-      return true;
-    } else if (issue.getDetails().getText()
-        .equalsIgnoreCase("Resource requires an id, but none is present")) {
-      return true;
-    }
-
-    return false;
+    return issue
+        .getDetails()
+        .getText()
+        .equalsIgnoreCase(
+          "Relative URLs must be of the format [ResourceName]/[id].  Encountered resource:0") 
+      || issue.getDetails().getText()
+        .equalsIgnoreCase("Resource requires an id, but none is present");
   }
 
   private boolean findImmunizationError(OperationOutcome outcome) {
     // find error entry for Immunization resource type that has an ignored error
     for (OperationOutcomeIssueComponent issue : outcome.getIssue()) {
       if (issue.getSeverity().equals(IssueSeverity.ERROR)) {
-        if (issue.getExpression().stream()
-            .filter(s -> s.asStringValue().contains("resource.ofType(Immunization)"))
-            .collect(Collectors.toList()).size() > 0) {
+        if (issue.getExpression()
+            .stream()
+            .anyMatch(s -> s.asStringValue().contains("resource.ofType(Immunization)"))) {
           if (ignoreError(issue)) {
             return true;
           }
@@ -159,5 +155,15 @@ public class ProfileTest {
       }
     }
     return false;
+  }
+
+  private String createMessage(OperationOutcomeIssueComponent issue) {
+    return new StringBuilder()
+    .append(issue.getSeverity().getDisplay())
+    .append(": type=" + issue.getCode().getDisplay())
+    .append(", location=" 
+      + (issue.hasExpression() ? issue.getExpression().get(0).asStringValue() : ""))
+    .append(", message=" + issue.getDetails().getText())
+    .toString();
   }
 }
