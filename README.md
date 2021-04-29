@@ -4,10 +4,6 @@ CI build of this IG available at <http://build.fhir.org/ig/dvci/vaccine-credenti
 
 ## Tests
 
-Test cases defined in src/test/resources/tests.csv. Will run Sushi to generate fsh-generated files. Assumes Sushi and Java JDK are installed.
-
-Test output is in ./target/validator.log and ./target/surefire-reports.
-
 Shell
 
     ./mvnw test
@@ -16,6 +12,15 @@ Windows
 
     ./mvnw.cmd test
 
+Assumes Sushi and Java JDK are pre-installed. Will run Sushi to generate files in /fsh-generated.
+
+Test output is in target/validator.log and target/surefire-reports.
+
+Test cases are defined in src/test/resources. 
+<ol>
+<li>tests.csv: list of json resource files and profiles that they should validate against without errors. Test case will fail if there are any validation issues of severity error (warning and information severity will pass).</li>
+<li>tests_errors.csv: used for test cases that should result in validator issues. It contains a list of json resource files and the profiles that they should validate against, along with expected issue severity, location, or message fragment. Test case will fail if there is no matching validation issue. Expected columns are optional. If all are left blank, then any validator issue will match.</li>
+</ol>
 
 ## License
 
