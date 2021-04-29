@@ -9,3 +9,8 @@ Thumbs.db
 !/script/validate*
 .vscode
 .env
+.classpath
+.project
+.settings/*
+target/*
+.mvn/wrapper/maven-wrapper.jar
