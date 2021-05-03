@@ -1,2 +1,3 @@
 example,profile,expectedIssueSeverity,expectedLocation,expectedErrorMessage
-examples/Scenario1Bundle.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-bundle,WARNING,Bundle.id,should-be-omitted
+examples/Scenario1Bundle.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-bundle,WARNING,Bundle.id,vc-should-be-omitted
+src/test/resources/observation-status-shall-be-complete.test.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/covid19-laboratory-result-observation,ERROR,,observation-status-shall-be-complete

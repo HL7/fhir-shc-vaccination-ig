@@ -7,14 +7,14 @@ RuleSet: fullurl(path)
 * {path}fullUrl ^short = "Locally unique identifier like resource:0"
 * {path}fullUrl ^definition = "Identifier for the contained resource that is locally unique within this Bundle. The identifier SHALL use `resource:#` format, where `#` is an integer incremented from 0 to _n_ within the Bundle."
 * {path}fullUrl ^comment = "n/a"
-* {path}fullUrl obeys shall-be-resource-uri
+* {path}fullUrl obeys vc-shall-be-resource-uri
 
 RuleSet: common-bundle-rules
 
 * id ^short = "Should be omitted"
 * id ^definition = "It is not necessary to provide an `id` for Bundles profiled in this IG. This element SHOULD be omitted for data minimization reasons."
 * id ^comment = "n/a"
-* id obeys should-be-omitted
+* id obeys vc-should-be-omitted
 
 * type  = #collection
 * type MS
@@ -106,7 +106,7 @@ Description: "The bundle of resources that represents the clinical content of a 
 * entry[laboratoryResultObservation] ^short = "Laboratory result"
 * entry[laboratoryResultObservation] ^definition = "Laboratory result"
 * entry[laboratoryResultObservation].resource only Covid19LaboratoryResultObservation
-* entry[laboratoryResultObservation] obeys vc-lab-1
+* entry[laboratoryResultObservation] obeys vc-bundle-lab-status-complete
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -130,7 +130,7 @@ Description: "The bundle of resources that represents the clinical content of a 
 * entry[laboratoryResultObservation] ^short = "Laboratory result"
 * entry[laboratoryResultObservation] ^definition = "Laboratory result"
 * entry[laboratoryResultObservation].resource only InfectiousDiseaseLaboratoryResultObservation
-* entry[laboratoryResultObservation] obeys vc-lab-1
+* entry[laboratoryResultObservation] obeys vc-bundle-lab-status-complete
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -154,7 +154,7 @@ Description: "The bundle of resources that represents the clinical content of a 
 * entry[laboratoryResultObservation] ^short = "Laboratory result"
 * entry[laboratoryResultObservation] ^definition = "Laboratory result"
 * entry[laboratoryResultObservation].resource only InfectiousDiseaseLaboratoryResultObservationDM
-* entry[laboratoryResultObservation] obeys vc-lab-1
+* entry[laboratoryResultObservation] obeys vc-bundle-lab-status-complete
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -178,6 +178,6 @@ Description: "The bundle of resources that represents the clinical content of a 
 * entry[laboratoryResultObservation] ^short = "Laboratory result"
 * entry[laboratoryResultObservation] ^definition = "Laboratory result"
 * entry[laboratoryResultObservation].resource only Covid19LaboratoryResultObservationDM
-* entry[laboratoryResultObservation] obeys vc-lab-1
+* entry[laboratoryResultObservation] obeys vc-bundle-lab-status-complete
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
