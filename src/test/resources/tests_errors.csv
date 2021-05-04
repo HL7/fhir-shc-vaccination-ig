@@ -8,3 +8,4 @@ src/test/resources/shall-be-true-if-populated-invariant.test.json,http://hl7.org
 src/test/resources/should-not-include-string-lot.test.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-immunization,WARNING,,vc-should-not-include-string-lot
 src/test/resources/shall-not-be-a-covid-loinc.test.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/infectious-disease-laboratory-result-observation,ERROR,,vc-shall-not-be-a-covid-loinc
 src/test/resources/should-be-under-20-chars.test.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-immunization,WARNING,,vc-should-be-under-20-chars
+src/test/resources/should-be-omitted-privacy.test.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-patient,WARNING,,vc-should-be-omitted-privacy
