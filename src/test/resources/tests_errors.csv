@@ -1,3 +1,5 @@
 example,profile,expectedIssueSeverity,expectedLocation,expectedErrorMessage
 examples/Scenario1Bundle.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-bundle,WARNING,Bundle.id,vc-should-be-omitted
-src/test/resources/observation-status-shall-be-complete.test.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/covid19-laboratory-result-observation,ERROR,,observation-status-shall-be-complete
+src/test/resources/observation-status-shall-be-complete.test.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/covid19-laboratory-result-observation,ERROR,,vc-observation-status-shall-be-complete
+src/test/resources/name-invariant-xor.test.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-patient,ERROR,,vc-name-invariant
+src/test/resources/name-invariant-none.test.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-patient,ERROR,,vc-name-invariant
