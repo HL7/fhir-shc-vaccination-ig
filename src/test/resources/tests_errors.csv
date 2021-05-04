@@ -4,3 +4,4 @@ src/test/resources/observation-status-shall-be-complete.test.json,http://hl7.org
 src/test/resources/name-invariant-xor.test.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-patient,ERROR,,vc-name-invariant
 src/test/resources/name-invariant-none.test.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-patient,ERROR,,vc-name-invariant
 src/test/resources/date-invariant-with-time.test.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-immunization,WARNING,,vc-date-invariant
+src/test/resources/shall-be-true-if-populated-invariant.test.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-immunization,ERROR,,vc-shall-be-true-if-populated-invariant
