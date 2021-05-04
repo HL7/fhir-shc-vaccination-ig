@@ -135,9 +135,7 @@ public class ProfileTest {
         .getDetails()
         .getText()
         .equalsIgnoreCase(
-          "Relative URLs must be of the format [ResourceName]/[id].  Encountered resource:0") 
-      || issue.getDetails().getText()
-        .equalsIgnoreCase("Resource requires an id, but none is present");
+          "Relative URLs must be of the format [ResourceName]/[id].  Encountered resource:0");
   }
 
   private boolean findImmunizationError(OperationOutcome outcome) {
