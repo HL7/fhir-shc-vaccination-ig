@@ -26,7 +26,7 @@ Description: "Defines a profile representing a vaccination for a vaccination cre
 * occurrenceDateTime 1..1 MS
 * occurrenceDateTime ^definition = "Date vaccine administered (`YYYY-MM-DD` format)."
 * occurrenceDateTime ^comment = "For data minimization reasons, only year, month, and date SHOULD be reported for this element. Exact time (hour, minute, second) are not relevant for our use cases."
-* occurrenceDateTime obeys date-invariant
+* occurrenceDateTime obeys vc-date-invariant
 
 // Parent profile short description is not as clear as it could be
 * primarySource ^short = "Information in this record from person who administered vaccine?"
@@ -58,8 +58,8 @@ Description: "Defines a profile representing a vaccination for a vaccination cre
 
 
 * lotNumber MS
-* lotNumber obeys should-be-under-20-chars
-* lotNumber obeys should-not-include-string-lot
+* lotNumber obeys vc-should-be-under-20-chars
+* lotNumber obeys vc-should-not-include-string-lot
 * lotNumber ^short = "String representing lot number like `0123L45A`"
 * lotNumber ^definition = "Lot number of the vaccine product. Implementers SHOULD NOT include text synonymous with \"lot number\" in this element as this is redundant. For example, use `0123L45A` rather than `Lot # 0123L45A`."
 
@@ -75,7 +75,7 @@ Description: "Defines a profile representing a vaccination for a vaccination cre
 * performer.actor.display MS
 * performer.actor.display 1..1
 * performer.actor.display ^definition = "Organization which was responsible for vaccine administration. Issuers SHOULD provide display name only. This is provided to Verifiers in case of invalid data in the credential, to support manual validation. This is not expected to be a computable Organization identifier."
-* performer.actor.display obeys should-be-under-20-chars
+* performer.actor.display obeys vc-should-be-under-20-chars
 
 * status ^short = "Whether or not the vaccination was completed"
 * status MS
@@ -115,7 +115,7 @@ Verifiers SHALL assume that if an Immunization resource is provided and `isSubpo
 This element is therefore an exception to the guidance that Issuers must populate `MustSupport` elements if the data are available. An invariant is used to provide a computable representation of this exception: it will produce an error if `isSubpotent = false`, which is the expected value of this element for the vast majority of resources. Because full potency is implicit per this element's definition, we do not want to populate `isSubpotent` with `false` because it increases payload size without adding information.
 
 If `isSubpotent` was not allowed at all (`0..0` cardinality), the concern is that resources where `isSubpotent = true` would inadvertently be generated without any indication they were not potent."
-* isSubpotent obeys shall-be-true-if-populated-invariant
+* isSubpotent obeys vc-shall-be-true-if-populated-invariant
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -185,7 +185,7 @@ we wanted to have value sets corresponding to all the value sets in the IIS core
 profile, VaccinationCredentialVaccineReactionValueSet includes the IIS adverse reaction codes."
 * ^status = #draft
 
-* id obeys should-be-under-20-chars
+* id obeys vc-should-be-under-20-chars
 
 * code = SCT#293104008 "Vaccines adverse reaction (disorder)"
 
