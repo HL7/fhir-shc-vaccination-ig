@@ -23,8 +23,18 @@
 [VaccinationCredentialLabTestResultsValueSet]: ValueSet-vaccination-credential-lab-test-results-value-set.html
 [VaccinationCredentialLabTestValueSet]: ValueSet-vaccination-credential-lab-test-value-set.html
 [VaccinationCredentialVaccineManufacturerValueSet]: ValueSet-vaccination-credential-vaccine-manufacturer-value-set.html
-[VaccinationCredentialVaccineValueSet]: ValueSet-vaccination-credential-vaccine-value-set.html
+[VaccineProductCVXValueSet]: ValueSet-vaccine-product-cvx-value-set.html
+[VaccineProductGTINValueSet]: ValueSet-vaccine-product-gtin-value-set.html
+[VaccineProductSNOMEDValueSet]: ValueSet-vaccine-product-snomed-value-set.html
 
 [Scenario1Bundle]: https://github.com/dvci/vaccine-credential-ig/blob/{{ site.data['git-branch'] }}/examples/Scenario1Bundle.json
 [Scenario2Bundle]: https://github.com/dvci/vaccine-credential-ig/blob/{{ site.data['git-branch'] }}/examples/Scenario2Bundle.json
 [Scenario3Bundle]: https://github.com/dvci/vaccine-credential-ig/blob/{{ site.data['git-branch'] }}/examples/Scenario3Bundle.json
+
+<!-- Code systems and value sets -->
+[CVX]: https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cvx
+[SNOMED-CT]: https://www.snomed.org
+[GTIN]: https://www.gs1.org/standards/id-keys/gtin
+[GTIN-code-system]: https://terminology.hl7.org/1.0.0/CodeSystem-gtin.html
+[MVX](https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=mvx) (`http://terminology.hl7.org/CodeSystem/v2-0227`), a code system maintained by CDC for identifying manufacturers of vaccines
+2. [GLN](https://www.gs1.org/standards/id-keys/gln)

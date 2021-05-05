@@ -36,7 +36,6 @@ Description: "Defines a profile representing a vaccination for a vaccination cre
 // Vaccine code
 * vaccineCode 1..1
 * vaccineCode MS
-* vaccineCode from VaccinationCredentialVaccineValueSet (required)
 * vaccineCode ^short = "Codes identifying the vaccine product administered"
 
 * vaccineCode.coding ^slicing.discriminator.type = #value
@@ -45,16 +44,35 @@ Description: "Defines a profile representing a vaccination for a vaccination cre
 * vaccineCode.coding ^slicing.description = "Slicing based on the code system"
 
 * vaccineCode.coding contains
-    vaccine 1..1 MS and
-    vaccineManufacturer 0..1 MS
+    cvx 0..1 and
+    gtin 0..1 and
+    snomed 0..1
 
-* vaccineCode.coding[vaccine] ^short = "Vaccine administered"
-* vaccineCode.coding[vaccine] from VaccinationCredentialVaccineValueSet (required)
+* vaccineCode.coding[cvx] ^short = "CVX code identifying the administered vaccine product"
+* vaccineCode.coding[cvx] from vaccine-product-cvx-value-set (required)
 
-* vaccineCode.coding[vaccineManufacturer] ^short = "Manufacturer of the administered vaccine"
-* vaccineCode.coding[vaccineManufacturer] from VaccinationCredentialVaccineManufacturerValueSet (required)
+* vaccineCode.coding[gtin] ^short = "GTIN code identifying the administered vaccine product"
+* vaccineCode.coding[gtin] from vaccine-product-gtin-value-set (required)
+
+* vaccineCode.coding[snomed] ^short = "SNOMED CT code identifying the administered vaccine product"
+* vaccineCode.coding[snomed] from vaccine-product-snomed-value-set (required)
 
 
+// Manufacturer
+// Why we are doing this rather than an extension or in vaccineCode
+// https://chat.fhir.org/#narrow/stream/179202-terminology/topic/Using.20multiple.20codes.20with.20CodeableConcept.20Datatype/near/236750401
+// Note that the FHIR validator will not currently validate that a given `value` is in the `system`
+// inside `manufacturer.identifier`.
+* manufacturer MS
+* manufacturer.identifier MS
+* manufacturer.identifier.system MS
+* manufacturer.identifier.system 1..1
+* manufacturer.identifier.system obeys shall-use-known-vaccine-manufacturer-code-system
+* manufacturer.identifier.system ^short = "Code system used to identify vaccine manufacturer"
+* manufacturer.identifier.value MS
+* manufacturer.identifier.value 1..1
+* manufacturer.identifier.value obeys shall-be-from-manufacturer-code-system
+* manufacturer.identifier.system ^short = "Code identifying vaccine manufacturer"
 
 
 * lotNumber MS
@@ -146,7 +164,9 @@ Description: "Defines a profile representing a vaccination for a vaccination cre
 * primarySource 0..0
 * reportOrigin 0..0
 * location 0..0
-* manufacturer 0..0
+* manufacturer.reference 0..0
+* manufacturer.type 0..0
+* manufacturer.display 0..0
 * expirationDate 0..0
 * site 0..0
 * route 0..0
@@ -168,9 +188,6 @@ Description: "Defines a profile representing a vaccination for a vaccination cre
 * fundingSource 0..0
 * reaction 0..0
 * programEligibility 0..0
-
-// Required in DM profile to provide implementers with sterner warning when straying from the expected value sets
-* vaccineCode from VaccinationCredentialVaccineValueSet (required)
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 

@@ -42,6 +42,7 @@
       <li><a href="conformance.html#data-minimization">What is "DM"?</a></li>
     </ul>
   </li>
+  <!--
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Value Sets<b class="caret"></b></a>
     <ul class="dropdown-menu">
@@ -58,6 +59,7 @@
       <li><a href="ValueSet-identity-assurance-level-value-set.html">Identity assurance levels</a></li>
     </ul>
   </li>
+  -->
   <!--<li><a href="data-dictionary/data_dictionary.xlsx">Data Dictionary (.xlsx)</a></li>-->
   <li><a href="https://github.com/dvci/vaccine-credential-ig/releases">Version History</a></li>
   <li><a href="https://github.com/dvci/vaccine-credential-ig">GitHub</a></li>

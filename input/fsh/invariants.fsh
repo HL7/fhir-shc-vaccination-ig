@@ -81,3 +81,16 @@ Expression:  "$this.lower().matches('final') or $this.lower().matches('amended')
 Severity:    #error
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Invariant: shall-use-known-vaccine-manufacturer-code-system
+Description: "SHALL use a known code system for identifying vaccine manufacturers"
+Expression: "$this.matches('http://terminology.hl7.org/CodeSystem/v2-0227') or $this.matches('http://terminology.hl7.org/CodeSystem/MVX') or $this.matches('https://www.gs1.org/gln')"
+Severity: #error
+// Keep list of manufacturer code systems in sync with the intro text for our Immunization profiles
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Invariant: shall-be-from-manufacturer-code-system
+Description: "SHALL be a code from a known manufacturer code system"
+Expression: "$this.memberOf('http://terminology.hl7.org/CodeSystem/v2-0227') or $this.memberOf('http://terminology.hl7.org/CodeSystem/MVX') or $this.memberOf('https://www.gs1.org/gln')"
+Severity: #error
