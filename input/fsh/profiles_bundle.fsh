@@ -27,6 +27,26 @@ RuleSet: common-bundle-rules
 * insert id-should-not-be-populated(entry.)
 * insert fullurl(entry.)
 
+RuleSet: common-bundle-dm-rules
+
+* id 0..0
+* identifier 0..0
+* meta.versionId 0..0
+* meta.lastUpdated 0..0
+* meta.source 0..0
+* meta.profile 0..0
+* meta.tag 0..0
+* meta.id 0..0
+* meta.extension 0..0
+* implicitRules 0..0
+* language 0..0
+* total 0..0
+* link 0..0
+* entry.link 0..0
+* entry.search 0..0
+* entry.request 0..0
+* entry.response 0..0
+* signature 0..0
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -65,6 +85,7 @@ Title: "Vaccination Credential Bundle - Data Minimization"
 Description: "The bundle of resources that represents the clinical content of a digital vaccination record using data minimization profiles."
 
 * insert common-bundle-rules
+* insert common-bundle-dm-rules
 
 * entry contains
     // These resources are required per Conformance > Supported Profiles.
@@ -141,6 +162,7 @@ Title: "Infectious Disease (Generic) Laboratory Bundle - Data Minimization"
 Description: "The bundle of resources that represents the clinical content of a digital lab credential record for a generic infectious disease for data minimization."
 
 * insert common-bundle-rules
+* insert common-bundle-dm-rules
 
 * entry contains
     // These resources are required per Conformance > Supported Profiles.
@@ -165,6 +187,7 @@ Title: "COVID-19-specific Laboratory Bundle - Data Minimization"
 Description: "The bundle of resources that represents the clinical content of a digital lab credential record specifically for COVID-19 data minimization."
 
 * insert common-bundle-rules
+* insert common-bundle-dm-rules
 
 * entry contains
     // These resources are required per Conformance > Supported Profiles.
