@@ -42,24 +42,26 @@
       <li><a href="conformance.html#data-minimization">What is "DM"?</a></li>
     </ul>
   </li>
-  <!--
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Value Sets<b class="caret"></b></a>
     <ul class="dropdown-menu">
-      <li><a href="ValueSet-vaccination-credential-vaccine-value-set.html">Vaccines</a></li>
-      <li><a href="ValueSet-vaccination-credential-vaccine-manufacturer-value-set.html">Vaccine manufacturers</a></li>
+      <li><a href="ValueSet-vaccine-product-gtin-value-set.html">Vaccine: GTIN</a>
+      <li><a href="ValueSet-vaccine-product-cvx-value-set.html">Vaccine: CVX</a>
+      <li><a href="ValueSet-vaccine-type-snomed-value-set.html">Vaccine: SNOMED-CT</a>
+      <li><a href="ValueSet-vaccine-target-icd-11-value-set.html">Vaccine: ICD-11</a>
+      <li><a href="ValueSet-vaccine-target-atc-value-set.html">Vaccine: ATC</a>
 
       <li role="separator" class="divider"></li>
 
       <li><a href="ValueSet-vaccination-credential-lab-test-value-set.html">Lab tests</a></li>
       <li><a href="ValueSet-vaccination-credential-lab-test-results-value-set.html">Lab test results</a></li>
+      <li><a href="ValueSet-vaccination-credential-covid-lab-test-results-value-set.html">Lab test results (COVID-19)</a>
 
       <li role="separator" class="divider"></li>
 
       <li><a href="ValueSet-identity-assurance-level-value-set.html">Identity assurance levels</a></li>
     </ul>
   </li>
-  -->
   <!--<li><a href="data-dictionary/data_dictionary.xlsx">Data Dictionary (.xlsx)</a></li>-->
   <li><a href="https://github.com/dvci/vaccine-credential-ig/releases">Version History</a></li>
   <li><a href="https://github.com/dvci/vaccine-credential-ig">GitHub</a></li>

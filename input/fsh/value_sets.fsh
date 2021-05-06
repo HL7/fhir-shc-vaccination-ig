@@ -66,7 +66,11 @@ can be found on the [maintenance platform](https://icd.who.int/dev11/l-m/en), an
 * `XM0GQ8`: COVID-19 vaccine, RNA based
 
 Implementers should consider the [ICD-11 maintenance platform](https://icd.who.int/dev11/l-m/en)
-the canonical source of ICD-11 codes for COVID-19 vaccines."
+the canonical source of ICD-11 codes for COVID-19 vaccines.
+
+Note that this value set should contain the same codes as the [WHO Vaccine List value set](https://who-int.github.io/svc/ValueSet-who-svc-vaccines.html),
+and may be replaced with the WHO value set once that is published.
+"
 
 * ^copyright = "TBD. More information can be found here: https://icd.who.int/icdapi/docs2/license/
 Contact licensing@who.int to obtain further information."
@@ -86,37 +90,27 @@ Contact licensing@who.int to obtain further information."
 // XM7C66 Bacterial and viral vaccines, combined
 * include codes from system ICD11 where concept is-a #XM7C66
 
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-ValueSet:    VaccinationCredentialVaccineManufacturerValueSet
-Id:          vaccination-credential-vaccine-manufacturer-value-set
-Title:       "Vaccine manufacturer value set"
-Description: "This value set includes codes for identifying vaccine manufacturers.
+ValueSet:    VaccineTargetATCValueSet
+Id:          vaccine-target-atc-value-set
+Title:       "Value set: all ATC codes for vaccine types"
+Description: "This value set includes the subset of [ATC](https://www.whocc.no/atc_ddd_index/?code=J07) that identify vaccine targets.
 
-Codes from the following systems are currently included:
+Note that an ATC code for COVID-19 vaccines (`J07BX03`) [has been created](https://www.who.int/medicines/publications/druginformation/issues/WHO_DI_34_4_ATC-DDD_ClassificationTemp.pdf) and will be added to the next published version of ATC/DDD slated for January 2022."
+// Antatomic, Therapeutic and Chemical Classification (ATC)
+// https://confluence.hl7.org/pages/viewpage.action?pageId=104584082
 
-1. [MVX](https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=mvx) (`http://terminology.hl7.org/CodeSystem/MVX` (preferred) or `http://terminology.hl7.org/CodeSystem/v2-0227`), a code system maintained by CDC for identifying manufacturers of vaccines
-2. [GLN](https://www.gs1.org/standards/id-keys/gln) (`https://www.gs1.org/gln`), which can be used to identify \"any legal entity or organisation: such as
-company operating in the supply chain including suppliers, customers, financial services companies, hospitals and freight forwarders\" ([source](https://www.gs1.org/docs/idkeys/GS1_Global_Location_Numbers.pdf))
+* ^copyright = "© Copyright WHO Collaborating Centre for Drug Statistics Methodology, Oslo, Norway. Use of all or parts of the material requires reference to the WHO Collaborating Centre for Drug Statistics Methodology. Copying and distribution for commercial purposes is not allowed. Changing or manipulating the material is not allowed."
 
-"
-
-// MVX codes - identifies manufacturer https://phinvads.cdc.gov/vads/ViewValueSet.action?oid=2.16.840.1.114222.4.11.826
-
-// This value set uses http://terminology.hl7.org/CodeSystem/v2-0227 as the code system
-* include codes from valueset http://phinvads.cdc.gov/fhir/ValueSet/2.16.840.1.114222.4.11.826
-
-// There's another HL7 representation of MVX with a cleaner URI so use/prefer that
-* include codes from system http://terminology.hl7.org/CodeSystem/MVX
-
-// This is the code system for GLN (it resolves in a browser). There doesn't appear to be HL7/FHIR support for it currently.
-* include codes from system https://www.gs1.org/gln
+* include codes from system https://www.whocc.no/atc_ddd_index/ where concept is-a #J07
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ValueSet:    VaccinationCredentialLabTestValueSet
 Id:          vaccination-credential-lab-test-value-set
-Title:       "Laboratory tests value set"
+Title:       "Value set: laboratory tests"
 Description: "This value set includes codes for identifying laboratory tests."
 
 * include codes from system LNC
@@ -125,7 +119,7 @@ Description: "This value set includes codes for identifying laboratory tests."
 
 ValueSet:    VaccinationCredentialLabTestResultsValueSet
 Id:          vaccination-credential-lab-test-results-value-set
-Title:       "Laboratory test results value set"
+Title:       "Value set: laboratory test results"
 Description: "This value set includes codes for identifying laboratory test results."
 
 // Include all clinical finding codes
@@ -156,9 +150,10 @@ Description: "This value set includes codes for identifying laboratory test resu
 * LNC#LA18996-1 "Strong positive"
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
+
 CodeSystem: IdentityAssuranceCodeSystem
 Id: identity-assurance-code-system
-Title: "Identity Assurance Code System"
+Title: "Code system: identity assurance"
 Description: "Code representing identity assurance level, based on NIST 800-63-3"
 * ^url =  http://terminology.hl7.org/CodeSystem/loa
 * #IAL1 "Name and birth date were self-asserted."
@@ -169,7 +164,7 @@ Description: "Code representing identity assurance level, based on NIST 800-63-3
 
 ValueSet:    IdentityAssuranceLevelValueSet
 Id:          identity-assurance-level-value-set
-Title:       "Identity assurance level value set"
+Title:       "Value set: identity assurance level"
 Description: "Code representing identity assurance level, based on NIST 800-63-3"
 * include codes from system LOA
 

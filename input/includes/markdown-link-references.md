@@ -20,11 +20,12 @@
 [VaccinationCredentialVaccineReactionObservation]: StructureDefinition-vaccination-credential-vaccine-reaction-observation.html
 
 [IdentityAssuranceLevelValueSet]: ValueSet-identity-assurance-level-value-set.html
+[VaccinationCredentialCOVIDLabTestResultsValueSet]: ValueSet-vaccination-credential-covid-lab-test-results-value-set.html
 [VaccinationCredentialLabTestResultsValueSet]: ValueSet-vaccination-credential-lab-test-results-value-set.html
 [VaccinationCredentialLabTestValueSet]: ValueSet-vaccination-credential-lab-test-value-set.html
-[VaccinationCredentialVaccineManufacturerValueSet]: ValueSet-vaccination-credential-vaccine-manufacturer-value-set.html
 [VaccineProductCVXValueSet]: ValueSet-vaccine-product-cvx-value-set.html
 [VaccineProductGTINValueSet]: ValueSet-vaccine-product-gtin-value-set.html
+[VaccineTargetATCValueSet]: ValueSet-vaccine-target-atc-value-set.html
 [VaccineTargetICD11ValueSet]: ValueSet-vaccine-target-icd-11-value-set.html
 [VaccineTypeSNOMEDValueSet]: ValueSet-vaccine-type-snomed-value-set.html
 
