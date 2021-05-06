@@ -77,7 +77,7 @@ However, if populating `manufacturer.identifier`, Issuers SHALL identify a code 
 
 | Code system                                      | Example                   |
 | ------------------------------------------------ | ------------------------- |
-| MVX: `http://terminology.hl7.org/CodeSystem/MVX` | `MOD` (Moderna)           |
+| MVX: `http://hl7.org/fhir/sid/mvx`               | `MOD` (Moderna)           |
 | GLN: `https://www.gs1.org/gln`                   | `0380777000008` (Moderna) |
 {: .grid }
 
@@ -89,7 +89,7 @@ For example, to identify Moderna, either of the following may be used:
     ...
     "manufacturer": {
       "identifier": {
-        "system": "http://terminology.hl7.org/CodeSystem/MVX",
+        "system": "http://hl7.org/fhir/sid/mvx",
         "value": "MOD"
       }
     }

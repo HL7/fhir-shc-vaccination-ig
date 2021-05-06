@@ -84,6 +84,6 @@ Severity:    #error
 
 Invariant: shall-use-known-vaccine-manufacturer-code-system
 Description: "SHALL use a known code system for identifying vaccine manufacturers"
-Expression: "$this.matches('http://terminology.hl7.org/CodeSystem/v2-0227') or $this.matches('http://terminology.hl7.org/CodeSystem/MVX') or $this.matches('https://www.gs1.org/gln')"
+Expression: "$this.matches('http://hl7.org/fhir/sid/mvx') or $this.matches('https://www.gs1.org/gln')"
 Severity: #error
 // Keep list of manufacturer code systems in sync with the intro text for our Immunization profiles
