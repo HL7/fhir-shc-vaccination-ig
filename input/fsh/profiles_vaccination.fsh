@@ -50,12 +50,11 @@ Description: "Defines a profile representing a vaccination for a vaccination cre
 
 * vaccineCode.coding[vaccine] ^short = "Vaccine administered"
 * vaccineCode.coding[vaccine] from VaccinationCredentialVaccineValueSet (required)
+* vaccineCode.coding[vaccine].system = #http://hl7.org/fhir/sid/cvx
 
 * vaccineCode.coding[vaccineManufacturer] ^short = "Manufacturer of the administered vaccine"
 * vaccineCode.coding[vaccineManufacturer] from VaccinationCredentialVaccineManufacturerValueSet (required)
-
-
-
+* vaccineCode.coding[vaccineManufacturer].system = #http://hl7.org/fhir/sid/mvx
 
 * lotNumber MS
 * lotNumber obeys vc-should-be-under-20-chars
