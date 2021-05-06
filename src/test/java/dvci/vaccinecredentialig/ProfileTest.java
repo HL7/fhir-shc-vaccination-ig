@@ -118,7 +118,14 @@ public class ProfileTest {
             "Bundle.entry:vaccinationCredentialImmunization: minimum required = 1, but only found 0"
             )) {
           // if there is an Immunization entry with errors, then ignore this error
-          if (!findImmunizationError(outcome)) {
+          if (!findIgnoredError(outcome, "Immunization")) {
+            errors.add(issue);
+          }
+        } else if (issue.getDetails().getText().contains(
+            "Bundle.entry:laboratoryResultObservation: minimum required = 1, but only found 0"
+          )) {
+          // if there is an Observation entry with errors, then ignore this error
+          if (!findIgnoredError(outcome, "Observation")) {
             errors.add(issue);
           }
         } else if (!ignoreError(issue)) {
@@ -138,13 +145,13 @@ public class ProfileTest {
           "Relative URLs must be of the format [ResourceName]/[id].  Encountered resource:0");
   }
 
-  private boolean findImmunizationError(OperationOutcome outcome) {
-    // find error entry for Immunization resource type that has an ignored error
+  private boolean findIgnoredError(OperationOutcome outcome, String resourceType) {
+    // true if there is an ignored error entry for specific resource type
     for (OperationOutcomeIssueComponent issue : outcome.getIssue()) {
       if (issue.getSeverity().equals(IssueSeverity.ERROR)) {
         if (issue.getExpression()
             .stream()
-            .anyMatch(s -> s.asStringValue().contains("resource.ofType(Immunization)"))) {
+            .anyMatch(s -> s.asStringValue().contains("resource.ofType(" + resourceType + ")"))) {
           if (ignoreError(issue)) {
             return true;
           }
