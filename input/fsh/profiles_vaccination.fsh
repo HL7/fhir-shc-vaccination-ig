@@ -46,7 +46,8 @@ Description: "Defines a profile representing a vaccination for a vaccination cre
 * vaccineCode.coding contains
     cvx 0..1 and
     gtin 0..1 and
-    snomed 0..1
+    snomed 0..1 and
+    icd11 0..1
 
 * vaccineCode.coding[cvx] ^short = "CVX code identifying the administered vaccine product"
 * vaccineCode.coding[cvx] from vaccine-product-cvx-value-set (required)
@@ -55,7 +56,10 @@ Description: "Defines a profile representing a vaccination for a vaccination cre
 * vaccineCode.coding[gtin] from vaccine-product-gtin-value-set (required)
 
 * vaccineCode.coding[snomed] ^short = "SNOMED CT code identifying the administered vaccine product"
-* vaccineCode.coding[snomed] from vaccine-product-snomed-value-set (required)
+* vaccineCode.coding[snomed] from vaccine-type-snomed-value-set (required)
+
+* vaccineCode.coding[icd11] ^short = "ICD11 code identifying the administered vaccine product"
+* vaccineCode.coding[icd11] from vaccine-target-icd-11-value-set (required)
 
 
 // Manufacturer
@@ -65,13 +69,13 @@ Description: "Defines a profile representing a vaccination for a vaccination cre
 // inside `manufacturer.identifier`.
 * manufacturer MS
 * manufacturer.identifier MS
+* manufacturer.identifier ^short = "Only populate when vaccine type is not provided in vaccineCode"
 * manufacturer.identifier.system MS
 * manufacturer.identifier.system 1..1
 * manufacturer.identifier.system obeys shall-use-known-vaccine-manufacturer-code-system
 * manufacturer.identifier.system ^short = "Code system used to identify vaccine manufacturer"
 * manufacturer.identifier.value MS
 * manufacturer.identifier.value 1..1
-* manufacturer.identifier.value obeys shall-be-from-manufacturer-code-system
 * manufacturer.identifier.system ^short = "Code identifying vaccine manufacturer"
 
 

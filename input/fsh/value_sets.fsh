@@ -18,29 +18,73 @@ Description: "This value set includes all [GTIN](https://www.gs1.org/gtin) codes
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-ValueSet:    VaccineProductSNOMEDValueSet
-Id:          vaccine-product-snomed-value-set
+ValueSet:    VaccineTypeSNOMEDValueSet
+Id:          vaccine-type-snomed-value-set
 Title:       "Value set: SNOMED-CT vaccine product codes"
 Description: "This value set includes the vaccination product codes from SNOMED Clinical Terms®.
 
 **Note that the value set expansion below may be out of date, and may not include COVID-19-related
 codes.** Implementers SHALL defer to [the canonical list of COVID-19-related SNOMED codes][snomed-covid]
 for COVID-related vaccines when it does not match the codes listed below.
+
+[snomed-covid]: https://confluence.ihtsdotools.org/display/snomed/SNOMED+CT+COVID-19+Related+Content
 "
 
-* ^copyright = "This value set includes content from SNOMED CT, which is copyright © 2002+
+* ^copyright = "This value set includes content from SNOMED-CT, which is copyright © 2002+
 International Health Terminology Standards Development Organization (IHTSDO), and distributed by
-agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement.
+agreement between IHTSDO and HL7. Implementer use of SNOMED-CT is not covered by this agreement.
 
-Note that some COVID-19-related SNOMED codes [are part of the SNOMED Global Patient Set (GPS)][snomed-covid]
-and can be used now under the same open license as the GPS, the
-[Creative Commons Attribution 4.0 International License][cc-ail].
+Note that some of the SNOMED-CT codes that are part of this value set expansion,
+[including the COVID-19-related SNOMED codes][snomed-covid],
+may be used under the a [Creative Commons Attribution 4.0 International License][cc-ail] as part
+of [the SNOMED Global Patient Set](https://gps.snomed.org). Please refer to [https://gps.snomed.org](https://gps.snomed.org)
+to determine which specific SNOMED codes may be used under this license.
 
 [snomed-covid]: https://confluence.ihtsdotools.org/display/snomed/SNOMED+CT+COVID-19+Related+Content
 [cc-ail]: https://creativecommons.org/licenses/by/4.0/
 "
 
 * include codes from system SCT where concept is-a #787859002
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ValueSet:    VaccineTargetICD11ValueSet
+Id:          vaccine-target-icd-11-value-set
+Title:       "Value set: all ICD-11 codes for vaccine types"
+Description: "This value set includes the subset of [ICD-11](https://icd.who.int/en) that identify vaccine types.
+
+Note that the COVID-related ICD-11 vaccine codes are not in the `09/2020` version of ICD-11. They
+can be found on the [maintenance platform](https://icd.who.int/dev11/l-m/en), and include:
+
+* `XM1NL1`: COVID-19 vaccine, inactivated virus
+* `XM5DF6`: COVID-19 vaccine, live attenuated virus
+* `XM9QW8`: COVID-19 vaccine, non-replicating viral vector
+* `XM0CX4`: COVID-19 vaccine, replicating viral vector
+* `XM5JC5`: COVID-19 vaccine, virus protein subunit
+* `XM1J92`: COVID-19 vaccine, virus like particle (VLP)
+* `XM6AT1`: COVID-19 vaccine, DNA based
+* `XM0GQ8`: COVID-19 vaccine, RNA based
+
+Implementers should consider the [ICD-11 maintenance platform](https://icd.who.int/dev11/l-m/en)
+the canonical source of ICD-11 codes for COVID-19 vaccines."
+
+* ^copyright = "TBD. More information can be found here: https://icd.who.int/icdapi/docs2/license/
+Contact licensing@who.int to obtain further information."
+
+// HL7 Terminology Authority page for ICD-11
+// https://confluence.hl7.org/pages/viewpage.action?pageId=97481986
+
+// XM3KV2 Bacterial vaccines
+* include codes from system ICD11 where concept is-a #XM3KV2
+
+// XM61M7 Viral vaccines
+* include codes from system ICD11 where concept is-a #XM61M7
+
+// XM4W25 Combination vaccines
+* include codes from system ICD11 where concept is-a #XM4W25
+
+// XM7C66 Bacterial and viral vaccines, combined
+* include codes from system ICD11 where concept is-a #XM7C66
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
