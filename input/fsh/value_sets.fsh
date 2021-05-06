@@ -133,6 +133,29 @@ Description: "This value set includes codes for identifying laboratory test resu
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+ValueSet:    VaccinationCredentialCOVIDLabTestResultsValueSet
+Id:          vaccination-credential-covid-lab-test-results-value-set
+Title:       "Value set: COVID-19 laboratory test results"
+Description: "This value set includes codes for identifying laboratory test results. It includes both SNOMED-CT and LOINC codes."
+
+* include codes from valueset covid-lab-test-results-snomed-vsac
+
+// Include codes from LOINC answer lists
+
+// http://loinc.org/vs/LL1055-4 // Detected|Not det|Equiv|Inconcl|Spec unsat for eval
+* LNC#LA11882-0 "Detected"
+* LNC#LA11883-8 "Not detected"
+* LNC#LA11885-3 "Equivocal"
+* LNC#LA9663-1 "Inconclusive"
+* LNC#LA13548-5 "Specimen unsatisfactory for evaluation"
+
+// http://loinc.org/vs/LL2206-2 // Neg|Borderline|Pos|Strong Pos
+* LNC#LA6577-6 "Negative"
+* LNC#LA4259-3 "Borderline"
+* LNC#LA6576-8 "Positive"
+* LNC#LA18996-1 "Strong positive"
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
 CodeSystem: IdentityAssuranceCodeSystem
 Id: identity-assurance-code-system
 Title: "Identity Assurance Code System"

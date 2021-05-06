@@ -77,7 +77,7 @@ previous infection status."
 
 * value[x] 1..1
 * value[x] only CodeableConcept or Quantity
-* valueCodeableConcept from covid-lab-test-results-snomed-vsac (required)
+* valueCodeableConcept from vaccination-credential-covid-lab-test-results-value-set (required)
 * code ^definition = "If an appropriate code is not found in the bound value set, use the InfectiousDiseaseLaboratoryResultObservation profile instead, which does not have a required binding."
 * valueCodeableConcept.text obeys should-be-omitted
 
