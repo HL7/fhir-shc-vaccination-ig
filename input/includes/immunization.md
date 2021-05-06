@@ -127,7 +127,7 @@ Note manufacturer and lot number may be recorded together in vaccine records. To
 
 When vaccine and manufacturer are provided using US-centric terminology (CVX and MVX, respectively) for COVID-19 vaccinations, CDC [provides a list](https://www.cdc.gov/vaccines/programs/iis/COVID-19-related-codes.html) that includes "Sale Proprietary Name" (e.g., `Moderna COVID-19 Vaccine`). The "Sale Proprietary Name" or other trade name SHALL NOT be included in FHIR resources, but MAY be used by actors when producing human-readable representations of these resources.
 
-Note that as of May 2021, CVX implicitly identifies specific vaccine products and manufacturers **only for COVID-19**. For other diseases, CVX typically identifies just the target disease and vaccine type. Issuers that only populate `vaccineCode` with a CVX code therefore MAY provide a manufacturer separately for COVID-19 vaccines, and SHOULD provide a manufacturer
+Note that as of May 2021, CVX implicitly identifies specific vaccine products and manufacturers **only for COVID-19**. For other diseases, CVX typically identifies just the target disease and vaccine type. Issuers that only populate `vaccineCode` with a CVX code therefore SHOULD NOT populate a `manufacturer` for COVID-19 vaccinations, but MAY populate a `manufacturer` for non-COVID-19 vaccinations.
 
 #### Universal terminology
 
