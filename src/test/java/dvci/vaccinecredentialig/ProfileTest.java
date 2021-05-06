@@ -113,17 +113,9 @@ public class ProfileTest {
     // manually filter out errors that are due to validator inconsistencies
     ArrayList<OperationOutcomeIssueComponent> errors = new ArrayList<>();
     for (OperationOutcomeIssueComponent issue : outcome.getIssue()) {
-      if (issue.getSeverity().equals(IssueSeverity.ERROR)) {
-        if (issue.getDetails().getText().contains(
-            "Bundle.entry:vaccinationCredentialImmunization: minimum required = 1, but only found 0"
-            )) {
-          // if there is an Immunization entry with errors, then ignore this error
-          if (!findImmunizationError(outcome)) {
-            errors.add(issue);
-          }
-        } else if (!ignoreError(issue)) {
-          errors.add(issue);
-        }
+      if (issue.getSeverity().equals(IssueSeverity.ERROR)
+          && !ignoreError(issue)) {
+        errors.add(issue);
       }
     }
 
@@ -136,22 +128,6 @@ public class ProfileTest {
         .getText()
         .equalsIgnoreCase(
           "Relative URLs must be of the format [ResourceName]/[id].  Encountered resource:0");
-  }
-
-  private boolean findImmunizationError(OperationOutcome outcome) {
-    // find error entry for Immunization resource type that has an ignored error
-    for (OperationOutcomeIssueComponent issue : outcome.getIssue()) {
-      if (issue.getSeverity().equals(IssueSeverity.ERROR)) {
-        if (issue.getExpression()
-            .stream()
-            .anyMatch(s -> s.asStringValue().contains("resource.ofType(Immunization)"))) {
-          if (ignoreError(issue)) {
-            return true;
-          }
-        }
-      }
-    }
-    return false;
   }
 
   private String createMessage(OperationOutcomeIssueComponent issue) {
