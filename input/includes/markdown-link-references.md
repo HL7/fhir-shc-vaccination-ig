@@ -13,6 +13,7 @@
 [VaccinationCredentialBundleDM]: StructureDefinition-vaccination-credential-bundle-dm.html
 [VaccinationCredentialBundle]: StructureDefinition-vaccination-credential-bundle.html
 [VaccinationCredentialImmunizationDM]: StructureDefinition-vaccination-credential-immunization-dm.html
+[VaccinationCredentialImmunizationUSCovid19]: StructureDefinition-vaccination-credential-immunization-us-covid-19.html
 [VaccinationCredentialImmunization]: StructureDefinition-vaccination-credential-immunization.html
 [VaccinationCredentialPatientDM]: StructureDefinition-vaccination-credential-patient-dm.html
 [VaccinationCredentialPatient]: StructureDefinition-vaccination-credential-patient.html

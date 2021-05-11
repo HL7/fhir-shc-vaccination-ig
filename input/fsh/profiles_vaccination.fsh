@@ -4,7 +4,7 @@ Profile:     VaccinationCredentialImmunization
 Id:          vaccination-credential-immunization
 Parent:      Immunization
 Title:       "Immunization Profile - Allowable Data"
-Description: "Defines a profile representing a vaccination for a vaccination credential Health Card."
+Description: "Defines a profile representing a vaccination for a SMART Health Card."
 
 * . ^definition = "Describes the event of a patient being administered a vaccine or a record of an immunization as reported by a patient, a clinician or another party. If the immunization is part of a multi-dose series, a separate Immunization resource SHALL be used to represent each dose."
 
@@ -142,11 +142,25 @@ If `isSubpotent` was not allowed at all (`0..0` cardinality), the concern is tha
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+Profile:     VaccinationCredentialImmunizationUSCovid19
+Id:          vaccination-credential-immunization-us-covid-19
+Parent:      VaccinationCredentialImmunization
+Title:       "Immunization Profile - Allowable Data - US - COVID-19"
+Description: "Recommended profile for US implementers representing a COVID-19 vaccination for a SMART Health Card."
+
+* manufacturer 0..0
+
+* vaccineCode.coding[gtin] 0..0
+* vaccineCode.coding[snomed] 0..0
+* vaccineCode.coding[icd11] 0..0
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
 Profile:     VaccinationCredentialImmunizationDM
 Id:          vaccination-credential-immunization-dm
 Parent:      VaccinationCredentialImmunization
 Title:       "Immunization Profile - Data Minimization"
-Description: "Defines a profile representing a vaccination for a vaccination credential Health Card. Only elements necessary for Verifiers can be populated."
+Description: "Defines a profile representing a vaccination for a SMART Health Card. Only elements necessary for Verifiers can be populated."
 
 * id 0..0
 * meta.versionId 0..0

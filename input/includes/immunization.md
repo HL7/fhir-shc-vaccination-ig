@@ -16,7 +16,7 @@ The `vaccineCode` element is used to identify the vaccine given to the patient.
 
 Implementers SHALL use one of the following code systems for identifying vaccinations in the `vaccineCode` element:
 
-{:.table-striped.table}
+{:.table-striped.table.table-bordered}
 | Code system                                    | Value set                                  | Example                                                                                    | COVID-19: Specify manufacturer?  |
 | ---------------------------------------------- | ------------------------------------------ | ------------------------------------------------------------------------------------------ | -------------------------------- |
 | GTIN: `https://www.gs1.org/gtin`               | [VaccineProductGTINValueSet]               | `380777273990` ([Moderna COVID-19 vaccination], NDC `80777-273`)                           | No                               |
@@ -75,7 +75,7 @@ Adding a GTIN to `vaccineCode` is preferred because this is less verbose than us
 
 However, if populating `manufacturer.identifier`, Issuers SHALL identify a code system URI in `system` and use a code from that code system in `value`. Specifically, Issuers SHALL use a code from one of the code systems below in `manufacturer.identifier.value`:
 
-{:.table-striped.table}
+{:.table-striped.table.table-bordered}
 | Code system                                      | Example                   |
 | ------------------------------------------------ | ------------------------- |
 | MVX: `http://hl7.org/fhir/sid/mvx`               | `MOD` (Moderna)           |
@@ -128,6 +128,10 @@ Note manufacturer and lot number may be recorded together in vaccine records. To
 When vaccine and manufacturer are provided using US-centric terminology (CVX and MVX, respectively) for COVID-19 vaccinations, CDC [provides a list](https://www.cdc.gov/vaccines/programs/iis/COVID-19-related-codes.html) that includes "Sale Proprietary Name" (e.g., `Moderna COVID-19 Vaccine`). The "Sale Proprietary Name" or other trade name SHALL NOT be included in FHIR resources, but MAY be used by actors when producing human-readable representations of these resources.
 
 Note that as of May 2021, CVX implicitly identifies specific vaccine products and manufacturers **only for COVID-19**. For other diseases, CVX typically identifies just the target disease and vaccine type. Issuers that only populate `vaccineCode` with a CVX code therefore SHOULD NOT populate a `manufacturer` for COVID-19 vaccinations, but MAY populate a `manufacturer` for non-COVID-19 vaccinations.
+
+<div class="alert alert-info" role="alert" markdown="1">
+Implementers in the United States SHOULD conform to **[this US-specific allowable data profile for representing COVID-19 vaccinations][VaccinationCredentialImmunizationUSCovid19]**.
+</div>
 
 #### Universal terminology
 

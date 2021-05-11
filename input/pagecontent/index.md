@@ -38,13 +38,13 @@ Due to the size constraints of the SMART Health Card payload, a "data minimizati
 
 To represent patient and clinical data related to a vaccination, the [VaccinationCredentialBundle] SHALL be used to wrap resources conforming to these profiles:
 
-{:.table-striped.table}
-| Profile: Allowable Data                           | Profile: Data Minimization                          | Purpose                                       | Required in bundle?     |
-| ------------------------------------------------- | --------------------------------------------------- | --------------------------------------------- | ----------------------- |
-| [VaccinationCredentialPatient]                    | [VaccinationCredentialPatientDM]                    | Identify the patient                          | Exactly 1 required      |
-| [VaccinationCredentialImmunization]               | [VaccinationCredentialImmunizationDM]               | Describe a vaccination                        | 1 or more required      |
-| [VaccinationCredentialVaccineReactionObservation] | [VaccinationCredentialVaccineReactionObservationDM] | Describe an adverse reaction to a vaccination | Optional (experimental) |
-| Bundle: [VaccinationCredentialBundle]             | Bundle: [VaccinationCredentialBundleDM]             | Bundle for wrapping the above resources       | n/a                     |
+{:.table-striped.table.table-bordered}
+| Profile: Allowable Data                                                                         | Profile: Data Minimization                          | Purpose                                       | Required in bundle?     |
+| ----------------------------------------------------------------------------------------------- | --------------------------------------------------- | --------------------------------------------- | ----------------------- |
+| [VaccinationCredentialPatient]                                                                  | [VaccinationCredentialPatientDM]                    | Identify the patient                          | Exactly 1 required      |
+| [VaccinationCredentialImmunization] ([US/COVID-19][VaccinationCredentialImmunizationUSCovid19]) | [VaccinationCredentialImmunizationDM]               | Describe a vaccination                        | 1 or more required      |
+| [VaccinationCredentialVaccineReactionObservation]                                               | [VaccinationCredentialVaccineReactionObservationDM] | Describe an adverse reaction to a vaccination | Optional (experimental) |
+| Bundle: [VaccinationCredentialBundle]                                                           | Bundle: [VaccinationCredentialBundleDM]             | Bundle for wrapping the above resources       | n/a                     |
 
 Examples using these profiles:
 
@@ -57,7 +57,7 @@ Examples using these profiles:
 
 To represent patient and laboratory test result information, [Covid19LaboratoryBundle] or [InfectiousDiseaseLaboratoryBundle] SHALL be used to wrap resources conforming to these profiles:
 
-{:.table-striped.table}
+{:.table-striped.table.table-bordered}
 | Profile: Allowable Data                                                 | Profile: Data Minimization                                                  | Purpose                                 | Required in bundle? |
 | ----------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------- | ------------------- |
 | [VaccinationCredentialPatient]                                              | [VaccinationCredentialPatientDM]                                                | Identify the patient                    | Required            |
