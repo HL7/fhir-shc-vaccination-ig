@@ -17,7 +17,7 @@ Description: "Slight modification of Patient, with identifier as 0..0 and limite
 
 * name 1..*
 * name and name.given and name.family MS
-* name obeys name-invariant
+* name obeys vc-name-invariant
 * name ^short = "Official name (i.e., legal name) of patient"
 * name ^definition = "Official name (i.e., legal name) of the patient, corresponding to `official` in [this value set](https://www.hl7.org/fhir/valueset-name-use.html). Issuers SHALL provide a single `name` element UNLESS they believe providing multiple `name` elements is critical for verification of the credential. If providing only a single `name` element, Issuers SHALL NOT populate `name.use`, and Verifiers SHALL assume that the provided name is `official`."
 * name ^comment = "Cardinality for this element is set to `1..*` rather than `1..1` as in rare cases there may be a valid rational for including multiple `name` elements. The Data Minimization version of this profile reflects the rarity of this by setting `name` to `1..1`."
@@ -52,7 +52,7 @@ Because gender is a common field in administrative data, it is possible Issuers 
 * insert contact-information-should-not-be-populated(address.postalCode)
 
 RuleSet: contact-information-should-not-be-populated(path)
-* {path} obeys should-be-omitted-privacy
+* {path} obeys vc-should-be-omitted-privacy
 * {path} ^comment = "For patient privacy reasons, this element SHALL NOT be populated unless the Issuer believes the credential cannot be verified in its absence."
 
 

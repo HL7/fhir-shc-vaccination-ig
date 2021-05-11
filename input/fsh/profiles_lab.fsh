@@ -26,7 +26,7 @@ RuleSet: LaboratoryResultObservation
 * value[x] ^comment = "Issuers SHALL provide a computable representation of laboratory results if at all possible. If the Issuer is unable to accurately translate laboratory results into a computable form, it is unlikely a Verifier will be able to interpret the results. Issuers SHALL make every possible effort to resolve non-computable results prior to issuing credentials. In rare cases when this is not possible, Issuers MAY populate `valueCodeableConcept.text` with a free text result. Populating `valueCodeableConcept.text` will result in a warning when validating against the Allowable Data profile and an error with the Data Minimization profile."
 * valueCodeableConcept.text ^short = "String representation of results when a computable representation is not possible"
 * valueCodeableConcept.text ^comment = "See comment for `value[x]`."
-* valueCodeableConcept.text obeys should-be-under-20-chars
+* valueCodeableConcept.text obeys vc-should-be-under-20-chars
 
 * performer only Reference(Organization)
 * performer MS
@@ -37,7 +37,7 @@ RuleSet: LaboratoryResultObservation
 // VCI-specific (not from US Core)
 * insert id-should-not-be-populated()
 
-* status obeys observation-status-shall-be-complete
+* status obeys vc-observation-status-shall-be-complete
 
 * meta.security 0..1
 * meta.security from IdentityAssuranceLevelValueSet (required)
@@ -55,7 +55,7 @@ RuleSet: LaboratoryResultObservation
 * performer.display MS
 * performer.display 1..1
 * performer.display ^definition = "Organization which was responsible for the laboratory test result. Issuers SHOULD provide display name only. This is provided to Verifiers in case of invalid data in the credential, to support manual validation. This is not expected to be a computable Organization identifier."
-* performer.display obeys should-be-under-20-chars
+* performer.display obeys vc-should-be-under-20-chars
 
 
 * insert reference-to-absolute-uri(subject)
@@ -79,7 +79,7 @@ previous infection status."
 * value[x] only CodeableConcept or Quantity
 * valueCodeableConcept from covid-lab-test-results-snomed-vsac (required)
 * code ^definition = "If an appropriate code is not found in the bound value set, use the InfectiousDiseaseLaboratoryResultObservation profile instead, which does not have a required binding."
-* valueCodeableConcept.text obeys should-be-omitted
+* valueCodeableConcept.text obeys vc-should-be-omitted
 
 /*
 TODO: Test using `device` rather than `method`, like so:
@@ -168,7 +168,7 @@ Description:    "Profile for reporting laboratory results indicating current or 
 // the case, there's no reason to use this generic profile -- the disease-specific profile should
 // be used instead.
 * code from VaccinationCredentialLabTestValueSet (required)
-* code obeys shall-not-be-a-covid-loinc
+* code obeys vc-shall-not-be-a-covid-loinc
 
 * value[x] 1..1
 * value[x] only CodeableConcept or Quantity
