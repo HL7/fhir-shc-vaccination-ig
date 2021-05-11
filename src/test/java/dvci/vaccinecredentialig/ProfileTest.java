@@ -31,14 +31,14 @@ public class ProfileTest {
   public static void setup() throws Exception {
     String txsrvr = System.getProperty("txsrvr") != null ? System.getProperty("txsrvr") : DEF_TX;
     String txLog = System.getProperty("txLog") != null ? System.getProperty("txLog") : DEF_TXLOG;
-    validator = new ValidationEngine("hl7.fhir.r4.core#4.0.1", 
+    validator = new ValidationEngine("hl7.fhir.r4.core#4.0.1",
       txsrvr, txLog, FhirPublication.R4, true, "4.0.1");
     validator.getContext().loadFromFolder("fsh-generated/resources");
   }
 
   /**
    * Executes test cases for which no errors should occur.
-   * 
+   *
    * @param source location of source file containing resource to validate
    * @param profile FHIR profile against which to validate resource
    * @throws FHIRException validation exception
@@ -75,9 +75,9 @@ public class ProfileTest {
   }
 
   /**
-   * Executes test cases for which validation issues should occur. 
+   * Executes test cases for which validation issues should occur.
    * Filters by optional parameters. Will pass if at least one match.
-   * 
+   *
    * @param source location of source file containing resource to validate
    * @param profile FHIR profile against which to validate resource
    * @param expectedIssueSeverity issue severity, optional
@@ -88,24 +88,24 @@ public class ProfileTest {
    */
   @ParameterizedTest
   @CsvFileSource(resources = "/tests_errors.csv", numLinesToSkip = 1)
-  public void testValidationExpectedErrors(String source, String profile, 
+  public void testValidationExpectedErrors(String source, String profile,
         IssueSeverity expectedIssueSeverity,
-        String expectedLocation, String expectedErrorMessage) 
+        String expectedLocation, String expectedErrorMessage)
       throws FHIRException, IOException {
     List<String> profiles = new ArrayList<>();
     profiles.add(profile);
     OperationOutcome outcome = validator.validate(source, profiles);
 
     Assertions.assertTrue(outcome.getIssue().stream()
-        .filter(issue -> expectedIssueSeverity == null 
+        .filter(issue -> expectedIssueSeverity == null
           || issue.getSeverity().equals(expectedIssueSeverity))
-        .filter(issue -> expectedErrorMessage == null 
+        .filter(issue -> expectedErrorMessage == null
           || issue.getDetails().getText().contains(expectedErrorMessage))
-        .anyMatch(issue -> expectedLocation == null 
+        .anyMatch(issue -> expectedLocation == null
           || issue.getExpression().stream()
               .anyMatch(s -> s.asStringValue().contains(expectedLocation))),
         "Should throw level=" + expectedIssueSeverity
-          + ", location=" + expectedLocation 
+          + ", location=" + expectedLocation
           + ", message=" + expectedErrorMessage);
   }
 
@@ -115,7 +115,7 @@ public class ProfileTest {
     for (OperationOutcomeIssueComponent issue : outcome.getIssue()) {
       if (issue.getSeverity().equals(IssueSeverity.ERROR)) {
         if (issue.getDetails().getText().contains(
-            "Bundle.entry:vaccinationCredentialImmunization: minimum required = 1, but only found 0"
+            "Bundle.entry:immunization: minimum required = 1, but only found 0"
             )) {
           // if there is an Immunization entry with errors, then ignore this error
           if (!findImmunizationError(outcome)) {
@@ -158,7 +158,7 @@ public class ProfileTest {
     return new StringBuilder()
     .append(issue.getSeverity().getDisplay())
     .append(": type=" + issue.getCode().getDisplay())
-    .append(", location=" 
+    .append(", location="
       + (issue.hasExpression() ? issue.getExpression().get(0).asStringValue() : ""))
     .append(", message=" + issue.getDetails().getText())
     .toString();
