@@ -38,6 +38,7 @@ Description: "Defines a profile representing a vaccination for a vaccination cre
 * vaccineCode MS
 * vaccineCode ^short = "Codes identifying the vaccine product administered"
 
+* vaccineCode.coding 1..*
 * vaccineCode.coding ^slicing.discriminator.type = #value
 * vaccineCode.coding ^slicing.discriminator.path = "system"
 * vaccineCode.coding ^slicing.rules = #closed
