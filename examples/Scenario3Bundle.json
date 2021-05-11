@@ -23,7 +23,7 @@
       "resource": {
         "resourceType": "Observation",
         "meta": {
-          "security": [{"code": "IAL1"}]
+          "security": [{"system": "https://smarthealth.cards/ial", "code": "IAL2"}]
         },
         "status": "final",
         "code": {
