@@ -16,15 +16,15 @@ The `vaccineCode` element is used to identify the vaccine given to the patient.
 
 Implementers SHALL use one of the following code systems for identifying vaccinations in the `vaccineCode` element:
 
+{:.table-striped.table}
 | Code system                                    | Value set                                  | Example                                                                                    | COVID-19: Specify manufacturer?  |
 | ---------------------------------------------- | ------------------------------------------ | ------------------------------------------------------------------------------------------ | -------------------------------- |
-| GTIN: `https://www.gs1.org/gtin`               | [VaccineProductGTINValueSet]               | `380777273990` ([Moderna COVID-19 vaccination], NDC `80777-273`)                                              | No                               |
-| CVX: `http://hl7.org/fhir/sid/cvx`             | [VaccineProductCVXValueSet]                | `207` ("COVID-19, mRNA, LNP-S, PF, 100 mcg/0.5 mL dose")                                   | Yes (optional)                   |
+| GTIN: `https://www.gs1.org/gtin`               | [VaccineProductGTINValueSet]               | `380777273990` ([Moderna COVID-19 vaccination], NDC `80777-273`)                           | No                               |
+| CVX: `http://hl7.org/fhir/sid/cvx`             | [VaccineProductCVXValueSet]                | `207` ("COVID-19, mRNA, LNP-S, PF, 100 mcg/0.5 mL dose")                                   | No (optional for other diseases) |
 | AIR\*                                          | [Australian Immunisation Register Vaccine] | `COVAST` ("COVID-19 Vaccine AstraZeneca")                                                  | No                               |
 | SNOMED-CT: `http://snomed.info/sct`            | [VaccineTypeSNOMEDValueSet]                | `1119349007` ("Severe acute respiratory syndrome coronavirus 2 mRNA only vaccine product") | Yes (required)                   |
-| ICD-11: `http://id.who.int/icd11/mms`          | [VaccineTypeICD11ValueSet]                 | `XM0GQ8` ("COVID-19 vaccine, RNA based)                                                    | Yes (required)                   |
+| ICD-11: `http://id.who.int/icd11/mms`          | [VaccineTargetICD11ValueSet]               | `XM0GQ8` ("COVID-19 vaccine, RNA based)                                                    | Yes (required)                   |
 | ATC/DDD: `https://www.whocc.no/atc_ddd_index/` | [VaccineTargetATCValueSet]                 | `J07BX03` ("covid-19 vaccines")                                                            | Yes (required)                   |
-{: .grid }
 
 \* The URI for AIR is `https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats`.
 
@@ -75,11 +75,11 @@ Adding a GTIN to `vaccineCode` is preferred because this is less verbose than us
 
 However, if populating `manufacturer.identifier`, Issuers SHALL identify a code system URI in `system` and use a code from that code system in `value`. Specifically, Issuers SHALL use a code from one of the code systems below in `manufacturer.identifier.value`:
 
+{:.table-striped.table}
 | Code system                                      | Example                   |
 | ------------------------------------------------ | ------------------------- |
 | MVX: `http://hl7.org/fhir/sid/mvx`               | `MOD` (Moderna)           |
 | GLN: `https://www.gs1.org/gln`                   | `0380777000008` (Moderna) |
-{: .grid }
 
 For example, to identify Moderna, either of the following may be used:
 
