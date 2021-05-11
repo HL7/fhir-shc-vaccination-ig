@@ -210,6 +210,20 @@ Description: "Defines a profile representing a vaccination for a SMART Health Ca
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+Profile:     VaccinationCredentialImmunizationUSCovid19DM
+Id:          vaccination-credential-immunization-us-covid-19-dm
+Parent:      VaccinationCredentialImmunizationDM
+Title:       "Immunization Profile - Data Minimization - US - COVID-19"
+Description: "Recommended data minimization profile for US implementers representing a COVID-19 vaccination for a SMART Health Card."
+
+* manufacturer 0..0
+
+* vaccineCode.coding[gtin] 0..0
+* vaccineCode.coding[snomed] 0..0
+* vaccineCode.coding[icd11] 0..0
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
 Profile:        VaccinationCredentialVaccineReactionObservation
 Parent:         Observation
 Id:             vaccination-credential-vaccine-reaction-observation
