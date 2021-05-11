@@ -3,8 +3,6 @@
 <div class="alert alert-info" role="alert" markdown="1">
 <p style="font-size: 2rem;"><strong>Known issues</strong></p>
 
-* The expansion of [VaccinationCredentialVaccineValueSet] currently has an out-of-date list of [CVX codes](https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cvx). This will be fixed in the next deploy of the HL7 terminology server (`tx.fhir.org`).<br><br>
-* Other value sets in this IG may also have out-of-date expansions. If a given code is listed in the canonical source for a given code system or value set, it should be considered valid regardless of the expansion in this IG.<br><br>
 * Validation with the FHIR Validator tool currently produces spurious errors for valid resources. [Details here](conformance.html#validation).
 
 </div>
@@ -41,8 +39,8 @@ Due to the size constraints of the SMART Health Card payload, a "data minimizati
 To represent patient and clinical data related to a vaccination, the [VaccinationCredentialBundle] SHALL be used to wrap resources conforming to these profiles:
 
 {:.table-striped.table}
-| Profile: Allowable Data                       | Profile: Data Minimization                      | Purpose                                       | Required in bundle?     |
-| --------------------------------------------- | ----------------------------------------------- | --------------------------------------------- | ----------------------- |
+| Profile: Allowable Data                           | Profile: Data Minimization                          | Purpose                                       | Required in bundle?     |
+| ------------------------------------------------- | --------------------------------------------------- | --------------------------------------------- | ----------------------- |
 | [VaccinationCredentialPatient]                    | [VaccinationCredentialPatientDM]                    | Identify the patient                          | Exactly 1 required      |
 | [VaccinationCredentialImmunization]               | [VaccinationCredentialImmunizationDM]               | Describe a vaccination                        | 1 or more required      |
 | [VaccinationCredentialVaccineReactionObservation] | [VaccinationCredentialVaccineReactionObservationDM] | Describe an adverse reaction to a vaccination | Optional (experimental) |
