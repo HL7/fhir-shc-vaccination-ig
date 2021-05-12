@@ -27,6 +27,11 @@ RuleSet: LaboratoryResultObservation
 * valueCodeableConcept.text ^short = "String representation of results when a computable representation is not possible"
 * valueCodeableConcept.text ^comment = "See comment for `value[x]`."
 * valueCodeableConcept.text obeys vc-should-be-under-20-chars
+* valueQuantity obeys vc-observation-quantity-should-have-range
+
+* referenceRange MS
+* referenceRange ^comment = "Issuers SHOULD provide a reference range for only quantitative lab results to allow recipients to correctly interpret the results."
+* referenceRange obeys vc-observation-range-only-quantity
 
 * performer only Reference(Organization)
 * performer MS
@@ -131,7 +136,6 @@ RuleSet: LaboratoryResultObservationDM
 * method 0..0
 * specimen 0..0
 * device 0..0
-* referenceRange 0..0
 * hasMember 0..0
 * derivedFrom 0..0
 * component 0..0
