@@ -106,7 +106,7 @@ The [VaccinationCredentialPatient] and [Covid19LaboratoryBundle]/[InfectiousDise
 
 ```json
 "meta": {
-  "security": [{"code": "IAL1"}]
+  "security": [{"system": "https://smarthealth.cards/ial", "code": "IAL1.2"}]
 }
 ```
 
