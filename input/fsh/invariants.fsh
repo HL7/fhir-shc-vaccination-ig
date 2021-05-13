@@ -71,7 +71,7 @@ Severity:    #error
 
 Invariant:   vc-should-not-include-string-lot
 Description: "lotNumber SHOULD NOT include `Lot #`, `Lot Number`, etc."
-Expression:  "$this.lower().matches('lot').not()"
+Expression:  "$this.lower().contains('lot').not()"
 Severity:    #warning
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
