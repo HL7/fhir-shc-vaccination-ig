@@ -23,7 +23,7 @@
       "resource": {
         "resourceType": "Immunization",
         "meta": {
-          "security": [{"code": "IAL1.1"}]
+          "security": [{"system": "https://smarthealth.cards/ial", "code": "IAL2"}]
         },
         "status": "completed",
         "vaccineCode": {
@@ -52,9 +52,6 @@
       "fullUrl": "resource:2",
       "resource": {
         "resourceType": "Immunization",
-        "meta": {
-          "security": [{"code": "IAL3"}]
-        },
         "status": "completed",
         "vaccineCode": {
           "coding": [
