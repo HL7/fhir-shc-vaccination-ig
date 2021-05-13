@@ -82,3 +82,17 @@ Expression:  "$this.lower() in ('final'|'amended'|'corrected')"
 Severity:    #error
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Invariant:   vc-observation-quantity-should-have-range
+Description: "Quantitative lab results SHOULD include reference range"
+Expression:  "%resource.referenceRange.exists()"
+Severity:    #warning
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Invariant:   vc-observation-range-only-quantity
+Description: "Reference range SHOULD only be included for quantitative lab results"
+Expression:  "$this.exists() and %resource.value.ofType(Quantity).exists()"
+Severity:    #warning
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
