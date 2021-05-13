@@ -145,6 +145,7 @@ RuleSet: LaboratoryResultObservationDM
 * performer.type 0..0
 * performer.identifier 0..0
 * valueCodeableConcept.text 0..0
+* valueQuantity.id 0..0
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 

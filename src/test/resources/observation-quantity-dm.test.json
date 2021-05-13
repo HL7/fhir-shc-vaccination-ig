@@ -1,0 +1,38 @@
+{
+  "resourceType": "Observation",
+  "meta": {
+    "security": [{"system": "https://smarthealth.cards/ial", "code": "IAL2"}]
+  },
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "94311-8"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "resource:0"
+  },
+  "effectiveDateTime": "2021-02-17",
+  "valueQuantity": {
+    "value": 122,
+    "unit": "umol/L"
+  },
+  "referenceRange": [
+    {
+      "low": {
+        "value": 64
+      },
+      "high": {
+        "value": 104
+      }
+    }
+  ],
+  "performer": [
+    {
+      "display": "ABC General Hospital"
+    }
+  ]
+}
