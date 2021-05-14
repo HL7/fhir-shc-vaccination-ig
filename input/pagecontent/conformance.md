@@ -68,10 +68,7 @@ If an Issuer wishes to include both vaccination and laboratory test results in t
 <div class="alert alert-danger" role="alert" markdown="1">
 <p style="font-size: 2rem;"><strong>Warning:</strong> FHIR validation currently does not work</p>
 
-The [FHIR Validator](https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar) currently generates a number of spurious errors when validating resources that are in fact valid. This is due to the following issues:
-
-1. For [data minimization](#data-minimization) reasons, we use absolute URIs in `resource:#` format within our Bundles. [We recently received clarification that this is supported in FHIR R4](https://jira.hl7.org/browse/FHIR-31422), but the FHIR Validator does not fully support this yet.
-1. The terminology server used by the FHIR Validator (`tx.fhir.org`) does not support a number of value sets that we use, and some of the value sets that are supported our out of date (like [CVX](https://terminology.hl7.org/1.0.0/CodeSystem-CVX.html)). This causes errors both in validating codes and Bundles that slice based on profiles with required value set bindings.
+The [FHIR Validator](https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar) may generate an error when validating resources that are in fact valid. The terminology server used by the FHIR Validator (`tx.fhir.org`) does not support a number of value sets in use, and some of the value sets that are supported are out of date (like [CVX](https://terminology.hl7.org/1.0.0/CodeSystem-CVX.html)). This causes errors both in validating codes and Bundles that slice based on profiles with required value set bindings.
 
 We are currently working on providing a functional validation workflow for implementers of this IG. This will be announced on the SMART Health Cards stream on [chat.fhir.org](https://chat.fhir.org) when it becomes available; if you do not have access please email [vci-ig@mitre.org](mailto:vci-ig@mitre.org) to be added.
 </div>

@@ -110,24 +110,15 @@ public class ProfileTest {
   }
 
   private ArrayList<OperationOutcomeIssueComponent> filterErrors(OperationOutcome outcome) {
-    // manually filter out errors that are due to validator inconsistencies
+    // fiind issues of severity ERROR
     ArrayList<OperationOutcomeIssueComponent> errors = new ArrayList<>();
     for (OperationOutcomeIssueComponent issue : outcome.getIssue()) {
-      if (issue.getSeverity().equals(IssueSeverity.ERROR)
-          && !ignoreError(issue)) {
+      if (issue.getSeverity().equals(IssueSeverity.ERROR)) {
         errors.add(issue);
       }
     }
 
     return errors;
-  }
-
-  private boolean ignoreError(OperationOutcomeIssueComponent issue) {
-    return issue
-        .getDetails()
-        .getText()
-        .equalsIgnoreCase(
-          "Relative URLs must be of the format [ResourceName]/[id].  Encountered resource:0");
   }
 
   private String createMessage(OperationOutcomeIssueComponent issue) {
