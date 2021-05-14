@@ -5,7 +5,6 @@
     {
       "fullUrl": "resource:0",
       "resource": {
-        "id": "resource:0",
         "resourceType": "Patient",
         "name": [
           {
@@ -24,7 +23,7 @@
       "resource": {
         "resourceType": "Observation",
         "meta": {
-          "security": [{"code": "IAL1"}]
+          "security": [{"system": "https://smarthealth.cards/ial", "code": "IAL2"}]
         },
         "status": "final",
         "code": {

@@ -1,9 +1,10 @@
 {
   "resourceType": "Bundle",
+  "id": "Scenario1Bundle",
   "type": "collection",
   "entry": [
     {
-      "fullUrl": "resource:0",
+      "fullUrl": "urn:uuid:0",
       "resource": {
         "resourceType": "Patient",
         "name": [
@@ -23,7 +24,7 @@
       "resource": {
         "resourceType": "Immunization",
         "meta": {
-          "security": [{"system": "https://smarthealth.cards/ial", "code": "IAL1.2"}]
+          "security": [{"code": "IAL1"}]
         },
         "status": "completed",
         "vaccineCode": {
@@ -53,7 +54,7 @@
       "resource": {
         "resourceType": "Immunization",
         "meta": {
-          "security": [{"system": "https://smarthealth.cards/ial", "code": "IAL1.2"}]
+          "security": [{"code": "IAL1.2"}]
         },
         "status": "completed",
         "vaccineCode": {
