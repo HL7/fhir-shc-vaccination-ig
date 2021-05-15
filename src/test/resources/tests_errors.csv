@@ -7,7 +7,7 @@ src/test/resources/date-invariant-with-time.test.json,http://hl7.org/fhir/uv/sma
 src/test/resources/shall-be-true-if-populated-invariant.test.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-immunization,ERROR,,vc-shall-be-true-if-populated-invariant
 src/test/resources/should-not-include-string-lot.test.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-immunization,WARNING,,vc-should-not-include-string-lot
 src/test/resources/shall-not-be-a-covid-loinc.test.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/infectious-disease-laboratory-result-observation,ERROR,,vc-shall-not-be-a-covid-loinc
-src/test/resources/should-be-under-20-chars.test.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-immunization,WARNING,,vc-should-be-under-20-chars
+src/test/resources/should-be-under-30-chars.test.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-immunization,WARNING,,vc-should-be-under-30-chars
 src/test/resources/should-be-omitted-privacy.test.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-patient,WARNING,,vc-should-be-omitted-privacy
 src/test/resources/shall-be-resource-uri.test.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-bundle,ERROR,,vc-shall-be-resource-uri
 src/test/resources/immunization-code-slicing.test.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-immunization,ERROR,Immunization.vaccineCode.coding[0],This element does not match any known slice  defined in the profile
