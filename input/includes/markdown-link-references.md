@@ -21,15 +21,15 @@
 [VaccinationCredentialVaccineReactionObservationDM]: StructureDefinition-vaccination-credential-vaccine-reaction-observation-dm.html
 [VaccinationCredentialVaccineReactionObservation]: StructureDefinition-vaccination-credential-vaccine-reaction-observation.html
 
-[IdentityAssuranceLevelValueSet]: ValueSet-identity-assurance-level-value-set.html
-[VaccinationCredentialCOVIDLabTestResultsValueSet]: ValueSet-vaccination-credential-covid-lab-test-results-value-set.html
-[VaccinationCredentialLabTestResultsValueSet]: ValueSet-vaccination-credential-lab-test-results-value-set.html
-[VaccinationCredentialLabTestValueSet]: ValueSet-vaccination-credential-lab-test-value-set.html
-[VaccineProductCVXValueSet]: ValueSet-vaccine-product-cvx-value-set.html
-[VaccineProductGTINValueSet]: ValueSet-vaccine-product-gtin-value-set.html
-[VaccineTargetATCValueSet]: ValueSet-vaccine-target-atc-value-set.html
-[VaccineTargetICD11ValueSet]: ValueSet-vaccine-target-icd-11-value-set.html
-[VaccineTypeSNOMEDValueSet]: ValueSet-vaccine-type-snomed-value-set.html
+[IdentityAssuranceLevel]: ValueSet-identity-assurance-level.html
+[LabResultFindings]: ValueSet-lab-result-findings.html
+[QualitativeLabResultsLOINC]: ValueSet-qualitative-lab-results-loinc.html
+[QualitativeLabResults]: ValueSet-qualitative-lab-results.html
+[VaccineProductCVX]: ValueSet-vaccine-product-cvx.html
+[VaccineProductGTIN]: ValueSet-vaccine-product-gtin.html
+[VaccineTargetATC]: ValueSet-vaccine-target-atc.html
+[VaccineTargetICD11]: ValueSet-vaccine-target-icd-11.html
+[VaccineTypeSNOMED]: ValueSet-vaccine-type-snomed.html
 
 [Scenario1Bundle]: https://github.com/dvci/vaccine-credential-ig/blob/{{ site.data['git-branch'] }}/examples/Scenario1Bundle.json
 [Scenario2Bundle]: https://github.com/dvci/vaccine-credential-ig/blob/{{ site.data['git-branch'] }}/examples/Scenario2Bundle.json

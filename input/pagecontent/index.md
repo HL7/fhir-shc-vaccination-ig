@@ -68,7 +68,7 @@ An example using these profiles:
 
 > **Scenario 3:** A patient is tested for SARS-CoV-2 (COVID19) antigen via rapid immunoassay on February 17, 2021 with result detectable. [See an example of a FHIR Bundle representing this.](https://github.com/dvci/vaccine-credential-ig/blob/{{ site.data['git-branch'] }}/examples/Scenario3Bundle.json)
 
-A laboratory results profile specific to COVID-19 is provided to limit the `code` to a [value set describing COVID-19-specific tests][Covid19LaboratoryTestValueSet]. Additional disease-specific profiles may be added in the future. To represent a disease without a specific set of profiles, implementers SHALL use [InfectiousDiseaseLaboratoryResultObservation] and [InfectiousDiseaseLaboratoryResultObservationDM], which can be used with [InfectiousDiseaseLaboratoryBundle].
+A laboratory results profile specific to COVID-19 is provided to limit the `code` to a [value set describing COVID-19-specific tests](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1114.9/expansion). Additional disease-specific profiles may be added in the future. To represent a disease without a specific set of profiles, implementers SHALL use [InfectiousDiseaseLaboratoryResultObservation] and [InfectiousDiseaseLaboratoryResultObservationDM], which can be used with [InfectiousDiseaseLaboratoryBundle].
 
 ### Approach to constraints in profiles
 
@@ -92,7 +92,7 @@ The IG is currently focused on coordinating implementers' representations of rel
 
 Value set bindings for [`MustSupport` elements](conformance.html) are `required`, meaning that resources MUST use a code specified in the bound value set. This is to ensure implementers know which code systems can be expected to appear in a given element.
 
-In general, the value sets used in these `required` bindings are as broad as possible. For example, in [VaccineProductCVXValueSet], all codes from the [CVX code system](https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cvx) are included (as opposed to defining a value set with just COVID-related CVX codes, for example).
+In general, the value sets used in these `required` bindings are as broad as possible. For example, in the [VaccineProductCVX] value set, all codes from the [CVX code system](https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cvx) are included (as opposed to defining a value set with just COVID-related CVX codes, for example).
 
 In cases where disease-specific value sets exist, this IG may provide profiles with bindings to these restricted value sets (e.g., [Covid19LaboratoryResultObservation]) to help implementers identify the preferred subset of codes for that disease. However, in these cases, this IG will also provide generic equivalents to these profiles with broad value sets (e.g., [InfectiousDiseaseLaboratoryResultObservation]). Implementers MAY fall back to the generic version such profiles if the code they need is not part of the disease-specific value sets.
 
@@ -100,7 +100,7 @@ Currently this IG uses US-centric terminology. We plan to add support for non-US
 
 ### Identity assurance
 
-The [VaccinationCredentialPatient] and [Covid19LaboratoryBundle]/[InfectiousDiseaseLaboratoryBundle] profiles include a mechanism for indicating level of identity assurance of the patient. This uses the [IdentityAssuranceLevelValueSet] in this format:
+The [VaccinationCredentialPatient] and [Covid19LaboratoryBundle]/[InfectiousDiseaseLaboratoryBundle] profiles include a mechanism for indicating level of identity assurance of the patient. This uses the [IdentityAssuranceLevel] value set in this format:
 
 ```json
 "meta": {

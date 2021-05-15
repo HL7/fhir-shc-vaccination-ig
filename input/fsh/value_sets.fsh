@@ -12,17 +12,21 @@
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-ValueSet:    VaccineProductCVXValueSet
-Id:          vaccine-product-cvx-value-set
+ValueSet:    VaccineProductCVX
+Id:          vaccine-product-cvx
 Title:       "Vaccine product: CVX"
 Description: "This value set includes all [CVX](https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cvx) codes, which identify vaccine products."
 
 * include codes from system http://hl7.org/fhir/sid/cvx
 
+// Ideally we would use this value set because it only includes active CVX codes, but the value set
+// expansion is out of date. For now we will stick with all CVX codes so validation works.
+// * include codes from valueset http://phinvads.cdc.gov/fhir/ValueSet/2.16.840.1.114222.4.11.934
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-ValueSet:    VaccineProductGTINValueSet
-Id:          vaccine-product-gtin-value-set
+ValueSet:    VaccineProductGTIN
+Id:          vaccine-product-gtin
 Title:       "Vaccine product: GTIN"
 Description: "This value set includes all [GTIN](https://www.gs1.org/gtin) codes, which may identify vaccine products."
 
@@ -30,8 +34,8 @@ Description: "This value set includes all [GTIN](https://www.gs1.org/gtin) codes
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-ValueSet:    VaccineTypeSNOMEDValueSet
-Id:          vaccine-type-snomed-value-set
+ValueSet:    VaccineTypeSNOMED
+Id:          vaccine-type-snomed
 Title:       "Vaccine type: SNOMED CT"
 Description: "This value set includes the vaccination product codes from SNOMED Clinical Terms®.
 
@@ -60,8 +64,8 @@ to determine which specific SNOMED codes may be used under this license.
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-ValueSet:    VaccineTargetICD11ValueSet
-Id:          vaccine-target-icd-11-value-set
+ValueSet:    VaccineTargetICD11
+Id:          vaccine-target-icd-11
 Title:       "Vaccine target: ICD-11"
 Description: "This value set includes the subset of [ICD-11](https://icd.who.int/en) that identify vaccine types.
 
@@ -105,8 +109,8 @@ Contact licensing@who.int to obtain further information."
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-ValueSet:    VaccineTargetATCValueSet
-Id:          vaccine-target-atc-value-set
+ValueSet:    VaccineTargetATC
+Id:          vaccine-target-atc
 Title:       "Vaccine target: ATC/DDD"
 Description: "This value set includes the subset of [ATC](https://www.whocc.no/atc_ddd_index/?code=J07) that identify vaccine targets.
 
@@ -120,31 +124,13 @@ Note that an ATC code for COVID-19 vaccines (`J07BX03`) [has been created](https
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-ValueSet:    VaccinationCredentialLabTestValueSet
-Id:          vaccination-credential-lab-test-value-set
-Title:       "Value set: laboratory tests"
-Description: "This value set includes codes for identifying laboratory tests."
+ValueSet:    QualitativeLabResultsLOINC
+Id:          qualitative-lab-results-loinc
+Title:       "Qualitative lab results - LOINC"
+Description: "This value set includes codes from LOINC answer lists with roughly equivalent meanings to the codes in this [value set of COVID-19-related SNOMED CT codes](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1114.10/expansion)."
 
-* include codes from system LNC
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
-ValueSet:    VaccinationCredentialLabTestResultsValueSet
-Id:          vaccination-credential-lab-test-results-value-set
-Title:       "Value set: laboratory test results"
-Description: "This value set includes codes for identifying laboratory test results."
-
-// Include all clinical finding codes
-* include codes from system SCT where concept is-a #404684003
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
-ValueSet:    VaccinationCredentialCOVIDLabTestResultsValueSet
-Id:          vaccination-credential-covid-lab-test-results-value-set
-Title:       "Value set: COVID-19 laboratory test results"
-Description: "This value set includes codes for identifying laboratory test results. It includes both SNOMED-CT and LOINC codes."
-
-* include codes from valueset covid-lab-test-results-snomed-vsac
+// This value set is not used directly by any profiles, but is included in other value sets.
+// It exists as a separate value set to keep the FSH for the other value sets DRY.
 
 // Include codes from LOINC answer lists
 
@@ -161,6 +147,49 @@ Description: "This value set includes codes for identifying laboratory test resu
 * LNC#LA6576-8 "Positive"
 * LNC#LA18996-1 "Strong positive"
 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ValueSet:    LabResultFindingsSNOMED
+Id:          lab-result-findings-snomed
+Title:       "Lab result findings - SNOMED CT"
+Description: "This value set includes SNOMED CT codes for identifying laboratory test results."
+
+// This value set has to be created separately from LabResultFindings. If the line below is
+// included directly within LabResultFindings, the following error occurs:
+//
+//     ERROR: ValueSet.where(id = 'lab-result-findings'): Error from server: Unable to find
+//     value set "http://hl7.org/fhir/uv/smarthealthcards-vaccination/ValueSet/qualitative-lab-results-loinc"
+
+// Include all clinical finding codes
+* include codes from system SCT where concept is-a #404684003 // Clinical finding (finding)
+// Note that expansion does not work for #441742003 (Evaluation finding (finding)), which would be preferable
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ValueSet:    LabResultFindings
+Id:          lab-result-findings
+Title:       "Lab result findings"
+Description: "This value set includes SNOMED CT and LOINC codes for identifying laboratory test results.
+
+Note that we plan to change this value set to include only children of `441742003` (\"Evaluation finding (finding)\")
+instead of `404684003` (\"Clinical finding (finding)\"), but currently value set expansion is
+not working with this code in the IG Publisher."
+
+* include codes from valueset lab-result-findings-snomed
+* include codes from valueset qualitative-lab-results-loinc
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ValueSet:    QualitativeLabResultFindings
+Id:          qualitative-lab-result-findings
+Title:       "Qualitative lab result findings"
+Description: "This value set includes codes for identifying laboratory test results. It includes SNOMED CT codes from a [value set of COVID-19-related SNOMED CT codes](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1114.10/expansion), as well as codes from LOINC answer lists with roughly equivalent meanings. While the source value set is COVID-19-related, these codes should apply to all infectious disease-related qualitative laboratory results."
+
+* include codes from valueset covid-lab-test-results-snomed-vsac
+
+* include codes from valueset qualitative-lab-results-loinc
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 CodeSystem: IdentityAssuranceLevelCodeSystem
@@ -176,9 +205,9 @@ Description: "Code representing identity assurance level, based on NIST 800-63-3
 * #IAL3 "In-person identity proofing is required. Identifying attributes must be verified by an authorized CSP representative through examination of physical documentation as described in NIST Special Publication 800-63A."
 
 
-ValueSet:    IdentityAssuranceLevelValueSet
-Id:          identity-assurance-level-value-set
-Title:       "Identity Assurance Level Value Set"
+ValueSet:    IdentityAssuranceLevel
+Id:          identity-assurance-level
+Title:       "Identity Assurance Level"
 Description: "Relevant identity assurance level codes, based on NIST 800-63-3. See <https://smarthealth.cards/ial> for details."
 * include codes from system IAL
 * exclude IAL#IAL1

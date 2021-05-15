@@ -15,7 +15,7 @@ Description: "Defines a profile representing a vaccination for a SMART Health Ca
 * insert reference-to-absolute-uri(patient)
 
 * meta.security 0..1
-* meta.security from IdentityAssuranceLevelValueSet (required)
+* meta.security from identity-assurance-level (required)
 * meta.security ^short = "Limited security label to convey identity level of assurance for patient referenced by this resource."
 * meta.security ^definition = "Limited security metadata which conveys an attestation that the immunization provider performed a certain level of identity verification at the time of service. If known, Issuers SHALL attest to the highest level that applies."
 * meta.security MS
@@ -54,19 +54,19 @@ Description: "Defines a profile representing a vaccination for a SMART Health Ca
 
 // It's necessary to fix `system` **in addition** to the value set binding for the slicing to work
 * vaccineCode.coding[cvx] ^short = "CVX code identifying the administered vaccine product"
-* vaccineCode.coding[cvx] from vaccine-product-cvx-value-set (required)
+* vaccineCode.coding[cvx] from vaccine-product-cvx (required)
 * vaccineCode.coding[cvx].system = "http://hl7.org/fhir/sid/cvx"
 
 * vaccineCode.coding[gtin] ^short = "GTIN code identifying the administered vaccine product"
-* vaccineCode.coding[gtin] from vaccine-product-gtin-value-set (required)
+* vaccineCode.coding[gtin] from vaccine-product-gtin (required)
 * vaccineCode.coding[gtin].system = "https://www.gs1.org/gtin"
 
 * vaccineCode.coding[snomed] ^short = "SNOMED CT code identifying the administered vaccine product"
-* vaccineCode.coding[snomed] from vaccine-type-snomed-value-set (required)
+* vaccineCode.coding[snomed] from vaccine-type-snomed (required)
 * vaccineCode.coding[snomed].system = "http://snomed.info/sct"
 
 * vaccineCode.coding[icd11] ^short = "ICD11 code identifying the administered vaccine product"
-* vaccineCode.coding[icd11] from vaccine-target-icd-11-value-set (required)
+* vaccineCode.coding[icd11] from vaccine-target-icd-11 (required)
 * vaccineCode.coding[icd11].system = "http://id.who.int/icd11/mms"
 
 // See http://build.fhir.org/ig/hl7au/au-fhir-base/StructureDefinition-au-immunization.html for the value set and code system URIs
@@ -109,7 +109,7 @@ Description: "Defines a profile representing a vaccination for a SMART Health Ca
 * performer.actor.display MS
 * performer.actor.display 1..1
 * performer.actor.display ^definition = "Organization which was responsible for vaccine administration. Issuers SHOULD provide display name only. This is provided to Verifiers in case of invalid data in the credential, to support manual validation. This is not expected to be a computable Organization identifier."
-* performer.actor.display obeys vc-should-be-under-40-chars
+* performer.actor.display obeys vc-should-be-under-30-chars
 
 * status ^short = "Whether or not the vaccination was completed"
 * status MS
@@ -248,8 +248,7 @@ Title:          "Vaccine Reaction Observation Profile - Allowable Data"
 Description:    "Profile for reporting a reaction to a vaccine.
 
 This profile may not be necessary depending on the use cases for this IG, but it's included for now because
-we wanted to have value sets corresponding to all the value sets in the IIS core data elements. In this
-profile, VaccinationCredentialVaccineReactionValueSet includes the IIS adverse reaction codes."
+we wanted to have value sets corresponding to all the value sets in the IIS core data elements."
 * ^status = #draft
 
 * id obeys vc-should-be-under-20-chars

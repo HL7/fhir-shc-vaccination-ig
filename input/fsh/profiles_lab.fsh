@@ -45,7 +45,7 @@ RuleSet: LaboratoryResultObservation
 * status obeys vc-observation-status-shall-be-complete
 
 * meta.security 0..1
-* meta.security from IdentityAssuranceLevelValueSet (required)
+* meta.security from identity-assurance-level (required)
 * meta.security ^short = "Limited security label to convey identity level of assurance for patient referenced by this resource."
 * meta.security ^definition = "Limited security metadata which conveys an attestation that the lab testing provider performed a certain level of identity verification at the time of service. If known, Issuers SHALL attest to the highest level that applies."
 * meta.security MS
@@ -82,7 +82,7 @@ previous infection status."
 
 * value[x] 1..1
 * value[x] only CodeableConcept or Quantity
-* valueCodeableConcept from vaccination-credential-covid-lab-test-results-value-set (required)
+* valueCodeableConcept from qualitative-lab-result-findings (required)
 * code ^definition = "If an appropriate code is not found in the bound value set, use the InfectiousDiseaseLaboratoryResultObservation profile instead, which does not have a required binding."
 * valueCodeableConcept.text obeys vc-should-be-omitted
 
@@ -172,12 +172,13 @@ Description:    "Profile for reporting laboratory results indicating current or 
 // Show an error if the code is part of a value set used in a disease-specific profile. If that's
 // the case, there's no reason to use this generic profile -- the disease-specific profile should
 // be used instead.
-* code from VaccinationCredentialLabTestValueSet (required)
+* code from http://hl7.org/fhir/ValueSet/observation-codes (required) // All LOINCs - https://www.hl7.org/fhir/valueset-observation-codes.html
+* code ^short = "LOINC identifying the lab test"
 * code obeys vc-shall-not-be-a-covid-loinc
 
 * value[x] 1..1
 * value[x] only CodeableConcept or Quantity
-* valueCodeableConcept from VaccinationCredentialLabTestResultsValueSet (required)
+* valueCodeableConcept from lab-result-findings (required)
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
