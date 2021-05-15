@@ -22,11 +22,12 @@ RuleSet: LaboratoryResultObservation
 * effective[x] only dateTime or Period
 * effective[x] 1..1
 
+* value[x] 1..1
 * value[x] MS
-* value[x] ^comment = "Issuers SHALL provide a computable representation of laboratory results if at all possible. If the Issuer is unable to accurately translate laboratory results into a computable form, it is unlikely a Verifier will be able to interpret the results. Issuers SHALL make every possible effort to resolve non-computable results prior to issuing credentials. In rare cases when this is not possible, Issuers MAY populate `valueCodeableConcept.text` with a free text result. Populating `valueCodeableConcept.text` will result in a warning when validating against the Allowable Data profile and an error with the Data Minimization profile."
-* valueCodeableConcept.text ^short = "String representation of results when a computable representation is not possible"
-* valueCodeableConcept.text ^comment = "See comment for `value[x]`."
-* valueCodeableConcept.text obeys vc-should-be-under-20-chars
+* value[x] only CodeableConcept or Quantity or string
+* value[x] ^comment = "Issuers SHALL provide a computable representation of laboratory results if at all possible. If the Issuer is unable to accurately translate laboratory results into a computable form, it is unlikely a Verifier will be able to interpret the results. Issuers SHALL make every possible effort to resolve non-computable results prior to issuing credentials. In rare cases when this is not possible, Issuers MAY populate `valueString` with a free text result."
+* valueString ^short = "String representation of results; used ONLY when a computable representation is not possible"
+* valueString obeys vc-should-be-under-20-chars
 * valueQuantity obeys vc-observation-quantity-should-have-range
 
 * referenceRange MS
@@ -80,12 +81,8 @@ previous infection status."
 * code from covid-lab-tests-loinc-vsac (required)
 * code ^definition = "If an appropriate code is not found in the bound value set, use the InfectiousDiseaseLaboratoryResultObservation profile instead, which does not have a required binding."
 
-* value[x] 1..1
-* value[x] only CodeableConcept or Quantity
 * valueCodeableConcept from qualitative-lab-result-findings (required)
 * code ^definition = "If an appropriate code is not found in the bound value set, use the InfectiousDiseaseLaboratoryResultObservation profile instead, which does not have a required binding."
-* valueCodeableConcept.text obeys vc-should-be-omitted
-
 /*
 TODO: Test using `device` rather than `method`, like so:
 
@@ -176,8 +173,6 @@ Description:    "Profile for reporting laboratory results indicating current or 
 * code ^short = "LOINC identifying the lab test"
 * code obeys vc-shall-not-be-a-covid-loinc
 
-* value[x] 1..1
-* value[x] only CodeableConcept or Quantity
 * valueCodeableConcept from lab-result-findings (required)
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
