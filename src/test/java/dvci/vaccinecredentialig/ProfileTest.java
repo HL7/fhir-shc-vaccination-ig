@@ -110,7 +110,7 @@ public class ProfileTest {
   }
 
   private ArrayList<OperationOutcomeIssueComponent> filterErrors(OperationOutcome outcome) {
-    // fiind issues of severity ERROR
+    // find issues of severity ERROR
     ArrayList<OperationOutcomeIssueComponent> errors = new ArrayList<>();
     for (OperationOutcomeIssueComponent issue : outcome.getIssue()) {
       if (issue.getSeverity().equals(IssueSeverity.ERROR)) {
