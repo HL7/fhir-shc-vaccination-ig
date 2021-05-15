@@ -1,4 +1,4 @@
-{% assign basepath = page.path | replace: '-examples.html', '.html' | replace: '-dm.html', '.html' %}
+{% assign basepath = page.path | replace: '-resource-examples.html', '.html' | replace: '-dm.html', '.html' %}
 
 <span class="label label-warning">Note</span> Both the [allowable data]({{basepath}}) and [data minimization]({{basepath | replace: '.html', '-dm.html'}}) versions of this profile use this same set of examples. ([More information on the two types of profiles](conformance.html#data-minimization).)
 

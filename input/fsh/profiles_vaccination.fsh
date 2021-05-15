@@ -4,7 +4,7 @@ Profile:     VaccinationCredentialImmunization
 Id:          vaccination-credential-immunization
 Parent:      Immunization
 Title:       "Immunization Profile - Allowable Data"
-Description: "Defines a profile representing a vaccination for a vaccination credential Health Card."
+Description: "Defines a profile representing a vaccination for a SMART Health Card."
 
 * . ^definition = "Describes the event of a patient being administered a vaccine or a record of an immunization as reported by a patient, a clinician or another party. If the immunization is part of a multi-dose series, a separate Immunization resource SHALL be used to represent each dose."
 
@@ -15,7 +15,7 @@ Description: "Defines a profile representing a vaccination for a vaccination cre
 * insert reference-to-absolute-uri(patient)
 
 * meta.security 0..1
-* meta.security from IdentityAssuranceLevelValueSet (required)
+* meta.security from identity-assurance-level (required)
 * meta.security ^short = "Limited security label to convey identity level of assurance for patient referenced by this resource."
 * meta.security ^definition = "Limited security metadata which conveys an attestation that the immunization provider performed a certain level of identity verification at the time of service. If known, Issuers SHALL attest to the highest level that applies."
 * meta.security MS
@@ -36,25 +36,60 @@ Description: "Defines a profile representing a vaccination for a vaccination cre
 // Vaccine code
 * vaccineCode 1..1
 * vaccineCode MS
-* vaccineCode from VaccinationCredentialVaccineValueSet (required)
 * vaccineCode ^short = "Codes identifying the vaccine product administered"
 
+* vaccineCode.coding 1..*
+* vaccineCode.coding MS
 * vaccineCode.coding ^slicing.discriminator.type = #value
 * vaccineCode.coding ^slicing.discriminator.path = "system"
 * vaccineCode.coding ^slicing.rules = #closed
 * vaccineCode.coding ^slicing.description = "Slicing based on the code system"
 
 * vaccineCode.coding contains
-    vaccine 1..1 MS and
-    vaccineManufacturer 0..1 MS
+    cvx 0..1 and
+    gtin 0..1 and
+    snomed 0..1 and
+    icd11 0..1 and
+    air 0..1
 
-* vaccineCode.coding[vaccine] ^short = "Vaccine administered"
-* vaccineCode.coding[vaccine] from VaccinationCredentialVaccineValueSet (required)
-* vaccineCode.coding[vaccine].system = #http://hl7.org/fhir/sid/cvx
+// It's necessary to fix `system` **in addition** to the value set binding for the slicing to work
+* vaccineCode.coding[cvx] ^short = "CVX code identifying the administered vaccine product"
+* vaccineCode.coding[cvx] from vaccine-product-cvx (required)
+* vaccineCode.coding[cvx].system = "http://hl7.org/fhir/sid/cvx"
 
-* vaccineCode.coding[vaccineManufacturer] ^short = "Manufacturer of the administered vaccine"
-* vaccineCode.coding[vaccineManufacturer] from VaccinationCredentialVaccineManufacturerValueSet (required)
-* vaccineCode.coding[vaccineManufacturer].system = #http://hl7.org/fhir/sid/mvx
+* vaccineCode.coding[gtin] ^short = "GTIN code identifying the administered vaccine product"
+* vaccineCode.coding[gtin] from vaccine-product-gtin (required)
+* vaccineCode.coding[gtin].system = "https://www.gs1.org/gtin"
+
+* vaccineCode.coding[snomed] ^short = "SNOMED CT code identifying the administered vaccine product"
+* vaccineCode.coding[snomed] from vaccine-type-snomed (required)
+* vaccineCode.coding[snomed].system = "http://snomed.info/sct"
+
+* vaccineCode.coding[icd11] ^short = "ICD11 code identifying the administered vaccine product"
+* vaccineCode.coding[icd11] from vaccine-target-icd-11 (required)
+* vaccineCode.coding[icd11].system = "http://id.who.int/icd11/mms"
+
+// See http://build.fhir.org/ig/hl7au/au-fhir-base/StructureDefinition-au-immunization.html for the value set and code system URIs
+* vaccineCode.coding[air] ^short = "Australian Immunisation Register Vaccine code identifying the administered vaccine product"
+* vaccineCode.coding[air] from https://healthterminologies.gov.au/fhir/ValueSet/australian-immunisation-register-vaccine-1 (required)
+* vaccineCode.coding[air].system = "https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats"
+
+// Manufacturer
+// Why we are doing this rather than an extension or in vaccineCode
+// https://chat.fhir.org/#narrow/stream/179202-terminology/topic/Using.20multiple.20codes.20with.20CodeableConcept.20Datatype/near/236750401
+// Note that the FHIR validator will not currently validate that a given `value` is in the `system`
+// inside `manufacturer.identifier`.
+* manufacturer MS
+* manufacturer.identifier MS
+* manufacturer.identifier ^short = "Only populate when vaccine type is not provided in vaccineCode"
+* manufacturer.identifier.system MS
+* manufacturer.identifier.system 1..1
+* manufacturer.identifier.system obeys shall-use-known-vaccine-manufacturer-code-system
+* manufacturer.identifier.system ^short = "Code system used to identify vaccine manufacturer"
+* manufacturer.identifier.value MS
+* manufacturer.identifier.value 1..1
+* manufacturer.identifier.system ^short = "Code identifying vaccine manufacturer"
+
 
 * lotNumber MS
 * lotNumber obeys vc-should-be-under-20-chars
@@ -74,7 +109,7 @@ Description: "Defines a profile representing a vaccination for a vaccination cre
 * performer.actor.display MS
 * performer.actor.display 1..1
 * performer.actor.display ^definition = "Organization which was responsible for vaccine administration. Issuers SHOULD provide display name only. This is provided to Verifiers in case of invalid data in the credential, to support manual validation. This is not expected to be a computable Organization identifier."
-* performer.actor.display obeys vc-should-be-under-20-chars
+* performer.actor.display obeys vc-should-be-under-30-chars
 
 * status ^short = "Whether or not the vaccination was completed"
 * status MS
@@ -118,11 +153,28 @@ If `isSubpotent` was not allowed at all (`0..0` cardinality), the concern is tha
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+Profile:     VaccinationCredentialImmunizationCVXCovid19
+Id:          vaccination-credential-immunization-cvx-covid-19
+Parent:      VaccinationCredentialImmunization
+Title:       "Immunization Profile - Allowable Data - COVID-19 with CVX"
+Description: "Recommended profile for implementers using CVX to identify COVID-19 vaccinations for a SMART Health Card."
+
+* manufacturer 0..0
+
+// The CVX slice is already required because no other slices are allowed. Adding the MS flag
+// improves the diff and MS snapshot views.
+* vaccineCode.coding[cvx] MS
+* vaccineCode.coding[gtin] 0..0
+* vaccineCode.coding[snomed] 0..0
+* vaccineCode.coding[icd11] 0..0
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
 Profile:     VaccinationCredentialImmunizationDM
 Id:          vaccination-credential-immunization-dm
 Parent:      VaccinationCredentialImmunization
 Title:       "Immunization Profile - Data Minimization"
-Description: "Defines a profile representing a vaccination for a vaccination credential Health Card. Only elements necessary for Verifiers can be populated."
+Description: "Defines a profile representing a vaccination for a SMART Health Card. Only elements necessary for Verifiers can be populated."
 
 * id 0..0
 * meta.versionId 0..0
@@ -145,7 +197,9 @@ Description: "Defines a profile representing a vaccination for a vaccination cre
 * primarySource 0..0
 * reportOrigin 0..0
 * location 0..0
-* manufacturer 0..0
+* manufacturer.reference 0..0
+* manufacturer.type 0..0
+* manufacturer.display 0..0
 * expirationDate 0..0
 * site 0..0
 * route 0..0
@@ -168,8 +222,22 @@ Description: "Defines a profile representing a vaccination for a vaccination cre
 * reaction 0..0
 * programEligibility 0..0
 
-// Required in DM profile to provide implementers with sterner warning when straying from the expected value sets
-* vaccineCode from VaccinationCredentialVaccineValueSet (required)
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Profile:     VaccinationCredentialImmunizationCVXCovid19DM
+Id:          vaccination-credential-immunization-cvx-covid-19-dm
+Parent:      VaccinationCredentialImmunizationDM
+Title:       "Immunization Profile - Data Minimization - COVID-19 with CVX"
+Description: "Recommended data minimization profile for implementers using CVX to identify COVID-19 vaccinations for a SMART Health Card."
+
+* manufacturer 0..0
+
+// The CVX slice is already required because no other slices are allowed. Adding the MS flag
+// improves the diff and MS snapshot views.
+* vaccineCode.coding[cvx] MS
+* vaccineCode.coding[gtin] 0..0
+* vaccineCode.coding[snomed] 0..0
+* vaccineCode.coding[icd11] 0..0
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -180,8 +248,7 @@ Title:          "Vaccine Reaction Observation Profile - Allowable Data"
 Description:    "Profile for reporting a reaction to a vaccine.
 
 This profile may not be necessary depending on the use cases for this IG, but it's included for now because
-we wanted to have value sets corresponding to all the value sets in the IIS core data elements. In this
-profile, VaccinationCredentialVaccineReactionValueSet includes the IIS adverse reaction codes."
+we wanted to have value sets corresponding to all the value sets in the IIS core data elements."
 * ^status = #draft
 
 * id obeys vc-should-be-under-20-chars

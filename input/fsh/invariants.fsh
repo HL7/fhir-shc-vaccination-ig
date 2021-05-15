@@ -41,6 +41,20 @@ Severity:    #warning
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+Invariant:   vc-should-be-under-40-chars
+Description: "Length SHOULD be <40 for data minimization."
+Expression:  "$this.length() < 40"
+Severity:    #warning
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Invariant:   vc-should-be-under-30-chars
+Description: "Length SHOULD be <30 for data minimization."
+Expression:  "$this.length() < 30"
+Severity:    #warning
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
 Invariant:   vc-should-be-under-20-chars
 Description: "Length SHOULD be <20 for data minimization."
 Expression:  "$this.length() < 20"
@@ -87,6 +101,14 @@ Invariant:   vc-observation-quantity-should-have-range
 Description: "Quantitative lab results SHOULD include reference range"
 Expression:  "%resource.referenceRange.exists()"
 Severity:    #warning
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Invariant: shall-use-known-vaccine-manufacturer-code-system
+Description: "SHALL use a known code system for identifying vaccine manufacturers"
+Expression: "$this.matches('http://hl7.org/fhir/sid/mvx') or $this.matches('https://www.gs1.org/gln')"
+Severity: #error
+// Keep list of manufacturer code systems in sync with the intro text for our Immunization profiles
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
