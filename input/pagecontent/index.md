@@ -42,7 +42,7 @@ To represent patient and clinical data related to a vaccination, the [Vaccinatio
 | Profile: Allowable Data                                                                         | Profile: Data Minimization                          | Purpose                                       | Required in bundle?     |
 | ----------------------------------------------------------------------------------------------- | --------------------------------------------------- | --------------------------------------------- | ----------------------- |
 | [VaccinationCredentialPatient]                                                                  | [VaccinationCredentialPatientDM]                    | Identify the patient                          | Exactly 1 required      |
-| [VaccinationCredentialImmunization] ([US/COVID-19][VaccinationCredentialImmunizationUSCovid19]) | [VaccinationCredentialImmunizationDM]               | Describe a vaccination                        | 1 or more required      |
+| [VaccinationCredentialImmunization] ([COVID-19 with CVX][VaccinationCredentialImmunizationCVXCovid19]) | [VaccinationCredentialImmunizationDM]               | Describe a vaccination                        | 1 or more required      |
 | [VaccinationCredentialVaccineReactionObservation]                                               | [VaccinationCredentialVaccineReactionObservationDM] | Describe an adverse reaction to a vaccination | Optional (experimental) |
 | Bundle: [VaccinationCredentialBundle]                                                           | Bundle: [VaccinationCredentialBundleDM]             | Bundle for wrapping the above resources       | n/a                     |
 
