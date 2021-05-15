@@ -18,9 +18,9 @@ RuleSet: common-bundle-rules
 
 * type  = #collection
 * type MS
-* entry ^slicing.discriminator.type = #profile
+* entry ^slicing.discriminator.type = #type
 * entry ^slicing.discriminator.path = "resource"
-* entry ^slicing.rules = #open
+* entry ^slicing.rules = #closed
 * entry ^slicing.description = "Slicing based on the profile conformance of the entry"
 * entry and entry.resource MS
 
