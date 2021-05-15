@@ -51,17 +51,22 @@ Description: "Defines a profile representing a vaccination for a SMART Health Ca
     snomed 0..1 and
     icd11 0..1
 
+// It's necessary to fix `system` **in addition** to the value set binding for the slicing to work
 * vaccineCode.coding[cvx] ^short = "CVX code identifying the administered vaccine product"
 * vaccineCode.coding[cvx] from vaccine-product-cvx-value-set (required)
+* vaccineCode.coding[cvx].system = "http://hl7.org/fhir/sid/cvx"
 
 * vaccineCode.coding[gtin] ^short = "GTIN code identifying the administered vaccine product"
 * vaccineCode.coding[gtin] from vaccine-product-gtin-value-set (required)
+* vaccineCode.coding[gtin].system = "https://www.gs1.org/gtin"
 
 * vaccineCode.coding[snomed] ^short = "SNOMED CT code identifying the administered vaccine product"
 * vaccineCode.coding[snomed] from vaccine-type-snomed-value-set (required)
+* vaccineCode.coding[snomed].system = "http://snomed.info/sct"
 
 * vaccineCode.coding[icd11] ^short = "ICD11 code identifying the administered vaccine product"
 * vaccineCode.coding[icd11] from vaccine-target-icd-11-value-set (required)
+* vaccineCode.coding[icd11].system = "http://id.who.int/icd11/mms"
 
 
 // Manufacturer
