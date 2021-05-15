@@ -1,8 +1,20 @@
+/***
+
+    Note there are 3 levels of vaccine identification value sets:
+
+        1. Product = includes target disease (e.g., COVID-19), type of vaccine (e.g. mRNA), and manufacturer
+        2. Type = includes target disease and type of vaccine
+        3. Target = includes only target disease
+
+    Value set ids, names, and titles identify this level.
+
+***/
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ValueSet:    VaccineProductCVXValueSet
 Id:          vaccine-product-cvx-value-set
-Title:       "Value set: all CVX codes"
+Title:       "Vaccine product: CVX"
 Description: "This value set includes all [CVX](https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cvx) codes, which identify vaccine products."
 
 * include codes from system http://hl7.org/fhir/sid/cvx
@@ -11,7 +23,7 @@ Description: "This value set includes all [CVX](https://www2a.cdc.gov/vaccines/i
 
 ValueSet:    VaccineProductGTINValueSet
 Id:          vaccine-product-gtin-value-set
-Title:       "Value set: all GTIN codes"
+Title:       "Vaccine product: GTIN"
 Description: "This value set includes all [GTIN](https://www.gs1.org/gtin) codes, which may identify vaccine products."
 
 * include codes from system https://www.gs1.org/gtin
@@ -20,7 +32,7 @@ Description: "This value set includes all [GTIN](https://www.gs1.org/gtin) codes
 
 ValueSet:    VaccineTypeSNOMEDValueSet
 Id:          vaccine-type-snomed-value-set
-Title:       "Value set: SNOMED-CT vaccine product codes"
+Title:       "Vaccine type: SNOMED CT"
 Description: "This value set includes the vaccination product codes from SNOMED Clinical Terms®.
 
 **Note that the value set expansion below may be out of date, and may not include COVID-19-related
@@ -50,7 +62,7 @@ to determine which specific SNOMED codes may be used under this license.
 
 ValueSet:    VaccineTargetICD11ValueSet
 Id:          vaccine-target-icd-11-value-set
-Title:       "Value set: all ICD-11 codes for vaccine types"
+Title:       "Vaccine target: ICD-11"
 Description: "This value set includes the subset of [ICD-11](https://icd.who.int/en) that identify vaccine types.
 
 Note that the COVID-related ICD-11 vaccine codes are not in the `09/2020` version of ICD-11. They
@@ -95,7 +107,7 @@ Contact licensing@who.int to obtain further information."
 
 ValueSet:    VaccineTargetATCValueSet
 Id:          vaccine-target-atc-value-set
-Title:       "Value set: all ATC codes for vaccine types"
+Title:       "Vaccine target: ATC/DDD"
 Description: "This value set includes the subset of [ATC](https://www.whocc.no/atc_ddd_index/?code=J07) that identify vaccine targets.
 
 Note that an ATC code for COVID-19 vaccines (`J07BX03`) [has been created](https://www.who.int/medicines/publications/druginformation/issues/WHO_DI_34_4_ATC-DDD_ClassificationTemp.pdf) and will be added to the next published version of ATC/DDD slated for January 2022."
