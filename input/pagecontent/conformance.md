@@ -61,8 +61,6 @@ Additionally:
 
 Bundles produced by Issuers SHALL validate against [VaccinationCredentialBundle] or [Covid19LaboratoryBundle]/[InfectiousDiseaseLaboratoryBundle] without errors, and SHOULD validate against [VaccinationCredentialBundleDM] or [Covid19LaboratoryBundleDM]/[InfectiousDiseaseLaboratoryBundleDM] without errors.
 
-If an Issuer wishes to include both vaccination and laboratory test results in the same Bundle resource, this resource SHALL validate against both [VaccinationCredentialBundle] and [InfectiousDiseaseLaboratoryBundle], and SHOULD validate against their DM counterparts.
-
 ### Validation
 
 <div class="alert alert-warning" role="alert" markdown="1">
