@@ -49,7 +49,8 @@ Description: "Defines a profile representing a vaccination for a SMART Health Ca
     cvx 0..1 and
     gtin 0..1 and
     snomed 0..1 and
-    icd11 0..1
+    icd11 0..1 and
+    air 0..1
 
 // It's necessary to fix `system` **in addition** to the value set binding for the slicing to work
 * vaccineCode.coding[cvx] ^short = "CVX code identifying the administered vaccine product"
@@ -68,6 +69,10 @@ Description: "Defines a profile representing a vaccination for a SMART Health Ca
 * vaccineCode.coding[icd11] from vaccine-target-icd-11-value-set (required)
 * vaccineCode.coding[icd11].system = "http://id.who.int/icd11/mms"
 
+// See http://build.fhir.org/ig/hl7au/au-fhir-base/StructureDefinition-au-immunization.html for the value set and code system URIs
+* vaccineCode.coding[air] ^short = "Australian Immunisation Register Vaccine code identifying the administered vaccine product"
+* vaccineCode.coding[air] from https://healthterminologies.gov.au/fhir/ValueSet/australian-immunisation-register-vaccine-1 (required)
+* vaccineCode.coding[air].system = "https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats"
 
 // Manufacturer
 // Why we are doing this rather than an extension or in vaccineCode
