@@ -50,7 +50,9 @@ validate_example() {
   msg "\n\n----------------------------------------------------------------"
   msg "Validating $1 against $2..."
   temp_file=$(mktemp)
-  java -jar input-cache/validator_cli.jar -version 4.0.1 -ig output/package.tgz $1 -profile http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/$2 > $temp_file || true
+  cmd="java -jar input-cache/validator_cli.jar -version 4.0.1 -ig hl7.fhir.uv.smarthealthcards-vaccination $1 -profile http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/$2"
+  msg "Validation command: $cmd"
+  $cmd > $temp_file || true
   result=$(cat "$temp_file" | grep FAILURE || [[ $? == 1 ]] )
 
   if [ -n "$result" ]; then

@@ -3,6 +3,7 @@ Alias: LNC = http://loinc.org
 Alias: SCT = http://snomed.info/sct
 Alias: ACT = http://terminology.hl7.org/CodeSystem/v3-ActReason
 Alias: IAL = https://smarthealth.cards/ial
+Alias: ICD11 = http://id.who.int/icd11/mms
 
 // LOINCs for COVID lab tests
 // https://www.nlm.nih.gov/vsac/support/usingvsac/covid19valuesets.html

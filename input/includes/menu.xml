@@ -45,17 +45,20 @@
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Value Sets<b class="caret"></b></a>
     <ul class="dropdown-menu">
-      <li><a href="ValueSet-vaccination-credential-vaccine-value-set.html">Vaccines</a></li>
-      <li><a href="ValueSet-vaccination-credential-vaccine-manufacturer-value-set.html">Vaccine manufacturers</a></li>
+      <li><a href="ValueSet-vaccine-product-gtin.html">Vaccine: GTIN</a>
+      <li><a href="ValueSet-vaccine-product-cvx.html">Vaccine: CVX</a>
+      <li><a href="ValueSet-vaccine-type-snomed.html">Vaccine: SNOMED-CT</a>
+      <li><a href="ValueSet-vaccine-target-icd-11.html">Vaccine: ICD-11</a>
+      <li><a href="ValueSet-vaccine-target-atc.html">Vaccine: ATC</a>
 
       <li role="separator" class="divider"></li>
 
-      <li><a href="ValueSet-vaccination-credential-lab-test-value-set.html">Lab tests</a></li>
-      <li><a href="ValueSet-vaccination-credential-lab-test-results-value-set.html">Lab test results</a></li>
+      <li><a href="ValueSet-lab-result-findings.html">Lab result findings</a></li>
+      <li><a href="ValueSet-qualitative-lab-result-findings.html">Qualitative lab result findings</a>
 
       <li role="separator" class="divider"></li>
 
-      <li><a href="ValueSet-identity-assurance-level-value-set.html">Identity assurance levels</a></li>
+      <li><a href="ValueSet-identity-assurance-level.html">Identity assurance levels</a></li>
     </ul>
   </li>
   <!--<li><a href="data-dictionary/data_dictionary.xlsx">Data Dictionary (.xlsx)</a></li>-->
