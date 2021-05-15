@@ -65,6 +65,8 @@ If an Issuer wishes to include both vaccination and laboratory test results in t
 
 ### Validation
 
+<div class="alert alert-warning" role="alert" markdown="1">
+<p style="font-size: 2rem;"><strong>Note:</strong> FHIR Validator may generate warnings for valid resources</p>
 
 The [FHIR Validator](https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar) may show some warnings when validating resources that are in fact valid. This is due to the following issues:
 
