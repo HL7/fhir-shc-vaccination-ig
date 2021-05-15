@@ -70,6 +70,10 @@ However, as described above, for [data minimization](conformance.html#data-minim
 
 Verifiers SHALL be able to meaningfully process and interpret codes from ALL of the systems listed above.
 
+##### Support for additional code systems
+
+Implementers may request support for an additional code system by [opening a new GitHub issue](https://github.com/dvci/vaccine-credential-ig/issues/new).
+
 #### Vaccine manufacturer
 
 There are two approaches for identifying vaccine manufacturer that are supported by this IG:
