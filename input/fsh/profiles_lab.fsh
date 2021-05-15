@@ -60,7 +60,7 @@ RuleSet: LaboratoryResultObservation
 * performer.display MS
 * performer.display 1..1
 * performer.display ^definition = "Organization which was responsible for the laboratory test result. Issuers SHOULD provide display name only. This is provided to Verifiers in case of invalid data in the credential, to support manual validation. This is not expected to be a computable Organization identifier."
-* performer.display obeys vc-should-be-under-20-chars
+* performer.display obeys vc-should-be-under-40-chars
 
 
 * insert reference-to-absolute-uri(subject)

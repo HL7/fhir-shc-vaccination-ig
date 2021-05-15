@@ -99,7 +99,7 @@ Description: "Defines a profile representing a vaccination for a SMART Health Ca
 * performer.actor.display MS
 * performer.actor.display 1..1
 * performer.actor.display ^definition = "Organization which was responsible for vaccine administration. Issuers SHOULD provide display name only. This is provided to Verifiers in case of invalid data in the credential, to support manual validation. This is not expected to be a computable Organization identifier."
-* performer.actor.display obeys vc-should-be-under-20-chars
+* performer.actor.display obeys vc-should-be-under-40-chars
 
 * status ^short = "Whether or not the vaccination was completed"
 * status MS

@@ -41,6 +41,13 @@ Severity:    #warning
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+Invariant:   vc-should-be-under-40-chars
+Description: "Length SHOULD be <40 for data minimization."
+Expression:  "$this.length() < 40"
+Severity:    #warning
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
 Invariant:   vc-should-be-under-20-chars
 Description: "Length SHOULD be <20 for data minimization."
 Expression:  "$this.length() < 20"
@@ -104,4 +111,3 @@ Expression:  "$this.exists() and %resource.value.ofType(Quantity).exists()"
 Severity:    #warning
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-
