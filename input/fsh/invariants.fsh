@@ -48,6 +48,13 @@ Severity:    #warning
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+Invariant:   vc-should-be-under-30-chars
+Description: "Length SHOULD be <30 for data minimization."
+Expression:  "$this.length() < 30"
+Severity:    #warning
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
 Invariant:   vc-should-be-under-20-chars
 Description: "Length SHOULD be <20 for data minimization."
 Expression:  "$this.length() < 20"
