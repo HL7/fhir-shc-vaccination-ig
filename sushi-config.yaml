@@ -8,10 +8,10 @@ name: SMARTHealthCardsVaccinationAndTestingIG
 title: "SMART Health Cards: Vaccination &amp; Testing Implementation Guide"
 status: draft
 publisher:
-  name: TBD
-  url: http://example.com
-  email: example@example.com
-version: 0.4.0-rc
+  name: vci.org
+  url: https://vci.org
+  email: vci-ig@mitre.org
+version: 0.5.0-rc
 fhirVersion: 4.0.1
 dependencies:
   us.cdc.phinvads:
