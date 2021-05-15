@@ -39,6 +39,7 @@ Description: "Defines a profile representing a vaccination for a SMART Health Ca
 * vaccineCode ^short = "Codes identifying the vaccine product administered"
 
 * vaccineCode.coding 1..*
+* vaccineCode.coding MS
 * vaccineCode.coding ^slicing.discriminator.type = #value
 * vaccineCode.coding ^slicing.discriminator.path = "system"
 * vaccineCode.coding ^slicing.rules = #closed
@@ -142,14 +143,17 @@ If `isSubpotent` was not allowed at all (`0..0` cardinality), the concern is tha
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Profile:     VaccinationCredentialImmunizationUSCovid19
-Id:          vaccination-credential-immunization-us-covid-19
+Profile:     VaccinationCredentialImmunizationCVXCovid19
+Id:          vaccination-credential-immunization-cvx-covid-19
 Parent:      VaccinationCredentialImmunization
-Title:       "Immunization Profile - Allowable Data - US - COVID-19"
-Description: "Recommended profile for US implementers representing a COVID-19 vaccination for a SMART Health Card."
+Title:       "Immunization Profile - Allowable Data - COVID-19 with CVX"
+Description: "Recommended profile for implementers using CVX to identify COVID-19 vaccinations for a SMART Health Card."
 
 * manufacturer 0..0
 
+// The CVX slice is already required because no other slices are allowed. Adding the MS flag
+// improves the diff and MS snapshot views.
+* vaccineCode.coding[cvx] MS
 * vaccineCode.coding[gtin] 0..0
 * vaccineCode.coding[snomed] 0..0
 * vaccineCode.coding[icd11] 0..0
@@ -210,14 +214,17 @@ Description: "Defines a profile representing a vaccination for a SMART Health Ca
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Profile:     VaccinationCredentialImmunizationUSCovid19DM
-Id:          vaccination-credential-immunization-us-covid-19-dm
+Profile:     VaccinationCredentialImmunizationCVXCovid19DM
+Id:          vaccination-credential-immunization-cvx-covid-19-dm
 Parent:      VaccinationCredentialImmunizationDM
-Title:       "Immunization Profile - Data Minimization - US - COVID-19"
-Description: "Recommended data minimization profile for US implementers representing a COVID-19 vaccination for a SMART Health Card."
+Title:       "Immunization Profile - Data Minimization - COVID-19 with CVX"
+Description: "Recommended data minimization profile for implementers using CVX to identify COVID-19 vaccinations for a SMART Health Card."
 
 * manufacturer 0..0
 
+// The CVX slice is already required because no other slices are allowed. Adding the MS flag
+// improves the diff and MS snapshot views.
+* vaccineCode.coding[cvx] MS
 * vaccineCode.coding[gtin] 0..0
 * vaccineCode.coding[snomed] 0..0
 * vaccineCode.coding[icd11] 0..0
