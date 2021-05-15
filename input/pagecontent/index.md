@@ -96,8 +96,6 @@ In general, the value sets used in these `required` bindings are as broad as pos
 
 In cases where disease-specific value sets exist, this IG may provide profiles with bindings to these restricted value sets (e.g., [Covid19LaboratoryResultObservation]) to help implementers identify the preferred subset of codes for that disease. However, in these cases, this IG will also provide generic equivalents to these profiles with broad value sets (e.g., [InfectiousDiseaseLaboratoryResultObservation]). Implementers MAY fall back to the generic version such profiles if the code they need is not part of the disease-specific value sets.
 
-Currently this IG uses US-centric terminology. We plan to add support for non-US terminology, and welcome any implementers outside the US to [identify which code systems and value sets are needed for their use cases](https://github.com/dvci/vaccine-credential-ig/issues/83).
-
 ### Identity assurance
 
 The [VaccinationCredentialPatient] and [Covid19LaboratoryBundle]/[InfectiousDiseaseLaboratoryBundle] profiles include a mechanism for indicating level of identity assurance of the patient. This uses the [IdentityAssuranceLevel] value set in this format:
