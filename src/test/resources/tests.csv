@@ -6,3 +6,4 @@ examples/Scenario2Bundle.json,http://hl7.org/fhir/uv/smarthealthcards-vaccinatio
 examples/Scenario3Bundle.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/covid19-laboratory-bundle
 examples/Scenario3Bundle.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/covid19-laboratory-bundle-dm
 src/test/resources/observation-quantity-dm.test.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/covid19-laboratory-result-observation-dm
+src/test/resources/observation-non-covid-loinc.test.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/infectious-disease-laboratory-result-observation
