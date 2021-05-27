@@ -70,6 +70,23 @@ An example using these profiles:
 
 A laboratory results profile specific to COVID-19 is provided to limit the `code` to a [value set describing COVID-19-specific tests](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1114.9/expansion). Additional disease-specific profiles may be added in the future. To represent a disease without a specific set of profiles, implementers SHALL use [InfectiousDiseaseLaboratoryResultObservation] and [InfectiousDiseaseLaboratoryResultObservationDM], which can be used with [InfectiousDiseaseLaboratoryBundle].
 
+#### Use case 3: Clinical disease credentials
+
+To represent patient and condition information, [Covid19ConditionBundle] or [InfectiousDiseaseConditionBundle] SHALL be used to wrap resources conforming to these profiles:
+
+{:.table-striped.table.table-bordered}
+| Profile: Allowable Data                                                 | Profile: Data Minimization                                                  | Purpose                                 | Required in bundle? |
+| ----------------------------------------------------------------------- | --------------------------------------------------------------------------- | --------------------------------------- | ------------------- |
+| [VaccinationCredentialPatient]                                              | [VaccinationCredentialPatientDM]                                                | Identify the patient                    | Required            |
+| [InfectiousDiseaseConditionCovid19]                                    | [InfectiousDiseaseConditionCovid19DM]                                      | Identify the condition assertion       | Required            |
+| Bundles: [Covid19ConditionBundle], [InfectiousDiseaseConditionBundle] | Bundles: [Covid19ConditionBundleDM], [InfectiousDiseaseConditionBundleDM] | Bundle for wrapping the above resources | n/a                 |
+
+An example using these profiles:
+
+> **Scenario 4:** A patient has a clinical diagnosis of COVID19 with onset date February 17, 2021. [See an example of a FHIR Bundle representing this.](https://github.com/dvci/vaccine-credential-ig/blob/{{ site.data['git-branch'] }}/examples/Scenario4Bundle.json)
+
+A laboratory results profile specific to COVID-19 is provided to limit the `code` to a [value set describing COVID-19-specific diagnoses](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1032.117/expansion). Additional disease-specific profiles may be added in the future. To represent a disease without a specific set of profiles, implementers SHALL use [InfectiousDiseaseCondition] and [InfectiousDiseaseConditionDM], which can be used with [InfectiousDiseaseConditionBundle].
+
 ### Approach to constraints in profiles
 
 The IG is currently focused on coordinating implementers' representations of relevant clinical data, rather than evaluating risk or applying decision rules based on these clinical data. For example, this IG does not include information about which vaccine products are considered effective, or which dosing protocols are appropriate for a given product. The rationale for focusing on "conveying a clinical history" rather than "evaluating risk or making decisions" is:

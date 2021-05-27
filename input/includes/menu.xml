@@ -38,6 +38,22 @@
         <a href="StructureDefinition-vaccination-credential-vaccine-reaction-observation.html">Experimental: Vaccination Reaction</a>
         <a href="StructureDefinition-vaccination-credential-vaccine-reaction-observation-dm.html">(DM)</a>
       </li>
+      <li class="side-by-side">
+        <a href="StructureDefinition-infectious-disease-condition-covid-19.html">Experimental: Condition (COVID-19)</a>
+        <a href="StructureDefinition-infectious-disease-condition-covid-19-dm.html">(DM)</a>
+      </li>
+      <li class="side-by-side">
+        <a href="StructureDefinition-infectious-disease-condition.html">Experimental: Condition (generic)</a>
+        <a href="StructureDefinition-infectious-disease-condition-dm.html">(DM)</a>
+      </li>
+      <li class="side-by-side">
+        <a href="StructureDefinition-covid19-condition-bundle.html">Experimental Bundle: COVID-19 Condition</a>
+        <a href="StructureDefinition-covid19-condition-bundle-dm.html">(DM)</a>
+      </li>
+      <li class="side-by-side">
+        <a href="StructureDefinition-infectious-disease-condition-bundle.html">Experimental Bundle: Generic Condition</a>
+        <a href="StructureDefinition-infectious-disease-condition-bundle-dm.html">(DM)</a>
+      </li>
       <li role="separator" class="divider"></li>
       <li><a href="conformance.html#data-minimization">What is "DM"?</a></li>
     </ul>

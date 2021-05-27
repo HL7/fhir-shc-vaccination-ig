@@ -1,0 +1,43 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "fullUrl": "resource:0",
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "family": "Anyperson",
+            "given": [
+              "John",
+              "B."
+            ]
+          }
+        ],
+        "birthDate": "1951-01-20"
+      }
+    },
+    {
+      "fullUrl": "resource:1",
+      "resource": {
+        "resourceType": "Condition",
+        "meta": {
+          "security": [{"system": "https://smarthealth.cards/ial", "code": "IAL2"}]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "840539006"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "resource:0"
+        },
+        "onsetDateTime": "2021-02-17"
+      }
+    }
+  ]
+}

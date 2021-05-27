@@ -84,5 +84,41 @@
             "title": "Jane C. Anyperson example",
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario2Bundle.json#L9-L19"
         }
+    ],
+    "StructureDefinition-infectious-disease-condition-bundle.html": [
+        {
+            "title": "Scenario 3 Bundle (COVID-19 condition)",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario4Bundle.json"
+        }
+    ],
+    "StructureDefinition-covid19-condition-bundle.html": [
+        {
+            "title": "Scenario 3 Bundle (COVID-19 condition)",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario4Bundle.json"
+        }
+    ],
+    "StructureDefinition-infectious-disease-condition.html": [
+        {
+            "title": "Scenario 3 Bundle (COVID-19 condition)",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario4Bundle.json"
+        }
+    ],
+    "StructureDefinition-infectious-disease-condition-dm.html": [
+        {
+            "title": "Scenario 3 Bundle (COVID-19 condition)",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario4Bundle.json"
+        }
+    ],
+    "StructureDefinition-infectious-disease-condition-covid-19.html": [
+        {
+            "title": "Scenario 3 Bundle (COVID-19 condition)",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario4Bundle.json"
+        }
+    ],
+    "StructureDefinition-infectious-disease-condition-covid-19-dm.html": [
+        {
+            "title": "Scenario 3 Bundle (COVID-19 condition)",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario4Bundle.json"
+        }
     ]
 }

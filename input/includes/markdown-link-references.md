@@ -20,6 +20,15 @@
 [VaccinationCredentialPatient]: StructureDefinition-vaccination-credential-patient.html
 [VaccinationCredentialVaccineReactionObservationDM]: StructureDefinition-vaccination-credential-vaccine-reaction-observation-dm.html
 [VaccinationCredentialVaccineReactionObservation]: StructureDefinition-vaccination-credential-vaccine-reaction-observation.html
+[Covid19ConditionBundle]: StructureDefinition-covid19-condition-bundle.html
+[Covid19ConditionBundleDM]: StructureDefinition-covid19-condition-bundle-dm.html
+[InfectiousDiseaseConditionBundle]: StructureDefinition-infectious-disease-condition-bundle.html
+[InfectiousDiseaseConditionBundleDM]: StructureDefinition-infectious-disease-condition-bundle-dm.html
+[InfectiousDiseaseConditionCovid19]: StructureDefinition-infectious-disease-condition-covid-19.html
+[InfectiousDiseaseConditionCovid19DM]: StructureDefinition-infectious-disease-condition-covid-19-dm.html
+[InfectiousDiseaseCondition]: StructureDefinition-infectious-disease-condition.html
+[InfectiousDiseaseConditionDM]: StructureDefinition-infectious-disease-condition-dm.html
+
 
 [IdentityAssuranceLevel]: ValueSet-identity-assurance-level.html
 [LabResultFindings]: ValueSet-lab-result-findings.html
@@ -30,10 +39,12 @@
 [VaccineTargetATC]: ValueSet-vaccine-target-atc.html
 [VaccineTargetICD11]: ValueSet-vaccine-target-icd-11.html
 [VaccineTypeSNOMED]: ValueSet-vaccine-type-snomed.html
+[C19HCCConfirmedCOVID19Infection]: ValueSet-confirmed-covid-19-infection.html
 
 [Scenario1Bundle]: https://github.com/dvci/vaccine-credential-ig/blob/{{ site.data['git-branch'] }}/examples/Scenario1Bundle.json
 [Scenario2Bundle]: https://github.com/dvci/vaccine-credential-ig/blob/{{ site.data['git-branch'] }}/examples/Scenario2Bundle.json
 [Scenario3Bundle]: https://github.com/dvci/vaccine-credential-ig/blob/{{ site.data['git-branch'] }}/examples/Scenario3Bundle.json
+[Scenario4Bundle]: https://github.com/dvci/vaccine-credential-ig/blob/{{ site.data['git-branch'] }}/examples/Scenario4Bundle.json
 
 <!-- Code systems and value sets -->
 [CVX]: https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cvx
