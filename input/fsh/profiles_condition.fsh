@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Profile:     VaccinationCredentialCondition
-Id:          vaccination-credential-condition
+Profile:     InfectiousDiseaseCondition
+Id:          infectious-disease-condition
 Parent:      Condition
 Title:       "Condition Profile - Allowable Data"
 Description: "Defines a profile representing an assertion of past infection for a SMART Health Card."
@@ -44,9 +44,9 @@ Description: "Defines a profile representing an assertion of past infection for 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Profile:     VaccinationCredentialConditionCovid19
-Id:          vaccination-credential-condition-covid-19
-Parent:      VaccinationCredentialCondition
+Profile:     InfectiousDiseaseConditionCovid19
+Id:          infectious-disease-condition-covid-19
+Parent:      InfectiousDiseaseCondition
 Title:       "Condition Profile - Allowable Data - COVID-19"
 Description: "Recommended profile for implementers to identify COVID-19 conditions for a SMART Health Card."
 
@@ -54,9 +54,9 @@ Description: "Recommended profile for implementers to identify COVID-19 conditio
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Profile:     VaccinationCredentialConditionDM
-Id:          vaccination-credential-condition-dm
-Parent:      VaccinationCredentialCondition
+Profile:     InfectiousDiseaseConditionDM
+Id:          infectious-disease-condition-dm
+Parent:      InfectiousDiseaseCondition
 Title:       "Condition Profile - Data Minimization"
 Description: "Defines a profile representing an assertion of past infection for a SMART Health Card. Only elements necessary for Verifiers can be populated."
 
@@ -90,9 +90,9 @@ Description: "Defines a profile representing an assertion of past infection for 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Profile:     VaccinationCredentialConditionCovid19DM
-Id:          vaccination-credential-condition-covid-19-dm
-Parent:      VaccinationCredentialConditionDM
+Profile:     InfectiousDiseaseConditionCovid19DM
+Id:          infectious-disease-condition-covid-19-dm
+Parent:      InfectiousDiseaseConditionDM
 Title:       "Condition Profile - Data Minimization - COVID-19"
 Description: "Recommended data minimization profile for implementers to identify COVID-19 conditions for a SMART Health Card."
 

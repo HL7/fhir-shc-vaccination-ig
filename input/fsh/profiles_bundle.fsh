@@ -224,7 +224,7 @@ Description: "The bundle of resources that represents the clinical content of a 
 
 * entry[condition] ^short = "Condition"
 * entry[condition] ^definition = "Condition"
-* entry[condition].resource only VaccinationCredentialCondition
+* entry[condition].resource only InfectiousDiseaseCondition
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -248,7 +248,7 @@ Description: "The bundle of resources that represents the clinical content of a 
 
 * entry[condition] ^short = "Condition"
 * entry[condition] ^definition = "Condition"
-* entry[condition].resource only VaccinationCredentialConditionDM
+* entry[condition].resource only InfectiousDiseaseConditionDM
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -271,7 +271,7 @@ Description: "The bundle of resources that represents the clinical content of a 
 
 * entry[condition] ^short = "Condition"
 * entry[condition] ^definition = "Condition"
-* entry[condition].resource only VaccinationCredentialConditionCovid19
+* entry[condition].resource only InfectiousDiseaseConditionCovid19
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -295,6 +295,6 @@ Description: "The bundle of resources that represents the clinical content of a 
 
 * entry[condition] ^short = "Condition"
 * entry[condition] ^definition = "Condition"
-* entry[condition].resource only VaccinationCredentialConditionCovid19DM
+* entry[condition].resource only InfectiousDiseaseConditionCovid19DM
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
