@@ -214,3 +214,10 @@ Description: "Relevant identity assurance level codes, based on NIST 800-63-3. S
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+ValueSet:    C19HCCConfirmedCOVID19Infection 
+Id:          confirmed-covid-19-infection 
+Title:       "C19HCC Confirmed COVID19 Infection"
+Description: "This value set includes all codes in the [VSAC C19HCC Confirmed COVID19 Infection](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1032.117/expansion) value set."
+
+* include codes from valueset http://cts.nlm.nih.gov/fhir/2.16.840.1.113762.1.4.1032.117

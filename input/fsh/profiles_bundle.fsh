@@ -204,3 +204,97 @@ Description: "The bundle of resources that represents the clinical content of a 
 * entry[labResult] obeys vc-bundle-lab-status-complete
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Profile: InfectiousDiseaseConditionBundle
+Parent: Bundle
+Id: infectious-disease-condition-bundle
+Title: "Infectious Disease Condition Bundle - Allowable Data"
+Description: "The bundle of resources that represents the clinical content of a digital infectious disease condition record."
+
+* insert common-bundle-rules
+
+* entry contains
+    // These resources are required per Conformance > Supported Profiles.
+    patient 1..1 MS and
+    condition 1..1 MS
+
+* entry[patient] ^short = "Patient"
+* entry[patient] ^definition = "The patient who is the subject of the Bundle"
+* entry[patient].resource only VaccinationCredentialPatient
+
+* entry[condition] ^short = "Condition"
+* entry[condition] ^definition = "Condition"
+* entry[condition].resource only VaccinationCredentialCondition
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Profile: InfectiousDiseaseConditionBundleDM
+Parent: Bundle
+Id: infectious-disease-condition-bundle-dm
+Title: "Infectious Disease Condition Bundle - Data Minimization"
+Description: "The bundle of resources that represents the clinical content of a digital infectious disease condition record using data minimization profiles."
+
+* insert common-bundle-rules
+* insert common-bundle-dm-rules
+
+* entry contains
+    // These resources are required per Conformance > Supported Profiles.
+    patient 1..1 MS and
+    condition 1..1 MS
+
+* entry[patient] ^short = "Patient"
+* entry[patient] ^definition = "The patient who is the subject of the Bundle"
+* entry[patient].resource only VaccinationCredentialPatient
+
+* entry[condition] ^short = "Condition"
+* entry[condition] ^definition = "Condition"
+* entry[condition].resource only VaccinationCredentialConditionDM
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Profile: Covid19ConditionBundle
+Parent: Bundle
+Id: covid19-condition-bundle
+Title: "COVID-19-specific Condition Bundle - Allowable Data"
+Description: "The bundle of resources that represents the clinical content of a digital condition credential record specifically for COVID-19."
+
+* insert common-bundle-rules
+
+* entry contains
+    // These resources are required per Conformance > Supported Profiles.
+    patient 1..1 MS and
+    condition 1..1 MS
+
+* entry[patient] ^short = "Patient"
+* entry[patient] ^definition = "The patient who is the subject of the Bundle"
+* entry[patient].resource only VaccinationCredentialPatient
+
+* entry[condition] ^short = "Condition"
+* entry[condition] ^definition = "Condition"
+* entry[condition].resource only VaccinationCredentialConditionCovid19
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Profile: Covid19ConditionBundleDM
+Parent: Bundle
+Id: covid19-condition-bundle-dm
+Title: "COVID-19-specific Condition Bundle - Data Minimization"
+Description: "The bundle of resources that represents the clinical content of a digital condition credential record specifically for COVID-19 data minimization."
+
+* insert common-bundle-rules
+* insert common-bundle-dm-rules
+
+* entry contains
+    // These resources are required per Conformance > Supported Profiles.
+    patient 1..1 MS and
+    condition 1..1 MS
+
+* entry[patient] ^short = "Patient"
+* entry[patient] ^definition = "The patient who is the subject of the Bundle"
+* entry[patient].resource only VaccinationCredentialPatientDM
+
+* entry[condition] ^short = "Condition"
+* entry[condition] ^definition = "Condition"
+* entry[condition].resource only VaccinationCredentialConditionCovid19DM
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
