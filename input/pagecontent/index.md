@@ -85,7 +85,7 @@ An example using these profiles:
 
 > **Scenario 4:** A patient has a clinical diagnosis of COVID19 with onset date February 17, 2021. [See an example of a FHIR Bundle representing this.](https://github.com/dvci/vaccine-credential-ig/blob/{{ site.data['git-branch'] }}/examples/Scenario4Bundle.json)
 
-A laboratory results profile specific to COVID-19 is provided to limit the `code` to a [value set describing COVID-19-specific diagnoses](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1032.117/expansion). Additional disease-specific profiles may be added in the future. To represent a disease without a specific set of profiles, implementers SHALL use [InfectiousDiseaseCondition] and [InfectiousDiseaseConditionDM], which can be used with [InfectiousDiseaseConditionBundle].
+A condition profile specific to COVID-19 is provided to limit the `code` to a [value set describing COVID-19-specific diagnoses](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1032.117/expansion). Additional disease-specific profiles may be added in the future. To represent a disease without a specific set of profiles, implementers SHALL use [InfectiousDiseaseCondition] and [InfectiousDiseaseConditionDM], which can be used with [InfectiousDiseaseConditionBundle].
 
 ### Approach to constraints in profiles
 
