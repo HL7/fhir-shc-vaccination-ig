@@ -112,9 +112,9 @@ Severity: #error
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Invariant:   vc-observation-range-only-quantity
-Description: "Reference range SHOULD only be included for quantitative lab results"
-Expression:  "$this.exists() and %resource.value.ofType(Quantity).exists()"
+Invariant:   vc-observation-range-only-quantity-or-string
+Description: "Reference range SHOULD be included for quantitative lab results, MAY be included for free text (string) results, and SHOULD NOT be included otherwise"
+Expression:  "$this.exists() and (%resource.value.ofType(Quantity).exists() or %resource.value.ofType(String).exists())"
 Severity:    #warning
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
