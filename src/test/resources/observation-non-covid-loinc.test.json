@@ -1,0 +1,32 @@
+{
+  "resourceType": "Observation",
+  "meta": {
+    "security": [{"system": "https://smarthealth.cards/ial", "code": "IAL1.2"}]
+  },
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "10348-1"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "resource:0"
+  },
+  "effectiveDateTime": "2021-02-17",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "260373001"
+      }
+    ]
+  },
+  "performer": [
+    {
+      "display": "ABC General Hospital"
+    }
+  ]
+}
