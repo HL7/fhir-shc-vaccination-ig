@@ -16,15 +16,10 @@
     "reference": "resource:0"
   },
   "effectiveDateTime": "2021-02-17",
-  "valueString": "unit": "122 umol/L",
+  "valueString": "Positive",
   "referenceRange": [
     {
-      "low": {
-        "value": 64
-      },
-      "high": {
-        "value": 104
-      }
+      "text": "Negative"
     }
   ],
   "performer": [

@@ -143,6 +143,7 @@ RuleSet: LaboratoryResultObservationDM
 * performer.identifier 0..0
 * valueCodeableConcept.text 0..0
 * valueQuantity.id 0..0
+* valueString.id 0..0
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
