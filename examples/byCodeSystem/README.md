@@ -1,6 +1,6 @@
 # Vaccine Code Examples
 
-** The files do not pass inferno yet **
+**The files do not pass inferno yet**
 
 See [Implentation Guide Immunization Allowable Data](http://build.fhir.org/ig/dvci/vaccine-credential-ig/branches/main/StructureDefinition-vaccination-credential-immunization.html).
 
@@ -40,9 +40,12 @@ This directory holds json files demonstrating each code system.
 | Unnamed       | Minhai Biotechnology Co.; Kangtai Biological Products Co. Ltd.                    | China           |
 | Novavax       | Novavax                                                                           | US              |
 
-Also added Novavax vaccine.
+Also added Novavax vaccine, although it is not yet approved as of Jun 9th, 2021.
 
 ## Vaccine Codes
+
+Blank means values are missing, and " " indicates same value for each row.
+
 | Vaccine           | GTIN            | CVX      | AIR      | SNOMED CT | ICD-11    | ATC/DDD  |
 | :---------------: | :-------------: | :------: | :------: | :-------: | :-------: | :------: |
 | Pfizer            |                 | 208      | COMIRN   | 840534001 |  XM0GQ8   | J07BX03  |
@@ -63,11 +66,9 @@ Also added Novavax vaccine.
 | Minha             |                 | 213      |          |   "   "   |  XMLNL1   |  "   "   |
 | Novavax           |                 | 211      |          |   "   "   |  XM5JC5   |  "   "   |
 
-** "  " indicates same value for all rows **
-
 Pfizer NDC: 59267-1000-2
 
-** CVX uses 213 for (any) unspecified COVID vaccine, ICD-11 has "parent code" XM68M6 for any COVID vaccine, AIR only registers vaccines approved in Australia **
+**CVX uses 213 for (any) unspecified COVID vaccine, ICD-11 has "parent code" XM68M6 for any COVID vaccine, AIR only registers vaccines approved in Australia**
 
 
 ## Manufacturer Codes
