@@ -1,0 +1,56 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "fullUrl": "resource:0",
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "family": "Anyperson",
+            "given": [
+              "John",
+              "B."
+            ]
+          }
+        ],
+        "birthDate": "1951-01-20"
+      }
+    },
+    {
+      "fullUrl": "resource:1",
+      "resource": {
+        "resourceType": "Immunization",
+        "meta": {
+          "security": [{"system": "https://smarthealth.cards/ial", "code": "IAL1.2"}]
+        },
+        "status": "completed",
+        "vaccineCode": {
+          "coding": [
+            {
+              "system": "https://www.whocc.no/atc_ddd_index/",
+              "code": "J07BX03"
+            },
+            {
+              "system": "https://www.gs1.org/gtin",
+              "code": "00359676580157"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "resource:0"
+        },
+        "occurrenceDateTime": "2021-01-01",
+        "performer": [
+          {
+            "actor": {
+              "display": "Some Clinic"
+            }
+          }
+        ],
+        "lotNumber": "0000003"
+      }
+    }
+  ]
+}
