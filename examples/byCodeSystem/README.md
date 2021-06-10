@@ -90,8 +90,7 @@ Pfizer NDC: 59267-1000-2
 | ZF2001            |      |                |
 | QazVac            |      |                |
 | Minha             |      |                |
-| Novavax           | NVX  |                |
-
+| Novavax           | NVX  | 0380631000007  |
 
 Sources:
  - [CVX Codes](https://www.cdc.gov/vaccines/programs/iis/COVID-19-related-codes.html)
