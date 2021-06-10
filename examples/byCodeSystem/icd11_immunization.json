@@ -37,7 +37,7 @@
         "manufacturer": {
           "identifier": {
             "system": "http://hl7.org/fhir/sid/mvx",
-            "code": "PFR"
+            "value": "PFR"
           }
         },
         "patient": {
@@ -73,7 +73,7 @@
         "manufacturer": {
           "identifier": {
             "system": "http://hl7.org/fhir/sid/mvx",
-            "code": "PFR"
+            "value": "PFR"
           }
         },
         "patient": {

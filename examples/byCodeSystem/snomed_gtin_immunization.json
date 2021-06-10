@@ -71,7 +71,7 @@
               "code": "3038077770688"
             }
           ]
-        }
+        },
         "patient": {
           "reference": "resource:0"
         },
