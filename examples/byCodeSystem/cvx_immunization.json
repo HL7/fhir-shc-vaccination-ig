@@ -30,7 +30,7 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/sid/cvx",
-              "code": "207"
+              "code": "213"
             }
           ]
         },
@@ -41,7 +41,7 @@
         "performer": [
           {
             "actor": {
-              "display": "ABC General Hospital"
+              "display": "Foreign Hospital"
             }
           }
         ],
@@ -60,7 +60,7 @@
           "coding": [
             {
               "system": "http://hl7.org/fhir/sid/cvx",
-              "code": "207"
+              "code": "213"
             }
           ]
         },
@@ -71,7 +71,7 @@
         "performer": [
           {
             "actor": {
-              "display": "ABC General Hospital"
+              "display": "Foreign Hospital"
             }
           }
         ],

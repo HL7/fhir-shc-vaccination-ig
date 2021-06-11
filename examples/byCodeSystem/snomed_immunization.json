@@ -36,8 +36,8 @@
         },
         "manufacturer": {
           "identifier": {
-            "system": "http://hl7.org/fhir/sid/mvx",
-            "value": "PFR"
+            "system": "https://www.gs1.org/gln",
+            "value": "0863772000001"
           }
         },
         "patient": {
@@ -72,8 +72,8 @@
         },
         "manufacturer": {
           "identifier": {
-            "system": "http://hl7.org/fhir/sid/mvx",
-            "value": "PFR"
+            "system": "https://www.gs1.org/gln",
+            "value": "0863772000001"
           }
         },
         "patient": {

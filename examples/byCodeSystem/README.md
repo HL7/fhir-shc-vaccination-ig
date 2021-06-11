@@ -1,8 +1,6 @@
 # Vaccine Code Examples
 
-**The files do not pass inferno yet**
-
-See [Implentation Guide Immunization Allowable Data](http://build.fhir.org/ig/dvci/vaccine-credential-ig/branches/main/StructureDefinition-vaccination-credential-immunization.html).
+See documentation at [Implentation Guide Immunization Allowable Data](http://build.fhir.org/ig/dvci/vaccine-credential-ig/branches/main/StructureDefinition-vaccination-credential-immunization.html).
 
 This directory holds json files demonstrating each code system.
 
