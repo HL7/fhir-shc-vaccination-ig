@@ -76,7 +76,7 @@ Description: "Defines a profile representing a vaccination for a SMART Health Ca
 * vaccineCode.coding[air].system = "https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats"
 
 * vaccineCode.coding[atc] ^short = "ATC/DDD code identifying the administered vaccine product"
-* vaccineCode.coding[atc] from vaccine-type-atc (required)
+* vaccineCode.coding[atc] from vaccine-target-atc (required)
 * vaccineCode.coding[atc].system = "https://www.whocc.no/atc_ddd_index/"
 
 // Manufacturer
