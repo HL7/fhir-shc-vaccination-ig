@@ -27,10 +27,10 @@ See `byCodeSystems` folder.
 
 
 ## Validation notes:
-`Scenario3Bundle.json` validation was moved from `tests.csv` to `tests_errors.csv`, and all examples in `examples/byCodeSystems` are also placed in `tests_errors.csv`. This
+`Scenario3Bundle.json` validation was moved from `tests.csv` to `tests_errors.csv`, and all examples in `examples/byCodeSystems` (besides CVX) are also placed in `tests_errors.csv`. This
 is because these examples rely on intensional ValueSets that point to inactive terminology servers, so automated testing raises Code Invalid errors. The codes in `examples/byCodeSystem` were 
 manually checked to be correct against human documentation and the files ran successfully on Inferno except for the Invalid Code errors. Before rolling out a stable release we should move this
-validation to `tests.csv` and make sure the terminology servers are pointed to properly.
+validation to `tests.csv` and make sure the terminology servers are pointed to properly. (CVX codes are defined extensionally and passes in `tests.csv`).
 
 Also note the `tests_errors.csv` and testing implementation only tests for one error per file, so only one error has been specified. However the examples with two doses actually raise the
-error twice, and examples that specify multiple code systems (i.e: ICD-11 and GTIN) raise more Code Invalid errors. 
+error twice, and examples that specify multiple code systems (i.e: ICD-11 and GTIN) raise more Invalid Code errors. 

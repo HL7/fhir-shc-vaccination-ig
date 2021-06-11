@@ -4,3 +4,5 @@ examples/Scenario1Bundle.json,http://hl7.org/fhir/uv/smarthealthcards-vaccinatio
 examples/Scenario2Bundle.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-bundle
 examples/Scenario2Bundle.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-bundle-dm
 src/test/resources/observation-quantity-dm.test.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/covid19-laboratory-result-observation-dm
+examples/byCodeSystem/cvx_immunization.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-bundle
+examples/byCodeSystem/cvx_immunization.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-bundle-dm
