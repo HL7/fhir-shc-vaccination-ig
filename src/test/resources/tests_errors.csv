@@ -16,3 +16,12 @@ src/test/resources/immunization-ial-value-set.test.json,http://hl7.org/fhir/uv/s
 src/test/resources/immunization-code-slicing.test.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-immunization,ERROR,Immunization.vaccineCode.coding[0],This element does not match any known slice  defined in the profile
 src/test/resources/observation-quantity-shall-have-range.test.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/covid19-laboratory-result-observation,WARNING,Observation.value.ofType(Quantity),vc-observation-quantity-should-have-range
 src/test/resources/observation-range-only-quantity.test.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/covid19-laboratory-result-observation,WARNING,,vc-observation-range-only-quantity
+examples/byCodeSystem/air_immunization.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-bundle,WARNING,Bundle.entry[1].resource.ofType(Immunization).vaccineCode.coding[0],ValueSet https://healthterminologies.gov.au/fhir/ValueSet/australian-immunisation-register-vaccine-1 not found by validator
+examples/byCodeSystem/atc_gtin_immunization.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-bundle, 
+examples/byCodeSystem/atc_immunization.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-bundle,
+examples/byCodeSystem/cvx_immunization.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-bundle,
+examples/byCodeSystem/gtin_immunization.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-bundle, 
+examples/byCodeSystem/icd11_gtin_immunization.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-bundle, 
+examples/byCodeSystem/icd11_immunization.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-bundle,
+examples/byCodeSystem/snomed_gtin_immunization.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-bundle, 
+examples/byCodeSystem/snomed_immunization.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-bundle, 

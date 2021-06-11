@@ -50,7 +50,8 @@ Description: "Defines a profile representing a vaccination for a SMART Health Ca
     gtin 0..1 and
     snomed 0..1 and
     icd11 0..1 and
-    air 0..1
+    air 0..1 and
+    atc 0..1
 
 // It's necessary to fix `system` **in addition** to the value set binding for the slicing to work
 * vaccineCode.coding[cvx] ^short = "CVX code identifying the administered vaccine product"
@@ -73,6 +74,10 @@ Description: "Defines a profile representing a vaccination for a SMART Health Ca
 * vaccineCode.coding[air] ^short = "Australian Immunisation Register Vaccine code identifying the administered vaccine product"
 * vaccineCode.coding[air] from https://healthterminologies.gov.au/fhir/ValueSet/australian-immunisation-register-vaccine-1 (required)
 * vaccineCode.coding[air].system = "https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats"
+
+* vaccineCode.coding[atc] ^short = "ATC/DDD code identifying the administered vaccine product"
+* vaccineCode.coding[atc] from vaccine-type-atc (required)
+* vaccineCode.coding[atc].system = "https://www.whocc.no/atc_ddd_index/"
 
 // Manufacturer
 // Why we are doing this rather than an extension or in vaccineCode
@@ -167,6 +172,8 @@ Description: "Recommended profile for implementers using CVX to identify COVID-1
 * vaccineCode.coding[gtin] 0..0
 * vaccineCode.coding[snomed] 0..0
 * vaccineCode.coding[icd11] 0..0
+* vaccineCode.coding[air] 0..0
+* vaccineCode.coding[atc] 0..0
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -238,6 +245,8 @@ Description: "Recommended data minimization profile for implementers using CVX t
 * vaccineCode.coding[gtin] 0..0
 * vaccineCode.coding[snomed] 0..0
 * vaccineCode.coding[icd11] 0..0
+* vaccineCode.coding[air] 0..0
+* vaccineCode.coding[atc] 0..0
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
