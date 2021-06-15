@@ -31,8 +31,8 @@ RuleSet: LaboratoryResultObservation
 * valueQuantity obeys vc-observation-quantity-should-have-range
 
 * referenceRange MS
-* referenceRange ^comment = "Issuers SHOULD provide a reference range for only quantitative lab results to allow recipients to correctly interpret the results."
-* referenceRange obeys vc-observation-range-only-quantity
+* referenceRange ^comment = "Issuers SHOULD provide a reference range for quantitative lab results to allow recipients to correctly interpret the results. Issuers MAY provide a reference range for free text (string) results."
+* referenceRange obeys vc-observation-range-only-quantity-or-string
 
 * performer only Reference(Organization)
 * performer MS
@@ -143,6 +143,7 @@ RuleSet: LaboratoryResultObservationDM
 * performer.identifier 0..0
 * valueCodeableConcept.text 0..0
 * valueQuantity.id 0..0
+* valueString.id 0..0
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
