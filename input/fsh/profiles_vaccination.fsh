@@ -54,19 +54,19 @@ Description: "Defines a profile representing a vaccination for a SMART Health Ca
 
 // It's necessary to fix `system` **in addition** to the value set binding for the slicing to work
 * vaccineCode.coding[cvx] ^short = "CVX code identifying the administered vaccine product"
-* vaccineCode.coding[cvx] from vaccine-product-cvx (required)
+* vaccineCode.coding[cvx] from vaccine-cvx (required)
 * vaccineCode.coding[cvx].system = "http://hl7.org/fhir/sid/cvx"
 
 * vaccineCode.coding[gtin] ^short = "GTIN code identifying the administered vaccine product"
-* vaccineCode.coding[gtin] from vaccine-product-gtin (required)
+* vaccineCode.coding[gtin] from vaccine-gtin (required)
 * vaccineCode.coding[gtin].system = "https://www.gs1.org/gtin"
 
 * vaccineCode.coding[snomed] ^short = "SNOMED CT code identifying the administered vaccine product"
-* vaccineCode.coding[snomed] from vaccine-type-snomed (required)
+* vaccineCode.coding[snomed] from vaccine-snomed (required)
 * vaccineCode.coding[snomed].system = "http://snomed.info/sct"
 
 * vaccineCode.coding[icd11] ^short = "ICD11 code identifying the administered vaccine product"
-* vaccineCode.coding[icd11] from vaccine-target-icd-11 (required)
+* vaccineCode.coding[icd11] from vaccine-icd-11 (required)
 * vaccineCode.coding[icd11].system = "http://id.who.int/icd11/mms"
 
 // See http://build.fhir.org/ig/hl7au/au-fhir-base/StructureDefinition-au-immunization.html for the value set and code system URIs
