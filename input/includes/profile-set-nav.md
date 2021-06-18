@@ -5,13 +5,18 @@
     </div>
     <div style="margin-top: 1em;">
       <p>{{ r.description }} The current page is <span class="active-page-example">highlighted</span> below.</p>
+      {% if r.instructions %}
+      {% capture url %}{{r.instructions}}{% endcapture %}
+      <p class="{% if page.path == url %}active-page{% endif %}"><span class="label label-success">Start here!</span>
+        <a href="{{ r.instructions }}">Implementation instructions for {{ r.name }}</a>
+      </p>
+      {% endif %}
       <table class="table">
           <thead>
               <tr>
                   <th>Primary profile (DM)</th>
-                  <th>Scope</th>
-                  <th>Implementation instructions</th>
                   <th>Fallback Profiles (AD)</th>
+                  <th>Scope</th>
               </tr>
           </thead>
           <tbody>
@@ -19,21 +24,9 @@
               <tr>
                   {% capture url %}StructureDefinition-{{ profileSet.slug }}-dm.html{% endcapture %}
                   <td class="{% if page.path == url %}active-page{% endif %}"><a href="{{ url }}">{{ profileSet.name }}</a></td>
-                  <td>{{ profileSet.scope }}</td>
-
-                  {% if r.instructions %}
-                  {% if forloop.first == true %}
-                  {% capture url %}{{r.instructions}}{% endcapture %}
-                  <td rowspan="{{ forloop.length }}" class="{% if page.path == url %}active-page{% endif %}">
-                      {% if page.path != url %}<span class="label label-success">Start here!</span>{% endif %}
-                      <a href="{{ r.instructions }}">Instructions</a>
-                  </td>
-                  {% endif %}
-                  {% else %}
-                  <td></td>
-                  {% endif %}
                   {% capture url %}StructureDefinition-{{ profileSet.slug }}-ad.html{% endcapture %}
                   <td class="{% if page.path == url %}active-page{% endif %}"><a href="{{ url }}">Fallback</a></td>
+                  <td>{{ profileSet.scope }}</td>
               </tr>
               {% endfor %}
           </tbody>

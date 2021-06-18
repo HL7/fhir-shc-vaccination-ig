@@ -3,9 +3,8 @@
     <tr>
         <th>Group</th>
         <th>Primary (DM)</th>
-        <th>Scope</th>
-        <th>Instructions</th>
         <th>Fallback (AD)</th>
+        <th>Scope</th>
     </tr>
 </thead>
 <tbody>
@@ -19,25 +18,21 @@
             <td rowspan="{{ forloop.length }}">
                 <strong>{{ r.name }}</strong><br>
                 {{ r.description }}
+                {% if r.instructions %}
+                    {% capture url %}{{r.instructions}}{% endcapture %}
+                    <br><br>
+                    <span class="label label-success">Start here!</span>
+                    <a href="{{ r.instructions }}">Implementation instructions</a>
+                {% endif %}
             </td>
         {% endif %}
         {% capture url %}StructureDefinition-{{ profileSet.slug }}-dm.html{% endcapture %}
         <td><a href="{{ url }}">{{ profileSet.name }}</a></td>
-        <td>{{ profileSet.scope }}</td>
 
-        {% if r.instructions %}
-        {% if forloop.first == true %}
-        {% capture url %}{{r.instructions}}{% endcapture %}
-        <td rowspan="{{ forloop.length }}" >
-            {% if page.path != url %}<span class="label label-success">Start here!</span>{% endif %}
-            <a href="{{ r.instructions }}">Instructions</a>
-        </td>
-        {% endif %}
-        {% else %}
-        <td></td>
-        {% endif %}
         {% capture url %}StructureDefinition-{{ profileSet.slug }}-ad.html{% endcapture %}
         <td ><a href="{{ url }}">Fallback</a></td>
+
+        <td>{{ profileSet.scope }}</td>
     </tr>
     {% endfor %}
 {% endfor %}
@@ -59,7 +54,7 @@ In some cases, multiple pairs of DM/AD profiles of the same resource are provide
 
 The recommended workflow for reading profiles of a given resource in this IG is as follows:
 
-1. First review the "Implementation details" page, if provided, which is marked with <span class="label label-success">Start here!</span> in the tables below. This contains critical information for implementers, and is linked prominently at the top of relevant profiles in addition to appearing in the tables below.
+1. First review the "Implementation details" page, if provided, which is marked with <span class="label label-success">Start here!</span> in the table above. This contains critical information for implementers, and is linked prominently at the top of relevant profiles in addition to appearing in the tables below.
 1. Review the "Snapshot" tab on the DM profile for the resource. The elements listed here SHOULD/SHALL be included based on  `MustSupport` (<span style="padding-left: 3px; padding-right: 3px; color: white; background-color: red;" >S</span> in the "Flags" column) and [cardinality](https://www.hl7.org/fhir/conformance-rules.html#cardinality) (in the "Card.") column. Elements not listed here SHOULD NOT/SHALL NOT be included. Details on interpreting cardinality and `MustSupport` for this IG are available on the [Conformance](conformance.html) page.
     - For more information about the data type for a given element, click the data type link in the "Type" column. This will bring you to the relevant portion of the FHIR specification for that data type.
     - The "Description & Constraints" column has a short description of each element. Some elements may also have a "Binding" listed here, which indicates values SHALL come from the specified list. (This IG uses "Required" for all value set bindings, but other IGs may use [more flexible binding strengths](https://www.hl7.org/fhir/terminologies.html#strength).)
