@@ -28,6 +28,7 @@ The primary actors are:
 
 Issuers and Verifiers are considered "implementers" of this IG.
 
+<!--
 ### Use cases
 
 Our primary focus is on the use case of representing the minimal set of clinical data necessary to represent COVID-19 vaccination status and laboratory testing for verification purposes in a SMART Health Card.
@@ -42,7 +43,7 @@ To represent patient and clinical data related to a vaccination, the [Vaccinatio
 | Profile: Allowable Data                                                                         | Profile: Data Minimization                          | Purpose                                       | Required in bundle?     |
 | ----------------------------------------------------------------------------------------------- | --------------------------------------------------- | --------------------------------------------- | ----------------------- |
 | [VaccinationCredentialPatient]                                                                  | [VaccinationCredentialPatientDM]                    | Identify the patient                          | Exactly 1 required      |
-| [VaccinationCredentialImmunization] ([COVID-19 with CVX][VaccinationCredentialImmunizationCVXCovid19]) | [VaccinationCredentialImmunizationDM]               | Describe a vaccination                        | 1 or more required      |
+| [SHCImmunizationDM] ([COVID-19 with CVX][SHCImmunizationDMCVXCovid19]) | [SHCImmunizationDMDM]               | Describe a vaccination                        | 1 or more required      |
 | [VaccinationCredentialVaccineReactionObservation]                                               | [VaccinationCredentialVaccineReactionObservationDM] | Describe an adverse reaction to a vaccination | Optional (experimental) |
 | Bundle: [VaccinationCredentialBundle]                                                           | Bundle: [VaccinationCredentialBundleDM]             | Bundle for wrapping the above resources       | n/a                     |
 
@@ -70,13 +71,15 @@ An example using these profiles:
 
 A laboratory results profile specific to COVID-19 is provided to limit the `code` to a [value set describing COVID-19-specific tests](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1114.9/expansion). Additional disease-specific profiles may be added in the future. To represent a disease without a specific set of profiles, implementers SHALL use [InfectiousDiseaseLaboratoryResultObservation] and [InfectiousDiseaseLaboratoryResultObservationDM], which can be used with [InfectiousDiseaseLaboratoryBundle].
 
+-->
+
 ### Approach to constraints in profiles
 
 The IG is currently focused on coordinating implementers' representations of relevant clinical data, rather than evaluating risk or applying decision rules based on these clinical data. For example, this IG does not include information about which vaccine products are considered effective, or which dosing protocols are appropriate for a given product. The rationale for focusing on "conveying a clinical history" rather than "evaluating risk or making decisions" is:
 
 1. Risk evaluation algorithms are likely to evolve faster than IG constraints can be updated.
 
-    For example, constraining the [VaccinationCredentialImmunization] profile to require specific `vaccineCode` values (e.g., only `CVX#207` and `CVX#208` for the current Moderna and Pfizer-BioNTech vaccines) could pose a problem if a new vaccine receives emergency authorization: recipients of the new vaccination would have non-conforming Immunization resources due to the constraints on `vaccineCode` until the IG could be updated and published.
+    For example, constraining the [SHCImmunizationDM] profile to require specific `vaccineCode` values (e.g., only `CVX#207` and `CVX#208` for the current Moderna and Pfizer-BioNTech vaccines) could pose a problem if a new vaccine receives emergency authorization: recipients of the new vaccination would have non-conforming Immunization resources due to the constraints on `vaccineCode` until the IG could be updated and published.
 
 1. Risk evaluation algorithms may be actor- or context-dependent.
 
@@ -86,7 +89,7 @@ The IG is currently focused on coordinating implementers' representations of rel
 
 1. More constrained profiles for risk evaluation can be created based on the profiles in this IG, but it's not possible to remove constraints in a child profile.
 
-1. Cardinality constraints are applied to specific data elements in [Allowable Data profiles](conformance.html#data-minimization) when their inclusion (1) is does not support our use case and could harm patients; or (2) is contrary to our [key design principles](https://vci.org/about#key-principles). For example, `Patient.identifier` is not allowed in resources conforming to [VaccinationCredentialPatient] as this may include a MRN or SSN, which would introduce a significant privacy risk for patients.
+1. Cardinality constraints are applied to specific data elements in [Allowable Data profiles](conformance.html#data-minimization) when their inclusion (1) is does not support our use case and could harm patients; or (2) is contrary to our [key design principles](https://vci.org/about#key-principles). For example, `Patient.identifier` is not allowed in resources conforming to [SHCPatientUnitedStatesDM] as this may include a MRN or SSN, which would introduce a significant privacy risk for patients.
 
 ### Approach to terminology bindings
 
@@ -94,11 +97,11 @@ Value set bindings for [`MustSupport` elements](conformance.html) are `required`
 
 In general, the value sets used in these `required` bindings are as broad as possible. For example, in the [VaccineProductCVX] value set, all codes from the [CVX code system](https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cvx) are included (as opposed to defining a value set with just COVID-related CVX codes, for example).
 
-In cases where disease-specific value sets exist, this IG may provide profiles with bindings to these restricted value sets (e.g., [Covid19LaboratoryResultObservation]) to help implementers identify the preferred subset of codes for that disease. However, in these cases, this IG will also provide generic equivalents to these profiles with broad value sets (e.g., [InfectiousDiseaseLaboratoryResultObservation]). Implementers MAY fall back to the generic version such profiles if the code they need is not part of the disease-specific value sets.
+In cases where disease-specific value sets exist, this IG may provide profiles with bindings to these restricted value sets (e.g., [SHCCovid19LaboratoryResultObservationDM]) to help implementers identify the preferred subset of codes for that disease. However, in these cases, this IG will also provide generic equivalents to these profiles with broad value sets (e.g., [SHCInfectiousDiseaseLaboratoryResultObservationDM]). Implementers MAY fall back to the generic version such profiles if the code they need is not part of the disease-specific value sets.
 
 ### Identity assurance
 
-The [VaccinationCredentialPatient] and [Covid19LaboratoryBundle]/[InfectiousDiseaseLaboratoryBundle] profiles include a mechanism for indicating level of identity assurance of the patient. This uses the [IdentityAssuranceLevel] value set in this format:
+The [SHCPatientGeneralDM] and [SHCCovid19LaboratoryBundleDM]/[SHCInfectiousDiseaseLaboratoryBundleDM] profiles include a mechanism for indicating level of identity assurance of the patient. This uses the [IdentityAssuranceLevel] value set in this format:
 
 ```json
 "meta": {

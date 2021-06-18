@@ -1,0 +1,1 @@
+{% include profile-set-nav.md resourceName="laboratory-results-observation" %}

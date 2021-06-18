@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Profile:     VaccinationCredentialImmunization
-Id:          vaccination-credential-immunization
+Profile:     SHCImmunizationAD
+Id:          shc-immunization-ad
 Parent:      Immunization
 Title:       "Immunization Profile - Allowable Data"
 Description: "Defines a profile representing a vaccination for a SMART Health Card."
@@ -10,7 +10,7 @@ Description: "Defines a profile representing a vaccination for a SMART Health Ca
 
 * insert id-should-not-be-populated()
 
-* patient only Reference(VaccinationCredentialPatient)
+* patient only Reference(shc-patient-general-ad)
 * patient MS
 * insert reference-to-absolute-uri(patient)
 
@@ -133,7 +133,7 @@ Description: "Defines a profile representing a vaccination for a SMART Health Ca
 // Support for IIS value set for OBX-5 (extensible)
 // * fundingSource from http://phinvads.cdc.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3287 (extensible)
 
-* reaction.detail only Reference(VaccinationCredentialVaccineReactionObservation)
+* reaction.detail only Reference(shc-vaccination-reaction-observation-ad)
 
 * isSubpotent MS
 * isSubpotent ^short = "Set to `true` if dose is subpotent; omit otherwise"
@@ -153,26 +153,9 @@ If `isSubpotent` was not allowed at all (`0..0` cardinality), the concern is tha
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Profile:     VaccinationCredentialImmunizationCVXCovid19
-Id:          vaccination-credential-immunization-cvx-covid-19
-Parent:      VaccinationCredentialImmunization
-Title:       "Immunization Profile - Allowable Data - COVID-19 with CVX"
-Description: "Recommended profile for implementers using CVX to identify COVID-19 vaccinations for a SMART Health Card."
-
-* manufacturer 0..0
-
-// The CVX slice is already required because no other slices are allowed. Adding the MS flag
-// improves the diff and MS snapshot views.
-* vaccineCode.coding[cvx] MS
-* vaccineCode.coding[gtin] 0..0
-* vaccineCode.coding[snomed] 0..0
-* vaccineCode.coding[icd11] 0..0
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
-Profile:     VaccinationCredentialImmunizationDM
-Id:          vaccination-credential-immunization-dm
-Parent:      VaccinationCredentialImmunization
+Profile:     SHCImmunizationDM
+Id:          shc-immunization-dm
+Parent:      shc-immunization-ad
 Title:       "Immunization Profile - Data Minimization"
 Description: "Defines a profile representing a vaccination for a SMART Health Card. Only elements necessary for Verifiers can be populated."
 
@@ -224,27 +207,10 @@ Description: "Defines a profile representing a vaccination for a SMART Health Ca
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Profile:     VaccinationCredentialImmunizationCVXCovid19DM
-Id:          vaccination-credential-immunization-cvx-covid-19-dm
-Parent:      VaccinationCredentialImmunizationDM
-Title:       "Immunization Profile - Data Minimization - COVID-19 with CVX"
-Description: "Recommended data minimization profile for implementers using CVX to identify COVID-19 vaccinations for a SMART Health Card."
-
-* manufacturer 0..0
-
-// The CVX slice is already required because no other slices are allowed. Adding the MS flag
-// improves the diff and MS snapshot views.
-* vaccineCode.coding[cvx] MS
-* vaccineCode.coding[gtin] 0..0
-* vaccineCode.coding[snomed] 0..0
-* vaccineCode.coding[icd11] 0..0
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
-Profile:        VaccinationCredentialVaccineReactionObservation
+Profile:        SHCVaccinationReactionObservationAD
 Parent:         Observation
-Id:             vaccination-credential-vaccine-reaction-observation
-Title:          "Vaccine Reaction Observation Profile - Allowable Data"
+Id:             shc-vaccination-reaction-observation-ad
+Title:          "Adverse Reaction to Vaccination Observation Profile - Allowable Data"
 Description:    "Profile for reporting a reaction to a vaccine.
 
 This profile may not be necessary depending on the use cases for this IG, but it's included for now because
@@ -255,13 +221,13 @@ we wanted to have value sets corresponding to all the value sets in the IIS core
 
 * code = SCT#293104008 "Vaccines adverse reaction (disorder)"
 
-* subject only Reference(VaccinationCredentialPatient)
+* subject only Reference(shc-patient-general-ad)
 * subject 1..1 MS
 * subject ^short = "Patient with reaction to vaccine"
-* subject ^definition = "Reference to a VaccinationCredentialPatient-conforming resource who had a reaction to the vaccine."
+* subject ^definition = "Reference to a SMART Health Card patient-conforming resource who had a reaction to the vaccine."
 
 // Not sure if this is the best element to use to refer to the immunization(s) attributed to the reaction
-* focus only Reference(VaccinationCredentialImmunization)
+* focus only Reference(shc-immunization-ad)
 * focus 1..* MS
 * focus ^short = "Immunization causing the reaction"
 * focus ^definition = "Reference to the VaccinationCredentialImmunization-conforming resource representing the vaccination(s) causing the reaction."
@@ -272,10 +238,10 @@ we wanted to have value sets corresponding to all the value sets in the IIS core
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Profile:        VaccinationCredentialVaccineReactionObservationDM
-Parent:         VaccinationCredentialVaccineReactionObservation
-Id:             vaccination-credential-vaccine-reaction-observation-dm
-Title:          "Vaccine Reaction Observation Profile - Data Minimization"
+Profile:        SHCVaccinationReactionObservationDM
+Parent:         shc-vaccination-reaction-observation-ad
+Id:             shc-vaccination-reaction-observation-dm
+Title:          "Adverse Reaction to Vaccination Observation Profile - Data Minimization"
 Description:    "Profile for reporting a reaction to a vaccine. Only elements necessary for Verifiers can be populated."
 
 * id 0..0

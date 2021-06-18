@@ -14,13 +14,17 @@ In this Implementation Guide, "support in some meaningful way" is defined as fol
 
     1. Issuers SHALL populate any elements marked as `MustSupport` **if and only if the necessary data are available in their system**. See [Missing data](#missing-data) below for details.
 
-    1. Issuers SHOULD NOT populate any elements that are not marked as `MustSupport` unless they believe the element contains valuable information for Verifiers. This is due to the payload size constraints of SMART Health Cards; see the [Data minimization](#data-minimization) section below for more details on how to reduce payload size when implementing. To avoid contradicting cardinality, all required elements (minimum cardinality > 0) are therefore also labeled as `MustSupport`.
+    1. Issuers SHOULD NOT populate any elements that are not marked as `MustSupport` unless they believe the element contains valuable information for Holders and/or Verifiers. This is due to the payload size constraints of SMART Health Cards; see the [Data minimization](#data-minimization) section below for more details on how to reduce payload size when implementing. To avoid contradicting cardinality, all required elements (minimum cardinality > 0) are therefore also labeled as `MustSupport`.
 
 - **Verifiers:**
 
     1. Verifiers SHALL read and meaningfully process elements marked BOTH as `MustSupport` and `Is-Modifier`. Note that `Is-Modifier` elements [by definition](https://www.hl7.org/fhir/conformance-rules.html#isModifier) **cannot be safely ignored** as they may change the meaning of the resource.
 
     1. For other elements flagged with `MustSupport`, Verifiers MAY process at their own discretion.
+
+### Required elements
+
+Elements with a minimum [cardinality](https://www.hl7.org/fhir/conformance-rules.html#cardinality) of 1 or greater are considered required.
 
 ### Missing data
 
@@ -62,6 +66,8 @@ Additionally:
 Bundles produced by Issuers SHALL validate against [VaccinationCredentialBundle] or [Covid19LaboratoryBundle]/[InfectiousDiseaseLaboratoryBundle] without errors, and SHOULD validate against [VaccinationCredentialBundleDM] or [Covid19LaboratoryBundleDM]/[InfectiousDiseaseLaboratoryBundleDM] without errors.
 
 ### Validation
+
+Resources may be assessed for conformance using one of [the tools listed under "Conformance testing" on this page](https://confluence.hl7.org/pages/viewpage.action?pageId=111122184#SMARTHealthCardsImplementationTools-Conformancetesting), or manually with the FHIR Validator (described below). Note that these tools do not check for `MustSupport` conformance as this depends on the particulars of the data available to the actor producing the resource. Implementers MUST manually check `MustSupport` conformance based on the criteria described above.
 
 <div class="alert alert-warning" role="alert" markdown="1">
 <p style="font-size: 2rem;"><strong>Note:</strong> FHIR Validator may generate warnings for valid resources</p>
