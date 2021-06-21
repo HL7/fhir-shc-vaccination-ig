@@ -44,25 +44,25 @@ Also added Novavax vaccine, although it is not yet approved as of Jun 9th, 2021.
 
 Blank means values are missing, and " " indicates same value for each row.
 
-| Vaccine           | GTIN            | CVX      | AIR      | SNOMED CT | ICD-11    | ATC/DDD  |
-| :---------------: | :-------------: | :------: | :------: | :-------: | :-------: | :------: |
-| Pfizer            |                 | 208      | COMIRN   | 840534001 |  XM0GQ8   | J07BX03  |
-| Moderna           | 30380777700688  | 207      |          |   "   "   |  XM0GQ8   |  "   "   |
-| AstraZeneca       |                 | 210      | COVAST   |   "   "   |  XM9QW8   |  "   "   |
-| Sputnik V         |                 | 213      |          |   "   "   |  XM9QW8   |  "   "   |
-| Sputnik Light     |                 | 213      |          |   "   "   |  XM9QW8   |  "   "   |
-| Janssen           | 00359676580157  | 212      |          |   "   "   |  XM9QW8   |  "   "   |
-| Sinovac           |                 | 213      |          |   "   "   |  XM1NL1   |  "   "   |
-| Beijing Sinopharm |                 | 213      |          |   "   "   |  XM1NL1   |  "   "   |
-| EpiVacCorona      |                 | 213      |          |   "   "   |  XM5JC5   |  "   "   |
-| CanSino           |                 | 213      |          |   "   "   |  XM9QW8   |  "   "   |
-| Covaxin Bharat    |                 | 213      |          |   "   "   |  XM1NL1   |  "   "   |
-| Wuhan Sinopharm   |                 | 213      |          |   "   "   |  XM1NL1   |  "   "   |
-| CoviVac Russia    |                 | 213      |          |   "   "   |  XM1NL1   |  "   "   |
-| ZF2001            |                 | 213      |          |   "   "   |  XM5JC5   |  "   "   |
-| QazVac            |                 | 213      |          |   "   "   |  XM1NL1   |  "   "   |
-| Minha             |                 | 213      |          |   "   "   |  XM1NL1   |  "   "   |
-| Novavax           |                 | 211      |          |   "   "   |  XM5JC5   |  "   "   |
+| Vaccine           | GTIN            | CVX      | AIR      | SNOMED CT  | ICD-11    | ATC/DDD  |
+| :---------------: | :-------------: | :------: | :------: | :-------:  | :-------: | :------: |
+| Pfizer            |                 | 208      | COMIRN   | 1119305005 |  XM0GQ8   | J07BX03  |
+| Moderna           | 30380777700688  | 207      |          |   "   "    |  XM0GQ8   |  "   "   |
+| AstraZeneca       |                 | 210      | COVAST   |   "   "    |  XM9QW8   |  "   "   |
+| Sputnik V         |                 | 213      |          |   "   "    |  XM9QW8   |  "   "   |
+| Sputnik Light     |                 | 213      |          |   "   "    |  XM9QW8   |  "   "   |
+| Janssen           | 00359676580157  | 212      |          |   "   "    |  XM9QW8   |  "   "   |
+| Sinovac           |                 | 213      |          |   "   "    |  XM1NL1   |  "   "   |
+| Beijing Sinopharm |                 | 213      |          |   "   "    |  XM1NL1   |  "   "   |
+| EpiVacCorona      |                 | 213      |          |   "   "    |  XM5JC5   |  "   "   |
+| CanSino           |                 | 213      |          |   "   "    |  XM9QW8   |  "   "   |
+| Covaxin Bharat    |                 | 213      |          |   "   "    |  XM1NL1   |  "   "   |
+| Wuhan Sinopharm   |                 | 213      |          |   "   "    |  XM1NL1   |  "   "   |
+| CoviVac Russia    |                 | 213      |          |   "   "    |  XM1NL1   |  "   "   |
+| ZF2001            |                 | 213      |          |   "   "    |  XM5JC5   |  "   "   |
+| QazVac            |                 | 213      |          |   "   "    |  XM1NL1   |  "   "   |
+| Minha             |                 | 213      |          |   "   "    |  XM1NL1   |  "   "   |
+| Novavax           |                 | 211      |          |   "   "    |  XM5JC5   |  "   "   |
 
 Pfizer NDC: 59267-1000-2
 
