@@ -58,7 +58,7 @@
 
 {% if page.path contains "-ad.html" %}
 <div class="alert alert-danger" role="alert" markdown="1">
-  **Note!** This is a fallback ["allowable data" profile](conformance.html#data-minimization). Implementers should validate against the ["data minimization" profile if possible]({{ page.path | replace: '-ad.html', '-dm.html' }}).
+  **Note!** This is a fallback ["allowable data" profile](profiles.html#data-minimization). Implementers should validate against the ["data minimization" profile if possible]({{ page.path | replace: '-ad.html', '-dm.html' }}).
 </div>
 {% endif %}
 

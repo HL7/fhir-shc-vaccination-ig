@@ -1,12 +1,3 @@
-<span class="label label-danger">NOTE</span> This implementation guide is under **active development** on [GitHub](https://github.com/dvci/vaccine-credential-ig/issues), and **may change without notice**. Please comment on or [create](https://github.com/dvci/vaccine-credential-ig/issues/new) an issue on GitHub if you have questions, comments, or suggestions. Contributions are welcome!
-
-<div class="alert alert-info" role="alert" markdown="1">
-<p style="font-size: 2rem;"><strong>Known issues</strong></p>
-
-* Validation with the FHIR Validator tool currently produces spurious errors for valid resources. [Details here](conformance.html#validation).
-
-</div>
-
 ### Scope
 
 This [FHIR Implementation Guide](https://www.hl7.org/fhir/implementationguide.html) (IG):
@@ -33,7 +24,7 @@ Issuers and Verifiers are considered "implementers" of this IG.
 
 Our primary focus is on the use case of representing the minimal set of clinical data necessary to represent COVID-19 vaccination status and laboratory testing for verification purposes in a SMART Health Card.
 
-Due to the size constraints of the SMART Health Card payload, a "data minimization" profile is provided to supplement each of the "allowable data" profiles. Please see the [Data minimization](conformance.html#data-minimization) section for details.
+Due to the size constraints of the SMART Health Card payload, a "data minimization" profile is provided to supplement each of the "allowable data" profiles. Please see the [Data minimization](profiles.html#data-minimization) section for details.
 
 #### Use case 1: vaccination credentials
 
@@ -89,19 +80,19 @@ The IG is currently focused on coordinating implementers' representations of rel
 
 1. More constrained profiles for risk evaluation can be created based on the profiles in this IG, but it's not possible to remove constraints in a child profile.
 
-1. Cardinality constraints are applied to specific data elements in [Allowable Data profiles](conformance.html#data-minimization) when their inclusion (1) is does not support our use case and could harm patients; or (2) is contrary to our [key design principles](https://vci.org/about#key-principles). For example, `Patient.identifier` is not allowed in resources conforming to [SHCPatientUnitedStatesDM] as this may include a MRN or SSN, which would introduce a significant privacy risk for patients.
+1. Cardinality constraints are applied to specific data elements in [Allowable Data profiles](profiles.html#data-minimization) when their inclusion (1) is does not support our use case and could harm patients; or (2) is contrary to our [key design principles](https://vci.org/about#key-principles). For example, `Patient.identifier` is not allowed in resources conforming to [SHCPatientUnitedStatesDM] as this may include a MRN or SSN, which would introduce a significant privacy risk for patients.
 
 ### Approach to terminology bindings
 
 Value set bindings for [`MustSupport` elements](conformance.html) are `required`, meaning that resources MUST use a code specified in the bound value set. This is to ensure implementers know which code systems can be expected to appear in a given element.
 
-In general, the value sets used in these `required` bindings are as broad as possible. For example, in the [VaccineProductCVX] value set, all codes from the [CVX code system](https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cvx) are included (as opposed to defining a value set with just COVID-related CVX codes, for example).
+In general, the value sets used in these `required` bindings are as broad as possible. For example, in the [VaccineCVX] value set, all codes from the [CVX code system](https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cvx) are included (as opposed to defining a value set with just COVID-related CVX codes, for example).
 
 In cases where disease-specific value sets exist, this IG may provide profiles with bindings to these restricted value sets (e.g., [SHCCovid19LaboratoryResultObservationDM]) to help implementers identify the preferred subset of codes for that disease. However, in these cases, this IG will also provide generic equivalents to these profiles with broad value sets (e.g., [SHCInfectiousDiseaseLaboratoryResultObservationDM]). Implementers MAY fall back to the generic version such profiles if the code they need is not part of the disease-specific value sets.
 
 ### Identity assurance
 
-The [SHCPatientGeneralDM] and [SHCCovid19LaboratoryBundleDM]/[SHCInfectiousDiseaseLaboratoryBundleDM] profiles include a mechanism for indicating level of identity assurance of the patient. This uses the [IdentityAssuranceLevel] value set in this format:
+The [SHCImmunizationDM] and [SHCCovid19LaboratoryResultObservationDM]/[SHCCovid19LaboratoryResultObservationDM] profiles include a mechanism for indicating level of identity assurance of the patient. This uses the [IdentityAssuranceLevel] value set in this format:
 
 ```json
 "meta": {
@@ -124,17 +115,10 @@ There is an [Excel data dictionary](data-dictionary/data_dictionary.xlsx) availa
 
 ### Contact information
 
-This FHIR Implementation Guide was developed as part of the [Vaccination Credential Initiative](https://vci.org). Please direct questions or comments to [vci-ig@mitre.org](mailto:vci-ig@mitre.org).
+This FHIR Implementation Guide was developed as part of the [Vaccination Credential Initiative](https://vci.org). Please direct questions or comments to the channels listed [here](contact.html).
 
 ----
 
 MITRE: Approved for Public Release. Distribution Unlimited. Case Number 21-0225
 
 {% include markdown-link-references.md %}
-
-<script>
-// Move Markdown TOC below alert box for cosmetics
-var ref = document.querySelector('div.alert');
-var el = document.querySelector('div.markdown-toc');
-ref.parentNode.insertBefore(el, ref.nextSibling);
-</script>

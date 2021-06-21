@@ -1,6 +1,7 @@
 [RFC 2119]: https://tools.ietf.org/html/rfc2119
-[SMART Health Card]: https://healthwallet.cards/
-[SMART Health Cards]: https://healthwallet.cards/
+[SMART Health Card]: https://smarthealth.cards/
+[SMART Health Cards]: https://smarthealth.cards/
+[SMART Health Cards Framework]: https://spec.smarthealth.cards/
 
 [SHCCovid19LaboratoryBundleDM]: StructureDefinition-shc-covid19-laboratory-bundle-dm.html
 [SHCCovid19LaboratoryBundleAD]: StructureDefinition-shc-covid19-laboratory-bundle-ad.html
