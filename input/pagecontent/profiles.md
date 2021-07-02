@@ -156,11 +156,11 @@ curl -L -O https://vci.org/ig/vaccination-and-testing/package.tgz
 # under "Defining URL" on any of the profile pages in this IG.
 java -jar path/to/validator_cli.jar -version 4.0.1 \
 -ig path/to/package.tgz \
--profile http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-immunization-dm \
+-profile http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-dm \
 path/to/immunization.json
 ```
 
-The command above would validate `path/to/immunization.json` against the [SHCImmunizationDM] profile. To validate against a different profile, change `shc-immunization-dm` to the [identifier](http://www.hl7.org/fhir/structuredefinition-definitions.html#StructureDefinition.identifier) of the profile you want to validate against. This can be found at the end of the canonical URL listed at the top of each profile's page in the IG.
+The command above would validate `path/to/immunization.json` against the [SHCVaccinationDM] profile. To validate against a different profile, change `shc-vaccination-dm` to the [identifier](http://www.hl7.org/fhir/structuredefinition-definitions.html#StructureDefinition.identifier) of the profile you want to validate against. This can be found at the end of the canonical URL listed at the top of each profile's page in the IG.
 
 Additional [testing and validation tools may be found here](https://confluence.hl7.org/display/PHWG/SMART+Health+Cards+Implementation+Tools).
 

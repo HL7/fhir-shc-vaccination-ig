@@ -70,7 +70,7 @@ Description: "The bundle of resources that represents the patient identification
 
 * entry[immunization] ^short = "Immunization"
 * entry[immunization] ^definition = "Immunization"
-* entry[immunization].resource only SHCImmunizationAD
+* entry[immunization].resource only SHCVaccinationAD
 
 * entry[vaccineReaction] ^short = "Vaccination reaction"
 * entry[vaccineReaction] ^definition = "Vaccination reaction"
@@ -99,7 +99,7 @@ Description: "The bundle of resources that represents the patient identification
 
 * entry[immunization] ^short = "Immunization"
 * entry[immunization] ^definition = "Immunization"
-* entry[immunization].resource only SHCImmunizationDM
+* entry[immunization].resource only SHCVaccinationDM
 
 * entry[vaccineReaction] ^short = "Vaccination reaction"
 * entry[vaccineReaction] ^definition = "Vaccination reaction"

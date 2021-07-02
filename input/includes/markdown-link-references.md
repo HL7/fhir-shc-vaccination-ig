@@ -7,8 +7,8 @@
 [SHCCovid19LaboratoryBundleAD]: StructureDefinition-shc-covid19-laboratory-bundle-ad.html
 [SHCCovid19LaboratoryResultObservationAD]: StructureDefinition-shc-covid19-laboratory-result-observation-ad.html
 [SHCCovid19LaboratoryResultObservationDM]: StructureDefinition-shc-covid19-laboratory-result-observation-dm.html
-[SHCImmunizationAD]: StructureDefinition-shc-immunization-ad.html
-[SHCImmunizationDM]: StructureDefinition-shc-immunization-dm.html
+[SHCVaccinationAD]: StructureDefinition-shc-vaccination-ad.html
+[SHCVaccinationDM]: StructureDefinition-shc-vaccination-dm.html
 [SHCInfectiousDiseaseLaboratoryBundleAD]: StructureDefinition-shc-infectious-disease-laboratory-bundle-ad.html
 [SHCInfectiousDiseaseLaboratoryBundleDM]: StructureDefinition-shc-infectious-disease-laboratory-bundle-dm.html
 [SHCInfectiousDiseaseLaboratoryResultObservationAD]: StructureDefinition-shc-infectious-disease-laboratory-result-observation-ad.html

@@ -32,14 +32,14 @@ Due to these size constraints and to preserve patient privacy, information that 
 **Scenario 1:** A patient receives two doses of the Moderna COVID-19 vaccine. The first dose was administered on January 1, 2021, and the second dose on January 29, 2021. Here is [an example of a FHIR Bundle representing this scenario](https://github.com/dvci/vaccine-credential-ig/blob/{{ site.data['git-branch'] }}/examples/Scenario1Bundle.json), which contains the following resources:
 
 * {% assign example = site.data.examples["StructureDefinition-vaccination-credential-patient.html"][0] %}[Patient resource: {{example.title}}]({{ example.url | replace: 'GIT_BRANCH_GOES_HERE', site.data['git-branch']}}) conforming to [SHCPatientUnitedStatesDM]
-* {% assign example = site.data.examples["StructureDefinition-vaccination-credential-immunization.html"][0] %}[Immunization resource: {{example.title}}]({{ example.url | replace: 'GIT_BRANCH_GOES_HERE', site.data['git-branch']}}) conforming to [SHCImmunizationDM]
-* {% assign example = site.data.examples["StructureDefinition-vaccination-credential-immunization.html"][1] %}[Immunization resource: {{example.title}}]({{ example.url | replace: 'GIT_BRANCH_GOES_HERE', site.data['git-branch']}}) conforming to [SHCImmunizationDM]
+* {% assign example = site.data.examples["StructureDefinition-vaccination-credential-immunization.html"][0] %}[Immunization resource: {{example.title}}]({{ example.url | replace: 'GIT_BRANCH_GOES_HERE', site.data['git-branch']}}) conforming to [SHCVaccinationDM]
+* {% assign example = site.data.examples["StructureDefinition-vaccination-credential-immunization.html"][1] %}[Immunization resource: {{example.title}}]({{ example.url | replace: 'GIT_BRANCH_GOES_HERE', site.data['git-branch']}}) conforming to [SHCVaccinationDM]
 
 **Scenario 2:** A patient receives two doses of the Pfizer-BioNTech COVID-19 vaccine. The first dose was administered on January 1, 2021, and the second dose on January 29, 2021. Here is [an example of a FHIR Bundle representing this scenario](https://github.com/dvci/vaccine-credential-ig/blob/{{ site.data['git-branch'] }}/examples/Scenario2Bundle.json), which contains the following resources:
 
 * {% assign example = site.data.examples["StructureDefinition-vaccination-credential-patient.html"][1] %}[Patient resource: {{example.title}}]({{ example.url | replace: 'GIT_BRANCH_GOES_HERE', site.data['git-branch']}}) conforming to [SHCPatientUnitedStatesDM]
-* {% assign example = site.data.examples["StructureDefinition-vaccination-credential-immunization.html"][2] %}[Immunization resource: {{example.title}}]({{ example.url | replace: 'GIT_BRANCH_GOES_HERE', site.data['git-branch']}}) conforming to [SHCImmunizationDM]
-* {% assign example = site.data.examples["StructureDefinition-vaccination-credential-immunization.html"][3] %}[Immunization resource: {{example.title}}]({{ example.url | replace: 'GIT_BRANCH_GOES_HERE', site.data['git-branch']}}) conforming to [SHCImmunizationDM]
+* {% assign example = site.data.examples["StructureDefinition-vaccination-credential-immunization.html"][2] %}[Immunization resource: {{example.title}}]({{ example.url | replace: 'GIT_BRANCH_GOES_HERE', site.data['git-branch']}}) conforming to [SHCVaccinationDM]
+* {% assign example = site.data.examples["StructureDefinition-vaccination-credential-immunization.html"][3] %}[Immunization resource: {{example.title}}]({{ example.url | replace: 'GIT_BRANCH_GOES_HERE', site.data['git-branch']}}) conforming to [SHCVaccinationDM]
 
 The example Bundle resources for both scenarios above conform to [SHCVaccinationBundleDM].
 
@@ -60,7 +60,7 @@ The IG is currently focused on coordinating implementers' representations of rel
 
 1. Risk evaluation algorithms are likely to evolve faster than IG constraints can be updated.
 
-    For example, constraining the [SHCImmunizationDM] profile to require specific `vaccineCode` values (e.g., only `CVX#207` and `CVX#208` for the current Moderna and Pfizer-BioNTech vaccines) could pose a problem if a new vaccine receives emergency authorization: recipients of the new vaccination would have non-conforming Immunization resources due to the constraints on `vaccineCode` until the IG could be updated and published.
+    For example, constraining the [SHCVaccinationDM] profile to require specific `vaccineCode` values (e.g., only `CVX#207` and `CVX#208` for the current Moderna and Pfizer-BioNTech vaccines) could pose a problem if a new vaccine receives emergency authorization: recipients of the new vaccination would have non-conforming Immunization resources due to the constraints on `vaccineCode` until the IG could be updated and published.
 
 1. Risk evaluation algorithms may be actor- or context-dependent.
 
@@ -82,7 +82,7 @@ In cases where disease-specific value sets exist, this IG may provide profiles w
 
 ### Identity assurance
 
-The [SHCImmunizationDM] and [SHCCovid19LaboratoryResultObservationDM]/[SHCCovid19LaboratoryResultObservationDM] profiles include a mechanism for indicating level of identity assurance of the patient. This uses the [IdentityAssuranceLevel] value set in this format:
+The [SHCVaccinationDM] and [SHCCovid19LaboratoryResultObservationDM]/[SHCCovid19LaboratoryResultObservationDM] profiles include a mechanism for indicating level of identity assurance of the patient. This uses the [IdentityAssuranceLevel] value set in this format:
 
 ```json
 "meta": {

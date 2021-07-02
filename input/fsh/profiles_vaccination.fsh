@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Profile:     SHCImmunizationAD
-Id:          shc-immunization-ad
+Profile:     SHCVaccinationAD
+Id:          shc-vaccination-ad
 Parent:      Immunization
 Title:       "Immunization Profile - Allowable Data"
 Description: "Defines a profile representing a vaccination for a SMART Health Card."
@@ -153,9 +153,9 @@ If `isSubpotent` was not allowed at all (`0..0` cardinality), the concern is tha
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Profile:     SHCImmunizationDM
-Id:          shc-immunization-dm
-Parent:      shc-immunization-ad
+Profile:     SHCVaccinationDM
+Id:          shc-vaccination-dm
+Parent:      shc-vaccination-ad
 Title:       "Immunization Profile - Data Minimization"
 Description: "Defines a profile representing a vaccination for a SMART Health Card. Only elements necessary for Verifiers can be populated."
 
@@ -227,7 +227,7 @@ we wanted to have value sets corresponding to all the value sets in the IIS core
 * subject ^definition = "Reference to a SMART Health Card patient-conforming resource who had a reaction to the vaccine."
 
 // Not sure if this is the best element to use to refer to the immunization(s) attributed to the reaction
-* focus only Reference(shc-immunization-ad)
+* focus only Reference(shc-vaccination-ad)
 * focus 1..* MS
 * focus ^short = "Immunization causing the reaction"
 * focus ^definition = "Reference to the VaccinationCredentialImmunization-conforming resource representing the vaccination(s) causing the reaction."
