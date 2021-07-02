@@ -16,15 +16,15 @@
       }
     ]
   },
-  "immunization": {
-    "name": "Immunization",
-    "description": "For representing an immunization for an infectious disease such as COVID-19 or influenza.",
-    "instructions": "immunization.html",
+  "vaccination": {
+    "name": "Vaccination",
+    "description": "For representing a vaccination for an infectious disease such as COVID-19 or influenza.",
+    "instructions": "vaccination.html",
     "profileSets": [
       {
-        "name": "Immunization",
+        "name": "Vaccination",
         "scope": "Any infectious disease",
-        "slug": "shc-immunization"
+        "slug": "shc-vaccination"
       }
     ]
   },

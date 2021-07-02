@@ -64,10 +64,10 @@
 
 {% include markdown-link-references.md %}
 
-{% if page.path contains "ignore-ad.html" %}
+{% if page.path contains "-ad.html" %}
 {% include examples-tab.md %}
 {% endif %}
 
-{% if page.path contains "ignore-dm.html" %}
+{% if page.path contains "-dm.html" %}
 {% include examples-tab.md %}
 {% endif %}

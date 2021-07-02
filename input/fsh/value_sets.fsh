@@ -147,7 +147,7 @@ Description: "This value set includes SNOMED CT codes for identifying laboratory
 // included directly within LabResultFindings, the following error occurs:
 //
 //     ERROR: ValueSet.where(id = 'lab-result-findings'): Error from server: Unable to find
-//     value set "http://hl7.org/fhir/uv/smarthealthcards-vaccination/ValueSet/qualitative-lab-results-loinc"
+//     value set "http://hl7.org/fhir/uv/shc-vaccination/ValueSet/qualitative-lab-results-loinc"
 
 // Include all clinical finding codes
 * include codes from system SCT where concept is-a #404684003 // Clinical finding (finding)
