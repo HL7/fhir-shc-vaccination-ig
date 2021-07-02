@@ -2,8 +2,8 @@
 # │  The properties below are used to create the ImplementationGuide resource. For a list of       │
 # │  supported properties, see: https://fshschool.org/sushi/configuration/                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: hl7.fhir.uv.smarthealthcards-vaccination
-canonical: http://hl7.org/fhir/uv/smarthealthcards-vaccination
+id: hl7.fhir.uv.shc-vaccination
+canonical: http://hl7.org/fhir/uv/shc-vaccination
 name: SMARTHealthCardsVaccinationAndTestingIG
 title: "SMART Health Cards: Vaccination &amp; Testing Implementation Guide"
 status: draft
@@ -11,7 +11,7 @@ publisher:
   name: vci.org
   url: https://vci.org
   email: vci-ig@mitre.org
-version: 0.5.0-rc
+version: 0.6.0-pre-ballot-stable
 fhirVersion: 4.0.1
 dependencies:
   us.cdc.phinvads:
@@ -20,7 +20,7 @@ dependencies:
   us.nlm.vsac:
     uri: http://fhir.org/packages/us.nlm.vsac
     version: 0.4.0
-copyrightYear: 2020+
+copyrightYear: 2021
 license: Apache-2.0
 releaseLabel: ci-build
 jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#001

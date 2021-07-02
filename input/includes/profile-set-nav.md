@@ -1,7 +1,7 @@
 {% assign r = site.data.profiles[include.resourceName]  %}
 <div class="well profile-set-nav" style="background-color: #fff; margin-top: 2em; width: 100%;">
     <div style="font-size: 1.2em; margin-top: -1.7em;">
-      <span style="background-color: #fff; padding-left: 0.5em; padding-right: 0.5em;"><strong>{{ r.name }}:</strong> Related Profiles & Information</span>
+      <span style="background-color: #fff; padding-left: 0.5em; padding-right: 0.5em;"><strong>{{ r.name }}:</strong> Profile Group Navigation</span>
     </div>
     <div style="margin-top: 1em;">
       <p>{{ r.description }} The current page is <span class="active-page-example">highlighted</span> below.</p>

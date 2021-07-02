@@ -69,7 +69,7 @@
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle.json"
         }
     ],
-        "StructureDefinition-covid19-laboratory-result-observation.html": [
+    "StructureDefinition-covid19-laboratory-result-observation.html": [
         {
             "title": "COVID-19 test results example",
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle.json#L24-L53"
@@ -78,11 +78,15 @@
     "StructureDefinition-vaccination-credential-patient.html": [
         {
             "title": "John B. Anyperson example",
-            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario1Bundle.json#L9-L19"
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario1Bundle.json#L8-L18"
         },
         {
             "title": "Jane C. Anyperson example",
-            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario2Bundle.json#L9-L19"
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario2Bundle.json#L8-L18"
+        },
+        {
+            "title": "James T. Anyperson example ",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle.json#L8-L18"
         }
     ]
 }

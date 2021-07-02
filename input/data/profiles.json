@@ -31,6 +31,7 @@
   "laboratory-results-observation": {
     "name": "Laboratory results observation",
     "description": "For representing laboratory test results related to infection with or immunity to an infectious disease.",
+    "instructions": "laboratory-results-observation.html",
     "profileSets": [
       {
         "name": "Lab results - COVID-19",
