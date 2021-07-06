@@ -1,0 +1,30 @@
+{
+  "resourceType": "Observation",
+  "meta": {
+    "security": [{"system": "https://smarthealth.cards/ial", "code": "IAL2"}]
+  },
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "94311-8"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "resource:0"
+  },
+  "effectiveDateTime": "2021-02-17",
+  "valueString": "Positive",
+  "referenceRange": [
+    {
+      "text": "Negative"
+    }
+  ],
+  "performer": [
+    {
+      "display": "ABC General Hospital"
+    }
+  ]
+}

@@ -21,12 +21,12 @@ Implementers SHALL use one of the following code systems for identifying vaccina
 {:.table-striped.table.table-bordered}
 | Code system                                    | Value set                                  | Example                                                                                    | COVID-19: Specify manufacturer?  |
 | ---------------------------------------------- | ------------------------------------------ | ------------------------------------------------------------------------------------------ | -------------------------------- |
-| GTIN: `https://www.gs1.org/gtin`               | [VaccineProductGTIN]                       | `380777273990` ([Moderna COVID-19 vaccination], NDC `80777-273`)                           | No                               |
-| CVX: `http://hl7.org/fhir/sid/cvx`             | [VaccineProductCVX]                        | `207` ("COVID-19, mRNA, LNP-S, PF, 100 mcg/0.5 mL dose")                                   | No (optional for other diseases) |
+| GTIN: `https://www.gs1.org/gtin`               | [VaccineGTIN]                       | `380777273990` ([Moderna COVID-19 vaccination], NDC `80777-273`)                           | No                               |
+| CVX: `http://hl7.org/fhir/sid/cvx`             | [VaccineCVX]                        | `207` ("COVID-19, mRNA, LNP-S, PF, 100 mcg/0.5 mL dose")                                   | No (optional for other diseases) |
 | AIR\*                                          | [Australian Immunisation Register Vaccine] | `COVAST` ("COVID-19 Vaccine AstraZeneca")                                                  | No                               |
-| SNOMED CT: `http://snomed.info/sct`            | [VaccineTypeSNOMED]                        | `1119349007` ("Severe acute respiratory syndrome coronavirus 2 mRNA only vaccine product") | Yes (required)&dagger;           |
-| ICD-11: `http://id.who.int/icd11/mms`          | [VaccineTargetICD11]                       | `XM0GQ8` ("COVID-19 vaccine, RNA based)                                                    | Yes (required)                   |
-| ATC/DDD: `https://www.whocc.no/atc_ddd_index/` | [VaccineTargetATC]                         | `J07BX03` ("covid-19 vaccines")                                                            | Yes (required)                   |
+| SNOMED CT: `http://snomed.info/sct`            | [VaccineSNOMED]                        | `1119349007` ("Severe acute respiratory syndrome coronavirus 2 mRNA only vaccine product") | Yes (required)&dagger;           |
+| ICD-11: `http://id.who.int/icd11/mms`          | [VaccineICD11]                       | `XM0GQ8` ("COVID-19 vaccine, RNA based)                                                    | Yes (required)                   |
+| ATC/DDD: `https://www.whocc.no/atc_ddd_index/` | [VaccineATC]                         | `J07BX03` ("covid-19 vaccines")                                                            | Yes (required)                   |
 
 \* The URI for AIR is `https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats`.
 

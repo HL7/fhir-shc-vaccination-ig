@@ -45,11 +45,11 @@
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Value Sets<b class="caret"></b></a>
     <ul class="dropdown-menu">
-      <li><a href="ValueSet-vaccine-product-gtin.html">Vaccine: GTIN</a>
-      <li><a href="ValueSet-vaccine-product-cvx.html">Vaccine: CVX</a>
-      <li><a href="ValueSet-vaccine-type-snomed.html">Vaccine: SNOMED-CT</a>
-      <li><a href="ValueSet-vaccine-target-icd-11.html">Vaccine: ICD-11</a>
-      <li><a href="ValueSet-vaccine-target-atc.html">Vaccine: ATC</a>
+      <li><a href="ValueSet-vaccine-gtin.html">Vaccine: GTIN</a>
+      <li><a href="ValueSet-vaccine-cvx.html">Vaccine: CVX</a>
+      <li><a href="ValueSet-vaccine-snomed.html">Vaccine: SNOMED-CT</a>
+      <li><a href="ValueSet-vaccine-icd-11.html">Vaccine: ICD-11</a>
+      <li><a href="ValueSet-vaccine-atc.html">Vaccine: ATC</a>
 
       <li role="separator" class="divider"></li>
 

@@ -26,3 +26,6 @@ releaseLabel: ci-build
 jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#001
 parameters:
   "liquid-path": "liquid"
+  "active-tables": true
+  "excludettl": true
+  "excludexml": true

@@ -15,7 +15,7 @@ Severity: #error
 
 Invariant:   vc-shall-not-be-a-covid-loinc
 Description: "This profile SHALL NOT be used to report results from COVID lab tests (https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1114.9/expansion). Use Covid19LaboratoryResultObservation instead."
-Expression:  "$this.memberOf('http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1114.9').not()"
+Expression:  "$this.coding.memberOf('http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113762.1.4.1114.9').not()"
 Severity:    #error
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -112,9 +112,9 @@ Severity: #error
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Invariant:   vc-observation-range-only-quantity
-Description: "Reference range SHOULD only be included for quantitative lab results"
-Expression:  "$this.exists() and %resource.value.ofType(Quantity).exists()"
+Invariant:   vc-observation-range-only-quantity-or-string
+Description: "Reference range SHOULD be included for quantitative lab results, MAY be included for free text (string) results, and SHOULD NOT be included otherwise"
+Expression:  "$this.exists() and (%resource.value.ofType(Quantity).exists() or %resource.value.ofType(String).exists())"
 Severity:    #warning
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
