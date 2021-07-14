@@ -15,13 +15,22 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Set up Ruby
+      - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.7
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-      - name: Run Ruby
+      - name: Run Ruby generate-examples
         run: |
           cd examples
           gem install health_cards
           ruby generate-examples.rb
+      - name: Commit examples
+        run: |
+          # setup the username and email
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+          # Stage the file, commit and push
+          git add examples/
+          git commit -m "generated examples"
+          git push          
