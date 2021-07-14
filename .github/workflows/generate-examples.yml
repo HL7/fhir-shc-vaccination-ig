@@ -1,0 +1,27 @@
+name: Generate examples
+
+on:
+  push:
+    branches:
+        - '**'
+  pull_request:
+    branches:
+        - '**'
+
+jobs:
+  test:
+    name: Generate examples
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+      - name: Run Ruby
+        run: |
+          cd examples
+          gem install health_cards
+          ruby generate-examples.rb
