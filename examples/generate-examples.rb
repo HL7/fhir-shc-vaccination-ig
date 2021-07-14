@@ -17,14 +17,16 @@ require 'open-uri'
      else
         outputPrefix = File.basename(filename, File.extname(filename))
         jws = @issuer.issue_jws(bundle, type: HealthCards::COVIDHealthCard)
-        payload_minified = HealthCards::HealthCard.decompress_payload(jws.payload)
+        payload = HealthCards::HealthCard.decompress_payload(jws.payload)
         smarthealthcard = HealthCards::Exporter.download([jws])
         qr_codes = HealthCards::Exporter.qr_codes(jws)
-        File.write("#{outputPrefix}-jws-payload-minified.json", payload_minified.to_json)
+        File.write("#{outputPrefix}-jws-payload-minified.json", payload.to_json)
+        File.write("#{outputPrefix}-jws-payload-expanded.json", JSON.pretty_generate(payload))
         File.write("#{outputPrefix}-jws.txt", jws)
         File.write("#{outputPrefix}-file.smart-health-card", smarthealthcard)
-        qr_codes.chunks.map.with_index { |ch, idx| 
-            File.write("#{outputPrefix}-qr-code-numeric-value-#{idx}.txt", ch.qrcode.data)
+        qr_codes.chunks.map.with_index { |chunk, idx| 
+            File.write("#{outputPrefix}-qr-code-numeric-value-#{idx}.txt", chunk.qrcode.data)
+            File.write("#{outputPrefix}-qr-code-#{idx}.png", chunk.image)
         }
      end
   end
