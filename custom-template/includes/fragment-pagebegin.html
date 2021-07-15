@@ -31,8 +31,8 @@
             if(hash == "#tab-snapshot") sessionStorage.setItem('fhir-resource-tab-index', 2);
             if(hash == "#tab-ms") sessionStorage.setItem('fhir-resource-tab-index', 3);
 
-            // Default to diff tab
-            if(!sessionStorage.getItem('fhir-resource-tab-index')) sessionStorage.setItem('fhir-resource-tab-index', 1);
+            // Default to snapshot tab
+            if(!sessionStorage.getItem('fhir-resource-tab-index')) sessionStorage.setItem('fhir-resource-tab-index', 2);
         } catch(e) { }
 
         // Make it so that clicking the tabs also sets the anchor in the url

@@ -2,7 +2,7 @@
 
 # Suppress errors related to relative links that the Publisher is turning into the wrong absolute links
 # Reported as https://github.com/HL7/fhir-ig-publisher/issues/245
-The link 'http://hl7.org/fhir/R4/conformance.html#data-minimization' for "data minimization reasons" cannot be resolved
+The link 'http://hl7.org/fhir/R4/profiles.html#data-minimization' for "data minimization reasons" cannot be resolved
 The link 'http://hl7.org/fhir/R4/conformance.html' for "conformance requirements" cannot be resolved
 
 # We are purposefully leaving out descriptions for data minimization

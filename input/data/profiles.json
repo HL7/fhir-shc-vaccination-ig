@@ -1,0 +1,80 @@
+{
+  "patient": {
+    "name": "Patient",
+    "description": "For representing the minimal information needed to identify a patient in a SMART Health Card.",
+    "instructions": "patient.html",
+    "profileSets": [
+      {
+        "name": "Patient - General",
+        "scope": "For general use where no geographic-specific profile exists",
+        "slug": "shc-patient-general"
+      },
+      {
+        "name": "Patient - United States",
+        "scope": "United States only",
+        "slug": "shc-patient-us"
+      }
+    ]
+  },
+  "vaccination": {
+    "name": "Vaccination",
+    "description": "For representing a vaccination for an infectious disease such as COVID-19 or influenza.",
+    "instructions": "vaccination.html",
+    "profileSets": [
+      {
+        "name": "Vaccination",
+        "scope": "Any infectious disease",
+        "slug": "shc-vaccination"
+      }
+    ]
+  },
+  "laboratory-results-observation": {
+    "name": "Laboratory results observation",
+    "description": "For representing laboratory test results related to infection with or immunity to an infectious disease.",
+    "instructions": "laboratory-results-observation.html",
+    "profileSets": [
+      {
+        "name": "Lab results - COVID-19",
+        "scope": "COVID-19 only",
+        "slug": "shc-covid19-laboratory-result-observation"
+      },
+      {
+        "name": "Lab results - Generic",
+        "scope": "Other infectious diseases",
+        "slug": "shc-infectious-disease-laboratory-result-observation"
+      }
+    ]
+  },
+  "bundles": {
+    "name": "Bundles",
+    "description": "Defines the contents of the `fhirBundle` element in a SMART Health Card for a given use case.",
+    "profileSets": [
+      {
+        "name": "Immunization Bundle",
+        "scope": "Immunization for any infectious disease",
+        "slug": "shc-vaccination-bundle"
+      },
+      {
+        "name": "COVID-19 Labs Bundle",
+        "scope": "Lab results for COVID-19 only",
+        "slug": "shc-covid19-laboratory-bundle"
+      },
+      {
+        "name": "Generic Labs Bundle",
+        "scope": "Lab results for any infections disease",
+        "slug": "shc-infectious-disease-laboratory-bundle"
+      }
+    ]
+  },
+  "experimental": {
+    "name": "Experimental",
+    "description": "Profiles that are considered experimental and may change without notice.",
+    "profileSets": [
+      {
+        "name": "Experimental: Vaccination Reaction",
+        "scope": "Any infectious disease",
+        "slug": "shc-vaccination-reaction-observation"
+      }
+    ]
+  }
+}

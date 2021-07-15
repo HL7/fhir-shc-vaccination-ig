@@ -50,11 +50,11 @@ RuleSet: common-bundle-dm-rules
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Profile: VaccinationCredentialBundle
+Profile: SHCVaccinationBundleAD
 Parent: Bundle
-Id: vaccination-credential-bundle
-Title: "Vaccination Credential Bundle - Allowable Data"
-Description: "The bundle of resources that represents the clinical content of a digital vaccination record."
+Id: shc-vaccination-bundle-ad
+Title: "Vaccination Bundle - Allowable Data"
+Description: "The bundle of resources that represents the patient identification and clinical content of a SMART Health Card for vaccinations."
 
 * insert common-bundle-rules
 
@@ -66,23 +66,23 @@ Description: "The bundle of resources that represents the clinical content of a 
 
 * entry[patient] ^short = "Patient"
 * entry[patient] ^definition = "The patient who is the subject of the Bundle"
-* entry[patient].resource only VaccinationCredentialPatient
+* entry[patient].resource only shc-patient-general-ad
 
 * entry[immunization] ^short = "Immunization"
 * entry[immunization] ^definition = "Immunization"
-* entry[immunization].resource only VaccinationCredentialImmunization
+* entry[immunization].resource only SHCVaccinationAD
 
 * entry[vaccineReaction] ^short = "Vaccination reaction"
 * entry[vaccineReaction] ^definition = "Vaccination reaction"
-* entry[vaccineReaction].resource only VaccinationCredentialVaccineReactionObservation
+* entry[vaccineReaction].resource only SHCVaccinationReactionObservationAD
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Profile: VaccinationCredentialBundleDM
+Profile: SHCVaccinationBundleDM
 Parent: Bundle
-Id: vaccination-credential-bundle-dm
-Title: "Vaccination Credential Bundle - Data Minimization"
-Description: "The bundle of resources that represents the clinical content of a digital vaccination record using data minimization profiles."
+Id: shc-vaccination-bundle-dm
+Title: "Vaccination Bundle - Data Minimization"
+Description: "The bundle of resources that represents the patient identification and clinical content of a SMART Health Card for vaccinations."
 
 * insert common-bundle-rules
 * insert common-bundle-dm-rules
@@ -95,23 +95,23 @@ Description: "The bundle of resources that represents the clinical content of a 
 
 * entry[patient] ^short = "Patient"
 * entry[patient] ^definition = "The patient who is the subject of the Bundle"
-* entry[patient].resource only VaccinationCredentialPatientDM
+* entry[patient].resource only shc-patient-general-dm
 
 * entry[immunization] ^short = "Immunization"
 * entry[immunization] ^definition = "Immunization"
-* entry[immunization].resource only VaccinationCredentialImmunizationDM
+* entry[immunization].resource only SHCVaccinationDM
 
 * entry[vaccineReaction] ^short = "Vaccination reaction"
 * entry[vaccineReaction] ^definition = "Vaccination reaction"
-* entry[vaccineReaction].resource only VaccinationCredentialVaccineReactionObservationDM
+* entry[vaccineReaction].resource only SHCVaccinationReactionObservationDM
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Profile: Covid19LaboratoryBundle
+Profile: SHCCovid19LaboratoryBundleAD
 Parent: Bundle
-Id: covid19-laboratory-bundle
-Title: "COVID-19-specific Laboratory Bundle - Allowable Data"
-Description: "The bundle of resources that represents the clinical content of a digital lab credential record specifically for COVID-19."
+Id: shc-covid19-laboratory-bundle-ad
+Title: "COVID-19-specific Laboratory Test Results Bundle - Allowable Data"
+Description: "The bundle of resources that represents the patient identification and clinical content of a SMART Health Card with lab results, specifically for COVID-19."
 
 * insert common-bundle-rules
 
@@ -122,20 +122,20 @@ Description: "The bundle of resources that represents the clinical content of a 
 
 * entry[patient] ^short = "Patient"
 * entry[patient] ^definition = "The patient who is the subject of the Bundle"
-* entry[patient].resource only VaccinationCredentialPatient
+* entry[patient].resource only shc-patient-general-ad
 
 * entry[labResult] ^short = "Laboratory result"
 * entry[labResult] ^definition = "Laboratory result"
-* entry[labResult].resource only Covid19LaboratoryResultObservation
+* entry[labResult].resource only SHCCovid19LaboratoryResultObservationAD
 * entry[labResult] obeys vc-bundle-lab-status-complete
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Profile: InfectiousDiseaseLaboratoryBundle
+Profile: SHCInfectiousDiseaseLaboratoryBundleAD
 Parent: Bundle
-Id: infectious-disease-laboratory-bundle
-Title: "Infectious Disease (Generic) Laboratory Bundle - Allowable Data"
-Description: "The bundle of resources that represents the clinical content of a digital lab credential record for a generic infectious disease."
+Id: shc-infectious-disease-laboratory-bundle-ad
+Title: "Infectious Disease (Generic) Laboratory Test Results Bundle - Allowable Data"
+Description: "The bundle of resources that represents the patient identification and clinical content of a SMART Health Card with lab results."
 
 * insert common-bundle-rules
 
@@ -146,20 +146,20 @@ Description: "The bundle of resources that represents the clinical content of a 
 
 * entry[patient] ^short = "Patient"
 * entry[patient] ^definition = "The patient who is the subject of the Bundle"
-* entry[patient].resource only VaccinationCredentialPatient
+* entry[patient].resource only shc-patient-general-ad
 
 * entry[labResult] ^short = "Laboratory result"
 * entry[labResult] ^definition = "Laboratory result"
-* entry[labResult].resource only InfectiousDiseaseLaboratoryResultObservation
+* entry[labResult].resource only SHCInfectiousDiseaseLaboratoryResultObservationAD
 * entry[labResult] obeys vc-bundle-lab-status-complete
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Profile: InfectiousDiseaseLaboratoryBundleDM
+Profile: SHCInfectiousDiseaseLaboratoryBundleDM
 Parent: Bundle
-Id: infectious-disease-laboratory-bundle-dm
-Title: "Infectious Disease (Generic) Laboratory Bundle - Data Minimization"
-Description: "The bundle of resources that represents the clinical content of a digital lab credential record for a generic infectious disease for data minimization."
+Id: shc-infectious-disease-laboratory-bundle-dm
+Title: "Infectious Disease (Generic) Laboratory Test Results Bundle - Data Minimization"
+Description: "The bundle of resources that represents the patient identification and clinical content of a SMART Health Card with lab results."
 
 * insert common-bundle-rules
 * insert common-bundle-dm-rules
@@ -171,19 +171,19 @@ Description: "The bundle of resources that represents the clinical content of a 
 
 * entry[patient] ^short = "Patient"
 * entry[patient] ^definition = "The patient who is the subject of the Bundle"
-* entry[patient].resource only VaccinationCredentialPatient
+* entry[patient].resource only shc-patient-general-dm
 
 * entry[labResult] ^short = "Laboratory result"
 * entry[labResult] ^definition = "Laboratory result"
-* entry[labResult].resource only InfectiousDiseaseLaboratoryResultObservationDM
+* entry[labResult].resource only SHCInfectiousDiseaseLaboratoryResultObservationDM
 * entry[labResult] obeys vc-bundle-lab-status-complete
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Profile: Covid19LaboratoryBundleDM
+Profile: SHCCovid19LaboratoryBundleDM
 Parent: Bundle
-Id: covid19-laboratory-bundle-dm
-Title: "COVID-19-specific Laboratory Bundle - Data Minimization"
+Id: shc-covid19-laboratory-bundle-dm
+Title: "COVID-19-specific Laboratory Test Results Bundle - Data Minimization"
 Description: "The bundle of resources that represents the clinical content of a digital lab credential record specifically for COVID-19 data minimization."
 
 * insert common-bundle-rules
@@ -196,11 +196,11 @@ Description: "The bundle of resources that represents the clinical content of a 
 
 * entry[patient] ^short = "Patient"
 * entry[patient] ^definition = "The patient who is the subject of the Bundle"
-* entry[patient].resource only VaccinationCredentialPatientDM
+* entry[patient].resource only shc-patient-general-dm
 
 * entry[labResult] ^short = "Laboratory result"
 * entry[labResult] ^definition = "Laboratory result"
-* entry[labResult].resource only Covid19LaboratoryResultObservationDM
+* entry[labResult].resource only SHCCovid19LaboratoryResultObservationDM
 * entry[labResult] obeys vc-bundle-lab-status-complete
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////

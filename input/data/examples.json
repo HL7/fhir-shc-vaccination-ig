@@ -1,83 +1,63 @@
 {
-    "StructureDefinition-vaccination-credential-immunization.html": [
+    "StructureDefinition-shc-vaccination.html": [
         {
-            "title": "Immunization example with Moderna reported by CVX",
+            "title": "Vaccination example with Moderna reported by CVX, dose 1",
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario1Bundle.json#L24-L48"
         },
         {
-            "title": "Immunization example with Pfizer reported by CVX",
+            "title": "Vaccination example with Pfizer reported by CVX, dose 1",
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario2Bundle.json#L24-L48"
         },
         {
-            "title": "Immunization example with AstraZeneca reported by AIR",
+            "title": "Vaccination example with AstraZeneca reported by AIR",
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/byCodeSystem/air_immunization.json#L24-L48"
         },
         {
-            "title": "Immunization example with Janssen reported by ATC (with manufacturer in MVX)",
+            "title": "Vaccination example with Janssen reported by ATC (with manufacturer in MVX)",
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/byCodeSystem/atc_immunization.json#L24-L54"
         },
         {
-            "title": "Immunization example with Janssen reported by ATC and GTIN",
+            "title": "Vaccination example with Janssen reported by ATC and GTIN",
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/byCodeSystem/atc_gtin_immunization.json#L24-L52"
         },
         {
-            "title": "Immunization example with an unspecified vaccine (presumably but not necessarily from a foreign country) reported by CVX",
+            "title": "Vaccination example with an unspecified vaccine (presumably but not necessarily from a foreign country) reported by CVX",
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/byCodeSystem/cvx_immunization.json#L24-L48"
         },
         {
-            "title": "Immunization example with Moderna reported by GTIN",
+            "title": "Vaccination example with Moderna reported by GTIN, dose 1",
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/byCodeSystem/gtin_immunization.json#L21-L45"
         },
         {
-            "title": "Immunization example with Pfizer reported by ICD-11 and manufacturer in MVX",
+            "title": "Vaccination example with Pfizer reported by ICD-11 and manufacturer in MVX, dose 1",
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/byCodeSystem/icd11_immunization.json#L24-L54"
         },
         {
-            "title": "Immunization example with Moderna reported by ICD-11 and GTIN",
+            "title": "Vaccination example with Moderna reported by ICD-11 and GTIN, dose 1",
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/byCodeSystem/icd11_gtin_immunization.json#L24-L52"
         },
         {
-            "title": "Immunization example with Pfizer reported by SNOMED and manufacturer in GLN",
+            "title": "Vaccination example with Pfizer reported by SNOMED and manufacturer in GLN, dose 1",
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/byCodeSystem/snomed_immunization.json#L24-54"
         },
         {
-            "title": "Immunization example with Moderna reported by SNOMED and GTIN",
+            "title": "Vaccination example with Moderna reported by SNOMED and GTIN, dose 1",
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/byCodeSystem/snomed_gtin_immunization.json#L24-L52"
         }
     ],
-    "StructureDefinition-covid19-laboratory-bundle.html": [
-        {
-            "title": "Scenario 3 Bundle (COVID-19 laboratory test results from immunoassay)",
-            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle.json"
-        }
-    ],
-    "StructureDefinition-vaccination-credential-immunization-cvx-covid-19.html": [
-        {
-            "title": "Immunization example with Moderna",
-            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario1Bundle.json#L24-L48"
-        },
-        {
-            "title": "Immunization example with Pfizer",
-            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario2Bundle.json#L24-L48"
-        },
-        {
-            "title": "Immunization example with an unspecified COVID-19 vaccine presumably (but not necessarily) from a foreign country",
-            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/byCodeSystem/cvx_immunization.json#L21-L50"
-        }
-    ],
-    "StructureDefinition-covid19-laboratory-result-observation.html": [
+    "StructureDefinition-shc-covid19-laboratory-result-observation.html": [
         {
             "title": "COVID-19 test results example",
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle.json#L24-L53"
         }
     ],
-    "StructureDefinition-infectious-disease-laboratory-result-observation.html": [
+    "StructureDefinition-shc-infectious-disease-laboratory-result-observation.html": [
         {
             "title": "COVID-19 test results example",
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle.json#L24-L53"
         }
     ],
-    "StructureDefinition-vaccination-credential-bundle.html": [
+    "StructureDefinition-shc-vaccination-bundle.html": [
         {
             "title": "Scenario 1 Bundle (COVID-19 vaccination with Pfizer, 2 doses)",
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario1Bundle.json"
@@ -123,32 +103,44 @@
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/byCodeSystem/snomed_gtin_immunization.json"
         }
     ],
-    "StructureDefinition-covid19-laboratory-bundle.html": [
+    "StructureDefinition-shc-covid19-laboratory-bundle.html": [
         {
             "title": "Scenario 3 Bundle (COVID-19 laboratory test results from immunoassay)",
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle.json"
         }
     ],
-    "StructureDefinition-infectious-disease-laboratory-bundle.html": [
+    "StructureDefinition-shc-infectious-disease-laboratory-bundle.html": [
         {
             "title": "Scenario 3 Bundle (COVID-19 laboratory test results from immunoassay)",
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle.json"
         }
     ],
-        "StructureDefinition-covid19-laboratory-result-observation.html": [
-        {
-            "title": "COVID-19 test results example",
-            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle.json#L24-L53"
-        }
-    ],
-    "StructureDefinition-vaccination-credential-patient.html": [
+    "StructureDefinition-shc-patient-us.html": [
         {
             "title": "John B. Anyperson example",
-            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario1Bundle.json#L9-L19"
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario1Bundle.json#L8-L18"
         },
         {
             "title": "Jane C. Anyperson example",
-            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario2Bundle.json#L9-L19"
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario2Bundle.json#L8-L18"
+        },
+        {
+            "title": "James T. Anyperson example ",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle.json#L8-L18"
+        }
+    ],
+    "StructureDefinition-shc-patient-general.html": [
+        {
+            "title": "John B. Anyperson example",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario1Bundle.json#L8-L18"
+        },
+        {
+            "title": "Jane C. Anyperson example",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario2Bundle.json#L8-L18"
+        },
+        {
+            "title": "James T. Anyperson example ",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle.json#L8-L18"
         }
     ]
 }

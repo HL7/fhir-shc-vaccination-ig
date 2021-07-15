@@ -1,26 +1,26 @@
 [RFC 2119]: https://tools.ietf.org/html/rfc2119
-[SMART Health Card]: https://healthwallet.cards/
-[SMART Health Cards]: https://healthwallet.cards/
+[SMART Health Card]: https://smarthealth.cards/
+[SMART Health Cards]: https://smarthealth.cards/
+[SMART Health Cards Framework]: https://spec.smarthealth.cards/
 
-[Covid19LaboratoryBundleDM]: StructureDefinition-covid19-laboratory-bundle-dm.html
-[Covid19LaboratoryBundle]: StructureDefinition-covid19-laboratory-bundle.html
-[Covid19LaboratoryResultObservationDM]: StructureDefinition-covid19-laboratory-result-observation-dm.html
-[Covid19LaboratoryResultObservation]: StructureDefinition-covid19-laboratory-result-observation.html
-[InfectiousDiseaseLaboratoryBundleDM]: StructureDefinition-infectious-disease-laboratory-bundle-dm.html
-[InfectiousDiseaseLaboratoryBundle]: StructureDefinition-infectious-disease-laboratory-bundle.html
-[InfectiousDiseaseLaboratoryResultObservationDM]: StructureDefinition-infectious-disease-laboratory-result-observation-dm.html
-[InfectiousDiseaseLaboratoryResultObservation]: StructureDefinition-infectious-disease-laboratory-result-observation.html
-[VaccinationCredentialBundleDM]: StructureDefinition-vaccination-credential-bundle-dm.html
-[VaccinationCredentialBundle]: StructureDefinition-vaccination-credential-bundle.html
-[VaccinationCredentialImmunizationCVXCovid19DM]: StructureDefinition-vaccination-credential-immunization-cvx-covid-19-dm.html
-[VaccinationCredentialImmunizationCVXCovid19]: StructureDefinition-vaccination-credential-immunization-cvx-covid-19.html
-[VaccinationCredentialImmunizationDM]: StructureDefinition-vaccination-credential-immunization-dm.html
-[VaccinationCredentialImmunization]: StructureDefinition-vaccination-credential-immunization.html
-[VaccinationCredentialPatientDM]: StructureDefinition-vaccination-credential-patient-dm.html
-[VaccinationCredentialPatient]: StructureDefinition-vaccination-credential-patient.html
-[VaccinationCredentialVaccineReactionObservationDM]: StructureDefinition-vaccination-credential-vaccine-reaction-observation-dm.html
-[VaccinationCredentialVaccineReactionObservation]: StructureDefinition-vaccination-credential-vaccine-reaction-observation.html
-
+[SHCCovid19LaboratoryBundleDM]: StructureDefinition-shc-covid19-laboratory-bundle-dm.html
+[SHCCovid19LaboratoryBundleAD]: StructureDefinition-shc-covid19-laboratory-bundle-ad.html
+[SHCCovid19LaboratoryResultObservationAD]: StructureDefinition-shc-covid19-laboratory-result-observation-ad.html
+[SHCCovid19LaboratoryResultObservationDM]: StructureDefinition-shc-covid19-laboratory-result-observation-dm.html
+[SHCVaccinationAD]: StructureDefinition-shc-vaccination-ad.html
+[SHCVaccinationDM]: StructureDefinition-shc-vaccination-dm.html
+[SHCInfectiousDiseaseLaboratoryBundleAD]: StructureDefinition-shc-infectious-disease-laboratory-bundle-ad.html
+[SHCInfectiousDiseaseLaboratoryBundleDM]: StructureDefinition-shc-infectious-disease-laboratory-bundle-dm.html
+[SHCInfectiousDiseaseLaboratoryResultObservationAD]: StructureDefinition-shc-infectious-disease-laboratory-result-observation-ad.html
+[SHCInfectiousDiseaseLaboratoryResultObservationDM]: StructureDefinition-shc-infectious-disease-laboratory-result-observation-dm.html
+[SHCPatientGeneralAD]: StructureDefinition-shc-patient-general-ad.html
+[SHCPatientGeneralDM]: StructureDefinition-shc-patient-general-dm.html
+[SHCPatientUnitedStatesAD]: StructureDefinition-shc-patient-us-ad.html
+[SHCPatientUnitedStatesDM]: StructureDefinition-shc-patient-us-dm.html
+[SHCVaccinationBundleAD]: StructureDefinition-shc-vaccination-bundle-ad.html
+[SHCVaccinationBundleDM]: StructureDefinition-shc-vaccination-bundle-dm.html
+[SHCVaccinationReactionObservationAD]: StructureDefinition-shc-vaccination-reaction-observation-ad.html
+[SHCVaccinationReactionObservationDM]: StructureDefinition-shc-vaccination-reaction-observation-dm.html
 [IdentityAssuranceLevel]: ValueSet-identity-assurance-level.html
 [LabResultFindingsSNOMED]: ValueSet-lab-result-findings-snomed.html
 [LabResultFindings]: ValueSet-lab-result-findings.html
