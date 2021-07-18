@@ -72,9 +72,9 @@ Description: "The bundle of resources that represents the patient identification
 * entry[immunization] ^definition = "Immunization"
 * entry[immunization].resource only SHCVaccinationAD
 
-* entry[vaccineReaction] ^short = "Vaccination reaction"
-* entry[vaccineReaction] ^definition = "Vaccination reaction"
-* entry[vaccineReaction].resource only SHCVaccinationReactionObservationAD
+// * entry[vaccineReaction] ^short = "Vaccination reaction"
+// * entry[vaccineReaction] ^definition = "Vaccination reaction"
+// * entry[vaccineReaction].resource only SHCVaccinationReactionObservationAD
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -101,9 +101,9 @@ Description: "The bundle of resources that represents the patient identification
 * entry[immunization] ^definition = "Immunization"
 * entry[immunization].resource only SHCVaccinationDM
 
-* entry[vaccineReaction] ^short = "Vaccination reaction"
-* entry[vaccineReaction] ^definition = "Vaccination reaction"
-* entry[vaccineReaction].resource only SHCVaccinationReactionObservationDM
+// * entry[vaccineReaction] ^short = "Vaccination reaction"
+// * entry[vaccineReaction] ^definition = "Vaccination reaction"
+// * entry[vaccineReaction].resource only SHCVaccinationReactionObservationDM
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 

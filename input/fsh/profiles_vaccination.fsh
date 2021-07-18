@@ -133,7 +133,7 @@ Description: "Defines a profile representing a vaccination for a SMART Health Ca
 // Support for IIS value set for OBX-5 (extensible)
 // * fundingSource from http://phinvads.cdc.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3287 (extensible)
 
-* reaction.detail only Reference(shc-vaccination-reaction-observation-ad)
+// * reaction.detail only Reference(shc-vaccination-reaction-observation-ad)
 
 * isSubpotent MS
 * isSubpotent ^short = "Set to `true` if dose is subpotent; omit otherwise"
@@ -205,6 +205,7 @@ Description: "Defines a profile representing a vaccination for a SMART Health Ca
 * reaction 0..0
 * programEligibility 0..0
 
+/*
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Profile:        SHCVaccinationReactionObservationAD
@@ -219,7 +220,7 @@ we wanted to have value sets corresponding to all the value sets in the IIS core
 
 * id obeys vc-should-be-under-20-chars
 
-* code = SCT#293104008 "Vaccines adverse reaction (disorder)"
+* code = SCT#293104008 "Adverse reaction to immunization"
 
 * subject only Reference(shc-patient-general-ad)
 * subject 1..1 MS
@@ -270,3 +271,4 @@ Description:    "Profile for reporting a reaction to a vaccine. Only elements ne
 * hasMember 0..0
 * derivedFrom 0..0
 * component 0..0
+*/

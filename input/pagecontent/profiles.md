@@ -14,6 +14,8 @@ This Implementation Guide (IG) includes Data Minimization (DM), which include on
 <tbody>
 {% for resource in site.data.profiles %}
 {% assign r = resource[1] %}
+{% if r.suppress == true %}
+{% else %}
 {% assign resourceName = resource[0] %}
 
     {% for profileSet in r.profileSets %}
@@ -39,6 +41,7 @@ This Implementation Guide (IG) includes Data Minimization (DM), which include on
         <td>{{ profileSet.scope }}</td>
     </tr>
     {% endfor %}
+{% endif %}
 {% endfor %}
 </tbody>
 </table>
