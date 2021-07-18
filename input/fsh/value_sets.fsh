@@ -50,6 +50,15 @@ to determine which specific SNOMED codes may be used under this license.
 
 * include codes from system SCT where concept is-a #787859002
 
+// This builds but doesn't expand with tx.fhir.org:
+//
+// Int'l editions identified at https://confluence.ihtsdotools.org/display/DOCEXTPG/4.4.2+Edition+URI+Examples
+// Canadian SNOMED
+// https://browser.ihtsdotools.org/?perspective=full&conceptId1=28531000087107&edition=MAIN/SNOMEDCT-CA/2021-03-31&release=&languages=en,fr
+// * include codes from system SCT|http://snomed.info/sct/20611000087101 where concept is-a #28531000087107
+// UK SNOMED
+// https://termbrowser.nhs.uk/?perspective=full&conceptId1=39330711000001103&edition=uk-edition&release=v20210512&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104
+// * include codes from system SCT|http://snomed.info/sct/83821000000107 where concept is-a #39330711000001103
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ValueSet:    VaccineICD11
