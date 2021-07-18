@@ -38,6 +38,10 @@ Description: "Defines a profile representing a vaccination for a SMART Health Ca
 * vaccineCode MS
 * vaccineCode ^short = "Codes identifying the vaccine product administered"
 
+// Override default example binding with something that makes more sense in the context of our IG
+// https://chat.fhir.org/#narrow/stream/179166-implementers/topic/IG/near/234918476
+* vaccineCode from vaccine-cvx (example)
+
 * vaccineCode.coding 1..*
 * vaccineCode.coding MS
 * vaccineCode.coding ^slicing.discriminator.type = #value
