@@ -49,12 +49,14 @@ Description: "Defines a profile representing a vaccination for a SMART Health Ca
 * vaccineCode.coding ^slicing.rules = #closed
 * vaccineCode.coding ^slicing.description = "Slicing based on the code system"
 
+// Keep in sync with use of `VaccineCodeCodingDM` below for the DM profile
 * vaccineCode.coding contains
     cvx 0..1 and
     gtin 0..1 and
     snomed 0..1 and
     icd11 0..1 and
-    air 0..1
+    air 0..1 and
+    atc 0..1
 
 // It's necessary to fix `system` **in addition** to the value set binding for the slicing to work
 * vaccineCode.coding[cvx] ^short = "CVX code identifying the administered vaccine product"
@@ -77,6 +79,10 @@ Description: "Defines a profile representing a vaccination for a SMART Health Ca
 * vaccineCode.coding[air] ^short = "Australian Immunisation Register Vaccine code identifying the administered vaccine product"
 * vaccineCode.coding[air] from https://healthterminologies.gov.au/fhir/ValueSet/australian-immunisation-register-vaccine-1 (required)
 * vaccineCode.coding[air].system = "https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats"
+
+* vaccineCode.coding[atc] ^short = "ATC code identifying the administered vaccine product"
+* vaccineCode.coding[atc] from vaccine-atc (required)
+* vaccineCode.coding[atc].system = "http://www.whocc.no/atc"
 
 // Manufacturer
 // Why we are doing this rather than an extension or in vaccineCode
@@ -208,6 +214,25 @@ Description: "Defines a profile representing a vaccination for a SMART Health Ca
 * fundingSource 0..0
 * reaction 0..0
 * programEligibility 0..0
+
+* vaccineCode.id 0..0
+* vaccineCode.extension 0..0
+* vaccineCode.text 0..0
+
+* insert vaccineCodeCodingDM(cvx)
+* insert vaccineCodeCodingDM(gtin)
+* insert vaccineCodeCodingDM(snomed)
+* insert vaccineCodeCodingDM(icd11)
+* insert vaccineCodeCodingDM(air)
+* insert vaccineCodeCodingDM(atc)
+
+
+RuleSet: vaccineCodeCodingDM (sliceName)
+* vaccineCode.coding[{sliceName}].id 0..0
+* vaccineCode.coding[{sliceName}].extension 0..0
+* vaccineCode.coding[{sliceName}].version 0..0
+* vaccineCode.coding[{sliceName}].display 0..0
+* vaccineCode.coding[{sliceName}].userSelected 0..0
 
 /*
 ////////////////////////////////////////////////////////////////////////////////////////////////////
