@@ -1,14 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-RuleSet: fullurl(path)
-
-* {path}fullUrl 1..1
-* {path}fullUrl MS
-* {path}fullUrl ^short = "Locally unique identifier like resource:0"
-* {path}fullUrl ^definition = "Identifier for the contained resource that is locally unique within this Bundle. The identifier SHALL use `resource:#` format, where `#` is an integer incremented from 0 to _n_ within the Bundle."
-* {path}fullUrl ^comment = "n/a"
-* {path}fullUrl obeys vc-shall-be-resource-uri
-
 RuleSet: common-bundle-rules
 
 * id ^short = "Should be omitted"
@@ -25,28 +16,67 @@ RuleSet: common-bundle-rules
 * entry and entry.resource MS
 
 * insert id-should-not-be-populated(entry.)
-* insert fullurl(entry.)
 
 RuleSet: common-bundle-dm-rules
 
 * id 0..0
 * identifier 0..0
-* meta.versionId 0..0
-* meta.lastUpdated 0..0
-* meta.source 0..0
-* meta.profile 0..0
-* meta.tag 0..0
-* meta.id 0..0
-* meta.extension 0..0
+* meta 0..0
+* timestamp 0..0
 * implicitRules 0..0
 * language 0..0
 * total 0..0
 * link 0..0
+* signature 0..0
+
+RuleSet: bundleSliceDM(sliceName)
+* entry[{sliceName}].id 0..0
+* entry[{sliceName}].extension 0..0
+* entry[{sliceName}].modifierExtension 0..0
+* entry[{sliceName}].link 0..0
+* entry[{sliceName}].search 0..0
+* entry[{sliceName}].request 0..0
+* entry[{sliceName}].response 0..0
+
+* entry[{sliceName}].fullUrl 1..1
+* entry[{sliceName}].fullUrl MS
+* entry[{sliceName}].fullUrl ^short = "Locally unique identifier like resource:0"
+* entry[{sliceName}].fullUrl ^definition = "Identifier for the contained resource that is locally unique within this Bundle. The identifier SHALL use `resource:#` format, where `#` is an integer incremented from 0 to _n_ within the Bundle."
+* entry[{sliceName}].fullUrl ^comment = "n/a"
+* entry[{sliceName}].fullUrl obeys vc-shall-be-resource-uri
+
+RuleSet: bundleDM
+// These have to come afterwards or the slice-specific constraints aren't applied
+* entry.id 0..0
+* entry.extension 0..0
+* entry.modifierExtension 0..0
 * entry.link 0..0
 * entry.search 0..0
 * entry.request 0..0
 * entry.response 0..0
-* signature 0..0
+
+* entry.fullUrl 1..1
+* entry.fullUrl MS
+* entry.fullUrl ^short = "Locally unique identifier like resource:0"
+* entry.fullUrl ^definition = "Identifier for the contained resource that is locally unique within this Bundle. The identifier SHALL use `resource:#` format, where `#` is an integer incremented from 0 to _n_ within the Bundle."
+* entry.fullUrl ^comment = "n/a"
+
+
+RuleSet: bundleSliceAD(sliceName)
+* entry[{sliceName}].fullUrl 1..1
+* entry[{sliceName}].fullUrl MS
+* entry[{sliceName}].fullUrl ^short = "Locally unique identifier like resource:0"
+* entry[{sliceName}].fullUrl ^definition = "Identifier for the contained resource that is locally unique within this Bundle. The identifier SHALL use `resource:#` format, where `#` is an integer incremented from 0 to _n_ within the Bundle."
+* entry[{sliceName}].fullUrl ^comment = "n/a"
+* entry[{sliceName}].fullUrl obeys vc-shall-be-resource-uri
+
+RuleSet: bundleAD
+// These have to come afterwards or the slice-specific constraints aren't applied
+* entry.fullUrl 1..1
+* entry.fullUrl MS
+* entry.fullUrl ^short = "Locally unique identifier like resource:0"
+* entry.fullUrl ^definition = "Identifier for the contained resource that is locally unique within this Bundle. The identifier SHALL use `resource:#` format, where `#` is an integer incremented from 0 to _n_ within the Bundle."
+* entry.fullUrl ^comment = "n/a"
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -68,11 +98,15 @@ Description: "The bundle of resources that represents the patient identification
 * entry[patient] ^definition = "The patient who is the subject of the Bundle"
 * entry[patient].resource only shc-patient-general-ad
 * entry[patient].resource 1..1
+* insert bundleSliceAD(patient)
+
 
 * entry[immunization] ^short = "Immunization"
 * entry[immunization] ^definition = "Immunization"
 * entry[immunization].resource only SHCVaccinationAD
 * entry[immunization].resource 1..1
+* insert bundleSliceAD(immunization)
+
 
 // * entry[vaccineReaction] ^short = "Vaccination reaction"
 // * entry[vaccineReaction] ^definition = "Vaccination reaction"
@@ -108,6 +142,8 @@ Description: "The bundle of resources that represents the patient identification
 * entry[immunization].resource 1..1
 * insert bundleSliceDM(immunization)
 
+* insert bundleDM
+
 
 // * entry[vaccineReaction] ^short = "Vaccination reaction"
 // * entry[vaccineReaction] ^definition = "Vaccination reaction"
@@ -132,13 +168,16 @@ Description: "The bundle of resources that represents the patient identification
 * entry[patient] ^definition = "The patient who is the subject of the Bundle"
 * entry[patient].resource only shc-patient-general-ad
 * entry[patient].resource 1..1
+* insert bundleSliceAD(patient)
 
 * entry[labResult] ^short = "Laboratory result"
 * entry[labResult] ^definition = "Laboratory result"
 * entry[labResult].resource only SHCCovid19LaboratoryResultObservationAD
 * entry[labResult] obeys vc-bundle-lab-status-complete
 * entry[labResult].resource 1..1
+* insert bundleSliceAD(labResult)
 
+* insert bundleAD
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -159,12 +198,17 @@ Description: "The bundle of resources that represents the patient identification
 * entry[patient] ^definition = "The patient who is the subject of the Bundle"
 * entry[patient].resource only shc-patient-general-ad
 * entry[patient].resource 1..1
+* insert bundleSliceAD(patient)
+
 
 * entry[labResult] ^short = "Laboratory result"
 * entry[labResult] ^definition = "Laboratory result"
 * entry[labResult].resource only SHCInfectiousDiseaseLaboratoryResultObservationAD
 * entry[labResult] obeys vc-bundle-lab-status-complete
 * entry[labResult].resource 1..1
+* insert bundleSliceAD(labResult)
+
+* insert bundleAD
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -197,6 +241,8 @@ Description: "The bundle of resources that represents the patient identification
 * entry[labResult].resource 1..1
 * insert bundleSliceDM(labResult)
 
+* insert bundleDM
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -227,18 +273,6 @@ Description: "The bundle of resources that represents the clinical content of a 
 * entry[labResult].resource 1..1
 * insert bundleSliceDM(labResult)
 
+* insert bundleDM
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-RuleSet: bundleSliceDM (sliceName)
-* entry[{sliceName}].id 0..0
-* entry[{sliceName}].extension 0..0
-* entry[{sliceName}].modifierExtension 0..0
-* entry[{sliceName}].link 0..0
-
-// For some reason these doesn't do anything -- they aren't reflected in the SUSHI output
-* entry[{sliceName}].search 0..0
-* entry[{sliceName}].request 0..0
-* entry[{sliceName}].response 0..0
-* entry[{sliceName}].fullUrl 1..1
-* entry[{sliceName}].fullUrl ^short = "Locally unique identifier like resource:0"
