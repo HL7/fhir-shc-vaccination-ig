@@ -155,6 +155,8 @@ RuleSet: LaboratoryResultObservationDM
 * referenceRange.type.id 0..0
 * referenceRange.type.extension 0..0
 * referenceRange.type.text 0..0
+* valueQuantity.id 0..0 // Needed to fix test failure - this makes no sense but it works. See https://github.com/dvci/vaccine-credential-ig/pull/145
+* valueString.id 0..0 // Needed to fix test failure - this makes no sense but it works. See https://github.com/dvci/vaccine-credential-ig/pull/145
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -167,6 +169,7 @@ Description:    "Profile for reporting COVID-19-related laboratory results indic
 previous infection status. Only elements necessary for Verifiers can be populated."
 
 * insert LaboratoryResultObservationDM
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
