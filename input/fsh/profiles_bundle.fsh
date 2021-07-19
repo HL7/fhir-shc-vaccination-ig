@@ -61,16 +61,18 @@ Description: "The bundle of resources that represents the patient identification
 * entry contains
     // These resources are required per Conformance > Supported Profiles.
     patient 1..1 MS and
-    immunization 1..* MS and
-    vaccineReaction 0..*
+    immunization 1..* MS // and
+    // vaccineReaction 0..*
 
 * entry[patient] ^short = "Patient"
 * entry[patient] ^definition = "The patient who is the subject of the Bundle"
 * entry[patient].resource only shc-patient-general-ad
+* entry[patient].resource 1..1
 
 * entry[immunization] ^short = "Immunization"
 * entry[immunization] ^definition = "Immunization"
 * entry[immunization].resource only SHCVaccinationAD
+* entry[immunization].resource 1..1
 
 // * entry[vaccineReaction] ^short = "Vaccination reaction"
 // * entry[vaccineReaction] ^definition = "Vaccination reaction"
@@ -90,16 +92,22 @@ Description: "The bundle of resources that represents the patient identification
 * entry contains
     // These resources are required per Conformance > Supported Profiles.
     patient 1..1 MS and
-    immunization 1..* MS and
-    vaccineReaction 0..*
+    immunization 1..* MS // and
+    // vaccineReaction 0..*
 
 * entry[patient] ^short = "Patient"
 * entry[patient] ^definition = "The patient who is the subject of the Bundle"
 * entry[patient].resource only shc-patient-general-dm
+* entry[patient].resource 1..1
+* insert bundleSliceDM(patient)
+
 
 * entry[immunization] ^short = "Immunization"
 * entry[immunization] ^definition = "Immunization"
 * entry[immunization].resource only SHCVaccinationDM
+* entry[immunization].resource 1..1
+* insert bundleSliceDM(immunization)
+
 
 // * entry[vaccineReaction] ^short = "Vaccination reaction"
 // * entry[vaccineReaction] ^definition = "Vaccination reaction"
@@ -123,11 +131,14 @@ Description: "The bundle of resources that represents the patient identification
 * entry[patient] ^short = "Patient"
 * entry[patient] ^definition = "The patient who is the subject of the Bundle"
 * entry[patient].resource only shc-patient-general-ad
+* entry[patient].resource 1..1
 
 * entry[labResult] ^short = "Laboratory result"
 * entry[labResult] ^definition = "Laboratory result"
 * entry[labResult].resource only SHCCovid19LaboratoryResultObservationAD
 * entry[labResult] obeys vc-bundle-lab-status-complete
+* entry[labResult].resource 1..1
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -147,11 +158,14 @@ Description: "The bundle of resources that represents the patient identification
 * entry[patient] ^short = "Patient"
 * entry[patient] ^definition = "The patient who is the subject of the Bundle"
 * entry[patient].resource only shc-patient-general-ad
+* entry[patient].resource 1..1
 
 * entry[labResult] ^short = "Laboratory result"
 * entry[labResult] ^definition = "Laboratory result"
 * entry[labResult].resource only SHCInfectiousDiseaseLaboratoryResultObservationAD
 * entry[labResult] obeys vc-bundle-lab-status-complete
+* entry[labResult].resource 1..1
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -172,11 +186,17 @@ Description: "The bundle of resources that represents the patient identification
 * entry[patient] ^short = "Patient"
 * entry[patient] ^definition = "The patient who is the subject of the Bundle"
 * entry[patient].resource only shc-patient-general-dm
+* entry[patient].resource 1..1
+* insert bundleSliceDM(patient)
+
 
 * entry[labResult] ^short = "Laboratory result"
 * entry[labResult] ^definition = "Laboratory result"
 * entry[labResult].resource only SHCInfectiousDiseaseLaboratoryResultObservationDM
 * entry[labResult] obeys vc-bundle-lab-status-complete
+* entry[labResult].resource 1..1
+* insert bundleSliceDM(labResult)
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -197,10 +217,28 @@ Description: "The bundle of resources that represents the clinical content of a 
 * entry[patient] ^short = "Patient"
 * entry[patient] ^definition = "The patient who is the subject of the Bundle"
 * entry[patient].resource only shc-patient-general-dm
+* entry[patient].resource 1..1
+* insert bundleSliceDM(patient)
 
 * entry[labResult] ^short = "Laboratory result"
 * entry[labResult] ^definition = "Laboratory result"
 * entry[labResult].resource only SHCCovid19LaboratoryResultObservationDM
 * entry[labResult] obeys vc-bundle-lab-status-complete
+* entry[labResult].resource 1..1
+* insert bundleSliceDM(labResult)
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+RuleSet: bundleSliceDM (sliceName)
+* entry[{sliceName}].id 0..0
+* entry[{sliceName}].extension 0..0
+* entry[{sliceName}].modifierExtension 0..0
+* entry[{sliceName}].link 0..0
+
+// For some reason these doesn't do anything -- they aren't reflected in the SUSHI output
+* entry[{sliceName}].search 0..0
+* entry[{sliceName}].request 0..0
+* entry[{sliceName}].response 0..0
+* entry[{sliceName}].fullUrl 1..1
+* entry[{sliceName}].fullUrl ^short = "Locally unique identifier like resource:0"
