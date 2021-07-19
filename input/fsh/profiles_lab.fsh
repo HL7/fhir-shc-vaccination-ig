@@ -31,6 +31,7 @@ RuleSet: LaboratoryResultObservation
 * valueQuantity obeys vc-observation-quantity-should-have-range
 
 * referenceRange MS
+* referenceRange ^short = "Provides guide for interpretation. SHOULD include if using valueQuantity."
 * referenceRange ^comment = "Issuers SHOULD provide a reference range for quantitative lab results to allow recipients to correctly interpret the results. Issuers MAY provide a reference range for free text (string) results."
 * referenceRange obeys vc-observation-range-only-quantity-or-string
 
@@ -123,6 +124,8 @@ RuleSet: LaboratoryResultObservationDM
 * basedOn 0..0
 * partOf 0..0
 * category 0..0
+* subject.id 0..0
+* subject.extension 0..0
 * encounter 0..0
 * focus 0..0
 * issued 0..0
@@ -141,9 +144,16 @@ RuleSet: LaboratoryResultObservationDM
 * performer.reference 0..0
 * performer.type 0..0
 * performer.identifier 0..0
+* valueCodeableConcept.id 0..0
+* valueCodeableConcept.extension 0..0
 * valueCodeableConcept.text 0..0
-* valueQuantity.id 0..0
-* valueString.id 0..0
+* referenceRange.id 0..0
+* referenceRange.extension 0..0
+* referenceRange.modifierExtension 0..0
+* referenceRange.appliesTo 0..0
+* referenceRange.age 0..0
+* referenceRange.text 0..0
+* referenceRange.type.text 0..0
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
