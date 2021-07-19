@@ -4,11 +4,14 @@
       <span style="background-color: #fff; padding-left: 0.5em; padding-right: 0.5em;"><strong>{{ r.name }}:</strong> Profile Group Navigation</span>
     </div>
     <div style="margin-top: 1em;">
-      <p>{{ r.description }} The current page is <span class="active-page-example">highlighted</span> below.</p>
+      <p>{{ r.description }}</p>
       {% if r.instructions %}
-      {% capture url %}{{r.instructions}}{% endcapture %}
-      <p class="{% if page.path == url %}active-page{% endif %}"><span class="label label-success">Start here!</span>
-        <a href="{{ r.instructions }}">Implementation instructions for {{ r.name }}</a>
+      <p>
+        {% capture url %}{{r.instructions}}{% endcapture %}
+        <span class="{% if page.path == url %}active-page{% endif %}">
+          <a href="{{ r.instructions }}" class="btn btn-success">Implementation instructions</a>
+          {% if page.path != url %}<span class="highlight"><strong>&#8592;</strong> Start here!</span>{% endif %}
+        </span>
       </p>
       {% endif %}
       <table class="table">
@@ -23,9 +26,13 @@
               {% for profileSet in r.profileSets %}
               <tr>
                   {% capture url %}StructureDefinition-{{ profileSet.slug }}-dm.html{% endcapture %}
-                  <td class="{% if page.path == url %}active-page{% endif %}"><a href="{{ url }}">{{ profileSet.name }}</a></td>
+                  <td class="{% if page.path == url %}active-page{% endif %}">
+                    <a href="{{ url }}" class="btn">{{ profileSet.name }}</a>
+                  </td>
                   {% capture url %}StructureDefinition-{{ profileSet.slug }}-ad.html{% endcapture %}
-                  <td class="{% if page.path == url %}active-page{% endif %}"><a href="{{ url }}">Fallback</a></td>
+                  <td class="{% if page.path == url %}active-page{% endif %}">
+                      <a href="{{ url }}" class="btn">Fallback</a>
+                  </td>
                   <td>{{ profileSet.scope }}</td>
               </tr>
               {% endfor %}
@@ -39,12 +46,39 @@
 </div>
 
 <style>
-  /* Hide top table on the profile pages */
+ /* Hide top table on the profile pages */
   #segment-content > div > div > div > div > table.grid:first-of-type {
     display: none;
   }
-  .active-page a, .active-page-example {
+  .profile-set-nav .btn {
+    font-size: inherit;
+    font-weight: normal;
+    border: 1px solid #ccc;
+    color: #333;
+  }
+  .profile-set-nav .btn:hover {
+    background-color: #e6e6e6;
+    border-color: #adadad;
+  }
+  .highlight {
       background-color: #fffeca;
+  }
+  .profile-set-nav .active-page .btn, .profile-set-nav .active-page .btn:hover {
+      /* background-color: #fffeca; */
+      background: #fbfbfb;
+      color: #da0c23;
+      -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+      -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+      box-shadow: inset 0px 0px 5px #c1c1c1;
+      border: 0;
+      cursor: not-allowed;
+  }
+  .profile-set-nav .btn-success {
+    color: white;
+  }
+  .profile-set-nav .btn-success:hover {
+    background-color: #449d44;
+    border-color: #398439;
   }
 </style>
 
@@ -57,9 +91,8 @@
 </script>
 
 {% if page.path contains "-ad.html" %}
-<div class="alert alert-danger" role="alert" markdown="1">
-  **Note!** This is a fallback ["allowable data" profile](profiles.html#data-minimization). Implementers should validate against the ["data minimization" profile if possible]({{ page.path | replace: '-ad.html', '-dm.html' }}).
-</div>
+**Note!** This is a [fallback "allowable data" (AD) profile](profiles.html#data-minimization). Implementers should validate against the [primary "data minimization" (DM) profile if possible]({{ page.path | replace: '-ad.html', '-dm.html' }}).
+{: .alert.alert-danger }
 {% endif %}
 
 {% include markdown-link-references.md %}

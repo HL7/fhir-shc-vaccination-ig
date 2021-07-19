@@ -1,1 +1,1 @@
-{% include profile-set-nav.md resourceName="immunization" %}
+{% include profile-set-nav.md resourceName="vaccination" %}
