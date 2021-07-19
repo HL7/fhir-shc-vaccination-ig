@@ -16,7 +16,7 @@ Description: "This value set includes all [CVX](https://www2a.cdc.gov/vaccines/i
 ValueSet:    VaccineGTIN
 Id:          vaccine-gtin
 Title:       "Vaccine: GTIN"
-Description: "This value set includes all [GTIN](https://www.gs1.org/gtin) codes, which may identify vaccine products."
+Description: "This value set includes all [GTIN](https://www.gs1.org/gtin) codes, rather than just the vaccine-related GTINs. This is because there is not a way to filter GTINs to a specific category of product. For more information about GTINs see the [Vaccination profile group information page](vaccination.html)."
 
 * include codes from system https://www.gs1.org/gtin
 
