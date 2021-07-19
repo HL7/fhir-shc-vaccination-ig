@@ -1,18 +1,18 @@
 example,profile,expectedIssueSeverity,expectedLocation,expectedErrorMessage
-src/test/resources/should-be-omitted.test.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-bundle,WARNING,Bundle.id,vc-should-be-omitted
-src/test/resources/observation-status-shall-be-complete.test.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/covid19-laboratory-result-observation,ERROR,,vc-observation-status-shall-be-complete
-src/test/resources/name-invariant-xor.test.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-patient,ERROR,,vc-name-invariant
-src/test/resources/name-invariant-none.test.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-patient,ERROR,,vc-name-invariant
-src/test/resources/date-invariant-with-time.test.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-immunization,WARNING,,vc-date-invariant
-src/test/resources/shall-be-true-if-populated-invariant.test.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-immunization,ERROR,,vc-shall-be-true-if-populated-invariant
-src/test/resources/should-not-include-string-lot.test.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-immunization,WARNING,,vc-should-not-include-string-lot
-src/test/resources/shall-not-be-a-covid-loinc.test.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/infectious-disease-laboratory-result-observation,ERROR,,vc-shall-not-be-a-covid-loinc
-src/test/resources/should-be-under-30-chars.test.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-immunization,WARNING,,vc-should-be-under-30-chars
-src/test/resources/should-be-omitted-privacy.test.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-patient,WARNING,,vc-should-be-omitted-privacy
-src/test/resources/shall-be-resource-uri.test.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-bundle,ERROR,,vc-shall-be-resource-uri
-src/test/resources/immunization-code-slicing.test.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-immunization,ERROR,Immunization.vaccineCode.coding[0],This element does not match any known slice  defined in the profile
-src/test/resources/immunization-code-slicing.test.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-immunization,ERROR,Immunization.vaccineCode.coding[0],This element does not match any known slice  defined in the profile
-src/test/resources/immunization-ial-value-set.test.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-immunization,ERROR,Immunization.meta.security[0],Not in value set
-src/test/resources/immunization-code-slicing.test.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-immunization,ERROR,Immunization.vaccineCode.coding[0],This element does not match any known slice  defined in the profile
-src/test/resources/observation-quantity-shall-have-range.test.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/covid19-laboratory-result-observation,WARNING,Observation.value.ofType(Quantity),vc-observation-quantity-should-have-range
-src/test/resources/observation-range-only-quantity.test.json,http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/covid19-laboratory-result-observation,WARNING,,vc-observation-range-only-quantity-or-string
+src/test/resources/should-be-omitted.test.json,http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-bundle-dm,WARNING,Bundle.id,vc-should-be-omitted
+src/test/resources/observation-status-shall-be-complete.test.json,http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-covid19-laboratory-result-observation-ad,ERROR,,vc-observation-status-shall-be-complete
+src/test/resources/name-invariant-xor.test.json,http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-patient-general-dm,ERROR,,vc-name-invariant
+src/test/resources/name-invariant-none.test.json,http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-patient-general-dm,ERROR,,vc-name-invariant
+src/test/resources/date-invariant-with-time.test.json,http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-ad,WARNING,,vc-date-invariant
+src/test/resources/shall-be-true-if-populated-invariant.test.json,http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-ad,ERROR,,vc-shall-be-true-if-populated-invariant
+src/test/resources/should-not-include-string-lot.test.json,http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-ad,WARNING,,vc-should-not-include-string-lot
+src/test/resources/shall-not-be-a-covid-loinc.test.json,http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-infectious-disease-laboratory-result-observation-ad,ERROR,,vc-shall-not-be-a-covid-loinc
+src/test/resources/should-be-under-30-chars.test.json,http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-ad,WARNING,,vc-should-be-under-30-chars
+src/test/resources/should-be-omitted-privacy.test.json,http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-patient-general-ad,WARNING,,vc-should-be-omitted-privacy
+src/test/resources/shall-be-resource-uri.test.json,http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-bundle-dm,ERROR,,vc-shall-be-resource-uri
+src/test/resources/immunization-code-slicing.test.json,http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-dm,ERROR,Immunization.vaccineCode.coding[0],This element does not match any known slice  defined in the profile
+src/test/resources/immunization-code-slicing.test.json,http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-dm,ERROR,Immunization.vaccineCode.coding[0],This element does not match any known slice  defined in the profile
+src/test/resources/immunization-ial-value-set.test.json,http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-dm,ERROR,Immunization.meta.security[0],Not in value set
+src/test/resources/immunization-code-slicing.test.json,http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-dm,ERROR,Immunization.vaccineCode.coding[0],This element does not match any known slice  defined in the profile
+src/test/resources/observation-quantity-shall-have-range.test.json,http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-covid19-laboratory-result-observation-dm,WARNING,Observation.value.ofType(Quantity),vc-observation-quantity-should-have-range
+src/test/resources/observation-range-only-quantity.test.json,http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-covid19-laboratory-result-observation-dm,WARNING,,vc-observation-range-only-quantity-or-string

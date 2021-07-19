@@ -2,9 +2,9 @@
 
 source script/validate-helper.sh
 
-validate_example examples/Scenario1Bundle.json vaccination-credential-bundle &&
-validate_example examples/Scenario1Bundle.json vaccination-credential-bundle-dm &&
-validate_example examples/Scenario2Bundle.json vaccination-credential-bundle &&
-validate_example examples/Scenario2Bundle.json vaccination-credential-bundle-dm &&
-validate_example examples/Scenario3Bundle.json covid19-laboratory-bundle &&
-validate_example examples/Scenario3Bundle.json covid19-laboratory-bundle-dm
+validate_example examples/Scenario1Bundle.json shc-vaccination-bundle-ad &&
+validate_example examples/Scenario1Bundle.json shc-vaccination-bundle-dm &&
+validate_example examples/Scenario2Bundle.json shc-vaccination-bundle-ad &&
+validate_example examples/Scenario2Bundle.json shc-vaccination-bundle-dm &&
+validate_example examples/Scenario3Bundle.json shc-covid19-laboratory-bundle-ad &&
+validate_example examples/Scenario3Bundle.json shc-covid19-laboratory-bundle-dm

@@ -1,53 +1,35 @@
 {
-    "StructureDefinition-vaccination-credential-immunization.html": [
+    "StructureDefinition-shc-vaccination.html": [
         {
-            "title": "Immunization example with Moderna, dose 1",
+            "title": "Vaccination example with Moderna, dose 1",
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario1Bundle.json#L24-L48"
         },
         {
-            "title": "Immunization example with Moderna, dose 2",
+            "title": "Vaccination example with Moderna, dose 2",
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario1Bundle.json#L54-L78"
         },
         {
-            "title": "Immunization example with Pfizer, dose 1",
+            "title": "Vaccination example with Pfizer, dose 1",
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario2Bundle.json#L24-L48"
         },
         {
-            "title": "Immunization example with Pfizer, dose 2",
+            "title": "Vaccination example with Pfizer, dose 2",
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario2Bundle.json#L54-L78"
         }
     ],
-    "StructureDefinition-vaccination-credential-immunization-cvx-covid-19.html": [
-        {
-            "title": "Immunization example with Moderna, dose 1",
-            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario1Bundle.json#L24-L48"
-        },
-        {
-            "title": "Immunization example with Moderna, dose 2",
-            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario1Bundle.json#L54-L78"
-        },
-        {
-            "title": "Immunization example with Pfizer, dose 1",
-            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario2Bundle.json#L24-L48"
-        },
-        {
-            "title": "Immunization example with Pfizer, dose 2",
-            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario2Bundle.json#L54-L78"
-        }
-    ],
-    "StructureDefinition-covid19-laboratory-result-observation.html": [
+    "StructureDefinition-shc-covid19-laboratory-result-observation.html": [
         {
             "title": "COVID-19 test results example",
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle.json#L24-L53"
         }
     ],
-    "StructureDefinition-infectious-disease-laboratory-result-observation.html": [
+    "StructureDefinition-shc-infectious-disease-laboratory-result-observation.html": [
         {
             "title": "COVID-19 test results example",
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle.json#L24-L53"
         }
     ],
-    "StructureDefinition-vaccination-credential-bundle.html": [
+    "StructureDefinition-shc-vaccination-bundle.html": [
         {
             "title": "Scenario 1 Bundle (COVID-19 vaccination with Pfizer, 2 doses)",
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario1Bundle.json"
@@ -57,32 +39,44 @@
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario2Bundle.json"
         }
     ],
-    "StructureDefinition-covid19-laboratory-bundle.html": [
+    "StructureDefinition-shc-covid19-laboratory-bundle.html": [
         {
             "title": "Scenario 3 Bundle (COVID-19 laboratory test results from immunoassay)",
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle.json"
         }
     ],
-    "StructureDefinition-infectious-disease-laboratory-bundle.html": [
+    "StructureDefinition-shc-infectious-disease-laboratory-bundle.html": [
         {
             "title": "Scenario 3 Bundle (COVID-19 laboratory test results from immunoassay)",
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle.json"
         }
     ],
-        "StructureDefinition-covid19-laboratory-result-observation.html": [
-        {
-            "title": "COVID-19 test results example",
-            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle.json#L24-L53"
-        }
-    ],
-    "StructureDefinition-vaccination-credential-patient.html": [
+    "StructureDefinition-shc-patient-us.html": [
         {
             "title": "John B. Anyperson example",
-            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario1Bundle.json#L9-L19"
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario1Bundle.json#L8-L18"
         },
         {
             "title": "Jane C. Anyperson example",
-            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario2Bundle.json#L9-L19"
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario2Bundle.json#L8-L18"
+        },
+        {
+            "title": "James T. Anyperson example ",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle.json#L8-L18"
+        }
+    ],
+    "StructureDefinition-shc-patient-general.html": [
+        {
+            "title": "John B. Anyperson example",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario1Bundle.json#L8-L18"
+        },
+        {
+            "title": "Jane C. Anyperson example",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario2Bundle.json#L8-L18"
+        },
+        {
+            "title": "James T. Anyperson example ",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle.json#L8-L18"
         }
     ]
 }

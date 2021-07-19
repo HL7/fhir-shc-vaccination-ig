@@ -13,7 +13,7 @@ RuleSet: LaboratoryResultObservation
 
 * code MS
 
-* subject only Reference(VaccinationCredentialPatient)
+* subject only Reference(shc-patient-general-ad)
 * subject 1..1 MS
 * subject ^short = "Patient to whom lab result applies"
 * subject ^definition = "Reference to a VaccinationCredentialPatient-conforming resource who is subject of lab result."
@@ -31,6 +31,7 @@ RuleSet: LaboratoryResultObservation
 * valueQuantity obeys vc-observation-quantity-should-have-range
 
 * referenceRange MS
+* referenceRange ^short = "Provides guide for interpretation. SHOULD include if using valueQuantity."
 * referenceRange ^comment = "Issuers SHOULD provide a reference range for quantitative lab results to allow recipients to correctly interpret the results. Issuers MAY provide a reference range for free text (string) results."
 * referenceRange obeys vc-observation-range-only-quantity-or-string
 
@@ -68,21 +69,21 @@ RuleSet: LaboratoryResultObservation
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Profile:        Covid19LaboratoryResultObservation
+Profile:        SHCCovid19LaboratoryResultObservationAD
 Parent:         Observation
-Id:             covid19-laboratory-result-observation
+Id:             shc-covid19-laboratory-result-observation-ad
 Title:          "COVID-19 Laboratory Result Observation Profile - Allowable Data"
 Description:    "Profile for reporting COVID-19-related laboratory results indicating current or
 previous infection status."
 
 * insert LaboratoryResultObservation
 
-// This binding can be required because implementers can fall back to InfectiousDiseaseLaboratoryResultObservation
+// This binding can be required because implementers can fall back to SHCInfectiousDiseaseLaboratoryResultObservation
 * code from covid-lab-tests-loinc-vsac (required)
-* code ^definition = "If an appropriate code is not found in the bound value set, use the InfectiousDiseaseLaboratoryResultObservation profile instead, which does not have a required binding."
+* code ^definition = "If an appropriate code is not found in the bound value set, use the SHCInfectiousDiseaseLaboratoryResultObservation profile instead, which does not have a required binding."
 
 * valueCodeableConcept from qualitative-lab-result-findings (required)
-* code ^definition = "If an appropriate code is not found in the bound value set, use the InfectiousDiseaseLaboratoryResultObservation profile instead, which does not have a required binding."
+* code ^definition = "If an appropriate code is not found in the bound value set, use the SHCInfectiousDiseaseLaboratoryResultObservation profile instead, which does not have a required binding."
 /*
 TODO: Test using `device` rather than `method`, like so:
 
@@ -123,6 +124,8 @@ RuleSet: LaboratoryResultObservationDM
 * basedOn 0..0
 * partOf 0..0
 * category 0..0
+* subject.id 0..0
+* subject.extension 0..0
 * encounter 0..0
 * focus 0..0
 * issued 0..0
@@ -141,16 +144,24 @@ RuleSet: LaboratoryResultObservationDM
 * performer.reference 0..0
 * performer.type 0..0
 * performer.identifier 0..0
+* valueCodeableConcept.id 0..0
+* valueCodeableConcept.extension 0..0
 * valueCodeableConcept.text 0..0
-* valueQuantity.id 0..0
-* valueString.id 0..0
+* referenceRange.id 0..0
+* referenceRange.extension 0..0
+* referenceRange.modifierExtension 0..0
+* referenceRange.appliesTo 0..0
+* referenceRange.age 0..0
+* referenceRange.type.id 0..0
+* referenceRange.type.extension 0..0
+* referenceRange.type.text 0..0
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-Profile:        Covid19LaboratoryResultObservationDM
-Parent:         Covid19LaboratoryResultObservation
-Id:             covid19-laboratory-result-observation-dm
+Profile:        SHCCovid19LaboratoryResultObservationDM
+Parent:         SHCCovid19LaboratoryResultObservationAD
+Id:             shc-covid19-laboratory-result-observation-dm
 Title:          "COVID-19 Laboratory Result Observation Profile - Data Minimization"
 Description:    "Profile for reporting COVID-19-related laboratory results indicating current or
 previous infection status. Only elements necessary for Verifiers can be populated."
@@ -159,9 +170,9 @@ previous infection status. Only elements necessary for Verifiers can be populate
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Profile:        InfectiousDiseaseLaboratoryResultObservation
+Profile:        SHCInfectiousDiseaseLaboratoryResultObservationAD
 Parent:         Observation
-Id:             infectious-disease-laboratory-result-observation
+Id:             shc-infectious-disease-laboratory-result-observation-ad
 Title:          "Generic Laboratory Result Observation Profile - Allowable Data"
 Description:    "Profile for reporting laboratory results indicating current or previous infection status for a disease without a specified laboratory result profile."
 
@@ -179,9 +190,9 @@ Description:    "Profile for reporting laboratory results indicating current or 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-Profile:        InfectiousDiseaseLaboratoryResultObservationDM
-Parent:         InfectiousDiseaseLaboratoryResultObservation
-Id:             infectious-disease-laboratory-result-observation-dm
+Profile:        SHCInfectiousDiseaseLaboratoryResultObservationDM
+Parent:         SHCInfectiousDiseaseLaboratoryResultObservationAD
+Id:             shc-infectious-disease-laboratory-result-observation-dm
 Title:          "Generic Laboratory Result Observation Profile - Data Minimization"
 Description:    "Profile for reporting laboratory results indicating current or previous infection status for a disease without a specified laboratory result profile.
 Only elements necessary for Verifiers can be populated."

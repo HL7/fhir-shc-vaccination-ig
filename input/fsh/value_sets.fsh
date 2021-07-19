@@ -16,7 +16,7 @@ Description: "This value set includes all [CVX](https://www2a.cdc.gov/vaccines/i
 ValueSet:    VaccineGTIN
 Id:          vaccine-gtin
 Title:       "Vaccine: GTIN"
-Description: "This value set includes all [GTIN](https://www.gs1.org/gtin) codes, which may identify vaccine products."
+Description: "This value set includes all [GTIN](https://www.gs1.org/gtin) codes, rather than just the vaccine-related GTINs. This is because there is not a way to filter GTINs to a specific category of product. For more information about GTINs see the [Vaccination profile group information page](vaccination.html)."
 
 * include codes from system https://www.gs1.org/gtin
 
@@ -31,24 +31,26 @@ Description: "This value set includes the vaccination product codes from SNOMED 
 codes.** Implementers SHALL defer to [the canonical list of COVID-19-related SNOMED codes][snomed-covid]
 for COVID-related vaccines when it does not match the codes listed below.
 
-[snomed-covid]: https://confluence.ihtsdotools.org/display/snomed/SNOMED+CT+COVID-19+Related+Content
-"
+[snomed-covid]: https://confluence.ihtsdotools.org/display/snomed/SNOMED+CT+COVID-19+Related+Content"
 
 * ^copyright = "This value set includes content from SNOMED-CT, which is copyright © 2002+
 International Health Terminology Standards Development Organization (IHTSDO), and distributed by
 agreement between IHTSDO and HL7. Implementer use of SNOMED-CT is not covered by this agreement.
 
 Note that some of the SNOMED-CT codes that are part of this value set expansion,
-[including the COVID-19-related SNOMED codes][snomed-covid],
-may be used under the a [Creative Commons Attribution 4.0 International License][cc-ail] as part
-of [the SNOMED Global Patient Set](https://gps.snomed.org). Please refer to [https://gps.snomed.org](https://gps.snomed.org)
-to determine which specific SNOMED codes may be used under this license.
+[including the COVID-19-related SNOMED codes](https://confluence.ihtsdotools.org/display/snomed/SNOMED+CT+COVID-19+Related+Content), may be used under the a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/) as part of [the SNOMED Global Patient Set](https://gps.snomed.org). Please refer to [https://gps.snomed.org](https://gps.snomed.org) to determine which specific SNOMED codes may be used under this license."
 
-[snomed-covid]: https://confluence.ihtsdotools.org/display/snomed/SNOMED+CT+COVID-19+Related+Content
-[cc-ail]: https://creativecommons.org/licenses/by/4.0/
-"
+* include codes from system SCT where concept descendent-of #787859002
 
-* include codes from system SCT where concept is-a #787859002
+// This builds but doesn't expand with tx.fhir.org:
+//
+// Int'l editions identified at https://confluence.ihtsdotools.org/display/DOCEXTPG/4.4.2+Edition+URI+Examples
+// Canadian SNOMED
+// https://browser.ihtsdotools.org/?perspective=full&conceptId1=28531000087107&edition=MAIN/SNOMEDCT-CA/2021-03-31&release=&languages=en,fr
+// * include codes from system SCT|http://snomed.info/sct/20611000087101 where concept is-a #28531000087107
+// UK SNOMED
+// https://termbrowser.nhs.uk/?perspective=full&conceptId1=39330711000001103&edition=uk-edition&release=v20210512&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104
+// * include codes from system SCT|http://snomed.info/sct/83821000000107 where concept is-a #39330711000001103
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -73,8 +75,7 @@ Implementers should consider the [ICD-11 maintenance platform](https://icd.who.i
 the canonical source of ICD-11 codes for COVID-19 vaccines.
 
 Note that this value set should contain the same codes as the [WHO Vaccine List value set](https://who-int.github.io/svc/ValueSet-who-svc-vaccines.html),
-and may be replaced with the WHO value set once that is published.
-"
+and may be replaced with the WHO value set once that is published."
 
 * ^copyright = "TBD. More information can be found here: https://icd.who.int/icdapi/docs2/license/
 Contact licensing@who.int to obtain further information."
@@ -108,7 +109,7 @@ Note that an ATC code for COVID-19 vaccines (`J07BX03`) [has been created](https
 
 * ^copyright = "© Copyright WHO Collaborating Centre for Drug Statistics Methodology, Oslo, Norway. Use of all or parts of the material requires reference to the WHO Collaborating Centre for Drug Statistics Methodology. Copying and distribution for commercial purposes is not allowed. Changing or manipulating the material is not allowed."
 
-* include codes from system https://www.whocc.no/atc_ddd_index/ where concept is-a #J07
+* include codes from system https://www.whocc.no/atc where concept is-a #J07
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -147,7 +148,7 @@ Description: "This value set includes SNOMED CT codes for identifying laboratory
 // included directly within LabResultFindings, the following error occurs:
 //
 //     ERROR: ValueSet.where(id = 'lab-result-findings'): Error from server: Unable to find
-//     value set "http://hl7.org/fhir/uv/smarthealthcards-vaccination/ValueSet/qualitative-lab-results-loinc"
+//     value set "http://hl7.org/fhir/uv/shc-vaccination/ValueSet/qualitative-lab-results-loinc"
 
 // Include all clinical finding codes
 * include codes from system SCT where concept is-a #404684003 // Clinical finding (finding)
