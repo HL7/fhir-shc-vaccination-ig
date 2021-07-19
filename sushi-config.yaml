@@ -6,6 +6,7 @@ id: hl7.fhir.uv.shc-vaccination
 canonical: http://hl7.org/fhir/uv/shc-vaccination
 name: SMARTHealthCardsVaccinationAndTestingIG
 title: "SMART Health Cards: Vaccination &amp; Testing Implementation Guide"
+description: "Defines the clinical and patient information contained within a SMART Health Card (SHC) related to vaccination and lab results related to an infectious disease like COVID-19."
 status: draft
 publisher:
   name: vci.org
@@ -15,10 +16,10 @@ version: 0.6.0-pre-ballot-stable
 fhirVersion: 4.0.1
 dependencies:
   us.cdc.phinvads:
-    uri: http://fhir.org/packages/us.cdc.phinvads
+    uri: http://fhir.org/packages/us.cdc.phinvads/ImplementationGuide/us.cdc.phinvads
     version: 0.7.0
   us.nlm.vsac:
-    uri: http://fhir.org/packages/us.nlm.vsac
+    uri: http://fhir.org/packages/us.nlm.vsac/ImplementationGuide/us.nlm.vsac
     version: 0.4.0
 copyrightYear: 2021
 license: Apache-2.0
