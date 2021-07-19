@@ -152,7 +152,6 @@ RuleSet: LaboratoryResultObservationDM
 * referenceRange.modifierExtension 0..0
 * referenceRange.appliesTo 0..0
 * referenceRange.age 0..0
-* referenceRange.text 0..0
 * referenceRange.type.id 0..0
 * referenceRange.type.extension 0..0
 * referenceRange.type.text 0..0
