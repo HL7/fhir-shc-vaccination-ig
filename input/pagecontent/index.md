@@ -50,6 +50,13 @@ The example Bundle resources for both scenarios above conform to [SHCVaccination
 * {% assign example = site.data.examples["StructureDefinition-shc-patient-us.html"][2] %}[Patient resource: {{example.title}}]({{ example.url | replace: 'GIT_BRANCH_GOES_HERE', site.data['git-branch']}}) conforming to [SHCPatientUnitedStatesDM]
 * {% assign example = site.data.examples["StructureDefinition-shc-covid19-laboratory-result-observation.html"][0] %}[Observation resource: {{example.title}}]({{ example.url | replace: 'GIT_BRANCH_GOES_HERE', site.data['git-branch']}}) conforming to [SHCCovid19LaboratoryResultObservationDM]
 
+#### Use case 3: past infection
+
+**Scenario 4:** A patient is diagnosed with clinical SARS-CoV-2 (COVID19) infection. Here is [an example of a FHIR Bundle representing this scenario](https://github.com/dvci/vaccine-credential-ig/blob/{{ site.data['git-branch'] }}/examples/Scenario4Bundle.json), which contains the following resources:
+
+* {% assign example = site.data.examples["StructureDefinition-shc-patient-us.html"][2] %}[Patient resource: {{example.title}}]({{ example.url | replace: 'GIT_BRANCH_GOES_HERE', site.data['git-branch']}}) conforming to [SHCPatientUnitedStatesDM]
+* {% assign example = site.data.examples["StructureDefinition-shc-covid19-condition.html"][0] %}[Observation resource: {{example.title}}]({{ example.url | replace: 'GIT_BRANCH_GOES_HERE', site.data['git-branch']}}) conforming to [SHCCovid19ConditionDM]
+
 ### Profiles
 
 For the list of profiles defined in this IG please see [the Profiles page](profiles.html).

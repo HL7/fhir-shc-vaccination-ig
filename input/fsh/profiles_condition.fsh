@@ -1,16 +1,8 @@
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
-Profile:     InfectiousDiseaseCondition
-Id:          infectious-disease-condition
-Parent:      Condition
-Title:       "Condition Profile - Allowable Data"
-Description: "Defines a profile representing an assertion of past infection for a SMART Health Card."
-
-* . ^definition = "Describes the details of a patient being clinically diagnosed with an infectious disease."
+RuleSet: ConditionAD
 
 * insert id-should-not-be-populated()
 
-* subject only Reference(VaccinationCredentialPatient)
+* subject only Reference(shc-patient-general-ad)
 * subject MS
 * insert reference-to-absolute-uri(subject)
 
@@ -43,22 +35,7 @@ Description: "Defines a profile representing an assertion of past infection for 
 * verificationStatus = http://terminology.hl7.org/CodeSystem/condition-ver-status#confirmed
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
-
-Profile:     InfectiousDiseaseConditionCovid19
-Id:          infectious-disease-condition-covid-19
-Parent:      InfectiousDiseaseCondition
-Title:       "Condition Profile - Allowable Data - COVID-19"
-Description: "Recommended profile for implementers to identify COVID-19 conditions for a SMART Health Card."
-
-* code from confirmed-covid-19-infection (required)
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
-Profile:     InfectiousDiseaseConditionDM
-Id:          infectious-disease-condition-dm
-Parent:      InfectiousDiseaseCondition
-Title:       "Condition Profile - Data Minimization"
-Description: "Defines a profile representing an assertion of past infection for a SMART Health Card. Only elements necessary for Verifiers can be populated."
+RuleSet: ConditionDM
 
 * id 0..0
 * meta.versionId 0..0
@@ -90,10 +67,44 @@ Description: "Defines a profile representing an assertion of past infection for 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Profile:     InfectiousDiseaseConditionCovid19DM
-Id:          infectious-disease-condition-covid-19-dm
-Parent:      InfectiousDiseaseConditionDM
-Title:       "Condition Profile - Data Minimization - COVID-19"
-Description: "Recommended data minimization profile for implementers to identify COVID-19 conditions for a SMART Health Card."
+Profile:     SHCInfectiousDiseaseConditionAD
+Id:          shc-infectious-disease-condition-ad
+Parent:      Condition
+Title:       "Generic Condition Profile - Allowable Data"
+Description: "Defines a profile representing an assertion of past infection."
+
+* insert ConditionAD
+
+* . ^definition = "Describes the details of a patient being clinically diagnosed with an infectious disease."
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Profile:     SHCCovid19ConditionAD
+Id:          shc-covid19-condition-ad
+Parent:      Condition
+Title:       "COVID-19 Condition Profile - Allowable Data"
+Description: "Recommended profile for implementers to assert past COVID-19 infection."
+
+* insert ConditionAD
 
 * code from confirmed-covid-19-infection (required)
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Profile:     SHCInfectiousDiseaseConditionDM
+Id:          shc-infectious-disease-condition-dm
+Parent:      SHCInfectiousDiseaseConditionAD
+Title:       "Generic Condition Profile - Data Minimization"
+Description: "Defines a profile representing an assertion of past infection. Only elements necessary for Verifiers can be populated."
+
+* insert ConditionDM
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Profile:     SHCCovid19ConditionDM
+Id:          shc-covid19-condition-dm
+Parent:      SHCCovid19ConditionAD
+Title:       "COVID-19 Condition Profile - Data Minimization"
+Description: "Recommended data minimization profile for implementers to identify COVID-19 conditions for a SMART Health Card."
+
+* insert ConditionDM

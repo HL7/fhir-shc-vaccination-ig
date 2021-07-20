@@ -79,39 +79,27 @@
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle.json#L8-L18"
         }
     ],
-    "StructureDefinition-infectious-disease-condition-bundle.html": [
+    "StructureDefinition-shc-infectious-disease-condition-bundle.html": [
         {
-            "title": "Scenario 3 Bundle (COVID-19 condition)",
+            "title": "Scenario 4 Bundle (COVID-19 condition)",
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario4Bundle.json"
         }
     ],
-    "StructureDefinition-covid19-condition-bundle.html": [
+    "StructureDefinition-shc-covid19-condition-bundle.html": [
         {
-            "title": "Scenario 3 Bundle (COVID-19 condition)",
+            "title": "Scenario 4 Bundle (COVID-19 condition)",
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario4Bundle.json"
         }
     ],
-    "StructureDefinition-infectious-disease-condition.html": [
+    "StructureDefinition-shc-infectious-disease-condition.html": [
         {
-            "title": "Scenario 3 Bundle (COVID-19 condition)",
+            "title": "Scenario 4 Bundle (COVID-19 condition)",
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario4Bundle.json"
         }
     ],
-    "StructureDefinition-infectious-disease-condition-dm.html": [
+    "StructureDefinition-shc-covid19-condition.html": [
         {
-            "title": "Scenario 3 Bundle (COVID-19 condition)",
-            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario4Bundle.json"
-        }
-    ],
-    "StructureDefinition-infectious-disease-condition-covid-19.html": [
-        {
-            "title": "Scenario 3 Bundle (COVID-19 condition)",
-            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario4Bundle.json"
-        }
-    ],
-    "StructureDefinition-infectious-disease-condition-covid-19-dm.html": [
-        {
-            "title": "Scenario 3 Bundle (COVID-19 condition)",
+            "title": "Scenario 4 Bundle (COVID-19 condition)",
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario4Bundle.json"
         }
     ]

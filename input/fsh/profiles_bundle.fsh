@@ -277,9 +277,9 @@ Description: "The bundle of resources that represents the clinical content of a 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Profile: InfectiousDiseaseConditionBundle
+Profile: SHCInfectiousDiseaseConditionBundleAD
 Parent: Bundle
-Id: infectious-disease-condition-bundle
+Id: shc-infectious-disease-condition-bundle-ad
 Title: "Infectious Disease Condition Bundle - Allowable Data"
 Description: "The bundle of resources that represents the clinical content of a digital infectious disease condition record."
 
@@ -292,17 +292,17 @@ Description: "The bundle of resources that represents the clinical content of a 
 
 * entry[patient] ^short = "Patient"
 * entry[patient] ^definition = "The patient who is the subject of the Bundle"
-* entry[patient].resource only VaccinationCredentialPatient
+* entry[patient].resource only shc-patient-general-ad
 
 * entry[condition] ^short = "Condition"
 * entry[condition] ^definition = "Condition"
-* entry[condition].resource only InfectiousDiseaseCondition
+* entry[condition].resource only SHCInfectiousDiseaseConditionAD
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Profile: InfectiousDiseaseConditionBundleDM
+Profile: SHCInfectiousDiseaseConditionBundleDM
 Parent: Bundle
-Id: infectious-disease-condition-bundle-dm
+Id: shc-infectious-disease-condition-bundle-dm
 Title: "Infectious Disease Condition Bundle - Data Minimization"
 Description: "The bundle of resources that represents the clinical content of a digital infectious disease condition record using data minimization profiles."
 
@@ -316,17 +316,17 @@ Description: "The bundle of resources that represents the clinical content of a 
 
 * entry[patient] ^short = "Patient"
 * entry[patient] ^definition = "The patient who is the subject of the Bundle"
-* entry[patient].resource only VaccinationCredentialPatient
+* entry[patient].resource only shc-patient-general-dm
 
 * entry[condition] ^short = "Condition"
 * entry[condition] ^definition = "Condition"
-* entry[condition].resource only InfectiousDiseaseConditionDM
+* entry[condition].resource only SHCInfectiousDiseaseConditionDM
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Profile: Covid19ConditionBundle
+Profile: SHCCovid19ConditionBundleAD
 Parent: Bundle
-Id: covid19-condition-bundle
+Id: shc-covid19-condition-bundle-ad
 Title: "COVID-19-specific Condition Bundle - Allowable Data"
 Description: "The bundle of resources that represents the clinical content of a digital condition credential record specifically for COVID-19."
 
@@ -339,17 +339,17 @@ Description: "The bundle of resources that represents the clinical content of a 
 
 * entry[patient] ^short = "Patient"
 * entry[patient] ^definition = "The patient who is the subject of the Bundle"
-* entry[patient].resource only VaccinationCredentialPatient
+* entry[patient].resource only shc-patient-general-ad
 
 * entry[condition] ^short = "Condition"
 * entry[condition] ^definition = "Condition"
-* entry[condition].resource only InfectiousDiseaseConditionCovid19
+* entry[condition].resource only SHCCovid19ConditionAD
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Profile: Covid19ConditionBundleDM
+Profile: SHCCovid19ConditionBundleDM
 Parent: Bundle
-Id: covid19-condition-bundle-dm
+Id: shc-covid19-condition-bundle-dm
 Title: "COVID-19-specific Condition Bundle - Data Minimization"
 Description: "The bundle of resources that represents the clinical content of a digital condition credential record specifically for COVID-19 data minimization."
 
@@ -363,10 +363,10 @@ Description: "The bundle of resources that represents the clinical content of a 
 
 * entry[patient] ^short = "Patient"
 * entry[patient] ^definition = "The patient who is the subject of the Bundle"
-* entry[patient].resource only VaccinationCredentialPatientDM
+* entry[patient].resource only shc-patient-general-dm
 
 * entry[condition] ^short = "Condition"
 * entry[condition] ^definition = "Condition"
-* entry[condition].resource only InfectiousDiseaseConditionCovid19DM
+* entry[condition].resource only SHCCovid19ConditionDM
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////

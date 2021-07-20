@@ -3,6 +3,7 @@
 [SMART Health Cards]: https://smarthealth.cards/
 [SMART Health Cards Framework]: https://spec.smarthealth.cards/
 
+[SHCCovid19ConditionDM]: StructureDefinition-shc-covid19-condition-dm.html
 [SHCCovid19LaboratoryBundleDM]: StructureDefinition-shc-covid19-laboratory-bundle-dm.html
 [SHCCovid19LaboratoryBundleAD]: StructureDefinition-shc-covid19-laboratory-bundle-ad.html
 [SHCCovid19LaboratoryResultObservationAD]: StructureDefinition-shc-covid19-laboratory-result-observation-ad.html

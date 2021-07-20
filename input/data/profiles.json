@@ -45,6 +45,22 @@
       }
     ]
   },
+  "condition": {
+    "name": "Condition",
+    "description": "For represent past clinical infection with COVID-19 or other infectious disease.",
+    "profileSets": [
+      {
+        "name": "Condition - COVID-19",
+        "scope": "COVID-19 only",
+        "slug": "shc-covid19-condition"
+      },
+      {
+        "name": "Condition - Generic",
+        "scope": "Other infectious diseases",
+        "slug": "shc-infectious-disease-condition"
+      }
+    ]
+  },
   "bundles": {
     "name": "Bundles",
     "description": "Defines the contents of the `fhirBundle` element in a SMART Health Card for a given use case.",
@@ -63,6 +79,16 @@
         "name": "Generic Labs Bundle",
         "scope": "Lab results for any infections disease",
         "slug": "shc-infectious-disease-laboratory-bundle"
+      },
+      {
+        "name": "COVID-19 Conditions Bundle",
+        "scope": "Conditions for COVID-19 only",
+        "slug": "shc-covid19-condition-bundle"
+      },
+      {
+        "name": "Generic Conditions Bundle",
+        "scope": "Conditions for any infections disease",
+        "slug": "shc-infectious-disease-condition-bundle"
       }
     ]
   },
