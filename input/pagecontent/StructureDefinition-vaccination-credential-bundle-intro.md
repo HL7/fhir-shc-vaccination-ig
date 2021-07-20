@@ -1,1 +1,0 @@
-{% include ad-profile.md %}

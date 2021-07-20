@@ -2,37 +2,34 @@
 
 # Suppress errors related to relative links that the Publisher is turning into the wrong absolute links
 # Reported as https://github.com/HL7/fhir-ig-publisher/issues/245
-The link 'http://hl7.org/fhir/R4/conformance.html#data-minimization' for "data minimization reasons" cannot be resolved
+The link 'http://hl7.org/fhir/R4/profiles.html#data-minimization' for "data minimization reasons" cannot be resolved
 The link 'http://hl7.org/fhir/R4/conformance.html' for "conformance requirements" cannot be resolved
 
-# We are purposefully leaving out descriptions for data minimization
-WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Immunization/ExampleImmunizationNoCVX.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
-WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/Scenario1Bundle.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
-WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Immunization/Scenario1Immunization1.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
-WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Immunization/Scenario1Immunization2.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
-WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Location/Scenario1Location.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
-WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Patient/Scenario1Patient.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
-WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/Scenario2Bundle.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
-WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Immunization/Scenario2Immunization1.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
-WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Immunization/Scenario2Immunization2.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
-WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Location/Scenario2Location.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
-WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Patient/Scenario2Patient.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
-WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Bundle/Scenario3Bundle.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
-WARNING: Unable to find ImplementationGuide.definition.resource.description for the resource Observation/Scenario3Lab.  Descriptions are strongly encouraged if they cannot be inferred from the resource to allow proper population of the artifact list.
+# Suppress errors related to not having examples. We do in fact have examples for all profiles, but they are linked to on GitHub rather than as part of the standard IG build process. The reason for this is that the IG publisher build process won't allow us to exclude `Resource.id`, `Resource.meta`, and `Resource.text` in examples. These elements SHOULD NOT be included in resources conforming to our IG, so having examples that include them would be confusing for implementers. Reported as https://github.com/HL7/fhir-ig-publisher/issues/293
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-covid19-laboratory-bundle-ad'): The Implementation Guide contains no examples for this profile
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-covid19-laboratory-bundle-dm'): The Implementation Guide contains no examples for this profile
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-covid19-laboratory-result-observation-ad'): The Implementation Guide contains no examples for this profile
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-covid19-laboratory-result-observation-dm'): The Implementation Guide contains no examples for this profile
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-infectious-disease-laboratory-bundle-ad'): The Implementation Guide contains no examples for this profile
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-infectious-disease-laboratory-bundle-dm'): The Implementation Guide contains no examples for this profile
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-infectious-disease-laboratory-result-observation-ad'): The Implementation Guide contains no examples for this profile
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-infectious-disease-laboratory-result-observation-dm'): The Implementation Guide contains no examples for this profile
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-patient-general-ad'): The Implementation Guide contains no examples for this profile
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-patient-general-dm'): The Implementation Guide contains no examples for this profile
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-patient-us-ad'): The Implementation Guide contains no examples for this profile
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-patient-us-dm'): The Implementation Guide contains no examples for this profile
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-ad'): The Implementation Guide contains no examples for this profile
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-bundle-ad'): The Implementation Guide contains no examples for this profile
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-bundle-dm'): The Implementation Guide contains no examples for this profile
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-dm'): The Implementation Guide contains no examples for this profile
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-reaction-observation-ad'): The Implementation Guide contains no examples for this profile
+WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-reaction-observation-dm'): The Implementation Guide contains no examples for this profile
 
-# We have examples, but leave out meta.profile for data minimization so the Publisher doesn't know how to find them
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/covid19-laboratory-bundle-dm'): The Implementation Guide contains no examples for this profile
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/covid19-laboratory-result-observation'): The Implementation Guide contains no examples for this profile
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/covid19-laboratory-result-observation-dm'): The Implementation Guide contains no examples for this profile
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/infections-disease-laboratory-bundle-dm'): The Implementation Guide contains no examples for this profile
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/infectious-disease-laboratory-result-observation'): The Implementation Guide contains no examples for this profile
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/infectious-disease-laboratory-result-observation-dm'): The Implementation Guide contains no examples for this profile
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-bundle'): The Implementation Guide contains no examples for this profile
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-bundle-dm'): The Implementation Guide contains no examples for this profile
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-immunization'): The Implementation Guide contains no examples for this profile
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-immunization-dm'): The Implementation Guide contains no examples for this profile
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-laboratory-bundle'): The Implementation Guide contains no examples for this profile
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-patient'): The Implementation Guide contains no examples for this profile
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-patient-dm'): The Implementation Guide contains no examples for this profile
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-vaccine-reaction-observation'): The Implementation Guide contains no examples for this profile
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/smarthealthcards-vaccination/StructureDefinition/vaccination-credential-vaccine-reaction-observation-dm'): The Implementation Guide contains no examples for this profile
+# tx.fhir.org does not support some of the code systems we use -- suppressing related warnings
+WARNING: ValueSet.where(id = 'vaccine-atc'): Error from server: Unable to provide support for code system https://www.whocc.no/atc_ddd_index/
+WARNING: ValueSet.where(id = 'vaccine-icd-11'): Error from server: Unable to provide support for code system http://id.who.int/icd11/mms
+
+# Per https://www.healthterminologies.gov.au/integration/R4/fhir/ValueSet/australian-immunisation-register-vaccine-1, https://healthterminologies.gov.au/fhir/ValueSet/australian-immunisation-register-vaccine-1 is the canonical URI for this value set. However, this causes the following warnings.
+WARNING: StructureDefinition/shc-vaccination-ad: StructureDefinition.differential.element[15].binding: The valueSet reference https://healthterminologies.gov.au/fhir/ValueSet/australian-immunisation-register-vaccine-1 on element Immunization.vaccineCode.coding could not be resolved
+WARNING: StructureDefinition/shc-vaccination-ad: StructureDefinition.snapshot.element[56].binding: The valueSet reference https://healthterminologies.gov.au/fhir/ValueSet/australian-immunisation-register-vaccine-1 on element Immunization.vaccineCode.coding could not be resolved
+WARNING: StructureDefinition/shc-vaccination-dm: StructureDefinition.snapshot.element[56].binding: The valueSet reference https://healthterminologies.gov.au/fhir/ValueSet/australian-immunisation-register-vaccine-1 on element Immunization.vaccineCode.coding could not be resolved

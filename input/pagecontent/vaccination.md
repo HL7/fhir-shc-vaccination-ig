@@ -1,3 +1,12 @@
+{% include profile-set-nav.md resourceName="vaccination" %}
+
+<script>
+// Move Markdown TOC below navigation
+var ref = document.querySelector('h4');
+var el = document.querySelector('div.markdown-toc');
+ref.parentNode.insertBefore(el, ref);
+</script>
+
 ### Usage
 
 #### Scope and terminology
@@ -14,23 +23,21 @@ Note that:
 
 The `vaccineCode` element is used to identify the vaccine given to the patient.
 
-Implementers SHALL use one of the following code systems for identifying vaccinations in the `vaccineCode` element:
+Implementers SHALL use at least one of the following code systems for identifying vaccinations in the `vaccineCode` element:
 
 ----------
 
 {:.table-striped.table.table-bordered}
-| Code system                                    | Value set                                  | Example                                                                                    | COVID-19: Specify manufacturer?  |
-| ---------------------------------------------- | ------------------------------------------ | ------------------------------------------------------------------------------------------ | -------------------------------- |
-| GTIN: `https://www.gs1.org/gtin`               | [VaccineProductGTIN]                       | `380777273990` ([Moderna COVID-19 vaccination], NDC `80777-273`)                           | No                               |
-| CVX: `http://hl7.org/fhir/sid/cvx`             | [VaccineProductCVX]                        | `207` ("COVID-19, mRNA, LNP-S, PF, 100 mcg/0.5 mL dose")                                   | No (optional for other diseases) |
-| AIR\*                                          | [Australian Immunisation Register Vaccine] | `COVAST` ("COVID-19 Vaccine AstraZeneca")                                                  | No                               |
-| SNOMED CT: `http://snomed.info/sct`            | [VaccineTypeSNOMED]                        | `1119349007` ("Severe acute respiratory syndrome coronavirus 2 mRNA only vaccine product") | Yes (required)&dagger;           |
-| ICD-11: `http://id.who.int/icd11/mms`          | [VaccineTargetICD11]                       | `XM0GQ8` ("COVID-19 vaccine, RNA based)                                                    | Yes (required)                   |
-| ATC/DDD: `https://www.whocc.no/atc_ddd_index/` | [VaccineTargetATC]                         | `J07BX03` ("covid-19 vaccines")                                                            | Yes (required)                   |
+| Code system                           | Value set                                  | Example                                                                                    |
+| ------------------------------------- | ------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| GTIN: `https://www.gs1.org/gtin`      | [VaccineGTIN]                              | `380777273990` ([Moderna COVID-19 vaccination], NDC `80777-273`)                           |
+| CVX: `http://hl7.org/fhir/sid/cvx`    | [VaccineCVX]                               | `207` ("COVID-19, mRNA, LNP-S, PF, 100 mcg/0.5 mL dose")                                   |
+| AIR\*                                 | [Australian Immunisation Register Vaccine] | `COVAST` ("COVID-19 Vaccine AstraZeneca")                                                  |
+| SNOMED CT: `http://snomed.info/sct`   | [VaccineSNOMED]                            | `1119349007` ("Severe acute respiratory syndrome coronavirus 2 mRNA only vaccine product") |
+| ICD-11: `http://id.who.int/icd11/mms` | [VaccineICD11]                             | `XM0GQ8` ("COVID-19 vaccine, RNA based)                                                    |
+| ATC/DDD: `http://www.whocc.no/atc`    | [VaccineATC]                               | `J07BX03` ("covid-19 vaccines")                                                            |
 
 \* The URI for AIR is `https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats`.
-
-&dagger; The UK edition of SNOMED CT includes codes for COVID-19 vaccines that identify specific vaccine products. [Children of `39330711000001103`](https://termbrowser.nhs.uk/?perspective=full&conceptId1=39330711000001103&edition=uk-edition&release=v20210317&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104), such as [`39326811000001106`](https://termbrowser.nhs.uk/?perspective=full&conceptId1=39326811000001106&edition=uk-edition&release=v20210317&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104) ("Generic COVID-19 mRNA (nucleoside modified) Vaccine Moderna 0.1mg/0.5mL dose dispersion for injection multidose vials (product)"), can therefore be used without separately specifying the manufacturer as long as the Fully Specified Name includes the manufacturer of the vaccine.
 
 [Australian Immunisation Register Vaccine]: https://www.healthterminologies.gov.au/integration/R4/fhir/ValueSet/australian-immunisation-register-vaccine-1
 [Moderna COVID-19 vaccination]: https://www.accessdata.fda.gov/spl/data/bf508dc6-df89-b057-e053-2a95a90abda9/bf508dc6-df89-b057-e053-2a95a90abda9.xml
@@ -66,7 +73,7 @@ When using multiple codes, the codes SHALL NOT contradict each other. More infor
 
 > More than one code may be used in CodeableConcept. The concept may be coded multiple times in different code systems.... Each coding (also referred to as a 'translation') is a representation of the concept as described above and may have slightly different granularity due to the differences in the definitions of the underlying codes. There is no meaning associated with the ordering of coding within a CodeableConcept.
 
-However, as described above, for [data minimization](conformance.html#data-minimization) reasons, Issuers SHOULD typically include ONLY a single code that is the most granular (i.e., includes the greatest level of detail) of the options available in their system UNLESS they believe another actor may benefit from the additional code. Typically at most two codes will be included in `vaccineCode`: a less granular code paired with a GTIN code to identify manufacturer as described below.
+However, as described above, for [data minimization](profiles.html#data-minimization) reasons, Issuers SHOULD typically include ONLY a single code that is the most granular (i.e., includes the greatest level of detail) of the options available in their system UNLESS they believe another actor may benefit from the additional code. Typically at most two codes will be included in `vaccineCode`: a less granular code paired with a GTIN code to identify manufacturer as described below.
 
 Verifiers SHALL be able to meaningfully process and interpret codes from ALL of the systems listed above.
 
@@ -74,16 +81,39 @@ Verifiers SHALL be able to meaningfully process and interpret codes from ALL of 
 
 Implementers may request support for an additional code system by [opening a new GitHub issue](https://github.com/dvci/vaccine-credential-ig/issues/new).
 
-#### Vaccine manufacturer
+#### Vaccine formulation specificity requirements
 
-There are two approaches for identifying vaccine manufacturer that are supported by this IG:
+In some cases, identifying the specific formulation of a vaccine may be necessary for Verifiers to determine if the presented immunization(s) meet their criteria. For example, a code meaning only "COVID-19 mRNA vaccine" may be insufficient for a Verifier who wishes to ensure the patient received two doses on the proper schedule (the timing of the 2nd dose is different for the Pfizer and Moderna mRNA vaccines). Some code systems, such as CVX, may provide different codes for vaccines where the timing and number of doses differ.
+
+Issuers of Immunization resources conforming to this IG's vaccination profiles SHALL provide code(s) in `vaccineCode` that allow Verifiers to infer the manufacture's recommended timing and number of doses for the vaccine in question. For example, this means providing a code that differentiates between the Moderna and Pfizer mRNA COVID-19 vaccines.
+
+Additionally, Issuers of Immunization resources conforming to this IG's vaccination profiles SHALL provide code(s) in `vaccineCode` that allow Verifiers to differentiate between vaccines with meaningfully different effectiveness as reported in peer-reviewed medical literature. For example, COVID-19 vaccines have a wide range of reported effectiveness, so it is insufficient to use only a generic "COVID-19 vaccine" code.
+
+For COVID-19 specifically, the following table identifies which code systems MAY require the use of additional information to identify a vaccination with enough specificity to meet these conformance criteria. However, this table may not reflect the most current versions of code systems or status of vaccines -- Issuers SHALL consult with infectious disease experts to determine a given set of code(s) is sufficient.
+
+
+{:.table-striped.table.table-bordered}
+| Code system | COVID-19: Additional codes needed to identify formulation? |
+| ----------- | ---------------------------------------------------------- |
+| GTIN        | No                                                         |
+| CVX         | No                                                         |
+| AIR         | No                                                         |
+| SNOMED CT   | Yes &dagger;                                               |
+| ICD-11      | Yes                                                        |
+| ATC/DDD     | Yes                                                        |
+
+&dagger; The UK edition of SNOMED CT includes codes for COVID-19 vaccines that identify specific vaccine products. [Children of `39330711000001103`](https://termbrowser.nhs.uk/?perspective=full&conceptId1=39330711000001103&edition=uk-edition&release=v20210317&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104), such as [`39326811000001106`](https://termbrowser.nhs.uk/?perspective=full&conceptId1=39326811000001106&edition=uk-edition&release=v20210317&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104) ("Generic COVID-19 mRNA (nucleoside modified) Vaccine Moderna 0.1mg/0.5mL dose dispersion for injection multidose vials (product)"), can therefore be used without separately specifying the manufacturer as long as the SNOMED Fully Specified Name includes the manufacturer of the vaccine. This holds for any other locale-specific editions of SNOMED CT that include codes with this level of granularity.
+
+#### Identifying vaccine manufacturer
+
+One way Issuers may be able to meet the above vaccine specificity conformance criteria is to identify the manufacturer of the vaccine. This can be done in two ways:
 
 1. Include GTIN in `vaccineCode` (preferred)
 2. Populate `manufacturer.identifier` (fallback)
 
-Adding a GTIN to `vaccineCode` is preferred because this is less verbose than using `manufacturer.identifier`, and because `manufacturer.identifier` is not a CodeableConcept. This means that it cannot be bound to a value set like `vaccineCode`.
+Adding a GTIN to `vaccineCode` is preferred because this is less verbose than using `manufacturer.identifier`, and because `manufacturer.identifier` is not a CodeableConcept (meaning that it cannot be bound to a value set like `vaccineCode` for validation).
 
-However, if populating `manufacturer.identifier`, Issuers SHALL identify a code system URI in `system` and use a code from that code system in `value`. Specifically, Issuers SHALL use a code from one of the code systems below in `manufacturer.identifier.value`:
+Despite `manufacturer.identifier` not being bound to a value set, Issuers populating this element SHALL identify a code system URI in `system` and use a code from that code system in `value`. Specifically, Issuers SHALL use a code from one of the code systems below in `manufacturer.identifier.value`:
 
 {:.table-striped.table.table-bordered}
 | Code system                                      | Example                   |
@@ -121,15 +151,7 @@ For example, to identify Moderna, either of the following may be used:
 
 Verifiers SHALL be able to meaningfully process and interpret codes from ALL of the systems listed above.
 
-##### When should vaccine manufacturer be provided?
-
-**For COVID-19:** If `vaccineCode` contains a code from a code system with `No` in the "COVID-19: Specify manufacturer?" column in the table above, Issuers SHALL NOT separately provide manufacturer. Otherwise, if `vaccineCode` contains a code from a code system with `Yes (optional)` in the "COVID-19: Specify manufacturer?" column, Issuers MAY separately provide manufacturer. Otherwise, Issuers SHALL separately provide manufacturer using one of the approaches described above. (Note the exception for some UK SNOMED CT codes as described with the &dagger; with the above table.)
-
-This is necessary to provide sufficient information for Verifiers to assess immunity based on the vaccination data in the SMART Health Cards. For example, the Pfizer and Moderna mRNA COVID-19 vaccines share the same SNOMED code (`1119349007`) but have different timing for the second dose; Verifiers may wish to know if two doses were administered with the correct timing and confirm that they were both from the same manufacturer. Another example: there is a single ATC/DDD code (`J07BX03`) for *all* COVID-19 vaccines; this is not sufficient information for Verifiers to assess immunity because some vaccines require multiple doses and some do not.
-
-**For other diseases:** If `vaccineCode` contains a GTIN, Issuers SHALL NOT separately provide manufacturer. Otherwise, Issuers SHOULD provide the manufacturer if they believe this information could be necessary or useful for Verifiers.
-
-For example, if there are multiple vaccines for a specific disease with different numbers of doses, different schedules for doses, or meaningful differences in effectiveness, Issuers SHOULD provide manufacturer using one of the approaches described above.
+Issuers SHALL ONLY provide manufacturer separately from the primary `vaccineCode` value IF it is necessary for differentiating among vaccine formulations as described above.
 
 Note manufacturer and lot number may be recorded together in vaccine records. To conform with this IG, manufacturer SHALL NOT appear in the `lotNumber` element; instead, Issuers SHALL apply the above conformance criteria to determine when and how manufacturer can be identified.
 
@@ -137,11 +159,7 @@ Note manufacturer and lot number may be recorded together in vaccine records. To
 
 When vaccine and manufacturer are provided using US-centric terminology (CVX and MVX, respectively) for COVID-19 vaccinations, CDC [provides a list](https://www.cdc.gov/vaccines/programs/iis/COVID-19-related-codes.html) that includes "Sale Proprietary Name" (e.g., `Moderna COVID-19 Vaccine`). The "Sale Proprietary Name" or other trade name SHALL NOT be included in FHIR resources, but MAY be used by actors when producing human-readable representations of these resources.
 
-Note that as of May 2021, CVX implicitly identifies specific vaccine products and manufacturers **only for COVID-19**. For other diseases, CVX typically identifies just the target disease and vaccine type. Issuers that only populate `vaccineCode` with a CVX code therefore SHALL NOT populate a `manufacturer` for COVID-19 vaccinations UNLESS they believe this information is important for Verifiers. Issuers using CVX MAY populate a `manufacturer` for non-COVID-19 vaccinations.
-
-<div class="alert alert-info" role="alert" markdown="1">
-Implementers using CVX to identify a COVID-19 vaccination SHOULD conform to **[this CVX-specific allowable data profile][VaccinationCredentialImmunizationCVXCovid19]**.
-</div>
+Note that as of July 2021, CVX implicitly identifies specific vaccine products and manufacturers **only for COVID-19**. For other diseases, CVX typically identifies just the target disease and vaccine type. Issuers that only populate `vaccineCode` with a CVX code therefore SHALL NOT populate a `manufacturer` for COVID-19 vaccinations UNLESS they believe this information is important for Verifiers. For other diseases, Issuers should refer to the conformance criteria above to determine if providing additional information to identify a specific vaccine formulation is necessary when primarily using CVX to identify vaccines.
 
 #### Universal terminology: GTIN and GLN
 
