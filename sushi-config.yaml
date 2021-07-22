@@ -12,7 +12,7 @@ publisher:
   name: vci.org
   url: https://vci.org
   email: vci-ig@mitre.org
-version: 0.6.0-pre-ballot-stable
+version: 0.6.0
 fhirVersion: 4.0.1
 dependencies:
   us.cdc.phinvads:
@@ -23,7 +23,7 @@ dependencies:
     version: 0.4.0
 copyrightYear: 2021
 license: Apache-2.0
-releaseLabel: ci-build
+releaseLabel: STU 1 (Proposed Ballot Version)
 jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#001
 parameters:
   "liquid-path": "liquid"
