@@ -1,0 +1,72 @@
+{
+  "iss": "https://spec.smarthealth.cards/examples/issuer",
+  "nbf": 1626974417,
+  "vc": {
+    "type": [
+      "https://smarthealth.cards#health-card"
+    ],
+    "credentialSubject": {
+      "fhirVersion": null,
+      "fhirBundle": {
+        "type": "collection",
+        "entry": [
+          {
+            "fullUrl": "resource:0",
+            "resource": {
+              "name": [
+                {
+                  "family": "Anyperson",
+                  "given": [
+                    "John",
+                    "B."
+                  ]
+                }
+              ],
+              "birthDate": "1951-01-20",
+              "resourceType": "Patient"
+            }
+          },
+          {
+            "fullUrl": "resource:1",
+            "resource": {
+              "status": "completed",
+              "vaccineCode": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/sid/cvx",
+                    "code": "207"
+                  }
+                ]
+              },
+              "patient": {
+                "reference": "resource:0"
+              },
+              "occurrenceDateTime": "2021-01-01",
+              "resourceType": "Immunization"
+            }
+          },
+          {
+            "fullUrl": "resource:2",
+            "resource": {
+              "status": "completed",
+              "vaccineCode": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/sid/cvx",
+                    "code": "207"
+                  }
+                ]
+              },
+              "patient": {
+                "reference": "resource:0"
+              },
+              "occurrenceDateTime": "2021-01-29",
+              "resourceType": "Immunization"
+            }
+          }
+        ],
+        "resourceType": "Bundle"
+      }
+    }
+  }
+}

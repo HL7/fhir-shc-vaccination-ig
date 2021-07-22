@@ -1,0 +1,42 @@
+{
+  "iss": "https://spec.smarthealth.cards/examples/issuer",
+  "nbf": 1626974417,
+  "vc": {
+    "type": [
+      "https://smarthealth.cards#health-card"
+    ],
+    "credentialSubject": {
+      "fhirVersion": null,
+      "fhirBundle": {
+        "type": "collection",
+        "entry": [
+          {
+            "fullUrl": "resource:0",
+            "resource": {
+              "name": [
+                {
+                  "family": "Anyperson",
+                  "given": [
+                    "James",
+                    "T."
+                  ]
+                }
+              ],
+              "birthDate": "1951-01-20",
+              "resourceType": "Patient"
+            }
+          },
+          {
+            "fullUrl": "resource:1",
+            "resource": {
+              "status": "final",
+              "effectiveDateTime": "2021-02-17",
+              "resourceType": "Observation"
+            }
+          }
+        ],
+        "resourceType": "Bundle"
+      }
+    }
+  }
+}
