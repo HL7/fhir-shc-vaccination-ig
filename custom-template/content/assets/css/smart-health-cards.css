@@ -1,55 +1,15 @@
-/* Yellow box at the top of the page that is problematic:
-
-1. Displays &amp; rather than &
-2. Links to a non-existent HL7 history page
-
-Disable until these issues are resolved.
-*/
-#publish-box {
-    display: none;
-}
-
 :root {
-
-  --ig-status-text-color: #7952b3; /* 1. IG Title and status text color */
-  --navbar-bg-color: #7952b3; /* 2. Header container color */
-  --footer-bg-color: #7952b3; /* 3. Footer background color*/
-  --footer-container-color: #7952b3; /* 4. Footer container color */
-  --stripe-bg-color: #7952b3; /* 5. Header strip color */
-
-  --btn-hover-color: #9b2fdd;  /* 6. Menu button hover color */
-  --btn-active-color: #da0c23; /* 7. Menu button active color */
-  --btn-text-color: #e6e6e6; /* 8. Menu button text color */
-  --btn-gradient-start-color: #428bca; /* 9. Menu item gradient start color */
-  --btn-gradient-end-color: #357ebd; /* 10. Menu item gradient end  color */
-  --btn-gradient-start-color-alpha: #ff428bca; /* 11. Menu item gradient start color (with alpha) */
-  --btn-gradient-end-color-alpha: #ff357ebd; /* 12. Menu item gradient end color (with alpha) */
-  --link-color: #428bca; /* 13. Hyperlink text color */
-  --link-hover-color: #2a6496; /* 14. Hyperlink text hover color */
-
-  --publish-box-bg-color: yellow; /* 15. Publish box background color */
-  --publish-box-border: 1px solid #0A0008; /* 16.  Publish box border definition */
-
-  --toc-box-bg-color: #ffeb7e; /* 17.  TOC box background color */
-  --toc-box-border: 1px solid navy; /* 18. TOC box border definition */
-
-  --stu-note-background-color: #fff2ff; /* 19. (STU) Note box background color */
-  --stu-note-border-left-color: #ffa0ff; /* 20. (STU) Note box border color */
 
   --ig-header-color: #f5f5f5; /* 21. Header color (sides) */
   --ig-header-container-color: #f5f5f5; /* 22. Header container color (center) */
+  --footer-bg-color: #f5f5f5; /* Gutters around the footer */
 
 }
 
+/* Left-aligns the IG title rather than centering it */
 #ig-status {
     text-align: left;
     padding-left: 12px;
-}
-
-/* Controls the IG title at the top of each page */
-#ig-status span {
-    font-size: 2.5rem;
-    font-weight: bold;
 }
 
 /* Cosmetic change to slim the stripe behind the navbar */

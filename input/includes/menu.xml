@@ -20,7 +20,6 @@
       <li><a href="ValueSet-identity-assurance-level.html">Identity assurance levels</a></li>
     </ul>
   </li>
-  <li><a href="https://github.com/dvci/vaccine-credential-ig/releases">Version History</a></li>
-  <li><a href="https://github.com/dvci/vaccine-credential-ig">GitHub</a></li>
+  <li><a href="https://github.com/HL7/fhir-shc-vaccination-ig">GitHub</a></li>
   <li><a href="contact.html">Contact the Authors</a></li>
 </ul>
