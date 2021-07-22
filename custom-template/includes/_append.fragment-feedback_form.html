@@ -1,0 +1,9 @@
+<!--
+Fixes "&amp;" rendered in the pub box
+Remove when this is resolved: https://github.com/HL7/fhir-ig-publisher/issues/299
+-->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+if(document.getElementById('publish-box')) $("#publish-box").html($("#publish-box").html().replace('amp;', ''));
+});
+</script>
