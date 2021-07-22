@@ -10,7 +10,7 @@ specification:
 
 versions:
   - current: http://build.fhir.org/ig/HL7/fhir-shc-vaccinationm-ig
-  - "0.6.0": http://build.fhir.org/ig/HL7/fhir-shc-vaccination-ig/branches/dev
+  - "0.6.0": http://hl7.org/fhir/uv/fhir-shc-vaccination/2021Sep
 
 artifacts:
 
