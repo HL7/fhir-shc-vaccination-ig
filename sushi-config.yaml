@@ -21,7 +21,7 @@ dependencies:
   us.nlm.vsac:
     uri: http://fhir.org/packages/us.nlm.vsac/ImplementationGuide/us.nlm.vsac
     version: 0.4.0
-copyrightYear: 2021
+copyrightYear: 2021+
 license: Apache-2.0
 releaseLabel: STU 1 (Proposed Ballot Version)
 jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#001
