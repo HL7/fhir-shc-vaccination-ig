@@ -1,16 +1,16 @@
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Profile:     VaccinationCredentialImmunization
-Id:          vaccination-credential-immunization
+Profile:     SHCVaccinationAD
+Id:          shc-vaccination-ad
 Parent:      Immunization
-Title:       "Immunization Profile - Allowable Data"
+Title:       "Vaccination Profile - Allowable Data"
 Description: "Defines a profile representing a vaccination for a SMART Health Card."
 
 * . ^definition = "Describes the event of a patient being administered a vaccine or a record of an immunization as reported by a patient, a clinician or another party. If the immunization is part of a multi-dose series, a separate Immunization resource SHALL be used to represent each dose."
 
 * insert id-should-not-be-populated()
 
-* patient only Reference(VaccinationCredentialPatient)
+* patient only Reference(shc-patient-general-ad)
 * patient MS
 * insert reference-to-absolute-uri(patient)
 
@@ -38,6 +38,10 @@ Description: "Defines a profile representing a vaccination for a SMART Health Ca
 * vaccineCode MS
 * vaccineCode ^short = "Codes identifying the vaccine product administered"
 
+// Override default example binding with something that makes more sense in the context of our IG
+// https://chat.fhir.org/#narrow/stream/179166-implementers/topic/IG/near/234918476
+* vaccineCode from vaccine-cvx (example)
+
 * vaccineCode.coding 1..*
 * vaccineCode.coding MS
 * vaccineCode.coding ^slicing.discriminator.type = #value
@@ -45,12 +49,14 @@ Description: "Defines a profile representing a vaccination for a SMART Health Ca
 * vaccineCode.coding ^slicing.rules = #closed
 * vaccineCode.coding ^slicing.description = "Slicing based on the code system"
 
+// Keep in sync with use of `VaccineCodeCodingDM` below for the DM profile
 * vaccineCode.coding contains
     cvx 0..1 and
     gtin 0..1 and
     snomed 0..1 and
     icd11 0..1 and
-    air 0..1
+    air 0..1 and
+    atc 0..1
 
 // It's necessary to fix `system` **in addition** to the value set binding for the slicing to work
 * vaccineCode.coding[cvx] ^short = "CVX code identifying the administered vaccine product"
@@ -73,6 +79,10 @@ Description: "Defines a profile representing a vaccination for a SMART Health Ca
 * vaccineCode.coding[air] ^short = "Australian Immunisation Register Vaccine code identifying the administered vaccine product"
 * vaccineCode.coding[air] from https://healthterminologies.gov.au/fhir/ValueSet/australian-immunisation-register-vaccine-1 (required)
 * vaccineCode.coding[air].system = "https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats"
+
+* vaccineCode.coding[atc] ^short = "ATC code identifying the administered vaccine product"
+* vaccineCode.coding[atc] from vaccine-atc (required)
+* vaccineCode.coding[atc].system = "http://www.whocc.no/atc"
 
 // Manufacturer
 // Why we are doing this rather than an extension or in vaccineCode
@@ -133,7 +143,7 @@ Description: "Defines a profile representing a vaccination for a SMART Health Ca
 // Support for IIS value set for OBX-5 (extensible)
 // * fundingSource from http://phinvads.cdc.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3287 (extensible)
 
-* reaction.detail only Reference(VaccinationCredentialVaccineReactionObservation)
+// * reaction.detail only Reference(shc-vaccination-reaction-observation-ad)
 
 * isSubpotent MS
 * isSubpotent ^short = "Set to `true` if dose is subpotent; omit otherwise"
@@ -153,27 +163,10 @@ If `isSubpotent` was not allowed at all (`0..0` cardinality), the concern is tha
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Profile:     VaccinationCredentialImmunizationCVXCovid19
-Id:          vaccination-credential-immunization-cvx-covid-19
-Parent:      VaccinationCredentialImmunization
-Title:       "Immunization Profile - Allowable Data - COVID-19 with CVX"
-Description: "Recommended profile for implementers using CVX to identify COVID-19 vaccinations for a SMART Health Card."
-
-* manufacturer 0..0
-
-// The CVX slice is already required because no other slices are allowed. Adding the MS flag
-// improves the diff and MS snapshot views.
-* vaccineCode.coding[cvx] MS
-* vaccineCode.coding[gtin] 0..0
-* vaccineCode.coding[snomed] 0..0
-* vaccineCode.coding[icd11] 0..0
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
-Profile:     VaccinationCredentialImmunizationDM
-Id:          vaccination-credential-immunization-dm
-Parent:      VaccinationCredentialImmunization
-Title:       "Immunization Profile - Data Minimization"
+Profile:     SHCVaccinationDM
+Id:          shc-vaccination-dm
+Parent:      shc-vaccination-ad
+Title:       "Vaccination Profile - Data Minimization"
 Description: "Defines a profile representing a vaccination for a SMART Health Card. Only elements necessary for Verifiers can be populated."
 
 * id 0..0
@@ -222,29 +215,32 @@ Description: "Defines a profile representing a vaccination for a SMART Health Ca
 * reaction 0..0
 * programEligibility 0..0
 
+* vaccineCode.id 0..0
+* vaccineCode.extension 0..0
+* vaccineCode.text 0..0
+
+* insert vaccineCodeCodingDM(cvx)
+* insert vaccineCodeCodingDM(gtin)
+* insert vaccineCodeCodingDM(snomed)
+* insert vaccineCodeCodingDM(icd11)
+* insert vaccineCodeCodingDM(air)
+* insert vaccineCodeCodingDM(atc)
+
+
+RuleSet: vaccineCodeCodingDM (sliceName)
+* vaccineCode.coding[{sliceName}].id 0..0
+* vaccineCode.coding[{sliceName}].extension 0..0
+* vaccineCode.coding[{sliceName}].version 0..0
+* vaccineCode.coding[{sliceName}].display 0..0
+* vaccineCode.coding[{sliceName}].userSelected 0..0
+
+/*
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Profile:     VaccinationCredentialImmunizationCVXCovid19DM
-Id:          vaccination-credential-immunization-cvx-covid-19-dm
-Parent:      VaccinationCredentialImmunizationDM
-Title:       "Immunization Profile - Data Minimization - COVID-19 with CVX"
-Description: "Recommended data minimization profile for implementers using CVX to identify COVID-19 vaccinations for a SMART Health Card."
-
-* manufacturer 0..0
-
-// The CVX slice is already required because no other slices are allowed. Adding the MS flag
-// improves the diff and MS snapshot views.
-* vaccineCode.coding[cvx] MS
-* vaccineCode.coding[gtin] 0..0
-* vaccineCode.coding[snomed] 0..0
-* vaccineCode.coding[icd11] 0..0
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
-Profile:        VaccinationCredentialVaccineReactionObservation
+Profile:        SHCVaccinationReactionObservationAD
 Parent:         Observation
-Id:             vaccination-credential-vaccine-reaction-observation
-Title:          "Vaccine Reaction Observation Profile - Allowable Data"
+Id:             shc-vaccination-reaction-observation-ad
+Title:          "Adverse Reaction to Vaccination Observation Profile - Allowable Data"
 Description:    "Profile for reporting a reaction to a vaccine.
 
 This profile may not be necessary depending on the use cases for this IG, but it's included for now because
@@ -253,15 +249,15 @@ we wanted to have value sets corresponding to all the value sets in the IIS core
 
 * id obeys vc-should-be-under-20-chars
 
-* code = SCT#293104008 "Vaccines adverse reaction (disorder)"
+* code = SCT#293104008 "Adverse reaction to immunization"
 
-* subject only Reference(VaccinationCredentialPatient)
+* subject only Reference(shc-patient-general-ad)
 * subject 1..1 MS
 * subject ^short = "Patient with reaction to vaccine"
-* subject ^definition = "Reference to a VaccinationCredentialPatient-conforming resource who had a reaction to the vaccine."
+* subject ^definition = "Reference to a SMART Health Card patient-conforming resource who had a reaction to the vaccine."
 
 // Not sure if this is the best element to use to refer to the immunization(s) attributed to the reaction
-* focus only Reference(VaccinationCredentialImmunization)
+* focus only Reference(shc-vaccination-ad)
 * focus 1..* MS
 * focus ^short = "Immunization causing the reaction"
 * focus ^definition = "Reference to the VaccinationCredentialImmunization-conforming resource representing the vaccination(s) causing the reaction."
@@ -272,10 +268,10 @@ we wanted to have value sets corresponding to all the value sets in the IIS core
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Profile:        VaccinationCredentialVaccineReactionObservationDM
-Parent:         VaccinationCredentialVaccineReactionObservation
-Id:             vaccination-credential-vaccine-reaction-observation-dm
-Title:          "Vaccine Reaction Observation Profile - Data Minimization"
+Profile:        SHCVaccinationReactionObservationDM
+Parent:         shc-vaccination-reaction-observation-ad
+Id:             shc-vaccination-reaction-observation-dm
+Title:          "Adverse Reaction to Vaccination Observation Profile - Data Minimization"
 Description:    "Profile for reporting a reaction to a vaccine. Only elements necessary for Verifiers can be populated."
 
 * id 0..0
@@ -304,3 +300,4 @@ Description:    "Profile for reporting a reaction to a vaccine. Only elements ne
 * hasMember 0..0
 * derivedFrom 0..0
 * component 0..0
+*/
