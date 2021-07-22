@@ -26,7 +26,7 @@ RuleSet: LaboratoryResultObservation
 * value[x] MS
 * value[x] only CodeableConcept or Quantity or string
 * value[x] ^comment = "Issuers SHALL provide a computable representation of laboratory results if at all possible. If the Issuer is unable to accurately translate laboratory results into a computable form, it is unlikely a Verifier will be able to interpret the results. Issuers SHALL make every possible effort to resolve non-computable results prior to issuing credentials. In rare cases when this is not possible, Issuers MAY populate `valueString` with a free text result."
-* valueCodeableConcept 0..1 // work-around to ensure alphabetic order of elements in diff of structure definition
+* valueCodeableConcept 0..1 // work-around to ensure alphabetic order of elements in diff of structure definition - see https://github.com/hapifhir/org.hl7.fhir.core/issues/562
 * valueQuantity obeys vc-observation-quantity-should-have-range
 * valueString ^short = "String representation of results; used ONLY when a computable representation is not possible"
 * valueString obeys vc-should-be-under-20-chars
