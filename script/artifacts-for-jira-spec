@@ -1,0 +1,60 @@
+#! /usr/bin/env ruby
+
+# Run with script/artifacts-for-jira-spec | xmllint --format - | pbcopy
+
+require 'yaml'
+require 'json'
+
+data = YAML.load_file(File.expand_path(File.join(__dir__, '..', 'jira-spec-artifacts.yaml')))
+
+path_to_fsh_generated = File.expand_path(File.join(__dir__, '..', 'fsh-generated', 'resources'))
+artifacts = []
+Dir.entries(path_to_fsh_generated).each do |f|
+  next unless f.end_with? '.json'
+  next if f.start_with? 'ImplementationGuide'
+  parsed = JSON.parse(IO.read("#{path_to_fsh_generated}/#{f}"))
+
+  artifacts << {
+    "name" => parsed['name'],
+    "id" => "#{parsed['resourceType']}/#{parsed['id']}",
+    "key" => "#{parsed['resourceType']}-#{parsed['id']}",
+  }
+end
+
+output = <<HEREDOC
+<?xml version="1.0" encoding="UTF-8"?>
+<specification
+    gitUrl="#{data['specification']['gitUrl']}"
+    url="#{data['specification']['url']}"
+    ballotUrl="#{data['specification']['ballotUrl']}"
+    ciUrl="#{data['specification']['ciUrl']}"
+    defaultWorkgroup="#{data['specification']['defaultWorkgroup']}"
+    defaultVersion="#{data['specification']['defaultVersion']}"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="../schemas/specification.xsd"
+>
+<!-- versions here -->
+<artifactPageExtension value="-definitions"/>
+<artifactPageExtension value="-examples"/>
+<artifactPageExtension value="-mappings"/>
+<!-- artifacts here -->
+<!-- pages here -->
+</specification>
+HEREDOC
+
+versions = data['versions'].map do |version|
+  %Q(<version code="#{version.keys.first}" url="#{version.values.first}" />)
+end.join("\n")
+
+artifacts = artifacts.map do |artifact|
+  %Q(<artifact id="#{artifact['id']}" key="#{artifact['key']}" name="#{artifact['name']}" />)
+end.join("\n")
+
+pages = data['pages'].map do |page|
+  %Q(<page key="#{page.keys.first}" name="#{page.values.first}" />)
+end.join("\n")
+
+puts output
+  .gsub('<!-- versions here -->', versions)
+  .gsub('<!-- artifacts here -->', artifacts)
+  .gsub('<!-- pages here -->', pages)

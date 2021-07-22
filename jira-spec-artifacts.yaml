@@ -1,0 +1,21 @@
+# Content for https://github.com/HL7/JIRA-Spec-Artifacts/blob/master/xml/FHIR-uv-shc-vaccination.xml
+# Run script/artifacts-for-jira-spec to generate XML to STDOUT
+specification:
+  gitUrl: "https://github.com/HL7/fhir-shc-vaccinationm-ig"
+  url: "http://hl7.org/fhir/fhir-shc-vaccinationm-ig"
+  ciUrl: "http://build.fhir.org/ig/HL7/fhir-shc-vaccinationm-ig"
+  ballotUrl: "http://hl7.org/fhir/uv/fhir-shc-vaccination/2021Sep"
+  defaultWorkgroup: "pher"
+  defaultVersion: "0.6.0"
+
+versions:
+  - current: http://build.fhir.org/ig/HL7/fhir-shc-vaccinationm-ig
+  - "0.6.0": http://build.fhir.org/ig/HL7/fhir-shc-vaccination-ig/branches/dev
+
+artifacts:
+
+
+pages:
+  - index: Home
+  - profiles: Profiles
+  - contact: Contact
