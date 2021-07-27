@@ -38,6 +38,10 @@ Description: "Defines a profile representing a vaccination for a SMART Health Ca
 * vaccineCode MS
 * vaccineCode ^short = "Codes identifying the vaccine product administered"
 
+// Override default example binding with something that makes more sense in the context of our IG
+// https://chat.fhir.org/#narrow/stream/179166-implementers/topic/IG/near/234918476
+* vaccineCode from vaccine-cvx (example)
+
 * vaccineCode.coding 1..*
 * vaccineCode.coding MS
 * vaccineCode.coding ^slicing.discriminator.type = #value
@@ -45,6 +49,7 @@ Description: "Defines a profile representing a vaccination for a SMART Health Ca
 * vaccineCode.coding ^slicing.rules = #closed
 * vaccineCode.coding ^slicing.description = "Slicing based on the code system"
 
+// Keep in sync with use of `VaccineCodeCodingDM` below for the DM profile
 * vaccineCode.coding contains
     cvx 0..1 and
     gtin 0..1 and
@@ -75,9 +80,9 @@ Description: "Defines a profile representing a vaccination for a SMART Health Ca
 * vaccineCode.coding[air] from https://healthterminologies.gov.au/fhir/ValueSet/australian-immunisation-register-vaccine-1 (required)
 * vaccineCode.coding[air].system = "https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats"
 
-* vaccineCode.coding[atc] ^short = "ATC/DDD code identifying the administered vaccine product"
+* vaccineCode.coding[atc] ^short = "ATC code identifying the administered vaccine product"
 * vaccineCode.coding[atc] from vaccine-atc (required)
-* vaccineCode.coding[atc].system = "https://www.whocc.no/atc_ddd_index/"
+* vaccineCode.coding[atc].system = "http://www.whocc.no/atc"
 
 // Manufacturer
 // Why we are doing this rather than an extension or in vaccineCode
@@ -138,7 +143,7 @@ Description: "Defines a profile representing a vaccination for a SMART Health Ca
 // Support for IIS value set for OBX-5 (extensible)
 // * fundingSource from http://phinvads.cdc.gov/fhir/ValueSet/2.16.840.1.114222.4.11.3287 (extensible)
 
-* reaction.detail only Reference(shc-vaccination-reaction-observation-ad)
+// * reaction.detail only Reference(shc-vaccination-reaction-observation-ad)
 
 * isSubpotent MS
 * isSubpotent ^short = "Set to `true` if dose is subpotent; omit otherwise"
@@ -210,6 +215,26 @@ Description: "Defines a profile representing a vaccination for a SMART Health Ca
 * reaction 0..0
 * programEligibility 0..0
 
+* vaccineCode.id 0..0
+* vaccineCode.extension 0..0
+* vaccineCode.text 0..0
+
+* insert vaccineCodeCodingDM(cvx)
+* insert vaccineCodeCodingDM(gtin)
+* insert vaccineCodeCodingDM(snomed)
+* insert vaccineCodeCodingDM(icd11)
+* insert vaccineCodeCodingDM(air)
+* insert vaccineCodeCodingDM(atc)
+
+
+RuleSet: vaccineCodeCodingDM (sliceName)
+* vaccineCode.coding[{sliceName}].id 0..0
+* vaccineCode.coding[{sliceName}].extension 0..0
+* vaccineCode.coding[{sliceName}].version 0..0
+* vaccineCode.coding[{sliceName}].display 0..0
+* vaccineCode.coding[{sliceName}].userSelected 0..0
+
+/*
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Profile:        SHCVaccinationReactionObservationAD
@@ -224,7 +249,7 @@ we wanted to have value sets corresponding to all the value sets in the IIS core
 
 * id obeys vc-should-be-under-20-chars
 
-* code = SCT#293104008 "Vaccines adverse reaction (disorder)"
+* code = SCT#293104008 "Adverse reaction to immunization"
 
 * subject only Reference(shc-patient-general-ad)
 * subject 1..1 MS
@@ -275,3 +300,4 @@ Description:    "Profile for reporting a reaction to a vaccine. Only elements ne
 * hasMember 0..0
 * derivedFrom 0..0
 * component 0..0
+*/

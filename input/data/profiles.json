@@ -67,6 +67,7 @@
     ]
   },
   "experimental": {
+    "suppress": true,
     "name": "Experimental",
     "description": "Profiles that are considered experimental and may change without notice.",
     "profileSets": [

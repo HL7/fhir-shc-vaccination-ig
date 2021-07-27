@@ -63,8 +63,56 @@
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario1Bundle.json"
         },
         {
+            "title": "Scenario 1 Bundle JWS payload expanded",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario1Bundle-jws-payload-expanded.json"
+        },
+        {
+            "title": "Scenario 1 Bundle JWS payload minified",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario1Bundle-jws-payload-minified.json"
+        },
+        {
+            "title": "Scenario 1 Bundle JWS",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario1Bundle-jws.txt"
+        },
+        {
+            "title": "Scenario 1 Bundle SMART Health Card file",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario1Bundle-file.smart-health-card"
+        },
+        {
+            "title": "Scenario 1 Bundle QR Code numeric value",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario1Bundle-qr-code-numeric-value-0.txt"
+        },
+        {
+            "title": "Scenario 1 Bundle QR Code",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario1Bundle-qr-code-0.png"
+        },
+        {
             "title": "Scenario 2 Bundle (COVID-19 vaccination with Moderna, 2 doses)",
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario2Bundle.json"
+        },
+        {
+            "title": "Scenario 2 Bundle JWS payload expanded",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario2Bundle-jws-payload-expanded.json"
+        },
+        {
+            "title": "Scenario 2 Bundle JWS payload minified",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario2Bundle-jws-payload-minified.json"
+        },
+        {
+            "title": "Scenario 2 Bundle JWS",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario2Bundle-jws.txt"
+        },
+        {
+            "title": "Scenario 2 Bundle SMART Health Card file",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario2Bundle-file.smart-health-card"
+        },
+        {
+            "title": "Scenario 2 Bundle QR Code numeric value",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario2Bundle-qr-code-numeric-value-0.txt"
+        },
+        {
+            "title": "Scenario 2 Bundle QR Code",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario2Bundle-qr-code-0.png"
         },
         {
             "title": "COVID-19 vaccination reported by AIR (1 dose of AstraZeneca)",
@@ -107,12 +155,60 @@
         {
             "title": "Scenario 3 Bundle (COVID-19 laboratory test results from immunoassay)",
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle.json"
+        },
+        {
+            "title": "Scenario 3 Bundle JWS payload expanded",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle-jws-payload-expanded.json"
+        },
+        {
+            "title": "Scenario 3 Bundle JWS payload minified",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle-jws-payload-minified.json"
+        },
+        {
+            "title": "Scenario 3 Bundle JWS",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle-jws.txt"
+        },
+        {
+            "title": "Scenario 3 Bundle SMART Health Card file",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle-file.smart-health-card"
+        },
+        {
+            "title": "Scenario 3 Bundle QR Code numeric value",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle-qr-code-numeric-value-0.txt"
+        },
+        {
+            "title": "Scenario 3 Bundle QR Code",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle-qr-code-0.png"
         }
     ],
     "StructureDefinition-shc-infectious-disease-laboratory-bundle.html": [
         {
             "title": "Scenario 3 Bundle (COVID-19 laboratory test results from immunoassay)",
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle.json"
+        },
+        {
+            "title": "Scenario 3 Bundle JWS payload expanded",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle-jws-payload-expanded.json"
+        },
+        {
+            "title": "Scenario 3 Bundle JWS payload minified",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle-jws-payload-minified.json"
+        },
+        {
+            "title": "Scenario 3 Bundle JWS",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle-jws.txt"
+        },
+        {
+            "title": "Scenario 3 Bundle SMART Health Card file",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle-file.smart-health-card"
+        },
+        {
+            "title": "Scenario 3 Bundle QR Code numeric value",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle-qr-code-numeric-value-0.txt"
+        },
+        {
+            "title": "Scenario 3 Bundle QR Code",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario3Bundle-qr-code-0.png"
         }
     ],
     "StructureDefinition-shc-patient-us.html": [

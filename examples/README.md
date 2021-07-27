@@ -33,4 +33,11 @@ manually checked to be correct against human documentation and the files ran suc
 validation to `tests.csv` and make sure the terminology servers are pointed to properly. (CVX and SNOMED terminology servers seem to work and the codes pass in `tests.csv`).
 
 Also note the `tests_errors.csv` and testing implementation only tests for one error per file, so only one error has been specified. However the examples with two doses actually raise the
-error twice, and examples that specify multiple code systems (i.e: ICD-11 and GTIN) raise more Invalid Code errors. 
+error twice, and examples that specify multiple code systems (i.e: ICD-11 and GTIN) raise more Invalid Code errors.
+ 
+# Generate examples
+
+Examples of SMART Health Cards generated from this Implementation Guide are generate via Ruby script generate-examples.rb.
+
+    gem install health_cards
+    ruby generate-examples.rb

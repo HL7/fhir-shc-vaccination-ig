@@ -26,11 +26,13 @@ RuleSet: LaboratoryResultObservation
 * value[x] MS
 * value[x] only CodeableConcept or Quantity or string
 * value[x] ^comment = "Issuers SHALL provide a computable representation of laboratory results if at all possible. If the Issuer is unable to accurately translate laboratory results into a computable form, it is unlikely a Verifier will be able to interpret the results. Issuers SHALL make every possible effort to resolve non-computable results prior to issuing credentials. In rare cases when this is not possible, Issuers MAY populate `valueString` with a free text result."
+* valueCodeableConcept 0..1 // work-around to ensure alphabetic order of elements in diff of structure definition - see https://github.com/hapifhir/org.hl7.fhir.core/issues/562
+* valueQuantity obeys vc-observation-quantity-should-have-range
 * valueString ^short = "String representation of results; used ONLY when a computable representation is not possible"
 * valueString obeys vc-should-be-under-20-chars
-* valueQuantity obeys vc-observation-quantity-should-have-range
 
 * referenceRange MS
+* referenceRange ^short = "Provides guide for interpretation. SHOULD include if using valueQuantity."
 * referenceRange ^comment = "Issuers SHOULD provide a reference range for quantitative lab results to allow recipients to correctly interpret the results. Issuers MAY provide a reference range for free text (string) results."
 * referenceRange obeys vc-observation-range-only-quantity-or-string
 
@@ -123,6 +125,8 @@ RuleSet: LaboratoryResultObservationDM
 * basedOn 0..0
 * partOf 0..0
 * category 0..0
+* subject.id 0..0
+* subject.extension 0..0
 * encounter 0..0
 * focus 0..0
 * issued 0..0
@@ -141,9 +145,19 @@ RuleSet: LaboratoryResultObservationDM
 * performer.reference 0..0
 * performer.type 0..0
 * performer.identifier 0..0
+* valueCodeableConcept.id 0..0
+* valueCodeableConcept.extension 0..0
 * valueCodeableConcept.text 0..0
-* valueQuantity.id 0..0
-* valueString.id 0..0
+* referenceRange.id 0..0
+* referenceRange.extension 0..0
+* referenceRange.modifierExtension 0..0
+* referenceRange.appliesTo 0..0
+* referenceRange.age 0..0
+* referenceRange.type.id 0..0
+* referenceRange.type.extension 0..0
+* referenceRange.type.text 0..0
+* valueQuantity.id 0..0 // Needed to fix test failure - this makes no sense but it works. See https://github.com/dvci/vaccine-credential-ig/pull/145
+* valueString.id 0..0 // Needed to fix test failure - this makes no sense but it works. See https://github.com/dvci/vaccine-credential-ig/pull/145
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -156,6 +170,7 @@ Description:    "Profile for reporting COVID-19-related laboratory results indic
 previous infection status. Only elements necessary for Verifiers can be populated."
 
 * insert LaboratoryResultObservationDM
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
