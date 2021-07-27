@@ -38,7 +38,7 @@
         },
         {
             "title": "Vaccination example with Pfizer reported by SNOMED and manufacturer in GLN, dose 1",
-            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/byCodeSystem/snomed_immunization.json#L24-54"
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/byCodeSystem/snomed_immunization.json#L24-L54"
         },
         {
             "title": "Vaccination example with Moderna reported by SNOMED and GTIN, dose 1",
