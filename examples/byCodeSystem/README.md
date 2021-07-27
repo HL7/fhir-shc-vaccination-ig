@@ -13,7 +13,7 @@ This directory holds json files demonstrating each code system.
 | AIR       | <https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats> | Austrailian Immunisation Register Vaccine | NO |
 | SNOMED CT | <http://snomed.info/sct>              | VaccineTypeSNOMED  | YES                    |
 | ICD-11    | <http://id.who.ind/icd11/mms>         | VaccineTargetICD11 | YES                    |
-| ATC/DDD   | <https://www.whocc.no/atc_ddd_index/> | VaccineTargetATC   | YES                    |
+| ATC/DDD   | <https://www.whocc.no/atc> | VaccineTargetATC   | YES                    |
 
 
 ## Approved Vaccines according to [Regulatory Affairs Professionals Society](https://www.raps.org/news-and-articles/news-articles/2020/3/covid-19-vaccine-tracker)

@@ -29,7 +29,7 @@
         "vaccineCode": {
           "coding": [
             {
-              "system": "https://www.whocc.no/atc_ddd_index/",
+              "system": "https://www.whocc.no/atc",
               "code": "J07BX03"
             },
             {
