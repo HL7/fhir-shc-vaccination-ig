@@ -82,7 +82,7 @@ Description: "Defines a profile representing a vaccination for a SMART Health Ca
 
 * vaccineCode.coding[atc] ^short = "ATC code identifying the administered vaccine product"
 * vaccineCode.coding[atc] from vaccine-atc (required)
-* vaccineCode.coding[atc].system = "https://www.whocc.no/atc"
+* vaccineCode.coding[atc].system = "http://www.whocc.no/atc"
 
 // Manufacturer
 // Why we are doing this rather than an extension or in vaccineCode
