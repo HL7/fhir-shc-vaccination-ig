@@ -101,7 +101,7 @@ Contact licensing@who.int to obtain further information."
 ValueSet:    VaccineATC
 Id:          vaccine-atc
 Title:       "Vaccine: ATC/DDD"
-Description: "This value set includes the subset of [ATC](https://www.whocc.no/atc_ddd_index/?code=J07) that identify vaccine targets.
+Description: "This value set includes the subset of [ATC](http://www.whocc.no/atc_ddd_index/?code=J07) that identify vaccine targets.
 
 Note that an ATC code for COVID-19 vaccines (`J07BX03`) [has been created](https://www.who.int/medicines/publications/druginformation/issues/WHO_DI_34_4_ATC-DDD_ClassificationTemp.pdf) and will be added to the next published version of ATC/DDD slated for January 2022."
 // Antatomic, Therapeutic and Chemical Classification (ATC)
@@ -109,7 +109,7 @@ Note that an ATC code for COVID-19 vaccines (`J07BX03`) [has been created](https
 
 * ^copyright = "© Copyright WHO Collaborating Centre for Drug Statistics Methodology, Oslo, Norway. Use of all or parts of the material requires reference to the WHO Collaborating Centre for Drug Statistics Methodology. Copying and distribution for commercial purposes is not allowed. Changing or manipulating the material is not allowed."
 
-* include codes from system https://www.whocc.no/atc where concept is-a #J07
+* include codes from system http://www.whocc.no/atc where concept is-a #J07
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 

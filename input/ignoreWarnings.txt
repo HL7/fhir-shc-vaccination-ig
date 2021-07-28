@@ -26,9 +26,9 @@ WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/shc-vaccination
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-reaction-observation-dm'): The Implementation Guide contains no examples for this profile
 
 # tx.fhir.org does not support some of the code systems we use -- suppressing related warnings
-WARNING: ValueSet.where(id = 'vaccine-atc'): Error from server: Unable to provide support for code system https://www.whocc.no/atc_ddd_index/
+WARNING: ValueSet.where(id = 'vaccine-atc'): Error from server: Unable to provide support for code system http://www.whocc.no/atc_ddd_index/
 WARNING: ValueSet.where(id = 'vaccine-icd-11'): Error from server: Unable to provide support for code system http://id.who.int/icd11/mms
-WARNING: ValueSet.where(id = 'vaccine-atc'): Error from server: Unable to provide support for code system https://www.whocc.no/atc
+WARNING: ValueSet.where(id = 'vaccine-atc'): Error from server: Unable to provide support for code system http://www.whocc.no/atc
 
 # Per https://www.healthterminologies.gov.au/integration/R4/fhir/ValueSet/australian-immunisation-register-vaccine-1, https://healthterminologies.gov.au/fhir/ValueSet/australian-immunisation-register-vaccine-1 is the canonical URI for this value set. However, this causes the following warnings.
 WARNING: StructureDefinition/shc-vaccination-ad: StructureDefinition.differential.element[15].binding: The valueSet reference https://healthterminologies.gov.au/fhir/ValueSet/australian-immunisation-register-vaccine-1 on element Immunization.vaccineCode.coding could not be resolved

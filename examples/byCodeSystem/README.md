@@ -13,7 +13,7 @@ This directory holds json files demonstrating each code system.
 | AIR       | <https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats> | Austrailian Immunisation Register Vaccine | NO |
 | SNOMED CT | <http://snomed.info/sct>              | VaccineTypeSNOMED  | YES                    |
 | ICD-11    | <http://id.who.ind/icd11/mms>         | VaccineTargetICD11 | YES                    |
-| ATC/DDD   | <https://www.whocc.no/atc> | VaccineTargetATC   | YES                    |
+| ATC/DDD   | <http://www.whocc.no/atc> | VaccineTargetATC   | YES                    |
 
 
 ## Approved Vaccines according to [Regulatory Affairs Professionals Society](https://www.raps.org/news-and-articles/news-articles/2020/3/covid-19-vaccine-tracker)
@@ -98,7 +98,7 @@ Sources:
  - [AIR Codes](https://www.servicesaustralia.gov.au/organisations/health-professionals/services/medicare/medicare-online-software-developers/resources/formats-exchange-electronic-data/air-vaccine-code-formats)
    + Australia has only approved two vaccines: <https://www.health.gov.au/initiatives-and-programs/covid-19-vaccines/getting-vaccinated-for-covid-19/which-covid-19-vaccine-will-i-receive>
  - [SNOMED CT Codes](https://confluence.ihtsdotools.org/display/snomed/SNOMED+CT+COVID-19+Related+Content) (same code for each)
- - [ATC/DDD Codes](https://www.whocc.no/lists_of__temporary_atc_ddds_and_alterations/new_atc_5th_levels/)
+ - [ATC/DDD Codes](http://www.whocc.no/lists_of__temporary_atc_ddds_and_alterations/new_atc_5th_levels/)
  - [GTIN Lookup](https://gepir.gs1.org/index.php/search-by-gtin)
  - [MVX Codes](https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=tradename)
  - [GLN Lookup](https://gepir.gs1.org/index.php/search-by-party-name)
