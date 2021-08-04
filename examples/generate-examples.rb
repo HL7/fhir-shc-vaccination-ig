@@ -3,7 +3,8 @@ require 'open-uri'
 
 module HealthCards
   class COVIDHealthCardCustom < HealthCards::COVIDHealthCard
-    allow type: FHIR::Observation, attributes: %w[status labCode patient effectiveDateTime]
+    additional_types 'https://smarthealth.cards#labresult'
+    allow type: FHIR::Observation, attributes: %w[status code subject effectiveDateTime performer referenceRange valueString valueQuantity valueCodeableConcept]
   end
 end
 
