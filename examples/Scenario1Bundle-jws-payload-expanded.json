@@ -1,9 +1,10 @@
 {
   "iss": "https://spec.smarthealth.cards/examples/issuer",
-  "nbf": 1626975037,
+  "nbf": 1628093717,
   "vc": {
     "type": [
-      "https://smarthealth.cards#health-card"
+      "https://smarthealth.cards#health-card",
+      "https://smarthealth.cards#labresult"
     ],
     "credentialSubject": {
       "fhirVersion": null,

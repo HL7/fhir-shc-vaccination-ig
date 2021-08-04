@@ -1,9 +1,10 @@
 {
   "iss": "https://spec.smarthealth.cards/examples/issuer",
-  "nbf": 1626975037,
+  "nbf": 1628093717,
   "vc": {
     "type": [
-      "https://smarthealth.cards#health-card"
+      "https://smarthealth.cards#health-card",
+      "https://smarthealth.cards#labresult"
     ],
     "credentialSubject": {
       "fhirVersion": null,
@@ -30,7 +31,31 @@
             "fullUrl": "resource:1",
             "resource": {
               "status": "final",
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://loinc.org",
+                    "code": "94558-4"
+                  }
+                ]
+              },
+              "subject": {
+                "reference": "resource:0"
+              },
               "effectiveDateTime": "2021-02-17",
+              "performer": [
+                {
+                  "display": "ABC General Hospital"
+                }
+              ],
+              "valueCodeableConcept": {
+                "coding": [
+                  {
+                    "system": "http://snomed.info/sct",
+                    "code": "260373001"
+                  }
+                ]
+              },
               "resourceType": "Observation"
             }
           }
