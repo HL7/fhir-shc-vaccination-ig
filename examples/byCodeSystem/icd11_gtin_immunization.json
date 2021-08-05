@@ -1,0 +1,90 @@
+{
+  "resourceType": "Bundle",
+  "type": "collection",
+  "entry": [
+    {
+      "fullUrl": "resource:0",
+      "resource": {
+        "resourceType": "Patient",
+        "name": [
+          {
+            "family": "Anyperson",
+            "given": [
+              "John",
+              "B."
+            ]
+          }
+        ],
+        "birthDate": "1951-01-20"
+      }
+    },
+    {
+      "fullUrl": "resource:1",
+      "resource": {
+        "resourceType": "Immunization",
+        "meta": {
+          "security": [{"system": "https://smarthealth.cards/ial", "code": "IAL1.2"}]
+        },
+        "status": "completed",
+        "vaccineCode": {
+          "coding": [
+            {
+              "system": "http://id.who.int/icd11/mms",
+              "code": "XM0GQ8"
+            },
+            {
+              "system": "https://www.gs1.org/gtin",
+              "code": "30380777700688"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "resource:0"
+        },
+        "occurrenceDateTime": "2021-01-01",
+        "performer": [
+          {
+            "actor": {
+              "display": "ABC General Hospital"
+            }
+          }
+        ],
+        "lotNumber": "0000004"
+      }
+    },
+    {
+      "fullUrl": "resource:2",
+      "resource": {
+        "resourceType": "Immunization",
+        "meta": {
+          "security": [{"system": "https://smarthealth.cards/ial", "code": "IAL1.2"}]
+        },
+        "status": "completed",
+        "vaccineCode": {
+          "coding": [
+            {
+              "system": "http://id.who.int/icd11/mms",
+              "code": "XM0GQ8"
+            },
+            {
+              "system": "https://www.gs1.org/gtin",
+              "code": "3038077770688"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "resource:0"
+        },
+        "occurrenceDateTime": "2021-01-29",
+        "performer": [
+          {
+            "actor": {
+              "display": "ABC General Hospital"
+            }
+          }
+        ],
+        "lotNumber": "0000010"
+      }
+    }
+  ]
+}

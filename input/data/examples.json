@@ -1,20 +1,56 @@
 {
     "StructureDefinition-shc-vaccination.html": [
         {
-            "title": "Vaccination example with Moderna, dose 1",
+            "title": "Vaccination example with Moderna reported by CVX, dose 1",
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario1Bundle.json#L24-L48"
         },
         {
-            "title": "Vaccination example with Moderna, dose 2",
+            "title": "Vaccination example with Moderna reported by CVX, dose 2",
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario1Bundle.json#L54-L78"
         },
         {
-            "title": "Vaccination example with Pfizer, dose 1",
+            "title": "Vaccination example with Pfizer reported by CVX, dose 1",
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario2Bundle.json#L24-L48"
         },
         {
-            "title": "Vaccination example with Pfizer, dose 2",
+            "title": "Vaccination example with Pfizer reported by CVX, dose 2",
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario2Bundle.json#L54-L78"
+        },
+        {
+            "title": "Vaccination example with AstraZeneca reported by AIR",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/byCodeSystem/air_immunization.json#L24-L48"
+        },
+        {
+            "title": "Vaccination example with Janssen reported by ATC (with manufacturer in MVX)",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/byCodeSystem/atc_immunization.json#L24-L54"
+        },
+        {
+            "title": "Vaccination example with Janssen reported by ATC and GTIN",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/byCodeSystem/atc_gtin_immunization.json#L24-L52"
+        },
+        {
+            "title": "Vaccination example with an unspecified vaccine (presumably but not necessarily from a foreign country) reported by CVX",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/byCodeSystem/cvx_immunization.json#L24-L48"
+        },
+        {
+            "title": "Vaccination example with Moderna reported by GTIN, dose 1",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/byCodeSystem/gtin_immunization.json#L21-L45"
+        },
+        {
+            "title": "Vaccination example with Pfizer reported by ICD-11 and manufacturer in MVX, dose 1",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/byCodeSystem/icd11_immunization.json#L24-L54"
+        },
+        {
+            "title": "Vaccination example with Moderna reported by ICD-11 and GTIN, dose 1",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/byCodeSystem/icd11_gtin_immunization.json#L24-L52"
+        },
+        {
+            "title": "Vaccination example with Pfizer reported by SNOMED and manufacturer in GLN, dose 1",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/byCodeSystem/snomed_immunization.json#L24-L54"
+        },
+        {
+            "title": "Vaccination example with Moderna reported by SNOMED and GTIN, dose 1",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/byCodeSystem/snomed_gtin_immunization.json#L24-L52"
         }
     ],
     "StructureDefinition-shc-covid19-laboratory-result-observation.html": [
@@ -85,6 +121,42 @@
         {
             "title": "Scenario 2 Bundle QR Code",
             "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/Scenario2Bundle-qr-code-0.png"
+        },
+        {
+            "title": "COVID-19 vaccination reported by AIR (1 dose of AstraZeneca)",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/byCodeSystem/air_immunization.json"
+        },
+        {
+            "title": "COVID-19 vaccination reported by ATC with manufacturer (1 dose of Janssen)",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/byCodeSystem/atc_immunization.json"
+        },
+        {
+            "title": "COVID-19 vaccination reported by ATC with GTIN (1 dose of Janssen)",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/byCodeSystem/atc_gtin_immunization.json"
+        },
+        {
+            "title": "COVID-19 vaccination reported by CVX (1 dose of an unspecified vaccine, presumably but not necessarily from China, Russia, or another foreign country).",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/byCodeSystem/cvx_immunization.json"
+        },
+        {
+            "title": "COVID-19 vaccination reported by GTIN (2 doses of Moderna)",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/byCodeSystem/gtin_immunization.json"
+        },
+        {
+            "title": "COVID-19 vaccination reported by ICD-11 with manufacturer (2 doses of Pfizer)",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/byCodeSystem/icd11_immunization.json"
+        },
+        {
+            "title": "COVID-19 vaccination reported by ICD-11 with GTIN (2 doses of Moderna)",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/byCodeSystem/icd11_gtin_immunization.json"
+        },
+        {
+            "title": "COVID-19 vaccination reported by SNOMED with manufacturer (2 doses of Pfizer)",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/byCodeSystem/snomed_immunization.json"
+        },
+        {
+            "title": "COVID-19 vaccination reported by SNOMED with GTIN (2 doses of Moderna)",
+            "url": "https://github.com/dvci/vaccine-credential-ig/blob/GIT_BRANCH_GOES_HERE/examples/byCodeSystem/snomed_gtin_immunization.json"
         }
     ],
     "StructureDefinition-shc-covid19-laboratory-bundle.html": [

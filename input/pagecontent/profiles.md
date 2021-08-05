@@ -141,6 +141,10 @@ The profiles of Bundle in this IG MAY be used with other types of SMART Health C
 
 ### Validation
 
+<div class="alert alert-info">
+  NOTE: At the time of publication, several code systems used for identifying vaccines (AIR, ATC, GTIN, ICD-11, GLN, and the UK edition of SNOMED-CT) are not supported by the default terminology server (`tx.fhir.org`) used by the FHIR validator, which may result in validation errors. To successfully validate resources using these code systems, an alternate terminology server that supports these code systems must be used.
+</div>
+
 Resources may be assessed for conformance using one of [the tools listed under "Conformance testing" on this page](https://confluence.hl7.org/pages/viewpage.action?pageId=111122184#SMARTHealthCardsImplementationTools-Conformancetesting), or manually with the FHIR Validator (described below).
 
 Note that these tools **do not** check for `MustSupport` conformance as this depends on the particulars of the data available to the actor producing the resource. Implementers MUST manually check `MustSupport` conformance based on the criteria described above.

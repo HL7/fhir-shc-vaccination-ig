@@ -4,7 +4,7 @@ require 'open-uri'
 module HealthCards
   class COVIDHealthCardCustom < HealthCards::COVIDHealthCard
     additional_types 'https://smarthealth.cards#labresult'
-    allow type: FHIR::Observation, attributes: %w[status code subject effectiveDateTime performer referenceRange valueString valueQuantity valueCodeableConcept]
+    allow type: FHIR::Observation, attributes: %w[status code subject effectiveDateTime performer referenceRange valueString valueQuantity valueCodeableConcept labCode patient]
   end
 end
 
@@ -20,7 +20,7 @@ Dir.glob('Scenario*Bundle.json') do |filename|
   puts filename
   bundle = FHIR::Bundle.new(JSON.parse(File.read(filename)))
   outputPrefix = File.basename(filename, File.extname(filename))
-  
+
   jws = @issuer.issue_jws(bundle, type: HealthCards::COVIDHealthCardCustom)
   payload = HealthCards::HealthCard.decompress_payload(jws.payload)
   smarthealthcard = HealthCards::Exporter.download([jws])
@@ -30,7 +30,7 @@ Dir.glob('Scenario*Bundle.json') do |filename|
   File.write("#{outputPrefix}-jws-payload-expanded.json", JSON.pretty_generate(payload))
   File.write("#{outputPrefix}-jws.txt", jws)
   File.write("#{outputPrefix}-file.smart-health-card", smarthealthcard)
-  qr_codes.chunks.map.with_index { |chunk, idx| 
+  qr_codes.chunks.map.with_index { |chunk, idx|
     File.write("#{outputPrefix}-qr-code-numeric-value-#{idx}.txt", chunk.qrcode.data)
     File.write("#{outputPrefix}-qr-code-#{idx}.png", chunk.image)
   }
