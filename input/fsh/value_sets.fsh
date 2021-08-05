@@ -25,12 +25,30 @@ Description: "This value set includes all [GTIN](https://www.gs1.org/gtin) codes
 ValueSet:    VaccineSNOMED
 Id:          vaccine-snomed
 Title:       "Vaccine: SNOMED CT"
-Description: "This value set includes the vaccination product codes from SNOMED Clinical Terms®.
+Description: "This value set includes codes identifying vaccine products from SNOMED Clinical Terms®,
+specifically descendants of [`787859002` (\"Vaccine product\")](http://browser.ihtsdotools.org/?perspective=full&conceptId1=787859002).
 
-**Note that the value set expansion below may be out of date, and may not include COVID-19-related
-codes.** Implementers SHALL defer to [the canonical list of COVID-19-related SNOMED codes][snomed-covid]
-for COVID-related vaccines when it does not match the codes listed below.
+**Descendants of this code from *any* edition of SNOMED CT MAY be used in elements bound to this value set.** All
+SNOMED codes regardless of edition share the same canonical URI (`http://snomed.info/sct`), which
+means that from a conformance perspective, this value set does not differentiate between [SNOMED CT editions].
 
+However, successfully validating resources with elements bound to this value set requires
+a terminology server that supports the SNOMED edition used by the implementer.
+
+The terminology server used for publishing this Implementation Guide (`tx.fhir.org`)
+supports the following [SNOMED CT editions] as of publishing:
+
+- International
+- Australia
+- Canada
+
+The relevant codes from these SNOMED CT editions are included in the value set expansion below.
+
+**Note that this value set expansion  may be out of date, and may not include COVID-19-related
+codes.** Implementers SHALL defer to [the canonical list of COVID-19-related SNOMED International codes][snomed-covid],
+or the national edition equivalent, for COVID-related vaccines when it does not match the codes listed below.
+
+[SNOMED CT editions]: https://confluence.ihtsdotools.org/display/DOCEXTPG/4.4.2+Edition+URI+Examples
 [snomed-covid]: https://confluence.ihtsdotools.org/display/snomed/SNOMED+CT+COVID-19+Related+Content"
 
 * ^copyright = "This value set includes content from SNOMED-CT, which is copyright © 2002+
@@ -42,15 +60,19 @@ Note that some of the SNOMED-CT codes that are part of this value set expansion,
 
 * include codes from system SCT where concept descendent-of #787859002
 
-// This builds but doesn't expand with tx.fhir.org:
-//
 // Int'l editions identified at https://confluence.ihtsdotools.org/display/DOCEXTPG/4.4.2+Edition+URI+Examples
+
 // Canadian SNOMED
 // https://browser.ihtsdotools.org/?perspective=full&conceptId1=28531000087107&edition=MAIN/SNOMEDCT-CA/2021-03-31&release=&languages=en,fr
-// * include codes from system SCT|http://snomed.info/sct/20611000087101 where concept is-a #28531000087107
-// UK SNOMED
+* include codes from system SCT|http://snomed.info/sct/20611000087101/version/20210331 where concept descendent-of #787859002
+
+// Australian SNOMED
+* include codes from system SCT|http://snomed.info/sct/32506021000036107/version/20210630 where concept descendent-of #787859002
+
+
+// UK SNOMED is not currently supported by tx.fhir.org: http://tx.fhir.org/r4/
 // https://termbrowser.nhs.uk/?perspective=full&conceptId1=39330711000001103&edition=uk-edition&release=v20210512&server=https://termbrowser.nhs.uk/sct-browser-api/snomed&langRefset=999001261000000100,999000691000001104
-// * include codes from system SCT|http://snomed.info/sct/83821000000107 where concept is-a #39330711000001103
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
