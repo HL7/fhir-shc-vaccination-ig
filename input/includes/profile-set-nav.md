@@ -46,10 +46,31 @@
 </div>
 
 <style>
- /* Hide top table on the profile pages */
+ /* Restyle table at the top of each profile page */
   #segment-content > div > div > div > div > table.grid:first-of-type {
-    display: none;
+    color: #ababab;
+    border: none;
   }
+  #segment-content > div > div > div > div > table.grid:first-of-type td {
+    font-size: 0.7em;
+    border: none;
+    padding: 0;
+  }
+  #segment-content > div > div > div > div > table.grid:first-of-type td p {
+    font-size: 1em;
+  }
+  #segment-content > div > div > div > div > table.grid:first-of-type tr td:first-of-type {
+    font-weight: bold;
+    text-align:  right;
+    padding-right:  0.5em;
+  }
+  #segment-content > div > div > div > div > table.grid:first-of-type tr td p:last-of-type {
+    padding-bottom:  0;
+    margin-bottom:  0;
+  }
+
+
+
   .profile-set-nav .btn {
     font-size: inherit;
     font-weight: normal;
