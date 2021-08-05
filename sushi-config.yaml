@@ -12,7 +12,7 @@ publisher:
   name: vci.org
   url: http://www.hl7.org/Special/committees/tbd
   email: vci-ig@mitre.org
-version: 0.6.0
+version: 0.6.1
 fhirVersion: 4.0.1
 dependencies:
   us.cdc.phinvads:
