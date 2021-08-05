@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/uv/shc-vaccination" ciUrl="http://build.fhir.org/ig/HL7/fhir-shc-vaccination-ig" defaultVersion="0.6.0" defaultWorkgroup="" gitUrl="https://github.com/HL7/fhir-shc-vaccination-ig" url="http://hl7.org/fhir/uv/shc-vaccination">
+<version code="current" url="http://build.fhir.org/ig/HL7/fhir-shc-vaccination-ig"/>
+<version code="0.6.0" url="http://hl7.org/fhir/uv/shc-vaccination"/>
+<artifactPageExtension value="-definitions"/>
+<artifactPageExtension value="-examples"/>
+<artifactPageExtension value="-mappings"/>
+<artifact id="StructureDefinition/shc-covid19-laboratory-result-observation-ad" key="StructureDefinition-shc-covid19-laboratory-result-observation-ad" name="COVID-19 Laboratory Result Observation Profile - Allowable Data"/>
+<artifact id="StructureDefinition/shc-covid19-laboratory-result-observation-dm" key="StructureDefinition-shc-covid19-laboratory-result-observation-dm" name="COVID-19 Laboratory Result Observation Profile - Data Minimization"/>
+<artifact id="StructureDefinition/shc-covid19-laboratory-bundle-ad" key="StructureDefinition-shc-covid19-laboratory-bundle-ad" name="COVID-19-specific Laboratory Test Results Bundle - Allowable Data"/>
+<artifact id="StructureDefinition/shc-covid19-laboratory-bundle-dm" key="StructureDefinition-shc-covid19-laboratory-bundle-dm" name="COVID-19-specific Laboratory Test Results Bundle - Data Minimization"/>
+<artifact id="StructureDefinition/shc-infectious-disease-laboratory-result-observation-ad" key="StructureDefinition-shc-infectious-disease-laboratory-result-observation-ad" name="Generic Laboratory Result Observation Profile - Allowable Data"/>
+<artifact id="StructureDefinition/shc-infectious-disease-laboratory-result-observation-dm" key="StructureDefinition-shc-infectious-disease-laboratory-result-observation-dm" name="Generic Laboratory Result Observation Profile - Data Minimization"/>
+<artifact id="ValueSet/identity-assurance-level" key="ValueSet-identity-assurance-level" name="Identity Assurance Level"/>
+<artifact id="CodeSystem/identity-assurance-level-code-system" key="CodeSystem-identity-assurance-level-code-system" name="Identity Assurance Level Code System"/>
+<artifact id="StructureDefinition/shc-infectious-disease-laboratory-bundle-ad" key="StructureDefinition-shc-infectious-disease-laboratory-bundle-ad" name="Infectious Disease (Generic) Laboratory Test Results Bundle - Allowable Data"/>
+<artifact id="StructureDefinition/shc-infectious-disease-laboratory-bundle-dm" key="StructureDefinition-shc-infectious-disease-laboratory-bundle-dm" name="Infectious Disease (Generic) Laboratory Test Results Bundle - Data Minimization"/>
+<artifact id="ValueSet/lab-result-findings" key="ValueSet-lab-result-findings" name="Lab result findings"/>
+<artifact id="ValueSet/lab-result-findings-snomed" key="ValueSet-lab-result-findings-snomed" name="Lab result findings - SNOMED CT"/>
+<artifact id="StructureDefinition/shc-patient-general-ad" key="StructureDefinition-shc-patient-general-ad" name="Patient Profile - General - Allowable Data"/>
+<artifact id="StructureDefinition/shc-patient-general-dm" key="StructureDefinition-shc-patient-general-dm" name="Patient Profile - General - Data Minimization"/>
+<artifact id="StructureDefinition/shc-patient-us-ad" key="StructureDefinition-shc-patient-us-ad" name="Patient Profile - United States - Allowable Data"/>
+<artifact id="StructureDefinition/shc-patient-us-dm" key="StructureDefinition-shc-patient-us-dm" name="Patient Profile - United States - Data Minimization"/>
+<artifact id="ValueSet/qualitative-lab-result-findings" key="ValueSet-qualitative-lab-result-findings" name="Qualitative lab result findings"/>
+<artifact id="ValueSet/qualitative-lab-results-loinc" key="ValueSet-qualitative-lab-results-loinc" name="Qualitative lab results - LOINC"/>
+<artifact id="StructureDefinition/shc-vaccination-bundle-ad" key="StructureDefinition-shc-vaccination-bundle-ad" name="Vaccination Bundle - Allowable Data"/>
+<artifact id="StructureDefinition/shc-vaccination-bundle-dm" key="StructureDefinition-shc-vaccination-bundle-dm" name="Vaccination Bundle - Data Minimization"/>
+<artifact id="StructureDefinition/shc-vaccination-ad" key="StructureDefinition-shc-vaccination-ad" name="Vaccination Profile - Allowable Data"/>
+<artifact id="StructureDefinition/shc-vaccination-dm" key="StructureDefinition-shc-vaccination-dm" name="Vaccination Profile - Data Minimization"/>
+<artifact id="ValueSet/vaccine-atc" key="ValueSet-vaccine-atc" name="Vaccine: ATC/DDD"/>
+<artifact id="ValueSet/vaccine-cvx" key="ValueSet-vaccine-cvx" name="Vaccine: CVX"/>
+<artifact id="ValueSet/vaccine-gtin" key="ValueSet-vaccine-gtin" name="Vaccine: GTIN"/>
+<artifact id="ValueSet/vaccine-icd-11" key="ValueSet-vaccine-icd-11" name="Vaccine: ICD-11"/>
+<artifact id="ValueSet/vaccine-snomed" key="ValueSet-vaccine-snomed" name="Vaccine: SNOMED CT"/>
+<page key="NA" name="(NA)"/>
+<page key="many" name="(many)"/>
+<page key="artifacts" name="Artifacts Summary"/>
+<page key="conformance" name="Conformance"/>
+<page key="contact" name="Contact"/>
+<page key="index" name="Home"/>
+<page key="laboratory-results-observation" name="Laboratory Results Observation"/>
+<page key="patient" name="Patient"/>
+<page key="profiles" name="Profiles"/>
+<page key="StructureDefinition-shc-covid19-laboratory-bundle-resource-examples" name="Structure Definition Shc Covid 19 Laboratory Bundle Resource Examples"/>
+<page key="StructureDefinition-shc-covid19-laboratory-result-observation-resource-examples" name="Structure Definition Shc Covid 19 Laboratory Result Observation Resource Examples"/>
+<page key="StructureDefinition-shc-infectious-disease-laboratory-bundle-resource-examples" name="Structure Definition Shc Infectious Disease Laboratory Bundle Resource Examples"/>
+<page key="StructureDefinition-shc-infectious-disease-laboratory-result-observation-resource-examples" name="Structure Definition Shc Infectious Disease Laboratory Result Observation Resource Examples"/>
+<page key="StructureDefinition-shc-patient-general-resource-examples" name="Structure Definition Shc Patient General Resource Examples"/>
+<page key="StructureDefinition-shc-patient-us-resource-examples" name="Structure Definition Shc Patient Us Resource Examples"/>
+<page key="StructureDefinition-shc-vaccination-bundle-resource-examples" name="Structure Definition Shc Vaccination Bundle Resource Examples"/>
+<page key="StructureDefinition-shc-vaccination-resource-examples" name="Structure Definition Shc Vaccination Resource Examples"/>
+<page key="toc" name="Table of Contents"/>
+<page key="vaccination" name="Vaccination"/>
+</specification>

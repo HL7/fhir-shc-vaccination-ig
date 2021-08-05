@@ -34,6 +34,8 @@ public class ProfileTest {
     validator = new ValidationEngine("hl7.fhir.r4.core#4.0.1",
       txsrvr, txLog, FhirPublication.R4, true, "4.0.1");
     validator.getContext().loadFromFolder("fsh-generated/resources");
+    validator.loadPackage("us.cdc.phinvads", "0.7.0");
+    validator.loadPackage("us.nlm.vsac", "0.4.0");
   }
 
   /**
