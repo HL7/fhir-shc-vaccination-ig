@@ -29,7 +29,7 @@
         "vaccineCode": {
           "coding": [
             {
-              "system": "http://id.who.int/icd11/mms",
+              "system": "http://id.who.int/icd/release/11/mms",
               "code": "XM0GQ8"
             },
             {
@@ -63,7 +63,7 @@
         "vaccineCode": {
           "coding": [
             {
-              "system": "http://id.who.int/icd11/mms",
+              "system": "http://id.who.int/icd/release/11/mms",
               "code": "XM0GQ8"
             },
             {

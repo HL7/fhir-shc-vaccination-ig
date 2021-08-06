@@ -73,7 +73,7 @@ Description: "Defines a profile representing a vaccination for a SMART Health Ca
 
 * vaccineCode.coding[icd11] ^short = "ICD11 code identifying the administered vaccine product"
 * vaccineCode.coding[icd11] from vaccine-icd-11 (required)
-* vaccineCode.coding[icd11].system = "http://id.who.int/icd11/mms"
+* vaccineCode.coding[icd11].system = "http://id.who.int/icd/release/11/mms"
 
 // See http://build.fhir.org/ig/hl7au/au-fhir-base/StructureDefinition-au-immunization.html for the value set and code system URIs
 * vaccineCode.coding[air] ^short = "Australian Immunisation Register Vaccine code identifying the administered vaccine product"
