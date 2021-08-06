@@ -12,7 +12,7 @@
             "current": true
         },
         {
-            "version": "0.6.2",
+            "version": "0.1.0",
             "date": "",
             "desc": "STU 1 Ballot Version",
             "path": "http://hl7.org/fhir/uv/shc-vaccination/2021Sep",
@@ -20,16 +20,6 @@
             "sequence": "STU 1",
             "fhirversion": "4.0.1",
             "current": true
-        },
-        {
-            "version": "0.6.0",
-            "date": "",
-            "desc": "STU 1 Proposed Ballot Version",
-            "path": "http://build.fhir.org/ig/HL7/fhir-shc-vaccination-ig/branches/0.6.0",
-            "status": "ballot",
-            "sequence": "STU 1",
-            "fhirversion": "4.0.1",
-            "current": false
         }
     ],
     "category": "Public Health"

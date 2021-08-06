@@ -12,7 +12,7 @@ publisher:
   name: HL7 International - Public Health Work Group
   url: http://www.hl7.org/Special/committees/pher
   email: vci-ig@mitre.org
-version: 0.6.2
+version: 0.1.0
 fhirVersion: 4.0.1
 dependencies:
   us.cdc.phinvads:
