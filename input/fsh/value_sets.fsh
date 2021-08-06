@@ -48,15 +48,13 @@ The relevant codes from these SNOMED CT editions are included in the value set e
 codes.** Implementers SHALL defer to [the canonical list of COVID-19-related SNOMED International codes][snomed-covid],
 or the national edition equivalent, for COVID-related vaccines when it does not match the codes listed below.
 
+Note that some of the SNOMED-CT codes that are part of this value set expansion,
+[including the COVID-19-related SNOMED codes](https://confluence.ihtsdotools.org/display/snomed/SNOMED+CT+COVID-19+Related+Content), may be used under the a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/) as part of [the SNOMED Global Patient Set](https://gps.snomed.org). Please refer to [https://gps.snomed.org](https://gps.snomed.org) to determine which specific SNOMED codes may be used under this license.
+
 [SNOMED CT editions]: https://confluence.ihtsdotools.org/display/DOCEXTPG/4.4.2+Edition+URI+Examples
 [snomed-covid]: https://confluence.ihtsdotools.org/display/snomed/SNOMED+CT+COVID-19+Related+Content"
 
-* ^copyright = "This value set includes content from SNOMED-CT, which is copyright © 2002+
-International Health Terminology Standards Development Organization (IHTSDO), and distributed by
-agreement between IHTSDO and HL7. Implementer use of SNOMED-CT is not covered by this agreement.
-
-Note that some of the SNOMED-CT codes that are part of this value set expansion,
-[including the COVID-19-related SNOMED codes](https://confluence.ihtsdotools.org/display/snomed/SNOMED+CT+COVID-19+Related+Content), may be used under the a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/) as part of [the SNOMED Global Patient Set](https://gps.snomed.org). Please refer to [https://gps.snomed.org](https://gps.snomed.org) to determine which specific SNOMED codes may be used under this license."
+* ^copyright = "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"
 
 * include codes from system SCT where concept descendent-of #787859002
 
@@ -99,7 +97,7 @@ the canonical source of ICD-11 codes for COVID-19 vaccines.
 Note that this value set should contain the same codes as the [WHO Vaccine List value set](https://who-int.github.io/svc/ValueSet-who-svc-vaccines.html),
 and may be replaced with the WHO value set once that is published."
 
-* ^copyright = "TBD. More information can be found here: https://icd.who.int/icdapi/docs2/license/
+* ^copyright = "More information can be found here: https://icd.who.int/en/docs/icd11-license.pdf.
 Contact licensing@who.int to obtain further information."
 
 // HL7 Terminology Authority page for ICD-11
@@ -129,7 +127,7 @@ Note that an ATC code for COVID-19 vaccines (`J07BX03`) [has been created](https
 // Antatomic, Therapeutic and Chemical Classification (ATC)
 // https://confluence.hl7.org/pages/viewpage.action?pageId=104584082
 
-* ^copyright = "© Copyright WHO Collaborating Centre for Drug Statistics Methodology, Oslo, Norway. Use of all or parts of the material requires reference to the WHO Collaborating Centre for Drug Statistics Methodology. Copying and distribution for commercial purposes is not allowed. Changing or manipulating the material is not allowed."
+* ^copyright = "This artifact includes content from Anatomical Therapeutic Chemical (ATC) classification system. ATC codes are copyright World Health Organization (WHO) Collaborating Centre for Drug Statistics Methodology. Terms & Conditions in https://www.whocc.no/use_of_atc_ddd/"
 
 * include codes from system http://www.whocc.no/atc where concept is-a #J07
 
@@ -139,6 +137,8 @@ ValueSet:    QualitativeLabResultsLOINC
 Id:          qualitative-lab-results-loinc
 Title:       "Qualitative lab results - LOINC"
 Description: "This value set includes codes from LOINC answer lists with roughly equivalent meanings to the codes in this [value set of COVID-19-related SNOMED CT codes](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1114.10/expansion)."
+
+* ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc"
 
 // This value set is not used directly by any profiles, but is included in other value sets.
 // It exists as a separate value set to keep the FSH for the other value sets DRY.
@@ -165,6 +165,8 @@ ValueSet:    LabResultFindingsSNOMED
 Id:          lab-result-findings-snomed
 Title:       "Lab result findings - SNOMED CT"
 Description: "This value set includes SNOMED CT codes for identifying laboratory test results."
+
+* ^copyright = "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"
 
 // This value set has to be created separately from LabResultFindings. If the line below is
 // included directly within LabResultFindings, the following error occurs:
