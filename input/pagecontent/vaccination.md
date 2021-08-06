@@ -34,7 +34,7 @@ Implementers SHALL use at least one of the following code systems for identifyin
 | CVX: `http://hl7.org/fhir/sid/cvx`    | [VaccineCVX]                               | `207` ("COVID-19, mRNA, LNP-S, PF, 100 mcg/0.5 mL dose")                                   |
 | AIR\*                                 | [Australian Immunisation Register Vaccine] | `COVAST` ("COVID-19 Vaccine AstraZeneca")                                                  |
 | SNOMED CT: `http://snomed.info/sct`   | [VaccineSNOMED]                            | `1119349007` ("Severe acute respiratory syndrome coronavirus 2 mRNA only vaccine product") |
-| ICD-11: `http://id.who.int/icd11/mms` | [VaccineICD11]                             | `XM0GQ8` ("COVID-19 vaccine, RNA based)                                                    |
+| ICD-11: `http://id.who.int/icd/release/11/mms` | [VaccineICD11]                             | `XM0GQ8` ("COVID-19 vaccine, RNA based)                                                    |
 | ATC/DDD: `http://www.whocc.no/atc`    | [VaccineATC]                               | `J07BX03` ("covid-19 vaccines")                                                            |
 
 \* The URI for AIR is `https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats`.
