@@ -1,6 +1,6 @@
-# Vaccination Credential FHIR Implementation Guide \[DRAFT\]
+# SMART Health Cards Vaccination and Testing FHIR Implementation Guide
 
-CI build of this IG available at <http://build.fhir.org/ig/dvci/vaccine-credential-ig/branches/main/>.
+CI build of this IG available at <http://build.fhir.org/ig/HL7/fhir-shc-vaccination-ig>.
 
 ## Tests
 
@@ -16,7 +16,7 @@ Assumes Sushi and Java JDK are pre-installed. Will run Sushi to generate files i
 
 Test output is in target/validator.log and target/surefire-reports.
 
-Test cases are defined in src/test/resources. 
+Test cases are defined in src/test/resources.
 <ol>
 <li>tests.csv: list of json resource files and profiles that they should validate against without errors. Test case will fail if there are any validation issues of severity error (warning and information severity will pass).</li>
 <li>tests_errors.csv: used for test cases that should result in validator issues. It contains a list of json resource files and the profiles that they should validate against, along with expected issue severity, location, or message fragment. Test case will fail if there is no matching validation issue. Expected columns are optional. If all are left blank, then any validator issue will match.</li>

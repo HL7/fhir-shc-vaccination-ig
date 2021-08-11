@@ -2,7 +2,6 @@
 <specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/uv/shc-vaccination/2021Sep" ciUrl="http://build.fhir.org/ig/HL7/fhir-shc-vaccination-ig" defaultVersion="0.6.2" defaultWorkgroup="pher" gitUrl="https://github.com/HL7/fhir-shc-vaccination-ig" url="http://hl7.org/fhir/uv/shc-vaccination">
 <version code="current" url="http://build.fhir.org/ig/HL7/fhir-shc-vaccination-ig"/>
 <version code="0.6.2" url="http://hl7.org/fhir/uv/shc-vaccination/2021Sep"/>
-<version code="0.6.0" deprecated="true" url="http://build.fhir.org/ig/HL7/fhir-shc-vaccination-ig/branches/0.6.0"/>
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
