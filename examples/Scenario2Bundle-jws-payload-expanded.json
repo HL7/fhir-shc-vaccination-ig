@@ -1,11 +1,10 @@
 {
   "iss": "https://spec.smarthealth.cards/examples/issuer",
-  "nbf": 1629148629,
+  "nbf": 1628269596,
   "vc": {
     "type": [
       "https://smarthealth.cards#health-card",
-      "https://smarthealth.cards#covid19",
-      "https://smarthealth.cards#immunization"
+      "https://smarthealth.cards#labresult"
     ],
     "credentialSubject": {
       "fhirVersion": null,
@@ -31,14 +30,6 @@
           {
             "fullUrl": "resource:1",
             "resource": {
-              "meta": {
-                "security": [
-                  {
-                    "system": "https://smarthealth.cards/ial",
-                    "code": "IAL2"
-                  }
-                ]
-              },
               "status": "completed",
               "vaccineCode": {
                 "coding": [
@@ -52,14 +43,6 @@
                 "reference": "resource:0"
               },
               "occurrenceDateTime": "2021-01-01",
-              "lotNumber": "0000002",
-              "performer": [
-                {
-                  "actor": {
-                    "display": "ABC General Hospital"
-                  }
-                }
-              ],
               "resourceType": "Immunization"
             }
           },
@@ -79,14 +62,6 @@
                 "reference": "resource:0"
               },
               "occurrenceDateTime": "2021-01-29",
-              "lotNumber": "0000008",
-              "performer": [
-                {
-                  "actor": {
-                    "display": "ABC General Hospital"
-                  }
-                }
-              ],
               "resourceType": "Immunization"
             }
           }

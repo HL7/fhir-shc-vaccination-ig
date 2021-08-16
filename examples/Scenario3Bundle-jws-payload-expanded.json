@@ -1,11 +1,10 @@
 {
   "iss": "https://spec.smarthealth.cards/examples/issuer",
-  "nbf": 1629148629,
+  "nbf": 1628269597,
   "vc": {
     "type": [
       "https://smarthealth.cards#health-card",
-      "https://smarthealth.cards#covid19",
-      "https://smarthealth.cards#laboratory"
+      "https://smarthealth.cards#labresult"
     ],
     "credentialSubject": {
       "fhirVersion": null,
@@ -31,14 +30,6 @@
           {
             "fullUrl": "resource:1",
             "resource": {
-              "meta": {
-                "security": [
-                  {
-                    "system": "https://smarthealth.cards/ial",
-                    "code": "IAL2"
-                  }
-                ]
-              },
               "status": "final",
               "code": {
                 "coding": [
