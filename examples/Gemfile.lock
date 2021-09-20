@@ -27,6 +27,8 @@ GEM
     mime-types-data (3.2021.0901)
     nokogiri (1.12.4-x86_64-darwin)
       racc (~> 1.4)
+    nokogiri (1.12.4-x86_64-linux)
+      racc (~> 1.4)
     racc (1.5.2)
     rqrcode (2.1.0)
       chunky_png (~> 1.0)
@@ -35,6 +37,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-20
+  x86_64-linux
 
 DEPENDENCIES
   health_cards!
