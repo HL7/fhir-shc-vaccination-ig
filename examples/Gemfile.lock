@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:dvci/health_cards.git
+  remote: https://github.com/dvci/health_cards.git
   revision: 6fb7211047447b4431b8e6b4cdce093c84cbb9a4
   specs:
     health_cards (0.0.2)

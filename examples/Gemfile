@@ -4,4 +4,4 @@ source "https://rubygems.org"
 
 git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 
-gem 'health_cards', git: 'git@github.com:dvci/health_cards.git'
+gem 'health_cards', git: 'https://github.com/dvci/health_cards.git'
