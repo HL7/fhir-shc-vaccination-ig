@@ -22,7 +22,8 @@ jobs:
       - name: Run Ruby generate-examples
         run: |
           cd examples
-          gem install health_cards
+          gem install bundler
+          bundle install
           ruby generate-examples.rb
       - name: Commit examples
         run: |

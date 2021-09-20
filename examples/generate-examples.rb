@@ -1,4 +1,7 @@
-require "health_cards"
+# frozen_string_literal: true
+
+require 'bundler/setup'
+require 'health_cards'
 require 'open-uri'
 
 module HealthCards
@@ -31,7 +34,7 @@ Dir.glob('Scenario*Bundle.json') do |filename|
   File.write("#{outputPrefix}-jws.txt", jws)
   File.write("#{outputPrefix}-file.smart-health-card", smarthealthcard)
   qr_codes.chunks.map.with_index { |chunk, idx|
-    File.write("#{outputPrefix}-qr-code-numeric-value-#{idx}.txt", chunk.qrcode.data)
+    File.write("#{outputPrefix}-qr-code-numeric-value-#{idx}.txt", chunk.data)
     File.write("#{outputPrefix}-qr-code-#{idx}.png", chunk.image)
   }
 end
