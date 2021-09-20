@@ -1,0 +1,68 @@
+{
+  "resourceType": "ChargeItemDefinition",
+  "id": "ebm",
+  "url": "http://fhir.de/ChargeItemDefinition/kbv/ebm-30110",
+  "version": "2-2018",
+  "status": "active",
+  "description": "Allergologisch-diagnostischer Komplex zur Diagnostik und/oder zum Ausschluss einer (Kontakt-)Allergie vom Spättyp (Typ IV), einschl. Kosten",
+  "effectivePeriod": {
+    "start": "2018-04-01",
+    "end": "2018-06-30"
+  },
+  "code": {
+    "coding": [
+      {
+        "system": "http://fhir.de/CodingSystem/kbv/ebm",
+        "code": "30110",
+        "display": "Allergologiediagnostik I"
+      }
+    ]
+  },
+  "applicability": [
+    {
+      "description": "Excludes billing code 13250 for same Encounter",
+      "language": "text/cql",
+      "expression": "[some CQL expression]"
+    },
+    {
+      "description": "Applies only once per Encounter",
+      "language": "text/CQL",
+      "expression": "[some CQL expression]"
+    }
+  ],
+  "propertyGroup": [
+    {
+      "priceComponent": [
+        {
+          "type": "base",
+          "code": {
+            "coding": [
+              {
+                "system": "http://fhir.de/CodeSystem/kbv/ebm-attribute",
+                "code": "gesamt-euro",
+                "display": "Gesamt (Euro)"
+              }
+            ]
+          },
+          "amount": {
+            "value": 67.44,
+            "currency": "EUR"
+          }
+        },
+        {
+          "type": "informational",
+          "code": {
+            "coding": [
+              {
+                "system": "http://fhir.de/CodeSystem/kbv/ebm-attribute",
+                "code": "gesamt-punkte",
+                "display": "Gesamt (Punkte)"
+              }
+            ]
+          },
+          "factor": 633
+        }
+      ]
+    }
+  ]
+}

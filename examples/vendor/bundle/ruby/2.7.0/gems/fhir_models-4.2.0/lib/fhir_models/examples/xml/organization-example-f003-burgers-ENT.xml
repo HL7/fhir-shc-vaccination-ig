@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Organization xmlns="http://hl7.org/fhir">
+  <id value="f003"/>
+  <meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  <active value="true"/>
+  <type>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/organization-type"/>
+      <code value="dept"/>
+      <display value="Hospital Department"/>
+    </coding>
+  </type>
+  <name value="Burgers UMC Ear,Nose,Throat unit"/>
+  <telecom>
+    <system value="phone"/>
+    <value value="022-655 6780"/>
+  </telecom>
+  <address>
+    <line value="West Wing, floor 5"/>
+  </address>
+  <partOf>
+    <reference value="Organization/f001"/>
+  </partOf>
+  <contact>
+    <purpose>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/contactentity-type"/>
+        <code value="ADMIN"/>
+      </coding>
+    </purpose>
+    <name>
+      <text value="mr. F. de Hond"/>
+    </name>
+    <telecom>
+      <system value="phone"/>
+      <value value="022-655 7654"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="KNO@burgersumc.nl"/>
+    </telecom>
+    <telecom>
+      <system value="fax"/>
+      <value value="022-655 0998"/>
+    </telecom>
+    <address>
+      <line value="West Wing, floor 5"/>
+    </address>
+  </contact>
+</Organization>

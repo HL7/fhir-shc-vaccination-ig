@@ -1,0 +1,79 @@
+{
+  "resourceType": "MolecularSequence",
+  "id": "fda-example",
+  "type": "dna",
+  "coordinateSystem": 1,
+  "patient": {
+    "reference": "Patient/example"
+  },
+  "referenceSeq": {
+    "referenceSeqId": {
+      "coding": [
+        {
+          "system": "http://www.ncbi.nlm.nih.gov/nuccore",
+          "code": "NC_000001.11"
+        }
+      ]
+    },
+    "strand": "watson",
+    "windowStart": 10453,
+    "windowEnd": 101770080
+  },
+  "variant": [
+    {
+      "start": 13116,
+      "end": 13117,
+      "observedAllele": "T",
+      "referenceAllele": "G"
+    }
+  ],
+  "quality": [
+    {
+      "type": "snp",
+      "standardSequence": {
+        "coding": [
+          {
+            "system": "https://precision.fda.gov/files/",
+            "code": "file-Bk50V4Q0qVb65P0v2VPbfYPZ"
+          }
+        ]
+      },
+      "start": 10453,
+      "end": 101770080,
+      "method": {
+        "coding": [
+          {
+            "system": "https://precision.fda.gov/jobs/",
+            "code": "job-ByxYPx809jFVy21KJG74Jg3Y"
+          }
+        ],
+        "text": "Vcfeval + Hap.py Comparison"
+      },
+      "truthTP": 7749,
+      "queryTP": 7984,
+      "truthFN": 2554,
+      "queryFP": 10670,
+      "gtFP": 2186,
+      "precision": 0.428005,
+      "recall": 0.752111,
+      "fScore": 0.545551
+    }
+  ],
+  "repository": [
+    {
+      "type": "login",
+      "url": "https://precision.fda.gov/files/file-Bx37ZK009P4bX5g3qjkFZV38",
+      "name": "FDA",
+      "variantsetId": "file-Bx37ZK009P4bX5g3qjkFZV38"
+    }
+  ],
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  }
+}

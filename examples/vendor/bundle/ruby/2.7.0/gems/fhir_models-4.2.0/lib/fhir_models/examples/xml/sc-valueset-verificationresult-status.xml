@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConceptMap xmlns="http://hl7.org/fhir">
+  <id value="sc-verificationresult-status"/>
+  
+  <url value="http://hl7.org/fhir/ConceptMap/sc-verificationresult-status"/>
+  <version value="4.0.1"/>
+  <name value="statusCanonicalMap"/>
+  <title value="Canonical Mapping for &quot;Status&quot;"/>
+  <status value="draft"/>
+  <date value="2018-06-06T00:06:02+10:00"/>
+  <publisher value="HL7 (FHIR Project)"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://hl7.org/fhir"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="fhir@lists.hl7.org"/>
+    </telecom>
+  </contact>
+  <description value="Canonical Mapping for &quot;The validation status of the target&quot;"/>
+  <sourceCanonical value="http://hl7.org/fhir/ValueSet/verificationresult-status"/>
+  <targetCanonical value="http://hl7.org/fhir/ValueSet/resource-status"/>
+  <group>
+    <source value="http://hl7.org/fhir/CodeSystem/status"/>
+    <target value="http://hl7.org/fhir/resource-status"/>
+    <element>
+      <code value="attested"/>
+      <target>
+        <code value="draft"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="validated"/>
+      <target>
+        <code value="accepted"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="in-process"/>
+      <target>
+        <code value="active"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="val-fail, reval-fail"/>
+      <target>
+        <code value="failed"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="req-revalid"/>
+      <target>
+        <code value="replaced"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+  </group>
+</ConceptMap>

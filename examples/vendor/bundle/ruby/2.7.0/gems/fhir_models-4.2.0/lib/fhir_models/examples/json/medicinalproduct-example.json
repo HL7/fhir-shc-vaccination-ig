@@ -1,0 +1,117 @@
+{
+  "resourceType": "MedicinalProduct",
+  "id": "example",
+  "identifier": [
+    {
+      "system": "http://ema.europa.eu/example/MPID",
+      "value": "{mpid}"
+    }
+  ],
+  "productClassification": [
+    {
+      "coding": [
+        {
+          "system": "http://ema.europa.eu/example/WHOAnatomicalTherapeuticChemicalATCClassificationSystem",
+          "code": "WHOAnatomicalTherapeuticChemicalATCClassificationSystem|B01AF02"
+        }
+      ]
+    }
+  ],
+  "attachedDocument": [
+    {
+      "reference": "DocumentReference/example"
+    }
+  ],
+  "masterFile": [
+    {
+      "reference": "DocumentReference/example"
+    }
+  ],
+  "name": [
+    {
+      "productName": "Equilidem 2.5 mg film-coated tablets",
+      "namePart": [
+        {
+          "part": "Equilidem",
+          "type": {
+            "code": "INV"
+          }
+        },
+        {
+          "part": "2.5 mg",
+          "type": {
+            "code": "STR"
+          }
+        },
+        {
+          "part": "film-coated tablets",
+          "type": {
+            "code": "FRM"
+          }
+        }
+      ],
+      "countryLanguage": [
+        {
+          "country": {
+            "coding": [
+              {
+                "system": "http://ema.europa.eu/example/countryCode",
+                "code": "EU"
+              }
+            ]
+          },
+          "jurisdiction": {
+            "coding": [
+              {
+                "system": "http://ema.europa.eu/example/jurisdictionCode",
+                "code": "EU"
+              }
+            ]
+          },
+          "language": {
+            "coding": [
+              {
+                "system": "http://ema.europa.eu/example/languageCode",
+                "code": "EN"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "manufacturingBusinessOperation": [
+    {
+      "operationType": {
+        "coding": [
+          {
+            "system": "http://ema.europa.eu/example/manufacturingOperationType",
+            "code": "Batchrelease"
+          }
+        ]
+      },
+      "authorisationReferenceNumber": {
+        "system": "http://ema.europa.eu/example/manufacturingAuthorisationReferenceNumber",
+        "value": "1324TZ"
+      },
+      "effectiveDate": "2013-03-15",
+      "manufacturer": [
+        {
+          "reference": "Organization/example"
+        }
+      ],
+      "regulator": {
+        "reference": "Organization/example"
+      }
+    }
+  ],
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  }
+}

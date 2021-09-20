@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MedicationRequest xmlns="http://hl7.org/fhir">
+    <id value="medrx0317"/>
+    <meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  <contained>
+        <Medication>
+            <id value="med0303"/>
+            <code>
+                <coding>
+                    <system value="http://www.nlm.nih.gov/research/umls/rxnorm"/>
+                    <code value="1594660"/>
+                    <display value="Alemtuzumab 10mg/ml (Lemtrada)"/>
+                </coding>
+            </code>
+        </Medication>
+    </contained>
+    <identifier>
+        <use value="official"/>
+        <system value="http://www.bmc.nl/portal/prescriptions"/>
+        <value value="12345689"/>
+    </identifier>
+    <status value="completed"/>
+    <intent value="order"/>
+    <medicationReference>
+        <reference value="#med0303"/>
+    </medicationReference>
+    <subject>
+        <!--   Linked to the resource patient who needs the medication   -->
+        <reference value="Patient/pat1"/>
+        <display value="Donald Duck"/>
+    </subject>
+    <authoredOn value="2015-01-15"/>
+    <requester>
+        <reference value="Practitioner/f007"/>
+        <display value="Patrick Pump"/>
+    </requester>
+    <reasonCode>
+        <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="92814006"/>
+            <display value="Chronic Lymphoid Leukemia (disorder)"/>
+        </coding>
+    </reasonCode>
+    <dosageInstruction>
+        <sequence value="1"/>
+        <text value="Rapid daily-dose escalation, until tolerated, from 3 mg/d, and then 10 mg/d, to the recommended maintenance dose of 30 mg IV over 120 min, 3 times per wk on alternate days for up to 12 wk"/>
+        <additionalInstruction>
+            <text value="Rapidly increase dose until tolerated"/>
+        </additionalInstruction>
+        <additionalInstruction>
+            <text value="Administer on alternate days"/>
+        </additionalInstruction>
+        <timing>
+            <repeat>
+                <duration value="12"/>
+                <durationUnit value="wk"/>
+                <frequency value="3"/>
+                <period value="1"/>
+                <periodUnit value="wk"/>
+            </repeat>
+        </timing>
+        <route>
+            <coding>
+                <system value="http://snomed.info/sct"/>
+                <code value="47625008"/>
+                <display value="Intravenous route (qualifier value)"/>
+            </coding>
+        </route>
+        <method>
+            <coding>
+                <system value="http://snomed.info/sct"/>
+                <code value="422145002"/>
+                <display value="Inject - dosing instruction imperative (qualifier value)"/>
+            </coding>
+        </method>
+        <doseAndRate>
+            <type>
+                <coding>
+                    <system value="http://terminology.hl7.org/CodeSystem/dose-rate-type"/>
+                    <code value="ordered"/>
+                    <display value="Ordered"/>
+                </coding>
+            </type>
+            <doseQuantity>
+                <value value="3"/>
+                <unit value="mg"/>
+                <system value="http://unitsofmeasure.org"/>
+                <code value="mg"/>
+            </doseQuantity>
+        </doseAndRate>
+        
+    </dosageInstruction>
+    <dosageInstruction>
+        <sequence value="2"/>
+        <text value="Rapid daily-dose escalation, until tolerated, from 3 mg/d, and then 10 mg/d, to the recommended maintenance dose of 30 mg IV over 120 min, 3 times per wk on alternate days for up to 12 wk"/>
+        <additionalInstruction>
+            <text value="Rapidly increase dose until tolerated"/>
+        </additionalInstruction>
+        <additionalInstruction>
+        <text value="Administer on alternate days"/>
+        </additionalInstruction>
+        <timing>
+            <repeat>
+                <duration value="12"/>
+                <durationUnit value="wk"/>
+                <frequency value="3"/>
+                <period value="1"/>
+                <periodUnit value="wk"/>
+            </repeat>
+        </timing>
+        <route>
+            <coding>
+                <system value="http://snomed.info/sct"/>
+                <code value="47625008"/>
+                <display value="Intravenous route (qualifier value)"/>
+            </coding>
+        </route>
+        <method>
+            <coding>
+                <system value="http://snomed.info/sct"/>
+                <code value="422145002"/>
+                <display value="Inject - dosing instruction imperative (qualifier value)"/>
+            </coding>
+        </method>
+        <doseAndRate>
+            <type>
+                <coding>
+                    <system value="http://terminology.hl7.org/CodeSystem/dose-rate-type"/>
+                    <code value="ordered"/>
+                    <display value="Ordered"/>
+                </coding>
+            </type>
+            <doseQuantity>
+                <value value="10"/>
+                <unit value="mg"/>
+                <system value="http://unitsofmeasure.org"/>
+                <code value="mg"/>
+            </doseQuantity>
+        </doseAndRate>
+        
+    </dosageInstruction>  
+    <dosageInstruction>
+        <sequence value="3"/>
+        <text value="Rapid daily-dose escalation, until tolerated, from 3 mg/d, and then 10 mg/d, to the recommended maintenance dose of 30 mg IV over 120 min, 3 times per wk on alternate days for up to 12 wk"/>
+        <additionalInstruction>
+            <text value="Rapidly increase dose until tolerated"/>
+        </additionalInstruction>
+        <additionalInstruction>
+        <text value="Administer on alternate days"/>
+        </additionalInstruction>
+        <timing>
+            <repeat>
+                <duration value="12"/>
+                <durationUnit value="wk"/>
+                <frequency value="3"/>
+                <period value="1"/>
+                <periodUnit value="wk"/>
+            </repeat>
+        </timing>
+        <route>
+            <coding>
+                <system value="http://snomed.info/sct"/>
+                <code value="47625008"/>
+                <display value="Intravenous route (qualifier value)"/>
+            </coding>
+        </route>
+        <method>
+            <coding>
+                <system value="http://snomed.info/sct"/>
+                <code value="422145002"/>
+                <display value="Inject - dosing instruction imperative (qualifier value)"/>
+            </coding>
+        </method>
+        <doseAndRate>
+            <type>
+                <coding>
+                    <system value="http://terminology.hl7.org/CodeSystem/dose-rate-type"/>
+                    <code value="ordered"/>
+                    <display value="Ordered"/>
+                </coding>
+            </type>
+            <doseQuantity>
+                <value value="30"/>
+                <unit value="mg"/>
+                <system value="http://unitsofmeasure.org"/>
+                <code value="mg"/>
+            </doseQuantity>
+        </doseAndRate>
+
+    </dosageInstruction>
+</MedicationRequest>

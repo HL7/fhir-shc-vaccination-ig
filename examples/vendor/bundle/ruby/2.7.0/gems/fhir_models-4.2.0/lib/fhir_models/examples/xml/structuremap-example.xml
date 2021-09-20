@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StructureMap xmlns="http://hl7.org/fhir">
+  <id value="example"/>
+  <meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  <url value="http://hl7.org/fhir/StructureMap/example"/>
+  <identifier>
+    <system value="urn:ietf:rfc:3986"/>
+    <value value="urn:oid:37843577-95fb-4adb-84c0-8837188a7bf3"/>
+  </identifier>
+  <version value="0.1"/>
+  <name value="ExampleMap"/>
+  <title value="Example Map"/>
+  <status value="draft"/>
+  <date value="2017-03-09"/>
+  <publisher value="HL7 FHIR Standard"/> 
+  <contact> 
+    <telecom> 
+      <system value="url"/> 
+      <value value="http://hl7.org/fhir"/> 
+    </telecom> 
+  </contact>   
+  <description value="Example Structure Map"/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="009"/>
+      <display value="Oceania"/>
+    </coding>
+  </jurisdiction>
+  <group>
+    <name value="Examples"/>
+    <typeMode value="none"/>
+    <documentation value="test -&gt; testValue"/>
+    <input>
+      <name value="test"/>
+      <mode value="source"/>
+    </input>
+    <rule>
+      <name value="rule1"/>
+      <source>
+        <context value="Source"/>
+        <type value="SourceClassA"/>
+        <element value="test"/>
+        <variable value="t"/>
+      </source>
+      <target>
+        <context value="Destination"/>
+        <contextType value="variable"/>
+        <element value="testValue"/>
+        <transform value="copy"/>
+      </target>
+    </rule>
+  </group>
+  
+</StructureMap>

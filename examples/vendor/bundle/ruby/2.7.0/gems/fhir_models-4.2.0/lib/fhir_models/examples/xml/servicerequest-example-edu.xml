@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ServiceRequest xmlns="http://hl7.org/fhir">
+	<id value="education"/>
+	<!--   insert contents here   -->
+	<meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  <status value="completed"/>
+	<intent value="order"/>
+	<category>
+		<coding>
+			<system value="http://snomed.info/sct"/>
+			<code value="311401005"/>
+			<display value="Patient education (procedure)"/>
+		</coding>
+		<text value="Education"/>
+	</category>
+	<code>
+		<coding>
+			<system value="http://snomed.info/sct"/>
+			<code value="48023004"/>
+			<display value="Breast self-examination technique education (procedure)"/>
+		</coding>
+		<text value="Health education - breast examination"/>
+	</code>
+	<subject>
+		<display value="Jane Doe"/>
+	</subject>
+	<occurrenceDateTime value="2014-08-16"/>
+	<authoredOn value="2016-08-16"/>
+	<requester>
+			<display value="Angela Care, MD"/>
+	</requester>
+	<performer>
+		<display value="Pamela Educator, RN"/>
+	</performer>
+	<reasonCode>
+		<text value="early detection of breast mass"/>
+	</reasonCode>
+</ServiceRequest>

@@ -1,0 +1,1 @@
+require 'date_time_precision/patch/1.8.7/time'

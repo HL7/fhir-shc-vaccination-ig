@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PlanDefinition xmlns="http://hl7.org/fhir">
+  <id value="zika-virus-intervention"/>
+  <meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  
+  <url value="http://example.org/PlanDefinition/zika-virus-intervention"/>
+  <identifier>
+    <use value="official"/>
+    <value value="zika-virus-intervention"/>
+  </identifier>
+  <version value="2.0.0"/>
+  <title value="Example Zika Virus Intervention"/>
+  <status value="active"/>
+  <date value="2017-01-12"/>
+  <description value="Zika Virus Management intervention describing the CDC Guidelines for Zika Virus Reporting and Management."/>
+  <useContext>
+    <code>
+      <system value="http://terminology.hl7.org/CodeSystem/usage-context-type"/>
+      <code value="age"/>
+    </code>
+    <valueRange>
+      <low><value value="12"/><unit value="a"/></low>
+    </valueRange>
+  </useContext>
+  <useContext>
+    <code>
+      <system value="http://terminology.hl7.org/CodeSystem/usage-context-type"/>
+      <code value="user"/>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="309343006"/>
+        <display value="Physician"/>
+      </coding>
+    </valueCodeableConcept>
+  </useContext>
+  <topic>
+    <text value="Zika Virus Management"/>
+  </topic>
+  <relatedArtifact>
+    <type value="derived-from"/>
+    <url value="https://www.cdc.gov/mmwr/volumes/65/wr/mm6539e1.htm?s_cid=mm6539e1_w"/>
+  </relatedArtifact>
+  <relatedArtifact>
+    <type value="predecessor"/>
+    <resource value="PlanDefinition/zika-virus-intervention-initial"/>
+  </relatedArtifact>
+  <library value="Library/zika-virus-intervention-logic"/>
+  <action>
+    <title value="Zika Virus Assessment"/>
+    <trigger>
+      <type value="named-event"/>
+      <name value="patient-view"/>
+    </trigger>
+    <condition>
+      <kind value="applicability"/>
+      <expression>
+        <language value="text/cql"/>
+        <expression value="Is Patient Pregnant"/>
+      </expression>
+    </condition>
+    <action>
+		<condition>
+			<kind value="applicability"/>
+            <expression>
+              <language value="text/cql"/>
+              <expression value="Should Administer Zika Virus Exposure Assessment"/>
+            </expression>
+		</condition>
+		<definitionCanonical value="ActivityDefinition/administer-zika-virus-exposure-assessment"/>
+    </action>
+    <action>
+		<condition>
+			<kind value="applicability"/>
+            <expression>
+              <language value="text/cql"/>
+			  <expression value="Should Order Serum + Urine rRT-PCR Test"/>
+			</expression>
+		</condition>
+		<definitionCanonical value="ActivityDefinition/order-serum-urine-rrt-pcr-test"/>
+    </action>
+    <action>
+		<condition>
+			<kind value="applicability"/>
+            <expression>
+              <language value="text/cql"/>
+			  <expression value="Should Order Serum Zika Virus IgM + Dengue Virus IgM"/>
+			</expression>
+		</condition>
+		<definitionCanonical value="ActivityDefinition/order-serum-zika-dengue-virus-igm"/>
+    </action>
+    <action>
+		<condition>
+			<kind value="applicability"/>
+            <expression>
+              <language value="text/cql"/>
+			  <expression value="Should Consider IgM Antibody Testing"/>
+			</expression>
+		</condition>
+		<definitionCanonical value="ActivityDefinition/consider-igm-antibody-testing"/>
+    </action>
+    <action>
+		<condition>
+			<kind value="applicability"/>
+            <expression>
+              <language value="text/cql"/>
+			  <expression value="Should Provide Mosquito Prevention and Contraception Advice"/>
+			</expression>
+		</condition>
+		<action>
+			<definitionCanonical value="ActivityDefinition/provide-mosquito-prevention-advice"/>
+		</action>
+		<action>
+			<definitionCanonical value="ActivityDefinition/provide-contraception-advice"/>
+		</action>
+    </action>
+  </action>
+</PlanDefinition>

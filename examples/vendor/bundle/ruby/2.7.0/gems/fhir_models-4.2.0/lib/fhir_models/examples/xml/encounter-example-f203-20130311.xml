@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Encounter xmlns="http://hl7.org/fhir">
+    <id value="f203"/>
+    <meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  <identifier>
+        <use value="temp"/>
+        <value value="Encounter_Roel_20130311"/>
+    </identifier>
+    <status value="finished"/>
+    <statusHistory>
+        <status value="arrived"/>
+        <period>
+            <start value="2013-03-08"/>
+        </period>
+    </statusHistory>
+    <!--  Encounter has finished  -->
+    <class>
+        <!--  Inpatient encounter for straphylococcus infection  -->
+        <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
+        <code value="IMP"/>
+        <display value="inpatient encounter"/>
+    </class>
+    <type>
+        <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="183807002"/>
+            <display value="Inpatient stay for nine days"/>
+        </coding>
+    </type>
+    <priority>
+        <!--  High priority  -->
+        <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="394849002"/>
+            <display value="High priority"/>
+        </coding>
+    </priority>
+    <subject>
+        <reference value="Patient/f201"/>
+        <display value="Roel"/>
+    </subject>
+    <episodeOfCare>
+        <reference value="EpisodeOfCare/example"/>
+    </episodeOfCare>
+    <basedOn>
+        <reference value="ServiceRequest/myringotomy"/>
+    </basedOn>
+    <participant>
+        <type>
+            <coding>
+                <system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType"/>
+                <code value="PART"/>
+            </coding>
+        </type>
+        <individual>
+            <reference value="Practitioner/f201"/>
+        </individual>
+    </participant>
+    <appointment>
+        <reference value="Appointment/example"/>
+    </appointment>
+    <period>
+        <start value="2013-03-11"/>
+        <end value="2013-03-20"/>
+    </period>
+    <reasonCode>
+        <text value="The patient seems to suffer from bilateral pneumonia and renal insufficiency, most likely due to chemotherapy."/>
+    </reasonCode>
+    <diagnosis>
+      <condition>
+          <reference value="Condition/stroke"/>
+      </condition>
+      <use>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/diagnosis-role"/>
+          <code value="AD"/>
+          <display value="Admission diagnosis"/>
+        </coding>
+      </use>
+      <rank value="1"/>
+    </diagnosis>
+    <diagnosis>
+      <condition>
+          <reference value="Condition/f201"/>
+      </condition>
+      <use>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/diagnosis-role"/>
+          <code value="DD"/>
+          <display value="Discharge diagnosis"/>
+        </coding>
+      </use>
+    </diagnosis>
+<account>
+        <reference value="Account/example"/>
+    </account>
+    <!--  No indication, because no referral took place  -->
+    <hospitalization>
+        <origin>
+            <reference value="Location/2"/>
+        </origin>
+        <admitSource>
+            <coding>
+                <system value="http://snomed.info/sct"/>
+                <code value="309902002"/>
+                <display value="Clinical Oncology Department"/>
+            </coding>
+        </admitSource>
+        <reAdmission>
+            <coding>
+                <display value="readmitted"/>
+            </coding>
+        </reAdmission>
+        <!--  accomodation details are not available  -->
+        <dietPreference>
+            <coding>
+                <system value="http://snomed.info/sct"/>
+                <code value="276026009"/>
+                <display value="Fluid balance regulation"/>
+            </coding>
+        </dietPreference>
+        <specialCourtesy>
+            <coding>
+                <system value="http://terminology.hl7.org/CodeSystem/v3-EncounterSpecialCourtesy"/>
+                <code value="NRM"/>
+                <display value="normal courtesy"/>
+            </coding>
+        </specialCourtesy>
+        <specialArrangement>
+            <coding>
+                <system value="http://terminology.hl7.org/CodeSystem/encounter-special-arrangements"/>
+                <code value="wheel"/>
+                <display value="Wheelchair"/>
+            </coding>
+        </specialArrangement>
+        <destination>
+            <!--  Fictive  -->
+            <reference value="Location/2"/>
+        </destination>
+    </hospitalization>
+    <serviceProvider>
+        <reference value="Organization/2"/>
+    </serviceProvider>
+    <partOf>
+        <reference value="Encounter/f203"/>
+    </partOf>
+</Encounter>

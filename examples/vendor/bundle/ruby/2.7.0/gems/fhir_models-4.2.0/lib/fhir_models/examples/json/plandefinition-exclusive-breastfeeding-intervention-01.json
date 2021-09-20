@@ -1,0 +1,112 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "exclusive-breastfeeding-intervention-01",
+  "identifier": [
+    {
+      "use": "official",
+      "value": "exclusive-breastfeeding-intervention-01"
+    }
+  ],
+  "version": "1.0.0",
+  "title": "Exclusive Breastfeeding Intervention-01",
+  "status": "active",
+  "date": "2015-03-08",
+  "description": "Exclusive breastfeeding intervention intended to improve outcomes for exclusive breastmilk feeding of newborns by ensuring that an appropriate breastfeeding readiness assessment order is created if necessary.",
+  "topic": [
+    {
+      "text": "Exclusive Breastfeeding"
+    }
+  ],
+  "relatedArtifact": [
+    {
+      "type": "derived-from",
+      "resource": "Measure/measure-exclusive-breastfeeding"
+    }
+  ],
+  "library": [
+    "Library/library-exclusive-breastfeeding-cds-logic"
+  ],
+  "action": [
+    {
+      "title": "Mother should be administered a breastfeeding readiness assessment.",
+      "trigger": [
+        {
+          "type": "named-event",
+          "name": "Admission"
+        },
+        {
+          "type": "named-event",
+          "name": "Birth"
+        },
+        {
+          "type": "named-event",
+          "name": "Infant Transfer to Recovery"
+        },
+        {
+          "type": "named-event",
+          "name": "Transfer to Post-Partum"
+        }
+      ],
+      "condition": [
+        {
+          "kind": "applicability",
+          "expression": {
+            "language": "text/cql",
+            "expression": "Should Create Assessment Order"
+          }
+        }
+      ],
+      "action": [
+        {
+          "title": "Create the breastfeeding readiness assessment order.",
+          "textEquivalent": "Administer a breastfeeding readiness assessment.",
+          "type": {
+            "coding": [
+              {
+                "code": "create"
+              }
+            ]
+          },
+          "dynamicValue": [
+            {
+              "path": "/",
+              "expression": {
+                "language": "text/cql",
+                "expression": "Create Breastfeeding Risk Assessment"
+              }
+            }
+          ]
+        },
+        {
+          "title": "Notify the provider to sign the order.",
+          "textEquivalent": "A Breastfeeding Readiness Assessment is recommended, please authorize or reject the order.",
+          "type": {
+            "coding": [
+              {
+                "code": "create"
+              }
+            ]
+          },
+          "dynamicValue": [
+            {
+              "path": "/",
+              "expression": {
+                "language": "text/cql",
+                "expression": "Communication Request to Provider"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  }
+}

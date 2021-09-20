@@ -1,0 +1,103 @@
+{
+  "resourceType": "MolecularSequence",
+  "id": "fda-vcfeval-comparison",
+  "coordinateSystem": 1,
+  "patient": {
+    "reference": "Patient/example"
+  },
+  "referenceSeq": {
+    "referenceSeqId": {
+      "coding": [
+        {
+          "system": "http://www.ncbi.nlm.nih.gov/nuccore",
+          "code": "NC_000001.11"
+        }
+      ]
+    },
+    "strand": "watson",
+    "windowStart": 10453,
+    "windowEnd": 101770080
+  },
+  "variant": [
+    {
+      "start": 13116,
+      "end": 13117,
+      "observedAllele": "T",
+      "referenceAllele": "G"
+    }
+  ],
+  "quality": [
+    {
+      "type": "indel",
+      "standardSequence": {
+        "coding": [
+          {
+            "system": "https://precision.fda.gov/files/",
+            "code": "file-BkZxBZ00bpJVk2q6x43b1YBx"
+          }
+        ]
+      },
+      "start": 10453,
+      "end": 101770080,
+      "method": {
+        "coding": [
+          {
+            "system": "https://precision.fda.gov/apps/",
+            "code": "app-BxfGF8j02pBZzZxbzZxP725P"
+          }
+        ],
+        "text": "Vcfeval + Hap.py Comparison"
+      },
+      "truthTP": 7749,
+      "truthFN": 2554,
+      "queryFP": 10670,
+      "gtFP": 2186,
+      "precision": 0.428005,
+      "recall": 0.752111
+    },
+    {
+      "type": "snp",
+      "standardSequence": {
+        "coding": [
+          {
+            "system": "https://precision.fda.gov/files/",
+            "code": "file-BkZxBZ00bpJVk2q6x43b1YBx"
+          }
+        ]
+      },
+      "start": 10453,
+      "end": 101770080,
+      "method": {
+        "coding": [
+          {
+            "system": "https://precision.fda.gov/apps/",
+            "code": "app-BxfGF8j02pBZzZxbzZxP725P"
+          }
+        ],
+        "text": "Vcfeval + Hap.py Comparison"
+      },
+      "truthTP": 92106,
+      "truthFN": 1247,
+      "queryFP": 21744,
+      "gtFP": 493,
+      "precision": 0.808602,
+      "recall": 0.986642
+    }
+  ],
+  "repository": [
+    {
+      "type": "login",
+      "url": "https://precision.fda.gov/jobs/job-ByxYPx809jFVy21KJG74Jg3Y",
+      "name": "FDA"
+    }
+  ],
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  }
+}

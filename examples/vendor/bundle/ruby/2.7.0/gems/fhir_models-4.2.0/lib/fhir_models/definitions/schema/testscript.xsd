@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  Copyright (c) 2011+, HL7, Inc.
+  All rights reserved.
+  
+  Redistribution and use in source and binary forms, with or without modification, 
+  are permitted provided that the following conditions are met:
+  
+   * Redistributions of source code must retain the above copyright notice, this 
+     list of conditions and the following disclaimer.
+   * Redistributions in binary form must reproduce the above copyright notice, 
+     this list of conditions and the following disclaimer in the documentation 
+     and/or other materials provided with the distribution.
+   * Neither the name of HL7 nor the names of its contributors may be used to 
+     endorse or promote products derived from this software without specific 
+     prior written permission.
+  
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
+  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
+  IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
+  INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
+  NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+  WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
+  POSSIBILITY OF SUCH DAMAGE.
+  
+
+  Generated on Fri, Nov 1, 2019 09:29+1100 for FHIR v4.0.1 
+
+  Note: the schemas &amp; schematrons do not contain all of the rules about what makes resources
+  valid. Implementers will still need to be familiar with the content of the specification and with
+  any profiles that apply to the resources in order to make a conformant implementation.
+
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="1.0">
+  <xs:include schemaLocation="fhir-base.xsd"/>
+  <xs:element name="TestScript" type="TestScript">
+    
+  </xs:element>
+  <xs:complexType name="TestScript">
+    
+    <xs:complexContent>
+      <xs:extension base="DomainResource">
+        <xs:sequence>
+          <xs:element name="url" minOccurs="1" maxOccurs="1" type="uri">
+            
+          </xs:element>
+          <xs:element name="identifier" minOccurs="0" maxOccurs="1" type="Identifier">
+            
+          </xs:element>
+          <xs:element name="version" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="name" minOccurs="1" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="title" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="status" minOccurs="1" maxOccurs="1" type="PublicationStatus">
+            
+          </xs:element>
+          <xs:element name="experimental" minOccurs="0" maxOccurs="1" type="boolean">
+            
+          </xs:element>
+          <xs:element name="date" minOccurs="0" maxOccurs="1" type="dateTime">
+            
+          </xs:element>
+          <xs:element name="publisher" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="contact" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
+            
+          </xs:element>
+          <xs:element name="description" minOccurs="0" maxOccurs="1" type="markdown">
+            
+          </xs:element>
+          <xs:element name="useContext" minOccurs="0" maxOccurs="unbounded" type="UsageContext">
+            
+          </xs:element>
+          <xs:element name="jurisdiction" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+            
+          </xs:element>
+          <xs:element name="purpose" minOccurs="0" maxOccurs="1" type="markdown">
+            
+          </xs:element>
+          <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
+            
+          </xs:element>
+          <xs:element name="origin" type="TestScript.Origin" minOccurs="0" maxOccurs="unbounded">
+            
+          </xs:element>
+          <xs:element name="destination" type="TestScript.Destination" minOccurs="0" maxOccurs="unbounded">
+            
+          </xs:element>
+          <xs:element name="metadata" type="TestScript.Metadata" minOccurs="0" maxOccurs="1">
+            
+          </xs:element>
+          <xs:element name="fixture" type="TestScript.Fixture" minOccurs="0" maxOccurs="unbounded">
+            
+          </xs:element>
+          <xs:element name="profile" minOccurs="0" maxOccurs="unbounded" type="Reference">
+            
+          </xs:element>
+          <xs:element name="variable" type="TestScript.Variable" minOccurs="0" maxOccurs="unbounded">
+            
+          </xs:element>
+          <xs:element name="setup" type="TestScript.Setup" minOccurs="0" maxOccurs="1">
+            
+          </xs:element>
+          <xs:element name="test" type="TestScript.Test" minOccurs="0" maxOccurs="unbounded">
+            
+          </xs:element>
+          <xs:element name="teardown" type="TestScript.Teardown" minOccurs="0" maxOccurs="1">
+            
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TestScript.Origin">
+    
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="index" minOccurs="1" maxOccurs="1" type="integer">
+            
+          </xs:element>
+          <xs:element name="profile" minOccurs="1" maxOccurs="1" type="Coding">
+            
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TestScript.Destination">
+    
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="index" minOccurs="1" maxOccurs="1" type="integer">
+            
+          </xs:element>
+          <xs:element name="profile" minOccurs="1" maxOccurs="1" type="Coding">
+            
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TestScript.Metadata">
+    
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="link" type="TestScript.Link" minOccurs="0" maxOccurs="unbounded">
+            
+          </xs:element>
+          <xs:element name="capability" type="TestScript.Capability" minOccurs="1" maxOccurs="unbounded">
+            
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TestScript.Link">
+    
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="url" minOccurs="1" maxOccurs="1" type="uri">
+            
+          </xs:element>
+          <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TestScript.Capability">
+    
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="required" minOccurs="1" maxOccurs="1" type="boolean">
+            
+          </xs:element>
+          <xs:element name="validated" minOccurs="1" maxOccurs="1" type="boolean">
+            
+          </xs:element>
+          <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="origin" minOccurs="0" maxOccurs="unbounded" type="integer">
+            
+          </xs:element>
+          <xs:element name="destination" minOccurs="0" maxOccurs="1" type="integer">
+            
+          </xs:element>
+          <xs:element name="link" minOccurs="0" maxOccurs="unbounded" type="uri">
+            
+          </xs:element>
+          <xs:element name="capabilities" minOccurs="1" maxOccurs="1" type="canonical">
+            
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TestScript.Fixture">
+    
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="autocreate" minOccurs="1" maxOccurs="1" type="boolean">
+            
+          </xs:element>
+          <xs:element name="autodelete" minOccurs="1" maxOccurs="1" type="boolean">
+            
+          </xs:element>
+          <xs:element name="resource" minOccurs="0" maxOccurs="1" type="Reference">
+            
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TestScript.Variable">
+    
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="name" minOccurs="1" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="defaultValue" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="expression" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="headerField" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="hint" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="path" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="sourceId" minOccurs="0" maxOccurs="1" type="id">
+            
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TestScript.Setup">
+    
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="action" type="TestScript.Action" minOccurs="1" maxOccurs="unbounded">
+            
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TestScript.Action">
+    
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="operation" type="TestScript.Operation" minOccurs="0" maxOccurs="1">
+            
+          </xs:element>
+          <xs:element name="assert" type="TestScript.Assert" minOccurs="0" maxOccurs="1">
+            
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TestScript.Operation">
+    
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="type" minOccurs="0" maxOccurs="1" type="Coding">
+            
+          </xs:element>
+          <xs:element name="resource" minOccurs="0" maxOccurs="1" type="code">
+            
+          </xs:element>
+          <xs:element name="label" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="accept" minOccurs="0" maxOccurs="1" type="code">
+            
+          </xs:element>
+          <xs:element name="contentType" minOccurs="0" maxOccurs="1" type="code">
+            
+          </xs:element>
+          <xs:element name="destination" minOccurs="0" maxOccurs="1" type="integer">
+            
+          </xs:element>
+          <xs:element name="encodeRequestUrl" minOccurs="1" maxOccurs="1" type="boolean">
+            
+          </xs:element>
+          <xs:element name="method" minOccurs="0" maxOccurs="1" type="TestScriptRequestMethodCode">
+            
+          </xs:element>
+          <xs:element name="origin" minOccurs="0" maxOccurs="1" type="integer">
+            
+          </xs:element>
+          <xs:element name="params" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="requestHeader" type="TestScript.RequestHeader" minOccurs="0" maxOccurs="unbounded">
+            
+          </xs:element>
+          <xs:element name="requestId" minOccurs="0" maxOccurs="1" type="id">
+            
+          </xs:element>
+          <xs:element name="responseId" minOccurs="0" maxOccurs="1" type="id">
+            
+          </xs:element>
+          <xs:element name="sourceId" minOccurs="0" maxOccurs="1" type="id">
+            
+          </xs:element>
+          <xs:element name="targetId" minOccurs="0" maxOccurs="1" type="id">
+            
+          </xs:element>
+          <xs:element name="url" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TestScript.RequestHeader">
+    
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="field" minOccurs="1" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="value" minOccurs="1" maxOccurs="1" type="string">
+            
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TestScript.Assert">
+    
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="label" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="direction" minOccurs="0" maxOccurs="1" type="AssertionDirectionType">
+            
+          </xs:element>
+          <xs:element name="compareToSourceId" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="compareToSourceExpression" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="compareToSourcePath" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="contentType" minOccurs="0" maxOccurs="1" type="code">
+            
+          </xs:element>
+          <xs:element name="expression" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="headerField" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="minimumId" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="navigationLinks" minOccurs="0" maxOccurs="1" type="boolean">
+            
+          </xs:element>
+          <xs:element name="operator" minOccurs="0" maxOccurs="1" type="AssertionOperatorType">
+            
+          </xs:element>
+          <xs:element name="path" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="requestMethod" minOccurs="0" maxOccurs="1" type="TestScriptRequestMethodCode">
+            
+          </xs:element>
+          <xs:element name="requestURL" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="resource" minOccurs="0" maxOccurs="1" type="code">
+            
+          </xs:element>
+          <xs:element name="response" minOccurs="0" maxOccurs="1" type="AssertionResponseTypes">
+            
+          </xs:element>
+          <xs:element name="responseCode" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="sourceId" minOccurs="0" maxOccurs="1" type="id">
+            
+          </xs:element>
+          <xs:element name="validateProfileId" minOccurs="0" maxOccurs="1" type="id">
+            
+          </xs:element>
+          <xs:element name="value" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="warningOnly" minOccurs="1" maxOccurs="1" type="boolean">
+            
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TestScript.Test">
+    
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="name" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="action" type="TestScript.Action1" minOccurs="1" maxOccurs="unbounded">
+            
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TestScript.Action1">
+    
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="operation" type="TestScript.Operation" minOccurs="0" maxOccurs="1">
+            
+          </xs:element>
+          <xs:element name="assert" type="TestScript.Assert" minOccurs="0" maxOccurs="1">
+            
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TestScript.Teardown">
+    
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="action" type="TestScript.Action2" minOccurs="1" maxOccurs="unbounded">
+            
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="TestScript.Action2">
+    
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="operation" type="TestScript.Operation" minOccurs="1" maxOccurs="1">
+            
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="AssertionDirectionType-list">
+    <xs:restriction base="code-primitive">
+      <xs:enumeration value="response">
+        
+      </xs:enumeration>
+      <xs:enumeration value="request">
+        
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AssertionDirectionType">
+    
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="AssertionDirectionType-list" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="AssertionOperatorType-list">
+    <xs:restriction base="code-primitive">
+      <xs:enumeration value="equals">
+        
+      </xs:enumeration>
+      <xs:enumeration value="notEquals">
+        
+      </xs:enumeration>
+      <xs:enumeration value="in">
+        
+      </xs:enumeration>
+      <xs:enumeration value="notIn">
+        
+      </xs:enumeration>
+      <xs:enumeration value="greaterThan">
+        
+      </xs:enumeration>
+      <xs:enumeration value="lessThan">
+        
+      </xs:enumeration>
+      <xs:enumeration value="empty">
+        
+      </xs:enumeration>
+      <xs:enumeration value="notEmpty">
+        
+      </xs:enumeration>
+      <xs:enumeration value="contains">
+        
+      </xs:enumeration>
+      <xs:enumeration value="notContains">
+        
+      </xs:enumeration>
+      <xs:enumeration value="eval">
+        
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AssertionOperatorType">
+    
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="AssertionOperatorType-list" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="AssertionResponseTypes-list">
+    <xs:restriction base="code-primitive">
+      <xs:enumeration value="okay">
+        
+      </xs:enumeration>
+      <xs:enumeration value="created">
+        
+      </xs:enumeration>
+      <xs:enumeration value="noContent">
+        
+      </xs:enumeration>
+      <xs:enumeration value="notModified">
+        
+      </xs:enumeration>
+      <xs:enumeration value="bad">
+        
+      </xs:enumeration>
+      <xs:enumeration value="forbidden">
+        
+      </xs:enumeration>
+      <xs:enumeration value="notFound">
+        
+      </xs:enumeration>
+      <xs:enumeration value="methodNotAllowed">
+        
+      </xs:enumeration>
+      <xs:enumeration value="conflict">
+        
+      </xs:enumeration>
+      <xs:enumeration value="gone">
+        
+      </xs:enumeration>
+      <xs:enumeration value="preconditionFailed">
+        
+      </xs:enumeration>
+      <xs:enumeration value="unprocessable">
+        
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="AssertionResponseTypes">
+    
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="AssertionResponseTypes-list" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="TestScriptRequestMethodCode-list">
+    <xs:restriction base="code-primitive">
+      <xs:enumeration value="delete">
+        
+      </xs:enumeration>
+      <xs:enumeration value="get">
+        
+      </xs:enumeration>
+      <xs:enumeration value="options">
+        
+      </xs:enumeration>
+      <xs:enumeration value="patch">
+        
+      </xs:enumeration>
+      <xs:enumeration value="post">
+        
+      </xs:enumeration>
+      <xs:enumeration value="put">
+        
+      </xs:enumeration>
+      <xs:enumeration value="head">
+        
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="TestScriptRequestMethodCode">
+    
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="TestScriptRequestMethodCode-list" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

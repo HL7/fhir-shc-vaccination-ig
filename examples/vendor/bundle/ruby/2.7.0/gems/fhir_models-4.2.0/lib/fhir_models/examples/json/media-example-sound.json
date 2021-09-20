@@ -1,0 +1,26 @@
+{
+  "resourceType": "Media",
+  "id": "sound",
+  "status": "completed",
+  "subject": {
+    "reference": "Patient/xcda"
+  },
+  "operator": {
+    "reference": "Practitioner/xcda-author"
+  },
+  "duration": 65,
+  "content": {
+    "id": "a1",
+    "contentType": "audio/mpeg",
+    "data": "dG9vIGJpZyB0b28gaW5jbHVkZSB0aGUgd2hvbGU="
+  },
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  }
+}

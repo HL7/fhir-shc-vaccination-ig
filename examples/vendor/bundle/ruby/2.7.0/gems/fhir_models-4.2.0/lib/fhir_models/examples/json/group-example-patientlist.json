@@ -1,0 +1,32 @@
+{
+  "resourceType": "Group",
+  "id": "example-patientlist",
+  "type": "person",
+  "actual": true,
+  "characteristic": [
+    {
+      "code": {
+        "coding": [
+          {
+            "system": "http://example.org",
+            "code": "attributed-to"
+          }
+        ],
+        "text": "Patients primarily attributed to"
+      },
+      "valueReference": {
+        "reference": "Practitioner/123"
+      },
+      "exclude": false
+    }
+  ],
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  }
+}

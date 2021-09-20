@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompartmentDefinition xmlns="http://hl7.org/fhir">
+  <id value="example"/>
+  <meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  <url value="http://hl7.org/fhir/CompartmentDefinition/example"/>
+  <name value="EXAMPLE"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <date value="2017-02-24"/>
+  <publisher value="Health Level Seven International (FHIR Infrastructure)"/>
+  <contact>
+    <name value="[string]"/><!--   0..1 Name of an individual to contact   -->
+    <telecom>
+      <system value="url"/>
+      <value value="http://hl7.org/fhir"/>
+    </telecom>
+  </contact>
+  <description value="The set of resources associated with a particular Device (example with Communication and CommunicationRequest resourses only)."/>
+  <useContext>
+    <code>
+      <system value="http://terminology.hl7.org/CodeSystem/usage-context-type"/>
+      <code value="focus"/>
+    </code>
+    <valueCodeableConcept>
+      <coding>
+        <system value="http://hl7.org/fhir/resource-types"/>
+        <code value="Device"/>
+      </coding>
+    </valueCodeableConcept>
+  </useContext>
+  <purpose value="Provides an example of a FHIR compartment definition based on the Device resource type."/>
+  <code value="Device"/>
+  <search value="true"/>
+  <resource>
+    <code value="Communication"/>
+    <param value="sender"/>
+    <param value="recipient"/>
+    <documentation value="The device used as the message sender and recipient"/>
+  </resource>
+  <resource>
+    <code value="CommunicationRequest"/>
+    <param value="sender"/>
+    <param value="recipient"/>
+    <documentation value="The device used as the message sender and recipient"/>
+  </resource>
+</CompartmentDefinition>

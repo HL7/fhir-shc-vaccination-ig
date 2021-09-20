@@ -1,0 +1,39 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "og-example1",
+  "status": "active",
+  "intent": "original-order",
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "49874-1"
+      }
+    ],
+    "text": "ABCB4 gene mutation analysis"
+  },
+  "subject": {
+    "reference": "Patient/example"
+  },
+  "encounter": {
+    "reference": "Encounter/example"
+  },
+  "occurrenceDateTime": "2014-05-12T16:16:00-07:00",
+  "requester": {
+    "reference": "Practitioner/example"
+  },
+  "performer": [
+    {
+      "reference": "Practitioner/example"
+    }
+  ],
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  }
+}

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Condition xmlns="http://hl7.org/fhir">
+  <id value="f203"/>
+  <meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  <clinicalStatus>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/condition-clinical"/>
+      <code value="active"/>
+    </coding>
+  </clinicalStatus>
+
+  <verificationStatus>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/>
+      <code value="confirmed"/>
+    </coding>
+  </verificationStatus>
+  <category>
+    <!--  Bacterial sepsis is certainly a moderate to severe problem  -->
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="55607006"/>
+      <display value="Problem"/>
+    </coding>
+    <coding>
+      <system value="http://terminology.hl7.org/CodeSystem/condition-category"/>
+      <code value="problem-list-item"/>
+    </coding>
+  </category>
+  <severity>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="371924009"/>
+      <display value="Moderate to severe"/>
+    </coding>
+  </severity>
+  <code>
+    <!--  The problem is bacterial sepsis  -->
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="10001005"/>
+      <display value="Bacterial sepsis"/>
+    </coding>
+  </code>
+  <bodySite>
+    <!--  Location is intravascular pulmonary  -->
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="281158006"/>
+      <display value="Pulmonary vascular structure"/>
+    </coding>
+  </bodySite>
+  <subject>
+    <!--  It entails Roel's problem  -->
+    <reference value="Patient/f201"/>
+    <display value="Roel"/>
+  </subject>
+  <encounter>
+    <reference value="Encounter/f203"/>
+    <display value="Roel's encounter on March elevanth"/>
+  </encounter>
+  <onsetDateTime value="2013-03-08"/>
+  <recordedDate value="2013-03-11"/>
+  <asserter>
+    <reference value="Practitioner/f201"/>
+  </asserter>
+  <evidence>
+    <detail>
+      <reference value="DiagnosticReport/f202"/>
+      <display value="Diagnostic report for Roel's sepsis"/>
+    </detail>
+  </evidence>
+</Condition>

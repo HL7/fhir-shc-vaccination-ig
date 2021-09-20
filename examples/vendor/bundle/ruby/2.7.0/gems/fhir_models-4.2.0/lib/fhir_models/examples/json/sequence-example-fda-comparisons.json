@@ -1,0 +1,78 @@
+{
+  "resourceType": "MolecularSequence",
+  "id": "fda-vcf-comparison",
+  "coordinateSystem": 1,
+  "patient": {
+    "reference": "Patient/example"
+  },
+  "referenceSeq": {
+    "referenceSeqId": {
+      "coding": [
+        {
+          "system": "http://www.ncbi.nlm.nih.gov/nuccore",
+          "code": "NC_000001.11"
+        }
+      ]
+    },
+    "strand": "watson",
+    "windowStart": 10453,
+    "windowEnd": 101770080
+  },
+  "variant": [
+    {
+      "start": 13116,
+      "end": 13117,
+      "observedAllele": "T",
+      "referenceAllele": "G"
+    }
+  ],
+  "quality": [
+    {
+      "type": "unknown",
+      "standardSequence": {
+        "coding": [
+          {
+            "system": "https://precision.fda.gov/files/",
+            "code": "file-BkZxBZ00bpJVk2q6x43b1YBx"
+          }
+        ]
+      },
+      "start": 10453,
+      "end": 101770080,
+      "score": {
+        "value": 5.0
+      },
+      "method": {
+        "coding": [
+          {
+            "system": "https://precision.fda.gov/apps/",
+            "code": "app-BqB9XZ8006ZZ2g5KzGXP3fpq"
+          }
+        ],
+        "text": "VCF Comparison"
+      },
+      "truthTP": 129481,
+      "truthFN": 3168,
+      "queryFP": 1507,
+      "gtFP": 2186,
+      "precision": 0.9885,
+      "fScore": 0.9823
+    }
+  ],
+  "repository": [
+    {
+      "type": "login",
+      "url": "https://precision.fda.gov/comparisons/1850",
+      "name": "FDA"
+    }
+  ],
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  }
+}

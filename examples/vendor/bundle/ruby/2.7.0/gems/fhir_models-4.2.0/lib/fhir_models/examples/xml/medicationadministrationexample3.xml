@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MedicationAdministration xmlns="http://hl7.org/fhir"> 
+  <id value="medadminexample03"/>
+  <meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  <contained>
+    <Medication>
+      <id value="med0303"/>
+      <code>
+        <coding>
+          <system value="http://www.nlm.nih.gov/research/umls/rxnorm"/>
+          <code value="1594660"/>
+          <display value="Alemtuzumab 10mg/ml (Lemtrada)"/>
+        </coding>
+      </code>
+    </Medication>
+  </contained>
+  <status value="on-hold"/>
+  <statusReason>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="373147003"/>
+      <display value="Administration of medication not done due to a contraindication (situation)"/>
+    </coding>
+  </statusReason>
+  <medicationReference>
+    <reference value="#med0303"/> 
+  </medicationReference>
+ <subject>
+   <reference value="Patient/pat1"/>
+   <display value="Donald Duck"/> 
+  </subject>
+<context>
+  <reference value="Encounter/f001"/>
+</context>
+<supportingInformation>
+  <reference value="Condition/f204"/>
+</supportingInformation>
+ <effectivePeriod>
+  <start value="2015-01-15T14:30:00+01:00"/>
+  <end value="2015-01-15T14:30:00+01:00"/>
+</effectivePeriod>
+
+  <request>
+    <reference value="MedicationRequest/medrx0317"/>
+  </request>
+  
+  <note>
+    <text value="Patient started Bupropion this morning - will administer in a reduced dose tomorrow"/>
+  </note>
+</MedicationAdministration>

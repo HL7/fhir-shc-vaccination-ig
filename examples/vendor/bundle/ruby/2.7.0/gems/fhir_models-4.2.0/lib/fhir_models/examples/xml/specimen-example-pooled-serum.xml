@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Specimen xmlns="http://hl7.org/fhir">
+	<id value="pooled-serum"/>
+	<!--    the accessionId assigned by the lab  -->
+	<meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  <accessionIdentifier>
+		<system value="https://vetmed.iastate.edu/vdl"/>
+		<value value="20171120-1234"/>
+	</accessionIdentifier>
+	<!--   Pooled serum sample from 30 individuals in the herd- no Snomed Code for this - used a made up local code  -->
+	<type>
+		<coding>
+			<system value="https://vetmed.iastate.edu/vdl"/>
+			<code value="Serum sample, pooled"/>
+			<display value="Serum sample, pooled"/>
+		</coding>
+		<text value="Pooled serum sample"/>
+	</type>
+	<!--   subject is a herd of breeding sows   -->
+	<subject>
+		<reference value="Group/herd1"/>
+	</subject>
+
+	<collection>
+		<collector>
+			<display value="James Herriot, FRCVS"/>
+		</collector>
+		<collectedDateTime value="2017-11-14"/>
+	</collection>
+	<container>
+		<type>
+			<coding>
+				<system value="https://vetmed.iastate.edu/vdl"/>
+				<code value="RTT"/>
+				<display value="Red Top Tube"/>
+			</coding>
+			<text value="Red Top Blood Collection Tube"/>
+		</type>
+	</container>
+	<note>
+		<text value="Pooled serum sample from 30 individuals"/>
+	</note>
+</Specimen>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MedicationRequest xmlns="http://hl7.org/fhir">
+	<id value="medrx002"/>
+	<meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  <identifier>
+		<use value="official"/>
+		<system value="http://www.bmc.nl/portal/prescriptions"/>
+		<value value="12345"/>
+	</identifier>
+	<status value="active"/>
+	<intent value="order"/>
+	<medicationReference>
+		<!--   Linked to a RESOURCE Medication   -->
+		<reference value="Medication/med0316"/>
+		<display value="prescribed medication"/>
+	</medicationReference>
+	<subject>
+		<!--   Linked to the resource patient who needs the medication   -->
+		<reference value="Patient/pat1"/>
+		<display value="Donald Duck"/>   
+	</subject>
+	<encounter>
+		<!--   Linked to a resource Encounter between patient and practitioner  -->
+		<reference value="Encounter/f001"/>
+		<display value="encounter that leads to this prescription"/>
+	</encounter>
+	<authoredOn value="2015-03-01"/>
+	<requester>
+		<reference value="Practitioner/f007"/>
+		<display value="Patrick Pump"/>
+	</requester>	
+	<reasonCode>
+		<coding>
+			<system value="http://snomed.info/sct"/>
+			<code value="59621000"/>
+			<display value="Essential hypertension (disorder)"/>
+		</coding>
+	</reasonCode>
+	<dosageInstruction>
+		<sequence value="1"/>
+		<text value="Take one tablet daily as directed"/>
+	</dosageInstruction>
+</MedicationRequest>

@@ -1,0 +1,46 @@
+{
+  "resourceType": "Group",
+  "id": "101",
+  "identifier": [
+    {
+      "system": "http://someveterinarianclinic.org/fhir/NamingSystem/herds",
+      "value": "12345"
+    }
+  ],
+  "type": "animal",
+  "actual": true,
+  "code": {
+    "text": "Horse"
+  },
+  "name": "John's herd",
+  "quantity": 25,
+  "characteristic": [
+    {
+      "code": {
+        "text": "gender"
+      },
+      "valueCodeableConcept": {
+        "text": "mixed"
+      },
+      "exclude": false
+    },
+    {
+      "code": {
+        "text": "owner"
+      },
+      "valueCodeableConcept": {
+        "text": "John Smith"
+      },
+      "exclude": false
+    }
+  ],
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  }
+}

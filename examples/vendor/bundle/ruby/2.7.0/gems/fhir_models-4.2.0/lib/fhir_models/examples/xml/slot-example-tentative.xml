@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Slot xmlns="http://hl7.org/fhir">
+ <id value="2"/>
+	<meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  
+	<serviceCategory>
+		<coding>
+			<code value="17"/>
+			<display value="General Practice"/>
+		</coding>
+	</serviceCategory>
+	<schedule>
+    <reference value="Schedule/example"/>
+  </schedule>
+  <status value="busy-tentative"/>
+	<start value="2013-12-25T09:45:00Z"/>
+	<end value="2013-12-25T10:00:00Z"/>
+	<comment value="Dr Careful is out of the office"/>
+</Slot>

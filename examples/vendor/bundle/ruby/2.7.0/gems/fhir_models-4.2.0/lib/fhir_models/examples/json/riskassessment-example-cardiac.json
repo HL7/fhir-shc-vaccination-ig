@@ -1,0 +1,64 @@
+{
+  "resourceType": "RiskAssessment",
+  "id": "cardiac",
+  "identifier": [
+    {
+      "use": "official",
+      "system": "http://example.org",
+      "value": "risk-assessment-cardiac"
+    }
+  ],
+  "status": "final",
+  "subject": {
+    "reference": "Patient/pat2"
+  },
+  "encounter": {
+    "reference": "Encounter/example"
+  },
+  "occurrenceDateTime": "2014-07-19T16:04:00Z",
+  "performer": {
+    "display": "http://cvdrisk.nhlbi.nih.gov/#cholesterol"
+  },
+  "basis": [
+    {
+      "reference": "Patient/pat2"
+    },
+    {
+      "reference": "DiagnosticReport/lipids"
+    },
+    {
+      "reference": "Observation/blood-pressure"
+    }
+  ],
+  "prediction": [
+    {
+      "outcome": {
+        "text": "Heart Attack"
+      },
+      "probabilityDecimal": 0.02,
+      "whenRange": {
+        "low": {
+          "value": 39,
+          "unit": "years",
+          "system": "http://unitsofmeasure.org",
+          "code": "a"
+        },
+        "high": {
+          "value": 49,
+          "unit": "years",
+          "system": "http://unitsofmeasure.org",
+          "code": "a"
+        }
+      }
+    }
+  ],
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  }
+}

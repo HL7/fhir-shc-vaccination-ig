@@ -1,0 +1,31 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "example-pgx",
+  "status": "active",
+  "intent": "original-order",
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "47403-1",
+        "display": "CYP2D6 gene targeted mutation analysis"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/899962"
+  },
+  "authoredOn": "2016-10-10T15:00:00-07:00",
+  "requester": {
+    "reference": "Practitioner/12345"
+  },
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  }
+}

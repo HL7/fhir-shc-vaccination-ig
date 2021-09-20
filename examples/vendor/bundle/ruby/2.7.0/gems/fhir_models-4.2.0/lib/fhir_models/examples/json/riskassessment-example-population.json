@@ -1,0 +1,25 @@
+{
+  "resourceType": "RiskAssessment",
+  "id": "population",
+  "contained": [
+    {
+      "resourceType": "Group",
+      "id": "group1",
+      "type": "person",
+      "actual": false
+    }
+  ],
+  "status": "final",
+  "subject": {
+    "reference": "#group1"
+  },
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  }
+}

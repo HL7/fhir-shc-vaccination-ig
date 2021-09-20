@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  Copyright (c) 2011+, HL7, Inc.
+  All rights reserved.
+  
+  Redistribution and use in source and binary forms, with or without modification, 
+  are permitted provided that the following conditions are met:
+  
+   * Redistributions of source code must retain the above copyright notice, this 
+     list of conditions and the following disclaimer.
+   * Redistributions in binary form must reproduce the above copyright notice, 
+     this list of conditions and the following disclaimer in the documentation 
+     and/or other materials provided with the distribution.
+   * Neither the name of HL7 nor the names of its contributors may be used to 
+     endorse or promote products derived from this software without specific 
+     prior written permission.
+  
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
+  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
+  IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
+  INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
+  NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+  WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
+  POSSIBILITY OF SUCH DAMAGE.
+  
+
+  Generated on Fri, Nov 1, 2019 09:29+1100 for FHIR v4.0.1 
+
+  Note: the schemas &amp; schematrons do not contain all of the rules about what makes resources
+  valid. Implementers will still need to be familiar with the content of the specification and with
+  any profiles that apply to the resources in order to make a conformant implementation.
+
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="1.0">
+  <xs:include schemaLocation="fhir-base.xsd"/>
+  <xs:element name="PlanDefinition" type="PlanDefinition">
+    
+  </xs:element>
+  <xs:complexType name="PlanDefinition">
+    
+    <xs:complexContent>
+      <xs:extension base="DomainResource">
+        <xs:sequence>
+          <xs:element name="url" minOccurs="0" maxOccurs="1" type="uri">
+            
+          </xs:element>
+          <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
+            
+          </xs:element>
+          <xs:element name="version" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="name" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="title" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="subtitle" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="type" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            
+          </xs:element>
+          <xs:element name="status" minOccurs="1" maxOccurs="1" type="PublicationStatus">
+            
+          </xs:element>
+          <xs:element name="experimental" minOccurs="0" maxOccurs="1" type="boolean">
+            
+          </xs:element>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            
+            <xs:element name="subjectCodeableConcept" type="CodeableConcept"/>
+            <xs:element name="subjectReference" type="Reference"/>
+          </xs:choice>
+          <xs:element name="date" minOccurs="0" maxOccurs="1" type="dateTime">
+            
+          </xs:element>
+          <xs:element name="publisher" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="contact" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
+            
+          </xs:element>
+          <xs:element name="description" minOccurs="0" maxOccurs="1" type="markdown">
+            
+          </xs:element>
+          <xs:element name="useContext" minOccurs="0" maxOccurs="unbounded" type="UsageContext">
+            
+          </xs:element>
+          <xs:element name="jurisdiction" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+            
+          </xs:element>
+          <xs:element name="purpose" minOccurs="0" maxOccurs="1" type="markdown">
+            
+          </xs:element>
+          <xs:element name="usage" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
+            
+          </xs:element>
+          <xs:element name="approvalDate" minOccurs="0" maxOccurs="1" type="date">
+            
+          </xs:element>
+          <xs:element name="lastReviewDate" minOccurs="0" maxOccurs="1" type="date">
+            
+          </xs:element>
+          <xs:element name="effectivePeriod" minOccurs="0" maxOccurs="1" type="Period">
+            
+          </xs:element>
+          <xs:element name="topic" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+            
+          </xs:element>
+          <xs:element name="author" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
+            
+          </xs:element>
+          <xs:element name="editor" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
+            
+          </xs:element>
+          <xs:element name="reviewer" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
+            
+          </xs:element>
+          <xs:element name="endorser" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
+            
+          </xs:element>
+          <xs:element name="relatedArtifact" minOccurs="0" maxOccurs="unbounded" type="RelatedArtifact">
+            
+          </xs:element>
+          <xs:element name="library" minOccurs="0" maxOccurs="unbounded" type="canonical">
+            
+          </xs:element>
+          <xs:element name="goal" type="PlanDefinition.Goal" minOccurs="0" maxOccurs="unbounded">
+            
+          </xs:element>
+          <xs:element name="action" type="PlanDefinition.Action" minOccurs="0" maxOccurs="unbounded">
+            
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PlanDefinition.Goal">
+    
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="category" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            
+          </xs:element>
+          <xs:element name="description" minOccurs="1" maxOccurs="1" type="CodeableConcept">
+            
+          </xs:element>
+          <xs:element name="priority" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            
+          </xs:element>
+          <xs:element name="start" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            
+          </xs:element>
+          <xs:element name="addresses" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+            
+          </xs:element>
+          <xs:element name="documentation" minOccurs="0" maxOccurs="unbounded" type="RelatedArtifact">
+            
+          </xs:element>
+          <xs:element name="target" type="PlanDefinition.Target" minOccurs="0" maxOccurs="unbounded">
+            
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PlanDefinition.Target">
+    
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="measure" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            
+          </xs:element>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            
+            <xs:element name="detailQuantity" type="Quantity"/>
+            <xs:element name="detailRange" type="Range"/>
+            <xs:element name="detailCodeableConcept" type="CodeableConcept"/>
+          </xs:choice>
+          <xs:element name="due" minOccurs="0" maxOccurs="1" type="Duration">
+            
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PlanDefinition.Action">
+    
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="prefix" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="title" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="textEquivalent" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="priority" minOccurs="0" maxOccurs="1" type="RequestPriority">
+            
+          </xs:element>
+          <xs:element name="code" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+            
+          </xs:element>
+          <xs:element name="reason" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+            
+          </xs:element>
+          <xs:element name="documentation" minOccurs="0" maxOccurs="unbounded" type="RelatedArtifact">
+            
+          </xs:element>
+          <xs:element name="goalId" minOccurs="0" maxOccurs="unbounded" type="id">
+            
+          </xs:element>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            
+            <xs:element name="subjectCodeableConcept" type="CodeableConcept"/>
+            <xs:element name="subjectReference" type="Reference"/>
+          </xs:choice>
+          <xs:element name="trigger" minOccurs="0" maxOccurs="unbounded" type="TriggerDefinition">
+            
+          </xs:element>
+          <xs:element name="condition" type="PlanDefinition.Condition" minOccurs="0" maxOccurs="unbounded">
+            
+          </xs:element>
+          <xs:element name="input" minOccurs="0" maxOccurs="unbounded" type="DataRequirement">
+            
+          </xs:element>
+          <xs:element name="output" minOccurs="0" maxOccurs="unbounded" type="DataRequirement">
+            
+          </xs:element>
+          <xs:element name="relatedAction" type="PlanDefinition.RelatedAction" minOccurs="0" maxOccurs="unbounded">
+            
+          </xs:element>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            
+            <xs:element name="timingDateTime" type="dateTime"/>
+            <xs:element name="timingAge" type="Age"/>
+            <xs:element name="timingPeriod" type="Period"/>
+            <xs:element name="timingDuration" type="Duration"/>
+            <xs:element name="timingRange" type="Range"/>
+            <xs:element name="timingTiming" type="Timing"/>
+          </xs:choice>
+          <xs:element name="participant" type="PlanDefinition.Participant" minOccurs="0" maxOccurs="unbounded">
+            
+          </xs:element>
+          <xs:element name="type" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            
+          </xs:element>
+          <xs:element name="groupingBehavior" minOccurs="0" maxOccurs="1" type="ActionGroupingBehavior">
+            
+          </xs:element>
+          <xs:element name="selectionBehavior" minOccurs="0" maxOccurs="1" type="ActionSelectionBehavior">
+            
+          </xs:element>
+          <xs:element name="requiredBehavior" minOccurs="0" maxOccurs="1" type="ActionRequiredBehavior">
+            
+          </xs:element>
+          <xs:element name="precheckBehavior" minOccurs="0" maxOccurs="1" type="ActionPrecheckBehavior">
+            
+          </xs:element>
+          <xs:element name="cardinalityBehavior" minOccurs="0" maxOccurs="1" type="ActionCardinalityBehavior">
+            
+          </xs:element>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            
+            <xs:element name="definitionCanonical" type="canonical"/>
+            <xs:element name="definitionUri" type="uri"/>
+          </xs:choice>
+          <xs:element name="transform" minOccurs="0" maxOccurs="1" type="canonical">
+            
+          </xs:element>
+          <xs:element name="dynamicValue" type="PlanDefinition.DynamicValue" minOccurs="0" maxOccurs="unbounded">
+            
+          </xs:element>
+          <xs:element name="action" type="PlanDefinition.Action" minOccurs="0" maxOccurs="unbounded">
+            
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PlanDefinition.Condition">
+    
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="kind" minOccurs="1" maxOccurs="1" type="ActionConditionKind">
+            
+          </xs:element>
+          <xs:element name="expression" minOccurs="0" maxOccurs="1" type="Expression">
+            
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PlanDefinition.RelatedAction">
+    
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="actionId" minOccurs="1" maxOccurs="1" type="id">
+            
+          </xs:element>
+          <xs:element name="relationship" minOccurs="1" maxOccurs="1" type="ActionRelationshipType">
+            
+          </xs:element>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            
+            <xs:element name="offsetDuration" type="Duration"/>
+            <xs:element name="offsetRange" type="Range"/>
+          </xs:choice>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PlanDefinition.Participant">
+    
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="type" minOccurs="1" maxOccurs="1" type="ActionParticipantType">
+            
+          </xs:element>
+          <xs:element name="role" minOccurs="0" maxOccurs="1" type="CodeableConcept">
+            
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="PlanDefinition.DynamicValue">
+    
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="path" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="expression" minOccurs="0" maxOccurs="1" type="Expression">
+            
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="ActionRequiredBehavior-list">
+    <xs:restriction base="code-primitive">
+      <xs:enumeration value="must">
+        
+      </xs:enumeration>
+      <xs:enumeration value="could">
+        
+      </xs:enumeration>
+      <xs:enumeration value="must-unless-documented">
+        
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ActionRequiredBehavior">
+    
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="ActionRequiredBehavior-list" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="ActionRelationshipType-list">
+    <xs:restriction base="code-primitive">
+      <xs:enumeration value="before-start">
+        
+      </xs:enumeration>
+      <xs:enumeration value="before">
+        
+      </xs:enumeration>
+      <xs:enumeration value="before-end">
+        
+      </xs:enumeration>
+      <xs:enumeration value="concurrent-with-start">
+        
+      </xs:enumeration>
+      <xs:enumeration value="concurrent">
+        
+      </xs:enumeration>
+      <xs:enumeration value="concurrent-with-end">
+        
+      </xs:enumeration>
+      <xs:enumeration value="after-start">
+        
+      </xs:enumeration>
+      <xs:enumeration value="after">
+        
+      </xs:enumeration>
+      <xs:enumeration value="after-end">
+        
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ActionRelationshipType">
+    
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="ActionRelationshipType-list" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="ActionGroupingBehavior-list">
+    <xs:restriction base="code-primitive">
+      <xs:enumeration value="visual-group">
+        
+      </xs:enumeration>
+      <xs:enumeration value="logical-group">
+        
+      </xs:enumeration>
+      <xs:enumeration value="sentence-group">
+        
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ActionGroupingBehavior">
+    
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="ActionGroupingBehavior-list" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="ActionSelectionBehavior-list">
+    <xs:restriction base="code-primitive">
+      <xs:enumeration value="any">
+        
+      </xs:enumeration>
+      <xs:enumeration value="all">
+        
+      </xs:enumeration>
+      <xs:enumeration value="all-or-none">
+        
+      </xs:enumeration>
+      <xs:enumeration value="exactly-one">
+        
+      </xs:enumeration>
+      <xs:enumeration value="at-most-one">
+        
+      </xs:enumeration>
+      <xs:enumeration value="one-or-more">
+        
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ActionSelectionBehavior">
+    
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="ActionSelectionBehavior-list" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="ActionCardinalityBehavior-list">
+    <xs:restriction base="code-primitive">
+      <xs:enumeration value="single">
+        
+      </xs:enumeration>
+      <xs:enumeration value="multiple">
+        
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ActionCardinalityBehavior">
+    
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="ActionCardinalityBehavior-list" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="ActionPrecheckBehavior-list">
+    <xs:restriction base="code-primitive">
+      <xs:enumeration value="yes">
+        
+      </xs:enumeration>
+      <xs:enumeration value="no">
+        
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ActionPrecheckBehavior">
+    
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="ActionPrecheckBehavior-list" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="ActionConditionKind-list">
+    <xs:restriction base="code-primitive">
+      <xs:enumeration value="applicability">
+        
+      </xs:enumeration>
+      <xs:enumeration value="start">
+        
+      </xs:enumeration>
+      <xs:enumeration value="stop">
+        
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ActionConditionKind">
+    
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="ActionConditionKind-list" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

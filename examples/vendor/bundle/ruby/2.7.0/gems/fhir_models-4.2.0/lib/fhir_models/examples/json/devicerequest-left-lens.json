@@ -1,0 +1,96 @@
+{
+  "resourceType": "DeviceRequest",
+  "id": "left-lens",
+  "identifier": [
+    {
+      "system": "http://www.happysight.com/prescription",
+      "value": "15013L"
+    }
+  ],
+  "groupIdentifier": {
+    "system": "http://acme.org",
+    "value": "15013"
+  },
+  "status": "completed",
+  "intent": "original-order",
+  "codeCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/ex-visionprescriptionproduct",
+        "code": "lens"
+      }
+    ]
+  },
+  "parameter": [
+    {
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "28842-3",
+            "display": "Sphere distance Glasses prescription.lens - left"
+          }
+        ],
+        "text": "sphere, left lens"
+      },
+      "valueQuantity": {
+        "value": -1.0,
+        "unit": "Diopter",
+        "system": "http://unitsofmeasure.org",
+        "code": "[diop]"
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "28843-1",
+            "display": "Cylinder base distance Glasses prescription.lens - left"
+          }
+        ],
+        "text": "cylinder, left lens"
+      },
+      "valueQuantity": {
+        "value": -0.5,
+        "unit": "Diopter",
+        "system": "http://unitsofmeasure.org",
+        "code": "[diop]"
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "28844-9",
+            "display": " Axis distance Glasses prescription.lens - left"
+          }
+        ],
+        "text": "axis, left lens"
+      },
+      "valueQuantity": {
+        "value": 180,
+        "unit": "Degrees",
+        "system": "http://unitsofmeasure.org",
+        "code": "deg"
+      }
+    }
+  ],
+  "subject": {
+    "reference": "Patient/example"
+  },
+  "occurrenceDateTime": "2014-06-15",
+  "requester": {
+    "reference": "Practitioner/example"
+  },
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  }
+}

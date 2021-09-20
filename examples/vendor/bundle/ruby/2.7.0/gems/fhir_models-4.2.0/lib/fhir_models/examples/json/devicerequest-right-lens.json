@@ -1,0 +1,96 @@
+{
+  "resourceType": "DeviceRequest",
+  "id": "right-lens",
+  "identifier": [
+    {
+      "system": "http://www.happysight.com/prescription",
+      "value": "15013R"
+    }
+  ],
+  "groupIdentifier": {
+    "system": "http://acme.org",
+    "value": "15013"
+  },
+  "status": "completed",
+  "intent": "original-order",
+  "codeCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/ex-visionprescriptionproduct",
+        "code": "lens"
+      }
+    ]
+  },
+  "parameter": [
+    {
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "28826-6",
+            "display": "Sphere distance Glasses prescription.lens - right"
+          }
+        ],
+        "text": "sphere, right lens"
+      },
+      "valueQuantity": {
+        "value": -2.0,
+        "unit": "Diopter",
+        "system": "http://unitsofmeasure.org",
+        "code": "[diop]"
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "28829-0",
+            "display": "Prism base distance Glasses prescription.lens - right"
+          }
+        ],
+        "text": "prisms, right lens"
+      },
+      "valueQuantity": {
+        "value": -2.0,
+        "unit": "Diopter",
+        "system": "http://unitsofmeasure.org",
+        "code": "[diop]"
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "28810-0",
+            "display": "Add 1 LM glasses lens - right"
+          }
+        ],
+        "text": "add, right lens"
+      },
+      "valueQuantity": {
+        "value": 2.0,
+        "unit": "Diopter",
+        "system": "http://unitsofmeasure.org",
+        "code": "[diop]"
+      }
+    }
+  ],
+  "subject": {
+    "reference": "Patient/example"
+  },
+  "occurrenceDateTime": "2014-06-15",
+  "requester": {
+    "reference": "Practitioner/example"
+  },
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  }
+}

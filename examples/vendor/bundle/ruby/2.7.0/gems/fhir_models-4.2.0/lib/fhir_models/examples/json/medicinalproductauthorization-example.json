@@ -1,0 +1,125 @@
+{
+  "resourceType": "MedicinalProductAuthorization",
+  "id": "example",
+  "identifier": [
+    {
+      "system": "http://ema.europa.eu/example/marketingAuthorisationNumber",
+      "value": "EU/1/11/999/001"
+    }
+  ],
+  "country": [
+    {
+      "coding": [
+        {
+          "system": "http://ema.europa.eu/example/country",
+          "code": "EU"
+        }
+      ]
+    }
+  ],
+  "status": {
+    "coding": [
+      {
+        "system": "http://ema.europa.eu/example/authorisationstatus",
+        "code": "active"
+      }
+    ]
+  },
+  "statusDate": "2015-01-14",
+  "validityPeriod": {
+    "start": "2015-08-16",
+    "end": "2020-05-20"
+  },
+  "dataExclusivityPeriod": {
+    "start": "2010-08-15",
+    "end": "2020-08-15"
+  },
+  "dateOfFirstAuthorization": "2010-08-15",
+  "internationalBirthDate": "2010-08-15",
+  "jurisdictionalAuthorization": [
+    {
+      "id": "1",
+      "identifier": [
+        {
+          "system": "http://ema.europa.eu/example/marketingauthorisationnumber",
+          "value": "123-456-789"
+        }
+      ],
+      "country": {
+        "coding": [
+          {
+            "system": "http://ema.europa.eu/example/countryCode",
+            "code": "NO"
+          }
+        ]
+      }
+    },
+    {
+      "id": "2",
+      "identifier": [
+        {
+          "system": "http://ema.europa.eu/example/marketingauthorisationnumber",
+          "value": "123-456-123"
+        }
+      ],
+      "country": {
+        "coding": [
+          {
+            "system": "http://ema.europa.eu/example/countryCode",
+            "code": "NO"
+          }
+        ]
+      }
+    }
+  ],
+  "holder": {
+    "reference": "Organization/example"
+  },
+  "regulator": {
+    "reference": "Organization/example"
+  },
+  "procedure": {
+    "identifier": {
+      "system": "http://ema.europa.eu/example/procedureidentifier-number",
+      "value": "EMEA/H/C/009999/IA/0099/G"
+    },
+    "type": {
+      "coding": [
+        {
+          "system": "http://ema.europa.eu/example/marketingAuthorisationProcedureType",
+          "code": "VariationTypeIA"
+        }
+      ]
+    },
+    "datePeriod": {
+      "start": "2015-08-02",
+      "end": "2015-08-21"
+    },
+    "application": [
+      {
+        "identifier": {
+          "system": "http://ema.europa.eu/example/applicationidentifier-number",
+          "value": "IA38G"
+        },
+        "type": {
+          "coding": [
+            {
+              "system": "http://ema.europa.eu/example/marketingAuthorisationApplicationType",
+              "code": "GroupTypeIAVariationNotification"
+            }
+          ]
+        },
+        "dateDateTime": "2015-08-01"
+      }
+    ]
+  },
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  }
+}

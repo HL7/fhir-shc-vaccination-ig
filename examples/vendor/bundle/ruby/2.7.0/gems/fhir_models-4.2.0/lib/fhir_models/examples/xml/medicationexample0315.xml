@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Medication xmlns="http://hl7.org/fhir">
+  <id value="med0315"/>
+  <meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  <code>
+    <coding>
+      <system value="http://www.nlm.nih.gov/research/umls/rxnorm"/>
+      <code value="358793"/>
+      <display value="Mometasone Furoate 0.05mg/Actuat"/>
+    </coding>
+  </code>
+  
+    <form>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="385157007"/>
+        <display value="Nasal Spray"/>
+      </coding>
+    </form>
+  
+</Medication>

@@ -1,0 +1,92 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "exclusive-breastfeeding-intervention-02",
+  "identifier": [
+    {
+      "use": "official",
+      "value": "exclusive-breastfeeding-intervention-02"
+    }
+  ],
+  "version": "1.0.0",
+  "title": "Exclusive Breastfeeding Intervention-02",
+  "status": "active",
+  "date": "2015-03-08",
+  "description": "Exclusive breastfeeding intervention intended to improve outcomes for exclusive breastmilk feeding of newborns by notifying the provider to sign the breastmilk feeding readiness assessment order, if necessary.",
+  "topic": [
+    {
+      "text": "Exclusive Breastfeeding"
+    }
+  ],
+  "relatedArtifact": [
+    {
+      "type": "derived-from",
+      "resource": "Measure/measure-exclusive-breastfeeding"
+    }
+  ],
+  "library": [
+    "Library/library-exclusive-breastfeeding-cds-logic"
+  ],
+  "action": [
+    {
+      "title": "Mother should be administered a breastfeeding readiness assessment.",
+      "trigger": [
+        {
+          "type": "named-event",
+          "name": "Admission"
+        },
+        {
+          "type": "named-event",
+          "name": "Birth"
+        },
+        {
+          "type": "named-event",
+          "name": "Infant Transfer to Recovery"
+        },
+        {
+          "type": "named-event",
+          "name": "Transfer to Post-Partum"
+        }
+      ],
+      "condition": [
+        {
+          "kind": "applicability",
+          "expression": {
+            "language": "text/cql",
+            "expression": "Should Notify Provider to Sign Assessment Order"
+          }
+        }
+      ],
+      "action": [
+        {
+          "title": "Notify the provider to sign the order.",
+          "textEquivalent": "A Breastfeeding Readiness Assessment is recommended, please authorize or reject the order.",
+          "type": {
+            "coding": [
+              {
+                "code": "create"
+              }
+            ]
+          },
+          "dynamicValue": [
+            {
+              "path": "/",
+              "expression": {
+                "language": "text/cql",
+                "expression": "Communication Request to Provider"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  }
+}

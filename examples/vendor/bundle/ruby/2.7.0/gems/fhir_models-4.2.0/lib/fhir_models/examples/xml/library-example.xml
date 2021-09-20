@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Library xmlns="http://hl7.org/fhir">
+  <id value="example"/>
+  <meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  
+
+  <identifier>
+    <use value="official"/>
+    <value value="ChalmydiaScreening_Common"/>
+  </identifier>
+  <version value="2.0.0"/>
+  <title value="Chlamydia Screening Common Library"/>
+  <status value="draft"/>
+  <type>
+    <coding>
+      <code value="logic-library"/>
+    </coding>
+  </type>
+  <date value="2015-07-22"/>
+  <description value="Common Logic for adherence to Chlamydia Screening guidelines"/>
+  <topic>
+    <text value="Chlamydia Screening"/>
+  </topic>
+
+  <relatedArtifact>
+    <type value="depends-on"/>
+    <resource value="Library/library-quick-model-definition"/>
+  </relatedArtifact>
+
+  <!-- valueSet>
+    <name value="Female Administrative Sex"/>
+    <identifier value="2.16.840.1.113883.3.560.100.2"/>
+  </valueSet -->
+  <!--  ... other value sets as defined in the library  -->
+
+  <dataRequirement>
+    <type value="Condition"/>
+    <codeFilter>
+      <path value="code"/>
+      <valueSet value="urn:oid:2.16.840.1.113883.3.464.1003.111.12.1006"/> <!--  Other Female Reproductive Conditions  -->
+    </codeFilter>
+  </dataRequirement>
+  <!--  ... other data requirements as defined in the library  -->
+
+  <content>
+    <contentType value="text/cql"/>
+    <url value="library-example-content.cql"/>
+  </content>
+
+</Library>

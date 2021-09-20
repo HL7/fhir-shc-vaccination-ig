@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OperationOutcome xmlns="http://hl7.org/fhir">
+  <id value="searchfail"/>
+  <meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  
+  <issue>
+    <severity value="fatal"/>
+    <code value="code-invalid"/>
+    <details>
+      <text value="The &quot;name&quot; parameter has the modifier &quot;exact&quot; which is not supported by this server"/>    
+    </details> 
+    <location value="http.name:exact"/>    
+  </issue>
+</OperationOutcome>

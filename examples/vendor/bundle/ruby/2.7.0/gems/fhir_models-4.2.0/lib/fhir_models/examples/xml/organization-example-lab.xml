@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Organization xmlns="http://hl7.org/fhir">
+  <id value="1832473e-2fe0-452d-abe9-3cdb9879522f"/>
+  <meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  
+<!--   Clinical Lab at Acme Hospital   -->
+  <identifier>
+    <system value="http://www.acme.org.au/units"/>
+    <value value="ClinLab"/>
+  </identifier>
+  <name value="Clinical Lab"/>
+  <telecom>
+    <system value="phone"/>
+    <value value="+1 555 234 1234"/>
+    <use value="work"/>
+  </telecom>
+  <telecom>
+    <system value="email"/>
+    <value value="contact@labs.acme.org"/>
+    <use value="work"/>
+  </telecom>
+</Organization>

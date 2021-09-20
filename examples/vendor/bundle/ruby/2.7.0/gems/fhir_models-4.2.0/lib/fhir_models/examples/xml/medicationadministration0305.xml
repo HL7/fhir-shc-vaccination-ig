@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MedicationAdministration xmlns="http://hl7.org/fhir"> 
+  <id value="medadmin0305"/>
+  <meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  <contained>
+    <Medication>
+        <id value="med0306"/>
+        <code>
+          <coding>
+            <system value="http://hl7.org/fhir/sid/ndc"/>
+            <code value="51144-050-01"/>
+            <display value="Adcetris"/>
+          </coding>
+        </code>
+        <manufacturer>
+          <reference value="Organization/mmanu"/>
+        </manufacturer>
+          <form>
+            <coding>
+              <system value="http://snomed.info/sct"/>
+              <code value="421637006"/>
+              <display value="Lyophilized powder for injectable solution (qualifier value) "/>
+            </coding>
+          </form>
+<batch>
+        <lotNumber value="12345"/>
+        <expirationDate value="2019-10-31"/>
+      </batch>
+       
+        
+      
+    </Medication>
+  </contained>
+  <instantiates value="http://www.bccancer.bc.ca/chemotherapy-protocols-site/Documents/Lymphoma-Myeloma/ULYBRENTUX%20Protocol_1Jun2017.pdf"/>
+  <status value="completed"/>
+  <medicationReference>
+    <reference value="#med0306"/> 
+  </medicationReference>
+ <subject>
+   <reference value="Patient/pat1"/>
+   <display value="Donald Duck"/> 
+  </subject>
+  <context> 
+    <reference value="Encounter/f001"/>
+    <display value="encounter who leads to this prescription"/>
+  </context>
+ <effectivePeriod>
+  <start value="2015-01-15T04:30:00+01:00"/>
+   <end value="2015-01-15T14:30:00+01:00"/>
+</effectivePeriod>
+  <performer>
+    <actor>
+    <reference value="Practitioner/f007"/>
+    <display value="Patrick Pump"/>
+    </actor>
+  </performer>
+  <request>
+    <reference value="MedicationRequest/medrx0316"/>
+  </request>
+  <dosage>
+    <text value="1.8 mg/kg IV infusion over 30 minutes"/>
+    <route>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="255560000"/>
+        <display value="Intravenous"/>
+      </coding>
+    </route>
+    <dose>
+      <value value="1.8"/>
+      <unit value="mg/kg"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="mg/kg"/> 
+    </dose>
+    <rateQuantity>
+      <value value="20"/>
+      <unit value="min"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="min"/> 
+    </rateQuantity>
+  </dosage>
+</MedicationAdministration>

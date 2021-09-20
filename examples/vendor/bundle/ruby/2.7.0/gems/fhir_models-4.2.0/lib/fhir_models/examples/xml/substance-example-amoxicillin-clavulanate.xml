@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Substance xmlns="http://hl7.org/fhir">
+	<id value="f205"/>
+	<meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  <contained>
+		<Substance>
+			<id value="ingr1"/>
+			<code>
+				<coding>
+					<system value="http://snomed.info/sct"/>
+					<code value="372687004"/>
+					<display value="Amoxicillin (substance)"/>
+				</coding>
+			</code>
+		</Substance>
+	</contained>
+	<contained>
+		<Substance>
+			<id value="ingr2"/>
+			<code>
+				<coding>
+					<system value="http://snomed.info/sct"/>
+					<code value="395938000"/>
+					<display value="Clavulanate potassium (substance)"/>
+				</coding>
+			</code>
+		</Substance>
+	</contained>
+	<category>
+		<coding>
+			<system value="http://terminology.hl7.org/CodeSystem/substance-category"/>
+			<code value="drug"/>
+			<display value="Drug or Medicament"/>
+		</coding>
+	</category>
+	<code>
+		<coding>
+			<system value="http://snomed.info/sct"/>
+			<code value="392259005"/>
+			<display value="Amoxicillin + clavulanate potassium 875mg/125mg tablet (product)"/>
+		</coding>
+	</code>
+	<description value="Augmentin 875"/>
+	<ingredient>
+		<quantity>
+			<numerator>
+				<value value="875"/>
+				<unit value="mg"/>
+				<system value="http://unitsofmeasure.org"/>
+				<code value="mg"/>
+			</numerator>
+			<denominator>
+				<value value="1000"/>
+				<unit value="mg"/>
+				<system value="http://unitsofmeasure.org"/>
+				<code value="mg"/>
+			</denominator>
+		</quantity>
+		<substanceReference>
+			<reference value="#ingr1"/>
+		</substanceReference>
+	</ingredient>
+	<ingredient>
+		<quantity>
+			<numerator>
+				<value value="125"/>
+				<unit value="mg"/>
+				<system value="http://unitsofmeasure.org"/>
+				<code value="mg"/>
+			</numerator>
+			<denominator>
+				<value value="1000"/>
+				<unit value="mg"/>
+				<system value="http://unitsofmeasure.org"/>
+				<code value="mg"/>
+			</denominator>
+		</quantity>
+		<substanceReference>
+			<reference value="#ingr2"/>
+		</substanceReference>
+	</ingredient>
+</Substance>

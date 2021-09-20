@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ObservationDefinition xmlns="http://hl7.org/fhir">
+  <id value="example"/>
+  <meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  <code> 
+    <coding>
+      <system value="http://loinc.org"/> 
+      <code value="15074-8"/> 
+      <display value="Glucose [Moles/volume] in Blood"/> 
+    </coding>
+  </code> 
+</ObservationDefinition>

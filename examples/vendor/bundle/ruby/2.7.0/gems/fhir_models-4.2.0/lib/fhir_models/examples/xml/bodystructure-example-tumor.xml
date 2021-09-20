@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BodyStructure xmlns="http://hl7.org/fhir">
+	<id value="tumor"/>
+	<meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  <identifier>
+		<system value="http://goodhealth.org/bodystructure/identifiers"/>
+		<value value="12345"/>
+	</identifier>
+	<morphology>
+		<coding>
+			<system value="http://snomed.info/sct"/>
+			<code value="4147007"/>
+			<display value="Mass (morphologic abnormality)"/>
+		</coding>
+		<text value="Splenic mass"/>
+	</morphology>
+	<location>
+		<coding>
+			<system value="http://snomed.info/sct"/>
+			<code value="78961009"/>
+			<display value="Splenic structure (body structure)"/>
+		</coding>
+		<text value="Spleen"/>
+	</location>
+	<description value="7 cm maximum diameter"/>
+	<image>
+		<!--     The actual image could be anywhere. This is a WADO example using a ficitious url    -->
+		<contentType value="application/dicom"/>
+		<url value="http://imaging.acme.com/wado/server?requestType=WADO&amp;amp;wado_details"/>
+	</image>
+	<patient>
+		<reference value="Patient/example"/>
+	</patient>
+</BodyStructure>

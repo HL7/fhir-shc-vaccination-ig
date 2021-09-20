@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Medication xmlns="http://hl7.org/fhir">
+   <id value="med0319"/>
+   
+      <meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  <form>
+         <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="385101003"/>
+            <display value="Ointment"/>
+         </coding>
+         <text value="Ointment"/>
+      </form>
+      <ingredient>
+         <itemCodeableConcept>
+            <coding>
+               <system value="http://snomed.info/sct"/>
+               <code value="387253001"/>
+               <display value="Salicyclic Acid (substance)"/>
+            </coding>
+         </itemCodeableConcept>
+         <strength>
+            <numerator>
+               <value value="5"/>
+               <system value="http://unitsofmeasure.org"/>
+               <code value="g"/>
+            </numerator>
+            <denominator>
+               <value value="100"/>
+               <system value="http://unitsofmeasure.org"/>
+               <code value="g"/>
+            </denominator>
+         </strength>
+      </ingredient>
+      <ingredient>
+         <itemCodeableConcept>
+            <coding>
+               <system value="http://snomed.info/sct"/>
+               <code value="396458002"/>
+               <display value="Hydrocortisone (substance)"/>
+            </coding>
+         </itemCodeableConcept>
+         <strength>
+            <numerator>
+               <value value="1"/>
+               <system value="http://unitsofmeasure.org"/>
+               <code value="g"/>
+            </numerator>
+            <denominator>
+               <value value="100"/>
+               <system value="http://unitsofmeasure.org"/>
+               <code value="g"/>
+            </denominator>
+         </strength>
+      </ingredient>
+      <ingredient>
+         <itemCodeableConcept>
+            <coding>
+               <system value="http://snomed.info/sct"/>
+               <code value="126066007"/>
+               <display value="White Petrolatum (substance)"/>
+            </coding>
+         </itemCodeableConcept>
+         <strength>
+            <numerator>
+               <value value="94"/>
+               <system value="http://unitsofmeasure.org"/>
+               <code value="g"/>
+            </numerator>
+            <denominator>
+               <value value="100"/>
+               <system value="http://unitsofmeasure.org"/>
+               <code value="g"/>
+            </denominator>
+         </strength>
+      </ingredient>
+   
+</Medication>

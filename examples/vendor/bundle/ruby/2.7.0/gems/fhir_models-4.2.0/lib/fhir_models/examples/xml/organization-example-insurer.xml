@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Organization xmlns="http://hl7.org/fhir">
+  <id value="2"/>
+  <meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  
+  <identifier>
+    <system value="urn:oid:2.16.840.1.113883.3.19.2.3"/>
+    <value value="666666"/>
+  </identifier>
+  <name value="XYZ Insurance"/>
+  <alias value="ABC Insurance"/>
+</Organization>

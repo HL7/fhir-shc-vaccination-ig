@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GuidanceResponse xmlns="http://hl7.org/fhir">
+  <id value="example"/>
+  <!--   This example demonstrates the response to an $evaluate operation using the GuidanceResponse resource.   -->
+  <meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  <contained>
+    <Parameters>
+      <id value="outputParameters1"/>
+      <parameter>
+        <name value="score"/>
+        <valueDecimal value="7"/>
+      </parameter>
+      <parameter>
+        <name value="item-assessed"/>
+		<valueCodeableConcept>
+		  <coding>
+			<system value="http://www.ama-assn.org/go/cpt"/>
+			<code value="70450"/>
+			<display value="CT, head, wo iv contrast"/>
+		  </coding>
+		</valueCodeableConcept>
+      </parameter>
+      <parameter>
+        <name value="device"/>
+        <valueReference>
+          <reference value="Device/software"/>
+        </valueReference>
+      </parameter>
+      <parameter>
+        <name value="guideline-followed"/>
+        <valueUri value="http://someguidelineprovider.org/radiology-appropriateness-guidelines.html"/>
+      </parameter>
+    </Parameters>
+  </contained>
+  <requestIdentifier>
+    <system value="http://example.org"/>
+    <value value="guidanceRequest1"/>
+  </requestIdentifier>
+  <identifier>
+    <system value="http://example.org"/>
+    <value value="guidanceResponse1"/>
+  </identifier>
+  <moduleUri value="http://someguidelineprovider.org/radiology-appropriateness-guidelines.html"/>
+  <status value="success"/>
+  <subject>
+    <reference value="Patient/example"/>
+  </subject>
+  <encounter>
+    <reference value="Encounter/example"/>
+  </encounter>
+  <occurrenceDateTime value="2017-03-10T16:02:00Z"/>
+  <performer>
+    <reference value="Device/software"/>
+  </performer>
+  <reasonCode>
+    <text value="Guideline Appropriate Ordering Assessment"/>
+  </reasonCode>
+  <outputParameters>
+    <reference value="#outputParameters1"/>
+  </outputParameters>
+</GuidanceResponse>

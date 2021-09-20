@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Medication xmlns="http://hl7.org/fhir">
+  <id value="med0313"/>
+  <meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  <code>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="400621001"/>
+      <display value="Lorazepam 2mg/ml injection solution 1ml vial (product)"/>
+    </coding>
+  </code>
+    <form>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="385219001"/>
+        <display value="Injection solution (qualifier value)"/>
+      </coding>
+    </form>
+  <amount>
+    <numerator><value value="1"/>
+      <unit value="ml"/>
+      <system value="http://unitsofmeasure.org"/>
+      <code value="ml"/>
+    </numerator>
+    <denominator>
+      <value value="1"/>
+      <system value="http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type"/>
+      <code value="vial"/>
+    </denominator>
+    </amount>
+    <ingredient>
+      <itemCodeableConcept>
+        <coding>
+          <system value="http://snomed.info/sct"/>
+          <code value="387106007"/>
+          <display value="Lorazepam (substance)"/>
+        </coding>
+      </itemCodeableConcept>
+      <strength>
+        <numerator>
+          <value value="2"/>
+          <system value="http://unitsofmeasure.org"/>
+          <code value="mg"/>
+        </numerator>
+        <denominator>
+          <value value="1"/>
+          <system value="http://unitsofmeasure.org"/>
+          <code value="mL"/>
+        </denominator>
+      </strength>
+    </ingredient>
+  
+</Medication>

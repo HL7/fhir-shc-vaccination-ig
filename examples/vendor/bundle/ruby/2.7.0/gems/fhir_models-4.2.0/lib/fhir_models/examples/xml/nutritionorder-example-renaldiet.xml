@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<NutritionOrder xmlns="http://hl7.org/fhir"><!--   id = renaldiet  file name = nutritionorder-example-renaldiet.xml Name= Renal Diet  Description = Nutrition Order Renal Diet Example
+edited by Eric Haas Health eData Inc
+  --><!--   EH: use oral Diet element   --><id value="renaldiet"/>
+	<meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  <identifier>
+		<system value="http://goodhealthhospital.org/nutrition-requests"/>
+		<value value="123"/>
+	</identifier>
+	<status value="active"/><intent value="order"/>
+	<patient>
+		<reference value="Patient/example"/>
+		<display value="Peter Chalmers"/>
+	</patient>
+	<encounter>
+		<reference value="Encounter/example"/>
+		<display value="Inpatient"/>
+	</encounter>
+	<dateTime value="2014-09-17"/>
+	<orderer>
+		<reference value="Practitioner/example"/>
+		<display value="Dr Adam Careful"/>
+	</orderer>
+	<allergyIntolerance>
+		<!--  EH  Show all the elements in this examples for preference, and intolerance   -->
+		<reference value="AllergyIntolerance/example"/>
+		<display value="Cashew Nuts"/>
+	</allergyIntolerance>
+	<foodPreferenceModifier>
+		<coding>
+			<system value="http://terminology.hl7.org/CodeSystem/diet"/>
+			<code value="dairy-free"/>
+		</coding>
+	</foodPreferenceModifier>
+	<excludeFoodModifier>
+		<coding>
+			<system value="http://snomed.info/sct"/>
+			<version value="20140730"/>
+			<code value="227493005"/>
+			<display value="Cashew Nut"/>
+		</coding>
+	</excludeFoodModifier>
+	<oralDiet>
+		<type>
+			<coding>
+				<system value="http://snomed.info/sct"/>
+				<code value="33489005"/>
+				<display value="Renal diet"/>
+			</coding>
+			<coding>
+				<system value="http://goodhealthhospital.org/diet-type-codes"/>
+				<code value="1050"/>
+				<display value="Renal"/>
+			</coding>
+			<text value="Renal Diet"/>
+		</type>
+		<!--   EH example of three times a day starting on 2/10   -->
+		<schedule>
+			<repeat>
+        <boundsPeriod>
+          <start value="2015-02-10"/>
+        </boundsPeriod>
+				<frequency value="3"/>
+				<period value="1"/>
+				<periodUnit value="d"/>
+			</repeat>
+		</schedule>
+		<nutrient>
+			<!--   list nutrients and amounts here   -->
+			<modifier>
+				<coding>
+					<system value="http://snomed.info/sct"/>
+					<code value="39972003"/>
+					<display value="Sodium"/>
+				</coding>
+			</modifier>
+			<amount>
+				<value value="2"/>
+				<unit value="grams"/>
+				<system value="http://unitsofmeasure.org"/>
+				<code value="g"/>
+			</amount>
+		</nutrient>
+		<nutrient>
+			<modifier>
+				<coding>
+					<system value="http://snomed.info/sct"/>
+					<code value="30820000"/>
+					<display value="Phosphorus"/>
+				</coding>
+			</modifier>
+			<amount>
+				<value value="1000"/>
+				<unit value="milligrams"/>
+				<system value="http://unitsofmeasure.org"/>
+				<code value="mg"/>
+			</amount>
+		</nutrient>
+		<nutrient>
+			<modifier>
+				<coding>
+					<system value="http://snomed.info/sct"/>
+					<code value="88480006"/>
+					<display value="Potassium"/>
+				</coding>
+			</modifier>
+			<amount>
+				<value value="2"/>
+				<unit value="grams"/>
+				<system value="http://unitsofmeasure.org"/>
+				<code value="g"/>
+			</amount>
+		</nutrient>
+	</oralDiet>
+</NutritionOrder>

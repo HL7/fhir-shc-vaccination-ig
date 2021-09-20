@@ -1,0 +1,28 @@
+{
+  "resourceType": "OperationOutcome",
+  "id": "validationfail",
+  "issue": [
+    {
+      "severity": "error",
+      "code": "structure",
+      "details": {
+        "text": "Error parsing resource XML (Unknown Content \"label\""
+      },
+      "location": [
+        "/f:Patient/f:identifier"
+      ],
+      "expression": [
+        "Patient.identifier"
+      ]
+    }
+  ],
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  }
+}

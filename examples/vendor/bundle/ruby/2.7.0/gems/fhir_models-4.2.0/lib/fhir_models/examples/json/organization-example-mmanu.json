@@ -1,0 +1,20 @@
+{
+  "resourceType": "Organization",
+  "id": "mmanu",
+  "active": true,
+  "name": "Acme Corporation",
+  "address": [
+    {
+      "country": "Swizterland"
+    }
+  ],
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  }
+}

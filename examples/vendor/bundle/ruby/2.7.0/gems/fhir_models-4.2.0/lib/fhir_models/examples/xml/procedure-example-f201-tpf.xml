@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Procedure xmlns="http://hl7.org/fhir">
+  <id value="f201"/>
+  <meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  <instantiatesCanonical value="PlanDefinition/KDN5"/>
+  <status value="completed"/>
+  <code>
+    <!--  The procedure is TPF-based chemotherapy  -->
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="367336001"/>
+      <display value="Chemotherapy"/>
+    </coding>
+  </code>
+  <subject>
+    <!--  It entails Roel's TPF treatment  -->
+    <reference value="Patient/f201"/>
+    <display value="Roel"/>
+  </subject>
+  <encounter>
+    <reference value="Encounter/f202"/>
+    <display value="Roel's encounter on January 28th, 2013"/>
+  </encounter>
+  <performedPeriod>
+    <start value="2013-01-28T13:31:00+01:00"/>
+    <end value="2013-01-28T14:27:00+01:00"/>
+  </performedPeriod>
+  <performer>
+    <function>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="310512001"/>
+        <display value="Medical oncologist"/>
+      </coding>
+    </function>
+	<actor>
+      <reference value="Practitioner/f201"/>
+      <display value="Dokter Bronsig"/>
+    </actor>
+  </performer>
+  <reasonCode>
+    <text value="DiagnosticReport/f201"/>
+  </reasonCode> 
+  <!--  TODO Why can't this be Resource (any) AND String?  -->
+  <bodySite>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="272676008"/>
+        <display value="Sphenoid bone"/>
+      </coding>
+  </bodySite>
+  <!--  No outcomes, reports, complications or follow-ups were available  -->
+  <note> 
+    <text value="Eerste neo-adjuvante TPF-kuur bij groot proces in sphenoid met intracraniale uitbreiding."/>
+  </note> 
+</Procedure>

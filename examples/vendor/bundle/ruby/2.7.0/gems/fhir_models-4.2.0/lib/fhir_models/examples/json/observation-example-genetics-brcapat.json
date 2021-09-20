@@ -1,0 +1,53 @@
+{
+  "resourceType": "Observation",
+  "id": "example-genetics-brcapat",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/observation-geneticsGene",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "https://www.ncbi.nlm.nih.gov/nuccore",
+            "code": "KX470182.1",
+            "display": "BRCA"
+          }
+        ]
+      }
+    },
+    {
+      "url": "http://hl7.org/fhir/us/core/StructureDefinition/us-core-ethnicity",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://browser.ihtsdotools.org/",
+            "code": "413581001",
+            "display": "Unknown racial group"
+          }
+        ]
+      }
+    }
+  ],
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "59041-4",
+        "display": "BRCA1+BRCA2 gene mutations tested for in Blood or Tissue by Molecular genetics method Nominal"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/brcapat",
+    "display": "Patient1 with Breast Cancer FamilyHistory"
+  },
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  }
+}

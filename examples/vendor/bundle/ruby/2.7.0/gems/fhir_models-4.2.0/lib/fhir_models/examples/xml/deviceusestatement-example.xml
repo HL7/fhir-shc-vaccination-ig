@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DeviceUseStatement xmlns="http://hl7.org/fhir">
+	<id value="example"/>
+	<meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  <identifier>
+		<system value="http:goodhealth.org/identifiers"/>
+		<value value="51ebb7a9-4e3a-4360-9a05-0cc2d869086f"/>
+	</identifier>
+	<status value="active"/>
+	<subject>
+		<reference value="Patient/example"/>
+	</subject>
+	<device>
+		<reference value="Device/example"/>
+	</device>
+	<reasonReference>
+		<reference value="Condition/example"/>
+		<display value="Appendectomy (surgery)"/>
+	</reasonReference>
+</DeviceUseStatement>

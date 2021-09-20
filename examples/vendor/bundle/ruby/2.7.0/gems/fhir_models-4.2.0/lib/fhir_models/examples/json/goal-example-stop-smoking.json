@@ -1,0 +1,49 @@
+{
+  "resourceType": "Goal",
+  "id": "stop-smoking",
+  "identifier": [
+    {
+      "value": "123"
+    }
+  ],
+  "lifecycleStatus": "completed",
+  "achievementStatus": {
+    "coding": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/goal-achievement",
+        "code": "achieved",
+        "display": "Achieved"
+      }
+    ],
+    "text": "Achieved"
+  },
+  "description": {
+    "text": "Stop smoking"
+  },
+  "subject": {
+    "reference": "Patient/example",
+    "display": "Peter James Chalmers"
+  },
+  "startDate": "2015-04-05",
+  "outcomeCode": [
+    {
+      "coding": [
+        {
+          "system": "http://snomed.info/sct",
+          "code": "8517006",
+          "display": "Ex-smoker (finding)"
+        }
+      ],
+      "text": "Former smoker"
+    }
+  ],
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  }
+}

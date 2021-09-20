@@ -1,0 +1,4 @@
+---
+BUNDLE_PATH: "/home/runner/work/fhir-shc-vaccination-ig/fhir-shc-vaccination-ig/examples/vendor/bundle"
+BUNDLE_DEPLOYMENT: "true"
+BUNDLE_JOBS: "4"

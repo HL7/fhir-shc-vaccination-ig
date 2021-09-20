@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PlanDefinition xmlns="http://hl7.org/fhir">
+  <id value="chlamydia-screening-intervention"/>
+  <meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  
+  <identifier>
+    <use value="official"/>
+    <value value="ChlamydiaScreening_CDS_UsingCommon"/>
+  </identifier>
+  <version value="2.0.0"/>
+  <title value="Chalmydia Screening CDS Example Using Common"/>
+  <status value="draft"/>
+  <date value="2015-07-22"/>
+  <description value="Chlamydia Screening CDS Example Using Common"/>
+  <topic>
+    <text value="Chlamydia Screening"/>
+  </topic>
+  <library value="Library/example"/>
+  <action>
+    <title value="Patient has not had chlamydia screening within the recommended timeframe..."/>
+    <condition>
+	  <kind value="applicability"/>
+	  <expression>
+        <language value="text/cql"/>
+        <expression value="NoScreening"/>
+      </expression>
+    </condition>
+    <dynamicValue>
+      <!--  The '$this' here indicates the dynamic value is providing the entire result, rather than a value of a particular element  -->
+      <path value="$this"/>
+      <expression>
+        <language value="text/cql"/>
+        <expression value="ChlamydiaScreeningRequest"/>
+      </expression>
+    </dynamicValue>
+  </action>
+</PlanDefinition>

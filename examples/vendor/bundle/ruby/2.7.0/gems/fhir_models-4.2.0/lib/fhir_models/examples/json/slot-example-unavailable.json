@@ -1,0 +1,30 @@
+{
+  "resourceType": "Slot",
+  "id": "3",
+  "serviceCategory": [
+    {
+      "coding": [
+        {
+          "code": "17",
+          "display": "General Practice"
+        }
+      ]
+    }
+  ],
+  "schedule": {
+    "reference": "Schedule/example"
+  },
+  "status": "busy-unavailable",
+  "start": "2013-12-25T09:30:00Z",
+  "end": "2013-12-25T09:45:00Z",
+  "comment": "Dr Careful is out of the office",
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  }
+}

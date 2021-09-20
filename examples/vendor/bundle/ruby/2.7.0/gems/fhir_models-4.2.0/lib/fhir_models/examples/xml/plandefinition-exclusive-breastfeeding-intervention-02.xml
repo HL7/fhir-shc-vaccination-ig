@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PlanDefinition xmlns="http://hl7.org/fhir">
+  <id value="exclusive-breastfeeding-intervention-02"/>
+  <meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  
+  <identifier>
+    <use value="official"/>
+    <value value="exclusive-breastfeeding-intervention-02"/>
+  </identifier>
+  <version value="1.0.0"/>
+  <title value="Exclusive Breastfeeding Intervention-02"/>
+  <status value="active"/>
+  <date value="2015-03-08"/>
+  <description value="Exclusive breastfeeding intervention intended to improve outcomes for exclusive breastmilk feeding of newborns by notifying the provider to sign the breastmilk feeding readiness assessment order, if necessary."/>
+  <topic>
+    <text value="Exclusive Breastfeeding"/>
+  </topic>
+  <relatedArtifact>
+    <type value="derived-from"/>
+    <resource value="Measure/measure-exclusive-breastfeeding"/>
+  </relatedArtifact>
+  <library value="Library/library-exclusive-breastfeeding-cds-logic"/>
+  <action>
+    <title value="Mother should be administered a breastfeeding readiness assessment."/>
+    <trigger>
+      <type value="named-event"/>
+      <name value="Admission"/>
+    </trigger>
+    <trigger>
+      <type value="named-event"/>
+      <name value="Birth"/>
+    </trigger>
+    <trigger>
+      <type value="named-event"/>
+      <name value="Infant Transfer to Recovery"/>
+    </trigger>
+    <trigger>
+      <type value="named-event"/>
+      <name value="Transfer to Post-Partum"/>
+    </trigger>
+    <condition>
+	  <kind value="applicability"/>
+      <expression>
+        <language value="text/cql"/>
+        <expression value="Should Notify Provider to Sign Assessment Order"/>
+      </expression>
+    </condition>
+    <action>
+      <title value="Notify the provider to sign the order."/>
+      <textEquivalent value="A Breastfeeding Readiness Assessment is recommended, please authorize or reject the order."/>
+      <type>
+        <coding><code value="create"/></coding>
+      </type>
+      <dynamicValue>
+        <path value="/"/>
+        <expression>
+          <language value="text/cql"/>
+          <expression value="Communication Request to Provider"/>
+        </expression>
+      </dynamicValue>
+    </action>
+  </action>
+</PlanDefinition>

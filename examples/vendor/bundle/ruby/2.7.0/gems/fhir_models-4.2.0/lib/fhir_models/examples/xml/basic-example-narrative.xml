@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Basic xmlns="http://hl7.org/fhir">
+  <id value="basic-example-narrative"/>
+  <meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  
+  <code>
+    <text value="Example Narrative Tester"/>
+  </code>
+</Basic>

@@ -1,0 +1,45 @@
+{
+  "resourceType": "MolecularSequence",
+  "id": "coord-1-base",
+  "type": "dna",
+  "coordinateSystem": 1,
+  "referenceSeq": {
+    "referenceSeqString": "ACGTAGTC",
+    "strand": "watson",
+    "windowStart": 1,
+    "windowEnd": 8
+  },
+  "variant": [
+    {
+      "start": 2,
+      "end": 3,
+      "observedAllele": "ATG",
+      "referenceAllele": "-",
+      "cigar": "3I"
+    },
+    {
+      "start": 5,
+      "end": 5,
+      "observedAllele": "T",
+      "referenceAllele": "A",
+      "cigar": "3I"
+    },
+    {
+      "start": 7,
+      "end": 7,
+      "observedAllele": "-",
+      "referenceAllele": "T",
+      "cigar": "1D"
+    }
+  ],
+  "observedSeq": "ACATGGTAGC",
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  }
+}

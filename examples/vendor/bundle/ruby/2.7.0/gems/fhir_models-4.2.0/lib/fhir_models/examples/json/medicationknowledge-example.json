@@ -1,0 +1,49 @@
+{
+  "resourceType": "MedicationKnowledge",
+  "id": "example",
+  "contained": [
+    {
+      "resourceType": "Organization",
+      "id": "org4",
+      "name": "Pfizer Laboratories Div Pfizer Inc"
+    }
+  ],
+  "code": {
+    "coding": [
+      {
+        "system": "http://hl7.org/fhir/sid/ndc",
+        "code": "0069-2587-10",
+        "display": "Vancomycin Hydrochloride (VANCOMYCIN HYDROCHLORIDE)"
+      }
+    ]
+  },
+  "status": "active",
+  "manufacturer": {
+    "reference": "#org4"
+  },
+  "doseForm": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "385219001",
+        "display": "Injection Solution (qualifier value)"
+      }
+    ]
+  },
+  "amount": {
+    "value": 50,
+    "unit": "mg/ml"
+  },
+  "synonym": [
+    "Vancomycin Hydrochloride (VANCOMYCIN HYDROCHLORIDE)"
+  ],
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  }
+}

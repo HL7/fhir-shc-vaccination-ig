@@ -1,0 +1,21 @@
+{
+  "resourceType": "ServiceRequest",
+  "id": "appendectomy-narrative",
+  "status": "completed",
+  "intent": "order",
+  "code": {
+    "text": "Appendectomy"
+  },
+  "subject": {
+    "display": "Paula Patient"
+  },
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  }
+}

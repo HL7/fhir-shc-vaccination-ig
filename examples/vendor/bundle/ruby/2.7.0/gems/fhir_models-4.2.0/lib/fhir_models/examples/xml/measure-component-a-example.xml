@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Measure xmlns="http://hl7.org/fhir">
+  <id value="component-a-example"/>
+  <meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  
+  <title value="Screening for Alcohol Misuse"/>
+  <status value="draft"/>
+  <scoring><coding><code value="proportion"/></coding></scoring>
+  
+  <group id="Main">
+    <population>
+      <code><coding><code value="initial-population"/></coding></code>
+      <criteria><language value="text/cql"/><expression value="Initial Population"/></criteria>
+    </population>
+    <population>
+      <code><coding><code value="denominator"/></coding></code>
+      <criteria><language value="text/cql"/><expression value="Denominator"/></criteria>
+    </population>
+    <population>
+      <code><coding><code value="numerator"/></coding></code>
+      <criteria><language value="text/cql"/><expression value="Numerator"/></criteria>
+    </population>
+  </group>
+</Measure>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Encounter xmlns="http://hl7.org/fhir">
+  <id value="f201"/>
+ <meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  <identifier>
+    <use value="temp"/><!--   0..1 The use of this identifier   -->
+    <value value="Encounter_Roel_20130404"/>
+ </identifier>
+ <status value="finished"/><!--  Encounter has finished  -->
+    <class>
+        <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
+        <code value="AMB"/> <!--   outpatient   -->
+        <display value="ambulatory"/>
+    </class>
+ <type><!--  TODO Why is this merely a CodeableConcept and not Resource (any)?  -->
+    <coding>
+       <system value="http://snomed.info/sct"/>
+       <code value="11429006"/>
+       <display value="Consultation"/>
+    </coding>
+ </type>
+ <priority><!--  Normal priority  -->
+    <coding>
+       <system value="http://snomed.info/sct"/>
+       <code value="17621005"/>
+       <display value="Normal"/>
+    </coding>
+ </priority>
+ <subject>
+     <reference value="Patient/f201"/>
+     <display value="Roel"/>
+ </subject>
+ <participant>
+     <individual>
+         <reference value="Practitioner/f201"/>
+    </individual>
+ </participant>
+ <reasonCode>
+   <text value="The patient had fever peaks over the last couple of days. He is worried about these peaks."/>
+ </reasonCode>
+ <!--  No indication, because no referral took place  -->
+ <!--  No hospitalization was deemed necessary  -->
+ <serviceProvider>
+     <reference value="Organization/f201"/>
+ </serviceProvider>
+</Encounter>
