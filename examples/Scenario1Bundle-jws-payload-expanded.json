@@ -1,13 +1,14 @@
 {
   "iss": "https://spec.smarthealth.cards/examples/issuer",
-  "nbf": 1628269596,
+  "nbf": 1632848286,
   "vc": {
     "type": [
       "https://smarthealth.cards#health-card",
-      "https://smarthealth.cards#labresult"
+      "https://smarthealth.cards#covid19",
+      "https://smarthealth.cards#immunization"
     ],
     "credentialSubject": {
-      "fhirVersion": null,
+      "fhirVersion": "4.0.1",
       "fhirBundle": {
         "type": "collection",
         "entry": [
@@ -30,6 +31,14 @@
           {
             "fullUrl": "resource:1",
             "resource": {
+              "meta": {
+                "security": [
+                  {
+                    "system": "https://smarthealth.cards/ial",
+                    "code": "IAL1.2"
+                  }
+                ]
+              },
               "status": "completed",
               "vaccineCode": {
                 "coding": [
@@ -43,12 +52,28 @@
                 "reference": "resource:0"
               },
               "occurrenceDateTime": "2021-01-01",
+              "lotNumber": "0000001",
+              "performer": [
+                {
+                  "actor": {
+                    "display": "ABC General Hospital"
+                  }
+                }
+              ],
               "resourceType": "Immunization"
             }
           },
           {
             "fullUrl": "resource:2",
             "resource": {
+              "meta": {
+                "security": [
+                  {
+                    "system": "https://smarthealth.cards/ial",
+                    "code": "IAL1.2"
+                  }
+                ]
+              },
               "status": "completed",
               "vaccineCode": {
                 "coding": [
@@ -62,6 +87,14 @@
                 "reference": "resource:0"
               },
               "occurrenceDateTime": "2021-01-29",
+              "lotNumber": "0000007",
+              "performer": [
+                {
+                  "actor": {
+                    "display": "ABC General Hospital"
+                  }
+                }
+              ],
               "resourceType": "Immunization"
             }
           }
