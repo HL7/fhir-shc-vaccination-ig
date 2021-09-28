@@ -21,11 +21,13 @@ module HealthCards
   end
   
   class COVIDLabHealthCard < HealthCards::HealthCardCustom
+    fhir_version '4.0.1'
     additional_types 'https://smarthealth.cards#covid19'
     additional_types 'https://smarthealth.cards#laboratory'
   end
 
   class COVIDImmunizationHealthCard < HealthCards::HealthCardCustom
+    fhir_version '4.0.1'
     additional_types 'https://smarthealth.cards#covid19'
     additional_types 'https://smarthealth.cards#immunization'
   end
