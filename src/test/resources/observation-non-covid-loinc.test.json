@@ -19,8 +19,8 @@
   "valueCodeableConcept": {
     "coding": [
       {
-        "system": "http://snomed.info/sct",
-        "code": "260373001"
+        "system": "http://loinc.org",
+        "code": "LA11882-0"
       }
     ]
   },

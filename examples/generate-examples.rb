@@ -2,9 +2,34 @@ require "health_cards"
 require 'open-uri'
 
 module HealthCards
-  class COVIDHealthCardCustom < HealthCards::COVIDHealthCard
-    additional_types 'https://smarthealth.cards#labresult'
-    allow type: FHIR::Observation, attributes: %w[status code subject effectiveDateTime performer referenceRange valueString valueQuantity valueCodeableConcept labCode patient]
+  class HealthCardCustom < HealthCards::HealthCard
+    fhir_version '4.0.1'
+
+    def to_hash
+      {
+        iss: issuer,
+        nbf: Time.now.to_i,
+        vc: {
+          type: self.class.types,
+          credentialSubject: {
+            fhirVersion: self.class.fhir_version,
+            fhirBundle: bundle.to_hash
+          }
+        }
+      }
+    end
+  end
+  
+  class COVIDLabHealthCard < HealthCards::HealthCardCustom
+    fhir_version '4.0.1'
+    additional_types 'https://smarthealth.cards#covid19'
+    additional_types 'https://smarthealth.cards#laboratory'
+  end
+
+  class COVIDImmunizationHealthCard < HealthCards::HealthCardCustom
+    fhir_version '4.0.1'
+    additional_types 'https://smarthealth.cards#covid19'
+    additional_types 'https://smarthealth.cards#immunization'
   end
 end
 
@@ -21,7 +46,14 @@ Dir.glob('Scenario*Bundle.json') do |filename|
   bundle = FHIR::Bundle.new(JSON.parse(File.read(filename)))
   outputPrefix = File.basename(filename, File.extname(filename))
 
-  jws = @issuer.issue_jws(bundle, type: HealthCards::COVIDHealthCardCustom)
+  jws = if bundle.entry.any? { |e| e.resource.is_a?(FHIR::Immunization) }
+    @issuer.issue_jws(bundle, type: HealthCards::COVIDImmunizationHealthCard)
+  elsif bundle.entry.any? { |e| e.resource.is_a?(FHIR::Observation) }
+    @issuer.issue_jws(bundle, type: HealthCards::COVIDLabHealthCard)
+  else
+    puts "ERROR: Unable to determine credential type."
+    exit 1
+  end
   payload = HealthCards::HealthCard.decompress_payload(jws.payload)
   smarthealthcard = HealthCards::Exporter.download([jws])
   qr_codes = HealthCards::Exporter.qr_codes(jws)
