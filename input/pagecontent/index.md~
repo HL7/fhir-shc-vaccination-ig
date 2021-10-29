@@ -24,8 +24,8 @@ Issuers and Verifiers are considered "implementers" of this IG.
 Our primary focus is on the use case of representing the minimal set of clinical data necessary to represent COVID-19 vaccination status and laboratory testing for verification purposes in a SMART Health Card. We support other infectious diseases as a secondary use case. To meet these use cases, we provide profiles of a [FHIR Bundle](https://www.hl7.org/fhir/bundle.html) that describes the contents of [the `fhirBundle` element in a SMART Health Card](https://spec.smarthealth.cards/#data-model). We also provide profiles of the resources contained within this Bundle.
 
 This IG defines two types of profiles:
-1. Allowable Data (AD)
-1. Data Minimization (DM)
+1. ** Allowable Data (AD)
+1. ** Data Minimization (DM)
 
 The DM profiles are "Primary" profiles which constrain the content to fit within the limits of a Quick Response (QR) code.
 The AD profiles are "Fallback" profiles which have fewer constraints than DM profiles, but if extra content is included it may result in multiple QR codes.
