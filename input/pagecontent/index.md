@@ -73,7 +73,7 @@ The IG is currently focused on coordinating implementers' representations of rel
 
 1. Risk evaluation algorithms may be actor- or context-dependent.
 
-    For example, some parties may only consider United States Food and Drug Administration (FDA)-approved or Emergency Use Emergency Use Authorization (EUA) vaccines to be acceptable, while others may accept vaccines approved in other countries.
+    For example, some parties may only consider United States Food and Drug Administration (FDA)-approved or Emergency Use Authorization (EUA) vaccines to be acceptable, while others may accept vaccines approved in other countries.
 
     Embedding stringent validation criteria in our FHIR profiles may make it impossible for implementers with less stringent criteria to use this IG.
 
