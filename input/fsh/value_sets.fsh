@@ -227,3 +227,21 @@ Description: "Relevant identity assurance level codes, based on NIST 800-63-3. S
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+CodeSystem: SpecimenCollectionSupervisionStatusCodeSystem
+Id: specimen-collection-supervision-status-code-system
+Title: "Specimen Collection Supervision Status Code System"
+Description: "Codes representing specimen collection supervision status"
+* ^url =  https://example.com/tbd
+* ^copyright = "CC0"
+* #clinical-setting "Specimen collected in a clinical setting, but no additional details available."
+* #hcw-collect "Specimen collected by a healthcare worker"
+* #individual-collect-unobserved "Specimen collected by the subject individual without any supervision"
+* #individual-collect-virtual-observed "Specimen collected by the subject individual with virtual observation by a healthcare worker"
+* #individual-collect-in-person-observed "Specimen collected by the subject individual with in-person observation by a healthcare worker"
+
+ValueSet:    SpecimenCollectionSupervisionStatus
+Id:          specimen-collection-supervision-status
+Title:       "Specimen Collection Supervision Status"
+Description: "Relevant codes representing specimen collection supervision status"
+* include codes from system specimen-collection-supervision-status-code-system
