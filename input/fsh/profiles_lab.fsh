@@ -65,6 +65,18 @@ RuleSet: LaboratoryResultObservation
 * performer.display ^definition = "Organization which was responsible for the laboratory test result. Issuers SHOULD provide display name only. This is provided to Verifiers in case of invalid data in the credential, to support manual validation. This is not expected to be a computable Organization identifier."
 * performer.display obeys vc-should-be-under-30-chars
 
+// FHIR-34403 - Include specimen collection supervision status in lab test profiles
+* component MS
+* component ^slicing.discriminator.type = #value
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.rules = #closed
+* component ^slicing.description = "Slicing based on the code of the component"
+* component contains specimen-supervision 0..1
+* component[specimen-supervision] MS
+* component[specimen-supervision].code = #specimen-supervision
+* component[specimen-supervision].value[x] only CodeableConcept
+* component[specimen-supervision].valueCodeableConcept 1..1 MS
+* component[specimen-supervision].valueCodeableConcept  from specimen-collection-supervision-status (required)
 
 * insert reference-to-absolute-uri(subject)
 
@@ -139,7 +151,7 @@ RuleSet: LaboratoryResultObservationDM
 * device 0..0
 * hasMember 0..0
 * derivedFrom 0..0
-* component 0..0
+* component 0..1
 * performer.id 0..0
 * performer.extension 0..0
 * performer.reference 0..0
