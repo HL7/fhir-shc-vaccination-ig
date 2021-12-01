@@ -47,6 +47,7 @@ RuleSet: LaboratoryResultObservation
 
 * status obeys vc-observation-status-shall-be-complete
 
+* meta MS
 * meta.security 0..1
 * meta.security from identity-assurance-level (required)
 * meta.security ^short = "Limited security label to convey identity level of assurance for patient referenced by this resource."

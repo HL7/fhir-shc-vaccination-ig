@@ -14,6 +14,7 @@ Description: "Defines a profile representing a vaccination for a SMART Health Ca
 * patient MS
 * insert reference-to-absolute-uri(patient)
 
+* meta MS
 * meta.security 0..1
 * meta.security from identity-assurance-level (required)
 * meta.security ^short = "Limited security label to convey identity level of assurance for patient referenced by this resource."
