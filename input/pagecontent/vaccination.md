@@ -73,7 +73,7 @@ When using multiple codes, the codes SHALL NOT contradict each other. More infor
 
 > More than one code may be used in CodeableConcept. The concept may be coded multiple times in different code systems.... Each coding (also referred to as a 'translation') is a representation of the concept as described above and may have slightly different granularity due to the differences in the definitions of the underlying codes. There is no meaning associated with the ordering of coding within a CodeableConcept.
 
-However, as described above, for [data minimization](profiles.html#data-minimization) reasons, Issuers SHOULD typically include ONLY a single code that is the most granular (i.e., includes the greatest level of detail) of the options available in their system UNLESS they believe another actor may benefit from the additional code. Typically at most two codes will be included in `vaccineCode`: a less granular code paired with a GTIN code to identify manufacturer as described below.
+However, as described above, for [data minimization](profiles.html#data-minimization-and-privacy) reasons, Issuers SHOULD typically include ONLY a single code that is the most granular (i.e., includes the greatest level of detail) of the options available in their system UNLESS they believe another actor may benefit from the additional code. Typically at most two codes will be included in `vaccineCode`: a less granular code paired with a GTIN code to identify manufacturer as described below.
 
 Verifiers SHALL be able to meaningfully process and interpret codes from ALL of the systems listed above.
 
