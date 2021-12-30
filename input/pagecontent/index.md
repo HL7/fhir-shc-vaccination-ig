@@ -17,7 +17,7 @@ The primary actors are:
 1. **Holders** who receive a [SMART Health Card] from an Issuer (which contains the FHIR resources described in this IG), and may display it to a Verifier.
 1. **Verifiers** who read and analyze the FHIR resources described in this IG.
 
-Issuers and Verifiers are considered "implementers" of this IG.
+Issuers and Verifiers are considered "implementers" of this IG. Additionally, "wallet applications" used by Holders to store digital versions of their SHC are also considered implementers.
 
 #### Privacy by design
 
