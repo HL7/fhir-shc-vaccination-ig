@@ -47,7 +47,7 @@ Implementers SHALL use at least one of the following code systems for identifyin
 Some additional information about the table above:
 
 * A **code system** defines a set of "codes" and their mappings onto specific meanings. For example, the [CVX code system][CVX] includes the code `207`, which is mapped to the meaning "COVID-19, mRNA, LNP-S, PF, 100 mcg/0.5 mL dose". Using a code system helps to ensure implementers represent a given concept in a consistent way that other implementers can understand.
-* A **value set** defines a group of codes that can be used within a specific element. For example, we define a [value set of SNOMED-CT codes for vaccine products][VaccineTypeSNOMED] for use in the `vaccineCode` element. FHIR allows an element to be "bound" to a value set, meaning that the contents of that element must come from the value set (for a "[required binding][binding]") or should come form the value set (for a "[preferred binding][binding]").
+* A **value set** defines a group of codes that can be used within a specific element. For example, we define a [value set of SNOMED-CT codes for vaccine products][VaccineSNOMED] for use in the `vaccineCode` element. FHIR allows an element to be "bound" to a value set, meaning that the contents of that element must come from the value set (for a "[required binding][binding]") or should come form the value set (for a "[preferred binding][binding]").
 * Codes from multiple code systems may be used in `vaccineCode`. While these codes all generally identify vaccines, they may do so at different levels of **granularity**. For example, some codes may just identify the target disease and type of vaccine. Others may identify specific vaccine products. The table above is sorted roughly from most to least granular.
 
 Issuers MAY include multiple codes within `vaccineCode` ONLY IF they believe the additional information is helpful for other actors. For example, an Issuer may be targeting a Verifier that prefers SNOMED, but the Issuer also wishes to provide manufacturer information via the GTIN. In this case, the following would conform:
@@ -204,7 +204,7 @@ Some locales may not have a GTIN lookup tool for pharmaceuticals or vaccines. In
 
 #### Universal terminology: SNOMED CT
 
-This IG also supports the use of [SNOMED CT for identifying vaccines][VaccineTypeSNOMED]. Note that some of the SNOMED CT codes that are part of this value set expansion, [including the COVID-19-related SNOMED CT codes][snomed-covid], may be used under the a [Creative Commons Attribution 4.0 International License][cc-ail] as part of [the SNOMED Global Patient Set](https://gps.snomed.org). Please refer to <https://gps.snomed.org> to determine which specific SNOMED CT codes may be used under this license.
+This IG also supports the use of [SNOMED CT for identifying vaccines][VaccineSNOMED]. Note that some of the SNOMED CT codes that are part of this value set expansion, [including the COVID-19-related SNOMED CT codes][snomed-covid], may be used under the a [Creative Commons Attribution 4.0 International License][cc-ail] as part of [the SNOMED Global Patient Set](https://gps.snomed.org). Please refer to <https://gps.snomed.org> to determine which specific SNOMED CT codes may be used under this license.
 
 [snomed-covid]: https://confluence.ihtsdotools.org/display/snomed/SNOMED+CT+COVID-19+Related+Content
 [cc-ail]: https://creativecommons.org/licenses/by/4.0/
@@ -213,7 +213,7 @@ This IG also supports the use of [SNOMED CT for identifying vaccines][VaccineTyp
 
 The `status` element indicates if a given Immunization resource represents a completed vaccination, or if the vaccination was not completed for some reason.
 
-Issuers SHALL only produce resources conforming to this profile IF `status` has the value `completed`, which is reflected in the profile by fixing the value of `status` to `completed`. Note that `status` is required rather than being omitted entirely due to inheriting `1..1` cardinality from the [Immunization](http://hl7.org/fhir/R4/immunization.html) resource, along with an `Is-Modifier` flag. This profile adds the `MustSupport` flag indicating Verifiers SHALL meaningfully process this element as described on the [Conformance](conformance.html) page, which is important in case a non-conforming resource is provided that has `status` set to a value other than `completed`.
+Issuers SHALL only produce resources conforming to this profile IF the immunization event was performed and warrants the `status` being valued `completed`. This requirement is reflected in the profile by fixing the value of `status` to `completed`. Note that `status` is required rather than being omitted entirely due to inheriting `1..1` cardinality from the [Immunization](http://hl7.org/fhir/R4/immunization.html) resource, along with an `Is-Modifier` flag. This profile adds the `MustSupport` flag indicating Verifiers SHALL meaningfully process this element as described on the [Conformance](conformance.html) page, which is important in case a non-conforming resource is provided that has `status` set to a value other than `completed`.
 
 The `statusReason` element is disallowed (`0..0` cardinality) because it is not meaningful when `status` is `completed`.
 
