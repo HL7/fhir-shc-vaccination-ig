@@ -175,11 +175,19 @@ Additional [testing and validation tools may be found here](https://confluence.h
 
 ---
 
-### Jurisdiction-specific profiles
+### Internationalization
 
-Implementers who wish to request jurisdiction-specific versions of any of the profiles in this IG (like the [United States-specific patient profiles](StructureDefinition-shc-patient-us-dm.html)) should [contact the authors of the IG](index.html#author-contact-information) to request new profiles be added.
+The [SMART Health Cards] specification and this IG are suitable for international use.
 
-Typically, jurisdiction-specific profiles can be added if they benefit the use cases of [the IG's actors](index.html#actors) within that jurisdiction.
+Additionally, this IG includes specific profiles for the following jurisdictions:
+
+- United States
+
+Other jurisdictions are welcome to define their own profiles that reflect their local concerns -- please contact the local HL7 affiliate or [the authors of this specification](contact.html) for assistance.
+
+Jurisdictional profiles will typically add constraints to those defined in the "fallback" profiles [defined above](#profile-groups). For example, jurisdictional profiles might add constraints limiting the patient identifier to a specific type of national patient/consumer id, or define a specific value set using codes from a local SNOMED-CT edition for vaccines.
+
+Typically jurisdictional profiles will include both "primary" and "fallback" profiles; both SHALL inherit from the generic "fallback" profile or the generic "primary" profile.
 
 {% include markdown-link-references.md %}
 
