@@ -26,7 +26,7 @@ If it is not clear how to split the parts of a person's name into `name.family` 
 Issuers SHOULD make every effort to have the contents of `name` match what appears on the patient's government-issued photo ID.
 
 Other implementers SHALL support display/processing of `name.family`/`name.given` AND `name.text`."
-* name.text ^short = "Use instead of `family` and `given` if the patient's name cannot be easily split these elements"
+* name.text ^short = "Use instead of `family` and `given` if the patient's name cannot be easily split into these elements"
 * name.given ^short = "Parts of patient's name other than their family name that appear on photo ID; e.g., first and middle names"
 * name.given ^comment = "This element is used to represent all parts of a patient's name that are not their family name. For example, Marie Salomea Skłodowska Curie would have three values for `name.given`: `[\"Marie\", \"Salomea\", \"Skłodowska\"]`.
 
