@@ -40,5 +40,5 @@ error twice, and examples that specify multiple code systems (i.e: ICD-11 and GT
 
 Examples of SMART Health Cards generated from this Implementation Guide are generate via Ruby script generate-examples.rb.
 
-    gem install health_cards
+    gem install health_cards -v '~> 1.0'
     ruby generate-examples.rb

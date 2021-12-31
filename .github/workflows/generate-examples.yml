@@ -22,7 +22,7 @@ jobs:
       - name: Run Ruby generate-examples
         run: |
           cd examples
-          gem install health_cards
+          gem install health_cards -v '~> 1.0'
           ruby generate-examples.rb
       - name: Commit examples
         run: |

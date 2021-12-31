@@ -30,3 +30,37 @@ parameters:
   "active-tables": true
   "excludettl": true
   "excludexml": true
+pages:
+  index.md:
+    title: Home
+  profiles.md:
+    title: Profiles
+  laboratory-results-observation.md:
+    title: Laboratory Results Observation
+  vaccination.md:
+    title: Vaccination
+  patient.md:
+    title: Patients
+  StructureDefinition-shc-covid19-laboratory-bundle-resource-examples.md:
+    title: Structure Definition SHC Covid 19 Laboratory Bundle Resource Examples
+  StructureDefinition-shc-covid19-laboratory-result-observation-resource-examples.md:
+    title: Structure Definition SHC Covid 19 Laboratory Result Observation Resource Examples
+  StructureDefinition-shc-infectious-disease-laboratory-bundle-resource-examples.md:
+    title: Structure Definition SHC Infectious Disease Laboratory Bundle Resource Examples
+  StructureDefinition-shc-infectious-disease-laboratory-result-observation-resource-examples.md:
+    title: Structure Definition SHC Infectious Disease Laboratory Result Observation Resource Examples
+  StructureDefinition-shc-patient-general-resource-examples.md:
+    title: Structure Definition SHC Patient General Resource Examples
+  StructureDefinition-shc-patient-us-resource-examples.md:
+    title: Structure Definition SHC Patient US Resource Examples
+  StructureDefinition-shc-vaccination-bundle-resource-examples.md:
+    title: Structure Definition SHC Vaccination Bundle Resource Examples
+  StructureDefinition-shc-vaccination-resource-examples.md:
+    title: Structure Definition SHC Vaccination Resource Examples
+  contact.md:
+    title: Contact
+  conformance.md:
+    title: Conformance
+  artifacts.html:
+    title: Artifacts Summary
+
