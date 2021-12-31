@@ -5,7 +5,8 @@
     "type": [
       "https://smarthealth.cards#health-card",
       "https://smarthealth.cards#immunization",
-      "https://smarthealth.cards#covid19"
+      "https://smarthealth.cards#mmr",
+      "https://smarthealth.cards#varicella"
     ],
     "credentialSubject": {
       "fhirVersion": "4.0.1",
@@ -17,14 +18,14 @@
             "resource": {
               "name": [
                 {
-                  "family": "Anyperson",
+                  "family": "Youngster",
                   "given": [
-                    "John",
+                    "Janet",
                     "B."
                   ]
                 }
               ],
-              "birthDate": "1951-01-20",
+              "birthDate": "2016-03-20",
               "resourceType": "Patient"
             }
           },
@@ -36,14 +37,14 @@
                 "coding": [
                   {
                     "system": "http://hl7.org/fhir/sid/cvx",
-                    "code": "207"
+                    "code": "94"
                   }
                 ]
               },
               "patient": {
                 "reference": "resource:0"
               },
-              "occurrenceDateTime": "2021-01-01",
+              "occurrenceDateTime": "2017-05-10",
               "resourceType": "Immunization"
             }
           },
@@ -55,7 +56,7 @@
                 "coding": [
                   {
                     "system": "http://hl7.org/fhir/sid/cvx",
-                    "code": "207"
+                    "code": "94"
                   }
                 ]
               },
