@@ -1,0 +1,90 @@
+{
+  "resourceType": "Observation",
+  "id": "example-genetics-2",
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "55233-1",
+        "display": "Genetic analysis master panel--This is the parent OBR for the panel holding all of the associated observations that can be reported with a molecular genetics analysis result."
+      }
+    ]
+  },
+  "subject": {
+    "reference": "Patient/example",
+    "display": "Molecular Lab Patient ID: HOSP-23456"
+  },
+  "issued": "2013-04-03T15:30:10+01:00",
+  "performer": [
+    {
+      "reference": "Practitioner/example",
+      "display": "Molecular Diagnostics Laboratory"
+    }
+  ],
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "10828004",
+        "display": "Positive"
+      }
+    ]
+  },
+  "derivedFrom": [
+    {
+      "reference": "Observation/example-genetics-1"
+    }
+  ],
+  "component": [
+    {
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "51967-8",
+            "display": "Genetic disease assessed"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://snomed.info/sct",
+            "code": "363358000",
+            "display": "Malignant tumor of lung (disorder)"
+          }
+        ],
+        "text": "Lung cancer"
+      }
+    },
+    {
+      "code": {
+        "coding": [
+          {
+            "system": "http://loinc.org",
+            "code": "53037-8",
+            "display": "Genetic disease sequence variation interpretation"
+          }
+        ]
+      },
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "code": "LA6669-1",
+            "display": "Pathogenic"
+          }
+        ]
+      }
+    }
+  ],
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  }
+}

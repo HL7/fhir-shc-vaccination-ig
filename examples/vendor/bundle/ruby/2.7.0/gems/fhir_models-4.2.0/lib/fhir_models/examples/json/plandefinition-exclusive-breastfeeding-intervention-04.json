@@ -1,0 +1,92 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "exclusive-breastfeeding-intervention-04",
+  "identifier": [
+    {
+      "use": "official",
+      "value": "exclusive-breastfeeding-intervention-04"
+    }
+  ],
+  "version": "1.0.0",
+  "title": "Exclusive Breastfeeding Intervention-04",
+  "status": "active",
+  "date": "2015-03-08",
+  "description": "Exclusive breastfeeding intervention intended to improve outcomes for exclusive breastmilk feeding of newborns by creating a lactation consult for the mother if appropriate.",
+  "topic": [
+    {
+      "text": "Exclusive Breastfeeding"
+    }
+  ],
+  "relatedArtifact": [
+    {
+      "type": "derived-from",
+      "resource": "Measure/measure-exclusive-breastfeeding"
+    }
+  ],
+  "library": [
+    "Library/library-exclusive-breastfeeding-cds-logic"
+  ],
+  "action": [
+    {
+      "title": "Mother should be referred to a lactation specialist for consultation.",
+      "trigger": [
+        {
+          "type": "named-event",
+          "name": "Admission"
+        },
+        {
+          "type": "named-event",
+          "name": "Birth"
+        },
+        {
+          "type": "named-event",
+          "name": "Infant Transfer to Recovery"
+        },
+        {
+          "type": "named-event",
+          "name": "Transfer to Post-Partum"
+        }
+      ],
+      "condition": [
+        {
+          "kind": "applicability",
+          "expression": {
+            "language": "text/cql",
+            "expression": "Should Create Lactation Consult"
+          }
+        }
+      ],
+      "action": [
+        {
+          "title": "Create a lactation consult request.",
+          "textEquivalent": "Create a lactation consult request",
+          "type": {
+            "coding": [
+              {
+                "code": "create"
+              }
+            ]
+          },
+          "dynamicValue": [
+            {
+              "path": "/",
+              "expression": {
+                "language": "text/cql",
+                "expression": "Create Lactation Consult Request"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  }
+}

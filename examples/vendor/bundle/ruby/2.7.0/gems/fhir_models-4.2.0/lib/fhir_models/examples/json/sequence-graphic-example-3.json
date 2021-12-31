@@ -1,0 +1,37 @@
+{
+  "resourceType": "MolecularSequence",
+  "id": "graphic-example-3",
+  "type": "dna",
+  "coordinateSystem": 0,
+  "referenceSeq": {
+    "referenceSeqPointer": {
+      "reference": "MolecularSequence/graphic-example-5"
+    },
+    "strand": "watson",
+    "windowStart": 128273732,
+    "windowEnd": 128273736
+  },
+  "variant": [
+    {
+      "start": 1282737234,
+      "end": 128273736,
+      "observedAllele": "GA",
+      "referenceAllele": "AT",
+      "cigar": "2M"
+    }
+  ],
+  "pointer": [
+    {
+      "reference": "MolecularSequence/graphic-example-4"
+    }
+  ],
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  }
+}

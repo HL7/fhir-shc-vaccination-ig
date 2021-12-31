@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CarePlan xmlns="http://hl7.org/fhir">
+  <id value="f002"/>
+  <meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  <contained>
+    <CareTeam>
+        <id value="careteam"/>
+        <participant>
+    	    <member>
+      		<reference value="Practitioner/f003"/>
+      		<display value="M.I.M. Versteegh"/>
+    	    </member>
+  	</participant>
+    </CareTeam>
+  </contained>
+  <contained>
+    <Goal>
+      <id value="goal"/>
+      <lifecycleStatus value="completed"/>
+	  <achievementStatus>
+		<coding>
+			<system value="http://terminology.hl7.org/CodeSystem/goal-achievement"/>
+			<code value="achieved"/>
+			<display value="Achieved"/>
+		</coding>
+		<text value="Achieved"/>
+	  </achievementStatus>
+      <description>
+        <text value="succesful surgery on lung of patient"/>
+      </description>
+      <subject>
+	<reference value="Patient/f001"/>
+	<display value="P. van de Heuvel"/>
+      </subject>      
+      <note>
+        <text value="goal accomplished with minor complications"/>
+      </note>
+    </Goal>
+  </contained>
+  <identifier>
+    <use value="official"/>
+    <!--   urn:oid:2.16.840.1.113883.4.642.1.36   -->
+    <system value="http://www.bmc.nl/zorgportal/identifiers/careplans"/>
+    <value value="CP2934"/>
+  </identifier>
+  <status value="completed"/>
+  <intent value="plan"/>
+  <subject>
+    <reference value="Patient/f001"/>
+    <display value="P. van de Heuvel"/>
+  </subject>  
+  <period>
+    <start value="2011-07-06"/>
+    <end value="2013-07-07"/>
+  </period>
+  <careTeam>
+    <reference value="#careteam"/>
+  </careTeam>
+  <addresses>
+    <reference value="Condition/f201"/>
+    <!--  TODO Correcte referentie  -->
+    <display value="?????"/>
+  </addresses>
+  <goal>
+    <reference value="#goal"/>
+  </goal>
+  <activity>
+    <detail>
+      <kind value="ServiceRequest"/>
+      <!--   urn:oid:2.16.840.1.113883.4.642.1.39   -->
+      <code>
+        <coding>
+          <system value="http://snomed.info/sct"/>
+          <code value="359615001"/>
+          <display value="Partial lobectomy of lung"/>
+        </coding>
+      </code>
+      <status value="completed"/>
+      <doNotPerform value="true"/>
+      <scheduledString value="2011-07-07T09:30:10+01:00"/>
+      <performer>
+        <reference value="Practitioner/f003"/>
+        <display value="M.I.M. Versteegh"/>
+      </performer>
+    </detail>
+  </activity>
+</CarePlan>

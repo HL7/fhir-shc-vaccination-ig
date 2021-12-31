@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Encounter xmlns="http://hl7.org/fhir">
+  <id value="xcda"/>
+  <meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  <identifier>
+    <use value="official"/>
+    <system value="http://healthcare.example.org/identifiers/enocunter"/>
+    <value value="1234213.52345873"/>
+  </identifier>
+  <status value="finished"/>
+    <class>
+        <system value="http://terminology.hl7.org/CodeSystem/v3-ActCode"/>
+        <code value="AMB"/> <!--   outpatient   -->
+        <display value="ambulatory"/>
+    </class>
+  <subject>
+    <reference value="Patient/xcda"/>
+  </subject>
+  <participant>
+    <individual>
+      <reference value="Practitioner/xcda1"/>
+    </individual>
+  </participant>
+  <reasonCode>
+    <coding>
+      <system value="http://ihe.net/xds/connectathon/eventCodes"/>
+      <code value="T-D8200"/>
+      <display value="Arm"/>
+    </coding>
+  </reasonCode>
+</Encounter>

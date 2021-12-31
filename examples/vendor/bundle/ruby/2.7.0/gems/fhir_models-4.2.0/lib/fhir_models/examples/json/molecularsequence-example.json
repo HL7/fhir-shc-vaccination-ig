@@ -1,0 +1,47 @@
+{
+  "resourceType": "MolecularSequence",
+  "id": "example",
+  "type": "dna",
+  "coordinateSystem": 0,
+  "patient": {
+    "reference": "Patient/example"
+  },
+  "referenceSeq": {
+    "referenceSeqId": {
+      "coding": [
+        {
+          "system": "http://www.ncbi.nlm.nih.gov/nuccore",
+          "code": "NC_000009.11"
+        }
+      ]
+    },
+    "strand": "watson",
+    "windowStart": 22125500,
+    "windowEnd": 22125510
+  },
+  "variant": [
+    {
+      "start": 22125503,
+      "end": 22125504,
+      "observedAllele": "C",
+      "referenceAllele": "G"
+    }
+  ],
+  "repository": [
+    {
+      "type": "openapi",
+      "url": "http://grch37.rest.ensembl.org/ga4gh/variants/3:rs1333049?content-type=application/json",
+      "name": "GA4GH API",
+      "variantsetId": "3:rs1333049"
+    }
+  ],
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  }
+}

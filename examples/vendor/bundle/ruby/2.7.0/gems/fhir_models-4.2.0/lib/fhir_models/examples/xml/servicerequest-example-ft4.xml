@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ServiceRequest xmlns="http://hl7.org/fhir">
+	<id value="ft4"/>
+	<meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  <status value="active"/>
+	<intent value="reflex-order"/>
+	<code>
+		<coding>
+			<system value="http://loinc.org"/>
+			<code value="3024-7"/>
+			<display value="Thyroxine (T4) free [Mass/​volume] in Serum or Plasma"/>
+		</coding>
+		<text value="Free T4"/>
+	</code>
+	<subject>
+		<reference value="Patient/pat2"/>
+	</subject>
+	<occurrenceDateTime value="2015-08-27T09:33:27+07:00"/>
+	<requester>
+			<reference value="Practitioner/example"/>
+	</requester>
+</ServiceRequest>

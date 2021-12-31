@@ -1,0 +1,37 @@
+{
+  "resourceType": "ActivityDefinition",
+  "id": "serum-dengue-virus-igm",
+  "url": "http://example.org/ActivityDefinition/serum-dengue-virus-igm",
+  "status": "draft",
+  "description": "Order Serum Dengue Virus IgM",
+  "relatedArtifact": [
+    {
+      "type": "documentation",
+      "display": "Explanation of diagnostic tests for Dengue virus and which to use based on the patient’s clinical and exposure history."
+    }
+  ],
+  "kind": "ServiceRequest",
+  "code": {
+    "text": "Serum Dengue Virus IgM"
+  },
+  "timingTiming": {
+    "_event": [
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
+            "valueExpression": {
+              "language": "text/cql",
+              "expression": "Now()"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "participant": [
+    {
+      "type": "practitioner"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "resourceType": "MedicinalProductIngredient",
+  "id": "example",
+  "role": {
+    "coding": [
+      {
+        "system": "http://ema.europa.eu/example/ingredientRole",
+        "code": "ActiveBase"
+      }
+    ]
+  },
+  "manufacturer": [
+    {
+      "reference": "Organization/example"
+    }
+  ],
+  "specifiedSubstance": [
+    {
+      "code": {
+        "coding": [
+          {
+            "system": "http://ema.europa.eu/example/specifiedSubstance",
+            "code": "equixabanCompanyequixaban1"
+          }
+        ]
+      },
+      "group": {
+        "coding": [
+          {
+            "system": "http://ema.europa.eu/example/specifiedSubstanceGroup",
+            "code": "2"
+          }
+        ]
+      }
+    }
+  ],
+  "substance": {
+    "code": {
+      "coding": [
+        {
+          "system": "http://ema.europa.eu/example/substance",
+          "code": "EQUIXABAN"
+        }
+      ]
+    },
+    "strength": [
+      {
+        "presentation": {
+          "numerator": {
+            "value": 2.5,
+            "unit": "mg"
+          },
+          "denominator": {
+            "value": 1,
+            "unit": "{tablet}"
+          }
+        }
+      }
+    ]
+  },
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  }
+}

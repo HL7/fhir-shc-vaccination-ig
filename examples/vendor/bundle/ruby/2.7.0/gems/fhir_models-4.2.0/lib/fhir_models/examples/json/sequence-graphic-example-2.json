@@ -1,0 +1,26 @@
+{
+  "resourceType": "MolecularSequence",
+  "id": "graphic-example-2",
+  "type": "dna",
+  "coordinateSystem": 0,
+  "referenceSeq": {
+    "referenceSeqString": "CGCCATTG",
+    "strand": "watson",
+    "windowStart": 0,
+    "windowEnd": 8
+  },
+  "pointer": [
+    {
+      "reference": "MolecularSequence/graphic-example-3"
+    }
+  ],
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  }
+}

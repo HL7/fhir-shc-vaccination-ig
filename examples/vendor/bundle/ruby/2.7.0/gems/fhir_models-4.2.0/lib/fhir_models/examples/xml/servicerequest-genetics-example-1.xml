@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ServiceRequest xmlns="http://hl7.org/fhir">
+	<id value="og-example1"/>
+	<meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  <status value="active"/>
+	<intent value="original-order"/>
+	<code>
+		<coding>
+			<system value="http://loinc.org"/>
+			<code value="49874-1"/>
+		</coding>
+		<text value="ABCB4 gene mutation analysis"/>
+	</code>
+	<subject>
+		<reference value="Patient/example"/>
+	</subject>
+	<encounter>
+		<reference value="Encounter/example"/>
+	</encounter>
+	<occurrenceDateTime value="2014-05-12T16:16:00-07:00"/>
+	<requester>
+			<reference value="Practitioner/example"/>
+	</requester>
+	<performer>
+		<reference value="Practitioner/example"/>
+	</performer>
+</ServiceRequest>

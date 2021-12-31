@@ -1,0 +1,26 @@
+{
+  "resourceType": "EffectEvidenceSynthesis",
+  "id": "example",
+  "status": "draft",
+  "population": {
+    "reference": "EvidenceVariable/example"
+  },
+  "exposure": {
+    "reference": "EvidenceVariable/example"
+  },
+  "exposureAlternative": {
+    "reference": "EvidenceVariable/example"
+  },
+  "outcome": {
+    "reference": "EvidenceVariable/example"
+  },
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  }
+}

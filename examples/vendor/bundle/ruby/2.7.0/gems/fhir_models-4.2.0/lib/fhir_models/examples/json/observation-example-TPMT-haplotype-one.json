@@ -1,0 +1,57 @@
+{
+  "resourceType": "Observation",
+  "id": "example-TPMT-haplotype-one",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/observation-geneticsGene",
+      "valueCodeableConcept": {
+        "coding": [
+          {
+            "system": "http://www.genenames.org",
+            "code": "12014",
+            "display": "TPMT"
+          }
+        ]
+      }
+    }
+  ],
+  "status": "unknown",
+  "code": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "363779003",
+        "display": "Genotype determination"
+      }
+    ],
+    "text": "Haplotype Call"
+  },
+  "subject": {
+    "reference": "Patient/example",
+    "display": "E***********"
+  },
+  "issued": "2013-04-03T15:30:10+01:00",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://pharmakb.org",
+        "code": "PA166128347",
+        "display": "*1"
+      }
+    ]
+  },
+  "derivedFrom": [
+    {
+      "reference": "MolecularSequence/example-TPMT-one"
+    }
+  ],
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  }
+}

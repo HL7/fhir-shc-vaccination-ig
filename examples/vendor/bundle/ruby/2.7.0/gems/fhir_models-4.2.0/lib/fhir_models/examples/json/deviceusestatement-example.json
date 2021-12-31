@@ -1,0 +1,32 @@
+{
+  "resourceType": "DeviceUseStatement",
+  "id": "example",
+  "identifier": [
+    {
+      "system": "http:goodhealth.org/identifiers",
+      "value": "51ebb7a9-4e3a-4360-9a05-0cc2d869086f"
+    }
+  ],
+  "status": "active",
+  "subject": {
+    "reference": "Patient/example"
+  },
+  "device": {
+    "reference": "Device/example"
+  },
+  "reasonReference": [
+    {
+      "reference": "Condition/example",
+      "display": "Appendectomy (surgery)"
+    }
+  ],
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  }
+}

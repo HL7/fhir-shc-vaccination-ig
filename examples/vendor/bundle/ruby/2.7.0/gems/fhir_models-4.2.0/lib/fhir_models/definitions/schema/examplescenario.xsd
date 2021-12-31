@@ -1,0 +1,756 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  Copyright (c) 2011+, HL7, Inc.
+  All rights reserved.
+  
+  Redistribution and use in source and binary forms, with or without modification, 
+  are permitted provided that the following conditions are met:
+  
+   * Redistributions of source code must retain the above copyright notice, this 
+     list of conditions and the following disclaimer.
+   * Redistributions in binary form must reproduce the above copyright notice, 
+     this list of conditions and the following disclaimer in the documentation 
+     and/or other materials provided with the distribution.
+   * Neither the name of HL7 nor the names of its contributors may be used to 
+     endorse or promote products derived from this software without specific 
+     prior written permission.
+  
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
+  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
+  IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
+  INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
+  NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+  WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
+  POSSIBILITY OF SUCH DAMAGE.
+  
+
+  Generated on Fri, Nov 1, 2019 09:29+1100 for FHIR v4.0.1 
+
+  Note: the schemas &amp; schematrons do not contain all of the rules about what makes resources
+  valid. Implementers will still need to be familiar with the content of the specification and with
+  any profiles that apply to the resources in order to make a conformant implementation.
+
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="1.0">
+  <xs:include schemaLocation="fhir-base.xsd"/>
+  <xs:element name="ExampleScenario" type="ExampleScenario">
+    
+  </xs:element>
+  <xs:complexType name="ExampleScenario">
+    
+    <xs:complexContent>
+      <xs:extension base="DomainResource">
+        <xs:sequence>
+          <xs:element name="url" minOccurs="0" maxOccurs="1" type="uri">
+            
+          </xs:element>
+          <xs:element name="identifier" minOccurs="0" maxOccurs="unbounded" type="Identifier">
+            
+          </xs:element>
+          <xs:element name="version" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="name" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="status" minOccurs="1" maxOccurs="1" type="PublicationStatus">
+            
+          </xs:element>
+          <xs:element name="experimental" minOccurs="0" maxOccurs="1" type="boolean">
+            
+          </xs:element>
+          <xs:element name="date" minOccurs="0" maxOccurs="1" type="dateTime">
+            
+          </xs:element>
+          <xs:element name="publisher" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="contact" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
+            
+          </xs:element>
+          <xs:element name="useContext" minOccurs="0" maxOccurs="unbounded" type="UsageContext">
+            
+          </xs:element>
+          <xs:element name="jurisdiction" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+            
+          </xs:element>
+          <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
+            
+          </xs:element>
+          <xs:element name="purpose" minOccurs="0" maxOccurs="1" type="markdown">
+            
+          </xs:element>
+          <xs:element name="actor" type="ExampleScenario.Actor" minOccurs="0" maxOccurs="unbounded">
+            
+          </xs:element>
+          <xs:element name="instance" type="ExampleScenario.Instance" minOccurs="0" maxOccurs="unbounded">
+            
+          </xs:element>
+          <xs:element name="process" type="ExampleScenario.Process" minOccurs="0" maxOccurs="unbounded">
+            
+          </xs:element>
+          <xs:element name="workflow" minOccurs="0" maxOccurs="unbounded" type="canonical">
+            
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ExampleScenario.Actor">
+    
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="actorId" minOccurs="1" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="type" minOccurs="1" maxOccurs="1" type="ExampleScenarioActorType">
+            
+          </xs:element>
+          <xs:element name="name" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="description" minOccurs="0" maxOccurs="1" type="markdown">
+            
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ExampleScenario.Instance">
+    
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="resourceId" minOccurs="1" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="resourceType" minOccurs="1" maxOccurs="1" type="ResourceType">
+            
+          </xs:element>
+          <xs:element name="name" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="description" minOccurs="0" maxOccurs="1" type="markdown">
+            
+          </xs:element>
+          <xs:element name="version" type="ExampleScenario.Version" minOccurs="0" maxOccurs="unbounded">
+            
+          </xs:element>
+          <xs:element name="containedInstance" type="ExampleScenario.ContainedInstance" minOccurs="0" maxOccurs="unbounded">
+            
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ExampleScenario.Version">
+    
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="versionId" minOccurs="1" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="description" minOccurs="1" maxOccurs="1" type="markdown">
+            
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ExampleScenario.ContainedInstance">
+    
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="resourceId" minOccurs="1" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="versionId" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ExampleScenario.Process">
+    
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="title" minOccurs="1" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="description" minOccurs="0" maxOccurs="1" type="markdown">
+            
+          </xs:element>
+          <xs:element name="preConditions" minOccurs="0" maxOccurs="1" type="markdown">
+            
+          </xs:element>
+          <xs:element name="postConditions" minOccurs="0" maxOccurs="1" type="markdown">
+            
+          </xs:element>
+          <xs:element name="step" type="ExampleScenario.Step" minOccurs="0" maxOccurs="unbounded">
+            
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ExampleScenario.Step">
+    
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="process" type="ExampleScenario.Process" minOccurs="0" maxOccurs="unbounded">
+            
+          </xs:element>
+          <xs:element name="pause" minOccurs="0" maxOccurs="1" type="boolean">
+            
+          </xs:element>
+          <xs:element name="operation" type="ExampleScenario.Operation" minOccurs="0" maxOccurs="1">
+            
+          </xs:element>
+          <xs:element name="alternative" type="ExampleScenario.Alternative" minOccurs="0" maxOccurs="unbounded">
+            
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ExampleScenario.Operation">
+    
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="number" minOccurs="1" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="type" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="name" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="initiator" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="receiver" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="description" minOccurs="0" maxOccurs="1" type="markdown">
+            
+          </xs:element>
+          <xs:element name="initiatorActive" minOccurs="0" maxOccurs="1" type="boolean">
+            
+          </xs:element>
+          <xs:element name="receiverActive" minOccurs="0" maxOccurs="1" type="boolean">
+            
+          </xs:element>
+          <xs:element name="request" type="ExampleScenario.ContainedInstance" minOccurs="0" maxOccurs="1">
+            
+          </xs:element>
+          <xs:element name="response" type="ExampleScenario.ContainedInstance" minOccurs="0" maxOccurs="1">
+            
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ExampleScenario.Alternative">
+    
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="title" minOccurs="1" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="description" minOccurs="0" maxOccurs="1" type="markdown">
+            
+          </xs:element>
+          <xs:element name="step" type="ExampleScenario.Step" minOccurs="0" maxOccurs="unbounded">
+            
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="ExampleScenarioActorType-list">
+    <xs:restriction base="code-primitive">
+      <xs:enumeration value="person">
+        
+      </xs:enumeration>
+      <xs:enumeration value="entity">
+        
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ExampleScenarioActorType">
+    
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="ExampleScenarioActorType-list" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="ResourceType-list">
+    <xs:restriction base="code-primitive">
+      <xs:enumeration value="Account">
+        
+      </xs:enumeration>
+      <xs:enumeration value="ActivityDefinition">
+        
+      </xs:enumeration>
+      <xs:enumeration value="AdverseEvent">
+        
+      </xs:enumeration>
+      <xs:enumeration value="AllergyIntolerance">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Appointment">
+        
+      </xs:enumeration>
+      <xs:enumeration value="AppointmentResponse">
+        
+      </xs:enumeration>
+      <xs:enumeration value="AuditEvent">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Basic">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Binary">
+        
+      </xs:enumeration>
+      <xs:enumeration value="BiologicallyDerivedProduct">
+        
+      </xs:enumeration>
+      <xs:enumeration value="BodyStructure">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Bundle">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CapabilityStatement">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CarePlan">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CareTeam">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CatalogEntry">
+        
+      </xs:enumeration>
+      <xs:enumeration value="ChargeItem">
+        
+      </xs:enumeration>
+      <xs:enumeration value="ChargeItemDefinition">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Claim">
+        
+      </xs:enumeration>
+      <xs:enumeration value="ClaimResponse">
+        
+      </xs:enumeration>
+      <xs:enumeration value="ClinicalImpression">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CodeSystem">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Communication">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CommunicationRequest">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CompartmentDefinition">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Composition">
+        
+      </xs:enumeration>
+      <xs:enumeration value="ConceptMap">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Condition">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Consent">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Contract">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Coverage">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CoverageEligibilityRequest">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CoverageEligibilityResponse">
+        
+      </xs:enumeration>
+      <xs:enumeration value="DetectedIssue">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Device">
+        
+      </xs:enumeration>
+      <xs:enumeration value="DeviceDefinition">
+        
+      </xs:enumeration>
+      <xs:enumeration value="DeviceMetric">
+        
+      </xs:enumeration>
+      <xs:enumeration value="DeviceRequest">
+        
+      </xs:enumeration>
+      <xs:enumeration value="DeviceUseStatement">
+        
+      </xs:enumeration>
+      <xs:enumeration value="DiagnosticReport">
+        
+      </xs:enumeration>
+      <xs:enumeration value="DocumentManifest">
+        
+      </xs:enumeration>
+      <xs:enumeration value="DocumentReference">
+        
+      </xs:enumeration>
+      <xs:enumeration value="DomainResource">
+        
+      </xs:enumeration>
+      <xs:enumeration value="EffectEvidenceSynthesis">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Encounter">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Endpoint">
+        
+      </xs:enumeration>
+      <xs:enumeration value="EnrollmentRequest">
+        
+      </xs:enumeration>
+      <xs:enumeration value="EnrollmentResponse">
+        
+      </xs:enumeration>
+      <xs:enumeration value="EpisodeOfCare">
+        
+      </xs:enumeration>
+      <xs:enumeration value="EventDefinition">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Evidence">
+        
+      </xs:enumeration>
+      <xs:enumeration value="EvidenceVariable">
+        
+      </xs:enumeration>
+      <xs:enumeration value="ExampleScenario">
+        
+      </xs:enumeration>
+      <xs:enumeration value="ExplanationOfBenefit">
+        
+      </xs:enumeration>
+      <xs:enumeration value="FamilyMemberHistory">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Flag">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Goal">
+        
+      </xs:enumeration>
+      <xs:enumeration value="GraphDefinition">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Group">
+        
+      </xs:enumeration>
+      <xs:enumeration value="GuidanceResponse">
+        
+      </xs:enumeration>
+      <xs:enumeration value="HealthcareService">
+        
+      </xs:enumeration>
+      <xs:enumeration value="ImagingStudy">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Immunization">
+        
+      </xs:enumeration>
+      <xs:enumeration value="ImmunizationEvaluation">
+        
+      </xs:enumeration>
+      <xs:enumeration value="ImmunizationRecommendation">
+        
+      </xs:enumeration>
+      <xs:enumeration value="ImplementationGuide">
+        
+      </xs:enumeration>
+      <xs:enumeration value="InsurancePlan">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Invoice">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Library">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Linkage">
+        
+      </xs:enumeration>
+      <xs:enumeration value="List">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Location">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Measure">
+        
+      </xs:enumeration>
+      <xs:enumeration value="MeasureReport">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Media">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Medication">
+        
+      </xs:enumeration>
+      <xs:enumeration value="MedicationAdministration">
+        
+      </xs:enumeration>
+      <xs:enumeration value="MedicationDispense">
+        
+      </xs:enumeration>
+      <xs:enumeration value="MedicationKnowledge">
+        
+      </xs:enumeration>
+      <xs:enumeration value="MedicationRequest">
+        
+      </xs:enumeration>
+      <xs:enumeration value="MedicationStatement">
+        
+      </xs:enumeration>
+      <xs:enumeration value="MedicinalProduct">
+        
+      </xs:enumeration>
+      <xs:enumeration value="MedicinalProductAuthorization">
+        
+      </xs:enumeration>
+      <xs:enumeration value="MedicinalProductContraindication">
+        
+      </xs:enumeration>
+      <xs:enumeration value="MedicinalProductIndication">
+        
+      </xs:enumeration>
+      <xs:enumeration value="MedicinalProductIngredient">
+        
+      </xs:enumeration>
+      <xs:enumeration value="MedicinalProductInteraction">
+        
+      </xs:enumeration>
+      <xs:enumeration value="MedicinalProductManufactured">
+        
+      </xs:enumeration>
+      <xs:enumeration value="MedicinalProductPackaged">
+        
+      </xs:enumeration>
+      <xs:enumeration value="MedicinalProductPharmaceutical">
+        
+      </xs:enumeration>
+      <xs:enumeration value="MedicinalProductUndesirableEffect">
+        
+      </xs:enumeration>
+      <xs:enumeration value="MessageDefinition">
+        
+      </xs:enumeration>
+      <xs:enumeration value="MessageHeader">
+        
+      </xs:enumeration>
+      <xs:enumeration value="MolecularSequence">
+        
+      </xs:enumeration>
+      <xs:enumeration value="NamingSystem">
+        
+      </xs:enumeration>
+      <xs:enumeration value="NutritionOrder">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Observation">
+        
+      </xs:enumeration>
+      <xs:enumeration value="ObservationDefinition">
+        
+      </xs:enumeration>
+      <xs:enumeration value="OperationDefinition">
+        
+      </xs:enumeration>
+      <xs:enumeration value="OperationOutcome">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Organization">
+        
+      </xs:enumeration>
+      <xs:enumeration value="OrganizationAffiliation">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Parameters">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Patient">
+        
+      </xs:enumeration>
+      <xs:enumeration value="PaymentNotice">
+        
+      </xs:enumeration>
+      <xs:enumeration value="PaymentReconciliation">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Person">
+        
+      </xs:enumeration>
+      <xs:enumeration value="PlanDefinition">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Practitioner">
+        
+      </xs:enumeration>
+      <xs:enumeration value="PractitionerRole">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Procedure">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Provenance">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Questionnaire">
+        
+      </xs:enumeration>
+      <xs:enumeration value="QuestionnaireResponse">
+        
+      </xs:enumeration>
+      <xs:enumeration value="RelatedPerson">
+        
+      </xs:enumeration>
+      <xs:enumeration value="RequestGroup">
+        
+      </xs:enumeration>
+      <xs:enumeration value="ResearchDefinition">
+        
+      </xs:enumeration>
+      <xs:enumeration value="ResearchElementDefinition">
+        
+      </xs:enumeration>
+      <xs:enumeration value="ResearchStudy">
+        
+      </xs:enumeration>
+      <xs:enumeration value="ResearchSubject">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Resource">
+        
+      </xs:enumeration>
+      <xs:enumeration value="RiskAssessment">
+        
+      </xs:enumeration>
+      <xs:enumeration value="RiskEvidenceSynthesis">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Schedule">
+        
+      </xs:enumeration>
+      <xs:enumeration value="SearchParameter">
+        
+      </xs:enumeration>
+      <xs:enumeration value="ServiceRequest">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Slot">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Specimen">
+        
+      </xs:enumeration>
+      <xs:enumeration value="SpecimenDefinition">
+        
+      </xs:enumeration>
+      <xs:enumeration value="StructureDefinition">
+        
+      </xs:enumeration>
+      <xs:enumeration value="StructureMap">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Subscription">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Substance">
+        
+      </xs:enumeration>
+      <xs:enumeration value="SubstanceNucleicAcid">
+        
+      </xs:enumeration>
+      <xs:enumeration value="SubstancePolymer">
+        
+      </xs:enumeration>
+      <xs:enumeration value="SubstanceProtein">
+        
+      </xs:enumeration>
+      <xs:enumeration value="SubstanceReferenceInformation">
+        
+      </xs:enumeration>
+      <xs:enumeration value="SubstanceSourceMaterial">
+        
+      </xs:enumeration>
+      <xs:enumeration value="SubstanceSpecification">
+        
+      </xs:enumeration>
+      <xs:enumeration value="SupplyDelivery">
+        
+      </xs:enumeration>
+      <xs:enumeration value="SupplyRequest">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Task">
+        
+      </xs:enumeration>
+      <xs:enumeration value="TerminologyCapabilities">
+        
+      </xs:enumeration>
+      <xs:enumeration value="TestReport">
+        
+      </xs:enumeration>
+      <xs:enumeration value="TestScript">
+        
+      </xs:enumeration>
+      <xs:enumeration value="ValueSet">
+        
+      </xs:enumeration>
+      <xs:enumeration value="VerificationResult">
+        
+      </xs:enumeration>
+      <xs:enumeration value="VisionPrescription">
+        
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ResourceType">
+    
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="ResourceType-list" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

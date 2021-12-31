@@ -1,0 +1,23 @@
+{
+  "resourceType": "Organization",
+  "id": "3",
+  "identifier": [
+    {
+      "system": "http://michigan.gov/state-dept-ids",
+      "value": "25"
+    }
+  ],
+  "name": "Michigan Health",
+  "alias": [
+    "Michigan State Department of Health"
+  ],
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  }
+}

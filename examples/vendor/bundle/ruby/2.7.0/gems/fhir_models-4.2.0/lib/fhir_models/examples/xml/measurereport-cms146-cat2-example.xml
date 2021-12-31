@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MeasureReport xmlns="http://hl7.org/fhir">
+  <id value="measurereport-cms146-cat2-example"/>
+  <meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  
+  <!-- code>
+    <coding>
+      <system value="http://loinc.org" />
+      <code value="55184-6" />
+    </coding>
+  </code -->
+  <contained>
+    <Organization>
+      <id value="reporter"/>
+      <name value="Good Health Hospital"/>
+    </Organization>
+  </contained>
+  <identifier>
+    <value value="measurereport-cms146-cat2-example-2017-03-13"/>
+  </identifier>
+  <status value="complete"/>
+  <type value="subject-list"/>
+  <measure value="Measure/CMS146"/>
+  <date value="2014-04-01"/>
+  <reporter>
+    <reference value="#reporter"/>
+  </reporter>
+  <period>
+      <start value="2014-01-01"/>
+      <end value="2014-03-31"/>
+  </period>
+  <group id="CMS146-group-1">
+    <population>
+      <code><coding><code value="initial-population"/></coding></code>
+      <count value="500"/>
+      <!--  The list references a patient-level MeasureReport for each member of the population  -->
+      <subjectResults>
+        <reference value="List/CMS146-initial-population"/>
+      </subjectResults>
+    </population>
+    <population>
+      <code><coding><code value="numerator"/></coding></code>
+      <count value="200"/>
+      <subjectResults>
+        <reference value="List/CMS146-numerator"/>
+      </subjectResults>
+    </population>
+    <population>
+      <code><coding><code value="denominator"/></coding></code>
+      <count value="500"/>
+      <subjectResults>
+        <reference value="List/CMS146-denominator"/>
+      </subjectResults>
+    </population>
+    <population>
+      <code><coding><code value="denominator-exclusion"/></coding></code>
+      <count value="100"/>
+      <subjectResults>
+        <reference value="List/CMS146-denominator-exclusions"/>
+      </subjectResults>
+    </population>
+    <stratifier>
+      <code><text value="stratifier-ages-up-to-9"/></code>
+      <stratum>
+        <value><text value="true"/></value>
+        <population>
+          <code><coding><code value="initial-population"/></coding></code>
+          <count value="250"/>
+          <subjectResults>
+            <reference value="List/CMS146-stratifier-ages-up-to-9-true-initial-population"/>
+          </subjectResults>
+        </population>
+        <population>
+          <code><coding><code value="numerator"/></coding></code>
+          <count value="100"/>
+          <subjectResults>
+            <reference value="List/CMS146-stratifier-ages-up-to-9-true-numerator"/>
+          </subjectResults>
+        </population>
+        <population>
+          <code><coding><code value="denominator"/></coding></code>
+          <count value="250"/>
+          <subjectResults>
+            <reference value="List/CMS146-stratifier-ages-up-to-9-true-denominator"/>
+          </subjectResults>
+        </population>
+        <population>
+          <code><coding><code value="denominator-exclusion"/></coding></code>
+          <count value="50"/>
+          <subjectResults>
+            <reference value="List/CMS146-stratifier-ages-up-to-9-true-denominator-exclusions"/>
+          </subjectResults>
+        </population>
+      </stratum>
+      <stratum>
+        <value><text value="false"/></value>
+        <population>
+          <code><coding><code value="initial-population"/></coding></code>
+          <count value="250"/>
+          <subjectResults>
+            <reference value="List/CMS146-stratifier-ages-up-to-9-false-initial-population"/>
+          </subjectResults>
+        </population>
+        <population>
+          <code><coding><code value="numerator"/></coding></code>
+          <count value="100"/>
+          <subjectResults>
+            <reference value="List/CMS146-stratifier-ages-up-to-9-false-numerator"/>
+          </subjectResults>
+        </population>
+        <population>
+          <code><coding><code value="denominator"/></coding></code>
+          <count value="250"/>
+          <subjectResults>
+            <reference value="List/CMS146-stratifier-ages-up-to-9-false-denominator"/>
+          </subjectResults>
+        </population>
+        <population>
+          <code><coding><code value="denominator-exclusion"/></coding></code>
+          <count value="50"/>
+          <subjectResults>
+            <reference value="List/CMS146-stratifier-ages-up-to-9-false-denominator-exclusions"/>
+          </subjectResults>
+        </population>
+      </stratum>
+    </stratifier>
+    <stratifier>
+      <code><text value="stratifier-ages-10-plus"/></code>
+      <stratum>
+        <value><text value="true"/></value>
+        <population>
+          <code><coding><code value="initial-population"/></coding></code>
+          <count value="250"/>
+          <subjectResults>
+            <reference value="List/CMS146-stratifier-ages-10-plus-true-initial-population"/>
+          </subjectResults>
+        </population>
+        <population>
+          <code><coding><code value="numerator"/></coding></code>
+          <count value="100"/>
+          <subjectResults>
+            <reference value="List/CMS146-stratifier-ages-10-plus-true-numerator"/>
+          </subjectResults>
+        </population>
+        <population>
+          <code><coding><code value="denominator"/></coding></code>
+          <count value="250"/>
+          <subjectResults>
+            <reference value="List/CMS146-stratifier-ages-10-plus-true-denominator"/>
+          </subjectResults>
+        </population>
+        <population>
+          <code><coding><code value="denominator-exclusion"/></coding></code>
+          <count value="50"/>
+          <subjectResults>
+            <reference value="List/CMS146-stratifier-ages-10-plus-true-denominator-exclusions"/>
+          </subjectResults>
+        </population>
+      </stratum>
+      <stratum>
+        <value><text value="false"/></value>
+        <population>
+          <code><coding><code value="initial-population"/></coding></code>
+          <count value="250"/>
+          <subjectResults>
+            <reference value="List/CMS146-stratifier-ages-10-plus-false-initial-population"/>
+          </subjectResults>
+        </population>
+        <population>
+          <code><coding><code value="numerator"/></coding></code>
+          <count value="100"/>
+          <subjectResults>
+            <reference value="List/CMS146-stratifier-ages-10-plus-false-numerator"/>
+          </subjectResults>
+        </population>
+        <population>
+          <code><coding><code value="denominator"/></coding></code>
+          <count value="250"/>
+          <subjectResults>
+            <reference value="List/CMS146-stratifier-ages-10-plus-false-denominator"/>
+          </subjectResults>
+        </population>
+        <population>
+          <code><coding><code value="denominator-exclusion"/></coding></code>
+          <count value="50"/>
+          <subjectResults>
+            <reference value="List/CMS146-stratifier-ages-10-plus-false-denominator-exclusions"/>
+          </subjectResults>
+        </population>
+      </stratum>
+    </stratifier>
+    <stratifier>
+      <code><text value="stratifier-gender"/></code>
+      <stratum>
+        <value><text value="male"/></value>
+        <population>
+          <code><coding><code value="initial-population"/></coding></code>
+          <count value="250"/>
+          <subjectResults>
+            <reference value="List/CMS146-stratifier-gender-male-initial-population"/>
+          </subjectResults>
+        </population>
+        <population>
+          <code><coding><code value="numerator"/></coding></code>
+          <count value="100"/>
+          <subjectResults>
+            <reference value="List/CMS146-stratifier-gender-male-numerator"/>
+          </subjectResults>
+        </population>
+        <population>
+          <code><coding><code value="denominator"/></coding></code>
+          <count value="250"/>
+          <subjectResults>
+            <reference value="List/CMS146-stratifier-gender-male-denominator"/>
+          </subjectResults>
+        </population>
+        <population>
+          <code><coding><code value="denominator-exclusion"/></coding></code>
+          <count value="50"/>
+          <subjectResults>
+            <reference value="List/CMS146-stratifier-gender-male-denominator-exclusions"/>
+          </subjectResults>
+        </population>
+      </stratum>
+      <stratum>
+        <value><text value="female"/></value>
+        <population>
+          <code><coding><code value="initial-population"/></coding></code>
+          <count value="250"/>
+          <subjectResults>
+            <reference value="List/CMS146-stratifier-gender-female-initial-population"/>
+          </subjectResults>
+        </population>
+        <population>
+          <code><coding><code value="numerator"/></coding></code>
+          <count value="100"/>
+          <subjectResults>
+            <reference value="List/CMS146-stratifier-gender-female-numerator"/>
+          </subjectResults>
+        </population>
+        <population>
+          <code><coding><code value="denominator"/></coding></code>
+          <count value="250"/>
+          <subjectResults>
+            <reference value="List/CMS146-stratifier-gender-female-denominator"/>
+          </subjectResults>
+        </population>
+        <population>
+          <code><coding><code value="denominator-exclusion"/></coding></code>
+          <count value="50"/>
+          <subjectResults>
+            <reference value="List/CMS146-stratifier-gender-female-denominator-exclusions"/>
+          </subjectResults>
+        </population>
+      </stratum>
+      <stratum>
+        <value><text value="other"/></value>
+        <population>
+          <code><coding><code value="initial-population"/></coding></code>
+          <count value="0"/>
+          <subjectResults>
+            <reference value="List/CMS146-stratifier-gender-other-initial-population"/>
+          </subjectResults>
+        </population>
+        <population>
+          <code><coding><code value="numerator"/></coding></code>
+          <count value="0"/>
+          <subjectResults>
+            <reference value="List/CMS146-stratifier-gender-other-numerator"/>
+          </subjectResults>
+        </population>
+        <population>
+          <code><coding><code value="denominator"/></coding></code>
+          <count value="0"/>
+          <subjectResults>
+            <reference value="List/CMS146-stratifier-gender-other-denominator"/>
+          </subjectResults>
+        </population>
+        <population>
+          <code><coding><code value="denominator-exclusion"/></coding></code>
+          <count value="0"/>
+          <subjectResults>
+            <reference value="List/CMS146-stratifier-gender-other-denominator-exclusions"/>
+          </subjectResults>
+        </population>
+      </stratum>
+      <stratum>
+        <value><text value="unknown"/></value>
+        <population>
+          <code><coding><code value="initial-population"/></coding></code>
+          <count value="0"/>
+          <subjectResults>
+            <reference value="List/CMS146-stratifier-gender-unknown-initial-population"/>
+          </subjectResults>
+        </population>
+        <population>
+          <code><coding><code value="numerator"/></coding></code>
+          <count value="0"/>
+          <subjectResults>
+            <reference value="List/CMS146-stratifier-gender-unknown-numerator"/>
+          </subjectResults>
+        </population>
+        <population>
+          <code><coding><code value="denominator"/></coding></code>
+          <count value="0"/>
+          <subjectResults>
+            <reference value="List/CMS146-stratifier-gender-unknown-denominator"/>
+          </subjectResults>
+        </population>
+        <population>
+          <code><coding><code value="denominator-exclusions"/></coding></code>
+          <count value="0"/>
+          <subjectResults>
+            <reference value="List/CMS146-stratifier-gender-unknown-denominator-exclusions"/>
+          </subjectResults>
+        </population>
+      </stratum>
+    </stratifier>
+  </group>
+</MeasureReport>

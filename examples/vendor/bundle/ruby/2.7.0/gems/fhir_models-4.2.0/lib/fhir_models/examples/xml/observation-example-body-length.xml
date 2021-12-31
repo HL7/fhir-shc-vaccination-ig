@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Observation xmlns="http://hl7.org/fhir">
+	<id value="body-length"/>
+	<meta>
+		<profile value="http://hl7.org/fhir/StructureDefinition/vitalsigns"/>
+	
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+	<status value="final"/>
+	<category>
+		<coding>
+			<system value="http://terminology.hl7.org/CodeSystem/observation-category"/>
+			<code value="vital-signs"/>
+			<display value="Vital Signs"/>
+		</coding>
+		<text value="Vital Signs"/>
+	</category>
+	<!--    This example demonstrates the use of a code translation to allow the observation to be interpreted as Body Length  ( typically used for infants)    -->
+	<code>
+		<coding>
+			<system value="http://loinc.org"/>
+			<code value="8302-2"/>
+			<display value="Body height"/>
+		</coding>
+		<coding>
+			<system value="http://loinc.org"/>
+			<code value="8306-3"/>
+			<display value="Body height --lying"/>
+			<userSelected value="true"/>
+		</coding>
+		<text value="Body Length"/>
+	</code>
+	<subject>
+		<reference value="Patient/example"/>
+	</subject>
+	<effectiveDateTime value="1999-07-02"/>
+	<valueQuantity>
+		<value value="25"/>
+		<unit value="cm"/>
+		<system value="http://unitsofmeasure.org"/>
+		<code value="cm"/>
+	</valueQuantity>
+</Observation>

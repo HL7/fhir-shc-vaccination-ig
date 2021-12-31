@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Media xmlns="http://hl7.org/fhir">
+  <id value="sound"/>
+
+  <meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  
+
+<status value="completed"/>
+
+
+
+  <subject>
+    <reference value="Patient/xcda"/>
+  </subject>
+  <operator>
+    <reference value="Practitioner/xcda-author"/>
+  </operator>
+
+  <duration value="65"/>
+
+  <content id="a1">
+    <contentType value="audio/mpeg"/>
+    <!--  too big too include the whole  -->
+    <data value="dG9vIGJpZyB0b28gaW5jbHVkZSB0aGUgd2hvbGU="/>
+  </content>
+</Media>

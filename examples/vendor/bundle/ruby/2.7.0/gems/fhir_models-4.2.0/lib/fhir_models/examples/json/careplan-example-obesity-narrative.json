@@ -1,0 +1,19 @@
+{
+  "resourceType": "CarePlan",
+  "id": "obesity-narrative",
+  "status": "active",
+  "intent": "plan",
+  "subject": {
+    "reference": "Patient/example",
+    "display": "Peter James Chalmers"
+  },
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  }
+}

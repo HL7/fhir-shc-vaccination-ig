@@ -1,0 +1,25 @@
+{
+  "resourceType": "OperationOutcome",
+  "id": "searchfail",
+  "issue": [
+    {
+      "severity": "fatal",
+      "code": "code-invalid",
+      "details": {
+        "text": "The \"name\" parameter has the modifier \"exact\" which is not supported by this server"
+      },
+      "location": [
+        "http.name:exact"
+      ]
+    }
+  ],
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  }
+}

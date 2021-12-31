@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SupplyRequest xmlns="http://hl7.org/fhir">
+  <id value="simpleorder"/>
+  <meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  <identifier>
+    <value value="Order10284"/>
+  </identifier>
+  <status value="active"/>
+  <category>
+    <coding>
+      <code value="central"/>
+      <display value="Central Stock Resupply"/>
+    </coding>
+  </category>
+  <priority value="asap"/>
+  <itemCodeableConcept>
+    <coding>
+      <code value="BlueTubes"/>
+      <display value="Blood collect tubes blue cap"/>
+    </coding>
+  </itemCodeableConcept>
+	<quantity>
+		<value value="10"/>
+	</quantity>
+  <occurrenceDateTime value="2016-12-31"/>
+  <authoredOn value="2016-12-31"/>
+  <requester>
+    <display value="Henry Seven"/>
+  </requester>
+  <supplier>
+    <display value="Vendor1"/>
+  </supplier>
+  <reasonCode>
+    <coding>
+      <code value="stock_low"/>
+      <display value="Refill due to low stock"/>
+    </coding>
+  </reasonCode>
+  <deliverFrom>
+    <display value="Location 1"/>
+  </deliverFrom>
+  <deliverTo>
+    <display value="GoodHealth Clinic Receiving"/>
+  </deliverTo>
+</SupplyRequest>

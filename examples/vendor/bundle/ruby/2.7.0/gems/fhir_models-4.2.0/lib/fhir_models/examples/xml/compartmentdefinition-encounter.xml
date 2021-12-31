@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CompartmentDefinition xmlns="http://hl7.org/fhir">
+  <id value="encounter"/>
+  
+  <url value="http://hl7.org/fhir/CompartmentDefinition/encounter"/>
+  <version value="4.0.1"/>
+  <name value="Base FHIR compartment definition for Encounter"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <date value="2019-11-01T09:29:23+11:00"/>
+  <publisher value="FHIR Project Team"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://hl7.org/fhir"/>
+    </telecom>
+  </contact>
+  <description value="There is an instance of the encounter compartment for each encounter resource, and the identity of the compartment is the same as the encounter. The set of resources associated with a particular encounter"/>
+  <code value="Encounter"/>
+  <search value="true"/>
+  <resource>
+    <code value="Account"/>
+  </resource>
+  <resource>
+    <code value="ActivityDefinition"/>
+  </resource>
+  <resource>
+    <code value="AdverseEvent"/>
+  </resource>
+  <resource>
+    <code value="AllergyIntolerance"/>
+  </resource>
+  <resource>
+    <code value="Appointment"/>
+  </resource>
+  <resource>
+    <code value="AppointmentResponse"/>
+  </resource>
+  <resource>
+    <code value="AuditEvent"/>
+  </resource>
+  <resource>
+    <code value="Basic"/>
+  </resource>
+  <resource>
+    <code value="Binary"/>
+  </resource>
+  <resource>
+    <code value="BiologicallyDerivedProduct"/>
+  </resource>
+  <resource>
+    <code value="BodyStructure"/>
+  </resource>
+  <resource>
+    <code value="Bundle"/>
+  </resource>
+  <resource>
+    <code value="CapabilityStatement"/>
+  </resource>
+  <resource>
+    <code value="CarePlan"/>
+    <param value="encounter"/>
+  </resource>
+  <resource>
+    <code value="CareTeam"/>
+    <param value="encounter"/>
+  </resource>
+  <resource>
+    <code value="CatalogEntry"/>
+  </resource>
+  <resource>
+    <code value="ChargeItem"/>
+    <param value="context"/>
+  </resource>
+  <resource>
+    <code value="ChargeItemDefinition"/>
+  </resource>
+  <resource>
+    <code value="Claim"/>
+    <param value="encounter"/>
+  </resource>
+  <resource>
+    <code value="ClaimResponse"/>
+  </resource>
+  <resource>
+    <code value="ClinicalImpression"/>
+    <param value="encounter"/>
+  </resource>
+  <resource>
+    <code value="CodeSystem"/>
+  </resource>
+  <resource>
+    <code value="Communication"/>
+    <param value="encounter"/>
+  </resource>
+  <resource>
+    <code value="CommunicationRequest"/>
+    <param value="encounter"/>
+  </resource>
+  <resource>
+    <code value="CompartmentDefinition"/>
+  </resource>
+  <resource>
+    <code value="Composition"/>
+    <param value="encounter"/>
+  </resource>
+  <resource>
+    <code value="ConceptMap"/>
+  </resource>
+  <resource>
+    <code value="Condition"/>
+    <param value="encounter"/>
+  </resource>
+  <resource>
+    <code value="Consent"/>
+  </resource>
+  <resource>
+    <code value="Contract"/>
+  </resource>
+  <resource>
+    <code value="Coverage"/>
+  </resource>
+  <resource>
+    <code value="CoverageEligibilityRequest"/>
+  </resource>
+  <resource>
+    <code value="CoverageEligibilityResponse"/>
+  </resource>
+  <resource>
+    <code value="DetectedIssue"/>
+  </resource>
+  <resource>
+    <code value="Device"/>
+  </resource>
+  <resource>
+    <code value="DeviceDefinition"/>
+  </resource>
+  <resource>
+    <code value="DeviceMetric"/>
+  </resource>
+  <resource>
+    <code value="DeviceRequest"/>
+    <param value="encounter"/>
+  </resource>
+  <resource>
+    <code value="DeviceUseStatement"/>
+  </resource>
+  <resource>
+    <code value="DiagnosticReport"/>
+    <param value="encounter"/>
+  </resource>
+  <resource>
+    <code value="DocumentManifest"/>
+    <param value="related-ref"/>
+  </resource>
+  <resource>
+    <code value="DocumentReference"/>
+    <param value="encounter"/>
+  </resource>
+  <resource>
+    <code value="EffectEvidenceSynthesis"/>
+  </resource>
+  <resource>
+    <code value="Encounter"/>
+    <param value="{def}"/>
+  </resource>
+  <resource>
+    <code value="Endpoint"/>
+  </resource>
+  <resource>
+    <code value="EnrollmentRequest"/>
+  </resource>
+  <resource>
+    <code value="EnrollmentResponse"/>
+  </resource>
+  <resource>
+    <code value="EpisodeOfCare"/>
+  </resource>
+  <resource>
+    <code value="EventDefinition"/>
+  </resource>
+  <resource>
+    <code value="Evidence"/>
+  </resource>
+  <resource>
+    <code value="EvidenceVariable"/>
+  </resource>
+  <resource>
+    <code value="ExampleScenario"/>
+  </resource>
+  <resource>
+    <code value="ExplanationOfBenefit"/>
+    <param value="encounter"/>
+  </resource>
+  <resource>
+    <code value="FamilyMemberHistory"/>
+  </resource>
+  <resource>
+    <code value="Flag"/>
+  </resource>
+  <resource>
+    <code value="Goal"/>
+  </resource>
+  <resource>
+    <code value="GraphDefinition"/>
+  </resource>
+  <resource>
+    <code value="Group"/>
+  </resource>
+  <resource>
+    <code value="GuidanceResponse"/>
+  </resource>
+  <resource>
+    <code value="HealthcareService"/>
+  </resource>
+  <resource>
+    <code value="ImagingStudy"/>
+  </resource>
+  <resource>
+    <code value="Immunization"/>
+  </resource>
+  <resource>
+    <code value="ImmunizationEvaluation"/>
+  </resource>
+  <resource>
+    <code value="ImmunizationRecommendation"/>
+  </resource>
+  <resource>
+    <code value="ImplementationGuide"/>
+  </resource>
+  <resource>
+    <code value="InsurancePlan"/>
+  </resource>
+  <resource>
+    <code value="Invoice"/>
+  </resource>
+  <resource>
+    <code value="Library"/>
+  </resource>
+  <resource>
+    <code value="Linkage"/>
+  </resource>
+  <resource>
+    <code value="List"/>
+  </resource>
+  <resource>
+    <code value="Location"/>
+  </resource>
+  <resource>
+    <code value="Measure"/>
+  </resource>
+  <resource>
+    <code value="MeasureReport"/>
+  </resource>
+  <resource>
+    <code value="Media"/>
+    <param value="encounter"/>
+  </resource>
+  <resource>
+    <code value="Medication"/>
+  </resource>
+  <resource>
+    <code value="MedicationAdministration"/>
+    <param value="context"/>
+  </resource>
+  <resource>
+    <code value="MedicationDispense"/>
+  </resource>
+  <resource>
+    <code value="MedicationKnowledge"/>
+  </resource>
+  <resource>
+    <code value="MedicationRequest"/>
+    <param value="encounter"/>
+  </resource>
+  <resource>
+    <code value="MedicationStatement"/>
+  </resource>
+  <resource>
+    <code value="MedicinalProduct"/>
+  </resource>
+  <resource>
+    <code value="MedicinalProductAuthorization"/>
+  </resource>
+  <resource>
+    <code value="MedicinalProductContraindication"/>
+  </resource>
+  <resource>
+    <code value="MedicinalProductIndication"/>
+  </resource>
+  <resource>
+    <code value="MedicinalProductIngredient"/>
+  </resource>
+  <resource>
+    <code value="MedicinalProductInteraction"/>
+  </resource>
+  <resource>
+    <code value="MedicinalProductManufactured"/>
+  </resource>
+  <resource>
+    <code value="MedicinalProductPackaged"/>
+  </resource>
+  <resource>
+    <code value="MedicinalProductPharmaceutical"/>
+  </resource>
+  <resource>
+    <code value="MedicinalProductUndesirableEffect"/>
+  </resource>
+  <resource>
+    <code value="MessageDefinition"/>
+  </resource>
+  <resource>
+    <code value="MessageHeader"/>
+  </resource>
+  <resource>
+    <code value="MolecularSequence"/>
+  </resource>
+  <resource>
+    <code value="NamingSystem"/>
+  </resource>
+  <resource>
+    <code value="NutritionOrder"/>
+    <param value="encounter"/>
+  </resource>
+  <resource>
+    <code value="Observation"/>
+    <param value="encounter"/>
+  </resource>
+  <resource>
+    <code value="ObservationDefinition"/>
+  </resource>
+  <resource>
+    <code value="OperationDefinition"/>
+  </resource>
+  <resource>
+    <code value="OperationOutcome"/>
+  </resource>
+  <resource>
+    <code value="Organization"/>
+  </resource>
+  <resource>
+    <code value="OrganizationAffiliation"/>
+  </resource>
+  <resource>
+    <code value="Patient"/>
+  </resource>
+  <resource>
+    <code value="PaymentNotice"/>
+  </resource>
+  <resource>
+    <code value="PaymentReconciliation"/>
+  </resource>
+  <resource>
+    <code value="Person"/>
+  </resource>
+  <resource>
+    <code value="PlanDefinition"/>
+  </resource>
+  <resource>
+    <code value="Practitioner"/>
+  </resource>
+  <resource>
+    <code value="PractitionerRole"/>
+  </resource>
+  <resource>
+    <code value="Procedure"/>
+    <param value="encounter"/>
+  </resource>
+  <resource>
+    <code value="Provenance"/>
+  </resource>
+  <resource>
+    <code value="Questionnaire"/>
+  </resource>
+  <resource>
+    <code value="QuestionnaireResponse"/>
+    <param value="encounter"/>
+  </resource>
+  <resource>
+    <code value="RelatedPerson"/>
+  </resource>
+  <resource>
+    <code value="RequestGroup"/>
+    <param value="encounter"/>
+  </resource>
+  <resource>
+    <code value="ResearchDefinition"/>
+  </resource>
+  <resource>
+    <code value="ResearchElementDefinition"/>
+  </resource>
+  <resource>
+    <code value="ResearchStudy"/>
+  </resource>
+  <resource>
+    <code value="ResearchSubject"/>
+  </resource>
+  <resource>
+    <code value="RiskAssessment"/>
+  </resource>
+  <resource>
+    <code value="RiskEvidenceSynthesis"/>
+  </resource>
+  <resource>
+    <code value="Schedule"/>
+  </resource>
+  <resource>
+    <code value="SearchParameter"/>
+  </resource>
+  <resource>
+    <code value="ServiceRequest"/>
+    <param value="encounter"/>
+  </resource>
+  <resource>
+    <code value="Slot"/>
+  </resource>
+  <resource>
+    <code value="Specimen"/>
+  </resource>
+  <resource>
+    <code value="SpecimenDefinition"/>
+  </resource>
+  <resource>
+    <code value="StructureDefinition"/>
+  </resource>
+  <resource>
+    <code value="StructureMap"/>
+  </resource>
+  <resource>
+    <code value="Subscription"/>
+  </resource>
+  <resource>
+    <code value="Substance"/>
+  </resource>
+  <resource>
+    <code value="SubstanceNucleicAcid"/>
+  </resource>
+  <resource>
+    <code value="SubstancePolymer"/>
+  </resource>
+  <resource>
+    <code value="SubstanceProtein"/>
+  </resource>
+  <resource>
+    <code value="SubstanceReferenceInformation"/>
+  </resource>
+  <resource>
+    <code value="SubstanceSourceMaterial"/>
+  </resource>
+  <resource>
+    <code value="SubstanceSpecification"/>
+  </resource>
+  <resource>
+    <code value="SupplyDelivery"/>
+  </resource>
+  <resource>
+    <code value="SupplyRequest"/>
+  </resource>
+  <resource>
+    <code value="Task"/>
+  </resource>
+  <resource>
+    <code value="TerminologyCapabilities"/>
+  </resource>
+  <resource>
+    <code value="TestReport"/>
+  </resource>
+  <resource>
+    <code value="TestScript"/>
+  </resource>
+  <resource>
+    <code value="ValueSet"/>
+  </resource>
+  <resource>
+    <code value="VerificationResult"/>
+  </resource>
+  <resource>
+    <code value="VisionPrescription"/>
+    <param value="encounter"/>
+  </resource>
+</CompartmentDefinition>

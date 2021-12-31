@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MedicinalProductPharmaceutical xmlns="http://hl7.org/fhir">
+  <id value="example"/>
+  <meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  <identifier>
+    <system value="http://ema.europa.eu/example/phpididentifiersets"/>
+    <value value="{PhPID}"/>
+  </identifier>
+  <administrableDoseForm>
+    <coding>
+      <system value="http://ema.europa.eu/example/administrabledoseform"/>
+      <code value="Film-coatedtablet"/>
+    </coding>
+  </administrableDoseForm>
+  <unitOfPresentation>
+    <coding>
+      <system value="http://ema.europa.eu/example/unitofpresentation"/>
+      <code value="Tablet"/>
+    </coding>
+  </unitOfPresentation>
+  <ingredient>
+    <reference value="MedicinalProductIngredient/example"/>
+  </ingredient>
+  <routeOfAdministration>
+     <code>
+       <coding>
+         <system value="http://ema.europa.eu/example/routeofadministration"/>
+         <code value="OralUse"/>
+       </coding>
+     </code>
+  </routeOfAdministration>
+</MedicinalProductPharmaceutical>

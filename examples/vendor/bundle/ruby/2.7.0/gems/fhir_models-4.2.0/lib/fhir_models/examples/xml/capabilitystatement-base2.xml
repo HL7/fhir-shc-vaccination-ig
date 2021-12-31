@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CapabilityStatement xmlns="http://hl7.org/fhir">
+  <id value="base2"/>
+  
+  <url value="http://hl7.org/fhir/CapabilityStatement/base2"/>
+  <version value="4.0.1"/>
+  <name value="Base FHIR Capability Statement (Empty)"/>
+  <status value="draft"/>
+  <experimental value="true"/>
+  <date value="2019-11-01T09:29:23+11:00"/>
+  <publisher value="FHIR Project Team"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://hl7.org/fhir"/>
+    </telecom>
+  </contact>
+  <description value="This is the base Capability Statement for FHIR. It represents a server that provides the none of the functionality defined by FHIR. It is provided to use as a template for system designers to build their own Capability Statements from. A capability statement has to contain something, so this contains a read of a Capability Statement"/>
+  <kind value="capability"/>
+  <software>
+    <name value="Insert your software name here..."/>
+  </software>
+  <fhirVersion value="4.0.1"/>
+  <format value="xml"/>
+  <format value="json"/>
+  <rest>
+    <mode value="server"/>
+    <documentation value="An empty Capability Statement"/>
+    <security>
+      <cors value="true"/>
+      <service>
+        <coding>
+          <system value="http://terminology.hl7.org/CodeSystem/restful-security-service"/>
+          <code value="SMART-on-FHIR"/>
+          <display value="SMART-on-FHIR"/>
+        </coding>
+        <text value="See http://docs.smarthealthit.org/"/>
+      </service>
+      <description value="This is the Capability Statement to declare that the server supports SMART-on-FHIR. See the SMART-on-FHIR docs for the extension that would go with such a server"/>
+    </security>
+    <resource>
+      <type value="CapabilityStatement"/>
+      <interaction>
+        <code value="read"/>
+        <documentation value="Read CapabilityStatement Resource"/>
+      </interaction>
+    </resource>
+  </rest>
+</CapabilityStatement>

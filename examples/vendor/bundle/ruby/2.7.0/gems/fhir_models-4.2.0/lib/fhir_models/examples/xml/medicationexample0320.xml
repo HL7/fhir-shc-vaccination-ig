@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Medication xmlns="http://hl7.org/fhir">
+  <id value="med0320"/>
+  <meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  <contained>
+    <Substance>
+      <id value="sub03"/>
+      <code>
+        <coding>
+          <system value="http://snomed.info/sct"/>
+          <code value="387531004"/>
+          <display value="Azithromycin (substance)"/>
+        </coding>
+      </code>
+    </Substance>
+  </contained>
+  <code>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="324252006"/>
+      <display value="Azithromycin 250mg capsule (product)"/>
+    </coding>
+  </code>
+  
+    <form>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="385055001"/>
+        <display value="Tablet dose form (qualifier value)"/>
+      </coding>
+    </form>
+    <ingredient>
+      <itemReference>
+        <reference value="#sub03"/>
+      </itemReference>
+      <strength>
+        <numerator>
+          <value value="250"/>
+          <system value="http://unitsofmeasure.org"/>
+          <code value="mg"/>
+        </numerator>
+        <denominator>
+          <value value="1"/>
+          <system value="http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm"/>
+          <code value="TAB"/>
+        </denominator>
+      </strength>
+    </ingredient>
+  
+</Medication>

@@ -1,0 +1,10 @@
+.DS_Store
+**/coverage/**
+fhir_models*log*
+invariants.txt
+.ruby-version
+.ruby-gemset
+tmp/
+
+# User-specific
+.idea

@@ -1,0 +1,17 @@
+{
+  "resourceType": "Procedure",
+  "id": "appendectomy-narrative",
+  "status": "completed",
+  "subject": {
+    "reference": "Patient/example"
+  },
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  }
+}

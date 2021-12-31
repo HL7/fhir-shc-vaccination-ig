@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OperationOutcome xmlns="http://hl7.org/fhir">
+  <id value="allok"/>
+  <meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  
+  <issue> 
+    <severity value="information"/>
+    <code value="informational"/>
+    <details>
+      <text value="All OK"/>
+    </details>
+ </issue>
+</OperationOutcome>

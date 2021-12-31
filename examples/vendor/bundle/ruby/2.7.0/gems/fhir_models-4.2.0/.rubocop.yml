@@ -1,0 +1,25 @@
+inherit_from: .rubocop_todo.yml
+AllCops:
+  TargetRubyVersion: 2.4
+  Exclude:
+    - 'test/**/*'
+    - 'spec/**/*'
+    - 'lib/fhir_models/fhir/**/*'
+    - 'lib/fhir_models/fhirpath/evaluate.rb'
+    - 'lib/**/*.rake'
+    - 'tmp/**/*'
+    - '*.gemspec'
+    - 'bin/*'
+Layout/LineLength:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/HashEachMethods:
+  Enabled: true
+Style/HashTransformKeys:
+  Enabled: true
+Style/HashTransformValues:
+  Enabled: true
+inherit_mode:
+  merge:
+    - Exclude

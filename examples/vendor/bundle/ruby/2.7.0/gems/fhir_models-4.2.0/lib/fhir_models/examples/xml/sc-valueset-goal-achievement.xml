@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConceptMap xmlns="http://hl7.org/fhir">
+  <id value="sc-goal-achievement"/>
+  
+  <url value="http://hl7.org/fhir/ConceptMap/sc-goal-achievement"/>
+  <version value="4.0.1"/>
+  <name value="GoalAchievementStatusCanonicalMap"/>
+  <title value="Canonical Mapping for &quot;Goal achievement status&quot;"/>
+  <status value="draft"/>
+  <date value="2019-11-01T09:29:23+11:00"/>
+  <publisher value="HL7 International - Patient Care WG"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://www.hl7.org/Special/committees/patientcare/"/>
+    </telecom>
+  </contact>
+  <description value="Canonical Mapping for &quot;Describes the progression, or lack thereof, towards the goal against the target.&quot;"/>
+  <sourceCanonical value="http://hl7.org/fhir/ValueSet/goal-achievement"/>
+  <targetCanonical value="http://hl7.org/fhir/ValueSet/resource-status"/>
+  <group>
+    <source value="http://terminology.hl7.org/CodeSystem/goal-achievement"/>
+    <target value="http://hl7.org/fhir/resource-status"/>
+    <element>
+      <code value="in-progress, sustaining, improving, worsening, no-change"/>
+      <target>
+        <code value="active"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="achieved"/>
+      <target>
+        <code value="complete"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="not-attainable"/>
+      <target>
+        <code value="abandoned"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+    <element>
+      <code value="no-progress, not-achieved"/>
+      <target>
+        <code value="not-done"/>
+        <equivalence value="equivalent"/>
+      </target>
+    </element>
+  </group>
+</ConceptMap>

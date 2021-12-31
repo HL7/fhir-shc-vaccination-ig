@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Medication xmlns="http://hl7.org/fhir">
+   <id value="med0317"/>
+   
+      <meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  <form>
+         <coding>
+            <system value="http://snomed.info/sct"/>
+            <code value="385219001"/>
+            <display value="Injection Solution (qualifier value)"/>
+         </coding>
+         <text value="Injection Solution (qualifier value)"/>
+      </form>
+      <ingredient>
+         <itemCodeableConcept>
+            <coding>
+               <system value="http://www.nlm.nih.gov/research/umls/rxnorm"/>
+               <code value="204520"/>
+               <display value="Potassium Chloride"/>
+            </coding>
+         </itemCodeableConcept>
+         <strength>
+            <numerator>
+               <value value="2"/>
+               <system value="http://unitsofmeasure.org"/>
+               <code value="meq"/>
+            </numerator>
+            <denominator>
+               <value value="1"/>
+               <system value="http://unitsofmeasure.org"/>
+               <code value="mL"/>
+            </denominator>
+         </strength>
+      </ingredient>
+      <ingredient>
+         <itemCodeableConcept>
+            <coding>
+               <system value="http://www.nlm.nih.gov/research/umls/rxnorm"/>
+               <code value="313002"/>
+               <display value="Sodium Chloride 0.9% injectable solution"/>
+            </coding>
+         </itemCodeableConcept>
+         <strength>
+            <numerator>
+               <value value="0.9"/>
+               <system value="http://unitsofmeasure.org"/>
+               <code value="g"/>
+            </numerator>
+            <denominator>
+               <value value="100"/>
+               <system value="http://unitsofmeasure.org"/>
+               <code value="mL"/>
+            </denominator>
+         </strength>
+      </ingredient>
+   
+</Medication>

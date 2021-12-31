@@ -1,0 +1,40 @@
+{
+  "resourceType": "MolecularSequence",
+  "id": "example-TPMT-two",
+  "type": "dna",
+  "coordinateSystem": 1,
+  "patient": {
+    "reference": "Patient/example"
+  },
+  "referenceSeq": {
+    "referenceSeqId": {
+      "coding": [
+        {
+          "system": "http://www.ncbi.nlm.nih.gov/nuccore",
+          "code": "NT_007592.15"
+        }
+      ]
+    },
+    "strand": "watson",
+    "windowStart": 18130918,
+    "windowEnd": 18143955
+  },
+  "variant": [
+    {
+      "start": 18131012,
+      "end": 18131012,
+      "observedAllele": "T",
+      "referenceAllele": "C"
+    }
+  ],
+  "observedSeq": "T-C-T-C-G-C-C-C",
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "resourceType": "MedicinalProductManufactured",
+  "id": "example",
+  "manufacturedDoseForm": {
+    "coding": [
+      {
+        "system": "http://ema.europa.eu/example/manufactureddoseform",
+        "code": "Film-coatedtablet"
+      }
+    ]
+  },
+  "unitOfPresentation": {
+    "coding": [
+      {
+        "system": "http://ema.europa.eu/example/unitofpresentation",
+        "code": "Tablet"
+      }
+    ]
+  },
+  "quantity": {
+    "value": 10,
+    "unit": "1"
+  },
+  "manufacturer": [
+    {
+      "reference": "Organization/example"
+    }
+  ],
+  "ingredient": [
+    {
+      "reference": "MedicinalProductIngredient/example"
+    }
+  ],
+  "physicalCharacteristics": {
+    "shape": "Oval",
+    "color": [
+      "Pink"
+    ],
+    "imprint": [
+      "894"
+    ]
+  },
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  }
+}

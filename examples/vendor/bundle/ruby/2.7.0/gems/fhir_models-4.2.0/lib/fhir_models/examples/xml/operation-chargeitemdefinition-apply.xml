@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OperationDefinition xmlns="http://hl7.org/fhir">
+  <id value="ChargeItemDefinition-apply"/>
+  
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm">
+    <valueInteger value="0"/>
+  </extension>
+  <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
+    <valueCode value="trial-use"/>
+  </extension>
+  <url value="http://hl7.org/fhir/OperationDefinition/ChargeItemDefinition-apply"/>
+  <version value="4.0.1"/>
+  <name value="Apply"/>
+  <status value="draft"/>
+  <kind value="operation"/>
+  <date value="2019-11-01T09:29:23+11:00"/>
+  <publisher value="HL7 (FHIR Project)"/>
+  <contact>
+    <telecom>
+      <system value="url"/>
+      <value value="http://hl7.org/fhir"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="fhir@lists.hl7.org"/>
+    </telecom>
+  </contact>
+  <description value="The apply operation applies a definition in a specific context"/>
+  <code value="apply"/>
+  <comment value="The result of invoking this operation is a resource of the type specified by the activity definition, with all the definitions resolved as appropriate for the type of resource. Any dynamicValue elements will be evaluated (in the order in which they appear in the resource) and the results applied to the returned resource.  If the ActivityDefinition includes library references, those libraries will be available to the evaluated expressions. If those libraries have parameters, those parameters will be bound by name to the parameters given to the operation. For a more detailed description, refer to the ActivityDefinition resource"/>
+  <resource value="ChargeItemDefinition"/>
+  <system value="false"/>
+  <type value="false"/>
+  <instance value="true"/>
+  <parameter>
+    <name value="chargeItem"/>
+    <use value="in"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="The ChargeItem on which the definition is to ba applies"/>
+    <type value="Reference"/>
+    <targetProfile value="http://hl7.org/fhir/StructureDefinition/ChargeItem"/>
+  </parameter>
+  <parameter>
+    <name value="account"/>
+    <use value="in"/>
+    <min value="0"/>
+    <max value="1"/>
+    <documentation value="The account in context, if any"/>
+    <type value="Reference"/>
+    <targetProfile value="http://hl7.org/fhir/StructureDefinition/Account"/>
+  </parameter>
+  <parameter>
+    <name value="return"/>
+    <use value="out"/>
+    <min value="1"/>
+    <max value="1"/>
+    <documentation value="The resource that is the result of applying the definition"/>
+    <type value="Any"/>
+  </parameter>
+</OperationDefinition>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Provenance xmlns="http://hl7.org/fhir"> 
+  <id value="consent-signature"/>
+  <meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  <target>
+    <reference value="Consent/consent-example-signature"/>
+  </target>
+ 
+  <!--   the provenance is recorded at the same time as 
+    the resource - batched together   -->
+  <recorded value="2016-05-26T00:41:10-04:00"/>
+ 
+  <agent> 
+    <role>
+      <coding>
+        <system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType"/>
+        <code value="AUT"/>
+      </coding>
+    </role>
+    <who>
+      <reference value="Patient/72"/>
+    </who>
+  </agent>
+  <signature>
+    <type>
+      <system value="urn:iso-astm:E1762-95:2013"/>
+      <code value="1.2.840.10065.1.12.1.1"/>
+      <display value="Author's Signature"/>
+    </type>
+    <when value="2016-05-26T00:41:10-04:00"/>
+    <who>
+      <reference value="Patient/72"/>
+    </who>
+	<targetFormat value="application/fhir+xml"/>
+	<sigFormat value="application/signature+xml"/>
+    <data value="dGhpcyBibG9iIGlzIHNuaXBwZWQ="/>
+  </signature>
+</Provenance>

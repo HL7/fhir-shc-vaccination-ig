@@ -1,0 +1,46 @@
+{
+  "resourceType": "Observation",
+  "id": "example-genetics-5",
+  "extension": [
+    {
+      "url": "http://hl7.org/fhir/StructureDefinition/observation-sequelTo",
+      "valueReference": {
+        "reference": "Observation/example-genetics-1",
+        "display": "ObservationForGenetics profile example 1"
+      }
+    }
+  ],
+  "status": "final",
+  "code": {
+    "text": "PCR validation"
+  },
+  "subject": {
+    "reference": "Patient/example",
+    "display": "Molecular Lab Patient ID: HOSP-23456"
+  },
+  "issued": "2013-04-03T15:30:10+01:00",
+  "performer": [
+    {
+      "reference": "Practitioner/example",
+      "display": "Sequence Analysis Laboratory"
+    }
+  ],
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "260385009",
+        "display": "Negative"
+      }
+    ]
+  },
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RiskAssessment xmlns="http://hl7.org/fhir">
+ <id value="cardiac"/>
+  <meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  
+  <identifier>
+    <use value="official"/>
+    <system value="http://example.org"/>
+    <value value="risk-assessment-cardiac"/>
+  </identifier>
+  <status value="final"/>
+  <subject>
+    <reference value="Patient/pat2"/>
+  </subject>
+  <encounter>
+    <reference value="Encounter/example"/>
+  </encounter>
+  <occurrenceDateTime value="2014-07-19T16:04:00Z"/>
+  <performer>
+    <display value="http://cvdrisk.nhlbi.nih.gov/#cholesterol"/>
+  </performer>
+  <basis>
+    <reference value="Patient/pat2"/>
+  </basis>
+  <basis>
+    <reference value="DiagnosticReport/lipids"/>
+  </basis>
+  <basis>
+    <reference value="Observation/blood-pressure"/>
+  </basis>
+  <prediction>
+    <outcome>
+      <text value="Heart Attack"/>
+    </outcome>
+    <probabilityDecimal value="0.02"/>
+    <whenRange>
+      <low>
+        <value value="39"/>
+        <unit value="years"/>
+        <system value="http://unitsofmeasure.org"/>
+        <code value="a"/>
+      </low>
+      <high>
+        <value value="49"/>
+        <unit value="years"/>
+        <system value="http://unitsofmeasure.org"/>
+        <code value="a"/>
+      </high>
+    </whenRange>
+  </prediction>
+</RiskAssessment>

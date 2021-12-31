@@ -1,0 +1,37 @@
+{
+  "resourceType": "Slot",
+  "id": "1",
+  "identifier": [
+    {
+      "system": "http://example.org/identifiers/slots",
+      "value": "123132"
+    }
+  ],
+  "serviceCategory": [
+    {
+      "coding": [
+        {
+          "code": "17",
+          "display": "General Practice"
+        }
+      ]
+    }
+  ],
+  "schedule": {
+    "reference": "Schedule/example"
+  },
+  "status": "busy",
+  "start": "2013-12-25T09:00:00Z",
+  "end": "2013-12-25T09:15:00Z",
+  "overbooked": true,
+  "comment": "Assessments should be performed before requesting appointments in this slot.",
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ActivityDefinition xmlns="http://hl7.org/fhir">
+  <id value="provide-mosquito-prevention-advice"/>
+  <meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  
+  <url value="http://example.org/ActivityDefinition/provide-mosquito-prevention-advice"/>
+  <status value="draft"/>
+  <description value="Provide mosquito prevention advice"/>
+  <relatedArtifact>
+	<type value="documentation"/>
+	<display value="Advice for patients about how to avoid Mosquito bites."/>
+	<url value="http://www.cdc.gov/zika/prevention/index.html"/>
+  </relatedArtifact>
+  <relatedArtifact>
+	<type value="documentation"/>
+	<display value="Advice for patients about which mosquito repellents are effective and safe to use in pregnancy. [DEET, IF3535 and Picardin are safe during]"/>
+	<url value="https://www.epa.gov/insect-repellents/find-insect-repellent-right-you"/>
+  </relatedArtifact>
+  <library value="Library/zika-virus-intervention-logic"/>
+  <kind value="CommunicationRequest"/>
+  <code>
+    <text value="Provide Mosquito Prevention Advice"/>
+  </code>
+  <timingTiming>
+    <event>
+      <extension url="http://hl7.org/fhir/StructureDefinition/cqf-expression">
+        <valueExpression>
+          <language value="text/cql"/>
+          <expression value="Now()"/>
+        </valueExpression>
+      </extension>
+    </event>
+  </timingTiming>
+	<participant>
+		<type value="practitioner"/>
+  </participant>
+</ActivityDefinition>

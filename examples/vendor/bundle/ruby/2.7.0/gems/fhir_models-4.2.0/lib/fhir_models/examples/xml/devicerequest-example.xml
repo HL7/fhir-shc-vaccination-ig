@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DeviceRequest xmlns="http://hl7.org/fhir">
+  <id value="example"/>
+  <!--   insert contents here   -->
+  <meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  <status value="completed"/>
+  <intent value="original-order"/>
+  <codeReference>
+    <reference value="Device/example"/>
+  </codeReference>
+  <subject>
+    <reference value="Patient/example"/>
+  </subject>
+</DeviceRequest>

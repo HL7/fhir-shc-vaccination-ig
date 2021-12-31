@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Medication xmlns="http://hl7.org/fhir">
+  <id value="med0312"/>
+  <meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  <contained>
+    <Substance>
+      <id value="sub02"/>
+      <code>
+        <coding>
+          <system value="http://snomed.info/sct"/>
+          <code value="387048002"/>
+          <display value="Nystatin (substance)"/>
+        </coding>
+      </code>
+    </Substance>
+  </contained>
+  <code>
+    <coding>
+      <system value="http://snomed.info/sct"/>
+      <code value="324689003"/>
+      <display value="Nystatin 100,000 units/ml oral suspension (product)"/>
+    </coding>
+  </code>
+  
+    <form>
+      <coding>
+        <system value="http://snomed.info/sct"/>
+        <code value="387048002"/>
+        <display value="Oral suspension (qualifier value)"/>
+      </coding>
+    </form>
+    <ingredient>
+      <itemReference>
+        <reference value="#sub02"/>
+      </itemReference>
+      <strength>
+        <numerator>
+          <value value="100000"/>
+          <system value="http://unitsofmeasure.org"/>
+          <code value="[IU]"/>
+        </numerator>
+        <denominator>
+          <value value="1"/>
+          <system value="http://unitsofmeasure.org"/>
+          <code value="mL"/>
+        </denominator>
+      </strength>
+    </ingredient>
+  
+</Medication>

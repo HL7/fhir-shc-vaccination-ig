@@ -1,0 +1,164 @@
+{
+  "resourceType": "MedicinalProductPackaged",
+  "id": "example",
+  "identifier": [
+    {
+      "system": "http://ema.europa.eu/example/pcid",
+      "value": "{PCID}"
+    }
+  ],
+  "description": "ALU-PVC/PVDC BLISTERS. CARTONS OF 10 FILM-COATED TABLETS. ",
+  "batchIdentifier": [
+    {
+      "outerPackaging": {
+        "system": "http://ema.europa.eu/example/baid1",
+        "value": "AAF5699",
+        "period": {
+          "end": "2016-06-06"
+        }
+      }
+    }
+  ],
+  "packageItem": [
+    {
+      "type": {
+        "coding": [
+          {
+            "system": "http://ema.europa.eu/example/packageitemcontainertype",
+            "code": "Carton"
+          }
+        ]
+      },
+      "quantity": {
+        "value": 1,
+        "unit": "1"
+      },
+      "material": [
+        {
+          "coding": [
+            {
+              "system": "http://ema.europa.eu/example/packageItemContainerMaterial",
+              "code": "PVC"
+            }
+          ]
+        },
+        {
+          "coding": [
+            {
+              "system": "http://ema.europa.eu/example/packageItemContainerMaterial",
+              "code": "PVDC"
+            }
+          ]
+        },
+        {
+          "coding": [
+            {
+              "system": "http://ema.europa.eu/example/packageItemContainerMaterial",
+              "code": "alu"
+            }
+          ]
+        }
+      ],
+      "packageItem": [
+        {
+          "type": {
+            "coding": [
+              {
+                "system": "http://ema.europa.eu/example/packageitemcontainertype",
+                "code": "Blister"
+              }
+            ]
+          },
+          "quantity": {
+            "value": 1,
+            "unit": "1"
+          },
+          "material": [
+            {
+              "coding": [
+                {
+                  "system": "http://ema.europa.eu/example/packageItemContainerMaterial",
+                  "code": "Paperboard"
+                }
+              ]
+            }
+          ],
+          "manufacturedItem": [
+            {
+              "reference": "MedicinalProductManufactured/example"
+            }
+          ],
+          "physicalCharacteristics": {
+            "height": {
+              "value": 125,
+              "unit": "mm"
+            },
+            "width": {
+              "value": 45,
+              "unit": "mm"
+            }
+          },
+          "shelfLifeStorage": [
+            {
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://ema.europa.eu/example/shelfLifeTypePlaceHolder",
+                    "code": "ShelfLifeofPackagedMedicinalProduct"
+                  }
+                ]
+              },
+              "period": {
+                "value": 3,
+                "unit": "a"
+              },
+              "specialPrecautionsForStorage": [
+                {
+                  "coding": [
+                    {
+                      "system": "http://ema.europa.eu/example/specialprecautionsforstorage",
+                      "code": "Thismedicinalproductdoesnotrequireanyspecialstoragecondition."
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "manufacturer": [
+            {
+              "reference": "Organization/example"
+            }
+          ]
+        }
+      ],
+      "physicalCharacteristics": {
+        "height": {
+          "value": 50,
+          "unit": "mm"
+        },
+        "width": {
+          "value": 136,
+          "unit": "mm"
+        },
+        "depth": {
+          "value": 23.5,
+          "unit": "mm"
+        }
+      },
+      "manufacturer": [
+        {
+          "reference": "Organization/example"
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  }
+}

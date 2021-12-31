@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TerminologyCapabilities xmlns="http://hl7.org/fhir">
+	<id value="example"/>
+	<meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  
+	<!--    the identifier for this capability statement. 
+    The identifier and version establish identifiers that other specifications etc.may use to 
+    refer to the capability statement that this resource represents in a logical manner 
+    rather than in a literal (URL) fashion 
+
+    The identifier should be globally unique - a UUID, an OID, or a URL/URI
+     -->
+	<url value="urn:uuid:68D043B5-9ECF-4559-A57A-396E0D452311"/>
+	<version value="20130510"/>
+	<name value="ACME-EHR"/>
+	<title value="ACME EHR capability statement"/>
+	<status value="draft"/>
+	<experimental value="true"/>
+	<date value="2012-01-04"/>
+	<publisher value="ACME Corporation"/>
+	<contact>
+		<name value="System Administrator"/>
+		<telecom>
+			<system value="email"/>
+			<value value="wile@acme.org"/>
+		</telecom>
+	</contact>
+	<description value="This is the FHIR capability statement for the main EHR at ACME for the private interface - it does not describe the public interface"/>
+	<kind value="instance"/>
+	<software>
+		<name value="TxServer"/>
+		<version value="0.1.2"/>
+	</software>
+	<implementation>
+		<description value="Acme Terminology Server"/>
+		<url value="http://example.org/tx"/>
+	</implementation>
+  <codeSearch value="explicit"/>
+</TerminologyCapabilities>

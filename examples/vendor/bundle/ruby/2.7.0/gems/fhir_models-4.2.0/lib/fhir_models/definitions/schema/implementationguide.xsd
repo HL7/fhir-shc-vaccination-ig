@@ -1,0 +1,1446 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+  Copyright (c) 2011+, HL7, Inc.
+  All rights reserved.
+  
+  Redistribution and use in source and binary forms, with or without modification, 
+  are permitted provided that the following conditions are met:
+  
+   * Redistributions of source code must retain the above copyright notice, this 
+     list of conditions and the following disclaimer.
+   * Redistributions in binary form must reproduce the above copyright notice, 
+     this list of conditions and the following disclaimer in the documentation 
+     and/or other materials provided with the distribution.
+   * Neither the name of HL7 nor the names of its contributors may be used to 
+     endorse or promote products derived from this software without specific 
+     prior written permission.
+  
+  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
+  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED 
+  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. 
+  IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, 
+  INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT 
+  NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR 
+  PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, 
+  WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) 
+  ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE 
+  POSSIBILITY OF SUCH DAMAGE.
+  
+
+  Generated on Fri, Nov 1, 2019 09:29+1100 for FHIR v4.0.1 
+
+  Note: the schemas &amp; schematrons do not contain all of the rules about what makes resources
+  valid. Implementers will still need to be familiar with the content of the specification and with
+  any profiles that apply to the resources in order to make a conformant implementation.
+
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" targetNamespace="http://hl7.org/fhir" elementFormDefault="qualified" version="1.0">
+  <xs:include schemaLocation="fhir-base.xsd"/>
+  <xs:element name="ImplementationGuide" type="ImplementationGuide">
+    
+  </xs:element>
+  <xs:complexType name="ImplementationGuide">
+    
+    <xs:complexContent>
+      <xs:extension base="DomainResource">
+        <xs:sequence>
+          <xs:element name="url" minOccurs="1" maxOccurs="1" type="uri">
+            
+          </xs:element>
+          <xs:element name="version" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="name" minOccurs="1" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="title" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="status" minOccurs="1" maxOccurs="1" type="PublicationStatus">
+            
+          </xs:element>
+          <xs:element name="experimental" minOccurs="0" maxOccurs="1" type="boolean">
+            
+          </xs:element>
+          <xs:element name="date" minOccurs="0" maxOccurs="1" type="dateTime">
+            
+          </xs:element>
+          <xs:element name="publisher" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="contact" minOccurs="0" maxOccurs="unbounded" type="ContactDetail">
+            
+          </xs:element>
+          <xs:element name="description" minOccurs="0" maxOccurs="1" type="markdown">
+            
+          </xs:element>
+          <xs:element name="useContext" minOccurs="0" maxOccurs="unbounded" type="UsageContext">
+            
+          </xs:element>
+          <xs:element name="jurisdiction" minOccurs="0" maxOccurs="unbounded" type="CodeableConcept">
+            
+          </xs:element>
+          <xs:element name="copyright" minOccurs="0" maxOccurs="1" type="markdown">
+            
+          </xs:element>
+          <xs:element name="packageId" minOccurs="1" maxOccurs="1" type="id">
+            
+          </xs:element>
+          <xs:element name="license" minOccurs="0" maxOccurs="1" type="SPDXLicense">
+            
+          </xs:element>
+          <xs:element name="fhirVersion" minOccurs="1" maxOccurs="unbounded" type="FHIRVersion">
+            
+          </xs:element>
+          <xs:element name="dependsOn" type="ImplementationGuide.DependsOn" minOccurs="0" maxOccurs="unbounded">
+            
+          </xs:element>
+          <xs:element name="global" type="ImplementationGuide.Global" minOccurs="0" maxOccurs="unbounded">
+            
+          </xs:element>
+          <xs:element name="definition" type="ImplementationGuide.Definition" minOccurs="0" maxOccurs="1">
+            
+          </xs:element>
+          <xs:element name="manifest" type="ImplementationGuide.Manifest" minOccurs="0" maxOccurs="1">
+            
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ImplementationGuide.DependsOn">
+    
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="uri" minOccurs="1" maxOccurs="1" type="canonical">
+            
+          </xs:element>
+          <xs:element name="packageId" minOccurs="0" maxOccurs="1" type="id">
+            
+          </xs:element>
+          <xs:element name="version" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ImplementationGuide.Global">
+    
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="type" minOccurs="1" maxOccurs="1" type="code">
+            
+          </xs:element>
+          <xs:element name="profile" minOccurs="1" maxOccurs="1" type="canonical">
+            
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ImplementationGuide.Definition">
+    
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="grouping" type="ImplementationGuide.Grouping" minOccurs="0" maxOccurs="unbounded">
+            
+          </xs:element>
+          <xs:element name="resource" type="ImplementationGuide.Resource" minOccurs="1" maxOccurs="unbounded">
+            
+          </xs:element>
+          <xs:element name="page" type="ImplementationGuide.Page" minOccurs="0" maxOccurs="1">
+            
+          </xs:element>
+          <xs:element name="parameter" type="ImplementationGuide.Parameter" minOccurs="0" maxOccurs="unbounded">
+            
+          </xs:element>
+          <xs:element name="template" type="ImplementationGuide.Template" minOccurs="0" maxOccurs="unbounded">
+            
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ImplementationGuide.Grouping">
+    
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="name" minOccurs="1" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ImplementationGuide.Resource">
+    
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="reference" minOccurs="1" maxOccurs="1" type="Reference">
+            
+          </xs:element>
+          <xs:element name="fhirVersion" minOccurs="0" maxOccurs="unbounded" type="FHIRVersion">
+            
+          </xs:element>
+          <xs:element name="name" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="description" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            
+            <xs:element name="exampleBoolean" type="boolean"/>
+            <xs:element name="exampleCanonical" type="canonical"/>
+          </xs:choice>
+          <xs:element name="groupingId" minOccurs="0" maxOccurs="1" type="id">
+            
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ImplementationGuide.Page">
+    
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:choice minOccurs="1" maxOccurs="1">
+            
+            <xs:element name="nameUrl" type="url"/>
+            <xs:element name="nameReference" type="Reference"/>
+          </xs:choice>
+          <xs:element name="title" minOccurs="1" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="generation" minOccurs="1" maxOccurs="1" type="GuidePageGeneration">
+            
+          </xs:element>
+          <xs:element name="page" type="ImplementationGuide.Page" minOccurs="0" maxOccurs="unbounded">
+            
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ImplementationGuide.Parameter">
+    
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="code" minOccurs="1" maxOccurs="1" type="GuideParameterCode">
+            
+          </xs:element>
+          <xs:element name="value" minOccurs="1" maxOccurs="1" type="string">
+            
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ImplementationGuide.Template">
+    
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="code" minOccurs="1" maxOccurs="1" type="code">
+            
+          </xs:element>
+          <xs:element name="source" minOccurs="1" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="scope" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ImplementationGuide.Manifest">
+    
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="rendering" minOccurs="0" maxOccurs="1" type="url">
+            
+          </xs:element>
+          <xs:element name="resource" type="ImplementationGuide.Resource1" minOccurs="1" maxOccurs="unbounded">
+            
+          </xs:element>
+          <xs:element name="page" type="ImplementationGuide.Page1" minOccurs="0" maxOccurs="unbounded">
+            
+          </xs:element>
+          <xs:element name="image" minOccurs="0" maxOccurs="unbounded" type="string">
+            
+          </xs:element>
+          <xs:element name="other" minOccurs="0" maxOccurs="unbounded" type="string">
+            
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ImplementationGuide.Resource1">
+    
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="reference" minOccurs="1" maxOccurs="1" type="Reference">
+            
+          </xs:element>
+          <xs:choice minOccurs="0" maxOccurs="1">
+            
+            <xs:element name="exampleBoolean" type="boolean"/>
+            <xs:element name="exampleCanonical" type="canonical"/>
+          </xs:choice>
+          <xs:element name="relativePath" minOccurs="0" maxOccurs="1" type="url">
+            
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ImplementationGuide.Page1">
+    
+    <xs:complexContent>
+      <xs:extension base="BackboneElement">
+        <xs:sequence>
+          <xs:element name="name" minOccurs="1" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="title" minOccurs="0" maxOccurs="1" type="string">
+            
+          </xs:element>
+          <xs:element name="anchor" minOccurs="0" maxOccurs="unbounded" type="string">
+            
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="GuideParameterCode-list">
+    <xs:restriction base="code-primitive">
+      <xs:enumeration value="apply">
+        
+      </xs:enumeration>
+      <xs:enumeration value="path-resource">
+        
+      </xs:enumeration>
+      <xs:enumeration value="path-pages">
+        
+      </xs:enumeration>
+      <xs:enumeration value="path-tx-cache">
+        
+      </xs:enumeration>
+      <xs:enumeration value="expansion-parameter">
+        
+      </xs:enumeration>
+      <xs:enumeration value="rule-broken-links">
+        
+      </xs:enumeration>
+      <xs:enumeration value="generate-xml">
+        
+      </xs:enumeration>
+      <xs:enumeration value="generate-json">
+        
+      </xs:enumeration>
+      <xs:enumeration value="generate-turtle">
+        
+      </xs:enumeration>
+      <xs:enumeration value="html-template">
+        
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="GuideParameterCode">
+    
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="GuideParameterCode-list" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="SPDXLicense-list">
+    <xs:restriction base="code-primitive">
+      <xs:enumeration value="not-open-source">
+        
+      </xs:enumeration>
+      <xs:enumeration value="0BSD">
+        
+      </xs:enumeration>
+      <xs:enumeration value="AAL">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Abstyles">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Adobe-2006">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Adobe-Glyph">
+        
+      </xs:enumeration>
+      <xs:enumeration value="ADSL">
+        
+      </xs:enumeration>
+      <xs:enumeration value="AFL-1.1">
+        
+      </xs:enumeration>
+      <xs:enumeration value="AFL-1.2">
+        
+      </xs:enumeration>
+      <xs:enumeration value="AFL-2.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="AFL-2.1">
+        
+      </xs:enumeration>
+      <xs:enumeration value="AFL-3.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Afmparse">
+        
+      </xs:enumeration>
+      <xs:enumeration value="AGPL-1.0-only">
+        
+      </xs:enumeration>
+      <xs:enumeration value="AGPL-1.0-or-later">
+        
+      </xs:enumeration>
+      <xs:enumeration value="AGPL-3.0-only">
+        
+      </xs:enumeration>
+      <xs:enumeration value="AGPL-3.0-or-later">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Aladdin">
+        
+      </xs:enumeration>
+      <xs:enumeration value="AMDPLPA">
+        
+      </xs:enumeration>
+      <xs:enumeration value="AML">
+        
+      </xs:enumeration>
+      <xs:enumeration value="AMPAS">
+        
+      </xs:enumeration>
+      <xs:enumeration value="ANTLR-PD">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Apache-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Apache-1.1">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Apache-2.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="APAFML">
+        
+      </xs:enumeration>
+      <xs:enumeration value="APL-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="APSL-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="APSL-1.1">
+        
+      </xs:enumeration>
+      <xs:enumeration value="APSL-1.2">
+        
+      </xs:enumeration>
+      <xs:enumeration value="APSL-2.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Artistic-1.0-cl8">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Artistic-1.0-Perl">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Artistic-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Artistic-2.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Bahyph">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Barr">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Beerware">
+        
+      </xs:enumeration>
+      <xs:enumeration value="BitTorrent-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="BitTorrent-1.1">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Borceux">
+        
+      </xs:enumeration>
+      <xs:enumeration value="BSD-1-Clause">
+        
+      </xs:enumeration>
+      <xs:enumeration value="BSD-2-Clause-FreeBSD">
+        
+      </xs:enumeration>
+      <xs:enumeration value="BSD-2-Clause-NetBSD">
+        
+      </xs:enumeration>
+      <xs:enumeration value="BSD-2-Clause-Patent">
+        
+      </xs:enumeration>
+      <xs:enumeration value="BSD-2-Clause">
+        
+      </xs:enumeration>
+      <xs:enumeration value="BSD-3-Clause-Attribution">
+        
+      </xs:enumeration>
+      <xs:enumeration value="BSD-3-Clause-Clear">
+        
+      </xs:enumeration>
+      <xs:enumeration value="BSD-3-Clause-LBNL">
+        
+      </xs:enumeration>
+      <xs:enumeration value="BSD-3-Clause-No-Nuclear-License-2014">
+        
+      </xs:enumeration>
+      <xs:enumeration value="BSD-3-Clause-No-Nuclear-License">
+        
+      </xs:enumeration>
+      <xs:enumeration value="BSD-3-Clause-No-Nuclear-Warranty">
+        
+      </xs:enumeration>
+      <xs:enumeration value="BSD-3-Clause">
+        
+      </xs:enumeration>
+      <xs:enumeration value="BSD-4-Clause-UC">
+        
+      </xs:enumeration>
+      <xs:enumeration value="BSD-4-Clause">
+        
+      </xs:enumeration>
+      <xs:enumeration value="BSD-Protection">
+        
+      </xs:enumeration>
+      <xs:enumeration value="BSD-Source-Code">
+        
+      </xs:enumeration>
+      <xs:enumeration value="BSL-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="bzip2-1.0.5">
+        
+      </xs:enumeration>
+      <xs:enumeration value="bzip2-1.0.6">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Caldera">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CATOSL-1.1">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CC-BY-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CC-BY-2.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CC-BY-2.5">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CC-BY-3.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CC-BY-4.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CC-BY-NC-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CC-BY-NC-2.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CC-BY-NC-2.5">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CC-BY-NC-3.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CC-BY-NC-4.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CC-BY-NC-ND-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CC-BY-NC-ND-2.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CC-BY-NC-ND-2.5">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CC-BY-NC-ND-3.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CC-BY-NC-ND-4.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CC-BY-NC-SA-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CC-BY-NC-SA-2.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CC-BY-NC-SA-2.5">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CC-BY-NC-SA-3.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CC-BY-NC-SA-4.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CC-BY-ND-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CC-BY-ND-2.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CC-BY-ND-2.5">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CC-BY-ND-3.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CC-BY-ND-4.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CC-BY-SA-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CC-BY-SA-2.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CC-BY-SA-2.5">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CC-BY-SA-3.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CC-BY-SA-4.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CC0-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CDDL-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CDDL-1.1">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CDLA-Permissive-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CDLA-Sharing-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CECILL-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CECILL-1.1">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CECILL-2.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CECILL-2.1">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CECILL-B">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CECILL-C">
+        
+      </xs:enumeration>
+      <xs:enumeration value="ClArtistic">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CNRI-Jython">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CNRI-Python-GPL-Compatible">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CNRI-Python">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Condor-1.1">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CPAL-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CPL-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CPOL-1.02">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Crossword">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CrystalStacker">
+        
+      </xs:enumeration>
+      <xs:enumeration value="CUA-OPL-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Cube">
+        
+      </xs:enumeration>
+      <xs:enumeration value="curl">
+        
+      </xs:enumeration>
+      <xs:enumeration value="D-FSL-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="diffmark">
+        
+      </xs:enumeration>
+      <xs:enumeration value="DOC">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Dotseqn">
+        
+      </xs:enumeration>
+      <xs:enumeration value="DSDP">
+        
+      </xs:enumeration>
+      <xs:enumeration value="dvipdfm">
+        
+      </xs:enumeration>
+      <xs:enumeration value="ECL-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="ECL-2.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="EFL-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="EFL-2.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="eGenix">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Entessa">
+        
+      </xs:enumeration>
+      <xs:enumeration value="EPL-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="EPL-2.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="ErlPL-1.1">
+        
+      </xs:enumeration>
+      <xs:enumeration value="EUDatagrid">
+        
+      </xs:enumeration>
+      <xs:enumeration value="EUPL-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="EUPL-1.1">
+        
+      </xs:enumeration>
+      <xs:enumeration value="EUPL-1.2">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Eurosym">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Fair">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Frameworx-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="FreeImage">
+        
+      </xs:enumeration>
+      <xs:enumeration value="FSFAP">
+        
+      </xs:enumeration>
+      <xs:enumeration value="FSFUL">
+        
+      </xs:enumeration>
+      <xs:enumeration value="FSFULLR">
+        
+      </xs:enumeration>
+      <xs:enumeration value="FTL">
+        
+      </xs:enumeration>
+      <xs:enumeration value="GFDL-1.1-only">
+        
+      </xs:enumeration>
+      <xs:enumeration value="GFDL-1.1-or-later">
+        
+      </xs:enumeration>
+      <xs:enumeration value="GFDL-1.2-only">
+        
+      </xs:enumeration>
+      <xs:enumeration value="GFDL-1.2-or-later">
+        
+      </xs:enumeration>
+      <xs:enumeration value="GFDL-1.3-only">
+        
+      </xs:enumeration>
+      <xs:enumeration value="GFDL-1.3-or-later">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Giftware">
+        
+      </xs:enumeration>
+      <xs:enumeration value="GL2PS">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Glide">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Glulxe">
+        
+      </xs:enumeration>
+      <xs:enumeration value="gnuplot">
+        
+      </xs:enumeration>
+      <xs:enumeration value="GPL-1.0-only">
+        
+      </xs:enumeration>
+      <xs:enumeration value="GPL-1.0-or-later">
+        
+      </xs:enumeration>
+      <xs:enumeration value="GPL-2.0-only">
+        
+      </xs:enumeration>
+      <xs:enumeration value="GPL-2.0-or-later">
+        
+      </xs:enumeration>
+      <xs:enumeration value="GPL-3.0-only">
+        
+      </xs:enumeration>
+      <xs:enumeration value="GPL-3.0-or-later">
+        
+      </xs:enumeration>
+      <xs:enumeration value="gSOAP-1.3b">
+        
+      </xs:enumeration>
+      <xs:enumeration value="HaskellReport">
+        
+      </xs:enumeration>
+      <xs:enumeration value="HPND">
+        
+      </xs:enumeration>
+      <xs:enumeration value="IBM-pibs">
+        
+      </xs:enumeration>
+      <xs:enumeration value="ICU">
+        
+      </xs:enumeration>
+      <xs:enumeration value="IJG">
+        
+      </xs:enumeration>
+      <xs:enumeration value="ImageMagick">
+        
+      </xs:enumeration>
+      <xs:enumeration value="iMatix">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Imlib2">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Info-ZIP">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Intel-ACPI">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Intel">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Interbase-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="IPA">
+        
+      </xs:enumeration>
+      <xs:enumeration value="IPL-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="ISC">
+        
+      </xs:enumeration>
+      <xs:enumeration value="JasPer-2.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="JSON">
+        
+      </xs:enumeration>
+      <xs:enumeration value="LAL-1.2">
+        
+      </xs:enumeration>
+      <xs:enumeration value="LAL-1.3">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Latex2e">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Leptonica">
+        
+      </xs:enumeration>
+      <xs:enumeration value="LGPL-2.0-only">
+        
+      </xs:enumeration>
+      <xs:enumeration value="LGPL-2.0-or-later">
+        
+      </xs:enumeration>
+      <xs:enumeration value="LGPL-2.1-only">
+        
+      </xs:enumeration>
+      <xs:enumeration value="LGPL-2.1-or-later">
+        
+      </xs:enumeration>
+      <xs:enumeration value="LGPL-3.0-only">
+        
+      </xs:enumeration>
+      <xs:enumeration value="LGPL-3.0-or-later">
+        
+      </xs:enumeration>
+      <xs:enumeration value="LGPLLR">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Libpng">
+        
+      </xs:enumeration>
+      <xs:enumeration value="libtiff">
+        
+      </xs:enumeration>
+      <xs:enumeration value="LiLiQ-P-1.1">
+        
+      </xs:enumeration>
+      <xs:enumeration value="LiLiQ-R-1.1">
+        
+      </xs:enumeration>
+      <xs:enumeration value="LiLiQ-Rplus-1.1">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Linux-OpenIB">
+        
+      </xs:enumeration>
+      <xs:enumeration value="LPL-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="LPL-1.02">
+        
+      </xs:enumeration>
+      <xs:enumeration value="LPPL-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="LPPL-1.1">
+        
+      </xs:enumeration>
+      <xs:enumeration value="LPPL-1.2">
+        
+      </xs:enumeration>
+      <xs:enumeration value="LPPL-1.3a">
+        
+      </xs:enumeration>
+      <xs:enumeration value="LPPL-1.3c">
+        
+      </xs:enumeration>
+      <xs:enumeration value="MakeIndex">
+        
+      </xs:enumeration>
+      <xs:enumeration value="MirOS">
+        
+      </xs:enumeration>
+      <xs:enumeration value="MIT-0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="MIT-advertising">
+        
+      </xs:enumeration>
+      <xs:enumeration value="MIT-CMU">
+        
+      </xs:enumeration>
+      <xs:enumeration value="MIT-enna">
+        
+      </xs:enumeration>
+      <xs:enumeration value="MIT-feh">
+        
+      </xs:enumeration>
+      <xs:enumeration value="MIT">
+        
+      </xs:enumeration>
+      <xs:enumeration value="MITNFA">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Motosoto">
+        
+      </xs:enumeration>
+      <xs:enumeration value="mpich2">
+        
+      </xs:enumeration>
+      <xs:enumeration value="MPL-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="MPL-1.1">
+        
+      </xs:enumeration>
+      <xs:enumeration value="MPL-2.0-no-copyleft-exception">
+        
+      </xs:enumeration>
+      <xs:enumeration value="MPL-2.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="MS-PL">
+        
+      </xs:enumeration>
+      <xs:enumeration value="MS-RL">
+        
+      </xs:enumeration>
+      <xs:enumeration value="MTLL">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Multics">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Mup">
+        
+      </xs:enumeration>
+      <xs:enumeration value="NASA-1.3">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Naumen">
+        
+      </xs:enumeration>
+      <xs:enumeration value="NBPL-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="NCSA">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Net-SNMP">
+        
+      </xs:enumeration>
+      <xs:enumeration value="NetCDF">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Newsletr">
+        
+      </xs:enumeration>
+      <xs:enumeration value="NGPL">
+        
+      </xs:enumeration>
+      <xs:enumeration value="NLOD-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="NLPL">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Nokia">
+        
+      </xs:enumeration>
+      <xs:enumeration value="NOSL">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Noweb">
+        
+      </xs:enumeration>
+      <xs:enumeration value="NPL-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="NPL-1.1">
+        
+      </xs:enumeration>
+      <xs:enumeration value="NPOSL-3.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="NRL">
+        
+      </xs:enumeration>
+      <xs:enumeration value="NTP">
+        
+      </xs:enumeration>
+      <xs:enumeration value="OCCT-PL">
+        
+      </xs:enumeration>
+      <xs:enumeration value="OCLC-2.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="ODbL-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="OFL-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="OFL-1.1">
+        
+      </xs:enumeration>
+      <xs:enumeration value="OGTSL">
+        
+      </xs:enumeration>
+      <xs:enumeration value="OLDAP-1.1">
+        
+      </xs:enumeration>
+      <xs:enumeration value="OLDAP-1.2">
+        
+      </xs:enumeration>
+      <xs:enumeration value="OLDAP-1.3">
+        
+      </xs:enumeration>
+      <xs:enumeration value="OLDAP-1.4">
+        
+      </xs:enumeration>
+      <xs:enumeration value="OLDAP-2.0.1">
+        
+      </xs:enumeration>
+      <xs:enumeration value="OLDAP-2.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="OLDAP-2.1">
+        
+      </xs:enumeration>
+      <xs:enumeration value="OLDAP-2.2.1">
+        
+      </xs:enumeration>
+      <xs:enumeration value="OLDAP-2.2.2">
+        
+      </xs:enumeration>
+      <xs:enumeration value="OLDAP-2.2">
+        
+      </xs:enumeration>
+      <xs:enumeration value="OLDAP-2.3">
+        
+      </xs:enumeration>
+      <xs:enumeration value="OLDAP-2.4">
+        
+      </xs:enumeration>
+      <xs:enumeration value="OLDAP-2.5">
+        
+      </xs:enumeration>
+      <xs:enumeration value="OLDAP-2.6">
+        
+      </xs:enumeration>
+      <xs:enumeration value="OLDAP-2.7">
+        
+      </xs:enumeration>
+      <xs:enumeration value="OLDAP-2.8">
+        
+      </xs:enumeration>
+      <xs:enumeration value="OML">
+        
+      </xs:enumeration>
+      <xs:enumeration value="OpenSSL">
+        
+      </xs:enumeration>
+      <xs:enumeration value="OPL-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="OSET-PL-2.1">
+        
+      </xs:enumeration>
+      <xs:enumeration value="OSL-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="OSL-1.1">
+        
+      </xs:enumeration>
+      <xs:enumeration value="OSL-2.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="OSL-2.1">
+        
+      </xs:enumeration>
+      <xs:enumeration value="OSL-3.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="PDDL-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="PHP-3.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="PHP-3.01">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Plexus">
+        
+      </xs:enumeration>
+      <xs:enumeration value="PostgreSQL">
+        
+      </xs:enumeration>
+      <xs:enumeration value="psfrag">
+        
+      </xs:enumeration>
+      <xs:enumeration value="psutils">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Python-2.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Qhull">
+        
+      </xs:enumeration>
+      <xs:enumeration value="QPL-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Rdisc">
+        
+      </xs:enumeration>
+      <xs:enumeration value="RHeCos-1.1">
+        
+      </xs:enumeration>
+      <xs:enumeration value="RPL-1.1">
+        
+      </xs:enumeration>
+      <xs:enumeration value="RPL-1.5">
+        
+      </xs:enumeration>
+      <xs:enumeration value="RPSL-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="RSA-MD">
+        
+      </xs:enumeration>
+      <xs:enumeration value="RSCPL">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Ruby">
+        
+      </xs:enumeration>
+      <xs:enumeration value="SAX-PD">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Saxpath">
+        
+      </xs:enumeration>
+      <xs:enumeration value="SCEA">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Sendmail">
+        
+      </xs:enumeration>
+      <xs:enumeration value="SGI-B-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="SGI-B-1.1">
+        
+      </xs:enumeration>
+      <xs:enumeration value="SGI-B-2.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="SimPL-2.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="SISSL-1.2">
+        
+      </xs:enumeration>
+      <xs:enumeration value="SISSL">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Sleepycat">
+        
+      </xs:enumeration>
+      <xs:enumeration value="SMLNJ">
+        
+      </xs:enumeration>
+      <xs:enumeration value="SMPPL">
+        
+      </xs:enumeration>
+      <xs:enumeration value="SNIA">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Spencer-86">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Spencer-94">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Spencer-99">
+        
+      </xs:enumeration>
+      <xs:enumeration value="SPL-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="SugarCRM-1.1.3">
+        
+      </xs:enumeration>
+      <xs:enumeration value="SWL">
+        
+      </xs:enumeration>
+      <xs:enumeration value="TCL">
+        
+      </xs:enumeration>
+      <xs:enumeration value="TCP-wrappers">
+        
+      </xs:enumeration>
+      <xs:enumeration value="TMate">
+        
+      </xs:enumeration>
+      <xs:enumeration value="TORQUE-1.1">
+        
+      </xs:enumeration>
+      <xs:enumeration value="TOSL">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Unicode-DFS-2015">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Unicode-DFS-2016">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Unicode-TOU">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Unlicense">
+        
+      </xs:enumeration>
+      <xs:enumeration value="UPL-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Vim">
+        
+      </xs:enumeration>
+      <xs:enumeration value="VOSTROM">
+        
+      </xs:enumeration>
+      <xs:enumeration value="VSL-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="W3C-19980720">
+        
+      </xs:enumeration>
+      <xs:enumeration value="W3C-20150513">
+        
+      </xs:enumeration>
+      <xs:enumeration value="W3C">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Watcom-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Wsuipa">
+        
+      </xs:enumeration>
+      <xs:enumeration value="WTFPL">
+        
+      </xs:enumeration>
+      <xs:enumeration value="X11">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Xerox">
+        
+      </xs:enumeration>
+      <xs:enumeration value="XFree86-1.1">
+        
+      </xs:enumeration>
+      <xs:enumeration value="xinetd">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Xnet">
+        
+      </xs:enumeration>
+      <xs:enumeration value="xpp">
+        
+      </xs:enumeration>
+      <xs:enumeration value="XSkat">
+        
+      </xs:enumeration>
+      <xs:enumeration value="YPL-1.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="YPL-1.1">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Zed">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Zend-2.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Zimbra-1.3">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Zimbra-1.4">
+        
+      </xs:enumeration>
+      <xs:enumeration value="zlib-acknowledgement">
+        
+      </xs:enumeration>
+      <xs:enumeration value="Zlib">
+        
+      </xs:enumeration>
+      <xs:enumeration value="ZPL-1.1">
+        
+      </xs:enumeration>
+      <xs:enumeration value="ZPL-2.0">
+        
+      </xs:enumeration>
+      <xs:enumeration value="ZPL-2.1">
+        
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="SPDXLicense">
+    
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="SPDXLicense-list" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="GuidePageGeneration-list">
+    <xs:restriction base="code-primitive">
+      <xs:enumeration value="html">
+        
+      </xs:enumeration>
+      <xs:enumeration value="markdown">
+        
+      </xs:enumeration>
+      <xs:enumeration value="xml">
+        
+      </xs:enumeration>
+      <xs:enumeration value="generated">
+        
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="GuidePageGeneration">
+    
+    <xs:complexContent>
+      <xs:extension base="Element">
+        <xs:attribute name="value" type="GuidePageGeneration-list" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Library xmlns="http://hl7.org/fhir">
+  <id value="library-quick-model-definition"/>
+  <meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  
+
+  <identifier>
+    <use value="official"/>
+    <value value="QUICK"/>
+  </identifier>
+  <version value="1.0.0"/>
+  <title value="QUICK Model Definition"/>
+  <status value="draft"/>
+  <type>
+    <coding>
+      <code value="model-definition"/>
+    </coding>
+  </type>
+  <date value="2016-07-08"/>
+  <description value="Model definition for the QUICK Logical Model"/>
+  <topic>
+    <text value="QUICK"/>
+  </topic>
+
+  <content>
+    <contentType value="application/xml"/>
+    <url value="http://cqlrepository.org/quick-modelinfo.xml"/>
+  </content>
+
+</Library>

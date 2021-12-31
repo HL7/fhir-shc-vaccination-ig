@@ -1,0 +1,63 @@
+{
+  "resourceType": "ActivityDefinition",
+  "id": "administer-zika-virus-exposure-assessment",
+  "url": "http://example.org/ActivityDefinition/administer-zika-virus-exposure-assessment",
+  "status": "draft",
+  "description": "Administer Zika Virus Exposure Assessment",
+  "useContext": [
+    {
+      "code": {
+        "system": "http://terminology.hl7.org/CodeSystem/usage-context-type",
+        "code": "age"
+      },
+      "valueRange": {
+        "low": {
+          "value": 12,
+          "unit": "a"
+        }
+      }
+    }
+  ],
+  "relatedArtifact": [
+    {
+      "type": "derived-from",
+      "url": "https://www.cdc.gov/zika/hc-providers/pregnant-woman.html"
+    },
+    {
+      "type": "depends-on",
+      "resource": "Questionnaire/zika-virus-exposure-assessment"
+    }
+  ],
+  "library": [
+    "Library/zika-virus-intervention-logic"
+  ],
+  "kind": "ServiceRequest",
+  "code": {
+    "coding": [
+      {
+        "system": "http://example.org/questionnaires",
+        "code": "zika-virus-exposure-assessment"
+      }
+    ]
+  },
+  "timingTiming": {
+    "_event": [
+      {
+        "extension": [
+          {
+            "url": "http://hl7.org/fhir/StructureDefinition/cqf-expression",
+            "valueExpression": {
+              "language": "text/cql",
+              "expression": "Now()"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "participant": [
+    {
+      "type": "practitioner"
+    }
+  ]
+}

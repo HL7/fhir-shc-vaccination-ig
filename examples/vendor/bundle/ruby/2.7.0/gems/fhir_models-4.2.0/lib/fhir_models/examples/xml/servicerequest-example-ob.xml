@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ServiceRequest xmlns="http://hl7.org/fhir">
+	<id value="ob"/>
+	<!--   insert contents here   -->
+	<meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  <status value="completed"/>
+	<intent value="order"/>
+	<category>
+		<coding>
+			<system value="http://snomed.info/sct"/>
+			<code value="386637004"/>
+			<display value="Obstetric procedure (procedure)"/>
+		</coding>
+		<text value="OB"/>
+	</category>
+	<code>
+		<coding>
+			<system value="http://snomed.info/sct"/>
+			<code value="22633006"/>
+			<display value="Vaginal delivery, medical personnel present (procedure)"/>
+		</coding>
+		<text value="Vaginal delivery"/>
+	</code>
+	<subject>
+		<display value="Jane Doe"/>
+	</subject>
+	<occurrenceDateTime value="2012-06-02"/>
+	<requester>
+			<display value="Women’s Hospital"/>
+	</requester>
+	<performer>
+		<display value="Martha Midwife, RNP"/>
+	</performer>
+	<reasonCode>
+		<text value="term pregnancy, active labor"/>
+	</reasonCode>
+</ServiceRequest>

@@ -1,0 +1,55 @@
+{
+  "resourceType": "PlanDefinition",
+  "id": "chlamydia-screening-intervention",
+  "identifier": [
+    {
+      "use": "official",
+      "value": "ChlamydiaScreening_CDS_UsingCommon"
+    }
+  ],
+  "version": "2.0.0",
+  "title": "Chalmydia Screening CDS Example Using Common",
+  "status": "draft",
+  "date": "2015-07-22",
+  "description": "Chlamydia Screening CDS Example Using Common",
+  "topic": [
+    {
+      "text": "Chlamydia Screening"
+    }
+  ],
+  "library": [
+    "Library/example"
+  ],
+  "action": [
+    {
+      "title": "Patient has not had chlamydia screening within the recommended timeframe...",
+      "condition": [
+        {
+          "kind": "applicability",
+          "expression": {
+            "language": "text/cql",
+            "expression": "NoScreening"
+          }
+        }
+      ],
+      "dynamicValue": [
+        {
+          "path": "$this",
+          "expression": {
+            "language": "text/cql",
+            "expression": "ChlamydiaScreeningRequest"
+          }
+        }
+      ]
+    }
+  ],
+  "meta": {
+    "tag": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "code": "HTEST",
+        "display": "test health data"
+      }
+    ]
+  }
+}

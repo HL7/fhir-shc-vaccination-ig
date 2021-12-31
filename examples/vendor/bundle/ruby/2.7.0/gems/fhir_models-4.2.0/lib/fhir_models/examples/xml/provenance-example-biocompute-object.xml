@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Provenance xmlns="http://hl7.org/fhir">
+	<id value="example-biocompute-object"/>
+	<meta>
+    <security>
+      <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+      <code value="HTEST"/>
+      <display value="test health data"/>
+    </security>
+  </meta>
+  
+	<target>
+		<reference value="MolecularSequence/example"/>
+	</target>
+	<occurredPeriod>
+		<start value="2017-06-06"/>
+	</occurredPeriod>
+	<recorded value="2016-06-09T08:12:14+10:00"/>
+	<reason>
+		<text value="antiviral resistance detection"/>
+	</reason>
+
+	<agent>
+		<type>
+			<coding>
+				<system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType"/>
+				<code value="AUT"/>
+			</coding>
+		</type>
+		<who>
+			<reference value="Practitioner/example"/>
+		</who>
+	</agent>
+
+	<entity>
+		<role value="source"/>
+		<what>
+			<identifier>
+				<!--     <reference value="https://hive.biochemistry.gwu.edu/cgi-bin/prd/htscsrs/servlet.cgi?pageid=bcoexample_1"/>  todo: this is not legal; fix once definition is fixed  -->
+				<type>
+					<coding>
+						<system value="https://hive.biochemistry.gwu.edu"/>
+						<code value="biocompute"/>
+						<display value="obj.1001"/>
+					</coding>
+				</type>
+				<value value="https://hive.biochemistry.gwu.edu/cgi-bin/prd/htscsrs/servlet.cgi?pageid=bcoexample_1"/>
+			</identifier>
+		</what>
+	</entity>
+</Provenance>
