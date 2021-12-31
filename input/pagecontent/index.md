@@ -2,12 +2,12 @@
 
 This [FHIR Implementation Guide](https://www.hl7.org/fhir/implementationguide.html) (IG):
 
-1. Describes the clinical information necessary to create a [SMART Health Card] identifying vaccination and laboratory testing status for infectious diseases such as [COVID-19](https://www.who.int/health-topics/coronavirus). In particular, it describes the content of the subject of a [SMART Health Card] in which the card [types](https://spec.smarthealth.cards/vocabulary/) include `https://smarthealth.cards#health-card`, `https://smarthealth.cards#immunization` and/or `https://smarthealth.cards#laboratory`, and optionally `https://smarthealth.cards#covid19`.
+1. Describes the clinical information necessary to create a [SMART Health Card] (SHC) identifying vaccination and laboratory testing status for infectious diseases such as [COVID-19](https://www.who.int/health-topics/coronavirus). In particular, it describes the content of the subject of a [SMART Health Card] in which the card [types](https://spec.smarthealth.cards/vocabulary/) include `https://smarthealth.cards#health-card`, `https://smarthealth.cards#immunization` and/or `https://smarthealth.cards#laboratory`, and optionally `https://smarthealth.cards#covid19`.
 2. Describes a minimal set of patient information (name and contact information) that is also included in the [SMART Health Card].
 
 **The goal of this IG is to define the conformance criteria of FHIR resources for use specifically in [SMART Health Cards].** This applies to the contents of both digital and paper Health Cards, including Health Cards produced via a [SMART Health Card-specific FHIR endpoint](https://spec.smarthealth.cards/#via-fhir-health-cards-issue-operation) like `[base]/Patient/:id/$health-cards-issue`. This IG is not applicable to general-purpose FHIR endpoints like `[base]/Patient/:id/Immunization`, nor is it meant to describe the canonical representation of clinical data in electronic health record systems; these are governed by other IGs like [US Core](https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-immunization.html).
 
-Note that this IG is not directly related to the [SMART App Launch Framework](http://www.hl7.org/fhir/smart-app-launch/). The name comes from [SMART Health IT](https://smarthealthit.org/), who also developed the [SMART Health Card] framework that this IG supports. SMART App Launch and SMART Health Cards are designed to work well together (the former being one of multiple methods for issuing the latter), but they don't have a hard dependency with each other.
+Note that this IG is not directly related to the [SMART App Launch Framework](http://www.hl7.org/fhir/smart-app-launch/). The name comes from [SMART Health IT](https://smarthealthit.org/), who also developed the [SMART Health Card] framework that this IG supports. ("SMART" is an [acronym](https://smarthealthit.org/an-app-platform-for-healthcare/about/) for Substitutable Medical Apps, Reusable Technology.) SMART App Launch and SMART Health Cards are designed to work well together (the former being one of multiple methods for issuing the latter), but they don't have a hard dependency with each other.
 
 ### Actors
 
@@ -36,7 +36,16 @@ For more information, please see [the data minimization and privacy section on t
 
 Our primary focus is on the use case of representing the minimal set of clinical data necessary to represent COVID-19 vaccination status and laboratory testing for verification purposes in a SMART Health Card. We support other infectious diseases as a secondary use case. To meet these use cases, we provide profiles of a [FHIR Bundle](https://www.hl7.org/fhir/bundle.html) that describes the contents of [the `fhirBundle` element in a SMART Health Card](https://spec.smarthealth.cards/#data-model). We also provide profiles of the resources contained within this Bundle.
 
-The SMART Health Cards Framework constrains the size of the FHIR payload embedded within a SMART Health Card to allow the entirety of the SMART Health Card to fit within [a single Version 22 QR code](https://spec.smarthealth.cards/#chunking). This IG is designed to support creating resources that fit within these size constraints. (While it is possible to generate a [denser QR code](https://www.qrcode.com/en/about/version.html), the [SMART Health Cards Framework](https://spec.smarthealth.cards/#every-health-card-can-be-embedded-in-a-qr-code) developers found that denser QR codes could be difficult to scan.) SMART Health Card payloads are compressed, so the precise number of available uncompressed bytes for the embedded FHIR Bundle is not knowable (the compression ratio depends on the specific content being compressed). In practice, we have found that bundles of resources conforming to the [data minimization profiles](profiles.html#data-minimization-and-privacy) in this IG do fit within the payload constraints.
+The SMART Health Cards Framework constrains the size of the FHIR payload embedded within a SMART Health Card to allow the entirety of the SMART Health Card to fit within [a single Version 22 QR code](https://spec.smarthealth.cards/#chunking). This IG is designed to support creating resources that fit within these size constraints. (While it is possible to generate a [denser QR code](https://www.qrcode.com/en/about/version.html), the [SMART Health Cards Framework](https://spec.smarthealth.cards/#every-health-card-can-be-embedded-in-a-qr-code) developers found that denser QR codes could be difficult to scan.) SMART Health Card payloads are compressed, so the precise number of available uncompressed bytes for the embedded FHIR Bundle is not knowable (the compression ratio depends on the specific content being compressed).
+
+To support implementers' efforts to minimize payload size, this IG provides two different sets of profiles:
+
+1. **Primary Profiles** focused on data minimization (DM). These profiles use cardinality constraints to prohibit elements beyond the minimal set needed to meet our use cases.
+2. **Fallback Profiles**, with relaxed constraints that include all allowable data (AD).
+
+More information can be found on the [Profiles page](profiles.html#data-minimization-and-privacy).
+
+In practice, we have found that bundles of resources conforming to the Primary Profiles in this IG do fit within the payload constraints.
 
 Due to these size constraints and to preserve patient privacy, information that is not necessary for Verifiers SHALL NOT be included in SMART Health Cards. With respect to patient privacy, note that when a SMART Health Card is issued, it is [cryptographically signed](https://spec.smarthealth.cards/#signing-health-cards) by the Issuer. This means that the contents, including the FHIR Bundle, cannot be changed without invalidating the signature. It is therefore critical for Issuers to exclude any information that could represent a privacy risk to a patient when presenting their SMART Health Card to a Verifier.
 
@@ -77,13 +86,13 @@ The IG is currently focused on coordinating implementers' representations of rel
 
 1. Risk evaluation algorithms may be actor- or context-dependent.
 
-    For example, some parties may only consider FDA-approved or EUA vaccines to be acceptable, while others may accept vaccines approved in other countries.
+    For example, some parties may only consider United States Food and Drug Administration (FDA)-approved or Emergency Use Authorization (EUA) vaccines to be acceptable, while others may accept vaccines approved in other countries.
 
     Embedding stringent validation criteria in our FHIR profiles may make it impossible for implementers with less stringent criteria to use this IG.
 
 1. More constrained profiles for risk evaluation can be created based on the profiles in this IG, but it's not possible to remove constraints in a child profile.
 
-1. Cardinality constraints are applied to specific data elements in [Allowable Data profiles](profiles.html#data-minimization-and-privacy) when their inclusion (1) does not support our use case and could harm patients; or (2) is contrary to our [key design principles](https://vci.org/about#key-principles). For example, `Patient.identifier` is not allowed in resources conforming to [SHCPatientUnitedStatesDM] as this may include a MRN or SSN in the United States, which would introduce a significant privacy risk for patients.
+1. Cardinality constraints are applied to specific data elements in [Allowable Data profiles](profiles.html#data-minimization) when their inclusion (1) does not support our use case and could harm patients; or (2) is contrary to our [key design principles](https://vci.org/about#key-principles). For example, `Patient.identifier` is not allowed in resources conforming to [SHCPatientUnitedStatesAD] as this may include a Medical Record Number (MRN) or Social Security Number (SSN) in the United States, which would introduce a significant privacy risk for patients.
 
 ### Approach to terminology bindings
 
