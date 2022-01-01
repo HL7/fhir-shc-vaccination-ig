@@ -25,6 +25,11 @@ Description: "All timestamps SHOULD be represented as Dates (YYYY-MM-DD only)."
 Expression:  "$this.toString().matches('^[0-9]{4}-[0-9]{2}-[0-9]{2}$')"
 Severity:    #warning
 
+Invariant:   vc-polymorphic-date-invariant
+Description: "All timestamps SHOULD be represented as Dates (YYYY-MM-DD only)."
+Expression:  "($this as DateTime).toString().matches('^[0-9]{4}-[0-9]{2}-[0-9]{2}$')"
+Severity:    #warning
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Invariant:   vc-shall-be-true-if-populated-invariant

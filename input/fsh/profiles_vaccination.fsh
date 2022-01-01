@@ -21,13 +21,12 @@ Description: "Defines a profile representing a vaccination for a SMART Health Ca
 * meta.security ^definition = "Limited security metadata which conveys an attestation that the immunization provider performed a certain level of identity verification at the time of service. If known, Issuers SHALL attest to the highest level that applies."
 * meta.security MS
 
+// occurrence[x] is already 1..1 in the base resource
+* occurrence[x] only dateTime
 * occurrence[x] MS
-* occurrence[x] ^definition = "Date vaccine administered."
-* occurrence[x] ^comment = "See `occurrenceDateTime`." // Remove inherited comment, which is not meaningful for our context.
-* occurrenceDateTime 1..1 MS
-* occurrenceDateTime ^definition = "Date vaccine administered (`YYYY-MM-DD` format)."
-* occurrenceDateTime ^comment = "For data minimization reasons, only year, month, and date SHOULD be reported for this element. Exact time (hour, minute, second) are not relevant for our use cases."
-* occurrenceDateTime obeys vc-date-invariant
+* occurrence[x] ^definition = "Date vaccine administered (`YYYY-MM-DD` format)."
+* occurrence[x] ^comment = "For data minimization reasons, only year, month, and date SHOULD be reported for this element. Exact time (hour, minute, second) are not relevant for our use cases."
+* occurrence[x] obeys vc-polymorphic-date-invariant
 
 // Parent profile short description is not as clear as it could be
 * primarySource ^short = "Information in this record from person who administered vaccine?"
