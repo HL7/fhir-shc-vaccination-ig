@@ -50,13 +50,4 @@ shc1 -> holder
 holder <----> Wallet
 
 holder -> Verifiers
-
-
-
-' Gov't building icon: https://thenounproject.com/icon/government-building-2031469/
-' Laboratory icon: https://thenounproject.com/icon/laboratory-4094344/
-' Pharmacy icon: https://thenounproject.com/icon/pharmacy-1131818/
-' Hospital icon: https://thenounproject.com/icon/hospital-3679275/
-' QR code smartphone icon: https://thenounproject.com/icon/qr-phone-code-2511015/
-' QR code document: https://thenounproject.com/icon/qr-document-440101/
 @enduml
