@@ -61,28 +61,28 @@ Description: "Defines a profile representing a vaccination for a SMART Health Ca
 // It's necessary to fix `system` **in addition** to the value set binding for the slicing to work
 * vaccineCode.coding[cvx] ^short = "CVX code identifying the administered vaccine product"
 * vaccineCode.coding[cvx] from vaccine-cvx (required)
-* vaccineCode.coding[cvx].system = "http://hl7.org/fhir/sid/cvx"
+* vaccineCode.coding[cvx].system = "http://hl7.org/fhir/sid/cvx" (exactly)
 
 * vaccineCode.coding[gtin] ^short = "GTIN code identifying the administered vaccine product"
 * vaccineCode.coding[gtin] from vaccine-gtin (required)
-* vaccineCode.coding[gtin].system = "https://www.gs1.org/gtin"
+* vaccineCode.coding[gtin].system = "https://www.gs1.org/gtin" (exactly)
 
 * vaccineCode.coding[snomed] ^short = "SNOMED CT code identifying the administered vaccine product"
 * vaccineCode.coding[snomed] from vaccine-snomed (required)
-* vaccineCode.coding[snomed].system = "http://snomed.info/sct"
+* vaccineCode.coding[snomed].system = "http://snomed.info/sct" (exactly)
 
 * vaccineCode.coding[icd11] ^short = "ICD11 code identifying the administered vaccine product"
 * vaccineCode.coding[icd11] from vaccine-icd-11 (required)
-* vaccineCode.coding[icd11].system = "http://id.who.int/icd/release/11/mms"
+* vaccineCode.coding[icd11].system = "http://id.who.int/icd/release/11/mms" (exactly)
 
 // See http://build.fhir.org/ig/hl7au/au-fhir-base/StructureDefinition-au-immunization.html for the value set and code system URIs
 * vaccineCode.coding[air] ^short = "Australian Immunisation Register Vaccine code identifying the administered vaccine product"
 * vaccineCode.coding[air] from https://healthterminologies.gov.au/fhir/ValueSet/australian-immunisation-register-vaccine-1 (required)
-* vaccineCode.coding[air].system = "https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats"
+* vaccineCode.coding[air].system = "https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats" (exactly)
 
 * vaccineCode.coding[atc] ^short = "ATC code identifying the administered vaccine product"
 * vaccineCode.coding[atc] from vaccine-atc (required)
-* vaccineCode.coding[atc].system = "http://www.whocc.no/atc"
+* vaccineCode.coding[atc].system = "http://www.whocc.no/atc" (exactly)
 
 // Manufacturer
 // Why we are doing this rather than an extension or in vaccineCode
@@ -123,7 +123,7 @@ Description: "Defines a profile representing a vaccination for a SMART Health Ca
 
 * status ^short = "Whether or not the vaccination was completed"
 * status MS
-* status = #completed
+* status = #completed (exactly)
 
 // If `status` is fixed to `completed`, `statusReason` is meaningless since it's only used for
 // incomplete vaccinations.
