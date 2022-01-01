@@ -20,6 +20,11 @@ The primary actors are:
 
 Issuers and Verifiers are considered "implementers" of this IG.
 
+This diagram shows the typical SHC workflow among these actors:
+
+<!-- If the image below is not wrapped in a div tag, the publisher tries to wrap text around the image, which is not desired. -->
+<div style="text-align: center;">{%include workflow.svg%}</div>
+
 ### Use cases
 
 Our primary focus is on the use case of representing the minimal set of clinical data necessary to represent COVID-19 vaccination status and laboratory testing for verification purposes in a SMART Health Card. We support other infectious diseases as a secondary use case. To meet these use cases, we provide profiles of a [FHIR Bundle](https://www.hl7.org/fhir/bundle.html) that describes the contents of [the `fhirBundle` element in a SMART Health Card](https://spec.smarthealth.cards/#data-model). We also provide profiles of the resources contained within this Bundle.
@@ -42,7 +47,7 @@ Due to these size constraints and to preserve patient privacy, information that 
 * {% assign example = site.data.examples["StructureDefinition-shc-vaccination.html"][2] %}[Immunization resource: {{example.title}}]({{ example.url | replace: 'GIT_BRANCH_GOES_HERE', site.data['git-branch']}}) conforming to [SHCVaccinationDM]
 * {% assign example = site.data.examples["StructureDefinition-shc-vaccination.html"][3] %}[Immunization resource: {{example.title}}]({{ example.url | replace: 'GIT_BRANCH_GOES_HERE', site.data['git-branch']}}) conforming to [SHCVaccinationDM]
 
-The example Bundle resources for both scenarios above conform to [SHCVaccinationBundleDM]. 
+The example Bundle resources for both scenarios above conform to [SHCVaccinationBundleDM].
 
 #### Use case 2: laboratory test results
 
