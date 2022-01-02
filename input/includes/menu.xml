@@ -1,8 +1,34 @@
 <ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
   <li><a href="index.html">Home</a></li>
-  <li><a href="profiles.html">Profiles</a></li>
+
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Value Sets<b class="caret"></b></a>
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Profile Groups<b class="caret"></b></a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="profiles.html">
+          All Profiles
+          <span class="label label-success" style="margin-left: 2em;">Start here!</span>
+        </a>
+      </li>
+
+      <li role="separator" class="divider"></li>
+
+      <li><a href="patient.html">Patient</a></li>
+      <li>
+        <a href="vaccination.html">Vaccination</a>
+      </li>
+      <li>
+        <a href="laboratory-results-observation.html">Lab results</a>
+      </li>
+      <li>
+        <a href="bundles.html">Bundles</a>
+      </li>
+    </ul>
+  </li>
+
+
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Terminology<b class="caret"></b></a>
     <ul class="dropdown-menu">
       <li><a href="ValueSet-vaccine-gtin.html">Vaccine: GTIN</a></li>
       <li><a href="ValueSet-vaccine-cvx.html">Vaccine: CVX</a></li>
@@ -21,5 +47,10 @@
     </ul>
   </li>
   <li><a href="https://github.com/HL7/fhir-shc-vaccination-ig">GitHub</a></li>
-  <li><a href="contact.html">Contact the Authors</a></li>
+  <li>
+    <a href="downloads.html">Downloads</a>
+  </li>
+  <li>
+    <a href="contact.html">Contact the Authors</a>
+  </li>
 </ul>
