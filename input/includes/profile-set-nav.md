@@ -48,11 +48,42 @@
 <style>
  /* Restyle table at the top of each profile page */
   #segment-content > div > div > div > div > table.grid:first-of-type {
-    color: #ababab;
+    margin-top: -12px;
+    margin-left: 2%;
+    width: 96%;
     border: none;
+    background-color: #f5f5f5;
+
+    /* Bananas stuff you apparently have to do to get both a border and round corners on a table */
+    border-left: 1px solid rgb(220, 220, 220);
+    border-right: 1px solid rgb(220, 220, 220);
+    border-bottom: 1px solid rgb(220, 220, 220);
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px !important;
+    overflow: hidden;
+    box-shadow: 0px 0px 1px rgb(220,220,220)
   }
+
   #segment-content > div > div > div > div > table.grid:first-of-type td {
-    font-size: 0.7em;
+    font-size: 0.8em;
+  }
+
+  /* add 10px exterior padding to table */
+  #segment-content > div > div > div > div > table.grid:first-of-type tr:first-of-type td { padding-top:10px; }
+  #segment-content > div > div > div > div > table.grid:first-of-type tr:last-of-type td { padding-bottom:10px; }
+
+  /* proper width on first column */
+    #segment-content > div > div > div > div > table.grid:first-of-type tr td:first-of-type {
+      min-width: 10em;
+  }
+
+  /* Fix font for defining url in table */
+  #segment-content > div > div > div > div > table.grid:first-of-type tr:first-of-type td:last-of-type {
+    font-family: Monaco, Menlo, Consolas, "Courier New", monospace !important;
+    font-size: 12px;
+  }
+
+  #segment-content > div > div > div > div > table.grid:first-of-type td {
     border: none;
     padding: 0;
   }
