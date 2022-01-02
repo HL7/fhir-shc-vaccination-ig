@@ -226,6 +226,8 @@ Description: "Defines a profile representing a vaccination for a SMART Health Ca
 * insert vaccineCodeCodingDM(air)
 * insert vaccineCodeCodingDM(atc)
 
+* insert reference-to-ad-profile-comment(patient)
+
 
 RuleSet: vaccineCodeCodingDM (sliceName)
 * vaccineCode.coding[{sliceName}].id 0..0

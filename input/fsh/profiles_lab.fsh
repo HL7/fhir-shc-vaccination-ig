@@ -172,6 +172,7 @@ previous infection status. Only elements necessary for Verifiers can be populate
 
 * insert LaboratoryResultObservationDM
 
+* insert reference-to-ad-profile-comment(subject)
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -203,3 +204,5 @@ Description:    "Profile for reporting laboratory results indicating current or 
 Only elements necessary for Verifiers can be populated."
 
 * insert LaboratoryResultObservationDM
+
+* insert reference-to-ad-profile-comment(subject)

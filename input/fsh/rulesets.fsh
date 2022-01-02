@@ -9,3 +9,10 @@ RuleSet: reference-to-absolute-uri(path)
 * {path}.type 0..0
 * {path}.identifier 0..0
 * {path}.display 0..0
+
+RuleSet: reference-to-ad-profile-comment(element)
+* {element} ^comment = "Note that this is a reference to the Fallback Profile (`SHCPatientGeneralAD`) rather than the Primary Profile.
+
+This is because in some cases, implementers may be able to use the Primary Profile for this resource, but need the Fallback Profile for the Patient resource.
+
+Resource instances that conform to the Primary Profile of Patient will **also** conform to the Fallback Profile of Patient. Implementers SHALL use the Primary Profile of Patient whenever possible. For more information see the [Profiles](profiles.html) page."
