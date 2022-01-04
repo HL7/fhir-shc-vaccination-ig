@@ -35,3 +35,11 @@
 .nav .open > .dropdown-menu {
     display: table-caption;
 }
+
+#segment-content a {
+    text-decoration: underline;
+}
+
+#segment-content .nav a {
+    text-decoration: none;
+}

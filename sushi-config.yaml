@@ -35,12 +35,14 @@ pages:
     title: Home
   profiles.md:
     title: Profiles
-  laboratory-results-observation.md:
-    title: Laboratory Results Observation
-  vaccination.md:
-    title: Vaccination
   patient.md:
-    title: Patients
+    title: "Profile Group: Patients"
+  vaccination.md:
+    title: "Profile Group: Vaccination"
+  laboratory-results-observation.md:
+    title: "Profile Group: Laboratory Results Observation"
+  bundles.md:
+    title: "Profile Group: Bundles"
   StructureDefinition-shc-covid19-laboratory-bundle-resource-examples.md:
     title: Structure Definition SHC Covid 19 Laboratory Bundle Resource Examples
   StructureDefinition-shc-covid19-laboratory-result-observation-resource-examples.md:
@@ -61,6 +63,7 @@ pages:
     title: Contact
   conformance.md:
     title: Conformance
+  downloads.md:
+    title: Downloads
   artifacts.html:
     title: Artifacts Summary
-
