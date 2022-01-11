@@ -1,4 +1,4 @@
-This Implementation Guide (IG) includes Data Minimization (DM), which include only the minimum set of elements necessary to create a valid resource, and fallback Allowable Data (AD) profiles. More detail about the difference between DM and AD profiles is available below.
+This Implementation Guide (IG) includes Primary Profiles to ensure data minimization (DM), and Fallback Profiles with relaxed constraints that include all allowable data (AD). More detail about the difference between DM and AD profiles is available below.
 
 ### Profile groups
 
@@ -89,7 +89,7 @@ In this Implementation Guide, "support in some meaningful way" is defined as fol
 
     1. Issuers SHALL populate any elements marked as `MustSupport` **if and only if the necessary data are available in their system**. See [Missing data](#missing-data) below for details.
 
-    1. Issuers SHOULD NOT populate any elements that are not marked as `MustSupport` unless they believe the element contains valuable information for Holders and/or Verifiers. This is due to the payload size constraints of SMART Health Cards; see the [Data minimization](#data-minimization) section below for more details on how to reduce payload size when implementing. To avoid contradicting cardinality, all required elements (minimum cardinality > 0) are therefore also labeled as `MustSupport`.
+    1. Issuers SHOULD NOT populate any elements that are not marked as `MustSupport` unless they believe the element contains valuable information for Holders and/or Verifiers. This is due to the payload size constraints of SMART Health Cards; see the [Data minimization](#data-minimization-and-privacy) section below for more details on how to reduce payload size when implementing. To avoid contradicting cardinality, all required elements (minimum cardinality > 0) are therefore also labeled as `MustSupport`.
 
 - **Verifiers:**
 
@@ -106,13 +106,13 @@ Elements with a minimum [cardinality](https://www.hl7.org/fhir/conformance-rules
 - If an Issuer does not have data for a `MustSupport` data element, the data element SHALL be omitted from the resource. Implementers SHALL NOT produce placeholder data when data are not available; instead, omit the element.
 - If an Issuer does not have data for a required data element (minimum cardinality > 0), the Issuer SHALL NOT produce the resource.
 
-### Data minimization
+### Data minimization and privacy
 
-The FHIR payload within a SMART Health Card SHALL be [small enough](https://spec.smarthealth.cards/#health-cards-are-small) to allow the entirety of the SMART Health Card to fit within [a single Version 22 QR code](https://spec.smarthealth.cards/#chunking). This limits the amount of data that SHOULD be included in FHIR resources that appear in SMART Health Card payloads.
+**To preserve patient privacy, information that is not necessary for Verifiers *SHALL NOT* be included in SMART Health Cards.** With respect to patient privacy, note that when a SMART Health Card is issued, it is [cryptographically signed](https://spec.smarthealth.cards/#signing-health-cards) by the Issuer. This means that the contents, including the FHIR bundle, cannot be changed without invalidating the signature. It is therefore critical for Issuers to exclude any information that could represent a privacy risk to a patient when presenting their SMART Health Card to a Verifier.
 
-To preserve patient privacy, information that is not necessary for Verifiers SHALL NOT be included in SMART Health Cards. With respect to patient privacy, note that when a SMART Health Card is issued, it is [cryptographically signed](https://spec.smarthealth.cards/#signing-health-cards) by the Issuer. This means that the contents, including the FHIR bundle, cannot be changed without invalidating the signature. It is therefore critical for Issuers to exclude any information that could represent a privacy risk to a patient when presenting their SMART Health Card to a Verifier.
+Additionally, FHIR payload within a SMART Health Card SHALL be [small enough](https://spec.smarthealth.cards/#health-cards-are-small) to allow the entirety of the SMART Health Card to fit within [a single Version 22 QR code](https://spec.smarthealth.cards/#chunking). This limits the amount of data that SHOULD be included in FHIR resources that appear in SMART Health Card payloads.
 
-See the [Validation section](#validation) for information on how to validate a resource against a profile.
+To ensure only the minimal amount of data are being included, Issuers SHOULD validate their FHIR resource instances against the primary (DM) profiles listed above. See the [Validation section](#validation) for information on how to validate a resource against a profile.
 
 Additionally:
 
@@ -172,6 +172,22 @@ path/to/immunization.json
 The command above would validate `path/to/immunization.json` against the [SHCVaccinationDM] profile. To validate against a different profile, change `shc-vaccination-dm` to the [identifier](http://www.hl7.org/fhir/structuredefinition-definitions.html#StructureDefinition.identifier) of the profile you want to validate against. This can be found at the end of the canonical URL listed at the top of each profile's page in the IG.
 
 Additional [testing and validation tools may be found here](https://confluence.hl7.org/display/PHWG/SMART+Health+Cards+Implementation+Tools).
+
+---
+
+### Internationalization
+
+The [SMART Health Cards] specification and this IG are suitable for international use.
+
+Additionally, this IG includes specific profiles for the following jurisdictions:
+
+- United States
+
+Other jurisdictions are welcome to define their own profiles that reflect their local concerns -- please contact the local HL7 affiliate or [the authors of this specification](contact.html) for assistance.
+
+Jurisdictional profiles will typically add constraints to those defined in the "fallback" profiles [defined above](#profile-groups). For example, jurisdictional profiles might add constraints limiting the patient identifier to a specific type of national patient/consumer id, or define a specific value set using codes from a local SNOMED-CT edition for vaccines.
+
+Typically jurisdictional profiles will include both "primary" and "fallback" profiles; both SHALL inherit from the generic "fallback" profile or the generic "primary" profile.
 
 {% include markdown-link-references.md %}
 
