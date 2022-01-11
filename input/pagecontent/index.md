@@ -47,7 +47,9 @@ More information can be found on the [Profiles page](profiles.html#data-minimiza
 
 In practice, we have found that bundles of resources conforming to the Primary Profiles in this IG do fit within the payload constraints.
 
-Due to these size constraints and to preserve patient privacy, information that is not necessary for Verifiers SHALL NOT be included in SMART Health Cards. With respect to patient privacy, note that when a SMART Health Card is issued, it is [cryptographically signed](https://spec.smarthealth.cards/#signing-health-cards) by the Issuer. This means that the contents, including the FHIR Bundle, cannot be changed without invalidating the signature. It is therefore critical for Issuers to exclude any information that could represent a privacy risk to a patient when presenting their SMART Health Card to a Verifier.
+Due to these size constraints and to preserve patient privacy, **information that is not necessary for Verifiers SHALL NOT be included in SMART Health Cards.** If sensitive information were included in a SMART Health Card, it cannot be removed by the patient without invalidating the SMART Health Card,[^signature] and this information would be exposed to the Verifier anytime the patient presented their SMART Health Card. It is therefore critical for Issuers to exclude any information that could represent a privacy risk to a patient when presenting their SMART Health Card to a Verifier.
+
+[^signature]: Once a SMART Health Card is issued, it is not possible to remove or edit any of the included information without without invalidating the [cryptographic signature](https://spec.smarthealth.cards/#signing-health-cards), which will cause the SMART Health Card to be flagged as invalid by verification apps.
 
 #### Use case 1: immunization records
 
