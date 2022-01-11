@@ -75,6 +75,13 @@ All resources meant to conform with this IG SHOULD conform to the relevant prima
 
 In some cases, multiple pairs of primary/fallback profiles of the same resource are provided (e.g., "Universal Patient" vs. "US-Only Patient"). Implementers SHALL use the _most specific_ set of profiles for their given use case. For example, a US-based implementer SHALL use the "US-Only Patient" profiles. Likewise, an implementer producing resources representing COVID-19 lab results SHALL use the COVID-19-specific lab results profiles.
 
+Note that in FHIR, a profile is derived from either the base FHIR resource (like [Patient](https://www.hl7.org/fhir/patient.html)) or another profile. In this IG, a Fallback Profile is typically derived from the base FHIR resource, and the corresponding Primary Profile is derived from the Fallback Profile. The Primary Profile can therefore be considered a child of the Fallback Profile. A child profile cannot remove or relax a constraint defined in the parent profile. Instead, child profiles typically impose stricter constraints than the parent profile.
+
+The diagram below shows the relationship of the Primary and Fallback Profiles, namely that the Primary Profile is a subset of the Fallback Profile:
+
+<!-- If the image below is not wrapped in a div tag, the publisher tries to wrap text around the image, which is not desired. -->
+<div style="text-align: center;"><img src="primary_vs_fallback.svg"></div>
+
 ### MustSupport interpretation
 
 [Elements in FHIR can be labeled as `MustSupport`](https://www.hl7.org/fhir/conformance-rules.html#mustSupport), denoted in profiles by this symbol: <span style="padding-left: 3px; padding-right: 3px; color: white; background-color: red;" >S</span>.
