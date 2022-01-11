@@ -2,62 +2,37 @@ This Implementation Guide (IG) includes Primary Profiles to ensure data minimiza
 
 ### Profile groups
 
-<table class="table">
-<thead>
-    <tr>
-        <th>Profile Group</th>
-        <th>Primary Profiles (DM)</th>
-        <th>Fallback Profiles (AD)</th>
-        <th>Scope</th>
-    </tr>
-</thead>
-<tbody>
+<ul>
 {% for resource in site.data.profiles %}
-{% assign r = resource[1] %}
-{% if r.suppress == true %}
-{% else %}
-{% assign resourceName = resource[0] %}
-
-    {% for profileSet in r.profileSets %}
-    <tr>
-        {% if forloop.first == true %}
-            <td rowspan="{{ forloop.length }}">
-                <strong>{{ r.name }}</strong><br>
-                {{ r.description }}
-                {% if r.instructions %}
-                    {% capture url %}{{r.instructions}}{% endcapture %}
-                    <br><br>
-                    <span class="label label-success">Start here!</span>
-                    <a href="{{ r.instructions }}">Implementation instructions</a>
-                {% endif %}
-            </td>
-        {% endif %}
-        {% capture url %}StructureDefinition-{{ profileSet.slug }}-dm.html{% endcapture %}
-        <td><a href="{{ url }}">{{ profileSet.name }}</a></td>
-
-        {% capture url %}StructureDefinition-{{ profileSet.slug }}-ad.html{% endcapture %}
-        <td ><a href="{{ url }}">Fallback</a></td>
-
-        <td>{{ profileSet.scope }}</td>
-    </tr>
-    {% endfor %}
-{% endif %}
+    {% assign key = resource[0] %}
+    {% assign r = resource[1] %}
+    <li>
+        <strong id="profile-group-{{ key }}">
+            {% if r.instructions %}<a href="{{ r.instructions }}">{% endif %}
+            {{ r.name }}
+            {% if r.instructions %}</a>{% endif %}
+        </strong>
+        <br>
+        {{ r.description | markdownify }}
+    </li>
 {% endfor %}
-</tbody>
-</table>
+</ul>
 
 <hr style="margin-top: 3em; margin-bottom: 3em;">
 
 ### How to use profiles for implementation
 
+<span class="label">Note</span> This specification uses the conformance verbs SHALL, SHOULD, and MAY as defined in [RFC 2119].
+
 The recommended workflow for reading profiles of a given resource in this IG is as follows:
 
 1. Begin by reading the [IG's home page](index.html) and this page in their entirety.
-1. Then look at the table above for the specific Profile Group you need. Start by reviewing the "Implementation instructions" page for that Profile Group, if provided (will appear with <span class="label label-success">Start here!</span> in the table above and on each related profile's page).
-1. If multiple pairs of primary/fallback profiles are available within this Profile Group, choose the one with the **narrowest** applicable scope.
-1. Review the "Snapshot" tab on the primary (DM) profile. The elements listed here SHOULD/SHALL be included based on  `MustSupport` (<span style="padding-left: 3px; padding-right: 3px; color: white; background-color: red;" >S</span> in the "Flags" column) and [cardinality](https://www.hl7.org/fhir/conformance-rules.html#cardinality) (in the "Card.") column. Elements **not** listed here SHOULD NOT or SHALL NOT be included. Details on interpreting cardinality and `MustSupport` for this IG are available [below](#mustsupport-interpretation).
-    - For more information about the data type for a given element, click the data type link in the "Type" column. This will bring you to the relevant portion of the FHIR specification for that data type.
-    - The "Description & Constraints" column has a short description of each element. Some elements may also have a "Binding" listed here, which indicates values SHALL come from the specified list. (This IG uses "Required" for all value set bindings, but other IGs may use [more flexible binding strengths](https://www.hl7.org/fhir/terminologies.html#strength).)
+1. Review this page in its entirety.
+1. Use the "Profile Groups" navigation menu, or the list of profile groups above to review the implementation instructions for each profile group in the IG.
+    1. If multiple pairs of primary/fallback profiles are available within this Profile Group, note that you should choose the pair with the **narrowest** applicable scope. For example, if there is a set of profiles for your country, you should use those rather than the generic set.
+    1. Review the "Snapshot" tab on the primary profile you plan to use within each profile group. The elements listed here SHOULD/SHALL be included based on  `MustSupport` (<span style="padding-left: 3px; padding-right: 3px; color: white; background-color: red;" >S</span> in the "Flags" column) and [cardinality](https://www.hl7.org/fhir/conformance-rules.html#cardinality) (in the "Card.") column. Elements **not** listed here SHOULD NOT or SHALL NOT be included. Details on interpreting cardinality and `MustSupport` for this IG are available [below](#mustsupport-interpretation).
+        - For more information about the data type for a given element, click the data type link in the "Type" column. This will bring you to the relevant portion of the FHIR specification for that data type.
+        - The "Description & Constraints" column has a short description of each element. Some elements may also have a "Binding" listed here, which indicates values SHALL come from the specified list. (This IG uses "Required" for all value set bindings, but other IGs may use [more flexible binding strengths](https://www.hl7.org/fhir/terminologies.html#strength).)
 1. For each element included in a given resource, review the detailed definition for the element in this IG. To find this, click the element's name in the "Snapshot" table of the relevant profile. The detailed definition may have more implementation and conformance information including applicable [invariants](https://www.hl7.org/fhir/conformance-rules.html#constraints).
 1. If you wish to [validate](#validation) your resource, start by validating against the primary (DM) profile for a given FHIR resource, and attempt to resolve any errors.
 
@@ -66,8 +41,6 @@ The recommended workflow for reading profiles of a given resource in this IG is 
     Issuers should be aware that adding in extraneous information to FHIR resources may not make it possible for the SMART Health Card to fit in a legible QR code. Issuers should refer to [SMART Health Cards Framework] for details.
 
 <hr style="margin-top: 3em; margin-bottom: 3em;">
-
-<span class="label">Note</span> This specification uses the conformance verbs SHALL, SHOULD, and MAY as defined in [RFC 2119].
 
 ### Conformance to profiles
 
