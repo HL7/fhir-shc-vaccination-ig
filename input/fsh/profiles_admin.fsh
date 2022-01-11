@@ -20,6 +20,11 @@ Description: "Slight modification of Patient, with identifier as 0..0 and limite
 * name ^comment = "Cardinality for this element is set to `1..*` rather than `1..1` as in rare cases there may be a valid rational for including multiple `name` elements. The Data Minimization version of this profile reflects the rarity of this by setting `name` to `1..1`. The open cardinality supports first and middle names for example, if they are not added to the given name field."
 * name.text ^short = "Use instead of `family` and `given` if the patient's name cannot be easily split these elements"
 * name.given ^short = "All of a patient's names, other than their family name, can be included in their given name"
+// FHIR-34447 - Allow name.suffix in primary Patient profiles (https://jira.hl7.org/browse/FHIR-34447)
+* name.prefix MS
+* name.prefix ^comment = "SHOULD be included if it appears on a government-issued ID."
+* name.suffix MS
+* name.suffix ^comment = "SHOULD be included if it appears on a government-issued ID."
 
 * birthDate MS
 * birthDate ^comment = "If exact date of birth is partially or completely unknown, Issuers SHALL populate this element with the date of birth information listed on the patient's government-issued identification. This MAY include a partial date of birth like `1999` or `1999-01`, or \"filler\" for unknown portions. (E.g., if a patient was born in 1950 but does not know the month or day, their government-issued identification may fill the month and day with `-01-01`. In this case, it is acceptable to populate this element with `1950-01-01` even if it is known the patient was not actually born on January 1.) If date of birth is completely unknown and no government-issued identification is available, Issuers MAY omit this element."
