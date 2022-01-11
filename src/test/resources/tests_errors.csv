@@ -1,6 +1,5 @@
 example,profile,expectedIssueSeverity,expectedLocation,expectedErrorMessage
 src/test/resources/should-be-omitted.test.json,http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-bundle-dm,WARNING,Bundle.id,vc-should-be-omitted
-src/test/resources/observation-status-shall-be-complete.test.json,http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-covid19-laboratory-result-observation-ad,ERROR,,vc-observation-status-shall-be-complete
 src/test/resources/name-invariant-xor.test.json,http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-patient-general-dm,ERROR,,vc-name-invariant
 src/test/resources/name-invariant-family-only.test.json,http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-patient-general-dm,ERROR,,vc-name-invariant
 src/test/resources/name-invariant-none.test.json,http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-patient-general-dm,ERROR,,vc-name-invariant

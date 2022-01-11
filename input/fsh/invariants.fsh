@@ -95,13 +95,6 @@ Severity:    #warning
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Invariant:   vc-observation-status-shall-be-complete
-Description: "SHALL be `final`, `amended`, or `corrected`"
-Expression:  "$this.lower() in ('final'|'amended'|'corrected')"
-Severity:    #error
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
 Invariant:   vc-observation-quantity-should-have-range
 Description: "Quantitative lab results SHOULD include reference range"
 Expression:  "%resource.referenceRange.exists()"
