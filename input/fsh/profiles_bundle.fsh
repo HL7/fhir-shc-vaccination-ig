@@ -7,7 +7,7 @@ RuleSet: common-bundle-rules
 * id ^comment = "n/a"
 * id obeys vc-should-be-omitted
 
-* type  = #collection
+* type  = #collection (exactly)
 * type MS
 * entry ^slicing.discriminator.type = #type
 * entry ^slicing.discriminator.path = "resource"
