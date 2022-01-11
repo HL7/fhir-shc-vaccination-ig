@@ -133,75 +133,24 @@ Note that an ATC code for COVID-19 vaccines (`J07BX03`) [has been created](https
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-ValueSet:    QualitativeLabResultsLOINC
-Id:          qualitative-lab-results-loinc
-Title:       "Qualitative lab results - LOINC"
-Description: "This value set includes codes from LOINC answer lists with roughly equivalent meanings to the codes in this [value set of COVID-19-related SNOMED CT codes](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1114.10/expansion)."
-
-* ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc"
-
-// This value set is not used directly by any profiles, but is included in other value sets.
-// It exists as a separate value set to keep the FSH for the other value sets DRY.
-
-// Include codes from LOINC answer lists
-
-// http://loinc.org/vs/LL1055-4 // Detected|Not det|Equiv|Inconcl|Spec unsat for eval
-* LNC#LA11882-0 "Detected"
-* LNC#LA11883-8 "Not detected"
-* LNC#LA11885-3 "Equivocal"
-* LNC#LA9663-1 "Inconclusive"
-* LNC#LA13548-5 "Specimen unsatisfactory for evaluation"
-
-// http://loinc.org/vs/LL2206-2 // Neg|Borderline|Pos|Strong Pos
-* LNC#LA6577-6 "Negative"
-* LNC#LA4259-3 "Borderline"
-* LNC#LA6576-8 "Positive"
-* LNC#LA18996-1 "Strong positive"
-
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
-ValueSet:    LabResultFindingsSNOMED
-Id:          lab-result-findings-snomed
-Title:       "Lab result findings - SNOMED CT"
+ValueSet:    LabResultFindings
+Id:          lab-result-findings
+Title:       "Lab result findings"
 Description: "This value set includes SNOMED CT codes for identifying laboratory test results."
 
 * ^copyright = "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"
 
-// This value set has to be created separately from LabResultFindings. If the line below is
-// included directly within LabResultFindings, the following error occurs:
-//
-//     ERROR: ValueSet.where(id = 'lab-result-findings'): Error from server: Unable to find
-//     value set "http://hl7.org/fhir/uv/shc-vaccination/ValueSet/qualitative-lab-results-loinc"
-
-// Include all clinical finding codes
-* include codes from system SCT where concept is-a #404684003 // Clinical finding (finding)
-// Note that expansion does not work for #441742003 (Evaluation finding (finding)), which would be preferable
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
-ValueSet:    LabResultFindings
-Id:          lab-result-findings
-Title:       "Lab result findings"
-Description: "This value set includes SNOMED CT and LOINC codes for identifying laboratory test results.
-
-Note that we plan to change this value set to include only children of `441742003` (\"Evaluation finding (finding)\")
-instead of `404684003` (\"Clinical finding (finding)\"), but currently value set expansion is
-not working with this code in the IG Publisher."
-
-* include codes from valueset lab-result-findings-snomed
-* include codes from valueset qualitative-lab-results-loinc
+* include codes from system SCT where concept descendent-of #260245000 // Findings values (qualifier value)
+* include codes from valueset covid-lab-test-results-snomed-vsac // adds a few codes not under 260245000
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 ValueSet:    QualitativeLabResultFindings
 Id:          qualitative-lab-result-findings
 Title:       "Qualitative lab result findings"
-Description: "This value set includes codes for identifying laboratory test results. It includes SNOMED CT codes from a [value set of COVID-19-related SNOMED CT codes](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1114.10/expansion), as well as codes from LOINC answer lists with roughly equivalent meanings. While the source value set is COVID-19-related, these codes should apply to all infectious disease-related qualitative laboratory results."
+Description: "This value set includes codes for identifying laboratory test results. It includes SNOMED CT codes from a [value set of COVID-19-related SNOMED CT codes](https://vsac.nlm.nih.gov/valueset/2.16.840.1.113762.1.4.1114.10/expansion). While the source value set is COVID-19-related, these codes should apply to all infectious disease-related qualitative laboratory results."
 
 * include codes from valueset covid-lab-test-results-snomed-vsac
-
-* include codes from valueset qualitative-lab-results-loinc
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
