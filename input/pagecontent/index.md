@@ -38,9 +38,7 @@ Our primary focus is on the use case of representing the minimal set of clinical
 
 The SMART Health Cards Framework constrains the size of the FHIR payload embedded within a SMART Health Card to allow the entirety of the SMART Health Card to fit within [a single Version 22 QR code](https://spec.smarthealth.cards/#chunking). This IG is designed to support creating resources that fit within these size constraints. (While it is possible to generate a [denser QR code](https://www.qrcode.com/en/about/version.html), the [SMART Health Cards Framework](https://spec.smarthealth.cards/#every-health-card-can-be-embedded-in-a-qr-code) developers found that denser QR codes could be difficult to scan.) SMART Health Card payloads are compressed, so the precise number of available uncompressed bytes for the embedded FHIR Bundle is not knowable (the compression ratio depends on the specific content being compressed). In practice, we have found that bundles of resources conforming to the [data minimization profiles](profiles.html#data-minimization-and-privacy) in this IG do fit within the payload constraints.
 
-Due to these size constraints and to preserve patient privacy, **information that is not necessary for Verifiers SHALL NOT be included in SMART Health Cards.** If sensitive information were included in a SMART Health Card, it cannot be removed by the patient without invalidating the SMART Health Card,[^signature] and this information would be exposed to the Verifier anytime the patient presented their SMART Health Card. It is therefore critical for Issuers to exclude any information that could represent a privacy risk to a patient when presenting their SMART Health Card to a Verifier.
-
-[^signature]: Once a SMART Health Card is issued, it is not possible to remove or edit any of the included information without without invalidating the [cryptographic signature](https://spec.smarthealth.cards/#signing-health-cards), which will cause the SMART Health Card to be flagged as invalid by verification apps.
+{% include privacy.md %}
 
 #### Use case 1: immunization records
 

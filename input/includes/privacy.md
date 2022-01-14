@@ -1,0 +1,5 @@
+Due to size constraints and to preserve patient privacy, **information that is not _strictly_ necessary for Verifiers in the context of [this IG's use cases](index.html#use-cases) SHALL NOT be included in SMART Health Cards.**
+
+If private or sensitive information are included in a SMART Health Card, it will be exposed to the Verifier every time the SMART Health Card is presented. Additionally, information cannot be removed without invaliding the entire SMART Health Card.[^explanation] It is therefore critical for Issuers to avoid including any information that could represent a safety or privacy risk to a patient in a SMART Health Card.
+
+[^explanation]: SMART Health Cards are designed to be "tamper-evident," meaning that **any** changes to the contents of a SMART Health Card after issuing will be apparent to a Verifier. Typically, Verifiers will reject any SMART Health Cards that have evidence of tampering. For technical details on how tampering can be detected, please refer to [the SMART Health Card specification](https://spec.smarthealth.cards/#issuer-generates-results).
