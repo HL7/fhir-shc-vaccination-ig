@@ -1,25 +1,25 @@
 {% assign r = site.data.profiles[include.resourceName]  %}
+{% capture url %}{{r.instructions}}{% endcapture %}
+{% if page.path != url %}
+<div style="padding-left: 9.3em; margin-bottom:-1.4em;"><span class="highlight"><strong>&darr;</strong> Start here!</span></div>
+{% endif %}
 <div class="well profile-set-nav" style="background-color: #fff; margin-top: 2em; width: 100%;">
     <div style="font-size: 1.2em; margin-top: -1.7em;">
-      <span style="background-color: #fff; padding-left: 0.5em; padding-right: 0.5em;"><strong>{{ r.name }}:</strong> Profile Group Navigation</span>
+      <span style="background-color: #fff; padding-left: 0.5em; padding-right: 0.5em;">
+        Profile Group:
+        {% if page.path == url %}<strong>{% else %}<a style="font-weight: bold; text-decoration: underline;" href="{{ url }}">{% endif %}
+          {{ r.name }}
+        {% if page.path == url %}</strong>{% else %}</a>{% endif %}
+      </span>
     </div>
     <div style="margin-top: 1em;">
-      <p>{{ r.description }}</p>
-      {% if r.instructions %}
-      <p>
-        {% capture url %}{{r.instructions}}{% endcapture %}
-        <span class="{% if page.path == url %}active-page{% endif %}">
-          <a href="{{ r.instructions }}" class="btn btn-success">Implementation instructions</a>
-          {% if page.path != url %}<span class="highlight"><strong>&#8592;</strong> Start here!</span>{% endif %}
-        </span>
-      </p>
-      {% endif %}
+      <p><strong>Description:</strong> {{ r.description | markdownify }}</p>
       <table class="table">
           <thead>
               <tr>
                   <th>Primary profile (DM)</th>
-                  <th>Fallback Profiles (AD)</th>
-                  <th>Scope</th>
+                  <th>Fallback profile (AD)</th>
+                  <th>Scope of profile pair</th>
               </tr>
           </thead>
           <tbody>
@@ -27,11 +27,11 @@
               <tr>
                   {% capture url %}StructureDefinition-{{ profileSet.slug }}-dm.html{% endcapture %}
                   <td class="{% if page.path == url %}active-page{% endif %}">
-                    <a href="{{ url }}" class="btn">{{ profileSet.name }}</a>
+                    <a href="{{ url }}">{{ profileSet.name }}</a>
                   </td>
                   {% capture url %}StructureDefinition-{{ profileSet.slug }}-ad.html{% endcapture %}
                   <td class="{% if page.path == url %}active-page{% endif %}">
-                      <a href="{{ url }}" class="btn">Fallback</a>
+                      <a href="{{ url }}">Fallback</a>
                   </td>
                   <td>{{ profileSet.scope }}</td>
               </tr>
@@ -100,37 +100,15 @@
     margin-bottom:  0;
   }
 
-
-
-  .profile-set-nav .btn {
-    font-size: inherit;
-    font-weight: normal;
-    border: 1px solid #ccc;
-    color: #333;
-  }
-  .profile-set-nav .btn:hover {
-    background-color: #e6e6e6;
-    border-color: #adadad;
-  }
   .highlight {
       background-color: #fffeca;
   }
-  .profile-set-nav .active-page .btn, .profile-set-nav .active-page .btn:hover {
-      /* background-color: #fffeca; */
-      background: #fbfbfb;
-      color: #da0c23;
-      -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
-      -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
-      box-shadow: inset 0px 0px 5px #c1c1c1;
-      border: 0;
-      cursor: not-allowed;
-  }
-  .profile-set-nav .btn-success {
-    color: white;
-  }
-  .profile-set-nav .btn-success:hover {
-    background-color: #449d44;
-    border-color: #398439;
+
+  .profile-set-nav .active-page a {
+    color: #eb8f00;
+    font-weight: bold;
+    text-decoration: none !important;
+    cursor: not-allowed;
   }
 </style>
 

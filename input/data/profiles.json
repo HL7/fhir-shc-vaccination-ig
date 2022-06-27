@@ -48,6 +48,7 @@
   "bundles": {
     "name": "Bundles",
     "description": "Defines the contents of the `fhirBundle` element in a SMART Health Card for a given use case.",
+    "instructions": "bundles.html",
     "profileSets": [
       {
         "name": "Immunization Bundle",
@@ -63,18 +64,6 @@
         "name": "Generic Labs Bundle",
         "scope": "Lab results for any infections disease",
         "slug": "shc-infectious-disease-laboratory-bundle"
-      }
-    ]
-  },
-  "experimental": {
-    "suppress": true,
-    "name": "Experimental",
-    "description": "Profiles that are considered experimental and may change without notice.",
-    "profileSets": [
-      {
-        "name": "Experimental: Vaccination Reaction",
-        "scope": "Any infectious disease",
-        "slug": "shc-vaccination-reaction-observation"
       }
     ]
   }
