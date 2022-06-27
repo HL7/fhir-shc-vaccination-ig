@@ -2,8 +2,17 @@
 
 # Suppress errors related to relative links that the Publisher is turning into the wrong absolute links
 # Reported as https://github.com/HL7/fhir-ig-publisher/issues/245
-The link 'http://hl7.org/fhir/R4/profiles.html#data-minimization' for "data minimization reasons" cannot be resolved
-The link 'http://hl7.org/fhir/R4/conformance.html' for "conformance requirements" cannot be resolved
+The link 'StructureDefinition-shc-covid19-laboratory-result-observation-ad.html/profiles.html#data-minimization-and-privacy' for "data minimization reasons" cannot be resolved
+The link 'StructureDefinition-shc-infectious-disease-laboratory-result-observation-ad.html/profiles.html#data-minimization-and-privacy' for "data minimization reasons" cannot be resolved
+The link 'StructureDefinition-shc-patient-general-ad.html/profiles.html#data-minimization-and-privacy' for "data minimization reasons" cannot be resolved
+The link 'StructureDefinition-shc-patient-general-ad.html/index.html#privacy-by-design' for "privacy by design" cannot be resolved
+The link 'StructureDefinition-shc-patient-general-ad.html/profiles.html#data-minimization-and-privacy' for "data minimization reasons" cannot be resolved
+The link 'StructureDefinition-shc-patient-general-ad.html/index.html#privacy-by-design' for "privacy by design" cannot be resolved
+The link 'StructureDefinition-shc-patient-general-dm.html/StructureDefinition-shc-patient-general-ad.html/profiles.html#data-minimization-and-privacy' for "data minimization reasons" cannot be resolved
+The link 'StructureDefinition-shc-patient-general-dm.html/StructureDefinition-shc-patient-general-ad.html/index.html#privacy-by-design' for "privacy by design" cannot be resolved
+The link 'StructureDefinition-shc-vaccination-ad.html/profiles.html#data-minimization-and-privacy' for "data minimization reasons" cannot be resolved
+The link 'StructureDefinition-shc-vaccination-ad.html/conformance.html' for "conformance requirements" cannot be resolved
+
 
 # Suppress errors related to not having examples. We do in fact have examples for all profiles, but they are linked to on GitHub rather than as part of the standard IG build process. The reason for this is that the IG publisher build process won't allow us to exclude `Resource.id`, `Resource.meta`, and `Resource.text` in examples. These elements SHOULD NOT be included in resources conforming to our IG, so having examples that include them would be confusing for implementers. Reported as https://github.com/HL7/fhir-ig-publisher/issues/293
 WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-covid19-laboratory-bundle-ad'): The Implementation Guide contains no examples for this profile

@@ -35,11 +35,21 @@ Implementers SHOULD include all given name parts that appear on the patient's go
 * birthDate MS
 * birthDate ^comment = "If exact date of birth is partially or completely unknown, Issuers SHALL populate this element with the date of birth information listed on the patient's government-issued identification. This MAY include a partial date of birth like `1999` or `1999-01`, or \"filler\" for unknown portions. (E.g., if a patient was born in 1950 but does not know the month or day, their government-issued identification may fill the month and day with `-01-01`. In this case, it is acceptable to populate this element with `1950-01-01` even if it is known the patient was not actually born on January 1.) If date of birth is completely unknown and no government-issued identification is available, Issuers MAY omit this element."
 
-* gender 0..0
-* gender ^short = "SHALL not be included"
-* gender ^comment = "Self-identified gender may change over time, and it may not be possible to re-issue a credential updating the value of this element. Including this element could therefore create a situation where the gender element in the credential does not match that in another form of identification, or does not match the Holder's self-identified gender at the time they present their credential to a Verifier.
+* gender 0..1
+* gender ^short = "Administrative gender"
+* gender obeys use-only-if-required-by-law
+* gender ^definition = "Administrative gender.
 
-Because gender is a common field in administrative data, it is possible Issuers will include it without considering the potential harms to Holders as described above. We have therefore disallowed this element in both the allowable and data minimization profiles."
+Issuers SHALL NOT include `gender` unless required by law in the jurisdiction where the SMART Health Card is issued.
+
+Verifiers SHALL NOT use `gender` in their workflows unless required by law in both the jurisdiction where the SMART Health Card was issued and the jurisdiction governing the Verifier."
+* gender ^comment = "SMART Health Cards cannot be used as a form of identification. From the [SMART Health Card specification](https://spec.smarthealth.cards/#can-a-smart-health-card-be-used-as-a-form-of-identification):
+
+_\"SMART Health Cards are designed for use alongside existing forms of identification (e.g., a driver's license in person, or an online ID verification service). A SMART Health Card is a non-forgeable digital artifact analogous to a paper record on official letterhead. Concretely, the problem SMART Health Cards solve is one of provenance: a digitally signed SMART Health Card is a credential that guarantees that a specific issuer generated the record. The duty of verifying that the person presenting a Health Card is the subject of the data within the Health Card (or is authorized to act on behalf of this data subject) falls to the person or system receiving and validating a Health Card.\"_
+
+To facilitate verifying that the person presenting a Health Card is the subject of the data within the Health Card (or is authorized to act on behalf of this data subject), the patient's name and date of birth are included the SMART Health Card. **Gender is typically not included** because name and date of birth are sufficient for verification workflows, and there may be legitimate reasons why gender in a SMART Health Card does not match that in an existing form of identification (e.g., a change in administrative gender, or differences in how gender is represented). Note that it may not be possible to get a re-issued SMART Health Card if a patient's administrative gender changes.
+
+Additionally, patients may not wish to share their administrative gender with Verifiers. Since this information is typically not necessary for the Verifiers' use case, it should be omitted as is consistent with the [privacy by design](index.html#privacy-by-design) approach used throughout this IG."
 
 * photo 0..0
 * photo ^comment = "Attachments are not allowed due to data size constraints."
@@ -65,6 +75,13 @@ RuleSet: contact-information-should-not-be-populated(path)
 * {path} obeys vc-should-be-omitted-privacy
 * {path} ^comment = "For patient privacy reasons, this element SHALL NOT be populated unless the Issuer believes the credential cannot be verified in its absence."
 
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Invariant:   use-only-if-required-by-law
+Description: "SHALL be omitted UNLESS required by law in jurisdiction where SHC is issued"
+Expression:  "$this.length() = 0"
+Severity:    #warning
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -110,6 +127,7 @@ Description: "Only elements necessary for Verifiers can be populated."
 * identifier 0..0
 * identifier ^definition = "Identifer is not allowed in this IG due to risk of accidental, unnecessary exposure of sensitive identifiers to verifiers. For use in the United States."
 
+* gender 0..0
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
