@@ -81,7 +81,7 @@ Elements with a minimum [cardinality](https://www.hl7.org/fhir/conformance-rules
 
 ### Data minimization and privacy
 
-**To preserve patient privacy, information that is not necessary for Verifiers *SHALL NOT* be included in SMART Health Cards.** With respect to patient privacy, note that when a SMART Health Card is issued, it is [cryptographically signed](https://spec.smarthealth.cards/#signing-health-cards) by the Issuer. This means that the contents, including the FHIR bundle, cannot be changed without invalidating the signature. It is therefore critical for Issuers to exclude any information that could represent a privacy risk to a patient when presenting their SMART Health Card to a Verifier.
+{% include privacy.md %}
 
 Additionally, FHIR payload within a SMART Health Card SHALL be [small enough](https://spec.smarthealth.cards/#health-cards-are-small) to allow the entirety of the SMART Health Card to fit within [a single Version 22 QR code](https://spec.smarthealth.cards/#chunking). This limits the amount of data that SHOULD be included in FHIR resources that appear in SMART Health Card payloads.
 
