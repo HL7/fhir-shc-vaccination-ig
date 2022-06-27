@@ -17,9 +17,20 @@ Description: "Slight modification of Patient, with identifier as 0..0 and limite
 * name obeys vc-name-invariant
 * name ^short = "Official name (i.e., legal name) of patient"
 * name ^definition = "Official name (i.e., legal name) of the patient, corresponding to `official` in [this value set](https://www.hl7.org/fhir/valueset-name-use.html). Issuers SHALL provide a single `name` element UNLESS they believe providing multiple `name` elements is critical for verification of the credential. If providing only a single `name` element, Issuers SHALL NOT populate `name.use`, and Verifiers SHALL assume that the provided name is `official`."
-* name ^comment = "Cardinality for this element is set to `1..*` rather than `1..1` as in rare cases there may be a valid rational for including multiple `name` elements. The Data Minimization version of this profile reflects the rarity of this by setting `name` to `1..1`. The open cardinality supports first and middle names for example, if they are not added to the given name field."
-* name.text ^short = "Use instead of `family` and `given` if the patient's name cannot be easily split these elements"
-* name.given ^short = "All of a patient's names, other than their family name, can be included in their given name"
+* name ^comment = "Cardinality for this element is set to `1..*` rather than `1..1` as in rare cases there may be a valid rational for including multiple `name` elements (e.g., for a recent name change that is not yet reflected on a photo ID but will be soon). The Data Minimization version of this profile reflects the rarity of this by setting `name` to `1..1`.
+
+Name parts are typically split between `name.family` and `name.given`. For example Marie Salomea Skłodowska Curie would be represented as `name.family=“Curie”`, and `name.given=[“Marie”, “Salomea”, “Skłodowska”]`.
+
+If it is not clear how to split the parts of a person's name into `name.family` and `name.given`, or if a person has a single word for their name, implementers MAY use `name.text` instead (e.g., `name.text=“Marie Salomea Skłodowska Curie”`).
+
+Issuers SHOULD make every effort to have the contents of `name` match what appears on the patient's government-issued photo ID.
+
+Other implementers SHALL support display/processing of `name.family`/`name.given` AND `name.text`."
+* name.text ^short = "Use instead of `family` and `given` if the patient's name cannot be easily split into these elements"
+* name.given ^short = "Parts of patient's name other than their family name that appear on photo ID; e.g., first and middle names"
+* name.given ^comment = "This element is used to represent all parts of a patient's name that are not their family name. For example, Marie Salomea Skłodowska Curie would have three values for `name.given`: `[\"Marie\", \"Salomea\", \"Skłodowska\"]`.
+
+Implementers SHOULD include all given name parts that appear on the patient's government-issued photo ID."
 
 * birthDate MS
 * birthDate ^comment = "If exact date of birth is partially or completely unknown, Issuers SHALL populate this element with the date of birth information listed on the patient's government-issued identification. This MAY include a partial date of birth like `1999` or `1999-01`, or \"filler\" for unknown portions. (E.g., if a patient was born in 1950 but does not know the month or day, their government-issued identification may fill the month and day with `-01-01`. In this case, it is acceptable to populate this element with `1950-01-01` even if it is known the patient was not actually born on January 1.) If date of birth is completely unknown and no government-issued identification is available, Issuers MAY omit this element."
