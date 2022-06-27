@@ -93,6 +93,8 @@ In general, the value sets used in these `required` bindings are as broad as pos
 
 In cases where disease-specific value sets exist, this IG may provide profiles with bindings to these restricted value sets (e.g., [SHCCovid19LaboratoryResultObservationDM]) to help implementers identify the preferred subset of codes for that disease. However, in these cases, this IG will also provide generic equivalents to these profiles with broad value sets (e.g., [SHCInfectiousDiseaseLaboratoryResultObservationDM]). Implementers MAY fall back to the generic version such profiles if the code they need is not part of the disease-specific value sets.
 
+Note that when a value set is specified as "Include all codes defined in ...", the definition does **not** constrain the value set content to a specific version of the code system. As the code system content is updated in new code system versions, the updated content will be available in the value set expansion (and via $validate-code). Also note that value set expansions in the published version of this IG may be out of date; please check with the canonical source of the code system for the most up-to-date set of codes that belong to a value set.
+
 ### Identity assurance
 
 The [SHCVaccinationDM] and [SHCCovid19LaboratoryResultObservationDM]/[SHCCovid19LaboratoryResultObservationDM] profiles include a mechanism for indicating level of identity assurance of the patient. This uses the [IdentityAssuranceLevel] value set in this format:
