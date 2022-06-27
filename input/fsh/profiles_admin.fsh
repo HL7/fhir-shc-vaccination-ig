@@ -19,9 +19,9 @@ Description: "Slight modification of Patient, with identifier as 0..0 and limite
 * name ^definition = "Official name (i.e., legal name) of the patient, corresponding to `official` in [this value set](https://www.hl7.org/fhir/valueset-name-use.html). Issuers SHALL provide a single `name` element UNLESS they believe providing multiple `name` elements is critical for verification of the credential. If providing only a single `name` element, Issuers SHALL NOT populate `name.use`, and Verifiers SHALL assume that the provided name is `official`."
 * name ^comment = "Cardinality for this element is set to `1..*` rather than `1..1` as in rare cases there may be a valid rational for including multiple `name` elements (e.g., for a recent name change that is not yet reflected on a photo ID but will be soon). The Data Minimization version of this profile reflects the rarity of this by setting `name` to `1..1`.
 
-Name parts are typically split between `name.family` and `name.given`. For example Marie Salomea Skłodowska Curie would be represented as `name.family=\"Curie\"`, and `name.given=[\"Marie\", \"Salomea\", \"Skłodowska\"]`.
+Name parts are typically split between `name.family` and `name.given`. For example Marie Salomea Skłodowska Curie would be represented as `name.family=“Curie”`, and `name.given=[“Marie”, “Salomea”, “Skłodowska”]`.
 
-If it is not clear how to split the parts of a person's name into `name.family` and `name.given`, or if a person has a single word for their name, implementers MAY use `name.text` instead (e.g., `name.text=\"Marie Salomea Skłodowska Curie\"`).
+If it is not clear how to split the parts of a person's name into `name.family` and `name.given`, or if a person has a single word for their name, implementers MAY use `name.text` instead (e.g., `name.text=“Marie Salomea Skłodowska Curie”`).
 
 Issuers SHOULD make every effort to have the contents of `name` match what appears on the patient's government-issued photo ID.
 
