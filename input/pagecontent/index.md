@@ -32,6 +32,11 @@ The design of the SMART Health Card specification results in the following chara
 
 For more information, please see [the data minimization and privacy section on the Profiles page](profiles.html#data-minimization-and-privacy).
 
+This diagram shows the typical SHC workflow among these actors:
+
+<!-- If the image below is not wrapped in a div tag, the publisher tries to wrap text around the image, which is not desired. -->
+<div style="text-align: center;">{%include workflow.svg%}</div>
+
 ### Use cases
 
 Our primary focus is on the use case of representing the minimal set of clinical data necessary to represent COVID-19 vaccination status and laboratory testing for verification purposes in a SMART Health Card. We support other infectious diseases as a secondary use case. To meet these use cases, we provide profiles of a [FHIR Bundle](https://www.hl7.org/fhir/bundle.html) that describes the contents of [the `fhirBundle` element in a SMART Health Card](https://spec.smarthealth.cards/#data-model). We also provide profiles of the resources contained within this Bundle.
