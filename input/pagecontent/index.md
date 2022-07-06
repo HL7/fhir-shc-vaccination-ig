@@ -121,4 +121,7 @@ Please direct questions or comments about this IG to the channels listed [here](
 
 MITRE: Approved for Public Release. Distribution Unlimited. Case Number 21-0225
 
+This IG includes the "Description" and "Electric Bolt" icons from [Material Icons](https://fonts.google.com/icons), which are [licensed under Apache 2.0](https://github.com/google/material-design-icons/blob/master/LICENSE). The "Quick Jump" functionality is provided by the [ninja-keys](https://github.com/ssleptsov/ninja-keys) library, which is [MIT licensed](https://github.com/ssleptsov/ninja-keys#license).
+
+----
 {% include markdown-link-references.md %}
