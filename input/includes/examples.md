@@ -1,6 +1,6 @@
 {% assign basepath = page.path | replace: '-resource-examples.html', '.html' | replace: '-dm.html', '.html' | replace: '-ad.html', '.html' %}
 
-<span class="label label-warning">Note</span> Both the [primary (data minimization)]({{basepath | replace: '.html', '-dm.html'}}) and [fallback (allowable data)]({{basepath | replace: '.html', '-ad.html'}}) versions of this profile use this same set of examples. ([More information on the two types of profiles](profiles.html#data-minimization).)
+<span class="label label-warning">Note</span> Both the [primary (data minimization)]({{basepath | replace: '.html', '-dm.html'}}) and [fallback (allowable data)]({{basepath | replace: '.html', '-ad.html'}}) versions of this profile use this same set of examples. ([More information on the two types of profiles](profiles.html#data-minimization-and-privacy).)
 
 <ul>
     {% for example in site.data.examples[basepath] %}
