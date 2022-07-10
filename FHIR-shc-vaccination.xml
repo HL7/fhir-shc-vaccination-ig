@@ -2,6 +2,7 @@
 <specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/uv/shc-vaccination/2021Sep" ciUrl="http://build.fhir.org/ig/HL7/fhir-shc-vaccination-ig" defaultVersion="0.6.2" defaultWorkgroup="pher" gitUrl="https://github.com/HL7/fhir-shc-vaccination-ig" url="http://hl7.org/fhir/uv/shc-vaccination">
 <version code="current" url="http://build.fhir.org/ig/HL7/fhir-shc-vaccination-ig"/>
 <version code="0.6.2" url="http://hl7.org/fhir/uv/shc-vaccination/2021Sep"/>
+<version code="0.6.0" deprecated="true"/>
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
@@ -36,19 +37,21 @@
 <page key="many" name="(many)"/>
 <page key="artifacts" name="Artifacts Summary"/>
 <page key="conformance" name="Conformance"/>
-<page key="contact" name="Contact"/>
+<page deprecated="true" key="contact" name="Contact"/>
+<page key="downloads" name="Downloads"/>
 <page key="index" name="Home"/>
-<page key="laboratory-results-observation" name="Laboratory Results Observation"/>
-<page key="patient" name="Patient"/>
+<page key="bundles" name="Profile Group: Bundles"/>
+<page key="laboratory-results-observation" name="Profile Group: Laboratory Results Observation"/>
+<page key="patient" name="Profile Group: Patients"/>
+<page key="vaccination" name="Profile Group: Vaccination"/>
 <page key="profiles" name="Profiles"/>
-<page key="StructureDefinition-shc-covid19-laboratory-bundle-resource-examples" name="Structure Definition Shc Covid 19 Laboratory Bundle Resource Examples"/>
-<page key="StructureDefinition-shc-covid19-laboratory-result-observation-resource-examples" name="Structure Definition Shc Covid 19 Laboratory Result Observation Resource Examples"/>
-<page key="StructureDefinition-shc-infectious-disease-laboratory-bundle-resource-examples" name="Structure Definition Shc Infectious Disease Laboratory Bundle Resource Examples"/>
-<page key="StructureDefinition-shc-infectious-disease-laboratory-result-observation-resource-examples" name="Structure Definition Shc Infectious Disease Laboratory Result Observation Resource Examples"/>
-<page key="StructureDefinition-shc-patient-general-resource-examples" name="Structure Definition Shc Patient General Resource Examples"/>
-<page key="StructureDefinition-shc-patient-us-resource-examples" name="Structure Definition Shc Patient Us Resource Examples"/>
-<page key="StructureDefinition-shc-vaccination-bundle-resource-examples" name="Structure Definition Shc Vaccination Bundle Resource Examples"/>
-<page key="StructureDefinition-shc-vaccination-resource-examples" name="Structure Definition Shc Vaccination Resource Examples"/>
+<page key="StructureDefinition-shc-covid19-laboratory-bundle-resource-examples" name="Structure Definition SHC Covid 19 Laboratory Bundle Resource Examples"/>
+<page key="StructureDefinition-shc-covid19-laboratory-result-observation-resource-examples" name="Structure Definition SHC Covid 19 Laboratory Result Observation Resource Examples"/>
+<page key="StructureDefinition-shc-infectious-disease-laboratory-bundle-resource-examples" name="Structure Definition SHC Infectious Disease Laboratory Bundle Resource Examples"/>
+<page key="StructureDefinition-shc-infectious-disease-laboratory-result-observation-resource-examples" name="Structure Definition SHC Infectious Disease Laboratory Result Observation Resource Examples"/>
+<page key="StructureDefinition-shc-patient-general-resource-examples" name="Structure Definition SHC Patient General Resource Examples"/>
+<page key="StructureDefinition-shc-patient-us-resource-examples" name="Structure Definition SHC Patient US Resource Examples"/>
+<page key="StructureDefinition-shc-vaccination-bundle-resource-examples" name="Structure Definition SHC Vaccination Bundle Resource Examples"/>
+<page key="StructureDefinition-shc-vaccination-resource-examples" name="Structure Definition SHC Vaccination Resource Examples"/>
 <page key="toc" name="Table of Contents"/>
-<page key="vaccination" name="Vaccination"/>
 </specification>

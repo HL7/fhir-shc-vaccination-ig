@@ -59,8 +59,6 @@ pages:
     title: Structure Definition SHC Vaccination Bundle Resource Examples
   StructureDefinition-shc-vaccination-resource-examples.md:
     title: Structure Definition SHC Vaccination Resource Examples
-  contact.md:
-    title: Contact
   conformance.md:
     title: Conformance
   downloads.md:

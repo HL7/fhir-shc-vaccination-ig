@@ -115,13 +115,32 @@ Resources representing a vaccination and associated data should be able to be di
 
 This FHIR Implementation Guide was initially developed by [VCI](https://vci.org), and is currently [an HL7 project](https://confluence.hl7.org/display/PHWG/SMART+Health+Cards+-+Vaccination+and+Testing+IG+Project+Page) sponsored by the [Public Health Work Group](https://confluence.hl7.org/display/PHWG/Public+Health+Work+Group).
 
-Please direct questions or comments about this IG to the channels listed [here](contact.html).
+If you have questions or comments about this IG, please reach out to us via one of these channels:
+
+1. The [smart/health-cards](https://chat.fhir.org/#narrow/stream/284830-smart.2Fhealth-cards) stream on [chat.fhir.org](https://chat.fhir.org/#narrow/stream/284830-smart.2Fhealth-cards) (requires free account)
+2. The [`vaccination` HL7 listserv](http://lists.hl7.org/read/?forum=vaccination) ([sign up here](https://www.hl7.org/Special/committees/pher/listserv.cfm))
+3. Email <vci-ig@mitre.org>
+
+#### Credits
+
+- Max Masnick (The MITRE Corporation[^PRS])
+
+To be included in the credits, please open a pull request on [GitHub](https://github.com/HL7/fhir-shc-vaccination-ig) adding yourself to [this file](https://github.com/HL7/fhir-shc-vaccination-ig/blob/master/input/pagecontent/index.md). Anyone on the [GitHub contributors list](https://github.com/HL7/fhir-shc-vaccination-ig/graphs/contributors) or who has otherwise contributed to this IG may be included.
+
+[^PRS]: MITRE: Approved for Public Release. Distribution Unlimited. Case Number 21-0225.
+
+<br><br>
 
 ----
 
-MITRE: Approved for Public Release. Distribution Unlimited. Case Number 21-0225
+<br><br>
 
 This IG includes the "Description" and "Electric Bolt" icons from [Material Icons](https://fonts.google.com/icons), which are [licensed under Apache 2.0](https://github.com/google/material-design-icons/blob/master/LICENSE). The "Quick Jump" functionality is provided by the [ninja-keys](https://github.com/ssleptsov/ninja-keys) library, which is [MIT licensed](https://github.com/ssleptsov/ninja-keys#license).
 
+<br><br>
+
 ----
+
+<br><br>
+
 {% include markdown-link-references.md %}
