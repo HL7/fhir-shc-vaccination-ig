@@ -1,0 +1,53 @@
+@startuml
+!define ICONURL https://raw.githubusercontent.com/tupadr3/plantuml-icon-font-sprites/v2.4.0
+!includeurl ICONURL/common.puml
+
+!includeurl ICONURL/font-awesome-5/hospital.puml
+!includeurl ICONURL/font-awesome-5/qrcode.puml
+!includeurl ICONURL/font-awesome-5/wallet.puml
+!includeurl ICONURL/font-awesome-5/school.puml
+!includeurl ICONURL/font-awesome-5/user_tie.puml
+!includeurl ICONURL/font-awesome-5/ticket_alt.puml
+!includeurl ICONURL/govicons/airplane.puml
+!includeurl ICONURL/material/local_pharmacy.puml
+!includeurl ICONURL/material/smartphone.puml
+!includeurl ICONURL/material/account_balance.puml
+!includeurl ICONURL/govicons/microscope.puml
+
+' left to right direction
+skinparam defaultTextAlignment center
+
+package Issuers {
+
+  FA5_HOSPITAL(hospital,Providers &\nHealth systems)
+  MATERIAL_LOCAL_PHARMACY(pharmacy,Retail pharmacies)
+  MATERIAL_ACCOUNT_BALANCE(gov,Governments &\nState registries)
+  GOV_MICROSCOPE(lab,Labs)
+
+}
+
+FA5_QRCODE(shc1,SMART Health Card\n(Printed or digital)) #White
+
+actor Holder as holder
+
+package Verifiers {
+  GOV_AIRPLANE(airplane,Travel industry)
+  FA5_SCHOOL(school,Schools & employers)
+  FA5_USER_TIE(border,Border control)
+  FA5_TICKET_ALT(ticket,Events & entertainment)
+
+}
+
+rectangle Wallet {
+  FA5_WALLET(wallet,Hold printed SHC)
+  MATERIAL_SMARTPHONE(smartphone,Smartphone app)
+}
+
+Issuers --> shc1
+
+shc1 -> holder
+
+holder <----> Wallet
+
+holder -> Verifiers
+@enduml
