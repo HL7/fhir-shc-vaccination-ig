@@ -10,6 +10,7 @@
 RuleSet: LaboratoryResultObservation
 
 * status MS
+* status from completed-observation-status (required)
 
 * code MS
 
@@ -44,8 +45,6 @@ RuleSet: LaboratoryResultObservation
 
 // VCI-specific (not from US Core)
 * insert id-should-not-be-populated()
-
-* status obeys vc-observation-status-shall-be-complete
 
 * meta MS
 * meta.security 0..1

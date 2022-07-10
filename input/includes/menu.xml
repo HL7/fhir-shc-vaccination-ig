@@ -39,7 +39,12 @@
       <li role="separator" class="divider"></li>
 
       <li><a href="ValueSet-lab-result-findings.html">Lab result findings</a></li>
-      <li><a href="ValueSet-qualitative-lab-result-findings.html">Qualitative lab result findings</a></li>
+      <li>
+        <a href="ValueSet-qualitative-lab-result-findings.html">Qualitative lab result findings</a>
+      </li>
+      <li>
+        <a href="ValueSet-completed-observation-status.html">Completed observation status</a>
+      </li>
 
       <li role="separator" class="divider"></li>
 

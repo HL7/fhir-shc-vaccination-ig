@@ -205,6 +205,17 @@ Description: "This value set includes codes for identifying laboratory test resu
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+ValueSet:    CompletedObservationStatus
+Id:          completed-observation-status
+Title:       "Completed observation status"
+Description: "Contains a subset of <http://hl7.org/fhir/ValueSet/observation-status> for completed/amended observations."
+
+* ObsStatus#final
+* ObsStatus#amended
+* ObsStatus#corrected
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
 CodeSystem: IdentityAssuranceLevelCodeSystem
 Id: identity-assurance-level-code-system
 Title: "Identity Assurance Level Code System"
