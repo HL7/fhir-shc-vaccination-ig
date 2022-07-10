@@ -163,7 +163,7 @@ Additionally, this IG includes specific profiles for the following jurisdictions
 
 - United States
 
-Other jurisdictions are welcome to define their own profiles that reflect their local concerns -- please contact the local HL7 affiliate or [the authors of this specification](contact.html) for assistance.
+Other jurisdictions are welcome to define their own profiles that reflect their local concerns -- please contact the local HL7 affiliate or [the authors of this specification](index.html#author-contact-information) for assistance.
 
 Jurisdictional profiles will typically add constraints to those defined in the "fallback" profiles [defined above](#profile-groups). For example, jurisdictional profiles might add constraints limiting the patient identifier to a specific type of national patient/consumer id, or define a specific value set using codes from a local SNOMED-CT edition for vaccines.
 
