@@ -138,6 +138,7 @@ If you have questions or comments about this IG, please reach out to us via one 
 #### Credits
 
 - Max Masnick (The MITRE Corporation[^PRS])
+- Additional authors here
 
 To be included in the credits, please open a pull request on [GitHub](https://github.com/HL7/fhir-shc-vaccination-ig) adding yourself to [this file](https://github.com/HL7/fhir-shc-vaccination-ig/blob/master/input/pagecontent/index.md). Anyone on the [GitHub contributors list](https://github.com/HL7/fhir-shc-vaccination-ig/graphs/contributors) or who has otherwise contributed to this IG may be included.
 
