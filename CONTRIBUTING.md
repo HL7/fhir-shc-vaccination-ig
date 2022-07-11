@@ -10,9 +10,11 @@ All nontrivial commits must have messages prefixed with a [jira.hl7.org](https:/
 >
 > ...rest of commit message...
 
-This allows us to track commits closely with the [HL7 balloting process](https://confluence.hl7.org/display/HL7/HL7+Balloting) that governs this IG. If you don't have an HL7 Jira issue for your change, you can create one yourself after [requesting a (free) Jira account from HL7](https://jira.hl7.org/secure/CreateIssue.jspa?pid=11200&issuetype=11300), or ask the maintainers to create an HL7 Jira issue for you as part of your PR.
+This allows us to track commits closely with the [HL7 balloting process](https://confluence.hl7.org/display/HL7/HL7+Balloting) that governs this IG. If you don't have an HL7 Jira issue for your change, you can create one yourself after [requesting a (free) Jira account from HL7](https://jira.hl7.org/secure/CreateIssue.jspa?pid=11200&issuetype=11300), or ask the maintainers to create an HL7 Jira issue for you as part of your pull request.
 
-Before requesting review/merging of a PR, please [clean up your commit history](https://about.gitlab.com/blog/2018/06/07/keeping-git-commit-history-clean/) and add the `FHIR-00000` prefix if needed. If you need to reference multiple issues, you can separate them with commas.
+Before requesting review/merging of a pull request, please [clean up your commit history](https://about.gitlab.com/blog/2018/06/07/keeping-git-commit-history-clean/) and add the `FHIR-00000` prefix if needed. If you need to reference multiple issues, you can separate them with commas.
+
+Contributors may open a pull request to add themselves to the credits list on [index.html in the IG build](https://github.com/HL7/fhir-shc-vaccination-ig/blob/master/input/pagecontent/index.md#credits).
 
 [^rename]: This will be renamed to `main` once the [FHIR CI build](https://fhir.github.io/auto-ig-builder/builds.html) supports this).
 
