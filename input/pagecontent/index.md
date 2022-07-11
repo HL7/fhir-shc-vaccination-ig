@@ -137,6 +137,7 @@ If you have questions or comments about this IG, please reach out to us via one 
 
 #### Credits
 
+- Josh Mandel (SMART Health IT and Microsoft)
 - Max Masnick (The MITRE Corporation[^PRS])
 - Additional authors here
 
