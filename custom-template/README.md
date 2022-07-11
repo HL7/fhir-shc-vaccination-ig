@@ -15,4 +15,6 @@ npm install
 npm run bundle
 ```
 
-Then copy `dist/ninja-keys.bundled.js` to `custom-template/content/assets/js/ninja-keys.bundled.js`.
+Then copy the contents of `dist/ninja-keys.bundled.js` to `custom-template/includes/_append.fragment-css.html` after removing the final line of `export { fi as NinjaKeys };`.
+
+(Note that the CI build server won't allow `.js` files in an "untrusted" custom template -- see https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/.2Ejs.20file.20in.20custom.20template.)
