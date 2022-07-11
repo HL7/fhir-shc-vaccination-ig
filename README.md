@@ -30,6 +30,10 @@ Test cases are defined in src/test/resources.
 <li>tests_errors.csv: used for test cases that should result in validator issues. It contains a list of json resource files and the profiles that they should validate against, along with expected issue severity, location, or message fragment. Test case will fail if there is no matching validation issue. Expected columns are optional. If all are left blank, then any validator issue will match.</li>
 </ol>
 
+## Contributing
+
+Pull requests are welcome! Please see [CONTRIBUTING.md](https://github.com/HL7/fhir-shc-vaccination-ig/blob/master/CONTRIBUTING.md) for details.
+
 ## License
 
 Copyright 2021 The MITRE Corporation
