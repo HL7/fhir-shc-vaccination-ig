@@ -4,7 +4,7 @@
 
 We use a standard GitHub pull request workflow for all contributions.
 
-All nontrivial commits must have messages prefixed with a [jira.hl7.org](https://jira.hl7.org) `FHIR` issue number before merging into `master`[^rename]. Here's [an example](https://github.com/HL7/fhir-shc-vaccination-ig/commit/21a6336bbeb754daddb2275fc05deabf882e6402):
+All commits that nontrivially affect IG content must have messages prefixed with a [jira.hl7.org](https://jira.hl7.org) `FHIR` issue number before merging into `master`[^rename]. Here's [an example](https://github.com/HL7/fhir-shc-vaccination-ig/commit/21a6336bbeb754daddb2275fc05deabf882e6402):
 
 > FHIR-33267: Remove invariant that is no longer needed
 >
@@ -13,6 +13,8 @@ All nontrivial commits must have messages prefixed with a [jira.hl7.org](https:/
 This allows us to track commits closely with the [HL7 balloting process](https://confluence.hl7.org/display/HL7/HL7+Balloting) that governs this IG. If you don't have an HL7 Jira issue for your change, you can create one yourself after [requesting a (free) Jira account from HL7](https://jira.hl7.org/secure/CreateIssue.jspa?pid=11200&issuetype=11300), or ask the maintainers to create an HL7 Jira issue for you as part of your pull request.
 
 Before requesting review/merging of a pull request, please [clean up your commit history](https://about.gitlab.com/blog/2018/06/07/keeping-git-commit-history-clean/) and add the `FHIR-00000` prefix if needed. If you need to reference multiple issues, you can separate them with commas.
+
+Branch names like `FHIR-00000-some-short-description` are preferred but not required.
 
 Contributors may open a pull request to add themselves to the credits list on [index.html in the IG build](https://github.com/HL7/fhir-shc-vaccination-ig/blob/master/input/pagecontent/index.md#credits).
 
