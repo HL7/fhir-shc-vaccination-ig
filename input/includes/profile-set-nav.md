@@ -137,27 +137,11 @@
 
 
 <script>
-    // Set tab based on the anchor in URL
-    var hash = window.location.hash;
-    try {
-        if(hash == "#tab-diff") sessionStorage.setItem('fhir-resource-tab-index', 1);
-        if(hash == "#tab-snapshot") sessionStorage.setItem('fhir-resource-tab-index', 2);
-        if(hash == "#tab-ms") sessionStorage.setItem('fhir-resource-tab-index', 3);
+  // Default to snapshot tab in the "Formal Views of Profile Content"
+  if(!sessionStorage.getItem('fhir-resource-tab-index')) sessionStorage.setItem('fhir-resource-tab-index', 2);
+</script>
 
-        // Default to snapshot tab
-        if(!sessionStorage.getItem('fhir-resource-tab-index')) sessionStorage.setItem('fhir-resource-tab-index', 2);
-    } catch(e) { }
-
-    // Make it so that clicking the tabs also sets the anchor in the url
-    document.addEventListener("DOMContentLoaded", function() {
-        $('#tabs .ui-tabs-nav li').click(function() {
-            var id = $(this).children('a').attr('id');
-            if(id == "ui-id-2") window.location.hash = "#tab-diff";
-            if(id == "ui-id-3") window.location.hash = "#tab-snapshot";
-            if(id == "ui-id-4") window.location.hash = "#tab-ms";
-        })
-    });
-
+<script>
     // Make gender invariant more visible
     if(window.location.pathname.split('/').pop() == 'StructureDefinition-shc-patient-general-ad.html') {
       document.addEventListener('DOMContentLoaded', function() {
