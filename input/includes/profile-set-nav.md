@@ -127,15 +127,6 @@
 
 {% include markdown-link-references.md %}
 
-{% if page.path contains "-ad.html" %}
-{% include examples-tab.md %}
-{% endif %}
-
-{% if page.path contains "-dm.html" %}
-{% include examples-tab.md %}
-{% endif %}
-
-
 <script>
   // Default to snapshot tab in the "Formal Views of Profile Content"
   if(!sessionStorage.getItem('fhir-resource-tab-index')) sessionStorage.setItem('fhir-resource-tab-index', 2);
