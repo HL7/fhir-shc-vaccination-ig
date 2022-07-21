@@ -1,11 +1,5 @@
 {
   "resourceType": "Bundle",
-  "meta" : {
-    "profile" : [
-      "http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-bundle-dm",
-      "http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-bundle-ad"
-    ]
-  },
   "id": "ImmunizationBundleExample1",
   "type": "collection",
   "entry": [

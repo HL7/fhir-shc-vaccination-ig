@@ -65,3 +65,6 @@ pages:
     title: Downloads
   artifacts.html:
     title: Artifacts Summary
+resources:
+  "Bundle/ImmunizationBundleExample1":
+    exampleCanonical: http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-bundle-dm

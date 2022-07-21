@@ -15,6 +15,7 @@
 <artifact id="StructureDefinition/shc-infectious-disease-laboratory-result-observation-dm" key="StructureDefinition-shc-infectious-disease-laboratory-result-observation-dm" name="Generic Laboratory Result Observation Profile - Data Minimization"/>
 <artifact id="ValueSet/identity-assurance-level" key="ValueSet-identity-assurance-level" name="Identity Assurance Level"/>
 <artifact id="CodeSystem/identity-assurance-level-code-system" key="CodeSystem-identity-assurance-level-code-system" name="Identity Assurance Level Code System"/>
+<artifact id="Bundle/ImmunizationBundleExample1" key="Bundle-ImmunizationBundleExample1" name="ImmunizationBundleExample1"/>
 <artifact id="StructureDefinition/shc-infectious-disease-laboratory-bundle-ad" key="StructureDefinition-shc-infectious-disease-laboratory-bundle-ad" name="Infectious Disease (Generic) Laboratory Test Results Bundle - Allowable Data"/>
 <artifact id="StructureDefinition/shc-infectious-disease-laboratory-bundle-dm" key="StructureDefinition-shc-infectious-disease-laboratory-bundle-dm" name="Infectious Disease (Generic) Laboratory Test Results Bundle - Data Minimization"/>
 <artifact id="ValueSet/lab-result-findings" key="ValueSet-lab-result-findings" name="Lab result findings"/>
