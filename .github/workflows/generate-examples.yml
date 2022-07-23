@@ -4,9 +4,12 @@ on:
   push:
     branches:
       - master
-      - dev
+      - temp-examples-in-ig-2022-07-20
     paths:
-      - 'examples/**'        
+      - 'input/examples/**'
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 
 jobs:
   test:
@@ -14,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -22,15 +25,27 @@ jobs:
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
       - name: Run Ruby generate-examples
         run: |
-          cd examples
+          cd input/examples
           gem install health_cards -v '~> 1.0'
-          ruby generate-examples.rb
-      - name: Commit examples
+          ruby $GITHUB_WORKSPACE/script/generate-examples.rb
+      - name: Check out master-examples branch as worktree
         run: |
           # setup the username and email
           git config user.name "GitHub Actions Bot"
           git config user.email "<>"
-          # Stage the file, commit and push
-          git add examples/
-          git commit -m "generated examples"
-          git push          
+
+          # Open `master-examples` branch as a worktree folder
+          git fetch origin
+          git worktree add --track -b master-examples $GITHUB_WORKSPACE/../master-examples origin/master-examples
+          cd $GITHUB_WORKSPACE/../master-examples
+
+          # Move generated files in
+          mv README.md ..
+          rm *
+          mv ../README.md .
+          cp $GITHUB_WORKSPACE/input/examples/* .
+
+          # Stage files and amend the previous commit (to avoid repo bloat)
+          git add -A
+          git commit --amend -m "Examples"
+          GIT_SSH_COMMAND='ssh -i ' git push -u --force origin master-examples

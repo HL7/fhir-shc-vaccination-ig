@@ -23,7 +23,10 @@ end
 
 @private_key = private_key
 @issuer = HealthCards::Issuer.new(key: @private_key, url: 'https://spec.smarthealth.cards/examples/issuer')
-Dir.glob('Scenario*Bundle.json') do |filename|
+Dir.glob('bundle*.json') do |filename|
+  # Skip examples of fallback profiles
+  next if filename.include? "-fallback"
+
   puts filename
   bundle = FHIR::Bundle.new(JSON.parse(File.read(filename)))
   outputPrefix = File.basename(filename, File.extname(filename))
