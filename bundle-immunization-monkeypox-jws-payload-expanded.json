@@ -1,0 +1,107 @@
+{
+  "iss": "https://spec.smarthealth.cards/examples/issuer",
+  "nbf": 1662893381,
+  "vc": {
+    "type": [
+      "https://smarthealth.cards#health-card",
+      "https://smarthealth.cards#monkeypox",
+      "https://smarthealth.cards#immunization"
+    ],
+    "credentialSubject": {
+      "fhirVersion": "4.0.1",
+      "fhirBundle": {
+        "id": "example-bundle-immunization-monkeypox",
+        "type": "collection",
+        "entry": [
+          {
+            "fullUrl": "resource:0",
+            "resource": {
+              "name": [
+                {
+                  "family": "Anyperson",
+                  "given": [
+                    "Jane",
+                    "C."
+                  ]
+                }
+              ],
+              "birthDate": "1961-01-20",
+              "resourceType": "Patient"
+            }
+          },
+          {
+            "fullUrl": "resource:1",
+            "resource": {
+              "meta": {
+                "security": [
+                  {
+                    "system": "https://smarthealth.cards/ial",
+                    "code": "IAL2"
+                  }
+                ]
+              },
+              "status": "completed",
+              "vaccineCode": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/sid/cvx",
+                    "code": "206"
+                  }
+                ]
+              },
+              "patient": {
+                "reference": "resource:0"
+              },
+              "occurrenceDateTime": "2022-08-01",
+              "lotNumber": "0000002",
+              "performer": [
+                {
+                  "actor": {
+                    "display": "ABC General Hospital"
+                  }
+                }
+              ],
+              "resourceType": "Immunization"
+            }
+          },
+          {
+            "fullUrl": "resource:2",
+            "resource": {
+              "meta": {
+                "security": [
+                  {
+                    "system": "https://smarthealth.cards/ial",
+                    "code": "IAL2"
+                  }
+                ]
+              },
+              "status": "completed",
+              "vaccineCode": {
+                "coding": [
+                  {
+                    "system": "http://hl7.org/fhir/sid/cvx",
+                    "code": "206"
+                  }
+                ]
+              },
+              "patient": {
+                "reference": "resource:0"
+              },
+              "occurrenceDateTime": "2022-08-29",
+              "lotNumber": "0000003",
+              "performer": [
+                {
+                  "actor": {
+                    "display": "ABC General Hospital"
+                  }
+                }
+              ],
+              "resourceType": "Immunization"
+            }
+          }
+        ],
+        "resourceType": "Bundle"
+      }
+    }
+  }
+}
