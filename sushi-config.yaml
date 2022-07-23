@@ -30,6 +30,9 @@ parameters:
   "active-tables": true
   "excludettl": true
   "excludexml": true
+  "no-narrative":
+    - Bundle/ImmunizationBundleExample1
+  "suppressed-ids": "ImmunizationBundleExample1"
 pages:
   index.md:
     title: Home
