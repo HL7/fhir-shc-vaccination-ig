@@ -137,14 +137,15 @@ If you have questions or comments about this IG, please reach out to us via one 
 
 #### Credits
 
+* Reece Adamson (The MITRE Corporation[^PRS])
 * Cary Anderson (Apple Inc.)
 * Shaumik Ashraf (The MITRE Corporation[^PRS])
 * Ricky Bloomfield (Apple Inc.)
+* Paul Denning (The MITRE Corporation[^PRS])
+* Neelima Karipineni (The MITRE Corporation[^PRS])
 * Josh Mandel (SMART Health IT and Microsoft)
 * Max Masnick (The MITRE Corporation[^PRS])
 * Pascal Pfiffner (Apple Inc.)
-* Paul Denning (The MITRE Corporation)
-* Additional authors here
 
 To be included in the credits, please open a pull request on [GitHub](https://github.com/HL7/fhir-shc-vaccination-ig) adding yourself to [this file](https://github.com/HL7/fhir-shc-vaccination-ig/blob/master/input/pagecontent/index.md). Anyone on the [GitHub contributors list](https://github.com/HL7/fhir-shc-vaccination-ig/graphs/contributors) or who has otherwise contributed to this IG may be included.
 
