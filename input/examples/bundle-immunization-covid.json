@@ -1,5 +1,6 @@
 {
   "resourceType": "Bundle",
+  "id": "example-bundle-immunization-covid",
   "type": "collection",
   "entry": [
     {
@@ -23,7 +24,12 @@
       "resource": {
         "resourceType": "Immunization",
         "meta": {
-          "security": [{"system": "https://smarthealth.cards/ial", "code": "IAL1.2"}]
+          "security": [
+            {
+              "system": "https://smarthealth.cards/ial",
+              "code": "IAL1.2"
+            }
+          ]
         },
         "status": "completed",
         "vaccineCode": {
@@ -53,7 +59,12 @@
       "resource": {
         "resourceType": "Immunization",
         "meta": {
-          "security": [{"system": "https://smarthealth.cards/ial", "code": "IAL1.2"}]
+          "security": [
+            {
+              "system": "https://smarthealth.cards/ial",
+              "code": "IAL1.2"
+            }
+          ]
         },
         "status": "completed",
         "vaccineCode": {
@@ -76,6 +87,41 @@
           }
         ],
         "lotNumber": "0000007"
+      }
+    },
+    {
+      "fullUrl": "resource:3",
+      "resource": {
+        "resourceType": "Immunization",
+        "meta": {
+          "security": [
+            {
+              "system": "https://smarthealth.cards/ial",
+              "code": "IAL1.2"
+            }
+          ]
+        },
+        "status": "completed",
+        "vaccineCode": {
+          "coding": [
+            {
+              "system": "http://hl7.org/fhir/sid/cvx",
+              "code": "229"
+            }
+          ]
+        },
+        "patient": {
+          "reference": "resource:0"
+        },
+        "occurrenceDateTime": "2022-09-15",
+        "performer": [
+          {
+            "actor": {
+              "display": "ABC General Hospital"
+            }
+          }
+        ],
+        "lotNumber": "0000001"
       }
     }
   ]
