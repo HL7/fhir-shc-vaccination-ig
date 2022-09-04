@@ -1,12 +1,11 @@
-# ╭──────────────────────────────────────ImplementationGuide───────────────────────────────────────╮
-# │  The properties below are used to create the ImplementationGuide resource. For a list of       │
-# │  supported properties, see: https://fshschool.org/sushi/configuration/                         │
-# ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
+---
 id: hl7.fhir.uv.shc-vaccination
 canonical: http://hl7.org/fhir/uv/shc-vaccination
 name: SMARTHealthCardsVaccinationAndTestingIG
-title: "SMART Health Cards: Vaccination &amp; Testing Implementation Guide"
-description: "Defines the clinical and patient information contained within a SMART Health Card (SHC) related to vaccination and lab results related to an infectious disease like COVID-19."
+title: 'SMART Health Cards: Vaccination &amp; Testing Implementation Guide'
+description: Defines the clinical and patient information contained within a SMART
+  Health Card (SHC) related to vaccination and lab results related to an infectious
+  disease like COVID-19.
 status: draft
 publisher:
   name: HL7 International - Public Health Work Group
@@ -26,42 +25,95 @@ license: Apache-2.0
 releaseLabel: STU 1 (Ballot Version)
 jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#001
 parameters:
-  "liquid-path": "liquid"
-  "active-tables": true
-  "excludettl": true
-  "excludexml": true
+  liquid-path: liquid
+  active-tables: true
+  excludettl: true
+  excludexml: true
+  no-narrative:
+  - Bundle/example-bundle-immunization-covid
+  - Bundle/example-bundle-immunization-covid-2
+  - Immunization/example-immunization-covid-1a
+  - Immunization/example-immunization-covid-2a
+  - Immunization/example-immunization-covid-3a
+  - Immunization/example-immunization-covid-1b
+  - Immunization/example-immunization-covid-2b
+  - Immunization/example-immunization-covid-3b
+  - Patient/example-patient-covid-1a
+  - Patient/example-patient-covid-1b
+  - Patient/example-patient-covid-1c
+  - Patient/example-patient-covid-1d
+  - Bundle/example-bundle-immunization-monkeypox
+  - Bundle/example-bundle-immunization-monkeypox-2
+  - Immunization/example-immunization-monkeypox-1a
+  - Immunization/example-immunization-monkeypox-2a
+  - Immunization/example-immunization-monkeypox-1b
+  - Immunization/example-immunization-monkeypox-2b
+  - Bundle/example-bundle-lab-test-results-covid
+  - Bundle/example-bundle-lab-test-results-covid-2
+  - Observation/example-observation-covid-1a
+  - Observation/example-observation-covid-1b
+  suppressed-ids: example-bundle-immunization-covid,example-bundle-immunization-covid-2,example-immunization-covid-1a,example-immunization-covid-2a,example-immunization-covid-3a,example-immunization-covid-1b,example-immunization-covid-2b,example-immunization-covid-3b,example-patient-covid-1a,example-patient-covid-1b,example-patient-covid-1c,example-patient-covid-1d,example-bundle-immunization-monkeypox,example-bundle-immunization-monkeypox-2,example-immunization-monkeypox-1a,example-immunization-monkeypox-2a,example-immunization-monkeypox-1b,example-immunization-monkeypox-2b,example-bundle-lab-test-results-covid,example-bundle-lab-test-results-covid-2,example-observation-covid-1a,example-observation-covid-1b
 pages:
   index.md:
     title: Home
   profiles.md:
     title: Profiles
   patient.md:
-    title: "Profile Group: Patients"
+    title: 'Profile Group: Patients'
   vaccination.md:
-    title: "Profile Group: Vaccination"
+    title: 'Profile Group: Vaccination'
   laboratory-results-observation.md:
-    title: "Profile Group: Laboratory Results Observation"
+    title: 'Profile Group: Laboratory Results Observation'
   bundles.md:
-    title: "Profile Group: Bundles"
-  StructureDefinition-shc-covid19-laboratory-bundle-resource-examples.md:
-    title: Structure Definition SHC Covid 19 Laboratory Bundle Resource Examples
-  StructureDefinition-shc-covid19-laboratory-result-observation-resource-examples.md:
-    title: Structure Definition SHC Covid 19 Laboratory Result Observation Resource Examples
-  StructureDefinition-shc-infectious-disease-laboratory-bundle-resource-examples.md:
-    title: Structure Definition SHC Infectious Disease Laboratory Bundle Resource Examples
-  StructureDefinition-shc-infectious-disease-laboratory-result-observation-resource-examples.md:
-    title: Structure Definition SHC Infectious Disease Laboratory Result Observation Resource Examples
-  StructureDefinition-shc-patient-general-resource-examples.md:
-    title: Structure Definition SHC Patient General Resource Examples
-  StructureDefinition-shc-patient-us-resource-examples.md:
-    title: Structure Definition SHC Patient US Resource Examples
-  StructureDefinition-shc-vaccination-bundle-resource-examples.md:
-    title: Structure Definition SHC Vaccination Bundle Resource Examples
-  StructureDefinition-shc-vaccination-resource-examples.md:
-    title: Structure Definition SHC Vaccination Resource Examples
+    title: 'Profile Group: Bundles'
   conformance.md:
     title: Conformance
   downloads.md:
     title: Downloads
   artifacts.html:
     title: Artifacts Summary
+resources:
+  Bundle/example-bundle-immunization-covid:
+    exampleCanonical: http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-bundle-dm
+  Bundle/example-bundle-immunization-covid-2:
+    exampleCanonical: http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-bundle-ad
+  Immunization/example-immunization-covid-1a:
+    exampleCanonical: http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-dm
+  Immunization/example-immunization-covid-2a:
+    exampleCanonical: http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-dm
+  Immunization/example-immunization-covid-3a:
+    exampleCanonical: http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-dm
+  Immunization/example-immunization-covid-1b:
+    exampleCanonical: http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-ad
+  Immunization/example-immunization-covid-2b:
+    exampleCanonical: http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-ad
+  Immunization/example-immunization-covid-3b:
+    exampleCanonical: http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-ad
+  Patient/example-patient-covid-1a:
+    exampleCanonical: http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-patient-general-dm
+  Patient/example-patient-covid-1b:
+    exampleCanonical: http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-patient-general-ad
+  Patient/example-patient-covid-1c:
+    exampleCanonical: http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-patient-us-dm
+  Patient/example-patient-covid-1d:
+    exampleCanonical: http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-patient-us-ad
+  Bundle/example-bundle-immunization-monkeypox:
+    exampleCanonical: http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-bundle-dm
+  Bundle/example-bundle-immunization-monkeypox-2:
+    exampleCanonical: http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-bundle-ad
+  Immunization/example-immunization-monkeypox-1a:
+    exampleCanonical: http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-dm
+  Immunization/example-immunization-monkeypox-2a:
+    exampleCanonical: http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-dm
+  Immunization/example-immunization-monkeypox-1b:
+    exampleCanonical: http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-ad
+  Immunization/example-immunization-monkeypox-2b:
+    exampleCanonical: http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-ad
+  Bundle/example-bundle-lab-test-results-covid:
+    exampleCanonical: http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-infectious-disease-laboratory-bundle-dm
+  Bundle/example-bundle-lab-test-results-covid-2:
+    exampleCanonical: http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-infectious-disease-laboratory-bundle-ad
+  Observation/example-observation-covid-1a:
+    exampleCanonical: http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-infectious-disease-laboratory-result-observation-dm
+  Observation/example-observation-covid-1b:
+    exampleCanonical: http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-infectious-disease-laboratory-result-observation-ad

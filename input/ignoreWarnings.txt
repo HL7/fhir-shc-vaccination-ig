@@ -1,5 +1,8 @@
 == Suppressed Messages ==
 
+# Suppress errors for Bundle examples related to `Bundle.id`. We use the `suppressed-ids` IG Publisher flag to suppress the output of `Bundle.id` in the example output, which works but does not avoid the QA errors below.
+ERROR: Bundle/ImmunizationBundleExample1: Bundle: Bundle.id: max allowed = 0, but found 1 (from http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-bundle-dm)
+
 # Suppress errors related to relative links that the Publisher is turning into the wrong absolute links
 # Reported as https://github.com/HL7/fhir-ig-publisher/issues/245
 The link 'StructureDefinition-shc-covid19-laboratory-result-observation-ad.html/profiles.html#data-minimization-and-privacy' for "data minimization reasons" cannot be resolved

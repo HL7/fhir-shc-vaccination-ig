@@ -1,5 +1,6 @@
 {
   "resourceType": "Bundle",
+  "id": "example-bundle-immunization-monkeypox-2",
   "type": "collection",
   "entry": [
     {
@@ -23,21 +24,26 @@
       "resource": {
         "resourceType": "Immunization",
         "meta": {
-          "security": [{"system": "https://smarthealth.cards/ial", "code": "IAL2"}]
+          "security": [
+            {
+              "system": "https://smarthealth.cards/ial",
+              "code": "IAL2"
+            }
+          ]
         },
         "status": "completed",
         "vaccineCode": {
           "coding": [
             {
               "system": "http://hl7.org/fhir/sid/cvx",
-              "code": "208"
+              "code": "206"
             }
           ]
         },
         "patient": {
           "reference": "resource:0"
         },
-        "occurrenceDateTime": "2021-01-01",
+        "occurrenceDateTime": "2022-08-01",
         "performer": [
           {
             "actor": {
@@ -52,19 +58,27 @@
       "fullUrl": "resource:2",
       "resource": {
         "resourceType": "Immunization",
+        "meta": {
+          "security": [
+            {
+              "system": "https://smarthealth.cards/ial",
+              "code": "IAL2"
+            }
+          ]
+        },
         "status": "completed",
         "vaccineCode": {
           "coding": [
             {
               "system": "http://hl7.org/fhir/sid/cvx",
-              "code": "208"
+              "code": "206"
             }
           ]
         },
         "patient": {
           "reference": "resource:0"
         },
-        "occurrenceDateTime": "2021-01-29",
+        "occurrenceDateTime": "2022-08-29",
         "performer": [
           {
             "actor": {
@@ -72,7 +86,7 @@
             }
           }
         ],
-        "lotNumber": "0000008"
+        "lotNumber": "0000003"
       }
     }
   ]

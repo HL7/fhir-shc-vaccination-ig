@@ -10,6 +10,7 @@ Thumbs.db
 !/script/artifacts-for-jira-spec
 !/script/regenerate-ninja-keys-index
 !/script/generate-examples.rb
+!/script/update-examples
 .vscode
 .env
 .classpath

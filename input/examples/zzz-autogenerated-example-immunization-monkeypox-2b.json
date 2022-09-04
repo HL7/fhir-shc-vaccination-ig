@@ -1,0 +1,33 @@
+{
+  "resourceType": "Immunization",
+  "meta": {
+    "security": [
+      {
+        "system": "https://smarthealth.cards/ial",
+        "code": "IAL2"
+      }
+    ]
+  },
+  "status": "completed",
+  "vaccineCode": {
+    "coding": [
+      {
+        "system": "http://hl7.org/fhir/sid/cvx",
+        "code": "206"
+      }
+    ]
+  },
+  "patient": {
+    "reference": "resource:0"
+  },
+  "occurrenceDateTime": "2022-08-29",
+  "performer": [
+    {
+      "actor": {
+        "display": "ABC General Hospital"
+      }
+    }
+  ],
+  "lotNumber": "0000003",
+  "id": "example-immunization-monkeypox-2b"
+}

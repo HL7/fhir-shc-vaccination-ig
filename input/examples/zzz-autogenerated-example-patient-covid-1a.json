@@ -1,0 +1,14 @@
+{
+  "resourceType": "Patient",
+  "name": [
+    {
+      "family": "Anyperson",
+      "given": [
+        "John",
+        "B."
+      ]
+    }
+  ],
+  "birthDate": "1951-01-20",
+  "id": "example-patient-covid-1a"
+}

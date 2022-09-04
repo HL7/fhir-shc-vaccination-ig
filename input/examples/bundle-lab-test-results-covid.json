@@ -1,5 +1,6 @@
 {
   "resourceType": "Bundle",
+  "id": "example-bundle-lab-test-results-covid",
   "type": "collection",
   "entry": [
     {

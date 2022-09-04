@@ -1,0 +1,38 @@
+{
+  "resourceType": "Observation",
+  "meta": {
+    "security": [
+      {
+        "system": "https://smarthealth.cards/ial",
+        "code": "IAL2"
+      }
+    ]
+  },
+  "status": "final",
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "94558-4"
+      }
+    ]
+  },
+  "subject": {
+    "reference": "resource:0"
+  },
+  "effectiveDateTime": "2021-02-17",
+  "valueCodeableConcept": {
+    "coding": [
+      {
+        "system": "http://snomed.info/sct",
+        "code": "260373001"
+      }
+    ]
+  },
+  "performer": [
+    {
+      "display": "ABC General Hospital"
+    }
+  ],
+  "id": "example-observation-covid-1a"
+}

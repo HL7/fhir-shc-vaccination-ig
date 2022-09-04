@@ -1,0 +1,30 @@
+# See input/examples/README.md for more information
+bundle-immunization-covid:
+  exampleOf:
+    - shc-vaccination-bundle-dm
+    - shc-vaccination-bundle-ad
+  embeddedResourceExampleOf:
+    Immunization:
+      - shc-vaccination-dm
+      - shc-vaccination-ad
+    Patient:
+      - shc-patient-general-dm
+      - shc-patient-general-ad
+      - shc-patient-us-dm
+      - shc-patient-us-ad
+bundle-immunization-monkeypox:
+  exampleOf:
+    - shc-vaccination-bundle-dm
+    - shc-vaccination-bundle-ad
+  embeddedResourceExampleOf:
+    Immunization:
+      - shc-vaccination-dm
+      - shc-vaccination-ad
+bundle-lab-test-results-covid:
+  exampleOf:
+    - shc-infectious-disease-laboratory-bundle-dm
+    - shc-infectious-disease-laboratory-bundle-ad
+  embeddedResourceExampleOf:
+    Observation:
+      - shc-infectious-disease-laboratory-result-observation-dm
+      - shc-infectious-disease-laboratory-result-observation-ad

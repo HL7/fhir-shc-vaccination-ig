@@ -9,10 +9,3 @@
         </li>
     {% endfor %}
 </ul>
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  $('<li class="active"><a href="#">Examples</a></li>').insertAfter('.nav-tabs li:first');
-
-});
-</script>

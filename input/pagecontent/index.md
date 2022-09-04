@@ -56,26 +56,29 @@ In practice, we have found that bundles of resources conforming to the Primary P
 
 #### Use case 1: immunization records
 
-**Scenario 1:** A patient receives two doses of the Moderna COVID-19 vaccine. The first dose was administered on January 1, 2021, and the second dose on January 29, 2021. Here is [an example of a FHIR Bundle representing this scenario](https://github.com/dvci/vaccine-credential-ig/blob/{{ site.data['git-branch'] }}/examples/Scenario1Bundle.json), which contains the following resources:
+**Scenario 1:** A patient receives two doses of the Moderna COVID-19 vaccine, and a third dose of the 2022 bivalent booster. The first dose was administered on January 1, 2021, the second dose on January 29, 2021, and the booster on September 5, 2022. Here is [an example of a FHIR Bundle representing this scenario](Bundle-example-bundle-immunization-covid.json.html), which contains the following resources:
 
-* {% assign example = site.data.examples["StructureDefinition-shc-patient-us.html"][0] %}[Patient resource: {{example.title}}]({{ example.url | replace: 'GIT_BRANCH_GOES_HERE', site.data['git-branch']}}) conforming to [SHCPatientUnitedStatesDM]
-* {% assign example = site.data.examples["StructureDefinition-shc-vaccination.html"][0] %}[Immunization resource: {{example.title}}]({{ example.url | replace: 'GIT_BRANCH_GOES_HERE', site.data['git-branch']}}) conforming to [SHCVaccinationDM]
-* {% assign example = site.data.examples["StructureDefinition-shc-vaccination.html"][1] %}[Immunization resource: {{example.title}}]({{ example.url | replace: 'GIT_BRANCH_GOES_HERE', site.data['git-branch']}}) conforming to [SHCVaccinationDM]
+1. An instance of a Patient resource conforming to [SHCPatientUnitedStatesDM]
+1. An instance of an Immunization resource conforming to [SHCVaccinationDM] to represent the first dose
+1. An instance of an Immunization resource conforming to [SHCVaccinationDM] to represent the second dose
+1. An instance of an Immunization resource conforming to [SHCVaccinationDM] to represent the booster (third dose)
 
-**Scenario 2:** A patient receives two doses of the Pfizer-BioNTech COVID-19 vaccine. The first dose was administered on January 1, 2021, and the second dose on January 29, 2021. Here is [an example of a FHIR Bundle representing this scenario](https://github.com/dvci/vaccine-credential-ig/blob/{{ site.data['git-branch'] }}/examples/Scenario2Bundle.json), which contains the following resources:
+**Scenario 2:** A patient receives two doses of the Jynneos (modified vaccinia Ankara vaccine) vaccine for monkeypox/smallpox. The first dose was administered on August 1, 2022, and the second dose on August 29, 2022. Here is [an example of a FHIR Bundle representing this scenario](Bundle-example-bundle-immunization-monkeypox.html), which contains the following resources:
 
-* {% assign example = site.data.examples["StructureDefinition-shc-patient-us.html"][1] %}[Patient resource: {{example.title}}]({{ example.url | replace: 'GIT_BRANCH_GOES_HERE', site.data['git-branch']}}) conforming to [SHCPatientUnitedStatesDM]
-* {% assign example = site.data.examples["StructureDefinition-shc-vaccination.html"][2] %}[Immunization resource: {{example.title}}]({{ example.url | replace: 'GIT_BRANCH_GOES_HERE', site.data['git-branch']}}) conforming to [SHCVaccinationDM]
-* {% assign example = site.data.examples["StructureDefinition-shc-vaccination.html"][3] %}[Immunization resource: {{example.title}}]({{ example.url | replace: 'GIT_BRANCH_GOES_HERE', site.data['git-branch']}}) conforming to [SHCVaccinationDM]
+1. An instance of a Patient resource conforming to [SHCPatientUnitedStatesDM]
+1. An instance of an Immunization resource conforming to [SHCVaccinationDM] to represent the first dose
+1. An instance of an Immunization resource conforming to [SHCVaccinationDM] to represent the second dose
 
 The example Bundle resources for both scenarios above conform to [SHCVaccinationBundleDM].
 
 #### Use case 2: laboratory test results
 
-**Scenario 3:** A patient is tested for SARS-CoV-2 (COVID19) antigen via rapid immunoassay on February 17, 2021 with result detectable. Here is [an example of a FHIR Bundle representing this scenario](https://github.com/dvci/vaccine-credential-ig/blob/{{ site.data['git-branch'] }}/examples/Scenario3Bundle.json), which contains the following resources:
+**Scenario 3:** A patient is tested for SARS-CoV-2 (COVID19) antigen via rapid immunoassay on February 17, 2021 with result detectable. Here is [an example of a FHIR Bundle representing this scenario](Bundle-example-bundle-lab-test-results-covid.html), which contains the following resources:
 
-* {% assign example = site.data.examples["StructureDefinition-shc-patient-us.html"][2] %}[Patient resource: {{example.title}}]({{ example.url | replace: 'GIT_BRANCH_GOES_HERE', site.data['git-branch']}}) conforming to [SHCPatientUnitedStatesDM]
-* {% assign example = site.data.examples["StructureDefinition-shc-covid19-laboratory-result-observation.html"][0] %}[Observation resource: {{example.title}}]({{ example.url | replace: 'GIT_BRANCH_GOES_HERE', site.data['git-branch']}}) conforming to [SHCCovid19LaboratoryResultObservationDM]
+1. An instance of a Patient resource conforming to [SHCPatientUnitedStatesDM]
+1. An instance of an Observation resource conforming to [SHCCovid19LaboratoryResultObservationDM] to represent lab test results
+
+The example Bundle resources for this scenario conforms to [SHCInfectiousDiseaseLaboratoryBundleDM].
 
 ### Profiles
 
