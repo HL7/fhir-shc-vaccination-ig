@@ -13,6 +13,12 @@ module HealthCards
       to_hash(filter: false).to_json(*args)
     end
   end
+
+  class MonkeypoxImmunizationHealthCard < HealthCards::MonkeypoxImmunizationPayload
+    def to_json(*args)
+      to_hash(filter: false).to_json(*args)
+    end
+  end
 end
 
 def private_key
@@ -31,10 +37,17 @@ Dir.glob('bundle*.json') do |filename|
   bundle = FHIR::Bundle.new(JSON.parse(File.read(filename)))
   outputPrefix = File.basename(filename, File.extname(filename))
 
-  jws = if bundle.entry.any? { |e| e.resource.is_a?(FHIR::Immunization) }
-    @issuer.issue_jws(bundle, type: HealthCards::COVIDImmunizationHealthCard)
+  if bundle.entry.any? { |e| e.resource.is_a?(FHIR::Immunization) }
+    if filename.include?('covid')
+      jws = @issuer.issue_jws(bundle, type: HealthCards::COVIDImmunizationHealthCard)
+    elsif filename.include?('monkeypox')
+      jws = @issuer.issue_jws(bundle, type: HealthCards::MonkeypoxImmunizationHealthCard)
+    else
+      puts "ERROR: Could not detect valid immunization target disease."
+      exit 1
+    end
   elsif bundle.entry.any? { |e| e.resource.is_a?(FHIR::Observation) }
-    @issuer.issue_jws(bundle, type: HealthCards::COVIDLabHealthCard)
+    jws = @issuer.issue_jws(bundle, type: HealthCards::COVIDLabHealthCard)
   else
     puts "ERROR: Unable to determine credential type."
     exit 1
