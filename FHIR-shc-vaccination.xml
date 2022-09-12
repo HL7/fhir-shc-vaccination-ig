@@ -15,7 +15,6 @@
 <artifact id="StructureDefinition/shc-infectious-disease-laboratory-result-observation-dm" key="StructureDefinition-shc-infectious-disease-laboratory-result-observation-dm" name="Generic Laboratory Result Observation Profile - Data Minimization"/>
 <artifact id="ValueSet/identity-assurance-level" key="ValueSet-identity-assurance-level" name="Identity Assurance Level"/>
 <artifact id="CodeSystem/identity-assurance-level-code-system" key="CodeSystem-identity-assurance-level-code-system" name="Identity Assurance Level Code System"/>
-<artifact id="Bundle/ImmunizationBundleExample1" key="Bundle-ImmunizationBundleExample1" name="ImmunizationBundleExample1"/>
 <artifact id="StructureDefinition/shc-infectious-disease-laboratory-bundle-ad" key="StructureDefinition-shc-infectious-disease-laboratory-bundle-ad" name="Infectious Disease (Generic) Laboratory Test Results Bundle - Allowable Data"/>
 <artifact id="StructureDefinition/shc-infectious-disease-laboratory-bundle-dm" key="StructureDefinition-shc-infectious-disease-laboratory-bundle-dm" name="Infectious Disease (Generic) Laboratory Test Results Bundle - Data Minimization"/>
 <artifact id="ValueSet/lab-result-findings" key="ValueSet-lab-result-findings" name="Lab result findings"/>
@@ -26,6 +25,8 @@
 <artifact id="StructureDefinition/shc-patient-us-dm" key="StructureDefinition-shc-patient-us-dm" name="Patient Profile - United States - Data Minimization"/>
 <artifact id="ValueSet/qualitative-lab-result-findings" key="ValueSet-qualitative-lab-result-findings" name="Qualitative lab result findings"/>
 <artifact id="ValueSet/qualitative-lab-results-loinc" key="ValueSet-qualitative-lab-results-loinc" name="Qualitative lab results - LOINC"/>
+<artifact id="ValueSet/specimen-collection-supervision-status" key="ValueSet-specimen-collection-supervision-status" name="Specimen Collection Supervision Status"/>
+<artifact id="CodeSystem/specimen-collection-supervision-status-code-system" key="CodeSystem-specimen-collection-supervision-status-code-system" name="Specimen Collection Supervision Status Code System"/>
 <artifact id="StructureDefinition/shc-vaccination-bundle-ad" key="StructureDefinition-shc-vaccination-bundle-ad" name="Vaccination Bundle - Allowable Data"/>
 <artifact id="StructureDefinition/shc-vaccination-bundle-dm" key="StructureDefinition-shc-vaccination-bundle-dm" name="Vaccination Bundle - Data Minimization"/>
 <artifact id="StructureDefinition/shc-vaccination-ad" key="StructureDefinition-shc-vaccination-ad" name="Vaccination Profile - Allowable Data"/>
@@ -57,7 +58,6 @@
 <artifact id="Patient/example-patient-covid-1b" key="Patient-example-patient-covid-1b" name="example-patient-covid-1b"/>
 <artifact id="Patient/example-patient-covid-1c" key="Patient-example-patient-covid-1c" name="example-patient-covid-1c"/>
 <artifact id="Patient/example-patient-covid-1d" key="Patient-example-patient-covid-1d" name="example-patient-covid-1d"/>
-<artifact id="ValueSet/tmpvs" key="ValueSet-tmpvs" name="tmpvs"/>
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page key="artifacts" name="Artifacts Summary"/>
