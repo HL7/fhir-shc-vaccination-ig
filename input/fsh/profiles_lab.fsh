@@ -68,6 +68,71 @@ RuleSet: LaboratoryResultObservation
 
 * insert reference-to-absolute-uri(subject)
 
+* insert SpecimenSupervisionStatusAD
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+RuleSet: SpecimenSupervisionStatusDM
+
+* component ^slicing.rules = #closed
+
+* component 0..1
+* component[specimen-supervision-status].code.id 0..0
+* component[specimen-supervision-status].code.extension 0..0
+* component[specimen-supervision-status].code.coding.id 0..0
+* component[specimen-supervision-status].code.coding.extension 0..0
+* component[specimen-supervision-status].code.coding.display 0..0
+* component[specimen-supervision-status].code.coding.version 0..0
+* component[specimen-supervision-status].code.coding.userSelected 0..0
+* component[specimen-supervision-status].code.text 0..0
+
+
+* component.value[x] only CodeableConcept
+* component[specimen-supervision-status].valueCodeableConcept.id 0..0
+* component[specimen-supervision-status].valueCodeableConcept.extension 0..0
+* component[specimen-supervision-status].valueCodeableConcept.coding.id 0..0
+* component[specimen-supervision-status].valueCodeableConcept.coding.extension 0..0
+* component[specimen-supervision-status].valueCodeableConcept.coding.display 0..0
+* component[specimen-supervision-status].valueCodeableConcept.coding.version 0..0
+* component[specimen-supervision-status].valueCodeableConcept.coding.userSelected 0..0
+* component[specimen-supervision-status].valueCodeableConcept.text 0..0
+
+// Has to be at the bottom, or these elements show up in the snapshot for the slice
+* component.id 0..0
+* component.extension 0..0
+* component.modifierExtension 0..0
+* component.dataAbsentReason 0..0
+* component.interpretation 0..0
+* component.referenceRange 0..0
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////
+
+RuleSet: SpecimenSupervisionStatusAD
+
+* component ^slicing.discriminator.type = #value
+* component ^slicing.discriminator.path = "code"
+* component ^slicing.description = "Slicing based on the code"
+* component ^slicing.rules = #open
+* component contains specimen-supervision-status 0..1 MS
+
+* component[specimen-supervision-status].code.coding 1..1
+* component[specimen-supervision-status].code.coding.system = SCT (exactly)
+* component[specimen-supervision-status].code.coding.system 1..1
+* component[specimen-supervision-status].code.coding.code 1..1
+* component[specimen-supervision-status].code.coding.code = #1208522006 (exactly)
+* component[specimen-supervision-status].code.coding.code ^short = "SNOMED CT concept 'Type of supervision for specimen collection (observable entity)'"
+
+* component[specimen-supervision-status].value[x] only CodeableConcept
+* component[specimen-supervision-status].valueCodeableConcept from SpecimenCollectionSupervisionStatus (required)
+* component[specimen-supervision-status].valueCodeableConcept 1..1
+* component[specimen-supervision-status].valueCodeableConcept.extension 0..0
+* component[specimen-supervision-status].valueCodeableConcept.coding 1..1
+* component[specimen-supervision-status].valueCodeableConcept.coding.system 1..1
+* component[specimen-supervision-status].valueCodeableConcept.coding.code 1..1
+
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Profile:        SHCCovid19LaboratoryResultObservationAD
@@ -139,7 +204,6 @@ RuleSet: LaboratoryResultObservationDM
 * device 0..0
 * hasMember 0..0
 * derivedFrom 0..0
-* component 0..0
 * performer.id 0..0
 * performer.extension 0..0
 * performer.reference 0..0
@@ -158,6 +222,8 @@ RuleSet: LaboratoryResultObservationDM
 * referenceRange.type.text 0..0
 * valueQuantity.id 0..0 // Needed to fix test failure - this makes no sense but it works. See https://github.com/dvci/vaccine-credential-ig/pull/145
 * valueString.id 0..0 // Needed to fix test failure - this makes no sense but it works. See https://github.com/dvci/vaccine-credential-ig/pull/145
+
+* insert SpecimenSupervisionStatusDM
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 

@@ -238,3 +238,13 @@ Description: "Relevant identity assurance level codes, based on NIST 800-63-3. S
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+ValueSet:    SpecimenCollectionSupervisionStatus
+Id:          specimen-collection-supervision-status
+Title:       "Specimen Collection Supervision Status"
+Description: "Relevant codes representing specimen collection supervision status"
+* SCT#1208526009 "Specimen collection by subject unsupervised by healthcare professional (finding)"
+* SCT#1208525008 "Virtual supervision by healthcare professional of specimen collection by subject (finding)"
+* SCT#1208524007 "In-person supervision by healthcare professional of specimen collection by subject (finding)"
+* SCT#1208523001 "Specimen collection by healthcare professional (finding)"
