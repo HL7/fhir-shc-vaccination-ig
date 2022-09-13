@@ -238,3 +238,21 @@ Description: "Relevant identity assurance level codes, based on NIST 800-63-3. S
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+CodeSystem: SpecimenCollectionSupervisionStatusCodeSystem
+Id: specimen-collection-supervision-status-code-system
+Title: "Specimen Collection Supervision Status Code System"
+Description: "Codes representing specimen collection supervision status"
+* ^copyright = "This value set includes content from SNOMED CT, which is copyright © 2002+ International Health Terminology Standards Development Organisation (IHTSDO), and distributed by agreement between IHTSDO and HL7. Implementer use of SNOMED CT is not covered by this agreement"
+
+// * #1208522006 "Type of supervision for specimen colllection (observable entity)"
+* #1208526009 "Specimen collection by subject unsupervised by healthcare professional (finding)"
+* #1208525008 "Virtual supervision by healthcare professional of specimen collection by subject (finding)"
+* #1208524007 "In-person supervision by healthcare professional of specimen collection by subject (finding)"
+* #1208523001 "Specimen collection by healthcare professional (finding)"
+
+ValueSet:    SpecimenCollectionSupervisionStatus
+Id:          specimen-collection-supervision-status
+Title:       "Specimen Collection Supervision Status"
+Description: "Relevant codes representing specimen collection supervision status"
+* include codes from system SCT
