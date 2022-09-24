@@ -42,19 +42,19 @@
 
 
 <!-- ValueSet links -->
-[CompletedObservationStatus]: StructureDefinition-completed-observation-status.html
-[IdentityAssuranceLevel]: StructureDefinition-identity-assurance-level.html
-[LabResultFindingsSNOMED]: StructureDefinition-lab-result-findings-snomed.html
-[LabResultFindings]: StructureDefinition-lab-result-findings.html
-[QualitativeLabResultFindings]: StructureDefinition-qualitative-lab-result-findings.html
-[QualitativeLabResultsLOINC]: StructureDefinition-qualitative-lab-results-loinc.html
-[SpecimenCollectionSupervisionStatus]: StructureDefinition-specimen-collection-supervision-status.html
-[VaccineATC]: StructureDefinition-vaccine-atc.html
-[VaccineCVX]: StructureDefinition-vaccine-cvx.html
-[VaccineGTIN]: StructureDefinition-vaccine-gtin.html
-[VaccineICD11]: StructureDefinition-vaccine-icd-11.html
-[VaccineSNOMED]: StructureDefinition-vaccine-snomed.html
+[CompletedObservationStatus]: ValueSet-completed-observation-status.html
+[IdentityAssuranceLevel]: ValueSet-identity-assurance-level.html
+[LabResultFindingsSNOMED]: ValueSet-lab-result-findings-snomed.html
+[LabResultFindings]: ValueSet-lab-result-findings.html
+[QualitativeLabResultFindings]: ValueSet-qualitative-lab-result-findings.html
+[QualitativeLabResultsLOINC]: ValueSet-qualitative-lab-results-loinc.html
+[SpecimenCollectionSupervisionStatus]: ValueSet-specimen-collection-supervision-status.html
+[VaccineATC]: ValueSet-vaccine-atc.html
+[VaccineCVX]: ValueSet-vaccine-cvx.html
+[VaccineGTIN]: ValueSet-vaccine-gtin.html
+[VaccineICD11]: ValueSet-vaccine-icd-11.html
+[VaccineSNOMED]: ValueSet-vaccine-snomed.html
 
 
 <!-- CodeSystem links -->
-[IdentityAssuranceLevelCodeSystem]: StructureDefinition-identity-assurance-level-code-system.html
+[IdentityAssuranceLevelCodeSystem]: CodeSystem-identity-assurance-level-code-system.html

@@ -11,6 +11,7 @@ Thumbs.db
 !/script/regenerate-ninja-keys-index
 !/script/generate-examples.rb
 !/script/update-examples
+!/script/markdown-links
 .vscode
 .env
 .classpath

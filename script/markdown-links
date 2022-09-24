@@ -1,0 +1,29 @@
+#! /usr/bin/env ruby
+
+require 'json'
+
+
+def get_links(p)
+  path_to_ig_output = File.expand_path('../output', __dir__)
+
+  links = []
+  Dir.entries(path_to_ig_output).each do |f|
+    next unless f.end_with?('.json')
+    next unless p.call(f)
+
+    parsed = JSON.parse(IO.read("#{path_to_ig_output}/#{f}"))
+
+    prefix = f.match(/([^-]*)/)[0]
+    links << "[#{parsed['name']}]: #{prefix}-#{parsed['id']}.html"
+  end
+  return links.sort
+end
+
+puts "<!-- StructureDefinition links -->"
+puts get_links(Proc.new { |f| f.start_with?('StructureDefinition') })
+
+puts "\n\n<!-- ValueSet links -->"
+puts get_links(Proc.new { |f| f.start_with?('ValueSet') })
+
+puts "\n\n<!-- CodeSystem links -->"
+puts get_links(Proc.new { |f| f.start_with?('CodeSystem') })
