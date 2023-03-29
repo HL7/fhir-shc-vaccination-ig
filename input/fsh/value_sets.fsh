@@ -220,7 +220,7 @@ CodeSystem: IdentityAssuranceLevelCodeSystem
 Id: identity-assurance-level-code-system
 Title: "Identity Assurance Level Code System"
 Description: "Code representing identity assurance level, based on NIST 800-63-3"
-* ^url =  https://smarthealth.cards/ial
+* ^url =  "https://smarthealth.cards/ial"
 * ^copyright = "Copyright Computational Health Informatics Program, Boston Children's Hospital, Boston, MA as part of the [SMART Health Cards Framework](https://smarthealth.cards/ial). Licensed under CC-BY 4.0 (<https://creativecommons.org/licenses/by/4.0/>)."
 * #IAL1 "Name and birth date were self-asserted."
 * #IAL1.2 "An unspecified ID was used to verify name and birth date."
