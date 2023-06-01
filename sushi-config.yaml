@@ -25,10 +25,12 @@ license: Apache-2.0
 releaseLabel: STU 1 (Ballot Version)
 jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#001
 parameters:
-  liquid-path: liquid
+  path-liquid: liquid
   active-tables: true
   excludettl: true
   excludexml: true
+  special-url:
+  - https://smarthealth.cards/ial
   no-narrative:
   - Bundle/example-bundle-immunization-covid
   - Bundle/example-bundle-immunization-covid-2
