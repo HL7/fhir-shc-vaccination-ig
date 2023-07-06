@@ -20,7 +20,7 @@
   "patient": {
     "reference": "resource:0"
   },
-  "occurrenceDateTime": "2022-08-29",
+  "occurrenceDateTime": "2022-08-01",
   "performer": [
     {
       "actor": {
@@ -28,6 +28,6 @@
       }
     }
   ],
-  "lotNumber": "0000003",
-  "id": "example-immunization-monkeypox-2b"
+  "lotNumber": "0000002",
+  "id": "example-immunization-mpox-1b"
 }

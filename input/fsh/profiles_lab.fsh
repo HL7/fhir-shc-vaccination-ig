@@ -145,28 +145,11 @@ previous infection status."
 * insert LaboratoryResultObservation
 
 // This binding can be required because implementers can fall back to SHCInfectiousDiseaseLaboratoryResultObservation
-* code from covid-lab-tests-loinc-vsac (required)
-* code ^definition = "If an appropriate code is not found in the bound value set, use the SHCInfectiousDiseaseLaboratoryResultObservation profile instead, which does not have a required binding."
+* code from https://terminology.smarthealth.cards/ValueSet/lab-qualitative-test-covid (required)
+* code ^definition = "If an appropriate code is not found in the bound value set, use the SHCInfectiousDiseaseLaboratoryResultObservation profile instead, which allows any LOINC."
 
-* valueCodeableConcept from qualitative-lab-result-findings (required)
-* code ^definition = "If an appropriate code is not found in the bound value set, use the SHCInfectiousDiseaseLaboratoryResultObservation profile instead, which does not have a required binding."
-/*
-TODO: Test using `device` rather than `method`, like so:
-
-{
-    device:{
-        identifier: {
-            system: "some_system",
-            value: "some_id"
-        }
-    }
-}
-
-* method MS
-* method ^short = "Device or technique used by laboratory"
-* method ^definition = "Identifies the device or technique used by the laboratory, such as a test kit or piece of laboratory equipment."
-* method ^comment = "The method element is used rather than device for data minimization reasons: device is a reference, which would require an additional FHIR resource."
-*/
+* valueCodeableConcept from https://terminology.smarthealth.cards/ValueSet/lab-qualitative-result (required)
+* code ^definition = "If an appropriate code is not found in the bound value set, use the SHCInfectiousDiseaseLaboratoryResultObservation profile instead, which allows for any SNOMED CT descendant of `441742003` \"Evaluation finding (finding)\" or `362981000` \"Qualifier value (qualifier value)\"."
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -254,7 +237,6 @@ Description:    "Profile for reporting laboratory results indicating current or 
 // be used instead.
 * code from http://hl7.org/fhir/ValueSet/observation-codes (required) // All LOINCs - https://www.hl7.org/fhir/valueset-observation-codes.html
 * code ^short = "LOINC identifying the lab test"
-* code obeys vc-shall-not-be-a-covid-loinc
 
 * valueCodeableConcept from lab-result-findings (required)
 

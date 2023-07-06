@@ -40,7 +40,7 @@ Description: "Defines a profile representing a vaccination for a SMART Health Ca
 
 // Override default example binding with something that makes more sense in the context of our IG
 // https://chat.fhir.org/#narrow/stream/179166-implementers/topic/IG/near/234918476
-* vaccineCode from vaccine-cvx (example)
+* vaccineCode from https://terminology.smarthealth.cards/ValueSet/immunization-all-cvx (example)
 
 * vaccineCode.coding 1..*
 * vaccineCode.coding MS
@@ -52,51 +52,31 @@ Description: "Defines a profile representing a vaccination for a SMART Health Ca
 // Keep in sync with use of `VaccineCodeCodingDM` below for the DM profile
 * vaccineCode.coding contains
     cvx 0..1 and
-    gtin 0..1 and
     snomed 0..1 and
-    icd11 0..1 and
-    air 0..1 and
-    atc 0..1
+    icd11 0..1
 
 // It's necessary to fix `system` **in addition** to the value set binding for the slicing to work
 * vaccineCode.coding[cvx] ^short = "CVX code identifying the administered vaccine product"
-* vaccineCode.coding[cvx] from vaccine-cvx (required)
+* vaccineCode.coding[cvx] from https://terminology.smarthealth.cards/ValueSet/immunization-all-cvx (required)
 * vaccineCode.coding[cvx].system = "http://hl7.org/fhir/sid/cvx" (exactly)
 
-* vaccineCode.coding[gtin] ^short = "GTIN code identifying the administered vaccine product"
-* vaccineCode.coding[gtin] from vaccine-gtin (required)
-* vaccineCode.coding[gtin].system = "https://www.gs1.org/gtin" (exactly)
-
 * vaccineCode.coding[snomed] ^short = "SNOMED CT code identifying the administered vaccine product"
-* vaccineCode.coding[snomed] from vaccine-snomed (required)
+* vaccineCode.coding[snomed] from https://terminology.smarthealth.cards/ValueSet/immunization-all-snomed (required)
 * vaccineCode.coding[snomed].system = "http://snomed.info/sct" (exactly)
 
-* vaccineCode.coding[icd11] ^short = "ICD11 code identifying the administered vaccine product"
-* vaccineCode.coding[icd11] from vaccine-icd-11 (required)
+* vaccineCode.coding[icd11] ^short = "ICD-11 MMS code identifying the administered vaccine product"
+* vaccineCode.coding[icd11] from https://terminology.smarthealth.cards/ValueSet/immunization-all-icd11 (required)
 * vaccineCode.coding[icd11].system = "http://id.who.int/icd/release/11/mms" (exactly)
-
-// See http://build.fhir.org/ig/hl7au/au-fhir-base/StructureDefinition-au-immunization.html for the value set and code system URIs
-* vaccineCode.coding[air] ^short = "Australian Immunisation Register Vaccine code identifying the administered vaccine product"
-* vaccineCode.coding[air] from https://healthterminologies.gov.au/fhir/ValueSet/australian-immunisation-register-vaccine-1 (required)
-* vaccineCode.coding[air].system = "https://www.humanservices.gov.au/organisations/health-professionals/enablers/air-vaccine-code-formats" (exactly)
-
-* vaccineCode.coding[atc] ^short = "ATC code identifying the administered vaccine product"
-* vaccineCode.coding[atc] from vaccine-atc (required)
-* vaccineCode.coding[atc].system = "http://www.whocc.no/atc" (exactly)
 
 // Manufacturer
 // Why we are doing this rather than an extension or in vaccineCode
 // https://chat.fhir.org/#narrow/stream/179202-terminology/topic/Using.20multiple.20codes.20with.20CodeableConcept.20Datatype/near/236750401
 // Note that the FHIR validator will not currently validate that a given `value` is in the `system`
 // inside `manufacturer.identifier`.
-* manufacturer MS
-* manufacturer.identifier MS
 * manufacturer.identifier ^short = "Only populate when vaccine type is not provided in vaccineCode"
-* manufacturer.identifier.system MS
 * manufacturer.identifier.system 1..1
 * manufacturer.identifier.system obeys shall-use-known-vaccine-manufacturer-code-system
 * manufacturer.identifier.system ^short = "Code system used to identify vaccine manufacturer"
-* manufacturer.identifier.value MS
 * manufacturer.identifier.value 1..1
 * manufacturer.identifier.system ^short = "Code identifying vaccine manufacturer"
 
@@ -190,9 +170,7 @@ Description: "Defines a profile representing a vaccination for a SMART Health Ca
 * primarySource 0..0
 * reportOrigin 0..0
 * location 0..0
-* manufacturer.reference 0..0
-* manufacturer.type 0..0
-* manufacturer.display 0..0
+* manufacturer 0..0
 * expirationDate 0..0
 * site 0..0
 * route 0..0
@@ -220,11 +198,8 @@ Description: "Defines a profile representing a vaccination for a SMART Health Ca
 * vaccineCode.text 0..0
 
 * insert vaccineCodeCodingDM(cvx)
-* insert vaccineCodeCodingDM(gtin)
 * insert vaccineCodeCodingDM(snomed)
 * insert vaccineCodeCodingDM(icd11)
-* insert vaccineCodeCodingDM(air)
-* insert vaccineCodeCodingDM(atc)
 
 * insert reference-to-ad-profile-comment(patient)
 

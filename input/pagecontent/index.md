@@ -2,8 +2,11 @@
 
 This [FHIR Implementation Guide](https://www.hl7.org/fhir/implementationguide.html) (IG):
 
-1. Describes the clinical information necessary to create a [SMART Health Card] (SHC) identifying vaccination and laboratory testing status for infectious diseases such as [COVID-19](https://www.who.int/health-topics/coronavirus). In particular, it describes the content of the subject of a [SMART Health Card] in which the card [types](https://spec.smarthealth.cards/vocabulary/) include `https://smarthealth.cards#health-card`, `https://smarthealth.cards#immunization` and/or `https://smarthealth.cards#laboratory`, and optionally `https://smarthealth.cards#covid19`.
-2. Describes a minimal set of patient information (name and contact information) that is also included in the [SMART Health Card].
+1. Describes the clinical information necessary to create a [SMART Health Card] (SHC) identifying vaccination and laboratory testing status for infectious diseases such as [COVID-19](https://www.who.int/health-topics/coronavirus). In particular, it describes the content of the subject of a [SMART Health Card] that contains an instance of [Immunization](https://www.hl7.org/fhir/immunization.html) targeting an infectious disease, or an instance of [Observation](https://www.hl7.org/fhir/observation.html) describing the results of laboratory testing for infectious diseases.
+
+   The [Data Model section of the SMART Health Cards specification](https://spec.smarthealth.cards/#data-model) provides the canonical description of the scope of this IG.
+
+2. Describes a minimal set of patient information (name and contact information) that is also included in a [SMART Health Card] for the use cases in #1.
 
 **The goal of this IG is to define the conformance criteria of FHIR resources for use specifically in [SMART Health Cards].** This applies to the contents of both digital and paper Health Cards, including Health Cards produced via a [SMART Health Card-specific FHIR endpoint](https://spec.smarthealth.cards/#via-fhir-health-cards-issue-operation) like `[base]/Patient/:id/$health-cards-issue`. This IG is not applicable to general-purpose FHIR endpoints like `[base]/Patient/:id/Immunization`, nor is it meant to describe the canonical representation of clinical data in electronic health record systems; these are governed by other IGs like [US Core](https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-immunization.html).
 
@@ -39,9 +42,9 @@ This diagram shows the typical SHC workflow among these actors:
 
 ### Use cases
 
-Our primary focus is on the use case of representing the minimal set of clinical data necessary to represent COVID-19 vaccination status and laboratory testing for verification purposes in a SMART Health Card. We support other infectious diseases as a secondary use case. To meet these use cases, we provide profiles of a [FHIR Bundle](https://www.hl7.org/fhir/bundle.html) that describes the contents of [the `fhirBundle` element in a SMART Health Card](https://spec.smarthealth.cards/#data-model). We also provide profiles of the resources contained within this Bundle.
+Our primary focus is on the use case of representing the minimal set of clinical data necessary to represent vaccination status and infectious disease-related laboratory testing in a SMART Health Card for outbreak/pandemic response. This IG may also be used to support use cases involving routine vaccination or infectious disease-related laboratory testing. To meet these use cases, we provide profiles of a [FHIR Bundle](https://www.hl7.org/fhir/bundle.html) that describes the contents of [the `fhirBundle` element in a SMART Health Card](https://spec.smarthealth.cards/#data-model). We also provide profiles of the resources contained within this Bundle.
 
-The SMART Health Cards Framework constrains the size of the FHIR payload embedded within a SMART Health Card to allow the entirety of the SMART Health Card to fit within [a single Version 22 QR code](https://spec.smarthealth.cards/#chunking). This IG is designed to support creating resources that fit within these size constraints. (While it is possible to generate a [denser QR code](https://www.qrcode.com/en/about/version.html), the [SMART Health Cards Framework](https://spec.smarthealth.cards/#every-health-card-can-be-embedded-in-a-qr-code) developers found that denser QR codes could be difficult to scan.) SMART Health Card payloads are compressed, with the amount of compression varying based on the content of the payload (in general, the more repeated content in the bundle, the higher the compression ratio). This means that it's not possible to calculate the precise number of *uncompressed* bytes available for the embedded FHIR Bundle.
+The SMART Health Cards Framework constrains the size of the FHIR payload embedded within a SMART Health Card to allow the entirety of the SMART Health Card to fit within [a single Version 22 QR code](https://spec.smarthealth.cards/#chunking). This IG is designed to support creating resources that fit within these size constraints. (While it is possible to generate a [denser QR code](https://www.qrcode.com/en/about/version.html), the [SMART Health Cards Framework](https://spec.smarthealth.cards/#every-health-card-can-be-embedded-in-a-qr-code) developers found that denser QR codes could be difficult to scan.) SMART Health Card payloads are compressed, with the amount of compression varying based on the content of the payload (in general, the more repeated content in the bundle, the higher the compression ratio). This means that it's not possible to calculate the precise number of _uncompressed_ bytes available for the embedded FHIR Bundle.
 
 To support implementers' efforts to minimize payload size, this IG provides two different sets of profiles:
 
@@ -63,7 +66,7 @@ In practice, we have found that bundles of resources conforming to the Primary P
 1. An instance of an Immunization resource conforming to [SHCVaccinationDM] to represent the second dose
 1. An instance of an Immunization resource conforming to [SHCVaccinationDM] to represent the booster (third dose)
 
-**Scenario 2:** A patient receives two doses of the Jynneos (modified vaccinia Ankara vaccine) vaccine for monkeypox/smallpox. The first dose was administered on August 1, 2022, and the second dose on August 29, 2022. Here is [an example of a FHIR Bundle representing this scenario](Bundle-example-bundle-immunization-monkeypox.html), which contains the following resources:
+**Scenario 2:** A patient receives two doses of the Jynneos (modified vaccinia Ankara vaccine) vaccine for mpox/smallpox. The first dose was administered on August 1, 2022, and the second dose on August 29, 2022. Here is [an example of a FHIR Bundle representing this scenario](Bundle-example-bundle-immunization-mpox.json.html), which contains the following resources:
 
 1. An instance of a Patient resource conforming to [SHCPatientUnitedStatesDM]
 1. An instance of an Immunization resource conforming to [SHCVaccinationDM] to represent the first dose
@@ -90,13 +93,13 @@ The IG is currently focused on coordinating implementers' representations of rel
 
 1. Risk evaluation algorithms are likely to evolve faster than IG constraints can be updated.
 
-    For example, constraining the [SHCVaccinationDM] profile to require specific `vaccineCode` values (e.g., only `CVX#207` and `CVX#208` for the current Moderna and Pfizer-BioNTech vaccines) could pose a problem if a new vaccine receives emergency authorization: recipients of the new vaccination would have non-conforming Immunization resources due to the constraints on `vaccineCode` until the IG could be updated and published.
+   For example, constraining the [SHCVaccinationDM] profile to require specific `vaccineCode` values (e.g., only `CVX#207` and `CVX#208` for the original Moderna and Pfizer-BioNTech vaccines) could pose a problem if a new vaccine receives emergency authorization: recipients of the new vaccination would have non-conforming Immunization resources due to the constraints on `vaccineCode` until the IG could be updated and published.
 
 1. Risk evaluation algorithms may be actor- or context-dependent.
 
-    For example, some parties may only consider United States Food and Drug Administration (FDA)-approved or Emergency Use Authorization (EUA) vaccines to be acceptable, while others may accept vaccines approved in other countries.
+   For example, some parties may only consider United States Food and Drug Administration (FDA)-approved or Emergency Use Authorization (EUA) vaccines to be acceptable, while others may accept vaccines approved in other countries.
 
-    Embedding stringent validation criteria in our FHIR profiles may make it impossible for implementers with less stringent criteria to use this IG.
+   Embedding stringent validation criteria in our FHIR profiles may make it impossible for implementers with less stringent criteria to use this IG.
 
 1. More constrained profiles for risk evaluation can be created based on the profiles in this IG, but it's not possible to remove constraints in a child profile.
 
@@ -106,7 +109,7 @@ The IG is currently focused on coordinating implementers' representations of rel
 
 Value set bindings for [`MustSupport` elements](profiles.html#mustsupport-interpretation) are `required`, meaning that resources MUST use a code specified in the bound value set. This is to ensure implementers know which code systems can be expected to appear in a given element.
 
-In general, the value sets used in these `required` bindings are as broad as possible. For example, in the [VaccineCVX] value set, all codes from the [CVX code system](https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cvx) are included (as opposed to defining a value set with just COVID-related CVX codes, for example).
+In general, the value sets used in these `required` bindings are as broad as possible. For example, all codes from the [CVX code system](https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cvx) are allowed for identifying vaccines (as opposed to defining a value set with just COVID-related CVX codes, for example).
 
 In cases where disease-specific value sets exist, this IG may provide profiles with bindings to these restricted value sets (e.g., [SHCCovid19LaboratoryResultObservationDM]) to help implementers identify the preferred subset of codes for that disease. However, in these cases, this IG will also provide generic equivalents to these profiles with broad value sets (e.g., [SHCInfectiousDiseaseLaboratoryResultObservationDM]). Implementers MAY fall back to the generic version of such profiles if the code they need is not part of the disease-specific value sets.
 
@@ -124,10 +127,6 @@ The [SHCVaccinationDM] and [SHCCovid19LaboratoryResultObservationDM]/[SHCCovid19
 
 Issuers SHALL populate these elements if identity assurance information is available.
 
-### Compatibility with IIS
-
-Resources representing a vaccination and associated data should be able to be directly populated with data from [IIS](https://www.cdc.gov/vaccines/programs/iis/index.html) implementations using the [HL7 v2.5.1 Implementation Guide for Immunization Messaging, Release 1.5](https://repository.immregistries.org/resource/hl7-version-2-5-1-implementation-guide-for-immunization-messaging-release-1-5-1/).
-
 ### Author contact information
 
 This FHIR Implementation Guide was initially developed by [VCI](https://vci.org), and is currently [an HL7 project](https://confluence.hl7.org/display/PHWG/SMART+Health+Cards+-+Vaccination+and+Testing+IG+Project+Page) sponsored by the [Public Health Work Group](https://confluence.hl7.org/display/PHWG/Public+Health+Work+Group).
@@ -140,17 +139,17 @@ If you have questions or comments about this IG, please reach out to us via one 
 
 #### Credits
 
-* Reece Adamson (The MITRE Corporation[^PRS])
-* Cary Anderson (Apple Inc.)
-* Shaumik Ashraf (The MITRE Corporation[^PRS])
-* Ricky Bloomfield (Apple Inc.)
-* Paul Denning (The MITRE Corporation[^PRS])
-* Neelima Karipineni (The MITRE Corporation[^PRS])
-* Josh Mandel (SMART Health IT and Microsoft)
-* Max Masnick (The MITRE Corporation[^PRS])
-* Pascal Pfiffner (Apple Inc.)
-* JP Pollak (The Commons Project and Cornell)
-* Isaac Vetter (Epic)
+- Reece Adamson (The MITRE Corporation[^PRS])
+- Cary Anderson (Apple Inc.)
+- Shaumik Ashraf (The MITRE Corporation[^PRS])
+- Ricky Bloomfield (Apple Inc.)
+- Paul Denning (The MITRE Corporation[^PRS])
+- Neelima Karipineni (The MITRE Corporation[^PRS])
+- Josh Mandel (SMART Health IT and Microsoft)
+- Max Masnick (The MITRE Corporation[^PRS])
+- Pascal Pfiffner (Apple Inc.)
+- JP Pollak (The Commons Project and Cornell)
+- Isaac Vetter (Epic)
 
 To be included in the credits, please open a pull request on [GitHub](https://github.com/HL7/fhir-shc-vaccination-ig) adding yourself to [this file](https://github.com/HL7/fhir-shc-vaccination-ig/blob/master/input/pagecontent/index.md). Anyone on the [GitHub contributors list](https://github.com/HL7/fhir-shc-vaccination-ig/graphs/contributors) or who has otherwise contributed to this IG may be included.
 
@@ -158,7 +157,7 @@ To be included in the credits, please open a pull request on [GitHub](https://gi
 
 <br><br>
 
-----
+---
 
 <br><br>
 
@@ -166,7 +165,7 @@ This IG includes the "Description" and "Electric Bolt" icons from [Material Icon
 
 <br><br>
 
-----
+---
 
 <br><br>
 

@@ -49,11 +49,6 @@
 [QualitativeLabResultFindings]: ValueSet-qualitative-lab-result-findings.html
 [QualitativeLabResultsLOINC]: ValueSet-qualitative-lab-results-loinc.html
 [SpecimenCollectionSupervisionStatus]: ValueSet-specimen-collection-supervision-status.html
-[VaccineATC]: ValueSet-vaccine-atc.html
-[VaccineCVX]: ValueSet-vaccine-cvx.html
-[VaccineGTIN]: ValueSet-vaccine-gtin.html
-[VaccineICD11]: ValueSet-vaccine-icd-11.html
-[VaccineSNOMED]: ValueSet-vaccine-snomed.html
 
 
 <!-- CodeSystem links -->

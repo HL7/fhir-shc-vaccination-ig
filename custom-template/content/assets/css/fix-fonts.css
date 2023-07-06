@@ -3,6 +3,10 @@
 
   Increases font sizes to industry standard base of 16px.
 */
+h5 {
+  /* Also fix H5, which now looks too small */
+  font-size: 18px !important;
+}
 body, p,
 li, td, tr, blockquote p {
   font-size: 16px;

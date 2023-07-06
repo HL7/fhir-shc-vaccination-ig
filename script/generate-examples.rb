@@ -14,7 +14,7 @@ module HealthCards
     end
   end
 
-  class MonkeypoxImmunizationHealthCard < HealthCards::MonkeypoxImmunizationPayload
+  class MpoxImmunizationHealthCard < HealthCards::MpoxImmunizationPayload
     def to_json(*args)
       to_hash(filter: false).to_json(*args)
     end
@@ -40,8 +40,8 @@ Dir.glob('bundle*.json') do |filename|
   if bundle.entry.any? { |e| e.resource.is_a?(FHIR::Immunization) }
     if filename.include?('covid')
       jws = @issuer.issue_jws(bundle, type: HealthCards::COVIDImmunizationHealthCard)
-    elsif filename.include?('monkeypox')
-      jws = @issuer.issue_jws(bundle, type: HealthCards::MonkeypoxImmunizationHealthCard)
+    elsif filename.include?('mpox')
+      jws = @issuer.issue_jws(bundle, type: HealthCards::MpoxImmunizationHealthCard)
     else
       puts "ERROR: Could not detect valid immunization target disease."
       exit 1

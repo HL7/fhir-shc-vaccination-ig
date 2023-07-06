@@ -1,47 +1,26 @@
 == Suppressed Messages ==
 
-# Suppress errors for Bundle examples related to `Bundle.id`. We use the `suppressed-ids` IG Publisher flag to suppress the output of `Bundle.id` in the example output, which works but does not avoid the QA errors below.
-ERROR: Bundle/ImmunizationBundleExample1: Bundle: Bundle.id: max allowed = 0, but found 1 (from http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-bundle-dm)
+# 229 is in fact a valid CVX code
+ERROR: Bundle/example-bundle-immunization-covid: Bundle.entry[3].resource/*Immunization/null*/.vaccineCode.coding[0]: Unknown Code '229' in the system 'http://hl7.org/fhir/sid/cvx'; The provided code http://hl7.org/fhir/sid/cvx#229 is not in the value set 'http://hl7.org/fhir/ValueSet/@all' (from Tx-Server) for 'http://hl7.org/fhir/sid/cvx#229'
+ERROR: Bundle/example-bundle-immunization-covid-2: Bundle.entry[3].resource/*Immunization/null*/.vaccineCode.coding[0]: Unknown Code '229' in the system 'http://hl7.org/fhir/sid/cvx'; The provided code http://hl7.org/fhir/sid/cvx#229 is not in the value set 'http://hl7.org/fhir/ValueSet/@all' (from Tx-Server) for 'http://hl7.org/fhir/sid/cvx#229'
+ERROR: Immunization/example-immunization-covid-3a: Immunization.vaccineCode.coding[0]: Unknown Code '229' in the system 'http://hl7.org/fhir/sid/cvx'; The provided code http://hl7.org/fhir/sid/cvx#229 is not in the value set 'http://hl7.org/fhir/ValueSet/@all' (from Tx-Server) for 'http://hl7.org/fhir/sid/cvx#229'
+ERROR: Immunization/example-immunization-covid-3b: Immunization.vaccineCode.coding[0]: Unknown Code '229' in the system 'http://hl7.org/fhir/sid/cvx'; The provided code http://hl7.org/fhir/sid/cvx#229 is not in the value set 'http://hl7.org/fhir/ValueSet/@all' (from Tx-Server) for 'http://hl7.org/fhir/sid/cvx#229'
 
-# Suppress errors related to relative links that the Publisher is turning into the wrong absolute links
-# Reported as https://github.com/HL7/fhir-ig-publisher/issues/245
-The link 'StructureDefinition-shc-covid19-laboratory-result-observation-ad.html/profiles.html#data-minimization-and-privacy' for "data minimization reasons" cannot be resolved
-The link 'StructureDefinition-shc-infectious-disease-laboratory-result-observation-ad.html/profiles.html#data-minimization-and-privacy' for "data minimization reasons" cannot be resolved
-The link 'StructureDefinition-shc-patient-general-ad.html/profiles.html#data-minimization-and-privacy' for "data minimization reasons" cannot be resolved
-The link 'StructureDefinition-shc-patient-general-ad.html/index.html#privacy-by-design' for "privacy by design" cannot be resolved
-The link 'StructureDefinition-shc-patient-general-ad.html/profiles.html#data-minimization-and-privacy' for "data minimization reasons" cannot be resolved
-The link 'StructureDefinition-shc-patient-general-ad.html/index.html#privacy-by-design' for "privacy by design" cannot be resolved
-The link 'StructureDefinition-shc-patient-general-dm.html/StructureDefinition-shc-patient-general-ad.html/profiles.html#data-minimization-and-privacy' for "data minimization reasons" cannot be resolved
-The link 'StructureDefinition-shc-patient-general-dm.html/StructureDefinition-shc-patient-general-ad.html/index.html#privacy-by-design' for "privacy by design" cannot be resolved
-The link 'StructureDefinition-shc-vaccination-ad.html/profiles.html#data-minimization-and-privacy' for "data minimization reasons" cannot be resolved
-The link 'StructureDefinition-shc-vaccination-ad.html/conformance.html' for "conformance requirements" cannot be resolved
-
-
-# Suppress errors related to not having examples. We do in fact have examples for all profiles, but they are linked to on GitHub rather than as part of the standard IG build process. The reason for this is that the IG publisher build process won't allow us to exclude `Resource.id`, `Resource.meta`, and `Resource.text` in examples. These elements SHOULD NOT be included in resources conforming to our IG, so having examples that include them would be confusing for implementers. Reported as https://github.com/HL7/fhir-ig-publisher/issues/293
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-covid19-laboratory-bundle-ad'): The Implementation Guide contains no examples for this profile
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-covid19-laboratory-bundle-dm'): The Implementation Guide contains no examples for this profile
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-covid19-laboratory-result-observation-ad'): The Implementation Guide contains no examples for this profile
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-covid19-laboratory-result-observation-dm'): The Implementation Guide contains no examples for this profile
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-infectious-disease-laboratory-bundle-ad'): The Implementation Guide contains no examples for this profile
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-infectious-disease-laboratory-bundle-dm'): The Implementation Guide contains no examples for this profile
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-infectious-disease-laboratory-result-observation-ad'): The Implementation Guide contains no examples for this profile
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-infectious-disease-laboratory-result-observation-dm'): The Implementation Guide contains no examples for this profile
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-patient-general-ad'): The Implementation Guide contains no examples for this profile
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-patient-general-dm'): The Implementation Guide contains no examples for this profile
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-patient-us-ad'): The Implementation Guide contains no examples for this profile
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-patient-us-dm'): The Implementation Guide contains no examples for this profile
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-ad'): The Implementation Guide contains no examples for this profile
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-bundle-ad'): The Implementation Guide contains no examples for this profile
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-bundle-dm'): The Implementation Guide contains no examples for this profile
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-dm'): The Implementation Guide contains no examples for this profile
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-reaction-observation-ad'): The Implementation Guide contains no examples for this profile
-WARNING: StructureDefinition.where(url = 'http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-reaction-observation-dm'): The Implementation Guide contains no examples for this profile
-
-# tx.fhir.org does not support some of the code systems we use -- suppressing related warnings
-WARNING: ValueSet.where(id = 'vaccine-icd-11'): Error from server: Unable to provide support for code system http://id.who.int/icd/release/11/mms
-WARNING: ValueSet.where(id = 'vaccine-atc'): Error from server: Unable to provide support for code system http://www.whocc.no/atc
-
-# Per https://www.healthterminologies.gov.au/integration/R4/fhir/ValueSet/australian-immunisation-register-vaccine-1, https://healthterminologies.gov.au/fhir/ValueSet/australian-immunisation-register-vaccine-1 is the canonical URI for this value set. However, this causes the following warnings.
-WARNING: StructureDefinition/shc-vaccination-ad: StructureDefinition.differential.element[15].binding: The valueSet reference https://healthterminologies.gov.au/fhir/ValueSet/australian-immunisation-register-vaccine-1 on element Immunization.vaccineCode.coding could not be resolved
-WARNING: StructureDefinition/shc-vaccination-ad: StructureDefinition.snapshot.element[56].binding: The valueSet reference https://healthterminologies.gov.au/fhir/ValueSet/australian-immunisation-register-vaccine-1 on element Immunization.vaccineCode.coding could not be resolved
-WARNING: StructureDefinition/shc-vaccination-dm: StructureDefinition.snapshot.element[56].binding: The valueSet reference https://healthterminologies.gov.au/fhir/ValueSet/australian-immunisation-register-vaccine-1 on element Immunization.vaccineCode.coding could not be resolved
+# Profiles in this IG prohibit filling the `id` element but the IG Publisher inserts this in generated instances
+ERROR: Bundle/example-bundle-immunization-covid: Bundle: Bundle.id: max allowed = 0, but found 1
+ERROR: Bundle/example-bundle-immunization-mpox: Bundle: Bundle.id: max allowed = 0, but found 1
+ERROR: Bundle/example-bundle-lab-test-results-covid: Bundle: Bundle.id: max allowed = 0, but found 1
+ERROR: Immunization/example-immunization-covid-1a: Immunization: Immunization.id: max allowed = 0, but found 1
+ERROR: Immunization/example-immunization-covid-2a: Immunization: Immunization.id: max allowed = 0, but found 1
+ERROR: Immunization/example-immunization-covid-3a: Immunization: Immunization.id: max allowed = 0, but found 1
+ERROR: Immunization/example-immunization-mpox-1a: Immunization: Immunization.id: max allowed = 0, but found 1
+ERROR: Immunization/example-immunization-mpox-2a: Immunization: Immunization.id: max allowed = 0, but found 1
+ERROR: Observation/example-observation-covid-1a: Observation: Observation.id: max allowed = 0, but found 1
+ERROR: Patient/example-patient-covid-1a: Patient: Patient.id: max allowed = 0, but found 1
+ERROR: Patient/example-patient-covid-1c: Patient: Patient.id: max allowed = 0, but found 1
+WARNING: Bundle/example-bundle-immunization-covid: Bundle.id: Rule vc-should-be-omitted: 'SHOULD be omitted for data minimization.' Failed
+WARNING: Bundle/example-bundle-immunization-mpox: Bundle.id: Rule vc-should-be-omitted: 'SHOULD be omitted for data minimization.' Failed
+WARNING: Bundle/example-bundle-lab-test-results-covid: Bundle.id: Rule vc-should-be-omitted: 'SHOULD be omitted for data minimization.' Failed
+WARNING: Bundle/example-bundle-immunization-covid-2: Bundle.id: Rule vc-should-be-omitted: 'SHOULD be omitted for data minimization.' Failed
+WARNING: Bundle/example-bundle-immunization-mpox-2: Bundle.id: Rule vc-should-be-omitted: 'SHOULD be omitted for data minimization.' Failed
+WARNING: Bundle/example-bundle-lab-test-results-covid-2: Bundle.id: Rule vc-should-be-omitted: 'SHOULD be omitted for data minimization.' Failed

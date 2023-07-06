@@ -126,6 +126,7 @@ for_sushi_config.each do |e|
   sushi_config['resources'] ||= {}
   sushi_config['resources'][key] ||= {}
   sushi_config['resources'][key]['exampleCanonical'] = 'http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/'+e[:canonical_of]
+  sushi_config['resources'][key]['description'] = 'Generated example for '+e[:canonical_of]
 
   # Generate intro page
   File.open(File.expand_path("StructureDefinition-#{e[:canonical_of]}-examples-intro.md", pagecontent_path), 'w') do |f|
