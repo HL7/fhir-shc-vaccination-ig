@@ -4,13 +4,17 @@ This [FHIR Implementation Guide](https://www.hl7.org/fhir/implementationguide.ht
 
 1. Describes the clinical information necessary to create a [SMART Health Card] (SHC) identifying vaccination and laboratory testing status for infectious diseases such as [COVID-19](https://www.who.int/health-topics/coronavirus). In particular, it describes the content of the subject of a [SMART Health Card] that contains an instance of [Immunization](https://www.hl7.org/fhir/immunization.html) targeting an infectious disease, or an instance of [Observation](https://www.hl7.org/fhir/observation.html) describing the results of laboratory testing for infectious diseases.
 
-   The [Data Model section of the SMART Health Cards specification](https://spec.smarthealth.cards/#data-model) provides the canonical description of the scope of this IG.
+   The [Data Model section of the SMART Health Cards specification](https://spec.smarthealth.cards/#data-model) provides the canonical description of the scope of this IG with respect to SHCs.
 
-2. Describes a minimal set of patient information (name and contact information) that is also included in a [SMART Health Card] for the use cases in #1.
+   Note that the content of this IG may be suitable for use in other health cards besides SHCs with similar scope and constraints.
 
-**The goal of this IG is to define the conformance criteria of FHIR resources for use specifically in [SMART Health Cards].** This applies to the contents of both digital and paper Health Cards, including Health Cards produced via a [SMART Health Card-specific FHIR endpoint](https://spec.smarthealth.cards/#via-fhir-health-cards-issue-operation) like `[base]/Patient/:id/$health-cards-issue`. This IG is not applicable to general-purpose FHIR endpoints like `[base]/Patient/:id/Immunization`, nor is it meant to describe the canonical representation of clinical data in electronic health record systems; these are governed by other IGs like [US Core](https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-immunization.html).
+2. Describes a minimal set of patient information (name and contact information) that is also included in a health card for the use cases in #1.
 
 Note that this IG is not directly related to the [SMART App Launch Framework](http://www.hl7.org/fhir/smart-app-launch/). The name comes from [SMART Health IT](https://smarthealthit.org/), who also developed the [SMART Health Card] framework that this IG supports. ("SMART" is an [acronym](https://smarthealthit.org/an-app-platform-for-healthcare/about/) for Substitutable Medical Apps, Reusable Technology.) SMART App Launch and SMART Health Cards are designed to work well together (the former being one of multiple methods for issuing the latter), but they don't have a hard dependency with each other.
+
+This IG does not describe API operations for issuing health cards. Note that [the SHC specification does describe a FHIR API operation for issuing SHCs](https://spec.smarthealth.cards/#via-fhir-health-cards-issue-operation) (`[base]/Patient/:id/$health-cards-issue`).
+
+This IG is not applicable to general-purpose FHIR endpoints like `[base]/Patient/:id/Immunization`, nor is it meant to describe the canonical representation of clinical data in electronic health record systems; these are governed by other IGs like [US Core](https://www.hl7.org/fhir/us/core/StructureDefinition-us-core-immunization.html).
 
 ### Actors
 
