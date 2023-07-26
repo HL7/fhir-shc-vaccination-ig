@@ -15,31 +15,30 @@
 <artifact id="StructureDefinition/shc-infectious-disease-laboratory-result-observation-dm" key="StructureDefinition-shc-infectious-disease-laboratory-result-observation-dm" name="Generic Laboratory Result Observation Profile - Data Minimization"/>
 <artifact id="ValueSet/identity-assurance-level" key="ValueSet-identity-assurance-level" name="Identity Assurance Level"/>
 <artifact id="CodeSystem/identity-assurance-level-code-system" key="CodeSystem-identity-assurance-level-code-system" name="Identity Assurance Level Code System"/>
-<artifact id="Bundle/ImmunizationBundleExample1" key="Bundle-ImmunizationBundleExample1" name="ImmunizationBundleExample1"/>
 <artifact id="StructureDefinition/shc-infectious-disease-laboratory-bundle-ad" key="StructureDefinition-shc-infectious-disease-laboratory-bundle-ad" name="Infectious Disease (Generic) Laboratory Test Results Bundle - Allowable Data"/>
 <artifact id="StructureDefinition/shc-infectious-disease-laboratory-bundle-dm" key="StructureDefinition-shc-infectious-disease-laboratory-bundle-dm" name="Infectious Disease (Generic) Laboratory Test Results Bundle - Data Minimization"/>
-<artifact id="ValueSet/lab-result-findings" key="ValueSet-lab-result-findings" name="Lab result findings"/>
-<artifact id="ValueSet/lab-result-findings-snomed" key="ValueSet-lab-result-findings-snomed" name="Lab result findings - SNOMED CT"/>
+<artifact id="ValueSet/lab-result-findings" key="ValueSet-lab-result-findings" name="Lab result findings (SNOMED CT)"/>
+<artifact deprecated="true" id="ValueSet/lab-result-findings-snomed" key="ValueSet-lab-result-findings-snomed" name="Lab result findings - SNOMED CT"/>
 <artifact id="StructureDefinition/shc-patient-general-ad" key="StructureDefinition-shc-patient-general-ad" name="Patient Profile - General - Allowable Data"/>
 <artifact id="StructureDefinition/shc-patient-general-dm" key="StructureDefinition-shc-patient-general-dm" name="Patient Profile - General - Data Minimization"/>
 <artifact id="StructureDefinition/shc-patient-us-ad" key="StructureDefinition-shc-patient-us-ad" name="Patient Profile - United States - Allowable Data"/>
 <artifact id="StructureDefinition/shc-patient-us-dm" key="StructureDefinition-shc-patient-us-dm" name="Patient Profile - United States - Data Minimization"/>
-<artifact id="ValueSet/qualitative-lab-result-findings" key="ValueSet-qualitative-lab-result-findings" name="Qualitative lab result findings"/>
-<artifact id="ValueSet/qualitative-lab-results-loinc" key="ValueSet-qualitative-lab-results-loinc" name="Qualitative lab results - LOINC"/>
+<artifact deprecated="true" id="ValueSet/qualitative-lab-result-findings" key="ValueSet-qualitative-lab-result-findings" name="Qualitative lab result findings"/>
+<artifact deprecated="true" id="ValueSet/qualitative-lab-results-loinc" key="ValueSet-qualitative-lab-results-loinc" name="Qualitative lab results - LOINC"/>
 <artifact id="ValueSet/specimen-collection-supervision-status" key="ValueSet-specimen-collection-supervision-status" name="Specimen Collection Supervision Status"/>
 <artifact id="StructureDefinition/shc-vaccination-bundle-ad" key="StructureDefinition-shc-vaccination-bundle-ad" name="Vaccination Bundle - Allowable Data"/>
 <artifact id="StructureDefinition/shc-vaccination-bundle-dm" key="StructureDefinition-shc-vaccination-bundle-dm" name="Vaccination Bundle - Data Minimization"/>
 <artifact id="StructureDefinition/shc-vaccination-ad" key="StructureDefinition-shc-vaccination-ad" name="Vaccination Profile - Allowable Data"/>
 <artifact id="StructureDefinition/shc-vaccination-dm" key="StructureDefinition-shc-vaccination-dm" name="Vaccination Profile - Data Minimization"/>
-<artifact id="ValueSet/vaccine-atc" key="ValueSet-vaccine-atc" name="Vaccine: ATC/DDD"/>
-<artifact id="ValueSet/vaccine-cvx" key="ValueSet-vaccine-cvx" name="Vaccine: CVX"/>
-<artifact id="ValueSet/vaccine-gtin" key="ValueSet-vaccine-gtin" name="Vaccine: GTIN"/>
-<artifact id="ValueSet/vaccine-icd-11" key="ValueSet-vaccine-icd-11" name="Vaccine: ICD-11"/>
-<artifact id="ValueSet/vaccine-snomed" key="ValueSet-vaccine-snomed" name="Vaccine: SNOMED CT"/>
+<artifact deprecated="true" id="ValueSet/vaccine-atc" key="ValueSet-vaccine-atc" name="Vaccine: ATC/DDD"/>
+<artifact deprecated="true" id="ValueSet/vaccine-cvx" key="ValueSet-vaccine-cvx" name="Vaccine: CVX"/>
+<artifact deprecated="true" id="ValueSet/vaccine-gtin" key="ValueSet-vaccine-gtin" name="Vaccine: GTIN"/>
+<artifact deprecated="true" id="ValueSet/vaccine-icd-11" key="ValueSet-vaccine-icd-11" name="Vaccine: ICD-11"/>
+<artifact deprecated="true" id="ValueSet/vaccine-snomed" key="ValueSet-vaccine-snomed" name="Vaccine: SNOMED CT"/>
 <artifact id="Bundle/example-bundle-immunization-covid" key="Bundle-example-bundle-immunization-covid" name="example-bundle-immunization-covid"/>
 <artifact id="Bundle/example-bundle-immunization-covid-2" key="Bundle-example-bundle-immunization-covid-2" name="example-bundle-immunization-covid-2"/>
-<artifact id="Bundle/example-bundle-immunization-monkeypox" key="Bundle-example-bundle-immunization-monkeypox" name="example-bundle-immunization-monkeypox"/>
-<artifact id="Bundle/example-bundle-immunization-monkeypox-2" key="Bundle-example-bundle-immunization-monkeypox-2" name="example-bundle-immunization-monkeypox-2"/>
+<artifact id="Bundle/example-bundle-immunization-mpox" key="Bundle-example-bundle-immunization-mpox" name="example-bundle-immunization-mpox"/>
+<artifact id="Bundle/example-bundle-immunization-mpox-2" key="Bundle-example-bundle-immunization-mpox-2" name="example-bundle-immunization-mpox-2"/>
 <artifact id="Bundle/example-bundle-lab-test-results-covid" key="Bundle-example-bundle-lab-test-results-covid" name="example-bundle-lab-test-results-covid"/>
 <artifact id="Bundle/example-bundle-lab-test-results-covid-2" key="Bundle-example-bundle-lab-test-results-covid-2" name="example-bundle-lab-test-results-covid-2"/>
 <artifact id="Immunization/example-immunization-covid-1a" key="Immunization-example-immunization-covid-1a" name="example-immunization-covid-1a"/>
@@ -48,10 +47,10 @@
 <artifact id="Immunization/example-immunization-covid-2b" key="Immunization-example-immunization-covid-2b" name="example-immunization-covid-2b"/>
 <artifact id="Immunization/example-immunization-covid-3a" key="Immunization-example-immunization-covid-3a" name="example-immunization-covid-3a"/>
 <artifact id="Immunization/example-immunization-covid-3b" key="Immunization-example-immunization-covid-3b" name="example-immunization-covid-3b"/>
-<artifact id="Immunization/example-immunization-monkeypox-1a" key="Immunization-example-immunization-monkeypox-1a" name="example-immunization-monkeypox-1a"/>
-<artifact id="Immunization/example-immunization-monkeypox-1b" key="Immunization-example-immunization-monkeypox-1b" name="example-immunization-monkeypox-1b"/>
-<artifact id="Immunization/example-immunization-monkeypox-2a" key="Immunization-example-immunization-monkeypox-2a" name="example-immunization-monkeypox-2a"/>
-<artifact id="Immunization/example-immunization-monkeypox-2b" key="Immunization-example-immunization-monkeypox-2b" name="example-immunization-monkeypox-2b"/>
+<artifact id="Immunization/example-immunization-mpox-1a" key="Immunization-example-immunization-mpox-1a" name="example-immunization-mpox-1a"/>
+<artifact id="Immunization/example-immunization-mpox-1b" key="Immunization-example-immunization-mpox-1b" name="example-immunization-mpox-1b"/>
+<artifact id="Immunization/example-immunization-mpox-2a" key="Immunization-example-immunization-mpox-2a" name="example-immunization-mpox-2a"/>
+<artifact id="Immunization/example-immunization-mpox-2b" key="Immunization-example-immunization-mpox-2b" name="example-immunization-mpox-2b"/>
 <artifact id="Observation/example-observation-covid-1a" key="Observation-example-observation-covid-1a" name="example-observation-covid-1a"/>
 <artifact id="Observation/example-observation-covid-1b" key="Observation-example-observation-covid-1b" name="example-observation-covid-1b"/>
 <artifact id="Patient/example-patient-covid-1a" key="Patient-example-patient-covid-1a" name="example-patient-covid-1a"/>

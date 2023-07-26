@@ -30,24 +30,9 @@
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">Terminology<b class="caret"></b></a>
     <ul class="dropdown-menu">
-      <li><a href="ValueSet-vaccine-gtin.html">Vaccine: GTIN</a></li>
-      <li><a href="ValueSet-vaccine-cvx.html">Vaccine: CVX</a></li>
-      <li><a href="ValueSet-vaccine-snomed.html">Vaccine: SNOMED-CT</a></li>
-      <li><a href="ValueSet-vaccine-icd-11.html">Vaccine: ICD-11</a></li>
-      <li><a href="ValueSet-vaccine-atc.html">Vaccine: ATC</a></li>
-
-      <li role="separator" class="divider"></li>
-
-      <li><a href="ValueSet-lab-result-findings.html">Lab result findings</a></li>
-      <li>
-        <a href="ValueSet-qualitative-lab-result-findings.html">Qualitative lab result findings</a>
-      </li>
       <li>
         <a href="ValueSet-completed-observation-status.html">Completed observation status</a>
       </li>
-
-      <li role="separator" class="divider"></li>
-
       <li><a href="ValueSet-identity-assurance-level.html">Identity assurance levels</a></li>
     </ul>
   </li>

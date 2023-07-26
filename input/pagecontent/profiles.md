@@ -29,10 +29,10 @@ The recommended workflow for reading profiles of a given resource in this IG is 
 1. Begin by reading the [IG's home page](index.html) and this page in their entirety.
 1. Review this page in its entirety.
 1. Use the "Profile Groups" navigation menu, or the list of profile groups above to review the implementation instructions for each profile group in the IG.
-    1. If multiple pairs of primary/fallback profiles are available within this Profile Group, note that you should choose the pair with the **narrowest** applicable scope. For example, if there is a set of profiles for your country, you should use those rather than the generic set.
+    1. If multiple pairs of primary/fallback profiles are available within this Profile Group, note that implementers SHALL choose the pair with the **narrowest** applicable scope. For example, if there is a set of profiles for your country, you would use those rather than the generic set.
     1. Review the "Snapshot" tab on the primary profile you plan to use within each profile group. The elements listed here SHOULD/SHALL be included based on  `MustSupport` (<span style="padding-left: 3px; padding-right: 3px; color: white; background-color: red;" >S</span> in the "Flags" column) and [cardinality](https://www.hl7.org/fhir/conformance-rules.html#cardinality) (in the "Card.") column. Elements **not** listed here SHOULD NOT or SHALL NOT be included. Details on interpreting cardinality and `MustSupport` for this IG are available [below](#mustsupport-interpretation).
         - For more information about the data type for a given element, click the data type link in the "Type" column. This will bring you to the relevant portion of the FHIR specification for that data type.
-        - The "Description & Constraints" column has a short description of each element. Some elements may also have a "Binding" listed here, which indicates values SHALL come from the specified list. (This IG uses "Required" for all value set bindings, but other IGs may use [more flexible binding strengths](https://www.hl7.org/fhir/terminologies.html#strength).)
+        - The "Description & Constraints" column has a short description of each element. Some elements may also have a "Binding" listed here, which indicates values SHALL come from the specified list. (This IG uses `required` for most value set bindings, but other IGs may use [more flexible binding strengths](https://www.hl7.org/fhir/terminologies.html#strength).)
 1. For each element included in a given resource, review the detailed definition for the element in this IG. To find this, click the element's name in the "Snapshot" table of the relevant profile. The detailed definition may have more implementation and conformance information including applicable [invariants](https://www.hl7.org/fhir/conformance-rules.html#constraints).
 1. If you wish to [validate](#validation) your resource, start by validating against the primary (DM) profile for a given FHIR resource, and attempt to resolve any errors.
 
@@ -83,8 +83,8 @@ Elements with a minimum [cardinality](https://www.hl7.org/fhir/conformance-rules
 
 ### Missing data
 
-- If an Issuer does not have data for a `MustSupport` data element, the data element SHALL be omitted from the resource. Implementers SHALL NOT produce placeholder data when data are not available; instead, omit the element.
-- If an Issuer does not have data for a required data element (minimum cardinality > 0), the Issuer SHALL NOT produce the resource.
+- If an Issuer does not have data for a `MustSupport` data element, the data element SHALL be omitted from the resource instance. Implementers SHALL NOT produce placeholder data when data are not available; instead, omit the element.
+- If an Issuer does not have data for a required data element (minimum cardinality > 0), the Issuer SHALL NOT produce the resource instance.
 
 ### Data minimization and privacy
 
@@ -99,7 +99,7 @@ Additionally:
 - Implementers SHOULD NOT populate `Resource.id` or `Resource.text` elements. `Resource.meta` SHOULD NOT be populated, except for `Resource.meta.security` in the vaccination and laboratory test results profiles.
 
 - Implementers SHALL use `resource:0` syntax for IDs and references.
-    - Implementers SHALL populate `Bundle.entry.fullUrl` elements with short resource-scheme URIs (e.g., `{"fullUrl": "resource:0}`).
+    - Implementers SHALL populate `Bundle.entry.fullUrl` elements with short resource-scheme URIs (e.g., `{"fullUrl": "resource:0"}`).
     - Implementers SHALL populate `Reference.reference` elements with short resource-scheme URIs (e.g., `{"patient": {"reference": "resource:0"}}`) which SHALL resolve within the bundle.
 
 - Implementers SHOULD NOT populate `CodeableConcept.text` or `Coding.display` when using any value from a value set with a `required` binding, or using specified values from a value set with an `extensible` binding.
@@ -115,15 +115,11 @@ Additionally:
 
 ### Bundles
 
-Bundles meant to populate the `fhirBundle` element of a SMART Health Card with a type of `https://smarthealth.cards#covid19` SHALL conform to one of the Bundles profiled in this IG.
+Bundles meant to populate the `fhirBundle` element of a SMART Health Card AND fall into the scope of this IG described at <https://spec.smarthealth.cards/#data-model> SHALL conform to one of the profiles of Bundle in this IG.
 
 The profiles of Bundle in this IG MAY be used with other types of SMART Health Cards.
 
 ### Validation
-
-<div class="alert alert-info">
-  NOTE: At the time of publication, several code systems used for identifying vaccines (AIR, ATC, GTIN, ICD-11, GLN, and the UK edition of SNOMED-CT) are not supported by the default terminology server (`tx.fhir.org`) used by the FHIR validator, which may result in validation errors. To successfully validate resources using these code systems, an alternate terminology server that supports these code systems must be used.
-</div>
 
 Resources may be assessed for conformance using one of [the tools listed under "Conformance testing" on this page](https://confluence.hl7.org/pages/viewpage.action?pageId=111122184#SMARTHealthCardsImplementationTools-Conformancetesting), or manually with the FHIR Validator (described below).
 
@@ -153,6 +149,14 @@ The command above would validate `path/to/immunization.json` against the [SHCVac
 
 Additional [testing and validation tools may be found here](https://confluence.hl7.org/display/PHWG/SMART+Health+Cards+Implementation+Tools).
 
+#### Terminology validation
+
+The SMART Health Cards community maintains [terminology.smarthealth.cards](https://terminology.smarthealth.cards), which provides ValueSets of codes relevant to this IG that can be updated rapidly as public health needs dictate. Data elements in this IG are bound to ValueSets hosted on [terminology.smarthealth.cards](https://terminology.smarthealth.cards) to support validation of terminology using FHIR tooling. However, the [terminology.smarthealth.cards](https://terminology.smarthealth.cards) ValueSets are not guaranteed to be complete or correct. Therefore, implementers SHALL independently verify the terminology they use in SMART Health Cards with the canonical version of the relevant code system (e.g., verify CVX codes using the [official CDC-published list](https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cvx)).
+
+Implementers are also encouraged to participate in the community maintaining [terminology.smarthealth.cards](https://terminology.smarthealth.cards) on [Zulip](https://chat.fhir.org/#narrow/stream/284830-smart.2Fhealth-cards) (free account required). Please notify the community of any inconsistencies between [terminology.smarthealth.cards](https://terminology.smarthealth.cards) ValueSets and canonical version of the relevant code code systems.
+
+Other questions related to terminology should also be directed to the [smart/health-cards Zulip stream at chat.fhir.org](https://chat.fhir.org/#narrow/stream/284830-smart.2Fhealth-cards).
+
 ---
 
 ### Internationalization
@@ -165,7 +169,7 @@ Additionally, this IG includes specific profiles for the following jurisdictions
 
 Other jurisdictions are welcome to define their own profiles that reflect their local concerns -- please contact the local HL7 affiliate or [the authors of this specification](index.html#author-contact-information) for assistance.
 
-Jurisdictional profiles will typically add constraints to those defined in the "fallback" profiles [defined above](#profile-groups). For example, jurisdictional profiles might add constraints limiting the patient identifier to a specific type of national patient/consumer id, or define a specific value set using codes from a local SNOMED-CT edition for vaccines.
+Jurisdictional profiles will typically add constraints to those defined in the "fallback" profiles [defined above](#profile-groups). For example, jurisdictional profiles might add constraints limiting the patient identifier to a specific type of national patient/consumer id, or define a specific value set using codes from a local SNOMED CT extension for vaccines.
 
 Typically jurisdictional profiles will include both "primary" and "fallback" profiles; both SHALL inherit from the generic "fallback" profile or the generic "primary" profile.
 
@@ -177,3 +181,5 @@ var ref = document.querySelector('h3:nth-of-type(2)');
 var el = document.querySelector('div.markdown-toc');
 ref.parentNode.insertBefore(el, ref);
 </script>
+
+---

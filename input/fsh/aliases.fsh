@@ -4,6 +4,7 @@ Alias: SCT = http://snomed.info/sct
 Alias: ACT = http://terminology.hl7.org/CodeSystem/v3-ActReason
 Alias: IAL = https://smarthealth.cards/ial
 Alias: ICD11 = http://id.who.int/icd/release/11/mms
+Alias: ICD11Foundation = http://id.who.int/icd/entity
 Alias: ObsStatus = http://hl7.org/fhir/observation-status
 
 // LOINCs for COVID lab tests

@@ -12,7 +12,7 @@ bundle-immunization-covid:
       - shc-patient-general-ad
       - shc-patient-us-dm
       - shc-patient-us-ad
-bundle-immunization-monkeypox:
+bundle-immunization-mpox:
   exampleOf:
     - shc-vaccination-bundle-dm
     - shc-vaccination-bundle-ad
