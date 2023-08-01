@@ -67,7 +67,7 @@ In this Implementation Guide, "support in some meaningful way" is defined as fol
 
 - **Issuers:**
 
-    1. Issuers SHALL populate any elements marked as `MustSupport` **if and only if the necessary data are available in their system**. See [Missing data](#missing-data) below for details.
+    1. Issuers SHALL populate any elements marked as `MustSupport` **if and only if the necessary data are available in their system for a given record**. See [Missing data](#missing-data) below for details.
 
     1. Issuers SHOULD NOT populate any elements that are not marked as `MustSupport` unless they believe the element contains valuable information for Holders and/or Verifiers. This is due to the payload size constraints of SMART Health Cards; see the [Data minimization](#data-minimization-and-privacy) section below for more details on how to reduce payload size when implementing. To avoid contradicting cardinality, all required elements (minimum cardinality > 0) are therefore also labeled as `MustSupport`.
 
