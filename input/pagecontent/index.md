@@ -65,7 +65,7 @@ In practice, we have found that bundles of resources conforming to the Primary P
 
 **Scenario 1:** A patient receives two doses of the Moderna COVID-19 vaccine, and a third dose of the 2022 bivalent booster. The first dose was administered on January 1, 2021, the second dose on January 29, 2021, and the booster on September 5, 2022. Here is [an example of a FHIR Bundle representing this scenario](Bundle-example-bundle-immunization-covid.json.html), which contains the following resources:
 
-1. An instance of a Patient resource conforming to [SHCPatientUnitedStatesDM]
+1. An instance of a Patient resource conforming to [SHCPatientUnitedStatesDM] (note that this profile is based on [SHCPatientGeneralDM], so this example conforms to both)
 1. An instance of an Immunization resource conforming to [SHCVaccinationDM] to represent the first dose
 1. An instance of an Immunization resource conforming to [SHCVaccinationDM] to represent the second dose
 1. An instance of an Immunization resource conforming to [SHCVaccinationDM] to represent the booster (third dose)
