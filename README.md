@@ -8,8 +8,6 @@ The IG can be built by running `./_genonce.sh` on Mac/Linux, or `_genonce.bat` o
 
 Building requires downloading the [IG Publisher](https://confluence.hl7.org/display/FHIR/IG+Publisher+Documentation) to `input-cache/publisher.jar`. This can be done by running `./_updatePublisher.sh` on Mac/Linux or `_updatePublisher.bat` on Windows, or by [downloading it from here](https://github.com/HL7/fhir-ig-publisher/releases). You will also [need the Jekyll dependency](https://confluence.hl7.org/display/FHIR/IG+Publisher+Documentation#IGPublisherDocumentation-Installing).
 
-If pages are added/removed/renamed, it is necessary to manually regenerate the [ninja-keys](https://github.com/ssleptsov/ninja-keys) index file, which is stored in `custom-template/includes/ninja-keys.html`. To do this, run `ruby script/regenerate-ninja-keys-index`. This requires Ruby (which should have been installed with Jekyll above) and `gem install nokogiri`.
-
 ## Tests
 
 Shell

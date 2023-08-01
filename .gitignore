@@ -8,7 +8,6 @@ Thumbs.db
 /script/*
 !/script/validate*
 !/script/artifacts-for-jira-spec
-!/script/regenerate-ninja-keys-index
 !/script/generate-examples.rb
 !/script/update-examples
 !/script/markdown-links

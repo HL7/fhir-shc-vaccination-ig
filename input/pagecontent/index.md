@@ -163,13 +163,6 @@ To be included in the credits, please open a pull request on [GitHub](https://gi
 
 <br><br>
 
----
-
-<br><br>
-
-This IG includes the "Description" and "Electric Bolt" icons from [Material Icons](https://fonts.google.com/icons), which are [licensed under Apache 2.0](https://github.com/google/material-design-icons/blob/master/LICENSE). The "Quick Jump" functionality is provided by the [ninja-keys](https://github.com/ssleptsov/ninja-keys) library, which is [MIT licensed](https://github.com/ssleptsov/ninja-keys#license).
-
-<br><br>
 
 ---
 
