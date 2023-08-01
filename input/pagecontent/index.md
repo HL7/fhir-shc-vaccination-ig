@@ -65,14 +65,14 @@ In practice, we have found that bundles of resources conforming to the Primary P
 
 **Scenario 1:** A patient receives two doses of the Moderna COVID-19 vaccine, and a third dose of the 2022 bivalent booster. The first dose was administered on January 1, 2021, the second dose on January 29, 2021, and the booster on September 5, 2022. Here is [an example of a FHIR Bundle representing this scenario](Bundle-example-bundle-immunization-covid.json.html), which contains the following resources:
 
-1. An instance of a Patient resource conforming to [SHCPatientUnitedStatesDM] (note that this profile is based on [SHCPatientGeneralDM], so this example conforms to both)
+1. An instance of a Patient resource conforming to [SHCPatientUnitedStatesDM](StructureDefinition-shc-patient-us-dm.html)[^patientprofile]
 1. An instance of an Immunization resource conforming to [SHCVaccinationDM] to represent the first dose
 1. An instance of an Immunization resource conforming to [SHCVaccinationDM] to represent the second dose
 1. An instance of an Immunization resource conforming to [SHCVaccinationDM] to represent the booster (third dose)
 
 **Scenario 2:** A patient receives two doses of the Jynneos (modified vaccinia Ankara vaccine) vaccine for mpox/smallpox. The first dose was administered on August 1, 2022, and the second dose on August 29, 2022. Here is [an example of a FHIR Bundle representing this scenario](Bundle-example-bundle-immunization-mpox.json.html), which contains the following resources:
 
-1. An instance of a Patient resource conforming to [SHCPatientUnitedStatesDM]
+1. An instance of a Patient resource conforming to [SHCPatientUnitedStatesDM](StructureDefinition-shc-patient-us-dm.html)[^patientprofile]
 1. An instance of an Immunization resource conforming to [SHCVaccinationDM] to represent the first dose
 1. An instance of an Immunization resource conforming to [SHCVaccinationDM] to represent the second dose
 
@@ -82,10 +82,12 @@ The example Bundle resources for both scenarios above conform to [SHCVaccination
 
 **Scenario 3:** A patient is tested for SARS-CoV-2 (COVID19) antigen via rapid immunoassay on February 17, 2021 with result detectable. Here is [an example of a FHIR Bundle representing this scenario](Bundle-example-bundle-lab-test-results-covid.html), which contains the following resources:
 
-1. An instance of a Patient resource conforming to [SHCPatientUnitedStatesDM]
+1. An instance of a Patient resource conforming to [SHCPatientUnitedStatesDM](StructureDefinition-shc-patient-us-dm.html)[^patientprofile]
 1. An instance of an Observation resource conforming to [SHCCovid19LaboratoryResultObservationDM] to represent lab test results
 
 The example Bundle resources for this scenario conforms to [SHCInfectiousDiseaseLaboratoryBundleDM].
+
+[^patientprofile]: Note that this profile is based on [SHCPatientGeneralDM], so this example conforms to both.
 
 ### Profiles
 
