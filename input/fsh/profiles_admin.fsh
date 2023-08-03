@@ -4,7 +4,9 @@ Profile:     SHCPatientGeneralAD
 Id:          shc-patient-general-ad
 Parent:      Patient
 Title:       "Patient Profile - General - Allowable Data"
-Description: "Slight modification of Patient, with identifier as 0..0 and limited MS. For general use if no geographic-specific profile exists."
+Description: "Defines a [fallback (AD) profile](./profiles.html#conformance-to-profiles) representing a patient in a health card related to infectious disease vaccination and testing issued in jurisdictions where no jurisdiction-specific profile is available.
+
+[See here for implementation details](./patient.html)."
 
 * insert id-should-not-be-populated()
 
@@ -96,7 +98,9 @@ Profile:     SHCPatientGeneralDM
 Id:          shc-patient-general-dm
 Parent:      shc-patient-general-ad
 Title:       "Patient Profile - General - Data Minimization"
-Description: "Only elements necessary for Verifiers can be populated. For general use if no geographic-specific profile exists."
+Description: "Defines a [primary (DM) profile](./profiles.html#conformance-to-profiles) representing a patient in a health card related to infectious disease vaccination and testing issued in jurisdictions where no jurisdiction-specific profile is available.
+
+[See here for implementation details](./patient.html)."
 
 * id 0..0
 * meta 0..0
@@ -128,8 +132,9 @@ Profile:     SHCPatientUnitedStatesAD
 Id:          shc-patient-us-ad
 Parent:      shc-patient-general-ad
 Title:       "Patient Profile - United States - Allowable Data"
-Description: "Only elements necessary for Verifiers can be populated."
+Description: "Defines a [fallback (AD) profile](./profiles.html#conformance-to-profiles) representing a patient in a health card related to infectious disease vaccination and testing issued in the United States.
 
+[See here for implementation details](./patient.html)."
 * identifier 0..0
 * identifier ^definition = "Identifer is not allowed in this IG due to risk of accidental, unnecessary exposure of sensitive identifiers to verifiers. For use in the United States."
 
@@ -141,7 +146,9 @@ Profile:     SHCPatientUnitedStatesDM
 Id:          shc-patient-us-dm
 Parent:      shc-patient-general-dm
 Title:       "Patient Profile - United States - Data Minimization"
-Description: "Only elements necessary for Verifiers can be populated. For use in the United States."
+Description: "Defines a [primary (DM) profile](./profiles.html#conformance-to-profiles) representing a patient in a health card related to infectious disease vaccination and testing issued in the United States.
+
+[See here for implementation details](./patient.html)."
 
 * identifier 0..0
 * identifier ^definition = "Identifer is not allowed in this IG due to risk of accidental, unnecessary exposure of sensitive identifiers to verifiers."

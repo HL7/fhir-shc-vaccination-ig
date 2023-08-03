@@ -4,8 +4,9 @@ Profile:     SHCVaccinationAD
 Id:          shc-vaccination-ad
 Parent:      Immunization
 Title:       "Vaccination Profile - Allowable Data"
-Description: "Defines a profile representing a vaccination for a SMART Health Card."
+Description: "Defines a [fallback (AD) profile](./profiles.html#conformance-to-profiles) representing a vaccination in a health card.
 
+[See here for implementation details](./vaccination.html)."
 * . ^definition = "Describes the event of a patient being administered a vaccine or a record of an immunization as reported by a patient, a clinician or another party. If the immunization is part of a multi-dose series, a separate Immunization resource SHALL be used to represent each dose."
 
 * insert id-should-not-be-populated()
@@ -147,8 +148,9 @@ Profile:     SHCVaccinationDM
 Id:          shc-vaccination-dm
 Parent:      shc-vaccination-ad
 Title:       "Vaccination Profile - Data Minimization"
-Description: "Defines a profile representing a vaccination for a SMART Health Card. Only elements necessary for Verifiers can be populated."
+Description: "Defines a [primary (DM) profile](./profiles.html#conformance-to-profiles) representing a vaccination in a health card.
 
+[See here for implementation details](./vaccination.html)."
 * id 0..0
 * meta.versionId 0..0
 * meta.lastUpdated 0..0

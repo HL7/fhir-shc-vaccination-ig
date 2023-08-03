@@ -71,6 +71,35 @@ pages:
     title: Downloads
   artifacts.html:
     title: Artifacts Summary
+groups:
+  Patient:
+    name: Patient Profiles
+    resources:
+    - StructureDefinition/shc-patient-general-dm
+    - StructureDefinition/shc-patient-general-ad
+    - StructureDefinition/shc-patient-us-dm
+    - StructureDefinition/shc-patient-us-ad
+  Vaccination:
+    name: Vaccination Profiles
+    resources:
+    - StructureDefinition/shc-vaccination-dm
+    - StructureDefinition/shc-vaccination-ad
+  LabResults:
+    name: Laboratory Results Profiles
+    resources:
+    - StructureDefinition/shc-covid19-laboratory-result-observation-dm
+    - StructureDefinition/shc-covid19-laboratory-result-observation-ad
+    - StructureDefinition/shc-infectious-disease-laboratory-result-observation-dm
+    - StructureDefinition/shc-infectious-disease-laboratory-result-observation-ad
+  Bundles:
+    name: Bundle Profiles
+    resources:
+    - StructureDefinition/shc-vaccination-bundle-dm
+    - StructureDefinition/shc-vaccination-bundle-ad
+    - StructureDefinition/shc-covid19-laboratory-bundle-dm
+    - StructureDefinition/shc-covid19-laboratory-bundle-ad
+    - StructureDefinition/shc-infectious-disease-laboratory-bundle-dm
+    - StructureDefinition/shc-infectious-disease-laboratory-bundle-ad
 resources:
   Bundle/example-bundle-immunization-covid:
     exampleCanonical: http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-bundle-dm

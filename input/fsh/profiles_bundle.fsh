@@ -84,7 +84,9 @@ Profile: SHCVaccinationBundleAD
 Parent: Bundle
 Id: shc-vaccination-bundle-ad
 Title: "Vaccination Bundle - Allowable Data"
-Description: "The bundle of resources that represents the patient identification and clinical content of a SMART Health Card for vaccinations."
+Description: "Defines a [fallback (AD) profile](./profiles.html#conformance-to-profiles) representing a bundle of patient and vaccination data for health cards.
+
+[See here for implementation details](./bundles.html)."
 
 * insert common-bundle-rules
 
@@ -118,7 +120,9 @@ Profile: SHCVaccinationBundleDM
 Parent: Bundle
 Id: shc-vaccination-bundle-dm
 Title: "Vaccination Bundle - Data Minimization"
-Description: "The bundle of resources that represents the patient identification and clinical content of a SMART Health Card for vaccinations."
+Description: "Defines a [primary (DM) profile](./profiles.html#conformance-to-profiles) representing a bundle of patient and vaccination data for health cards.
+
+[See here for implementation details](./bundles.html)."
 
 * insert common-bundle-rules
 * insert common-bundle-dm-rules
@@ -155,7 +159,9 @@ Profile: SHCCovid19LaboratoryBundleAD
 Parent: Bundle
 Id: shc-covid19-laboratory-bundle-ad
 Title: "COVID-19-specific Laboratory Test Results Bundle - Allowable Data"
-Description: "The bundle of resources that represents the patient identification and clinical content of a SMART Health Card with lab results, specifically for COVID-19."
+Description: "Defines a [fallback (AD) profile](./profiles.html#conformance-to-profiles) representing a bundle of patient and COVID-19 laboratory testing data for health cards.
+
+[See here for implementation details](./bundles.html)."
 
 * insert common-bundle-rules
 
@@ -185,7 +191,9 @@ Profile: SHCInfectiousDiseaseLaboratoryBundleAD
 Parent: Bundle
 Id: shc-infectious-disease-laboratory-bundle-ad
 Title: "Infectious Disease (Generic) Laboratory Test Results Bundle - Allowable Data"
-Description: "The bundle of resources that represents the patient identification and clinical content of a SMART Health Card with lab results."
+Description: "Defines a [fallback (AD) profile](./profiles.html#conformance-to-profiles) representing a bundle of patient and generic infectious disease laboratory testing data for health cards.
+
+[See here for implementation details](./bundles.html)."
 
 * insert common-bundle-rules
 
@@ -217,7 +225,9 @@ Profile: SHCInfectiousDiseaseLaboratoryBundleDM
 Parent: Bundle
 Id: shc-infectious-disease-laboratory-bundle-dm
 Title: "Infectious Disease (Generic) Laboratory Test Results Bundle - Data Minimization"
-Description: "The bundle of resources that represents the patient identification and clinical content of a SMART Health Card with lab results."
+Description: "Defines a [primary (DM) profile](./profiles.html#conformance-to-profiles) representing a bundle of patient and generic infectious disease laboratory testing data for health cards.
+
+[See here for implementation details](./bundles.html)."
 
 * insert common-bundle-rules
 * insert common-bundle-dm-rules
@@ -250,7 +260,9 @@ Profile: SHCCovid19LaboratoryBundleDM
 Parent: Bundle
 Id: shc-covid19-laboratory-bundle-dm
 Title: "COVID-19-specific Laboratory Test Results Bundle - Data Minimization"
-Description: "The bundle of resources that represents the clinical content of a digital lab credential record specifically for COVID-19 data minimization."
+Description: "Defines a [primary (DM) profile](./profiles.html#conformance-to-profiles) representing a bundle of patient and COVID-19 laboratory testing data for health cards.
+
+[See here for implementation details](./bundles.html)."
 
 * insert common-bundle-rules
 * insert common-bundle-dm-rules

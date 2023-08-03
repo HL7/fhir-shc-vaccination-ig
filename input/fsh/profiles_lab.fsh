@@ -139,8 +139,9 @@ Profile:        SHCCovid19LaboratoryResultObservationAD
 Parent:         Observation
 Id:             shc-covid19-laboratory-result-observation-ad
 Title:          "COVID-19 Laboratory Result Observation Profile - Allowable Data"
-Description:    "Profile for reporting COVID-19-related laboratory results indicating current or
-previous infection status."
+Description: "Defines a [fallback (AD) profile](./profiles.html#conformance-to-profiles) representing a laboratory testing result for COVID-19 in a health card.
+
+[See here for implementation details](./laboratory-results-observation.html)."
 
 * insert LaboratoryResultObservation
 
@@ -215,8 +216,9 @@ Profile:        SHCCovid19LaboratoryResultObservationDM
 Parent:         SHCCovid19LaboratoryResultObservationAD
 Id:             shc-covid19-laboratory-result-observation-dm
 Title:          "COVID-19 Laboratory Result Observation Profile - Data Minimization"
-Description:    "Profile for reporting COVID-19-related laboratory results indicating current or
-previous infection status. Only elements necessary for Verifiers can be populated."
+Description: "Defines a [primary (DM) profile](./profiles.html#conformance-to-profiles) representing a laboratory testing result for COVID-19 in a health card.
+
+[See here for implementation details](./laboratory-results-observation.html)."
 
 * insert LaboratoryResultObservationDM
 
@@ -228,7 +230,9 @@ Profile:        SHCInfectiousDiseaseLaboratoryResultObservationAD
 Parent:         Observation
 Id:             shc-infectious-disease-laboratory-result-observation-ad
 Title:          "Generic Laboratory Result Observation Profile - Allowable Data"
-Description:    "Profile for reporting laboratory results indicating current or previous infection status for a disease without a specified laboratory result profile."
+Description: "Defines a [fallback (AD) profile](./profiles.html#conformance-to-profiles) representing an infectious disease laboratory testing result in a health card.
+
+[See here for implementation details](./laboratory-results-observation.html)."
 
 * insert LaboratoryResultObservation
 
@@ -247,8 +251,9 @@ Profile:        SHCInfectiousDiseaseLaboratoryResultObservationDM
 Parent:         SHCInfectiousDiseaseLaboratoryResultObservationAD
 Id:             shc-infectious-disease-laboratory-result-observation-dm
 Title:          "Generic Laboratory Result Observation Profile - Data Minimization"
-Description:    "Profile for reporting laboratory results indicating current or previous infection status for a disease without a specified laboratory result profile.
-Only elements necessary for Verifiers can be populated."
+Description: "Defines a [primary (DM) profile](./profiles.html#conformance-to-profiles) representing an infectious disease laboratory testing result in a health card.
+
+[See here for implementation details](./laboratory-results-observation.html)."
 
 * insert LaboratoryResultObservationDM
 
