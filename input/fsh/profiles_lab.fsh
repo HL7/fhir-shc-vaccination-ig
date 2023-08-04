@@ -153,6 +153,20 @@ Description: "Defines a [fallback (AD) profile](./profiles.html#conformance-to-p
 
 RuleSet: LaboratoryResultObservationDM
 
+* code.id 0..0
+* code.extension 0..0
+// Since code.coding is expanded in the snapshot, add a rule to require the
+// necessary elements to conform to the required binding. This is redundant, but
+// not having the cardinality rules will be more confusing than omitting them.
+* code.coding 1..1
+* code.coding.id 0..0
+* code.coding.extension 0..0
+* code.coding.system 1..1 // needed for required binding -- see above
+* code.coding.version 0..0
+* code.coding.code 1..1 // needed for required binding -- see above
+* code.coding.display 0..0
+* code.coding.userSelected 0..0
+* code.text 0..0
 * id 0..0
 * identifier 0..0
 * meta.versionId 0..0
@@ -192,6 +206,18 @@ RuleSet: LaboratoryResultObservationDM
 * performer.identifier 0..0
 * valueCodeableConcept.id 0..0
 * valueCodeableConcept.extension 0..0
+// Since valueCodeableConcept.coding is expanded in the snapshot, add a rule to require the
+// necessary elements to conform to the required binding. This is redundant, but
+// not having the cardinality rules will be more confusing than omitting them.
+* valueCodeableConcept.coding 1..1
+* valueCodeableConcept.coding.id 0..0
+* valueCodeableConcept.coding.extension 0..0
+* valueCodeableConcept.coding.system 1..1 // needed for required binding -- see above
+* valueCodeableConcept.coding.version 0..0
+* valueCodeableConcept.coding.code 1..1 // needed for required binding -- see above
+* valueCodeableConcept.coding.display 0..0
+* valueCodeableConcept.coding.userSelected 0..0
+* valueCodeableConcept.text 0..0
 * valueCodeableConcept.text 0..0
 * referenceRange.id 0..0
 * referenceRange.extension 0..0
