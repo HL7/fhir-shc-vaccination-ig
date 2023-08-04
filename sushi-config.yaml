@@ -11,7 +11,7 @@ publisher:
   name: HL7 International - Public Health Work Group
   url: http://www.hl7.org/Special/committees/pher
   email: vci-ig@mitre.org
-version: 0.6.2
+version: 1.0.0-rc
 fhirVersion: 4.0.1
 dependencies:
   cards.smarthealth.terminology:
@@ -19,7 +19,7 @@ dependencies:
     version: current
 copyrightYear: 2021+
 license: Apache-2.0
-releaseLabel: STU 1 (Ballot Version)
+releaseLabel: STU 1 Release Candidate
 jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#001
 parameters:
   path-liquid: liquid
