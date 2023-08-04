@@ -40,8 +40,8 @@ RuleSet: LaboratoryResultObservation
 * performer only Reference(Organization)
 * performer MS
 * performer 0..1
-* performer ^short = "Organization which was responsible for laboratory record."
-* performer ^definition = "Organization which was responsible for laboratory record. Issuers SHOULD provide display name only. This is provided to Verifiers in case of invalid data in the credential, to support manual validation. This is not expected to be a computable Organization identifier."
+* performer ^short = "Organization which was responsible for laboratory record; typically the organization collecting the sample or performing the test."
+* performer ^definition = "Organization which was responsible for laboratory record. Typically this is the organization that collected the sample (e.g., a pharmacy or outpatient facility) or performed the test (e.g., a clinical laboratory). Issuers SHOULD provide display name only. This is provided to Verifiers in case of invalid data in the credential, to support manual validation. This is not expected to be a computable Organization identifier."
 
 // VCI-specific (not from US Core)
 * insert id-should-not-be-populated()
