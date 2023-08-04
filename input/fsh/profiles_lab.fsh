@@ -87,8 +87,6 @@ RuleSet: SpecimenSupervisionStatusDM
 * component[specimen-supervision-status].code.coding.userSelected 0..0
 * component[specimen-supervision-status].code.text 0..0
 
-
-* component.value[x] only CodeableConcept
 * component[specimen-supervision-status].valueCodeableConcept.id 0..0
 * component[specimen-supervision-status].valueCodeableConcept.extension 0..0
 * component[specimen-supervision-status].valueCodeableConcept.coding.id 0..0
@@ -124,7 +122,6 @@ RuleSet: SpecimenSupervisionStatusAD
 * component[specimen-supervision-status].code.coding.code = #1208522006 (exactly)
 * component[specimen-supervision-status].code.coding.code ^short = "SNOMED CT concept 'Type of supervision for specimen collection (observable entity)'"
 
-* component[specimen-supervision-status].value[x] only CodeableConcept
 * component[specimen-supervision-status].valueCodeableConcept from SpecimenCollectionSupervisionStatus (required)
 * component[specimen-supervision-status].valueCodeableConcept 1..1
 * component[specimen-supervision-status].valueCodeableConcept.extension 0..0
