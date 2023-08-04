@@ -24,6 +24,8 @@ bundle-lab-test-results-covid:
   exampleOf:
     - shc-infectious-disease-laboratory-bundle-dm
     - shc-infectious-disease-laboratory-bundle-ad
+    - shc-covid19-laboratory-bundle-dm
+    - shc-covid19-laboratory-bundle-ad
   embeddedResourceExampleOf:
     Observation:
       - shc-infectious-disease-laboratory-result-observation-dm

@@ -20,7 +20,7 @@ Severity:    #warning
 
 Invariant:   vc-polymorphic-date-invariant
 Description: "All timestamps SHOULD be represented as Dates (YYYY-MM-DD only)."
-Expression:  "($this as DateTime).toString().matches('^[0-9]{4}-[0-9]{2}-[0-9]{2}$')"
+Expression:  "($this as dateTime).toString().matches('^[0-9]{4}-[0-9]{2}-[0-9]{2}$')"
 Severity:    #warning
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -105,7 +105,7 @@ Severity: #error
 
 Invariant:   vc-observation-range-only-quantity-or-string
 Description: "Reference range SHOULD be included for quantitative lab results, MAY be included for free text (string) results, and SHOULD NOT be included otherwise"
-Expression:  "$this.exists() and (%resource.value.ofType(Quantity).exists() or %resource.value.ofType(String).exists())"
+Expression:  "$this.exists() and (%resource.value.ofType(Quantity).exists() or %resource.value.ofType(string).exists())"
 Severity:    #warning
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////

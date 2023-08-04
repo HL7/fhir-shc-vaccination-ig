@@ -173,6 +173,10 @@ Jurisdictional profiles will typically add constraints to those defined in the "
 
 Typically jurisdictional profiles will include both "primary" and "fallback" profiles; both SHALL inherit from the generic "fallback" profile or the generic "primary" profile.
 
+---
+
+{% include dependency-table.xhtml %}
+
 {% include markdown-link-references.md %}
 
 <script>
@@ -181,5 +185,3 @@ var ref = document.querySelector('h3:nth-of-type(2)');
 var el = document.querySelector('div.markdown-toc');
 ref.parentNode.insertBefore(el, ref);
 </script>
-
----
