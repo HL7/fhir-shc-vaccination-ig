@@ -175,7 +175,11 @@ Typically jurisdictional profiles will include both "primary" and "fallback" pro
 
 ---
 
+### Dependencies
+
 {% include dependency-table.xhtml %}
+
+---
 
 {% include markdown-link-references.md %}
 
