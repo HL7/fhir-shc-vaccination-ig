@@ -169,12 +169,6 @@ resources:
   Observation/example-observation-covid-1b:
     exampleCanonical: http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-infectious-disease-laboratory-result-observation-ad
     description: Generated example for shc-infectious-disease-laboratory-result-observation-ad
-  Observation/example-observation-covid-1c:
-    exampleCanonical: http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-covid19-laboratory-bundle-dm
-    description: Generated example for shc-covid19-laboratory-bundle-dm
-  Observation/example-observation-covid-1d:
-    exampleCanonical: http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-covid19-laboratory-bundle-ad
-    description: Generated example for shc-covid19-laboratory-bundle-ad
   Bundle/example-bundle-lab-test-results-covid-3:
     exampleCanonical: http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-covid19-laboratory-bundle-dm
     description: Generated example for shc-covid19-laboratory-bundle-dm
