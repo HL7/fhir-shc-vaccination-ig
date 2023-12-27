@@ -6,7 +6,7 @@ title: 'SMART Health Cards: Vaccination &amp; Testing Implementation Guide'
 description: Defines the clinical and patient information contained within a SMART
   Health Card (SHC) related to vaccination and lab results related to an infectious
   disease like COVID-19.
-status: active
+status: draft
 publisher:
   name: HL7 International / Public Health
   url: http://www.hl7.org/Special/committees/pher
@@ -23,7 +23,7 @@ extension:
   valueCode: pher
 copyrightYear: 2021+
 license: Apache-2.0
-releaseLabel: trial-use
+releaseLabel: STU1 Release
 jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#001
 parameters:
   path-liquid: liquid
