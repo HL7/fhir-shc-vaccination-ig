@@ -57,7 +57,9 @@ parameters:
   - Bundle/example-bundle-lab-test-results-covid-4
   - Observation/example-observation-covid-1a
   - Observation/example-observation-covid-1b
-  suppressed-ids: example-bundle-immunization-covid,example-bundle-immunization-covid-2,example-immunization-covid-1a,example-immunization-covid-2a,example-immunization-covid-3a,example-immunization-covid-1b,example-immunization-covid-2b,example-immunization-covid-3b,example-patient-covid-1a,example-patient-covid-1b,example-patient-covid-1c,example-patient-covid-1d,example-bundle-immunization-mpox,example-bundle-immunization-mpox-2,example-immunization-mpox-1a,example-immunization-mpox-2a,example-immunization-mpox-1b,example-immunization-mpox-2b,example-bundle-lab-test-results-covid,example-bundle-lab-test-results-covid-2,example-bundle-lab-test-results-covid-3,example-bundle-lab-test-results-covid-4,example-observation-covid-1a,example-observation-covid-1b
+  - Observation/example-observation-covid-1c
+  - Observation/example-observation-covid-1d
+  suppressed-ids: example-bundle-immunization-covid,example-bundle-immunization-covid-2,example-immunization-covid-1a,example-immunization-covid-2a,example-immunization-covid-3a,example-immunization-covid-1b,example-immunization-covid-2b,example-immunization-covid-3b,example-patient-covid-1a,example-patient-covid-1b,example-patient-covid-1c,example-patient-covid-1d,example-bundle-immunization-mpox,example-bundle-immunization-mpox-2,example-immunization-mpox-1a,example-immunization-mpox-2a,example-immunization-mpox-1b,example-immunization-mpox-2b,example-bundle-lab-test-results-covid,example-bundle-lab-test-results-covid-2,example-bundle-lab-test-results-covid-3,example-bundle-lab-test-results-covid-4,example-observation-covid-1a,example-observation-covid-1b,example-observation-covid-1c,example-observation-covid-1d
 pages:
   index.md:
     title: Home
@@ -179,3 +181,9 @@ resources:
   Bundle/example-bundle-lab-test-results-covid-4:
     exampleCanonical: http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-covid19-laboratory-bundle-ad
     description: Generated example for shc-covid19-laboratory-bundle-ad
+  Observation/example-observation-covid-1c:
+    exampleCanonical: http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-covid19-laboratory-result-observation-ad
+    description: Generated example for shc-covid19-laboratory-result-observation-ad
+  Observation/example-observation-covid-1d:
+    exampleCanonical: http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-covid19-laboratory-result-observation-dm
+    description: Generated example for shc-covid19-laboratory-result-observation-dm

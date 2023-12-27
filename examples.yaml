@@ -30,3 +30,5 @@ bundle-lab-test-results-covid:
     Observation:
       - shc-infectious-disease-laboratory-result-observation-dm
       - shc-infectious-disease-laboratory-result-observation-ad
+      - shc-covid19-laboratory-result-observation-ad
+      - shc-covid19-laboratory-result-observation-dm
