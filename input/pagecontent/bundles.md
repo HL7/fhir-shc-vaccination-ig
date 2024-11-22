@@ -1,12 +1,5 @@
 {% include profile-set-nav.md resourceName="bundles" %}
 
-<script>
-// Move Markdown TOC below navigation
-var ref = document.querySelector('h4');
-var el = document.querySelector('div.markdown-toc');
-ref.parentNode.insertBefore(el, ref);
-</script>
-
 ### Usage
 
 Issuers SHALL ensure the contents of `.vc.credentialSubject.fhirBundle` in a [SMART Health Card](https://spec.smarthealth.cards/#data-model) (or equivalent payload in another health card standard) conforms to one of the Bundle profiles listed on this page.

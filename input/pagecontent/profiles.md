@@ -182,10 +182,3 @@ Typically jurisdictional profiles will include both "primary" and "fallback" pro
 ---
 
 {% include markdown-link-references.md %}
-
-<script>
-// Move Markdown TOC below alert box for cosmetics
-var ref = document.querySelector('h3:nth-of-type(2)');
-var el = document.querySelector('div.markdown-toc');
-ref.parentNode.insertBefore(el, ref);
-</script>

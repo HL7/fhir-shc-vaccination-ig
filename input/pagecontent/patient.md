@@ -1,12 +1,5 @@
 {% include profile-set-nav.md resourceName="patient" %}
 
-<script>
-// Move Markdown TOC below navigation
-var ref = document.querySelector('h4');
-var el = document.querySelector('div.markdown-toc');
-ref.parentNode.insertBefore(el, ref);
-</script>
-
 ### Usage
 
 SMART Health Cards issued in the United States SHALL NOT have `Patient.identifier` set as this could include sensitive information such as a Social Security Number or MRN. This is reflected by the `0..0` cardinality of this element in the US profiles of Patient. Issuers of SMART Health Cards in the United States SHALL conform to [SHCPatientUnitedStatesAD] and SHOULD conform to [SHCPatientUnitedStatesDM].

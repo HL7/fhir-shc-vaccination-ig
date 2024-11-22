@@ -112,13 +112,6 @@
   }
 </style>
 
-<script>
-  // If parent is inline-block, switch to inline. This will make the nav table always take up 100% width
-  var parent = document.querySelector('.profile-set-nav').parentElement;
-  if(parent.style.display == "inline-block") {
-    parent.style.display = "inline";
-  }
-</script>
 
 {% if page.path contains "-ad.html" %}
 **Note!** This is a [fallback "allowable data" (AD) profile](profiles.html#data-minimization-and-privacy). Implementers should validate against the [primary "data minimization" (DM) profile if possible]({{ page.path | replace: '-ad.html', '-dm.html' }}).
@@ -126,23 +119,3 @@
 {% endif %}
 
 {% include markdown-link-references.md %}
-
-<script>
-  // Default to snapshot tab in the "Formal Views of Profile Content"
-  if(!sessionStorage.getItem('fhir-resource-tab-index')) sessionStorage.setItem('fhir-resource-tab-index', 2);
-</script>
-
-<script>
-    // Make gender invariant more visible
-    if(window.location.pathname.split('/').pop() == 'StructureDefinition-shc-patient-general-ad.html') {
-      document.addEventListener('DOMContentLoaded', function() {
-        var newPageName = window.location.pathname.split('/').pop().replace('.html', '-definitions.html');
-        jQuery('#tabs span:contains("use-only-if-required-by-law")').css('color', 'red');
-        // Code point 60 is the "less than sign" -- putting the character directly in caused a
-        // parsing error with the IG Publisher's facility for validating HTML.
-        var lessThanSign = String.fromCodePoint(60)
-        var toAppend = `. For more information see here ${lessThanSign}a href="${newPageName}#Patient.gender">here${lessThanSign}/a>.`
-        jQuery('#tabs span:contains("use-only-if-required-by-law")').parent().append(toAppend);
-      });
-    }
-</script>

@@ -1,12 +1,5 @@
 {% include profile-set-nav.md resourceName="laboratory-results-observation" %}
 
-<script>
-// Move Markdown TOC below navigation
-var ref = document.querySelector('h4');
-var el = document.querySelector('div.markdown-toc');
-ref.parentNode.insertBefore(el, ref);
-</script>
-
 ### Usage
 
 Note that `Observation.effective[x]` is the clinically relevant time/time-period, which is typically when the specimen assessed in the laboratory test was collected (as opposed to when the lab assay was performed).

@@ -1,12 +1,5 @@
 {% include profile-set-nav.md resourceName="vaccination" %}
 
-<script>
-// Move Markdown TOC below navigation
-var ref = document.querySelector('h4');
-var el = document.querySelector('div.markdown-toc');
-ref.parentNode.insertBefore(el, ref);
-</script>
-
 ### Usage
 
 #### Scope and terminology
