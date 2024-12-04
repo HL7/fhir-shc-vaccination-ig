@@ -1,6 +1,6 @@
 == Suppressed Messages ==
 
-# Profiles in this IG prohibit filling the `id` element but the IG Publisher inserts this in generated instances
+# 01 Profiles in this IG prohibit filling the `id` element but the IG Publisher inserts this in generated instances
 WARNING: Bundle/example-bundle-immunization-covid: Bundle.id: Constraint failed: vc-should-be-omitted: 'SHOULD be omitted for data minimization.' (defined in http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-bundle-dm)
 WARNING: Bundle/example-bundle-immunization-mpox: Bundle.id: Constraint failed: vc-should-be-omitted: 'SHOULD be omitted for data minimization.' (defined in http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-bundle-dm)
 WARNING: Bundle/example-bundle-lab-test-results-covid: Bundle.id: Constraint failed: vc-should-be-omitted: 'SHOULD be omitted for data minimization.' (defined in http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-infectious-disease-laboratory-bundle-dm)
@@ -10,11 +10,11 @@ WARNING: Bundle/example-bundle-lab-test-results-covid-2: Bundle.id: Constraint f
 WARNING: Bundle/example-bundle-lab-test-results-covid-3: Bundle.id: Constraint failed: vc-should-be-omitted: 'SHOULD be omitted for data minimization.' (defined in http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-covid19-laboratory-bundle-dm)
 WARNING: Bundle/example-bundle-lab-test-results-covid-4: Bundle.id: Constraint failed: vc-should-be-omitted: 'SHOULD be omitted for data minimization.' (defined in http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-covid19-laboratory-bundle-ad)
 
-# These elements are not included in this IG
+# 02 These elements are not included in this IG
 WARNING: 2: An HTML fragment from the set [cross-version-analysis.xhtml, cross-version-analysis-inline.xhtml] is not included anywhere in the produced implementation guide
 WARNING: 4: The HTML fragment 'globals-table.xhtml' is not included anywhere in the produced implementation guide
 
-# Not included due to data minimization constraints
+# 03 Not included due to data minimization constraints
 WARNING: Immunization/example-immunization-covid-1a: Immunization: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
 WARNING: Immunization/example-immunization-covid-1b: Immunization: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
 WARNING: Immunization/example-immunization-covid-2a: Immunization: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
@@ -34,7 +34,7 @@ WARNING: Patient/example-patient-covid-1d: Patient: Constraint failed: dom-6: 'A
 WARNING: Observation/example-observation-covid-1c: Observation: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
 WARNING: Observation/example-observation-covid-1d: Observation: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
 
-# These errors are related to profiling id with 0..0 but not being able to exclude id in the examples. Grahame is aware of this and has indicated that there is no way to resolve currently. https://chat.fhir.org/#narrow/channel/284830-smart.2Fhealth-cards/topic/Publication.20of.20the.20SHC.20Vaccination.20IG
+# 04 These errors are related to profiling id with 0..0 but not being able to exclude id in the examples. Grahame is aware of this and has indicated that there is no way to resolve currently. https://chat.fhir.org/#narrow/channel/284830-smart.2Fhealth-cards/topic/Publication.20of.20the.20SHC.20Vaccination.20IG
 ERROR: Bundle/example-bundle-immunization-covid: Bundle: Bundle.id: max allowed = 0, but found 1 (from http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-bundle-dm|1.0.0)
 ERROR: Bundle/example-bundle-immunization-mpox: Bundle: Bundle.id: max allowed = 0, but found 1 (from http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-vaccination-bundle-dm|1.0.0)
 ERROR: Bundle/example-bundle-lab-test-results-covid: Bundle: Bundle.id: max allowed = 0, but found 1 (from http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-infectious-disease-laboratory-bundle-dm|1.0.0)
@@ -48,3 +48,27 @@ ERROR: Observation/example-observation-covid-1a: Observation: Observation.id: ma
 ERROR: Observation/example-observation-covid-1d: Observation: Observation.id: max allowed = 0, but found 1 (from http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-covid19-laboratory-result-observation-dm|1.0.0)
 ERROR: Patient/example-patient-covid-1a: Patient: Patient.id: max allowed = 0, but found 1 (from http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-patient-general-dm|1.0.0)
 ERROR: Patient/example-patient-covid-1c: Patient: Patient.id: max allowed = 0, but found 1 (from http://hl7.org/fhir/uv/shc-vaccination/StructureDefinition/shc-patient-us-dm|1.0.0)
+
+# 05 These warnings are related to the lack of a `text` element, which is omitted for data minimization reasons as described in the IG
+WARNING: Bundle/example-bundle-immunization-covid: Bundle.entry[0].resource/*Patient/null*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
+WARNING: Bundle/example-bundle-immunization-covid: Bundle.entry[1].resource/*Immunization/null*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
+WARNING: Bundle/example-bundle-immunization-covid: Bundle.entry[2].resource/*Immunization/null*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
+WARNING: Bundle/example-bundle-immunization-covid: Bundle.entry[3].resource/*Immunization/null*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
+WARNING: Bundle/example-bundle-immunization-mpox: Bundle.entry[0].resource/*Patient/null*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
+WARNING: Bundle/example-bundle-immunization-mpox: Bundle.entry[1].resource/*Immunization/null*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
+WARNING: Bundle/example-bundle-immunization-mpox: Bundle.entry[2].resource/*Immunization/null*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
+WARNING: Bundle/example-bundle-lab-test-results-covid: Bundle.entry[0].resource/*Patient/null*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
+WARNING: Bundle/example-bundle-lab-test-results-covid: Bundle.entry[1].resource/*Observation/null*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
+WARNING: Bundle/example-bundle-immunization-covid-2: Bundle.entry[0].resource/*Patient/null*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
+WARNING: Bundle/example-bundle-immunization-covid-2: Bundle.entry[1].resource/*Immunization/null*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
+WARNING: Bundle/example-bundle-immunization-covid-2: Bundle.entry[2].resource/*Immunization/null*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
+WARNING: Bundle/example-bundle-immunization-covid-2: Bundle.entry[3].resource/*Immunization/null*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
+WARNING: Bundle/example-bundle-immunization-mpox-2: Bundle.entry[0].resource/*Patient/null*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
+WARNING: Bundle/example-bundle-immunization-mpox-2: Bundle.entry[1].resource/*Immunization/null*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
+WARNING: Bundle/example-bundle-immunization-mpox-2: Bundle.entry[2].resource/*Immunization/null*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
+WARNING: Bundle/example-bundle-lab-test-results-covid-2: Bundle.entry[0].resource/*Patient/null*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
+WARNING: Bundle/example-bundle-lab-test-results-covid-2: Bundle.entry[1].resource/*Observation/null*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
+WARNING: Bundle/example-bundle-lab-test-results-covid-3: Bundle.entry[0].resource/*Patient/null*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
+WARNING: Bundle/example-bundle-lab-test-results-covid-3: Bundle.entry[1].resource/*Observation/null*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
+WARNING: Bundle/example-bundle-lab-test-results-covid-4: Bundle.entry[0].resource/*Patient/null*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
+WARNING: Bundle/example-bundle-lab-test-results-covid-4: Bundle.entry[1].resource/*Observation/null*/: Constraint failed: dom-6: 'A resource should have narrative for robust management' (defined in http://hl7.org/fhir/StructureDefinition/DomainResource) (Best Practice Recommendation)
