@@ -23,7 +23,7 @@ extension:
   valueCode: pher
 copyrightYear: 2021+
 license: Apache-2.0
-releaseLabel: STU1 Release
+releaseLabel: STU1
 jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#001
 parameters:
   path-liquid: liquid
