@@ -28,9 +28,12 @@ RuleSet: LaboratoryResultObservation
 * value[x] only CodeableConcept or Quantity or string
 * value[x] ^comment = "Issuers SHALL provide a computable representation of laboratory results if at all possible. If the Issuer is unable to accurately translate laboratory results into a computable form, it is unlikely a Verifier will be able to interpret the results. Issuers SHALL make every possible effort to resolve non-computable results prior to issuing credentials. In rare cases when this is not possible, Issuers MAY populate `valueString` with a free text result."
 * valueCodeableConcept 0..1 // work-around to ensure alphabetic order of elements in diff of structure definition - see https://github.com/hapifhir/org.hl7.fhir.core/issues/562
+* valueCodeableConcept MS
 * valueQuantity obeys vc-observation-quantity-should-have-range
+* valueQuantity MS
 * valueString ^short = "String representation of results; used ONLY when a computable representation is not possible"
 * valueString obeys vc-should-be-under-20-chars
+* valueString MS
 
 * referenceRange MS
 * referenceRange ^short = "Provides guide for interpretation. SHOULD include if using valueQuantity."
@@ -123,6 +126,7 @@ RuleSet: SpecimenSupervisionStatusAD
 * component[specimen-supervision-status].code.coding.code ^short = "SNOMED CT concept 'Type of supervision for specimen collection (observable entity)'"
 
 * component[specimen-supervision-status].valueCodeableConcept from SpecimenCollectionSupervisionStatus (required)
+* component[specimen-supervision-status].valueCodeableConcept MS
 * component[specimen-supervision-status].valueCodeableConcept 1..1
 * component[specimen-supervision-status].valueCodeableConcept.extension 0..0
 * component[specimen-supervision-status].valueCodeableConcept.coding 1..1
@@ -143,10 +147,12 @@ Description: "Defines a [fallback (AD) profile](./profiles.html#conformance-to-p
 * insert LaboratoryResultObservation
 
 // This binding can be required because implementers can fall back to SHCInfectiousDiseaseLaboratoryResultObservation
-* code from https://terminology.smarthealth.cards/ValueSet/lab-qualitative-test-covid (required)
+* code from LabQualitativeTestCovidValueSet (required)
 * code ^definition = "If an appropriate code is not found in the bound value set, use the SHCInfectiousDiseaseLaboratoryResultObservation profile instead, which allows any LOINC."
 
-* valueCodeableConcept from https://terminology.smarthealth.cards/ValueSet/lab-qualitative-result (required)
+* valueCodeableConcept from LabQualitativeResultValueSet (required)
+* valueQuantity MS
+* valueString MS
 * code ^definition = "If an appropriate code is not found in the bound value set, use the SHCInfectiousDiseaseLaboratoryResultObservation profile instead, which allows for any SNOMED CT descendant of `441742003` \"Evaluation finding (finding)\" or `362981000` \"Qualifier value (qualifier value)\"."
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////

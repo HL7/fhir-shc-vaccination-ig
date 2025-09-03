@@ -162,6 +162,10 @@ To be included in the credits, please open a pull request on [GitHub](https://gi
 
 <br><br>
 
+{% include cross-version-analysis.xhtml %}
+
+{% include globals-table.xhtml %}
+
 {% include ip-statements.xhtml %}
 
 {% include markdown-link-references.md %}

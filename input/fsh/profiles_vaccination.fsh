@@ -41,7 +41,7 @@ Description: "Defines a [fallback (AD) profile](./profiles.html#conformance-to-p
 
 // Override default example binding with something that makes more sense in the context of our IG
 // https://chat.fhir.org/#narrow/stream/179166-implementers/topic/IG/near/234918476
-* vaccineCode from https://terminology.smarthealth.cards/ValueSet/immunization-all-cvx (example)
+* vaccineCode from ImmunizationAllCvxValueSet (example)
 
 * vaccineCode.coding 1..*
 * vaccineCode.coding MS
@@ -58,16 +58,19 @@ Description: "Defines a [fallback (AD) profile](./profiles.html#conformance-to-p
 
 // It's necessary to fix `system` **in addition** to the value set binding for the slicing to work
 * vaccineCode.coding[cvx] ^short = "CVX code identifying the administered vaccine product"
-* vaccineCode.coding[cvx] from https://terminology.smarthealth.cards/ValueSet/immunization-all-cvx (required)
+* vaccineCode.coding[cvx] from ImmunizationAllCvxValueSet (required)
 * vaccineCode.coding[cvx].system = "http://hl7.org/fhir/sid/cvx" (exactly)
+* vaccineCode.coding[cvx] MS
 
 * vaccineCode.coding[snomed] ^short = "SNOMED CT code identifying the administered vaccine product"
-* vaccineCode.coding[snomed] from https://terminology.smarthealth.cards/ValueSet/immunization-all-snomed (required)
+* vaccineCode.coding[snomed] from SnomedVaccineCodes (required)
 * vaccineCode.coding[snomed].system = "http://snomed.info/sct" (exactly)
+* vaccineCode.coding[snomed] MS
 
 * vaccineCode.coding[icd11] ^short = "ICD-11 MMS code identifying the administered vaccine product"
-* vaccineCode.coding[icd11] from https://terminology.smarthealth.cards/ValueSet/immunization-all-icd11 (required)
+* vaccineCode.coding[icd11] from ICD11Codes
 * vaccineCode.coding[icd11].system = "http://id.who.int/icd/release/11/mms" (exactly)
+* vaccineCode.coding[icd11] MS
 
 // Manufacturer
 // Why we are doing this rather than an extension or in vaccineCode

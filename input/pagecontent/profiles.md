@@ -151,11 +151,9 @@ Additional [testing and validation tools may be found here](https://confluence.h
 
 #### Terminology validation
 
-The SMART Health Cards community maintains [terminology.smarthealth.cards](https://terminology.smarthealth.cards), which provides ValueSets of codes relevant to this IG that can be updated rapidly as public health needs dictate. Data elements in this IG are bound to ValueSets hosted on [terminology.smarthealth.cards](https://terminology.smarthealth.cards) to support validation of terminology using FHIR tooling. However, the [terminology.smarthealth.cards](https://terminology.smarthealth.cards) ValueSets are not guaranteed to be complete or correct. Therefore, implementers SHALL independently verify the terminology they use in SMART Health Cards with the canonical version of the relevant code system (e.g., verify CVX codes using the [official CDC-published list](https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cvx)).
+ValueSets in this IG are not regularly updated, and therefore are not guaranteed to be complete or correct. Because of this, implementers SHALL independently verify the terminology they use in SMART Health Cards with the canonical version of the relevant code system (e.g., verify CVX codes using the [official CDC-published list](https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=cvx)).
 
-Implementers are also encouraged to participate in the community maintaining [terminology.smarthealth.cards](https://terminology.smarthealth.cards) on [Zulip](https://chat.fhir.org/#narrow/stream/284830-smart.2Fhealth-cards) (free account required). Please notify the community of any inconsistencies between [terminology.smarthealth.cards](https://terminology.smarthealth.cards) ValueSets and canonical version of the relevant code code systems.
-
-Other questions related to terminology should also be directed to the [smart/health-cards Zulip stream at chat.fhir.org](https://chat.fhir.org/#narrow/stream/284830-smart.2Fhealth-cards).
+Implementer questions related to terminology should also be directed to the [smart/health-cards Zulip stream at chat.fhir.org](https://chat.fhir.org/#narrow/stream/284830-smart.2Fhealth-cards).
 
 ---
 
