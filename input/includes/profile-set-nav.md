@@ -114,7 +114,7 @@
 
 
 {% if page.path contains "-ad.html" %}
-**Note!** This is a [fallback "allowable data" (AD) profile](profiles.html#data-minimization-and-privacy). Implementers should validate against the [primary "data minimization" (DM) profile if possible]({{ page.path | replace: '-ad.html', '-dm.html' }}).
+**Note!** This is a [fallback "allowable data" (AD) profile](profiles.html#data-minimization-and-privacy). Implementers should validate against the [primary "data minimization" (DM) profile if possible]({{ page.path | replace: '-ad.html', '-dm.html' | replace: 'en/', '' }}).
 {: .alert.alert-danger }
 {% endif %}
 

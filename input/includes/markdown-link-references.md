@@ -1,7 +1,7 @@
 [RFC 2119]: https://tools.ietf.org/html/rfc2119
-[SMART Health Card]: https://smarthealth.cards/
-[SMART Health Cards]: https://smarthealth.cards/
-[SMART Health Cards Framework]: https://spec.smarthealth.cards/
+[SMART Health Card]: https://hl7.org/fhir/uv/smart-health-cards-and-links/
+[SMART Health Cards]: https://hl7.org/fhir/uv/smart-health-cards-and-links/
+[SMART Health Cards Framework]: https://hl7.org/fhir/uv/smart-health-cards-and-links/
 
 [Scenario1Bundle]: https://github.com/dvci/vaccine-credential-ig/blob/{{ site.data['git-branch'] }}/examples/Scenario1Bundle.json
 [Scenario2Bundle]: https://github.com/dvci/vaccine-credential-ig/blob/{{ site.data['git-branch'] }}/examples/Scenario2Bundle.json

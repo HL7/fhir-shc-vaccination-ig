@@ -1,0 +1,13 @@
+{
+    "package-id": "hl7.fhir.uv.shc-vaccination",
+    "version": "1.0.0",
+    "path": "http://hl7.org/fhir/uv/shc-vaccination/STU1",
+    "mode": "milestone",
+    "status": "trial-use",
+    "sequence": "STU 1",
+    "first": true,
+    "title": "SMART Health Cards: Vaccination & Testing Implementation Guide",
+    "ci-build": "http://build.fhir.org/ig/HL7/fhir-shc-vaccination-ig",
+    "category": "Public Health",
+    "introduction": "FHIR Implementation Guide describing clinical and patient data contained within a SMART Health Card for infectious disease vaccination records and laboratory testing status."
+}

@@ -2,7 +2,7 @@
   <li><a href="index.html">Home</a></li>
 
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Profile Groups<b class="caret"></b></a>
+    <a data-toggle="dropdown" class="dropdown-toggle">Profile Groups<b class="caret"></b></a>
     <ul class="dropdown-menu">
       <li>
         <a href="profiles.html">
@@ -28,7 +28,7 @@
 
 
   <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">Terminology<b class="caret"></b></a>
+    <a data-toggle="dropdown" class="dropdown-toggle">Terminology<b class="caret"></b></a>
     <ul class="dropdown-menu">
       <li>
         <a href="ValueSet-completed-observation-status.html">Completed observation status</a>

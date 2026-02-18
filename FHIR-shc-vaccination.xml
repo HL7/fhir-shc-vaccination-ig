@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/uv/shc-vaccination/2021Sep" ciUrl="http://build.fhir.org/ig/HL7/fhir-shc-vaccination-ig" defaultVersion="0.6.2" defaultWorkgroup="pher" gitUrl="https://github.com/HL7/fhir-shc-vaccination-ig" url="http://hl7.org/fhir/uv/shc-vaccination">
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/uv/shc-vaccination" ciUrl="http://build.fhir.org/ig/HL7/fhir-shc-vaccination-ig" defaultVersion="1.0.0" defaultWorkgroup="pher" gitUrl="https://github.com/HL7/fhir-shc-vaccination-ig" url="http://hl7.org/fhir/uv/shc-vaccination">
 <version code="current" url="http://build.fhir.org/ig/HL7/fhir-shc-vaccination-ig"/>
-<version code="0.6.2" url="http://hl7.org/fhir/uv/shc-vaccination/2021Sep"/>
+<version code="1.0.0" url="http://hl7.org/fhir/uv/shc-vaccination"/>
+<version code="0.6.2" deprecated="true" url="http://hl7.org/fhir/uv/shc-vaccination/2021Sep"/>
 <version code="0.6.0" deprecated="true"/>
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
 <artifactPageExtension value="-mappings"/>
+<artifact id="ValueSet/ICD11Codes" key="ValueSet-ICD11Codes" name="All ICD-11 codes"/>
 <artifact id="StructureDefinition/shc-covid19-laboratory-result-observation-ad" key="StructureDefinition-shc-covid19-laboratory-result-observation-ad" name="COVID-19 Laboratory Result Observation Profile - Allowable Data"/>
 <artifact id="StructureDefinition/shc-covid19-laboratory-result-observation-dm" key="StructureDefinition-shc-covid19-laboratory-result-observation-dm" name="COVID-19 Laboratory Result Observation Profile - Data Minimization"/>
 <artifact id="StructureDefinition/shc-covid19-laboratory-bundle-ad" key="StructureDefinition-shc-covid19-laboratory-bundle-ad" name="COVID-19-specific Laboratory Test Results Bundle - Allowable Data"/>
@@ -15,16 +17,20 @@
 <artifact id="StructureDefinition/shc-infectious-disease-laboratory-result-observation-dm" key="StructureDefinition-shc-infectious-disease-laboratory-result-observation-dm" name="Generic Laboratory Result Observation Profile - Data Minimization"/>
 <artifact id="ValueSet/identity-assurance-level" key="ValueSet-identity-assurance-level" name="Identity Assurance Level"/>
 <artifact id="CodeSystem/identity-assurance-level-code-system" key="CodeSystem-identity-assurance-level-code-system" name="Identity Assurance Level Code System"/>
+<artifact id="ValueSet/immunization-all-cvx" key="ValueSet-immunization-all-cvx" name="Immunization / All / CVX"/>
 <artifact id="StructureDefinition/shc-infectious-disease-laboratory-bundle-ad" key="StructureDefinition-shc-infectious-disease-laboratory-bundle-ad" name="Infectious Disease (Generic) Laboratory Test Results Bundle - Allowable Data"/>
 <artifact id="StructureDefinition/shc-infectious-disease-laboratory-bundle-dm" key="StructureDefinition-shc-infectious-disease-laboratory-bundle-dm" name="Infectious Disease (Generic) Laboratory Test Results Bundle - Data Minimization"/>
+<artifact id="ValueSet/lab-qualitative-test-covid" key="ValueSet-lab-qualitative-test-covid" name="LOINCs identifying qualitative COVID lab tests"/>
 <artifact id="ValueSet/lab-result-findings" key="ValueSet-lab-result-findings" name="Lab result findings (SNOMED CT)"/>
 <artifact deprecated="true" id="ValueSet/lab-result-findings-snomed" key="ValueSet-lab-result-findings-snomed" name="Lab result findings - SNOMED CT"/>
 <artifact id="StructureDefinition/shc-patient-general-ad" key="StructureDefinition-shc-patient-general-ad" name="Patient Profile - General - Allowable Data"/>
 <artifact id="StructureDefinition/shc-patient-general-dm" key="StructureDefinition-shc-patient-general-dm" name="Patient Profile - General - Data Minimization"/>
 <artifact id="StructureDefinition/shc-patient-us-ad" key="StructureDefinition-shc-patient-us-ad" name="Patient Profile - United States - Allowable Data"/>
 <artifact id="StructureDefinition/shc-patient-us-dm" key="StructureDefinition-shc-patient-us-dm" name="Patient Profile - United States - Data Minimization"/>
+<artifact id="ValueSet/lab-qualitative-result" key="ValueSet-lab-qualitative-result" name="Qualitative infectious disease-related lab test result codes"/>
 <artifact deprecated="true" id="ValueSet/qualitative-lab-result-findings" key="ValueSet-qualitative-lab-result-findings" name="Qualitative lab result findings"/>
 <artifact deprecated="true" id="ValueSet/qualitative-lab-results-loinc" key="ValueSet-qualitative-lab-results-loinc" name="Qualitative lab results - LOINC"/>
+<artifact id="ValueSet/SnomedVaccineCodes" key="ValueSet-SnomedVaccineCodes" name="SNOMED CT vaccine codes"/>
 <artifact id="ValueSet/specimen-collection-supervision-status" key="ValueSet-specimen-collection-supervision-status" name="Specimen Collection Supervision Status"/>
 <artifact id="StructureDefinition/shc-vaccination-bundle-ad" key="StructureDefinition-shc-vaccination-bundle-ad" name="Vaccination Bundle - Allowable Data"/>
 <artifact id="StructureDefinition/shc-vaccination-bundle-dm" key="StructureDefinition-shc-vaccination-bundle-dm" name="Vaccination Bundle - Data Minimization"/>

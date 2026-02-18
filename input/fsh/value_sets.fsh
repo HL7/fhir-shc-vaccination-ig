@@ -11,6 +11,9 @@ Title:       "All ICD-11 codes"
 Description: "All codes from ICD-11"
 * ^experimental = false
 * ^status = #active
+* ^copyright = "International Classification of Diseases, Eleventh Revision (ICD-11), World Health Organization (WHO)
+2019/2021. <https://icd.who.int/browse11>. Licensed under [Creative Commons Attribution-NoDerivatives 3.0 IGO license
+(CC BY-ND 3.0 IGO)](https://creativecommons.org/licenses/by-nd/3.0/igo/)."
 * include codes from system $icd11
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -410,7 +413,7 @@ Title: "Qualitative infectious disease-related lab test result codes"
 Description: "This value set includes a codes to identify the results of qualitative lab tests related to infectious diseases."
 * ^experimental = false
 
-* ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2022, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc
+* ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc
 
 The SNOMED CT codes in this ValueSet are part of SNOMED GPS, which is produced by SNOMED International under the terms of the [Creative Commons Attribution 4.0 International Public License](https://creativecommons.org/licenses/by/4.0/).
 
@@ -453,7 +456,7 @@ Description: "This value set includes a subset of the LOINCs found at <https://l
 qualitative results we believe to be useful in SMART Health Cards are included.qualitative results we believe to be useful in SMART Health Cards are included."
 
 
-* ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2022, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc"
+* ^copyright = "This material contains content from LOINC (http://loinc.org). LOINC is copyright © 1995-2020, Regenstrief Institute, Inc. and the Logical Observation Identifiers Names and Codes (LOINC) Committee and is available at no cost under the license at http://loinc.org/license. LOINC® is a registered United States trademark of Regenstrief Institute, Inc"
 * ^version = "2023.1"
 * ^experimental = false
 

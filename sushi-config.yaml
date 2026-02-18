@@ -2,7 +2,7 @@
 id: hl7.fhir.uv.shc-vaccination
 canonical: http://hl7.org/fhir/uv/shc-vaccination
 name: SMARTHealthCardsVaccinationAndTestingIG
-title: 'SMART Health Cards: Vaccination &amp; Testing Implementation Guide'
+title: 'SMART Health Cards: Vaccination & Testing Implementation Guide'
 description: Defines the clinical and patient information contained within a SMART
   Health Card (SHC) related to vaccination and lab results related to an infectious
   disease like COVID-19.
@@ -20,9 +20,14 @@ extension:
   valueCode: trial-use
 - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm
   valueInteger: 4
+- url: http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm-support
+  valueMarkdown: |
+    This FHIR Implementation Guide is widely implemented by technology vendors as
+    part of the COVID-19 pandemic response. This meets the criteria of
+    [FMM4](https://confluence.hl7.org/spaces/FHIR/pages/35718679/FHIR+Maturity+Model).
 copyrightYear: 2021+
 license: Apache-2.0
-releaseLabel: STU1
+releaseLabel: STU 1
 jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#001
 parameters:
   path-liquid: liquid
