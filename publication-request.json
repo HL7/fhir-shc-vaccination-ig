@@ -5,9 +5,6 @@
     "mode": "milestone",
     "status": "trial-use",
     "sequence": "STU 1",
-    "first": true,
-    "title": "SMART Health Cards: Vaccination & Testing Implementation Guide",
-    "ci-build": "http://build.fhir.org/ig/HL7/fhir-shc-vaccination-ig",
-    "category": "Public Health",
-    "introduction": "FHIR Implementation Guide describing clinical and patient data contained within a SMART Health Card for infectious disease vaccination records and laboratory testing status."
+    "desc": "STU1 release for the SMART Health Cards: Vaccination & Testing Implementation Guide",
+    "first": false
 }
