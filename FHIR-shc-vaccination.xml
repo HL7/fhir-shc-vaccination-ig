@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/uv/shc-vaccination" ciUrl="http://build.fhir.org/ig/HL7/fhir-shc-vaccination-ig" defaultVersion="1.0.0" defaultWorkgroup="pher" gitUrl="https://github.com/HL7/fhir-shc-vaccination-ig" url="http://hl7.org/fhir/uv/shc-vaccination">
+<specification xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ballotUrl="http://hl7.org/fhir/uv/shc-vaccination/2021Sep" ciUrl="http://build.fhir.org/ig/HL7/fhir-shc-vaccination-ig" defaultVersion="1.0.0" defaultWorkgroup="pher" gitUrl="https://github.com/HL7/fhir-shc-vaccination-ig" url="http://hl7.org/fhir/uv/shc-vaccination">
 <version code="current" url="http://build.fhir.org/ig/HL7/fhir-shc-vaccination-ig"/>
-<version code="1.0.0" url="http://hl7.org/fhir/uv/shc-vaccination"/>
-<version code="0.6.2" deprecated="true" url="http://hl7.org/fhir/uv/shc-vaccination/2021Sep"/>
+<version code="1.0.0" url="http://hl7.org/fhir/uv/shc-vaccination/STU1"/>
+<version code="0.6.2" url="http://hl7.org/fhir/uv/shc-vaccination/2021Sep"/>
 <version code="0.6.0" deprecated="true"/>
 <artifactPageExtension value="-definitions"/>
 <artifactPageExtension value="-examples"/>
