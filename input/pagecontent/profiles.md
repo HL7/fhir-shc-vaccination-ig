@@ -125,7 +125,7 @@ Resources may be assessed for conformance using one of [the tools listed under "
 
 Note that these tools **do not** check for `MustSupport` conformance as this depends on the particulars of the data available to the actor producing the resource. Implementers MUST manually check `MustSupport` conformance based on the criteria described above.
 
-To validate a specific resource against a profile, the [FHIR Validator](https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar) can be used, where [package.tgz is downloaded from the IG](package.tgz):
+To validate a specific resource against a profile, the [FHIR Validator](https://github.com/hapifhir/org.hl7.fhir.core/releases/latest/download/validator_cli.jar) can be used, where [../package.tgz is downloaded from the IG](package.tgz):
 
 ```sh
 # Run to get latest validator_cli.jar (~80MB)
