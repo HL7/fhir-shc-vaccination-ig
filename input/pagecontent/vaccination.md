@@ -28,18 +28,15 @@ Codes from at least one of these code systems SHALL be used to populate the `Imm
 * **Verifiers** of SMART Health Cards SHALL be able to meaningfully process and interpret ANY code from the code systems listed in the table below that appear in the respective "Applicable Subset of Codes".
 
 {:.table-striped.table.table-bordered}
-| Code System | Identifying URI | Applicable Subset of Codes | ValueSet | Example |
-| -- | -- | -- | -- | -- |
-| **CVX** | `http://hl7.org/fhir/sid/cvx` | Any [CVX code][CVX] | [ValueSet][cvx-vs] | `230` ("Moderna COVID-19 Bivalent, Original + BA.4/BA.5") |
-| **ICD-11 MMS** | `http://id.who.int/icd/release/11/mms` | Descendants of [Foundation entity `164949870`]† | [ValueSet][icd-vs] | `XM3DT5` ("COVID-19 Vaccine Moderna") |
-| **SNOMED CT** | `http://snomed.info/sct` | Descendants of [`787859002`][SNOMED-vaccine-concept]‡ | [ValueSet][snomed-vs] | `28571000087109` ("COVID-19 SPIKEVAX 0.20 mg/mL mRNA Mod") |
+| Code System    | Identifying URI                        | Applicable Subset of Codes                            | Example                                                    |
+| -------------- | -------------------------------------- | ----------------------------------------------------- | ---------------------------------------------------------- |
+| **CVX**        | `http://hl7.org/fhir/sid/cvx`          | Any [CVX code][CVX]                                   | `230` ("Moderna COVID-19 Bivalent, Original + BA.4/BA.5")  |
+| **ICD-11 MMS** | `http://id.who.int/icd/release/11/mms` | Descendants of [Foundation entity `164949870`]†       | `XM3DT5` ("COVID-19 Vaccine Moderna")                      |
+| **SNOMED CT**  | `http://snomed.info/sct`               | Descendants of [`787859002`][SNOMED-vaccine-concept]‡ | `28571000087109` ("COVID-19 SPIKEVAX 0.20 mg/mL mRNA Mod") |
 
 [CVX]: https://www2a.cdc.gov/vaccines/iis/iisstandards/vaccines.asp?rpt=CVX
 [Foundation entity `164949870`]: https://icd.who.int/browse11/l-m/en#/http%3A%2F%2Fid.who.int%2Ficd%2Fentity%2F164949870
 [SNOMED-vaccine-concept]: https://browser.ihtsdotools.org/?perspective=full&conceptId1=787859002
-[cvx-vs]: https://terminology.smarthealth.cards/ValueSet-immunization-all-cvx.html
-[icd-vs]: https://terminology.smarthealth.cards/ValueSet-immunization-all-icd11.html
-[snomed-vs]: https://terminology.smarthealth.cards/ValueSet-immunization-all-snomed.html
 
 ##### † Applicable subset of ICD-11 MMS codes
 
