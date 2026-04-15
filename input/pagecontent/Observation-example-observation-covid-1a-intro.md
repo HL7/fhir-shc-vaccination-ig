@@ -42,3 +42,5 @@
   ]
 }
 ```
+
+{% include data-minimization-examples-note.md %}

@@ -5,3 +5,5 @@
 
 <div class="alert alert-success" markdown="1">This example is a copy of [`example-bundle-lab-test-results-covid`](Bundle-example-bundle-lab-test-results-covid.html). See [here](https://github.com/HL7/fhir-shc-vaccination-ig/tree/master/input/examples) for more information.
 </div>
+
+{% include data-minimization-examples-note.md %}

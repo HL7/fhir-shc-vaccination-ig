@@ -37,3 +37,5 @@
   "lotNumber": "0000007"
 }
 ```
+
+{% include data-minimization-examples-note.md %}

@@ -18,3 +18,5 @@
   "birthDate": "1951-01-20"
 }
 ```
+
+{% include data-minimization-examples-note.md %}
