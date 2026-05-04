@@ -70,6 +70,7 @@
 <page key="NA" name="(NA)"/>
 <page key="many" name="(many)"/>
 <page key="artifacts" name="Artifacts Summary"/>
+<page key="changelog" name="Changelog"/>
 <page key="conformance" name="Conformance"/>
 <page deprecated="true" key="contact" name="Contact"/>
 <page key="downloads" name="Downloads"/>

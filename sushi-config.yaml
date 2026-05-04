@@ -83,6 +83,8 @@ pages:
     title: Downloads
   artifacts.html:
     title: Artifacts Summary
+  changelog.md:
+    title: Changelog
 groups:
   Patient:
     name: Patient Profiles
